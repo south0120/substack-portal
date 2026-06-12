@@ -1,7 +1,8 @@
 const FEEDS_URL = "https://raw.githubusercontent.com/south0120/substack-portal/main/feeds.json";
 const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
-const FEEDS_PER_RUN = 40;
-const CONCURRENCY = 10;
+const FEEDS_PER_RUN = 5; // Workers Free の CPU 制限対策で小さく保つ
+const INGEST_MAX = 10;
+const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -28,6 +29,7 @@ export default {
       if (url.pathname === "/api/writers") return getWriters(url, env);
       if (url.pathname === "/api/categories") return getCategories(env);
       if (url.pathname === "/api/health") return getHealth(env);
+      if (url.pathname === "/api/ingest") return runIngest(url, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -36,7 +38,10 @@ export default {
   },
 };
 
-async function refreshFeeds(env) {
+async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
+  // フィードを1件ずつ処理し、その都度 cursor を進める。
+  // 途中で invocation が落ちても進捗が残り、次回が同じフィードをやり直し続けない。
+  const stats = { feeds: 0, feedSuccesses: 0, articlesProcessed: 0, cursorStart: null, cursorEnd: null };
   try {
     const response = await fetch(FEEDS_URL, {
       headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
@@ -47,95 +52,101 @@ async function refreshFeeds(env) {
     const feeds = Array.isArray(payload.feeds) ? payload.feeds : [];
     if (!feeds.length) {
       console.warn("No feeds configured");
-      return;
+      return stats;
     }
 
     const cursorRow = await env.DB.prepare("SELECT value FROM meta WHERE key = ?")
       .bind("cursor").first();
-    const cursor = normalizeCursor(cursorRow?.value, feeds.length);
-    const selected = Array.from(
-      { length: Math.min(FEEDS_PER_RUN, feeds.length) },
-      (_, index) => feeds[(cursor + index) % feeds.length],
-    );
+    let cursor = normalizeCursor(cursorRow?.value, feeds.length);
+    stats.cursorStart = cursor;
+    const count = Math.min(perRun, feeds.length);
 
-    let feedSuccesses = 0;
-    let articleCount = 0;
-    for (let start = 0; start < selected.length; start += CONCURRENCY) {
-      const batch = selected.slice(start, start + CONCURRENCY);
-      const results = await Promise.allSettled(batch.map(fetchAndParseFeed));
-      const writerStatements = [];
-      const articleStatements = [];
-
-      results.forEach((result, index) => {
-        const feed = batch[index];
-        if (result.status === "rejected") {
-          console.warn(`Feed failed: ${feed?.name || feed?.feed_url || "unknown"}`, result.reason);
-          return;
-        }
-        feedSuccesses += 1;
-        const parsed = result.value;
-        writerStatements.push(
-          env.DB.prepare(`
-            INSERT INTO writers (name, url, feed_url, avatar, bio, categories, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(name) DO UPDATE SET
-              url = excluded.url,
-              feed_url = excluded.feed_url,
-              avatar = excluded.avatar,
-              bio = excluded.bio,
-              categories = excluded.categories,
-              updated_at = excluded.updated_at
-          `).bind(
-            parsed.writer.name,
-            parsed.writer.url,
-            parsed.writer.feed_url,
-            parsed.writer.avatar,
-            parsed.writer.bio,
-            JSON.stringify(parsed.writer.categories),
-            parsed.writer.updated_at,
-          ),
-        );
-        for (const article of parsed.articles) {
-          articleStatements.push(
-            env.DB.prepare(`
-              INSERT INTO articles
-                (id, url, title, excerpt, image, published, writer, category)
-              VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-              ON CONFLICT(url) DO NOTHING
-            `).bind(
-              article.id,
-              article.url,
-              article.title,
-              article.excerpt,
-              article.image,
-              article.published,
-              article.writer,
-              article.category,
-            ),
-          );
-        }
-        articleCount += parsed.articles.length;
-      });
-
-      await runBatches(env.DB, writerStatements);
-      await runBatches(env.DB, articleStatements);
+    for (let index = 0; index < count; index += 1) {
+      const feed = feeds[cursor];
+      stats.feeds += 1;
+      try {
+        const parsed = await fetchAndParseFeed(feed);
+        await upsertParsedFeed(env, parsed);
+        stats.feedSuccesses += 1;
+        stats.articlesProcessed += parsed.articles.length;
+      } catch (error) {
+        console.warn(`Feed failed: ${feed?.name || feed?.feed_url || "unknown"}`, error);
+      }
+      cursor = (cursor + 1) % feeds.length;
+      await setMeta(env, "cursor", String(cursor));
     }
-
-    const nextCursor = (cursor + FEEDS_PER_RUN) % feeds.length;
-    await env.DB.prepare(`
-      INSERT INTO meta (key, value) VALUES ('cursor', ?)
-      ON CONFLICT(key) DO UPDATE SET value = excluded.value
-    `).bind(String(nextCursor)).run();
-    console.log(JSON.stringify({
-      feeds: selected.length,
-      feedSuccesses,
-      articlesProcessed: articleCount,
-      cursor,
-      nextCursor,
-    }));
+    stats.cursorEnd = cursor;
+    await setMeta(env, "last_run", new Date().toISOString());
+    console.log(JSON.stringify(stats));
   } catch (error) {
     console.error("Scheduled refresh failed", error);
   }
+  return stats;
+}
+
+async function upsertParsedFeed(env, parsed) {
+  const writerStatement = env.DB.prepare(`
+    INSERT INTO writers (name, url, feed_url, avatar, bio, categories, updated_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(name) DO UPDATE SET
+      url = excluded.url,
+      feed_url = excluded.feed_url,
+      avatar = excluded.avatar,
+      bio = excluded.bio,
+      categories = excluded.categories,
+      updated_at = excluded.updated_at
+  `).bind(
+    parsed.writer.name,
+    parsed.writer.url,
+    parsed.writer.feed_url,
+    parsed.writer.avatar,
+    parsed.writer.bio,
+    JSON.stringify(parsed.writer.categories),
+    parsed.writer.updated_at,
+  );
+  const articleStatements = parsed.articles.map((article) =>
+    env.DB.prepare(`
+      INSERT INTO articles
+        (id, url, title, excerpt, image, published, writer, category)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT(url) DO NOTHING
+    `).bind(
+      article.id,
+      article.url,
+      article.title,
+      article.excerpt,
+      article.image,
+      article.published,
+      article.writer,
+      article.category,
+    ),
+  );
+  await runBatches(env.DB, [writerStatement, ...articleStatements]);
+}
+
+async function setMeta(env, key, value) {
+  await env.DB.prepare(`
+    INSERT INTO meta (key, value) VALUES (?, ?)
+    ON CONFLICT(key) DO UPDATE SET value = excluded.value
+  `).bind(key, value).run();
+}
+
+async function getMeta(env, key) {
+  const row = await env.DB.prepare("SELECT value FROM meta WHERE key = ?").bind(key).first();
+  return row?.value ?? null;
+}
+
+// 手動バックフィル用: GET /api/ingest?n=5 （60秒スロットル付き）
+async function runIngest(url, env) {
+  const lastIngest = Number(await getMeta(env, "last_ingest_ms")) || 0;
+  const now = Date.now();
+  if (now - lastIngest < INGEST_THROTTLE_MS) {
+    return jsonResponse({ error: "Throttled. Retry shortly.", retryAfterMs: INGEST_THROTTLE_MS - (now - lastIngest) }, 429, "no-store");
+  }
+  await setMeta(env, "last_ingest_ms", String(now));
+  const n = Math.min(INGEST_MAX, Math.max(1, positiveInt(url.searchParams.get("n"), FEEDS_PER_RUN)));
+  const stats = await refreshFeeds(env, n);
+  return jsonResponse(stats, 200, "no-store");
 }
 
 async function fetchAndParseFeed(feed) {
@@ -311,17 +322,28 @@ async function getCategories(env) {
 }
 
 async function getHealth(env) {
-  const row = await env.DB.prepare("SELECT COUNT(*) AS articles FROM articles").first();
-  return jsonResponse({ ok: true, articles: Number(row?.articles || 0) });
+  const [articleRow, writerRow, cursor, lastRun] = await Promise.all([
+    env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+    getMeta(env, "cursor"),
+    getMeta(env, "last_run"),
+  ]);
+  return jsonResponse({
+    ok: true,
+    articles: Number(articleRow?.n || 0),
+    writers: Number(writerRow?.n || 0),
+    cursor: Number(cursor) || 0,
+    lastRun: lastRun || null,
+  }, 200, "no-store");
 }
 
-function jsonResponse(body, status = 200) {
+function jsonResponse(body, status = 200, cache = "public, max-age=300") {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       ...CORS_HEADERS,
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=300",
+      "Cache-Control": cache,
     },
   });
 }

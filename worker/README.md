@@ -19,14 +19,15 @@
    ```sh
    npx wrangler deploy
    ```
-5. 初回データ投入のために D1 execute を追加で行う必要はありません。cron を待つか、ローカルで scheduled handler を手動実行します。
+5. 初回データ投入（バックフィル）は本番の `/api/ingest` を叩くのが最速です（60秒に1回まで）。
    ```sh
-   npx wrangler dev --test-scheduled
-   curl http://localhost:8787/__scheduled
+   # 5フィードずつ進む。約25回（=25分強）で全122名分が入る
+   curl "https://fyl-api.<account>.workers.dev/api/ingest?n=5"
    ```
+   進捗は `/api/health` の `cursor` / `articles` / `writers` / `lastRun` で確認できます。
 
-毎時 40 フィードずつ巡回するため、122名分は約3時間で一巡します。
+## 巡回方式（Workers Free 対応）
 
-## 毎時ローテーションにした理由
-
-Cloudflare Workers 無料プランのサブリクエスト上限（50回/1実行）に収めるため、David の日次一括実行指定から、毎時40フィードのローテーション方式へ変更しています。各実行では `feeds.json` の取得に1回、RSS取得に最大40回を使い、D1 の `meta.cursor` に次回の開始位置を保存します。
+- 毎時 cron で **5フィードずつ** 巡回（`FEEDS_PER_RUN=5`）。約25時間で一巡し、以降は差分のみ追加されます。
+- 無料プランの CPU・サブリクエスト制限で実行が途中終了しても進捗が失われないよう、**1フィード処理するごとに `meta.cursor` を更新**します（途中死しても次回は続きから）。
+- `GET /api/ingest?n=1..10` で手動巡回も可能（60秒スロットル付き）。初期投入や障害後の追い上げに使います。
