@@ -147,7 +147,7 @@ def main() -> int:
         try:
             prompt_text = prompt_for(recent)
             resp = client.messages.create(
-                model="claude-opus-4-8",
+                model="claude-haiku-4-5-20251001",
                 max_tokens=4000,
                 system="あなたは日本語ニュースレター記事のトピック分類器です。各記事を最も適切なトピック1つに分類してください。",
                 messages=[{"role": "user", "content": prompt_text}],

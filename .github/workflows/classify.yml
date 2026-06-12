@@ -2,7 +2,7 @@ name: Classify writer topics
 
 on:
   schedule:
-    - cron: "40 21 * * 0"
+    - cron: "40 * * * *"
   workflow_dispatch:
 
 permissions:
