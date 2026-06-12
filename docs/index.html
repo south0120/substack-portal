@@ -54,14 +54,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
 .view-toggle button.on{background:#fff;color:var(--brand);box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .sample-banner{max-width:1248px;margin:14px auto 0;padding:8px 14px;border:1px solid var(--brand-line);
   border-radius:12px;background:var(--brand-soft);color:#9A410F;font-size:.78rem;font-weight:700}
-.intro{max-width:1248px;margin:0 auto;padding:34px 16px 18px}
-.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--brand);font-size:.76rem;
-  font-weight:900;letter-spacing:.08em;margin-bottom:8px}
-.eyebrow::before{content:"";width:22px;height:2px;background:var(--brand)}
-.intro h2{font-size:clamp(1.6rem,4vw,2.65rem);line-height:1.28;letter-spacing:-.035em;
-  font-weight:900;max-width:720px}
-.intro p{color:var(--sub);font-size:.88rem;margin-top:10px;max-width:650px}
-.stats{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.intro{max-width:1248px;margin:0 auto;padding:16px 16px 6px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.intro h2{font-size:clamp(1.02rem,1.8vw,1.28rem);line-height:1.3;letter-spacing:-.02em;
+  font-weight:900;white-space:nowrap}
+.stats{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
 .stat{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;
   font-size:.72rem;color:var(--sub)}
 .stat b{color:var(--ink);font-variant-numeric:tabular-nums;margin-right:3px}
@@ -181,7 +178,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 @media(min-width:1040px){
   body{padding-bottom:0}
   .header-in{padding:12px 16px}
-  .intro{padding-top:48px}
+  .intro{padding-top:20px}
   .writer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .article-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .article-card{flex-direction:column}
@@ -222,9 +219,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 <div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
 
 <section class="intro" id="intro">
-  <span class="eyebrow">CURATED WRITERS</span>
-  <h2>書き手との出会いを、<br>一冊を選ぶように。</h2>
-  <p>カテゴリごとの棚から、気になる書き手と最近の記事を見つけられます。棚の順番は固定です。</p>
+  <h2>書き手との出会いを、一冊を選ぶように。</h2>
   <div class="stats">
     <span class="stat"><b id="writerStat">0</b>書き手</span>
     <span class="stat"><b id="categoryStat">0</b>カテゴリ</span>
