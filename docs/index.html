@@ -410,6 +410,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
           検索語や絞り込みを変えてください。
         </div>
         <button class="more" id="moreButton" type="button" hidden>さらに記事を読み込む</button>
+        <div id="loadSentinel" style="height:1px"></div>
       </div>
     </div>
   </section>
@@ -1383,6 +1384,15 @@ function init(){
     shown += PAGE_SIZE;
     renderArticles();
   });
+  (function(){
+    const io = new IntersectionObserver(entries => {
+      if(!entries[0].isIntersecting) return;
+      if(document.getElementById("moreButton").hidden) return;
+      shown += PAGE_SIZE;
+      renderArticles();
+    }, {rootMargin:"400px"});
+    io.observe(document.getElementById("loadSentinel"));
+  })();
   document.getElementById("sidebarOrderOpen").addEventListener("click", openOrderModal);
   document.getElementById("articleOrderOpen").addEventListener("click", openOrderModal);
   document.getElementById("orderClose").addEventListener("click", closeOrderModal);
