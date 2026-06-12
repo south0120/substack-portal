@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-labelledby="title desc">
+  <title id="title">Find Your Letter - Light Mode Logo</title>
+  <desc id="desc">Elegant wordmark reading Find Your Letter with a magnifying glass in Find and an envelope in Letter.</desc>
+  <defs>
+    <style>
+      .bg { fill:#ffffff; }
+      .serif { font-family: 'Didot','Bodoni 72','Baskerville','Times New Roman',serif; font-weight:700; }
+      .script { font-family: 'Snell Roundhand','Bickham Script Pro','Great Vibes','Brush Script MT',cursive; font-weight:400; }
+      .ink { fill:#111418; }
+      .orange { fill:none; stroke:#ff6719; stroke-linecap:round; stroke-linejoin:round; }
+      .orangeFill { fill:#ff6719; }
+      .whiteFill { fill:#ffffff; }
+    </style>
+    <filter id="softShadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.2" flood-color="#111418" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect class="bg" width="1600" height="420"/>
+  <g filter="url(#softShadow)">
+    <text class="serif ink" x="82" y="259" font-size="180" letter-spacing="-6">Fin</text>
+    <text class="serif ink" x="418" y="259" font-size="180" letter-spacing="-6">d</text>
+
+    <!-- magnifying glass over the d, suggesting search -->
+    <circle cx="442" cy="213" r="54" class="orange" stroke-width="8"/>
+    <path d="M409 197 C414 180 431 169 449 169" class="whiteFill" stroke="#ffffff" stroke-width="13" stroke-linecap="round"/>
+    <path d="M411 197 C416 181 432 173 448 173" class="orange" stroke-width="4"/>
+    <path d="M481 252 L531 302" class="orange" stroke-width="18"/>
+    <circle cx="538" cy="309" r="10" class="orangeFill"/>
+
+    <!-- pen-like handwritten center word -->
+    <text class="script ink" x="545" y="271" font-size="178" letter-spacing="-8">Your</text>
+
+    <text class="serif ink" x="1064" y="259" font-size="180" letter-spacing="-5">L</text>
+    <!-- envelope icon replacing the e-like space in Letter -->
+    <g transform="translate(1198 167)">
+      <rect x="0" y="0" width="92" height="64" rx="4" class="orange" stroke-width="7"/>
+      <path d="M5 7 L46 41 L87 7" class="orange" stroke-width="7"/>
+      <path d="M6 60 L36 35" class="orange" stroke-width="5" opacity="0.55"/>
+      <path d="M86 60 L56 35" class="orange" stroke-width="5" opacity="0.55"/>
+    </g>
+    <text class="serif ink" x="1296" y="259" font-size="180" letter-spacing="-6">tter</text>
+  </g>
+</svg>

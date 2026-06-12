@@ -70,12 +70,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   border-bottom:1px solid var(--line);backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px)}
 .header-in{max-width:1280px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
-.brand-mark{flex:none;width:38px;height:38px;border-radius:10px;overflow:hidden;
-  display:grid;place-items:center;box-shadow:0 5px 15px rgba(255,103,25,.23)}
-.brand-mark img{width:100%;height:100%;object-fit:cover}
-.titles{min-width:0}
-.titles h1{font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;font-weight:900;line-height:1.2;white-space:nowrap;letter-spacing:-.01em}
-.titles p{display:none;color:var(--sub);font-size:.7rem;white-space:nowrap}
+.site-logo-link{flex:none;display:flex;align-items:center;text-decoration:none}
+.site-logo{height:32px;width:auto;display:block}
+.site-logo--dark{display:none}
+@media(prefers-color-scheme:dark){
+  .site-logo--light{display:none}
+  .site-logo--dark{display:block}
+}
 .search{position:relative;flex:1;min-width:0;margin-left:auto;max-width:460px}
 .search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;
   transform:translateY(-50%);color:var(--faint);pointer-events:none}
@@ -102,6 +103,17 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .order-button svg{width:15px;height:15px}
 .shelf-section{padding:18px 0 12px;scroll-margin-top:74px}
 .shelf-heading{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.shelf-grip{display:none;width:11px;height:16px;flex:none;color:var(--faint)}
+@media(hover:hover){
+  .shelf-heading{cursor:grab}
+  .shelf-heading:hover .shelf-grip{display:block}
+  .shelf-section.dragging{opacity:.55}
+  .shelf-section{position:relative}
+  .shelf-section.drop-before::before,.shelf-section.drop-after::after{
+    content:"";position:absolute;left:0;right:0;height:3px;border-radius:2px;background:var(--brand);z-index:3}
+  .shelf-section.drop-before::before{top:-2px}
+  .shelf-section.drop-after::after{bottom:-2px}
+}
 .category-icon{width:34px;height:34px;flex:none;border-radius:10px;display:grid;place-items:center}
 .category-icon svg{width:20px;height:20px}
 .shelf-heading h2{font-size:1.08rem;font-weight:900}
@@ -267,7 +279,6 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .modal-action.primary{border-color:var(--brand);background:var(--brand);color:#fff}
 [hidden]{display:none!important}
 @media(min-width:700px){
-  .titles p{display:block}
   .view-toggle{display:flex}
   .guide-link{width:auto;padding:0 11px;display:flex;gap:6px}
   .guide-link span{display:inline}
@@ -326,13 +337,10 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 <body>
 <header class="header">
   <div class="header-in">
-    <a class="brand-mark" href="#" aria-label="Find Your Letter トップ">
-      <img src="assets/icons/icon_192.png" alt="" width="38" height="38">
+    <a class="site-logo-link" href="#" aria-label="Find Your Letter">
+      <img src="assets/logo/logo_light.png" alt="Find Your Letter" class="site-logo site-logo--light">
+      <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
     </a>
-    <div class="titles">
-      <h1>Find Your Letter</h1>
-      <p>日本語ニュースレターを探す</p>
-    </div>
     <label class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <input id="searchInput" type="search" placeholder="記事を検索" aria-label="検索">
@@ -669,8 +677,9 @@ function renderShelf(){
     if(!items.length) return "";
     const style = styleFor(name);
     return `
-      <section class="shelf-section" data-shelf>
-        <div class="shelf-heading">
+      <section class="shelf-section" data-shelf data-shelf-category="${esc(name)}">
+        <div class="shelf-heading" draggable="true" title="ドラッグで棚の順番を入れ替え">
+          <svg class="shelf-grip" viewBox="0 0 12 18" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/><circle cx="3" cy="14" r="1.2"/><circle cx="9" cy="14" r="1.2"/></svg>
           <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
           <h2>${esc(name)}<span class="writer-count">${items.length}人</span></h2>
           <span class="shelf-rule"></span>
@@ -706,6 +715,46 @@ function renderShelf(){
       });
     });
     enableDragScroll(row);
+  });
+  enableShelfDnD(root);
+}
+
+// 棚の見出しをドラッグ&ドロップしてカテゴリ順を入れ替える
+function enableShelfDnD(root){
+  const clear = () => root.querySelectorAll(".shelf-section").forEach(s =>
+    s.classList.remove("drop-before","drop-after","dragging"));
+  root.querySelectorAll(".shelf-section").forEach(section => {
+    const name = section.dataset.shelfCategory;
+    const heading = section.querySelector(".shelf-heading");
+    heading.addEventListener("dragstart", event => {
+      draggedCategory = name;
+      section.classList.add("dragging");
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", name);
+    });
+    heading.addEventListener("dragend", () => { draggedCategory = ""; clear(); });
+    section.addEventListener("dragover", event => {
+      if(!draggedCategory || draggedCategory === name) return;
+      event.preventDefault();
+      clear();
+      const rect = section.getBoundingClientRect();
+      const before = event.clientY < rect.top + rect.height / 2;
+      section.classList.add(before ? "drop-before" : "drop-after");
+      event.dataTransfer.dropEffect = "move";
+    });
+    section.addEventListener("drop", event => {
+      if(!draggedCategory || draggedCategory === name) return;
+      event.preventDefault();
+      const before = section.classList.contains("drop-before");
+      const next = categoryOrder().filter(n => n !== draggedCategory);
+      const targetIndex = next.indexOf(name);
+      next.splice(before ? targetIndex : targetIndex + 1, 0, draggedCategory);
+      saveCategoryOrder(next);
+      draggedCategory = "";
+      renderShelf();
+      renderCategorySidebar();
+      renderCategoryPills();
+    });
   });
 }
 

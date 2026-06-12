@@ -44,11 +44,13 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .header{position:sticky;top:0;z-index:10;background:var(--header-bg);
   border-bottom:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .header-in{max-width:920px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:11px}
-.brand-mark{width:38px;height:38px;flex:none;border-radius:10px;overflow:hidden;
-  box-shadow:0 5px 15px rgba(255,103,25,.23)}
-.brand-mark img{display:block;width:100%;height:100%}
-.titles h1{font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;font-weight:900;line-height:1.2;letter-spacing:-.01em}
-.titles p{color:var(--sub);font-size:.7rem}
+.site-logo-link{flex:none;display:flex;align-items:center;text-decoration:none}
+.site-logo{height:32px;width:auto;display:block}
+.site-logo--dark{display:none}
+@media(prefers-color-scheme:dark){
+  .site-logo--light{display:none}
+  .site-logo--dark{display:block}
+}
 .back-top{margin-left:auto;color:var(--brand);font-size:.75rem;font-weight:700}
 .main{max-width:760px;margin:auto;padding:38px 16px 64px}
 .eyebrow{color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.1em}
@@ -94,13 +96,10 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
 <body>
 <header class="header">
   <div class="header-in">
-    <a class="brand-mark" href="./" aria-label="Find Your Letterへ戻る">
-      <img src="assets/icons/icon_192.png" alt="" width="38" height="38">
+    <a class="site-logo-link" href="./" aria-label="Find Your Letter">
+      <img src="assets/logo/logo_light.png" alt="Find Your Letter" class="site-logo site-logo--light">
+      <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
     </a>
-    <div class="titles">
-      <h1>Find Your Letter</h1>
-      <p>使い方ガイド</p>
-    </div>
     <a class="back-top" href="./">← ポータルへ戻る</a>
   </div>
 </header>
