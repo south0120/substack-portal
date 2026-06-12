@@ -115,6 +115,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .writer-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
   scrollbar-width:none;padding:2px 1px 12px;overscroll-behavior-inline:contain}
 .writer-grid::-webkit-scrollbar{display:none}
+@media(hover:hover){.writer-grid{cursor:grab}}
+.writer-grid.drag-scrolling{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.writer-grid.drag-scrolling .writer-card{pointer-events:none}
 .writer-card{flex:0 0 min(72vw,232px);width:232px;scroll-snap-align:start;background:var(--card);
   border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
   padding:14px;display:flex;flex-direction:column;min-height:360px;
@@ -702,7 +705,41 @@ function renderShelf(){
         row.scrollBy({left:Number(button.dataset.direction) * row.clientWidth * .8,behavior:"smooth"});
       });
     });
+    enableDragScroll(row);
   });
+}
+
+// マウスドラッグで棚を横パンする（タッチはネイティブスクロールに任せる）
+function enableDragScroll(row){
+  let startX = 0, startLeft = 0, dragging = false, moved = false;
+  row.addEventListener("pointerdown", event => {
+    if(event.pointerType !== "mouse" || event.button !== 0) return;
+    dragging = true; moved = false;
+    startX = event.clientX; startLeft = row.scrollLeft;
+  });
+  row.addEventListener("pointermove", event => {
+    if(!dragging) return;
+    const delta = event.clientX - startX;
+    if(!moved && Math.abs(delta) > 5){
+      moved = true;
+      row.classList.add("drag-scrolling");
+      try{ row.setPointerCapture(event.pointerId); }catch(_){}
+    }
+    if(moved) row.scrollLeft = startLeft - delta;
+  });
+  const end = event => {
+    if(!dragging) return;
+    dragging = false;
+    if(moved){
+      try{ row.releasePointerCapture(event.pointerId); }catch(_){}
+      // ドラッグ直後のクリックでカードのリンクが開かないように1回だけ握りつぶす
+      row.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); }, {capture:true, once:true});
+      requestAnimationFrame(() => row.classList.remove("drag-scrolling"));
+    }
+  };
+  row.addEventListener("pointerup", end);
+  row.addEventListener("pointercancel", end);
+  row.addEventListener("dragstart", event => event.preventDefault());
 }
 
 function renderOrderList(){
