@@ -9,4 +9,4 @@ database_name = "fyl-articles"
 database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
 
 [triggers]
-crons = ["0 * * * *"]
+crons = ["*/10 * * * *"]

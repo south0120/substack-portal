@@ -1,7 +1,7 @@
 const FEEDS_URL = "https://raw.githubusercontent.com/south0120/substack-portal/main/feeds.json";
 const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
-const FEEDS_CONCURRENCY = 10; // 並列fetch数
-const INGEST_MAX = 10;
+const FEEDS_PER_RUN = 22;
+const INGEST_MAX = 22;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
 const GITHUB_OWNER = "south0120";
@@ -352,8 +352,8 @@ function bytesToBase64(bytes) {
   return btoa(binary);
 }
 
-async function refreshFeeds(env) {
-  const stats = { feeds: 0, feedSuccesses: 0, articlesProcessed: 0 };
+async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
+  const stats = { feeds: 0, feedSuccesses: 0, articlesProcessed: 0, cursorStart: null, cursorEnd: null };
   try {
     const response = await fetch(FEEDS_URL, {
       headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
@@ -367,24 +367,27 @@ async function refreshFeeds(env) {
       return stats;
     }
 
-    // 全フィードを FEEDS_CONCURRENCY 件ずつ並列処理
-    for (let i = 0; i < feeds.length; i += FEEDS_CONCURRENCY) {
-      const batch = feeds.slice(i, i + FEEDS_CONCURRENCY);
-      const results = await Promise.allSettled(
-        batch.map(async (feed) => {
-          const parsed = await fetchAndParseFeed(feed);
-          await upsertParsedFeed(env, parsed);
-          return parsed.articles.length;
-        }),
-      );
-      stats.feeds += batch.length;
-      for (const result of results) {
-        if (result.status === "fulfilled") {
-          stats.feedSuccesses += 1;
-          stats.articlesProcessed += result.value;
-        }
+    const cursorRow = await env.DB.prepare("SELECT value FROM meta WHERE key = ?")
+      .bind("cursor").first();
+    let cursor = normalizeCursor(cursorRow?.value, feeds.length);
+    stats.cursorStart = cursor;
+    const count = Math.min(perRun, feeds.length);
+
+    for (let index = 0; index < count; index += 1) {
+      const feed = feeds[cursor];
+      stats.feeds += 1;
+      try {
+        const parsed = await fetchAndParseFeed(feed);
+        await upsertParsedFeed(env, parsed);
+        stats.feedSuccesses += 1;
+        stats.articlesProcessed += parsed.articles.length;
+      } catch (error) {
+        console.warn(`Feed failed: ${feed?.name || feed?.feed_url || "unknown"}`, error);
       }
+      cursor = (cursor + 1) % feeds.length;
+      await setMeta(env, "cursor", String(cursor));
     }
+    stats.cursorEnd = cursor;
     await setMeta(env, "last_run", new Date().toISOString());
     console.log(JSON.stringify(stats));
   } catch (error) {
@@ -453,7 +456,8 @@ async function runIngest(url, env) {
     return jsonResponse({ error: "Throttled. Retry shortly.", retryAfterMs: INGEST_THROTTLE_MS - (now - lastIngest) }, 429, "no-store");
   }
   await setMeta(env, "last_ingest_ms", String(now));
-  const stats = await refreshFeeds(env);
+  const n = Math.min(INGEST_MAX, Math.max(1, positiveInt(url.searchParams.get("n"), FEEDS_PER_RUN)));
+  const stats = await refreshFeeds(env, n);
   return jsonResponse(stats, 200, "no-store");
 }
 
