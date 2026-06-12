@@ -57,9 +57,13 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .site-logo{height:32px;width:auto;display:block}
 .site-logo--dark{display:none}
 @media(prefers-color-scheme:dark){
-  .site-logo--light{display:none}
-  .site-logo--dark{display:block}
+  :root:not([data-theme="light"]) .site-logo--light{display:none}
+  :root:not([data-theme="light"]) .site-logo--dark{display:block}
 }
+:root[data-theme="dark"] .site-logo--light{display:none}
+:root[data-theme="dark"] .site-logo--dark{display:block}
+:root[data-theme="light"] .site-logo--light{display:block}
+:root[data-theme="light"] .site-logo--dark{display:none}
 .back-top{margin-left:auto;color:var(--brand);font-size:.75rem;font-weight:700}
 .main{max-width:760px;margin:auto;padding:38px 16px 64px}
 .eyebrow{color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.1em}
@@ -104,7 +108,18 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
   text-decoration:none;transition:background .15s,color .15s}
 .opt-out-button:hover{background:var(--brand);color:#fff}
 .opt-out-button svg{width:16px;height:16px;flex:none}
-.tally-wrap{margin-top:12px;background:#fff;border-radius:10px;overflow:hidden;padding:4px 0}
+.tally-wrap{background:#fff;border-radius:10px;overflow:hidden;padding:4px 0}
+.form-toggle{margin-top:12px}
+.form-toggle>summary{
+  cursor:pointer;display:flex;align-items:center;gap:7px;
+  padding:9px 12px;border:1.5px solid var(--brand-line);border-radius:10px;
+  background:var(--brand-soft);color:var(--brand);font-size:.82rem;font-weight:700;
+  list-style:none;user-select:none}
+.form-toggle>summary::-webkit-details-marker{display:none}
+.form-toggle>summary::after{content:"▼";margin-left:auto;font-size:.68rem;transition:transform .2s}
+.form-toggle[open]>summary::after{transform:rotate(180deg)}
+.form-toggle>summary svg{width:15px;height:15px;flex:none}
+.form-toggle>.tally-wrap{border-radius:0 0 10px 10px;margin-top:-2px}
 footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;color:var(--faint);font-size:.7rem}
 @media(min-width:640px){
   .guide-section{padding:24px}
@@ -200,24 +215,35 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
     <section class="guide-section">
       <div class="section-head">
         <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></span>
-        <h3>7. 掲載について</h3>
+        <h3>7. 掲載削除フォーム</h3>
       </div>
-      <p>掲載中の書き手の記事はRSSから自動取得しています。各記事と画像の著作権は、それぞれの配信元に帰属します。</p>
-      <p>掲載の削除をご希望の書き手の方は、下のフォームからお申請ください。確認後すみやかに削除します。</p>
-      <div class="tally-wrap">
-        <iframe data-tally-src="https://tally.so/embed/ODVANg?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="374" frameborder="0" marginheight="0" marginwidth="0" title="掲載削除申請フォーム"></iframe>
-      </div>
+      <p>掲載中の書き手の記事はRSSから自動取得しています。各記事と画像の著作権は、それぞれの配信元に帰属します。掲載削除をご希望の方は下からお申請ください。</p>
+      <details class="form-toggle">
+        <summary>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+          削除申請フォームを開く
+        </summary>
+        <div class="tally-wrap">
+          <iframe data-tally-src="https://tally.so/embed/ODVANg?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="374" frameborder="0" marginheight="0" marginwidth="0" title="掲載削除申請フォーム"></iframe>
+        </div>
+      </details>
     </section>
 
     <section class="guide-section">
       <div class="section-head">
         <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-        <h3>8. 掲載依頼</h3>
+        <h3>8. 掲載依頼フォーム</h3>
       </div>
-      <p>日本語ニュースレターを書いている方で、掲載を希望される場合は下のフォームからお申請ください。</p>
-      <div class="tally-wrap">
-        <iframe data-tally-src="https://tally.so/embed/zxbKk0?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="211" frameborder="0" marginheight="0" marginwidth="0" title="掲載依頼フォーム"></iframe>
-      </div>
+      <p>日本語ニュースレターを書いている方で、掲載を希望される場合は下からお申請ください。</p>
+      <details class="form-toggle">
+        <summary>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+          掲載依頼フォームを開く
+        </summary>
+        <div class="tally-wrap">
+          <iframe data-tally-src="https://tally.so/embed/zxbKk0?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="211" frameborder="0" marginheight="0" marginwidth="0" title="掲載依頼フォーム"></iframe>
+        </div>
+      </details>
     </section>
 
     <section class="guide-section">
