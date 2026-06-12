@@ -1525,7 +1525,7 @@ async function load(){
         fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1`),
         fetchJson(`${WORKER_URL}/api/writers`)
       ]);
-      if(!Array.isArray(writers.writers) || writers.writers.length === 0) throw new Error("writer data is empty");
+      if(!Array.isArray(writers.writers) || writers.writers.length < 10) throw new Error("writer data insufficient, fallback to static");
       DATA = {
         updated_at:articles.articles?.[0]?.published || "",
         categories:[...new Set(writers.writers.flatMap(writer =>
