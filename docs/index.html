@@ -135,7 +135,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .shelf-arrow:hover{color:var(--brand);border-color:var(--brand-line)}
 .shelf-arrow svg{width:16px;height:16px}
 .writer-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
-  scrollbar-width:none;padding:2px 1px 12px;overscroll-behavior-inline:contain;touch-action:pan-x}
+  scrollbar-width:none;padding:2px 1px 12px;overscroll-behavior-inline:contain}
 .writer-grid::-webkit-scrollbar{display:none}
 @media(hover:hover){.writer-grid{cursor:grab}}
 .writer-grid.drag-scrolling{cursor:grabbing;scroll-snap-type:none;user-select:none}
@@ -1580,7 +1580,7 @@ async function load(){
       const dy = Math.abs(e.touches[0].clientY - startY);
       if(dx > 4 || dy > 4) locked = dx > dy;
     }
-    if(locked) e.preventDefault();
+    if(locked === false) e.preventDefault();
   }, {passive:false});
   const reset = () => { locked=null; target=null; };
   document.addEventListener("touchend", reset, {passive:true});
