@@ -678,7 +678,7 @@ function renderShelf(){
     const style = styleFor(name);
     return `
       <section class="shelf-section" data-shelf data-shelf-category="${esc(name)}">
-        <div class="shelf-heading" draggable="true" title="ドラッグで棚の順番を入れ替え">
+        <div class="shelf-heading" title="ドラッグで棚の順番を入れ替え">
           <svg class="shelf-grip" viewBox="0 0 12 18" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/><circle cx="3" cy="14" r="1.2"/><circle cx="9" cy="14" r="1.2"/></svg>
           <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
           <h2>${esc(name)}<span class="writer-count">${items.length}人</span></h2>
@@ -719,41 +719,61 @@ function renderShelf(){
   enableShelfDnD(root);
 }
 
-// 棚の見出しをドラッグ&ドロップしてカテゴリ順を入れ替える
+// 棚の見出しをポインタドラッグしてカテゴリ順を入れ替える（HTML5 DnD不使用・タッチ対応）
 function enableShelfDnD(root){
-  const clear = () => root.querySelectorAll(".shelf-section").forEach(s =>
-    s.classList.remove("drop-before","drop-after","dragging"));
-  root.querySelectorAll(".shelf-section").forEach(section => {
+  const sections = () => [...root.querySelectorAll(".shelf-section")];
+  const clear = () => sections().forEach(s => s.classList.remove("drop-before","drop-after","dragging"));
+  sections().forEach(section => {
     const name = section.dataset.shelfCategory;
     const heading = section.querySelector(".shelf-heading");
-    heading.addEventListener("dragstart", event => {
-      draggedCategory = name;
-      section.classList.add("dragging");
-      event.dataTransfer.effectAllowed = "move";
-      event.dataTransfer.setData("text/plain", name);
-    });
-    heading.addEventListener("dragend", () => { draggedCategory = ""; clear(); });
-    section.addEventListener("dragover", event => {
-      if(!draggedCategory || draggedCategory === name) return;
-      event.preventDefault();
-      clear();
-      const rect = section.getBoundingClientRect();
-      const before = event.clientY < rect.top + rect.height / 2;
-      section.classList.add(before ? "drop-before" : "drop-after");
-      event.dataTransfer.dropEffect = "move";
-    });
-    section.addEventListener("drop", event => {
-      if(!draggedCategory || draggedCategory === name) return;
-      event.preventDefault();
-      const before = section.classList.contains("drop-before");
-      const next = categoryOrder().filter(n => n !== draggedCategory);
-      const targetIndex = next.indexOf(name);
-      next.splice(before ? targetIndex : targetIndex + 1, 0, draggedCategory);
-      saveCategoryOrder(next);
-      draggedCategory = "";
-      renderShelf();
-      renderCategorySidebar();
-      renderCategoryPills();
+    heading.addEventListener("pointerdown", event => {
+      if(event.target.closest(".shelf-arrow")) return;
+      if(event.pointerType !== "mouse" || event.button !== 0) return; // タッチはページスクロール優先（並び替えはモーダルで）
+      const startY = event.clientY;
+      let active = false;
+      let target = null, before = false;
+      try{ heading.setPointerCapture(event.pointerId); }catch(_){}
+      const move = ev => {
+        if(!active && Math.abs(ev.clientY - startY) > 6){
+          active = true;
+          section.classList.add("dragging");
+        }
+        if(!active) return;
+        ev.preventDefault();
+        target = null;
+        sections().forEach(s => s.classList.remove("drop-before","drop-after"));
+        for(const s of sections()){
+          if(s === section) continue;
+          const rect = s.getBoundingClientRect();
+          if(ev.clientY >= rect.top && ev.clientY <= rect.bottom){
+            before = ev.clientY < rect.top + rect.height / 2;
+            s.classList.add(before ? "drop-before" : "drop-after");
+            target = s;
+            break;
+          }
+        }
+      };
+      const up = ev => {
+        heading.removeEventListener("pointermove", move);
+        heading.removeEventListener("pointerup", up);
+        heading.removeEventListener("pointercancel", up);
+        if(!active){ clear(); return; }
+        try{ heading.releasePointerCapture(ev.pointerId); }catch(_){}
+        if(target){
+          const next = categoryOrder().filter(n => n !== name);
+          const index = next.indexOf(target.dataset.shelfCategory);
+          next.splice(before ? index : index + 1, 0, name);
+          saveCategoryOrder(next);
+          renderShelf();
+          renderCategorySidebar();
+          renderCategoryPills();
+          return;
+        }
+        clear();
+      };
+      heading.addEventListener("pointermove", move);
+      heading.addEventListener("pointerup", up);
+      heading.addEventListener("pointercancel", up);
     });
   });
 }
