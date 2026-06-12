@@ -393,6 +393,10 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
   .sample-banner,footer{max-width:calc(var(--maxw) - 64px)}
   .article-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
+.header-meta{max-width:var(--maxw);margin:0 auto;padding:0 16px 5px;text-align:right;
+  font-size:.63rem;color:var(--faint)}
+@media(min-width:1040px){.header-meta{padding-left:24px;padding-right:24px}}
+@media(min-width:1600px){.header-meta{padding-left:32px;padding-right:32px}}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
@@ -419,6 +423,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </a>
   </div>
+  <div class="header-meta" id="fetchStatus" hidden></div>
 </header>
 
 <div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
@@ -1498,9 +1503,14 @@ function init(){
   DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
   loadCategoryOrder();
   loadCategoryFilters();
-  document.getElementById("updatedAt").textContent = DATA.updated_at
-    ? new Date(DATA.updated_at).toLocaleString("ja-JP")
-    : "サンプルデータ";
+  const updatedStr = DATA.updated_at ? new Date(DATA.updated_at).toLocaleString("ja-JP") : "サンプルデータ";
+  document.getElementById("updatedAt").textContent = updatedStr;
+  if(DATA.updated_at){
+    const fetchEl = document.getElementById("fetchStatus");
+    const d = new Date(DATA.updated_at);
+    fetchEl.textContent = `最終取得 ${d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}`;
+    fetchEl.hidden = false;
+  }
   initFilters();
   initArticleSwipe();
   initTopicTooltip();
