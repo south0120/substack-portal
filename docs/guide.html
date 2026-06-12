@@ -104,6 +104,7 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
   text-decoration:none;transition:background .15s,color .15s}
 .opt-out-button:hover{background:var(--brand);color:#fff}
 .opt-out-button svg{width:16px;height:16px;flex:none}
+.tally-wrap{margin-top:12px;background:#fff;border-radius:10px;overflow:hidden;padding:4px 0}
 footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;color:var(--faint);font-size:.7rem}
 @media(min-width:640px){
   .guide-section{padding:24px}
@@ -203,16 +204,26 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
       </div>
       <p>掲載中の書き手の記事はRSSから自動取得しています。各記事と画像の著作権は、それぞれの配信元に帰属します。</p>
       <p>掲載の削除をご希望の書き手の方は、下のフォームからお申請ください。確認後すみやかに削除します。</p>
-      <div class="mini-note" style="margin-top:12px;padding:0;overflow:hidden;border-radius:10px">
-        <iframe data-tally-src="https://tally.so/embed/ODVANg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="374" frameborder="0" marginheight="0" marginwidth="0" title="掲載削除申請フォーム"></iframe>
+      <div class="tally-wrap">
+        <iframe data-tally-src="https://tally.so/embed/ODVANg?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="374" frameborder="0" marginheight="0" marginwidth="0" title="掲載削除申請フォーム"></iframe>
       </div>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </section>
+
+    <section class="guide-section">
+      <div class="section-head">
+        <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>8. 掲載依頼</h3>
+      </div>
+      <p>日本語ニュースレターを書いている方で、掲載を希望される場合は下のフォームからお申請ください。</p>
+      <div class="tally-wrap">
+        <iframe data-tally-src="https://tally.so/embed/zxbKk0?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="211" frameborder="0" marginheight="0" marginwidth="0" title="掲載依頼フォーム"></iframe>
+      </div>
     </section>
 
     <section class="guide-section">
       <div class="section-head">
         <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
-        <h3>8. 外観</h3>
+        <h3>9. 外観</h3>
       </div>
       <p>ダークモードとライトモードを切り替えられます。「自動」はOSの設定に合わせます。</p>
       <div class="theme-picker" role="group" aria-label="カラーモード">
@@ -227,6 +238,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
 </main>
 
 <footer>Find Your Letter</footer>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 <script>
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
