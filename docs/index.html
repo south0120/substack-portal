@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Find Your Letter</title>
 <meta name="description" content="日本語ニュースレターをカテゴリで探せるキュレーションポータル">
 <meta name="theme-color" content="#FF6719">
@@ -91,7 +91,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;
   transform:translateY(-50%);color:var(--faint);pointer-events:none}
 .search input{width:100%;height:40px;border:1px solid var(--line);border-radius:12px;
-  background:var(--card);padding:0 12px 0 38px;color:var(--ink);font-size:.85rem}
+  background:var(--card);padding:0 12px 0 38px;color:var(--ink);font-size:1rem}
 .search input:focus{outline:none;border-color:var(--brand-line);box-shadow:0 0 0 3px var(--brand-soft)}
 .view-toggle{display:none;flex:none;background:var(--panel);border:1px solid var(--line);
   border-radius:11px;padding:3px;gap:2px}
@@ -249,9 +249,10 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .footer-links a{color:var(--sub);text-decoration:underline;text-underline-offset:2px}
 .footer-links a:hover{color:var(--brand)}
 .bnav{position:fixed;z-index:25;left:0;right:0;bottom:0;display:flex;background:var(--nav-bg);
-  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);
+  border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.bnav button{flex:1;border:0;background:transparent;color:var(--faint);padding:8px 0 6px;
+.bnav button{flex:1;border:0;background:transparent;color:var(--faint);padding:10px 0 8px;
   display:flex;flex-direction:column;align-items:center;gap:1px;font-size:.61rem}
 .bnav button svg{width:20px;height:20px}
 .bnav button.on{color:var(--brand)}
@@ -1300,6 +1301,9 @@ function init(){
   document.querySelectorAll("[data-mobile-view]").forEach(button =>
     button.addEventListener("click", () => setView(button.dataset.mobileView))
   );
+  document.getElementById("searchInput").addEventListener("keydown", e => {
+    if(e.key === "Enter") e.currentTarget.blur();
+  });
   document.getElementById("searchInput").addEventListener("input", event => {
     query = event.target.value.trim();
     shown = PAGE_SIZE;
