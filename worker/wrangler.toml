@@ -1,0 +1,12 @@
+name = "fyl-api"
+main = "index.js"
+compatibility_date = "2026-05-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fyl-articles"
+# `npx wrangler d1 create fyl-articles` の出力で置き換える
+database_id = "REPLACE_WITH_D1_ID"
+
+[triggers]
+crons = ["0 * * * *"]

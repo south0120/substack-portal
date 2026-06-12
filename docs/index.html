@@ -458,6 +458,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
   </section>
 </div>
 
+<script src="config.js"></script>
 <script>
 const CAT_STYLE = {
   "AI": {bg:"#F1EAFE",fg:"#7C3AED",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 4.5A3 3 0 0 0 6 8a3 3 0 0 0-1 5.8A3.5 3.5 0 0 0 9.5 19V4.5ZM14.5 4.5A3 3 0 0 1 18 8a3 3 0 0 1 1 5.8A3.5 3.5 0 0 1 14.5 19V4.5Z"/><path d="M9.5 9H7.8M14.5 9h1.7M9.5 14H7.8M14.5 14h1.7"/></svg>'},
@@ -519,6 +520,8 @@ const CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor
 const ORDER_KEY = "sp_category_order_v1";
 const PERIODS = [["all","すべて"],["day","24時間"],["week","今週"],["month","今月"]];
 const PAGE_SIZE = 24;
+const API_PAGE_SIZE = 30;
+const WORKER_URL = (window.FYL_WORKER_URL || "").replace(/\/$/, "");
 const hoursAgo = hours => new Date(Date.now() - hours * 36e5).toISOString();
 const SAMPLE = {
   updated_at:"",
@@ -552,6 +555,12 @@ let period = "all";
 let shown = PAGE_SIZE;
 let customCategoryOrder = [];
 let draggedCategory = "";
+let API_MODE = Boolean(WORKER_URL);
+let apiPage = 1;
+let apiHasMore = false;
+let apiLoading = false;
+let apiTotal = 0;
+let apiRequestId = 0;
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({
   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
@@ -597,6 +606,9 @@ function formatDate(value){
 }
 
 function defaultCategoryOrder(){
+  if(API_MODE){
+    return [...new Set(DATA.categories.map(normalizedCategory))];
+  }
   return MASTER_CATEGORIES.filter(name =>
     DATA.writers.some(writer => writerCategories(writer).includes(name))
   );
@@ -960,18 +972,19 @@ function articleCard(article){
 function filteredArticles(){
   const normalized = query.toLocaleLowerCase("ja");
   return DATA.articles.filter(article =>
-    (category === "すべて" || normalizedCategory(article.category) === category) &&
+    (API_MODE || category === "すべて" || normalizedCategory(article.category) === category) &&
     periodMatches(article.published) &&
-    `${article.title} ${article.excerpt} ${article.writer}`.toLocaleLowerCase("ja").includes(normalized)
+    (API_MODE || `${article.title} ${article.excerpt} ${article.writer}`.toLocaleLowerCase("ja").includes(normalized))
   );
 }
 
 function renderArticles(){
   const items = filteredArticles();
-  document.getElementById("articleGrid").innerHTML = items.slice(0,shown).map(articleCard).join("");
-  document.getElementById("articleCount").innerHTML = `<b>${items.length}</b>件の記事`;
+  const visible = API_MODE ? items : items.slice(0,shown);
+  document.getElementById("articleGrid").innerHTML = visible.map(articleCard).join("");
+  document.getElementById("articleCount").innerHTML = `<b>${API_MODE && period === "all" ? apiTotal : items.length}</b>件の記事`;
   document.getElementById("articleEmpty").hidden = items.length !== 0;
-  document.getElementById("moreButton").hidden = items.length <= shown;
+  document.getElementById("moreButton").hidden = API_MODE ? !apiHasMore : items.length <= shown;
   document.querySelectorAll("#categoryPills .category-tab").forEach(button =>
     button.classList.toggle("on", button.dataset.category === category)
   );
@@ -1002,11 +1015,12 @@ function setCategory(nextCategory, scrollTab = true){
   if(!categories.includes(nextCategory)) return;
   category = nextCategory;
   shown = PAGE_SIZE;
-  renderArticles();
+  if(API_MODE) resetApiArticles(); else renderArticles();
   if(scrollTab) requestAnimationFrame(scrollActiveCategoryTab);
 }
 
 function setView(nextView, scroll = true){
+  const previousView = view;
   view = nextView;
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
@@ -1019,7 +1033,9 @@ function setView(nextView, scroll = true){
     button.classList.toggle("on", button.dataset.mobileView === view)
   );
   history.replaceState(null,"",shelf ? "#writers" : `${location.pathname}${location.search}`);
-  if(shelf) renderShelf(); else renderArticles();
+  if(shelf) renderShelf();
+  else if(API_MODE && previousView === "shelf") resetApiArticles();
+  else renderArticles();
   if(scroll) window.scrollTo({top:0,behavior:"smooth"});
 }
 
@@ -1376,20 +1392,29 @@ function init(){
   document.getElementById("searchInput").addEventListener("input", event => {
     query = event.target.value.trim();
     shown = PAGE_SIZE;
-    if(view === "shelf") renderShelf(); else renderArticles();
+    if(view === "shelf") renderShelf();
+    else if(API_MODE) resetApiArticles();
+    else renderArticles();
   });
   document.getElementById("mobileSearch").addEventListener("click", () => {
     const input = document.getElementById("searchInput");
     input.scrollIntoView({block:"center",behavior:"smooth"});
     input.focus();
   });
-  document.getElementById("moreButton").addEventListener("click", () => {
-    shown += PAGE_SIZE;
-    renderArticles();
+  document.getElementById("moreButton").addEventListener("click", async () => {
+    if(API_MODE) await loadNextApiPage();
+    else{
+      shown += PAGE_SIZE;
+      renderArticles();
+    }
   });
   (function(){
     const io = new IntersectionObserver(entries => {
       if(!entries[0].isIntersecting) return;
+      if(API_MODE){
+        if(apiHasMore && !apiLoading) loadNextApiPage();
+        return;
+      }
       if(document.getElementById("moreButton").hidden) return;
       shown += PAGE_SIZE;
       renderArticles();
@@ -1421,31 +1446,114 @@ function init(){
   });
 }
 
+function apiArticlesUrl(page){
+  const params = new URLSearchParams({limit:String(API_PAGE_SIZE),page:String(page)});
+  if(category !== "すべて") params.set("category",category);
+  if(query) params.set("q",query);
+  return `${WORKER_URL}/api/articles?${params}`;
+}
+
+async function fetchJson(url){
+  const response = await fetch(url);
+  if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+  return response.json();
+}
+
+async function resetApiArticles(){
+  const requestId = ++apiRequestId;
+  apiLoading = true;
+  apiPage = 1;
+  apiHasMore = false;
+  apiTotal = 0;
+  DATA.articles = [];
+  renderArticles();
+  try{
+    const loaded = await fetchJson(apiArticlesUrl(1));
+    if(requestId !== apiRequestId) return;
+    DATA.articles = Array.isArray(loaded.articles) ? loaded.articles : [];
+    apiPage = Number(loaded.page) || 1;
+    apiHasMore = Boolean(loaded.hasMore);
+    apiTotal = Number(loaded.total) || 0;
+    renderArticles();
+  }catch(error){
+    if(requestId === apiRequestId) console.warn("Find Your Letter API request failed",error);
+  }finally{
+    if(requestId === apiRequestId) apiLoading = false;
+  }
+}
+
+async function loadNextApiPage(){
+  if(!API_MODE || apiLoading || !apiHasMore) return;
+  const requestId = apiRequestId;
+  apiLoading = true;
+  try{
+    const loaded = await fetchJson(apiArticlesUrl(apiPage + 1));
+    if(requestId !== apiRequestId) return;
+    DATA.articles.push(...(Array.isArray(loaded.articles) ? loaded.articles : []));
+    apiPage = Number(loaded.page) || apiPage + 1;
+    apiHasMore = Boolean(loaded.hasMore);
+    apiTotal = Number(loaded.total) || apiTotal;
+    renderArticles();
+  }catch(error){
+    console.warn("Find Your Letter API request failed",error);
+  }finally{
+    if(requestId === apiRequestId) apiLoading = false;
+  }
+}
+
+async function loadStaticData(){
+  const response = await fetch("data/articles.json",{cache:"no-store"});
+  if(!response.ok) throw new Error("data request failed");
+  const loaded = await response.json();
+  if(!Array.isArray(loaded.writers) || loaded.writers.length === 0) throw new Error("writer data is empty");
+  return {
+    updated_at: loaded.updated_at || "",
+    categories: Array.isArray(loaded.categories) ? loaded.categories : [],
+    writers: loaded.writers,
+    articles: Array.isArray(loaded.articles) ? loaded.articles : []
+  };
+}
+
 async function load(){
   let sample = false;
-  const [articlesResult, topicsResult] = await Promise.allSettled([
-    fetch("data/articles.json",{cache:"no-store"}),
+  const topicsPromise = Promise.allSettled([
     fetch("data/topics.json",{cache:"no-store"})
   ]);
   try{
-    if(articlesResult.status !== "fulfilled") throw articlesResult.reason;
-    const response = articlesResult.value;
-    if(!response.ok) throw new Error("data request failed");
-    const loaded = await response.json();
-    if(!Array.isArray(loaded.writers) || loaded.writers.length === 0) throw new Error("writer data is empty");
-    DATA = {
-      updated_at: loaded.updated_at || "",
-      categories: Array.isArray(loaded.categories) ? loaded.categories : [],
-      writers: loaded.writers,
-      articles: Array.isArray(loaded.articles) ? loaded.articles : []
-    };
-  }catch(_){
-    DATA = SAMPLE;
-    sample = true;
-  }
-  if(topicsResult.status === "fulfilled" && topicsResult.value.ok){
+    if(API_MODE){
+      const [articles, writers] = await Promise.all([
+        fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1`),
+        fetchJson(`${WORKER_URL}/api/writers`)
+      ]);
+      if(!Array.isArray(writers.writers) || writers.writers.length === 0) throw new Error("writer data is empty");
+      DATA = {
+        updated_at:articles.articles?.[0]?.published || "",
+        categories:[...new Set(writers.writers.flatMap(writer =>
+          Array.isArray(writer.categories) ? writer.categories : []
+        ))],
+        writers:writers.writers,
+        articles:Array.isArray(articles.articles) ? articles.articles : []
+      };
+      apiPage = Number(articles.page) || 1;
+      apiHasMore = Boolean(articles.hasMore);
+      apiTotal = Number(articles.total) || 0;
+    }else{
+      DATA = await loadStaticData();
+    }
+  }catch(error){
+    if(API_MODE) console.warn("Find Your Letter API initial load failed; using static data",error);
+    API_MODE = false;
     try{
-      const loadedTopics = await topicsResult.value.json();
+      DATA = await loadStaticData();
+    }catch(_){
+      DATA = SAMPLE;
+      sample = true;
+    }
+  }
+  const topicsResult = await topicsPromise;
+  if(topicsResult[0].status === "fulfilled" && topicsResult[0].value.ok){
+    try{
+      const loadedTopics = await topicsResult[0].value.json();
       if(loadedTopics && typeof loadedTopics.writers === "object") TOPICS = loadedTopics;
     }catch(_){
       TOPICS = null;
