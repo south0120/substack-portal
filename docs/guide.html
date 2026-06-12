@@ -6,6 +6,7 @@
 <title>使い方 | Find Your Letter</title>
 <meta name="description" content="Find Your Letterの使い方">
 <meta name="theme-color" content="#FF6719">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141417">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon_192.png">
@@ -21,14 +22,26 @@
   --brand:#FF6719;--brand-soft:#FFF1E8;--brand-line:#FFD9C2;
   --bg:#F8F8F7;--card:#FFFFFF;--line:#E9E9E7;
   --ink:#1B1B1F;--sub:#60656E;--faint:#969CA5;
+  --header-bg:rgba(255,255,255,.92);--panel:#F7F7F8;
+  --shadow:0 2px 10px rgba(24,24,32,.04);
+  color-scheme:light dark;
   font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
+    --bg:#141417;--card:#1E1E23;--line:#2E2E35;
+    --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
+    --header-bg:rgba(22,22,26,.92);--panel:#28282E;
+    --shadow:0 2px 10px rgba(0,0,0,.18);
+  }
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.75}
 a{color:inherit;text-decoration:none}
 svg{stroke-linecap:round;stroke-linejoin:round}
 a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
-.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+.header{position:sticky;top:0;z-index:10;background:var(--header-bg);
   border-bottom:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .header-in{max-width:920px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:11px}
 .brand-mark{width:38px;height:38px;flex:none;border-radius:10px;overflow:hidden;
@@ -43,7 +56,7 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .intro>p{margin-top:12px;color:var(--sub);font-size:.92rem}
 .guide-list{margin-top:34px;display:grid;gap:16px}
 .guide-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;
-  box-shadow:0 2px 10px rgba(24,24,32,.04)}
+  box-shadow:var(--shadow)}
 .section-head{display:flex;align-items:center;gap:11px;margin-bottom:9px}
 .section-icon{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;
   background:var(--brand-soft);color:var(--brand)}
@@ -52,7 +65,7 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .guide-section p,.guide-section li{color:var(--sub);font-size:.82rem}
 .guide-section ul{margin:8px 0 0 1.2em}
 .guide-section li+li{margin-top:4px}
-.mini-note{margin-top:10px;padding:10px 12px;border-radius:10px;background:#F7F7F8}
+.mini-note{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--panel)}
 .topic-demo{margin-top:12px;padding:12px;border:1px solid var(--line);border-radius:11px}
 .topic-bar{display:flex;height:8px;overflow:hidden;border-radius:999px}
 .topic-bar span:nth-child(1){width:31%;background:#7C3AED}
