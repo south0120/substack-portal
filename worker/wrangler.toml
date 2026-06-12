@@ -6,7 +6,7 @@ compatibility_date = "2026-05-01"
 binding = "DB"
 database_name = "fyl-articles"
 # `npx wrangler d1 create fyl-articles` の出力で置き換える
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
 
 [triggers]
 crons = ["0 * * * *"]
