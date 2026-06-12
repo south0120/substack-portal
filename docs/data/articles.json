@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-12T05:27:31.843925+00:00",
+  "updated_at": "2026-06-12T06:29:20.070419+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -7,8 +7,8 @@
     "投資・経済",
     "社会・文化",
     "ライフスタイル",
-    "クリエイティブ",
     "キャリア・働き方",
+    "クリエイティブ",
     "健康・ウェルネス",
     "教育・学び"
   ],
@@ -17,7 +17,10 @@
       "name": "サウスのAI活動報告書",
       "url": "https://south0120.substack.com",
       "feed_url": "https://south0120.substack.com/feed",
-      "category": "AI",
+      "categories": [
+        "AI",
+        "テクノロジー"
+      ],
       "bio": "「AIで仕事を半分に」をテーマに週次で活動報告。自作Chrome拡張の先行共有も。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!q7rp!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd792750f-d46d-4aca-9d0c-048e8f04c7e8_400x400.png",
       "latest": [
@@ -42,7 +45,9 @@
       "name": "梶谷健人のニュースレター",
       "url": "https://kajikent.substack.com",
       "feed_url": "https://kajikent.substack.com/feed",
-      "category": "AI",
+      "categories": [
+        "AI"
+      ],
       "bio": "AI時代の事業・組織・キャリア戦略をテーマにした探究と思考の共有。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!wx_G!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63c67165-3c09-42d2-8606-d1e27ef05400_1200x1200.png",
       "latest": [
@@ -67,7 +72,10 @@
       "name": "わど🐏最新AI情報",
       "url": "https://wad0427.substack.com",
       "feed_url": "https://wad0427.substack.com/feed",
-      "category": "AI",
+      "categories": [
+        "AI",
+        "ビジネス"
+      ],
       "bio": "難しいAIを早く・優しく解説。Claude Codeでの自動化実践も発信。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!6SkX!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febad0110-8391-444c-862e-b7ff0f05c903_1280x1280.png",
       "latest": [
@@ -92,7 +100,10 @@
       "name": "くろの｜Claude Code ガチ勢",
       "url": "https://kuronoaiagent.substack.com",
       "feed_url": "https://kuronoaiagent.substack.com/feed",
-      "category": "AI",
+      "categories": [
+        "AI",
+        "ビジネス"
+      ],
       "bio": "Claude Code 使用1500時間超。AIエージェント実践のノウハウを共有。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!p11F!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eb38a97-09ae-4718-a6b8-2b2767e6d2b7_400x400.jpeg",
       "latest": [
@@ -117,7 +128,10 @@
       "name": "テツメモの発信実験ログ",
       "url": "https://tetumemo.substack.com",
       "feed_url": "https://tetumemo.substack.com/feed",
-      "category": "テクノロジー",
+      "categories": [
+        "テクノロジー",
+        "AI"
+      ],
       "bio": "AI時代の発信・ニュースレター・個人メディアづくりの試行錯誤ログ。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!RaPy!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5a6e549-3473-4bdb-a8f5-25d8c50df448_1280x1280.png",
       "latest": [
@@ -142,7 +156,9 @@
       "name": "週刊ソフトウェアエンジニアのリリースノート",
       "url": "https://yujimine.substack.com",
       "feed_url": "https://yujimine.substack.com/feed",
-      "category": "テクノロジー",
+      "categories": [
+        "テクノロジー"
+      ],
       "bio": "現役ソフトウェアエンジニアの1週間の日誌を毎週月曜に配信。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
       "latest": [
@@ -167,7 +183,10 @@
       "name": "Lawrence's Newsletter",
       "url": "https://lawrencesnewsletter.com",
       "feed_url": "https://lawrencesnewsletter.com/feed",
-      "category": "テクノロジー",
+      "categories": [
+        "テクノロジー",
+        "ビジネス"
+      ],
       "bio": "AI時代の生存戦略。3分でわかるテクノロジー最前線と戦略分析。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!IdKp!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62ebf9d5-e475-4ea4-9ee1-b9ba5f3538fc_256x256.png",
       "latest": [
@@ -192,7 +211,10 @@
       "name": "Andy Kondo - Innovation Analyst",
       "url": "https://andykondo.substack.com",
       "feed_url": "https://andykondo.substack.com/feed",
-      "category": "ビジネス",
+      "categories": [
+        "ビジネス",
+        "テクノロジー"
+      ],
       "bio": "イノベーションアナリストによる欧州発のテクノロジー・産業分析。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!zpXf!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0aa84cd5-c6f9-4e41-ae28-2288ffd883c4_1002x1002.png",
       "latest": [
@@ -217,7 +239,9 @@
       "name": "週刊創業日記",
       "url": "https://sogyonikki.substack.com",
       "feed_url": "https://sogyonikki.substack.com/feed",
-      "category": "ビジネス",
+      "categories": [
+        "ビジネス"
+      ],
       "bio": "AIソロプレナーが事業と開発、テクノロジーと市場を毎週日曜に綴る。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!qQep!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa0d0c5ac-63f0-4ce6-afac-4791f858916d_800x800.png",
       "latest": [
@@ -242,7 +266,10 @@
       "name": "DEBUNK",
       "url": "https://www.debunkresearch.com",
       "feed_url": "https://www.debunkresearch.com/feed",
-      "category": "投資・経済",
+      "categories": [
+        "投資・経済",
+        "AI"
+      ],
       "bio": "Agentic Web Research。Crypto版とAI版のリサーチ記事を毎朝更新。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
@@ -267,7 +294,10 @@
       "name": "ポス鳥（日本語版）",
       "url": "https://postorijapan.substack.com",
       "feed_url": "https://postorijapan.substack.com/feed",
-      "category": "社会・文化",
+      "categories": [
+        "社会・文化",
+        "ビジネス"
+      ],
       "bio": "メディアと制度設計を切り口に、ニュースの裏側を国際比較で読み解く。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!_TaV!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8d5a5405-94e6-4b53-9dd8-ae2cdba33fe0_400x400.png",
       "latest": [
@@ -292,7 +322,9 @@
       "name": "せんとうとまちニュースレター",
       "url": "https://sentotomachi.substack.com",
       "feed_url": "https://sentotomachi.substack.com/feed",
-      "category": "社会・文化",
+      "categories": [
+        "社会・文化"
+      ],
       "bio": "銭湯の文化的価値と、銭湯がある街の生活文化を探求する活動報告。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!3MOW!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa42ec67f-299c-4d0c-926f-c8a501620769_1200x1200.png",
       "latest": [
@@ -317,7 +349,9 @@
       "name": "シンプリィライフ・ノート",
       "url": "https://simpleeelifecom.substack.com",
       "feed_url": "https://simpleeelifecom.substack.com/feed",
-      "category": "ライフスタイル",
+      "categories": [
+        "ライフスタイル"
+      ],
       "bio": "ゆっくり心を整える。科学・寓話・作品考察と日々のあれこれ。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!Wdez!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fccc7ae81-46c7-4fa8-9395-9fc60c3fb670_540x540.png",
       "latest": [
@@ -342,7 +376,10 @@
       "name": "おゆわりのAIと暮らし日記",
       "url": "https://oyuwarilife.substack.com",
       "feed_url": "https://oyuwarilife.substack.com/feed",
-      "category": "ライフスタイル",
+      "categories": [
+        "ライフスタイル",
+        "キャリア・働き方"
+      ],
       "bio": "AIを使って仕事・育児・暮らしを少しずつ整えていく等身大の日記。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
       "latest": [
@@ -367,7 +404,9 @@
       "name": "SEINO CHISATO JOURNAL",
       "url": "https://seinochisato.substack.com",
       "feed_url": "https://seinochisato.substack.com/feed",
-      "category": "クリエイティブ",
+      "categories": [
+        "クリエイティブ"
+      ],
       "bio": "アーティストの制作現場から、アイデア・裏話・展示情報を隔週配信。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!zLuG!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8233d736-2908-48a6-a557-5fee5905ce1b_1280x1280.png",
       "latest": [
@@ -392,7 +431,9 @@
       "name": "斉藤ナミ／エッセイスト",
       "url": "https://nami5711.substack.com",
       "feed_url": "https://nami5711.substack.com/feed",
-      "category": "クリエイティブ",
+      "categories": [
+        "クリエイティブ"
+      ],
       "bio": "note創作大賞エッセイ部門大賞受賞。日常を綴るエッセイと日記。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!gwwI!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87f494bb-8617-4437-9cb4-2eea6ce6c0ac_400x400.jpeg",
       "latest": [
@@ -417,7 +458,10 @@
       "name": "キャリア孔明",
       "url": "https://careerkoumei.substack.com",
       "feed_url": "https://careerkoumei.substack.com/feed",
-      "category": "キャリア・働き方",
+      "categories": [
+        "キャリア・働き方",
+        "ビジネス"
+      ],
       "bio": "SNS時代を生き抜く戦略・発信ノウハウ・新しい働き方を毎日配信。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!UWsa!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0ab5e04-9edd-4909-9213-f6550295bab1_304x304.jpeg",
       "latest": [
@@ -442,7 +486,9 @@
       "name": "週刊ソトワークスタイル",
       "url": "https://nakalab.substack.com",
       "feed_url": "https://nakalab.substack.com/feed",
-      "category": "キャリア・働き方",
+      "categories": [
+        "キャリア・働き方"
+      ],
       "bio": "琵琶湖畔でのソトワーク実験から、身体と環境が生む働き方を探究。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!CDcf!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F481e8f67-5e12-4460-932e-3f6e2bc9261e_1024x1024.png",
       "latest": [
@@ -467,7 +513,9 @@
       "name": "おやすみ前の自分ほぐしエッセイ",
       "url": "https://itawaru.substack.com",
       "feed_url": "https://itawaru.substack.com/feed",
-      "category": "健康・ウェルネス",
+      "categories": [
+        "健康・ウェルネス"
+      ],
       "bio": "自分をいたわり、人間関係の消耗から抜け出すためのエッセイ。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!B-v-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fitawaru.substack.com%2Fimg%2Fsubstack.png",
       "latest": [
@@ -492,7 +540,9 @@
       "name": "カトちゃんの古代史考察",
       "url": "https://ahoka1117.substack.com",
       "feed_url": "https://ahoka1117.substack.com/feed",
-      "category": "教育・学び",
+      "categories": [
+        "教育・学び"
+      ],
       "bio": "ヤマト中枢の現地から、独自視点で読み解く日本古代史考察。",
       "avatar": "https://substackcdn.com/image/fetch/$s_!9nO8!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6380910b-11b6-45b7-a8b6-e690ad08d417_1176x1176.png",
       "latest": [

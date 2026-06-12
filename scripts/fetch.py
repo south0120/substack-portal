@@ -71,7 +71,17 @@ def fetch_bytes(url: str) -> bytes:
         return response.read()
 
 
-def parse_feed(xml_bytes: bytes, writer: dict[str, str]) -> tuple[str, str, list[dict[str, str]]]:
+def feed_categories(feed: dict[str, object]) -> list[str]:
+    """Normalize current array and legacy string category schemas."""
+    value = feed.get("categories", feed.get("category", []))
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, list):
+        return [item for item in value if isinstance(item, str) and item]
+    return []
+
+
+def parse_feed(xml_bytes: bytes, writer: dict[str, object]) -> tuple[str, str, list[dict[str, str]]]:
     """Parse one RSS 2.0 feed and return site URL, avatar, and Japanese articles."""
     root = ET.fromstring(xml_bytes)
     channel = root.find("channel")
@@ -102,7 +112,7 @@ def parse_feed(xml_bytes: bytes, writer: dict[str, str]) -> tuple[str, str, list
                 "published": parse_published(item.findtext("pubDate") or ""),
                 "image": image,
                 "writer": writer["name"],
-                "category": writer["category"],
+                "category": str(writer["categories"][0]),
             }
         )
 
@@ -110,8 +120,8 @@ def parse_feed(xml_bytes: bytes, writer: dict[str, str]) -> tuple[str, str, list
     return site_url, avatar, articles
 
 
-def unique_categories(feeds: list[dict[str, str]]) -> list[str]:
-    return list(dict.fromkeys(feed["category"] for feed in feeds))
+def unique_categories(feeds: list[dict[str, object]]) -> list[str]:
+    return list(dict.fromkeys(category for feed in feeds for category in feed_categories(feed)))
 
 
 def main() -> int:
@@ -120,11 +130,15 @@ def main() -> int:
     all_articles: list[dict[str, str]] = []
 
     for index, feed in enumerate(feeds):
+        categories = feed_categories(feed)
+        if not categories:
+            print(f"Warning: skipped {feed['name']}: no categories configured", file=sys.stderr)
+            continue
         writer: dict[str, object] = {
             "name": feed["name"],
             "url": fallback_site_url(feed["feed_url"]),
             "feed_url": feed["feed_url"],
-            "category": feed["category"],
+            "categories": categories,
             "bio": feed["bio"],
             "avatar": "",
             "latest": [],
