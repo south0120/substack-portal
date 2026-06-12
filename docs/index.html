@@ -68,7 +68,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 }
 .header{position:sticky;top:0;z-index:30;background:var(--header-bg);
   border-bottom:1px solid var(--line);backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px)}
+  -webkit-backdrop-filter:blur(16px);
+  transition:transform .28s ease}
+.header--hidden{transform:translateY(-100%);pointer-events:none}
 .header-in{max-width:1280px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
 .site-logo-link{flex:none;display:flex;align-items:center;text-decoration:none}
 .site-logo{height:32px;width:auto;display:block}
@@ -81,8 +83,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 @media(max-width:699px){
   .header-in{flex-wrap:wrap;padding:10px 14px 8px;gap:8px}
   .site-logo-link{width:100%;justify-content:center}
-  .site-logo{height:52px}
+  .site-logo{height:26px}
   .search{max-width:none}
+  .search input{font-size:16px}
 }
 .search{position:relative;flex:1;min-width:0;margin-left:auto;max-width:460px}
 .search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;
@@ -1252,6 +1255,30 @@ function initPwaPrompt(){
   },2500);
 }
 
+function initHideOnScroll(){
+  const header = document.querySelector(".header");
+  let lastY = 0, ticking = false;
+  window.addEventListener("scroll", () => {
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if(y < 10){
+        header.classList.remove("header--hidden");
+        document.documentElement.style.setProperty("--header-height", `${header.offsetHeight}px`);
+      } else if(y > lastY + 4){
+        header.classList.add("header--hidden");
+        document.documentElement.style.setProperty("--header-height", "0px");
+      } else if(y < lastY - 4){
+        header.classList.remove("header--hidden");
+        document.documentElement.style.setProperty("--header-height", `${header.offsetHeight}px`);
+      }
+      lastY = y;
+      ticking = false;
+    });
+  }, {passive:true});
+}
+
 function init(){
   DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
   loadCategoryOrder();
@@ -1262,6 +1289,7 @@ function init(){
   initArticleSwipe();
   initTopicTooltip();
   initPwaPrompt();
+  initHideOnScroll();
   updateHeaderHeight();
   renderShelf();
   setView(location.hash === "#writers" ? "shelf" : "articles", false);
@@ -1349,7 +1377,7 @@ async function load(){
 (function(){
   let startX=0, startY=0, locked=null, target=null;
   document.addEventListener("touchstart", e => {
-    target = e.target.closest(".writer-grid, .category-tabs");
+    target = e.target.closest(".category-tabs");
     if(!target || e.touches.length !== 1){ locked=null; return; }
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
