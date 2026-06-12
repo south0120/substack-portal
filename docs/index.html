@@ -81,7 +81,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 @media(max-width:699px){
   .header-in{flex-wrap:wrap;padding:10px 14px 8px;gap:8px}
   .site-logo-link{width:100%;justify-content:center}
-  .site-logo{height:26px}
+  .site-logo{height:52px}
   .search{max-width:none}
 }
 .search{position:relative;flex:1;min-width:0;margin-left:auto;max-width:460px}
@@ -1344,6 +1344,30 @@ async function load(){
   document.getElementById("sampleBanner").hidden = !sample;
   init();
 }
+
+/* 横スクロール要素の縦移動ロック: touchmoveの途中タッチも含めて制御 */
+(function(){
+  let startX=0, startY=0, locked=null, target=null;
+  document.addEventListener("touchstart", e => {
+    target = e.target.closest(".writer-grid, .category-tabs");
+    if(!target || e.touches.length !== 1){ locked=null; return; }
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    locked = null;
+  }, {passive:true});
+  document.addEventListener("touchmove", e => {
+    if(!target || e.touches.length !== 1) return;
+    if(locked === null){
+      const dx = Math.abs(e.touches[0].clientX - startX);
+      const dy = Math.abs(e.touches[0].clientY - startY);
+      if(dx > 4 || dy > 4) locked = dx > dy;
+    }
+    if(locked) e.preventDefault();
+  }, {passive:false});
+  const reset = () => { locked=null; target=null; };
+  document.addEventListener("touchend", reset, {passive:true});
+  document.addEventListener("touchcancel", reset, {passive:true});
+})();
 
 load();
 if("serviceWorker" in navigator){
