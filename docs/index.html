@@ -77,6 +77,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   .site-logo--light{display:none}
   .site-logo--dark{display:block}
 }
+/* モバイル: ロゴを検索バーの上に全幅で表示 */
+@media(max-width:699px){
+  .header-in{flex-wrap:wrap;padding:10px 14px 8px;gap:8px}
+  .site-logo-link{width:100%;justify-content:flex-start}
+  .site-logo{height:26px}
+  .search{max-width:none}
+}
 .search{position:relative;flex:1;min-width:0;margin-left:auto;max-width:460px}
 .search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;
   transform:translateY(-50%);color:var(--faint);pointer-events:none}
@@ -125,7 +132,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .shelf-arrow:hover{color:var(--brand);border-color:var(--brand-line)}
 .shelf-arrow svg{width:16px;height:16px}
 .writer-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
-  scrollbar-width:none;padding:2px 1px 12px;overscroll-behavior-inline:contain}
+  scrollbar-width:none;padding:2px 1px 12px;overscroll-behavior-inline:contain;touch-action:pan-x}
 .writer-grid::-webkit-scrollbar{display:none}
 @media(hover:hover){.writer-grid{cursor:grab}}
 .writer-grid.drag-scrolling{cursor:grabbing;scroll-snap-type:none;user-select:none}
@@ -199,7 +206,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   gap:22px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;
   background:var(--tabs-bg);border-bottom:1px solid var(--line);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  overscroll-behavior-inline:contain}
+  overscroll-behavior-inline:contain;touch-action:pan-x}
 .category-tabs::-webkit-scrollbar{display:none}
 .category-tab{position:relative;flex:none;border:0;background:transparent;color:var(--sub);
   padding:12px 1px 10px;font-size:.82rem;font-weight:700;white-space:nowrap}
