@@ -36,5 +36,8 @@ jobs:
           git add docs/data/*.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: update shelf topics"
-          git pull --rebase
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "retry $i..."
+            sleep 5
+          done
