@@ -36,6 +36,7 @@
   --sheet-shadow:0 18px 48px rgba(24,24,32,.18);
   --modal-shadow:0 24px 70px rgba(0,0,0,.22);
   --modal-backdrop:rgba(27,27,31,.38);
+  --maxw:1600px;
   color-scheme:light dark;
   font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
 }
@@ -71,7 +72,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   -webkit-backdrop-filter:blur(16px);
   transition:transform .28s ease}
 .header--hidden{transform:translateY(-100%);pointer-events:none}
-.header-in{max-width:1280px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
+.header-in{max-width:var(--maxw);margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
 .site-logo-link{flex:none;display:flex;align-items:center;text-decoration:none}
 .site-logo{height:32px;width:auto;display:block}
 .site-logo--dark{display:none}
@@ -103,9 +104,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .guide-link:hover{border-color:var(--brand-line);color:var(--brand)}
 .guide-link svg{width:19px;height:19px}
 .guide-link span{display:none}
-.sample-banner{max-width:1248px;margin:14px auto 0;padding:8px 14px;border:1px solid var(--brand-line);
+.sample-banner{max-width:calc(var(--maxw) - 48px);margin:14px auto 0;padding:8px 14px;border:1px solid var(--brand-line);
   border-radius:12px;background:var(--brand-soft);color:var(--brand-ink);font-size:.78rem;font-weight:700}
-.main{max-width:1280px;margin:auto;padding:0 16px 42px}
+.main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
 .shelf-tools{display:flex;justify-content:flex-end;padding:20px 0 0}
 .order-button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
   border-radius:10px;background:var(--card);color:var(--sub);font-size:.72rem;font-weight:700;padding:7px 10px}
@@ -218,6 +219,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   transition:transform .2s ease}
 .category-tab.on{color:var(--brand)}
 .category-tab.on::after{transform:scaleX(1)}
+.category-selection-chip{align-self:center;flex:none;border:1px solid var(--brand-line);border-radius:999px;
+  background:var(--brand-soft);color:var(--brand);padding:5px 10px;font-size:.72rem;font-weight:900;
+  white-space:nowrap}
 .article-order-button{margin-left:auto}
 .article-count{margin-left:auto;color:var(--sub);font-size:.75rem}
 .article-count b{color:var(--ink)}
@@ -243,7 +247,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .more{display:block;margin:22px auto 0;border:1px solid var(--line);border-radius:999px;
   background:var(--card);color:var(--ink);font-weight:700;font-size:.78rem;padding:9px 24px}
 .more:hover{border-color:var(--brand);color:var(--brand)}
-footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24px 16px 38px;
+footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(--line);padding:24px 16px 38px;
   color:var(--faint);font-size:.7rem}
 .footer-links{display:block;margin-top:6px}
 .footer-links a{color:var(--sub);text-decoration:underline;text-underline-offset:2px}
@@ -280,6 +284,16 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .order-row{display:flex;align-items:center;gap:8px;border:1px solid var(--line);
   border-radius:11px;padding:4px 11px 4px 4px;
   transition:border-color .1s,opacity .15s;position:relative}
+.category-check{position:relative;width:20px;height:20px;flex:none;display:grid;place-items:center}
+.category-check input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.category-check-box{width:17px;height:17px;border:1.5px solid var(--faint);border-radius:5px;
+  background:var(--card);display:grid;place-items:center;color:#fff;transition:background .15s,border-color .15s}
+.category-check-box::after{content:"";width:8px;height:4px;border-left:2px solid currentColor;
+  border-bottom:2px solid currentColor;transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.category-check input:checked+.category-check-box{border-color:var(--brand);background:var(--brand)}
+.category-check input:checked+.category-check-box::after{opacity:1}
+.category-check input:focus-visible+.category-check-box{outline:2px solid var(--brand);outline-offset:3px}
+.order-row.filter-on{border-color:var(--brand-line);background:var(--brand-soft)}
 .order-row.dragging{opacity:.45}
 .order-row.drop-before::before,.order-row.drop-after::after{
   content:"";position:absolute;left:0;right:0;height:2px;background:var(--brand)}
@@ -309,7 +323,9 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 }
 @media(min-width:1040px){
   body{padding-bottom:0}
-  .header-in{padding:12px 16px}
+  .header-in{padding:12px 24px}
+  .main{padding-left:24px;padding-right:24px}
+  footer{padding-left:0;padding-right:0}
   .writer-grid{gap:16px}
   .article-layout{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;align-items:start}
   .category-sidebar{display:block;position:sticky;top:76px;padding:22px 0}
@@ -317,9 +333,12 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
     letter-spacing:.08em;margin:0 7px 7px}
   .category-list{list-style:none;display:grid;gap:3px}
   .category-sidebar-item{position:relative}
-  .category-sidebar-button{width:100%;display:flex;align-items:center;gap:7px;border:0;
+  .category-sidebar-button{min-width:0;flex:1;display:flex;align-items:center;gap:7px;border:0;
     border-radius:9px;background:transparent;color:var(--sub);padding:8px 7px;
     text-align:left;font-size:.72rem;font-weight:700}
+  .category-sidebar-row{display:flex;align-items:center;border-radius:9px}
+  .category-sidebar-row.filter-on{background:var(--brand-soft)}
+  .category-sidebar-row .category-check{margin-left:7px}
   .category-sidebar-button:hover{background:var(--card);color:var(--ink)}
   .category-sidebar-button.on{background:var(--brand-soft);color:var(--brand)}
   .category-sidebar-icon{width:18px;height:18px;display:grid;place-items:center;flex:none}
@@ -348,6 +367,11 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 }
 @media(min-width:1280px){
   .article-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(min-width:1600px){
+  .header-in,.main{padding-left:32px;padding-right:32px}
+  .sample-banner,footer{max-width:calc(var(--maxw) - 64px)}
+  .article-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -449,7 +473,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 <div class="modal-backdrop" id="orderBackdrop" hidden>
   <section class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
     <h2 id="orderTitle">カテゴリを並び替え</h2>
-    <p>書き手の棚と記事のカテゴリ表示に反映されます。</p>
+    <p>チェックしたカテゴリの記事を表示します。並び順は書き手の棚にも反映されます。</p>
     <ol class="order-list" id="orderList"></ol>
     <div class="modal-actions">
       <button type="button" class="modal-action" id="orderReset">リセット</button>
@@ -518,6 +542,7 @@ const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor
 const CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
 const CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
 const ORDER_KEY = "sp_category_order_v1";
+const CATEGORY_FILTER_KEY = "sp_category_filter_v1";
 const PERIODS = [["all","すべて"],["day","24時間"],["week","今週"],["month","今月"]];
 const PAGE_SIZE = 24;
 const API_PAGE_SIZE = 30;
@@ -554,6 +579,7 @@ let category = "すべて";
 let period = "all";
 let shown = PAGE_SIZE;
 let customCategoryOrder = [];
+let categoryFilters = new Set();
 let draggedCategory = "";
 let API_MODE = Boolean(WORKER_URL);
 let apiPage = 1;
@@ -634,6 +660,42 @@ function saveCategoryOrder(order){
   try{
     localStorage.setItem(ORDER_KEY, JSON.stringify(order));
   }catch(_){}
+}
+
+function loadCategoryFilters(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(CATEGORY_FILTER_KEY) || "[]");
+    categoryFilters = new Set(Array.isArray(saved)
+      ? saved.filter(name => typeof name === "string" && categoryOrder().includes(name))
+      : []);
+  }catch(_){
+    categoryFilters = new Set();
+  }
+  category = categoryFilters.size === 1 ? [...categoryFilters][0] : "すべて";
+}
+
+function saveCategoryFilters(){
+  try{
+    localStorage.setItem(CATEGORY_FILTER_KEY, JSON.stringify([...categoryFilters]));
+  }catch(_){}
+}
+
+function categoryMatches(article){
+  return categoryFilters.size === 0 || categoryFilters.has(normalizedCategory(article.category));
+}
+
+function categoryIsActive(name){
+  return categoryFilters.size === 0 ? name === "すべて" :
+    categoryFilters.size === 1 && categoryFilters.has(name);
+}
+
+function categoryCheckbox(name, context){
+  const checked = categoryFilters.has(name);
+  return `<label class="category-check" title="${esc(name)}を複数選択">
+    <input type="checkbox" data-category-filter="${esc(name)}" data-filter-context="${context}"
+      aria-label="${esc(name)}を複数選択" ${checked ? "checked" : ""}>
+    <span class="category-check-box" aria-hidden="true"></span>
+  </label>`;
 }
 
 function writerCard(writer){
@@ -851,8 +913,9 @@ function renderOrderList(){
   const downIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
   const gripIcon = '<svg viewBox="0 0 12 20" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.3"/><circle cx="9" cy="4" r="1.3"/><circle cx="3" cy="10" r="1.3"/><circle cx="9" cy="10" r="1.3"/><circle cx="3" cy="16" r="1.3"/><circle cx="9" cy="16" r="1.3"/></svg>';
   document.getElementById("orderList").innerHTML = order.map((name,index) => `
-    <li class="order-row" data-cat="${esc(name)}">
+    <li class="order-row${categoryFilters.has(name) ? " filter-on" : ""}" data-cat="${esc(name)}">
       <span class="order-grip-touch" aria-hidden="true">${gripIcon}</span>
+      ${categoryCheckbox(name,"modal")}
       <span class="order-name">${esc(name)}</span>
       <span class="order-move-group">
         <button type="button" class="order-move" data-index="${index}" data-shift="-1"
@@ -874,14 +937,20 @@ function renderOrderList(){
       renderCategorySidebar();
     });
   });
+  document.querySelectorAll('#orderList [data-category-filter]').forEach(input => {
+    input.addEventListener("change", () => toggleCategoryFilter(input.dataset.categoryFilter));
+  });
 }
 
 function initOrderTouchDnd(listEl){
+  if(listEl.dataset.touchDndReady === "true") return;
+  listEl.dataset.touchDndReady = "true";
   let dragging = null;
   function rows(){ return [...listEl.querySelectorAll(".order-row")]; }
   function clearIndicators(){ rows().forEach(r => r.classList.remove("drop-before","drop-after")); }
 
   listEl.addEventListener("touchstart", e => {
+    if(!e.target.closest(".order-grip-touch")) return;
     const row = e.target.closest(".order-row");
     if(!row) return;
     dragging = row;
@@ -972,7 +1041,7 @@ function articleCard(article){
 function filteredArticles(){
   const normalized = query.toLocaleLowerCase("ja");
   return DATA.articles.filter(article =>
-    (API_MODE || category === "すべて" || normalizedCategory(article.category) === category) &&
+    categoryMatches(article) &&
     periodMatches(article.published) &&
     (API_MODE || `${article.title} ${article.excerpt} ${article.writer}`.toLocaleLowerCase("ja").includes(normalized))
   );
@@ -982,15 +1051,20 @@ function renderArticles(){
   const items = filteredArticles();
   const visible = API_MODE ? items : items.slice(0,shown);
   document.getElementById("articleGrid").innerHTML = visible.map(articleCard).join("");
-  document.getElementById("articleCount").innerHTML = `<b>${API_MODE && period === "all" ? apiTotal : items.length}</b>件の記事`;
+  const useApiTotal = API_MODE && period === "all" && categoryFilters.size < 2;
+  document.getElementById("articleCount").innerHTML = `<b>${useApiTotal ? apiTotal : items.length}</b>件の記事`;
   document.getElementById("articleEmpty").hidden = items.length !== 0;
   document.getElementById("moreButton").hidden = API_MODE ? !apiHasMore : items.length <= shown;
   document.querySelectorAll("#categoryPills .category-tab").forEach(button =>
-    button.classList.toggle("on", button.dataset.category === category)
+    button.classList.toggle("on",categoryIsActive(button.dataset.category))
   );
   document.querySelectorAll("#categorySidebar .category-sidebar-button").forEach(button =>
-    button.classList.toggle("on", button.dataset.category === category)
+    button.classList.toggle("on",categoryIsActive(button.dataset.category))
   );
+  document.querySelectorAll("[data-category-filter]").forEach(input => {
+    input.checked = categoryFilters.has(input.dataset.categoryFilter);
+    input.closest(".category-sidebar-row,.order-row")?.classList.toggle("filter-on",input.checked);
+  });
   document.querySelectorAll("#periodPills .pill").forEach(button =>
     button.classList.toggle("on", button.dataset.period === period)
   );
@@ -1013,10 +1087,27 @@ function scrollActiveCategoryTab(){
 function setCategory(nextCategory, scrollTab = true){
   const categories = ["すべて", ...categoryOrder()];
   if(!categories.includes(nextCategory)) return;
+  categoryFilters = nextCategory === "すべて" ? new Set() : new Set([nextCategory]);
   category = nextCategory;
+  saveCategoryFilters();
   shown = PAGE_SIZE;
+  renderCategoryPills();
+  renderCategorySidebar();
   if(API_MODE) resetApiArticles(); else renderArticles();
   if(scrollTab) requestAnimationFrame(scrollActiveCategoryTab);
+}
+
+function toggleCategoryFilter(name){
+  if(!categoryOrder().includes(name)) return;
+  if(categoryFilters.has(name)) categoryFilters.delete(name);
+  else categoryFilters.add(name);
+  category = categoryFilters.size === 1 ? [...categoryFilters][0] : "すべて";
+  saveCategoryFilters();
+  shown = PAGE_SIZE;
+  renderCategoryPills();
+  renderCategorySidebar();
+  if(!document.getElementById("orderBackdrop").hidden) renderOrderList();
+  if(API_MODE) resetApiArticles(); else renderArticles();
 }
 
 function setView(nextView, scroll = true){
@@ -1041,9 +1132,13 @@ function setView(nextView, scroll = true){
 
 function renderCategoryPills(){
   const categories = ["すべて", ...categoryOrder()];
-  document.getElementById("categoryPills").innerHTML = categories.map(name =>
-    `<button type="button" class="category-tab${name === category ? " on" : ""}" data-category="${esc(name)}">${esc(name)}</button>`
+  const selectionChip = categoryFilters.size > 0
+    ? `<button type="button" class="category-selection-chip" id="categorySelectionOpen">選択中: ${categoryFilters.size}件</button>`
+    : "";
+  document.getElementById("categoryPills").innerHTML = selectionChip + categories.map(name =>
+    `<button type="button" class="category-tab${categoryIsActive(name) ? " on" : ""}" data-category="${esc(name)}">${esc(name)}</button>`
   ).join("");
+  document.getElementById("categorySelectionOpen")?.addEventListener("click", openOrderModal);
   document.querySelectorAll("#categoryPills .category-tab").forEach(button => {
     button.addEventListener("click", () => setCategory(button.dataset.category));
   });
@@ -1066,18 +1161,29 @@ function renderCategorySidebar(){
     const style = styleFor(name);
     return `
       <li class="category-sidebar-item" data-category-item="${esc(name)}"${isAll ? "" : ' draggable="true"'}>
-        <button type="button" class="category-sidebar-button${name === category ? " on" : ""}" data-category="${esc(name)}">
-          <span class="category-sidebar-icon" style="${isAll ? "" : `color:${style.fg}`}">${isAll ? allIcon : style.icon}</span>
-          <span class="category-sidebar-name">${esc(name)}</span>
-          ${isAll ? "" : grip}
-        </button>
+        <div class="category-sidebar-row${!isAll && categoryFilters.has(name) ? " filter-on" : ""}">
+          ${isAll ? "" : categoryCheckbox(name,"sidebar")}
+          <button type="button" class="category-sidebar-button${categoryIsActive(name) ? " on" : ""}" data-category="${esc(name)}">
+            <span class="category-sidebar-icon" style="${isAll ? "" : `color:${style.fg}`}">${isAll ? allIcon : style.icon}</span>
+            <span class="category-sidebar-name">${esc(name)}</span>
+            ${isAll ? "" : grip}
+          </button>
+        </div>
       </li>`;
   }).join("");
   root.querySelectorAll(".category-sidebar-button").forEach(button => {
     button.addEventListener("click", () => setCategory(button.dataset.category));
   });
+  root.querySelectorAll("[data-category-filter]").forEach(input => {
+    input.addEventListener("click", event => event.stopPropagation());
+    input.addEventListener("change", () => toggleCategoryFilter(input.dataset.categoryFilter));
+  });
   root.querySelectorAll('[draggable="true"]').forEach(item => {
     item.addEventListener("dragstart", event => {
+      if(event.target.closest(".category-check")){
+        event.preventDefault();
+        return;
+      }
       draggedCategory = item.dataset.categoryItem;
       item.classList.add("dragging");
       event.dataTransfer.effectAllowed = "move";
@@ -1123,6 +1229,9 @@ function initFilters(){
       period = button.dataset.period;
       shown = PAGE_SIZE;
       renderArticles();
+      if(API_MODE && categoryFilters.size >= 2 && filteredArticles().length < 10 && apiHasMore){
+        loadNextApiPage();
+      }
     });
   });
 }
@@ -1368,6 +1477,7 @@ function initHideOnScroll(){
 function init(){
   DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
   loadCategoryOrder();
+  loadCategoryFilters();
   document.getElementById("updatedAt").textContent = DATA.updated_at
     ? new Date(DATA.updated_at).toLocaleString("ja-JP")
     : "サンプルデータ";
@@ -1379,6 +1489,7 @@ function init(){
   updateHeaderHeight();
   renderShelf();
   setView(location.hash === "#writers" ? "shelf" : "articles", false);
+  if(API_MODE && view === "articles" && categoryFilters.size > 0) resetApiArticles();
 
   document.querySelectorAll("[data-view]").forEach(button =>
     button.addEventListener("click", () => setView(button.dataset.view))
@@ -1448,7 +1559,7 @@ function init(){
 
 function apiArticlesUrl(page){
   const params = new URLSearchParams({limit:String(API_PAGE_SIZE),page:String(page)});
-  if(category !== "すべて") params.set("category",category);
+  if(categoryFilters.size === 1) params.set("category",[...categoryFilters][0]);
   if(query) params.set("q",query);
   return `${WORKER_URL}/api/articles?${params}`;
 }
@@ -1461,6 +1572,7 @@ async function fetchJson(url){
 
 async function resetApiArticles(){
   const requestId = ++apiRequestId;
+  let shouldLoadMore = false;
   apiLoading = true;
   apiPage = 1;
   apiHasMore = false;
@@ -1475,16 +1587,20 @@ async function resetApiArticles(){
     apiHasMore = Boolean(loaded.hasMore);
     apiTotal = Number(loaded.total) || 0;
     renderArticles();
+    shouldLoadMore = categoryFilters.size >= 2 && filteredArticles().length < 10 && apiHasMore;
   }catch(error){
     if(requestId === apiRequestId) console.warn("Find Your Letter API request failed",error);
   }finally{
     if(requestId === apiRequestId) apiLoading = false;
   }
+  if(requestId === apiRequestId && shouldLoadMore) await loadNextApiPage();
 }
 
 async function loadNextApiPage(){
   if(!API_MODE || apiLoading || !apiHasMore) return;
   const requestId = apiRequestId;
+  const matchingBefore = filteredArticles().length;
+  let loadedPage = false;
   apiLoading = true;
   try{
     const loaded = await fetchJson(apiArticlesUrl(apiPage + 1));
@@ -1493,11 +1609,16 @@ async function loadNextApiPage(){
     apiPage = Number(loaded.page) || apiPage + 1;
     apiHasMore = Boolean(loaded.hasMore);
     apiTotal = Number(loaded.total) || apiTotal;
+    loadedPage = true;
     renderArticles();
   }catch(error){
     console.warn("Find Your Letter API request failed",error);
   }finally{
     if(requestId === apiRequestId) apiLoading = false;
+  }
+  if(requestId === apiRequestId && loadedPage && categoryFilters.size >= 2 &&
+    filteredArticles().length - matchingBefore < 10 && apiHasMore){
+    await loadNextApiPage();
   }
 }
 

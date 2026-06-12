@@ -33,3 +33,23 @@ GitHub Actions は6時間ごとに RSS を取得し、`docs/data/articles.json` 
 ## Google Analytics
 
 `docs/index.html` 内の `G-XXXXXXXXXX` を Google Analytics の実際の測定 ID（例: `G-ABC123XYZ`）へ2か所とも置換してください。
+
+## Tally 掲載申請 Webhook
+
+Tally でフォームを作成し、フィールドのラベルを `掲載名`、`Substack URL`、`カテゴリ`、`自己紹介` にします。Tally の **Integrations → Webhooks** で送信先を `https://fyl-api.<account>.workers.dev/api/apply` に設定してください。
+
+Signing secret を設定する場合は、同じ値を Worker に登録します。
+
+```sh
+npx wrangler secret put TALLY_SIGNING_SECRET
+```
+
+GitHub には `south0120/substack-portal` のみを対象にした fine-grained personal access token を作成し、Repository permissions で **Contents: Read and write** と **Pull requests: Read and write** を許可します。トークンは Worker の secret に登録します。
+
+```sh
+npx wrangler secret put GITHUB_TOKEN
+```
+
+申請を受信すると、フィードの到達性と日本語記事タイトルを検証し、D1 の `applications` テーブルへ記録した後、`feeds.json` に書き手を追加する Pull Request を自動作成します。Pull Request を確認してマージすると、既存の毎時 cron が新しいフィードの取得を開始します。
+
+通常はスパム対策のため Pull Request を作成します。Worker の環境変数に `AUTO_COMMIT=true` を設定すると、Pull Request を作らず `main` へ直接コミットします。
