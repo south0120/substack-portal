@@ -278,6 +278,15 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .order-modal p{color:var(--sub);font-size:.72rem;margin-top:3px}
 .order-list{list-style:none;display:grid;gap:7px;margin:15px 0}
 .order-row{display:flex;align-items:center;gap:8px;border:1px solid var(--line);
+  transition:border-color .1s,opacity .15s;position:relative}
+.order-row.dragging{opacity:.45}
+.order-row.drop-before::before,.order-row.drop-after::after{
+  content:"";position:absolute;left:0;right:0;height:2px;background:var(--brand)}
+.order-row.drop-before::before{top:-5px}
+.order-row.drop-after::after{bottom:-5px}
+.order-grip-touch{width:28px;height:44px;display:flex;align-items:center;justify-content:center;
+  color:var(--faint);cursor:grab;touch-action:none}
+.order-grip-touch svg{width:14px;height:20px}
   border-radius:11px;padding:4px 4px 4px 11px}
 .order-name{min-width:0;flex:1;font-size:.78rem;font-weight:700}
 .order-move{width:44px;height:44px;border:0;border-radius:8px;background:var(--panel);
@@ -826,8 +835,10 @@ function renderOrderList(){
   const order = categoryOrder();
   const upIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg>';
   const downIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  const gripIcon = '<svg viewBox="0 0 12 20" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.3"/><circle cx="9" cy="4" r="1.3"/><circle cx="3" cy="10" r="1.3"/><circle cx="9" cy="10" r="1.3"/><circle cx="3" cy="16" r="1.3"/><circle cx="9" cy="16" r="1.3"/></svg>';
   document.getElementById("orderList").innerHTML = order.map((name,index) => `
-    <li class="order-row">
+    <li class="order-row" data-cat="${esc(name)}">
+      <span class="order-grip-touch" aria-hidden="true">${gripIcon}</span>
       <span class="order-name">${esc(name)}</span>
       <button type="button" class="order-move" data-index="${index}" data-shift="-1"
         aria-label="${esc(name)}を上へ" ${index === 0 ? "disabled" : ""}>${upIcon}</button>
@@ -849,8 +860,62 @@ function renderOrderList(){
   });
 }
 
+function initOrderTouchDnd(listEl){
+  let dragging = null;
+  function rows(){ return [...listEl.querySelectorAll(".order-row")]; }
+  function clearIndicators(){ rows().forEach(r => r.classList.remove("drop-before","drop-after")); }
+
+  listEl.addEventListener("touchstart", e => {
+    const row = e.target.closest(".order-row");
+    if(!row) return;
+    dragging = row;
+    row.classList.add("dragging");
+  }, {passive:true});
+
+  listEl.addEventListener("touchmove", e => {
+    if(!dragging) return;
+    e.preventDefault();
+    const y = e.touches[0].clientY;
+    clearIndicators();
+    const others = rows().filter(r => r !== dragging);
+    let placed = false;
+    for(const row of others){
+      const r = row.getBoundingClientRect();
+      if(y < r.top + r.height / 2){
+        row.classList.add("drop-before");
+        placed = true;
+        break;
+      }
+    }
+    if(!placed && others.length) others[others.length - 1].classList.add("drop-after");
+  }, {passive:false});
+
+  listEl.addEventListener("touchend", () => {
+    if(!dragging) return;
+    dragging.classList.remove("dragging");
+    const before = listEl.querySelector(".order-row.drop-before");
+    const after  = listEl.querySelector(".order-row.drop-after");
+    if(before) listEl.insertBefore(dragging, before);
+    else if(after) listEl.insertBefore(dragging, after.nextSibling);
+    clearIndicators();
+    const newOrder = rows().map(r => r.dataset.cat).filter(Boolean);
+    saveCategoryOrder(newOrder);
+    renderShelf();
+    renderCategoryPills();
+    renderCategorySidebar();
+    dragging = null;
+  }, {passive:true});
+
+  listEl.addEventListener("touchcancel", () => {
+    if(dragging) dragging.classList.remove("dragging");
+    clearIndicators();
+    dragging = null;
+  }, {passive:true});
+}
+
 function openOrderModal(){
   renderOrderList();
+  initOrderTouchDnd(document.getElementById("orderList"));
   document.getElementById("orderBackdrop").hidden = false;
   document.getElementById("orderClose").focus();
 }
