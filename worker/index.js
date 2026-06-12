@@ -468,14 +468,25 @@ async function fetchAndParseFeed(feed) {
   if (!feed?.name || !feed?.feed_url || !categories.length) {
     throw new Error("Feed is missing name, feed_url, or categories");
   }
-  const response = await fetch(feed.feed_url, {
-    headers: {
-      "User-Agent": USER_AGENT,
-      Accept: "application/rss+xml, application/xml, text/xml",
-    },
-    signal: AbortSignal.timeout(15000),
-  });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  // Substack が Cloudflare の共有IPを確率的に拒否するため、失敗時は1回だけリトライ
+  let response = null;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      response = await fetch(feed.feed_url, {
+        headers: {
+          "User-Agent": USER_AGENT,
+          Accept: "application/rss+xml, application/xml, text/xml",
+        },
+        signal: AbortSignal.timeout(15000),
+      });
+      if (response.ok) break;
+    } catch (error) {
+      if (attempt === 1) throw error;
+      response = null;
+    }
+    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 1500));
+  }
+  if (!response || !response.ok) throw new Error(`HTTP ${response ? response.status : "fetch_failed"}`);
   const xml = await response.text();
   const channel = firstTag(xml, "channel");
   if (!channel) throw new Error("RSS channel not found");
