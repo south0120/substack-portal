@@ -1673,13 +1673,14 @@ async function load(){
   ]);
   try{
     if(API_MODE){
-      const [articles, writers] = await Promise.all([
+      const [articles, writers, health] = await Promise.all([
         fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1`),
-        fetchJson(`${WORKER_URL}/api/writers`)
+        fetchJson(`${WORKER_URL}/api/writers`),
+        fetchJson(`${WORKER_URL}/api/health`)
       ]);
       if(!Array.isArray(writers.writers) || writers.writers.length < 10) throw new Error("writer data insufficient, fallback to static");
       DATA = {
-        updated_at:articles.articles?.[0]?.published || "",
+        updated_at:health.lastRun || articles.articles?.[0]?.published || "",
         categories:[...new Set(writers.writers.flatMap(writer =>
           Array.isArray(writer.categories) ? writer.categories : []
         ))],
