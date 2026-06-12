@@ -1,0 +1,39 @@
+name: Classify writer topics
+
+on:
+  schedule:
+    - cron: "40 21 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install classifier dependency
+        run: pip install anthropic
+
+      - name: Fetch RSS feeds
+        run: python scripts/fetch.py
+
+      - name: Classify writer topics
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/classify.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/*.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: update shelf topics"
+          git push

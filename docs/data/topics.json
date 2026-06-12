@@ -1,0 +1,369 @@
+{
+  "generated_at": "2026-06-12T05:30:48.782686+00:00",
+  "labels": [
+    "AI",
+    "テクノロジー",
+    "ビジネス",
+    "ライフスタイル",
+    "読書",
+    "その他"
+  ],
+  "writers": {
+    "サウスのAI活動報告書": {
+      "topics": [
+        {
+          "label": "テクノロジー",
+          "pct": 33.3
+        },
+        {
+          "label": "その他",
+          "pct": 27.8
+        },
+        {
+          "label": "AI",
+          "pct": 22.2
+        },
+        {
+          "label": "ビジネス",
+          "pct": 11.1
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "cb05cc4f7c3d894f891d37aca81a635d25d1469711a7e71498161e4c3ba31f4e",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "梶谷健人のニュースレター": {
+      "topics": [
+        {
+          "label": "AI",
+          "pct": 45.5
+        },
+        {
+          "label": "読書",
+          "pct": 27.3
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 18.2
+        },
+        {
+          "label": "その他",
+          "pct": 9.1
+        }
+      ],
+      "sample_n": 11,
+      "source_hash": "700c006d7190e59b050844bdbfe7d143440bc0c101790b213db8e1b4de6d06be",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "わど🐏最新AI情報": {
+      "topics": [
+        {
+          "label": "AI",
+          "pct": 50.0
+        },
+        {
+          "label": "ビジネス",
+          "pct": 37.5
+        },
+        {
+          "label": "その他",
+          "pct": 12.5
+        }
+      ],
+      "sample_n": 8,
+      "source_hash": "dc115d581546f34aedd3327115573e4452217c0315869a7fcf61a0b89ca5c520",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "くろの｜Claude Code ガチ勢": {
+      "topics": [
+        {
+          "label": "AI",
+          "pct": 47.1
+        },
+        {
+          "label": "ビジネス",
+          "pct": 47.1
+        },
+        {
+          "label": "その他",
+          "pct": 5.9
+        }
+      ],
+      "sample_n": 17,
+      "source_hash": "cb966c2a688efa7c0e043bcd050a0c739d798ec81725452a087b2bcb284832e2",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "テツメモの発信実験ログ": {
+      "topics": [
+        {
+          "label": "AI",
+          "pct": 58.3
+        },
+        {
+          "label": "ビジネス",
+          "pct": 25.0
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 8.3
+        },
+        {
+          "label": "その他",
+          "pct": 8.3
+        }
+      ],
+      "sample_n": 12,
+      "source_hash": "c0e80589f6cd8f38ee7e60c8fa64409f2af3753b6030349265718376cefdeda9",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "週刊ソフトウェアエンジニアのリリースノート": {
+      "topics": [
+        {
+          "label": "テクノロジー",
+          "pct": 88.9
+        },
+        {
+          "label": "AI",
+          "pct": 5.6
+        },
+        {
+          "label": "その他",
+          "pct": 5.6
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "6b7219260675af882fbae7dd5d47b807411dbd3d90091043cd32a151de5e05de",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "Lawrence's Newsletter": {
+      "topics": [
+        {
+          "label": "ビジネス",
+          "pct": 77.8
+        },
+        {
+          "label": "AI",
+          "pct": 11.1
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 11.1
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "dbd793d3f19d3b90b8f02441e5eac48c819aba9d88940eef4628beb106c3dc59",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "Andy Kondo - Innovation Analyst": {
+      "topics": [
+        {
+          "label": "テクノロジー",
+          "pct": 44.4
+        },
+        {
+          "label": "ビジネス",
+          "pct": 27.8
+        },
+        {
+          "label": "その他",
+          "pct": 11.1
+        },
+        {
+          "label": "AI",
+          "pct": 5.6
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 5.6
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "6c48a63c1f6a38171fc35704f3bb292f375e736e208596303b919e1e6d2a84e7",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "週刊創業日記": {
+      "topics": [
+        {
+          "label": "その他",
+          "pct": 45.5
+        },
+        {
+          "label": "ビジネス",
+          "pct": 36.4
+        },
+        {
+          "label": "AI",
+          "pct": 18.2
+        }
+      ],
+      "sample_n": 11,
+      "source_hash": "d3e657ac3b01a0e36e11e93eeed231a36096e96f1da1b55243f37a4d73630986",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "DEBUNK": {
+      "topics": [
+        {
+          "label": "ビジネス",
+          "pct": 55.6
+        },
+        {
+          "label": "AI",
+          "pct": 38.9
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 5.6
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "b7307b1ff72feb687fd0c91a9a27841061b7d9885a911930db5ef9d5099fa27c",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "ポス鳥（日本語版）": {
+      "topics": [
+        {
+          "label": "ビジネス",
+          "pct": 58.3
+        },
+        {
+          "label": "その他",
+          "pct": 33.3
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 8.3
+        }
+      ],
+      "sample_n": 12,
+      "source_hash": "3ff5bced0c9d53b6b4276af527c802acc18e3b3d12eb4d76e2ce2318b02b5760",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "せんとうとまちニュースレター": {
+      "topics": [
+        {
+          "label": "その他",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "6481160284ddacd7d3503fb1e178e75d660eede07748485ecb65d895783201f9",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "シンプリィライフ・ノート": {
+      "topics": [
+        {
+          "label": "ライフスタイル",
+          "pct": 44.4
+        },
+        {
+          "label": "その他",
+          "pct": 44.4
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 5.6
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "bc98d2cc70a357a3aced684dd1c57955ee6fc31082e9c1f9e8ac4dfc77e0eb5f",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "おゆわりのAIと暮らし日記": {
+      "topics": [
+        {
+          "label": "ライフスタイル",
+          "pct": 44.4
+        },
+        {
+          "label": "ビジネス",
+          "pct": 38.9
+        },
+        {
+          "label": "AI",
+          "pct": 16.7
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "47f10798e5c9f75da90f7ef29248ac9e574c0c35d830ff0aad099756f36d12de",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "SEINO CHISATO JOURNAL": {
+      "topics": [
+        {
+          "label": "その他",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 4,
+      "source_hash": "11bb20b116c36289875d3864b9ef12210e335d0e735dac7d141c7501406f043a",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "斉藤ナミ／エッセイスト": {
+      "topics": [
+        {
+          "label": "ライフスタイル",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 8,
+      "source_hash": "0a958e5a683571672eb8546bbf731a210ef56be4889cc39f476d76be128f1e72",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "キャリア孔明": {
+      "topics": [
+        {
+          "label": "ビジネス",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 18,
+      "source_hash": "dad62b3f842ff0b104a3cbf1ff1afd34d7900ee6224a1cbb9976f8013c1681b0",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "週刊ソトワークスタイル": {
+      "topics": [
+        {
+          "label": "ライフスタイル",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 10,
+      "source_hash": "e55d09147fb179176b458c78f132dec0e636fdb31e59cd3c57e6ba30d6e26af3",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "おやすみ前の自分ほぐしエッセイ": {
+      "topics": [
+        {
+          "label": "ライフスタイル",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 8,
+      "source_hash": "88c6e66aa00d808e997e26ea84744b0ef7e769448b034961ba02f52ebbf6c72e",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    },
+    "カトちゃんの古代史考察": {
+      "topics": [
+        {
+          "label": "その他",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 7,
+      "source_hash": "211bb0cdfd3d0d1514c12ac3967b9c1f5d0884ae7b6bea13f37ea95eeb55b782",
+      "classified_at": "2026-06-12T05:30:48.782686+00:00"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+ "_comment": "棚に並べる書き手リスト。category は index.html の CAT_STYLE / fetch.py の CATEGORIES と同じキーを使う。bio は棚カードに出る一言紹介。",
+ "feeds": [
+  {"name": "サウスのAI活動報告書", "feed_url": "https://south0120.substack.com/feed", "category": "AI", "bio": "「AIで仕事を半分に」をテーマに週次で活動報告。自作Chrome拡張の先行共有も。"},
+  {"name": "梶谷健人のニュースレター", "feed_url": "https://kajikent.substack.com/feed", "category": "AI", "bio": "AI時代の事業・組織・キャリア戦略をテーマにした探究と思考の共有。"},
+  {"name": "わど🐏最新AI情報", "feed_url": "https://wad0427.substack.com/feed", "category": "AI", "bio": "難しいAIを早く・優しく解説。Claude Codeでの自動化実践も発信。"},
+  {"name": "くろの｜Claude Code ガチ勢", "feed_url": "https://kuronoaiagent.substack.com/feed", "category": "AI", "bio": "Claude Code 使用1500時間超。AIエージェント実践のノウハウを共有。"},
+  {"name": "テツメモの発信実験ログ", "feed_url": "https://tetumemo.substack.com/feed", "category": "テクノロジー", "bio": "AI時代の発信・ニュースレター・個人メディアづくりの試行錯誤ログ。"},
+  {"name": "週刊ソフトウェアエンジニアのリリースノート", "feed_url": "https://yujimine.substack.com/feed", "category": "テクノロジー", "bio": "現役ソフトウェアエンジニアの1週間の日誌を毎週月曜に配信。"},
+  {"name": "Lawrence's Newsletter", "feed_url": "https://lawrencesnewsletter.com/feed", "category": "テクノロジー", "bio": "AI時代の生存戦略。3分でわかるテクノロジー最前線と戦略分析。"},
+  {"name": "Andy Kondo - Innovation Analyst", "feed_url": "https://andykondo.substack.com/feed", "category": "ビジネス", "bio": "イノベーションアナリストによる欧州発のテクノロジー・産業分析。"},
+  {"name": "週刊創業日記", "feed_url": "https://sogyonikki.substack.com/feed", "category": "ビジネス", "bio": "AIソロプレナーが事業と開発、テクノロジーと市場を毎週日曜に綴る。"},
+  {"name": "DEBUNK", "feed_url": "https://www.debunkresearch.com/feed", "category": "投資・経済", "bio": "Agentic Web Research。Crypto版とAI版のリサーチ記事を毎朝更新。"},
+  {"name": "ポス鳥（日本語版）", "feed_url": "https://postorijapan.substack.com/feed", "category": "社会・文化", "bio": "メディアと制度設計を切り口に、ニュースの裏側を国際比較で読み解く。"},
+  {"name": "せんとうとまちニュースレター", "feed_url": "https://sentotomachi.substack.com/feed", "category": "社会・文化", "bio": "銭湯の文化的価値と、銭湯がある街の生活文化を探求する活動報告。"},
+  {"name": "シンプリィライフ・ノート", "feed_url": "https://simpleeelifecom.substack.com/feed", "category": "ライフスタイル", "bio": "ゆっくり心を整える。科学・寓話・作品考察と日々のあれこれ。"},
+  {"name": "おゆわりのAIと暮らし日記", "feed_url": "https://oyuwarilife.substack.com/feed", "category": "ライフスタイル", "bio": "AIを使って仕事・育児・暮らしを少しずつ整えていく等身大の日記。"},
+  {"name": "SEINO CHISATO JOURNAL", "feed_url": "https://seinochisato.substack.com/feed", "category": "クリエイティブ", "bio": "アーティストの制作現場から、アイデア・裏話・展示情報を隔週配信。"},
+  {"name": "斉藤ナミ／エッセイスト", "feed_url": "https://nami5711.substack.com/feed", "category": "クリエイティブ", "bio": "note創作大賞エッセイ部門大賞受賞。日常を綴るエッセイと日記。"},
+  {"name": "キャリア孔明", "feed_url": "https://careerkoumei.substack.com/feed", "category": "キャリア・働き方", "bio": "SNS時代を生き抜く戦略・発信ノウハウ・新しい働き方を毎日配信。"},
+  {"name": "週刊ソトワークスタイル", "feed_url": "https://nakalab.substack.com/feed", "category": "キャリア・働き方", "bio": "琵琶湖畔でのソトワーク実験から、身体と環境が生む働き方を探究。"},
+  {"name": "おやすみ前の自分ほぐしエッセイ", "feed_url": "https://itawaru.substack.com/feed", "category": "健康・ウェルネス", "bio": "自分をいたわり、人間関係の消耗から抜け出すためのエッセイ。"},
+  {"name": "カトちゃんの古代史考察", "feed_url": "https://ahoka1117.substack.com/feed", "category": "教育・学び", "bio": "ヤマト中枢の現地から、独自視点で読み解く日本古代史考察。"}
+ ]
+}

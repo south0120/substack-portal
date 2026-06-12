@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Substackの棚</title>
+<meta name="description" content="日本語で書くSubstackの書き手を、本屋の棚のように">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Google Analytics: GA_MEASUREMENT_ID を実IDに置換してください (例: G-ABC123XYZ) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<style>
+:root{
+  --brand:#FF6719;--brand-soft:#FFF1E8;--brand-line:#FFD9C2;
+  --bg:#F8F8F7;--card:#FFFFFF;--line:#E9E9E7;
+  --ink:#1B1B1F;--sub:#60656E;--faint:#969CA5;
+  --radius:18px;--shadow:0 2px 10px rgba(24,24,32,.045);
+  --shadow-hover:0 14px 34px rgba(24,24,32,.1);
+  font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.6;padding-bottom:68px}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+img{display:block}
+svg{stroke-linecap:round;stroke-linejoin:round}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--brand);outline-offset:3px
+}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);
+  border-bottom:1px solid rgba(233,233,231,.92);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px)}
+.header-in{max-width:1280px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
+.brand-mark{flex:none;width:38px;height:38px;border-radius:10px;background:var(--brand);
+  display:grid;place-items:center;box-shadow:0 5px 15px rgba(255,103,25,.23)}
+.brand-mark svg{width:21px;height:21px}
+.titles{min-width:0}
+.titles h1{font-size:1.08rem;font-weight:900;line-height:1.25;white-space:nowrap}
+.titles p{display:none;color:var(--sub);font-size:.7rem;white-space:nowrap}
+.search{position:relative;flex:1;min-width:0;margin-left:auto;max-width:460px}
+.search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;
+  transform:translateY(-50%);color:var(--faint);pointer-events:none}
+.search input{width:100%;height:40px;border:1px solid var(--line);border-radius:12px;
+  background:#fff;padding:0 12px 0 38px;color:var(--ink);font-size:.85rem}
+.search input:focus{outline:none;border-color:var(--brand-line);box-shadow:0 0 0 3px var(--brand-soft)}
+.view-toggle{display:none;flex:none;background:#F0F0EF;border:1px solid var(--line);
+  border-radius:11px;padding:3px;gap:2px}
+.view-toggle button{border:0;background:transparent;color:var(--sub);font-size:.78rem;
+  font-weight:700;border-radius:8px;padding:6px 12px}
+.view-toggle button.on{background:#fff;color:var(--brand);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.sample-banner{max-width:1248px;margin:14px auto 0;padding:8px 14px;border:1px solid var(--brand-line);
+  border-radius:12px;background:var(--brand-soft);color:#9A410F;font-size:.78rem;font-weight:700}
+.intro{max-width:1248px;margin:0 auto;padding:34px 16px 18px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--brand);font-size:.76rem;
+  font-weight:900;letter-spacing:.08em;margin-bottom:8px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--brand)}
+.intro h2{font-size:clamp(1.6rem,4vw,2.65rem);line-height:1.28;letter-spacing:-.035em;
+  font-weight:900;max-width:720px}
+.intro p{color:var(--sub);font-size:.88rem;margin-top:10px;max-width:650px}
+.stats{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.stat{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;
+  font-size:.72rem;color:var(--sub)}
+.stat b{color:var(--ink);font-variant-numeric:tabular-nums;margin-right:3px}
+.main{max-width:1280px;margin:auto;padding:0 16px 42px}
+.shelf-section{padding:22px 0 15px;scroll-margin-top:74px}
+.shelf-heading{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.category-icon{width:34px;height:34px;flex:none;border-radius:10px;display:grid;place-items:center}
+.category-icon svg{width:20px;height:20px}
+.shelf-heading h2{font-size:1.08rem;font-weight:900}
+.writer-count{font-size:.72rem;color:var(--faint);font-weight:500;margin-left:5px}
+.shelf-rule{height:1px;background:var(--line);flex:1;margin-left:8px}
+.writer-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;padding:2px 1px 12px}
+.writer-grid::-webkit-scrollbar{display:none}
+.writer-card{flex:0 0 min(84vw,340px);scroll-snap-align:start;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:17px;display:flex;flex-direction:column;min-height:300px;
+  transition:transform .2s,box-shadow .2s,border-color .2s}
+.writer-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--brand-line)}
+.writer-top{display:flex;align-items:center;gap:12px}
+.avatar-wrap{position:relative;flex:none;width:50px;height:50px}
+.avatar-fallback,.avatar{position:absolute;inset:0;width:50px;height:50px;border-radius:50%}
+.avatar-fallback{display:grid;place-items:center;font-size:1rem;font-weight:900}
+.avatar{object-fit:cover;background:#fff}
+.writer-ident{min-width:0}
+.writer-ident h3{font-size:.96rem;font-weight:900;line-height:1.38;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.badge{display:inline-flex;align-items:center;gap:5px;margin-top:5px;border-radius:999px;
+  padding:2px 8px;font-size:.62rem;font-weight:700}
+.badge::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.72}
+.bio{color:var(--sub);font-size:.78rem;line-height:1.62;margin:13px 0;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.latest{border-top:1px solid var(--line);padding-top:9px;display:grid;gap:2px}
+.latest-label{font-size:.66rem;color:var(--faint);font-weight:700;margin-bottom:2px}
+.latest-link{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:baseline;
+  border-radius:7px;padding:4px 3px;font-size:.75rem;line-height:1.45}
+.latest-link:hover{color:var(--brand);background:var(--brand-soft)}
+.latest-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.latest-date{font-size:.65rem;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
+.latest-empty{font-size:.73rem;color:var(--faint);padding:7px 2px}
+.topics{border-top:1px solid var(--line);margin-top:10px;padding-top:9px}
+.topics-heading{display:flex;align-items:baseline;gap:6px;color:var(--sub);
+  font-size:.68rem;font-weight:700;margin-bottom:6px}
+.topics-note{color:var(--faint);font-size:.64rem;font-weight:500}
+.topics-bar{display:flex;width:100%;height:8px;border-radius:999px;overflow:hidden;background:var(--line)}
+.topics-segment{height:100%}
+.topics-legend{display:flex;flex-wrap:wrap;gap:3px 10px;margin-top:6px;color:var(--sub);
+  font-size:.7rem;line-height:1.4;font-variant-numeric:tabular-nums}
+.topics-legend-item{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.topics-dot{width:7px;height:7px;border-radius:50%;flex:none}
+.writer-footer{margin-top:auto;padding-top:13px}
+.writer-button{display:flex;justify-content:center;align-items:center;gap:6px;width:100%;
+  border:1px solid var(--brand-line);border-radius:10px;background:var(--brand-soft);
+  color:var(--brand);font-size:.76rem;font-weight:900;padding:8px 11px}
+.writer-button:hover{background:var(--brand);color:#fff}
+.writer-button svg{width:14px;height:14px}
+.no-results{text-align:center;color:var(--sub);padding:60px 16px}
+.no-results svg{width:42px;height:42px;color:var(--faint);margin-bottom:10px}
+.no-results b{display:block;color:var(--ink);font-size:1rem;margin-bottom:4px}
+.article-tools{padding:24px 0 14px}
+.filter-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.pills{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px 0 9px}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:none;border:1px solid var(--line);border-radius:999px;background:#fff;
+  color:var(--sub);padding:6px 13px;font-size:.76rem;white-space:nowrap}
+.pill.on{color:var(--brand);background:var(--brand-soft);border-color:var(--brand-line);font-weight:700}
+.select{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);
+  padding:7px 10px;font-size:.76rem;max-width:230px}
+.article-count{margin-left:auto;color:var(--sub);font-size:.75rem}
+.article-count b{color:var(--ink)}
+.article-grid{display:grid;grid-template-columns:1fr;gap:13px}
+.article-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;min-width:0;
+  transition:transform .2s,box-shadow .2s,border-color .2s}
+.article-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--brand-line)}
+.thumb{position:relative;flex:none;width:105px;background:#f1f1ef;overflow:hidden}
+.thumb-placeholder{position:absolute;inset:0;display:grid;place-items:center}
+.thumb-placeholder svg{width:32px;height:32px;opacity:.55}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.article-body{min-width:0;padding:12px 13px;display:flex;flex-direction:column;gap:5px}
+.article-body .badge{align-self:flex-start;margin:0}
+.article-body h3{font-size:.9rem;line-height:1.48;font-weight:700;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.excerpt{display:none;color:var(--sub);font-size:.75rem;line-height:1.55;
+  -webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.article-meta{display:flex;gap:7px;align-items:center;margin-top:auto;color:var(--faint);
+  font-size:.67rem;min-width:0}
+.article-writer{color:var(--sub);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.article-date{margin-left:auto;white-space:nowrap}
+.more{display:block;margin:22px auto 0;border:1px solid var(--line);border-radius:999px;
+  background:#fff;color:var(--ink);font-weight:700;font-size:.78rem;padding:9px 24px}
+.more:hover{border-color:var(--brand);color:var(--brand)}
+footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24px 16px 38px;
+  color:var(--faint);font-size:.7rem}
+.bnav{position:fixed;z-index:25;left:0;right:0;bottom:0;display:flex;background:rgba(255,255,255,.96);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.bnav button{flex:1;border:0;background:transparent;color:var(--faint);padding:8px 0 6px;
+  display:flex;flex-direction:column;align-items:center;gap:1px;font-size:.61rem}
+.bnav button svg{width:20px;height:20px}
+.bnav button.on{color:var(--brand)}
+[hidden]{display:none!important}
+@media(min-width:700px){
+  .titles p{display:block}
+  .view-toggle{display:flex}
+  .writer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+  .writer-card{min-width:0;max-width:none}
+  .article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .excerpt{display:-webkit-box}
+  .thumb{width:125px}
+}
+@media(min-width:1040px){
+  body{padding-bottom:0}
+  .header-in{padding:12px 16px}
+  .intro{padding-top:48px}
+  .writer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .article-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .article-card{flex-direction:column}
+  .thumb{width:100%;height:145px;order:2}
+  .article-body{padding:15px 15px 12px;min-height:190px}
+  .bnav{display:none}
+}
+@media(min-width:1240px){
+  .writer-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="brand-mark" href="#" aria-label="Substackの棚 トップ">
+      <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M3 4h18v3H3zM3 9h18v3H3zM3 14h18v7l-9-4-9 4z"/></svg>
+    </a>
+    <div class="titles">
+      <h1>Substackの棚</h1>
+      <p>日本語で書くSubstackの書き手を、本屋の棚のように</p>
+    </div>
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="searchInput" type="search" placeholder="書き手を検索" aria-label="検索">
+    </label>
+    <div class="view-toggle" aria-label="表示切り替え">
+      <button type="button" data-view="shelf" class="on">棚</button>
+      <button type="button" data-view="articles">記事</button>
+    </div>
+  </div>
+</header>
+
+<div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
+
+<section class="intro" id="intro">
+  <span class="eyebrow">CURATED WRITERS</span>
+  <h2>書き手との出会いを、<br>一冊を選ぶように。</h2>
+  <p>カテゴリごとの棚から、気になる書き手と最近の記事を見つけられます。棚の順番は固定です。</p>
+  <div class="stats">
+    <span class="stat"><b id="writerStat">0</b>書き手</span>
+    <span class="stat"><b id="categoryStat">0</b>カテゴリ</span>
+    <span class="stat">6時間ごとに更新</span>
+  </div>
+</section>
+
+<main class="main">
+  <div id="shelfView"></div>
+
+  <section id="articleView" hidden>
+    <div class="article-tools">
+      <div class="pills" id="categoryPills" aria-label="カテゴリ"></div>
+      <div class="filter-row">
+        <div class="pills" id="periodPills" aria-label="期間"></div>
+        <select id="writerSelect" class="select" aria-label="書き手で絞り込み">
+          <option value="">すべての書き手</option>
+        </select>
+        <span class="article-count" id="articleCount"></span>
+      </div>
+    </div>
+    <div class="article-grid" id="articleGrid"></div>
+    <div class="no-results" id="articleEmpty" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v12H4z"/><path d="M4 13h4l2 3h4l2-3h4"/></svg>
+      <b>該当する記事がありません</b>
+      検索語や絞り込みを変えてください。
+    </div>
+    <button class="more" id="moreButton" type="button" hidden>さらに記事を読み込む</button>
+  </section>
+</main>
+
+<footer>
+  各記事と画像の権利は配信元に帰属します。棚は登録順で表示し、順位付けは行いません。最終更新: <span id="updatedAt">未取得</span>
+</footer>
+
+<nav class="bnav" aria-label="モバイルナビゲーション">
+  <button type="button" data-mobile-view="shelf" class="on">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4v16M20 4v16M4 7h16M4 17h16"/><path d="M8 7v10M15 7v10"/></svg>棚
+  </button>
+  <button type="button" data-mobile-view="articles">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>記事
+  </button>
+  <button type="button" id="mobileSearch">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>検索
+  </button>
+</nav>
+
+<script>
+const CAT_STYLE = {
+  "AI": {bg:"#F1EAFE",fg:"#7C3AED",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9.5 4.5A3 3 0 0 0 6 8a3 3 0 0 0-1 5.8A3.5 3.5 0 0 0 9.5 19V4.5ZM14.5 4.5A3 3 0 0 1 18 8a3 3 0 0 1 1 5.8A3.5 3.5 0 0 1 14.5 19V4.5Z"/><path d="M9.5 9H7.8M14.5 9h1.7M9.5 14H7.8M14.5 14h1.7"/></svg>'},
+  "テクノロジー": {bg:"#E7F0FE",fg:"#2563EB",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3M10 10h4v4h-4z"/></svg>'},
+  "ビジネス": {bg:"#E6F6EC",fg:"#16A34A",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 17 6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg>'},
+  "投資・経済": {bg:"#FEF4E0",fg:"#D97706",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg>'},
+  "社会・文化": {bg:"#FDE8F0",fg:"#DB2777",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>'},
+  "ライフスタイル": {bg:"#E4F7F4",fg:"#0D9488",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z"/><path d="M17 10h1a3 3 0 0 1 0 6h-1M6 4v1M10 3v2M14 4v1"/></svg>'},
+  "クリエイティブ": {bg:"#FFEDE2",fg:"#EA580C",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a1.5 1.5 0 0 1 0-3h3a6 6 0 0 0 0-12h-3Z"/><circle cx="7.5" cy="10" r=".8" fill="currentColor" stroke="none"/><circle cx="9.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/><circle cx="14" cy="6" r=".8" fill="currentColor" stroke="none"/></svg>'},
+  "キャリア・働き方": {bg:"#FFF6DC",fg:"#B45309",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>'},
+  "健康・ウェルネス": {bg:"#FDEAEA",fg:"#DC2626",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>'},
+  "教育・学び": {bg:"#EDF1FE",fg:"#4F46E5",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a4 4 0 0 0-4-4H2V4ZM22 4h-6a4 4 0 0 0-4 4v13a4 4 0 0 1 4-4h6V4Z"/></svg>'},
+  "その他": {bg:"#F1F2F4",fg:"#6B7280",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h6M7 12h10M7 16h10M16 8h1"/></svg>'}
+};
+const TOPIC_COLORS = {
+  "AI":"#7C3AED",
+  "テクノロジー":"#2563EB",
+  "ビジネス":"#16A34A",
+  "ライフスタイル":"#0D9488",
+  "読書":"#B45309",
+  "その他":"#6B7280"
+};
+const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
+const PERIODS = [["all","すべて"],["day","24時間"],["week","今週"],["month","今月"]];
+const PAGE_SIZE = 24;
+const hoursAgo = hours => new Date(Date.now() - hours * 36e5).toISOString();
+const SAMPLE = {
+  updated_at:"",
+  categories:["AI","社会・文化","クリエイティブ"],
+  writers:[
+    {name:"架空AI便り",url:"#",feed_url:"#",category:"AI",bio:"仕事と暮らしの中で試したAI活用を、週に一度まとめる架空のニュースレターです。",avatar:"",latest:[
+      {title:"小さな自動化から始める仕事の見直し",url:"#",published:hoursAgo(5)},
+      {title:"対話型AIと考えを整理する方法",url:"#",published:hoursAgo(48)}
+    ]},
+    {name:"まちの観察室",url:"#",feed_url:"#",category:"社会・文化",bio:"街角の変化や地域の営みを記録し、社会の動きを考える架空の読み物です。",avatar:"",latest:[
+      {title:"商店街に残る小さな交流の場所",url:"#",published:hoursAgo(30)}
+    ]},
+    {name:"つくる手帖",url:"#",feed_url:"#",category:"クリエイティブ",bio:"制作の途中で見つけた工夫や、表現を続けるための習慣を綴る架空の便りです。",avatar:"",latest:[
+      {title:"完成前の作品を見せるということ",url:"#",published:hoursAgo(72)}
+    ]}
+  ],
+  articles:[
+    {title:"小さな自動化から始める仕事の見直し",url:"#",excerpt:"毎日の繰り返しを観察し、無理なく自動化する順番を考えます。",published:hoursAgo(5),image:"",writer:"架空AI便り",category:"AI"},
+    {title:"商店街に残る小さな交流の場所",url:"#",excerpt:"店と客の間に生まれる会話から、街の居場所について考えます。",published:hoursAgo(30),image:"",writer:"まちの観察室",category:"社会・文化"},
+    {title:"対話型AIと考えを整理する方法",url:"#",excerpt:"答えを求める前に、問いを整えるための使い方を紹介します。",published:hoursAgo(48),image:"",writer:"架空AI便り",category:"AI"},
+    {title:"完成前の作品を見せるということ",url:"#",excerpt:"制作途中の共有が、表現と関係性に与える変化を振り返ります。",published:hoursAgo(72),image:"",writer:"つくる手帖",category:"クリエイティブ"}
+  ]
+};
+
+let DATA = SAMPLE;
+let TOPICS = null;
+let view = "shelf";
+let query = "";
+let category = "すべて";
+let period = "all";
+let selectedWriter = "";
+let shown = PAGE_SIZE;
+
+const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+})[char]);
+
+function safeUrl(value){
+  const text = String(value || "");
+  if(text === "#") return "#";
+  try{
+    const url = new URL(text, window.location.href);
+    return ["http:","https:"].includes(url.protocol) ? url.href : "#";
+  }catch(_){
+    return "#";
+  }
+}
+
+function styleFor(name){
+  return CAT_STYLE[name] || CAT_STYLE["その他"];
+}
+
+function topicColor(label){
+  return TOPIC_COLORS[label] || TOPIC_COLORS["その他"];
+}
+
+function formatDate(value){
+  const date = new Date(value);
+  if(Number.isNaN(date.getTime())) return "";
+  const hours = (Date.now() - date.getTime()) / 36e5;
+  if(hours < 24) return `${Math.max(1, Math.round(hours))}時間前`;
+  if(hours < 24 * 7) return `${Math.round(hours / 24)}日前`;
+  return date.toLocaleDateString("ja-JP",{month:"numeric",day:"numeric"});
+}
+
+function categoryOrder(){
+  const declared = Array.isArray(DATA.categories) ? DATA.categories : [];
+  const present = DATA.writers.map(writer => writer.category);
+  return [...new Set([...declared, ...present])].filter(name =>
+    DATA.writers.some(writer => writer.category === name)
+  );
+}
+
+function writerCard(writer){
+  const style = styleFor(writer.category);
+  const initial = String(writer.name || "?").slice(0,1);
+  const latest = Array.isArray(writer.latest) ? writer.latest.slice(0,3) : [];
+  const topicEntry = TOPICS && TOPICS.writers ? TOPICS.writers[writer.name] : null;
+  const topics = topicEntry && Array.isArray(topicEntry.topics)
+    ? topicEntry.topics.filter(topic => Number.isFinite(Number(topic.pct)) && Number(topic.pct) > 0)
+    : [];
+  const latestHtml = latest.length ? latest.map(article => `
+    <a class="latest-link" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener">
+      <span class="latest-title">${esc(article.title)}</span>
+      <span class="latest-date">${esc(formatDate(article.published))}</span>
+    </a>`).join("") : '<p class="latest-empty">最近の記事はまだありません</p>';
+  const avatar = writer.avatar ? `<img class="avatar" src="${esc(safeUrl(writer.avatar))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
+  const topicsHtml = topics.length ? `
+      <div class="topics">
+        <div class="topics-heading">最近の傾向 <span class="topics-note">直近${esc(topicEntry.sample_n)}件</span></div>
+        <div class="topics-bar" role="img" aria-label="最近の記事のトピック比率">
+          ${topics.map(topic => {
+            const pct = Math.min(100, Math.max(0, Number(topic.pct)));
+            return `<span class="topics-segment" style="width:${pct}%;background:${topicColor(topic.label)}" title="${esc(topic.label)} ${pct.toFixed(1)}%"></span>`;
+          }).join("")}
+        </div>
+        <div class="topics-legend">
+          ${topics.map(topic => {
+            const pct = Math.min(100, Math.max(0, Number(topic.pct)));
+            return `<span class="topics-legend-item"><span class="topics-dot" style="background:${topicColor(topic.label)}"></span>${esc(topic.label)} ${pct.toFixed(1)}%</span>`;
+          }).join("")}
+        </div>
+      </div>` : "";
+  return `
+    <article class="writer-card">
+      <div class="writer-top">
+        <div class="avatar-wrap">
+          <span class="avatar-fallback" style="background:${style.bg};color:${style.fg}">${esc(initial)}</span>
+          ${avatar}
+        </div>
+        <div class="writer-ident">
+          <h3 title="${esc(writer.name)}">${esc(writer.name)}</h3>
+          <span class="badge" style="background:${style.bg};color:${style.fg}">${esc(writer.category)}</span>
+        </div>
+      </div>
+      <p class="bio">${esc(writer.bio)}</p>
+      <div class="latest">
+        <span class="latest-label">最近の記事</span>
+        ${latestHtml}
+      </div>
+      ${topicsHtml}
+      <div class="writer-footer">
+        <a class="writer-button" href="${esc(safeUrl(writer.url))}" target="_blank" rel="noopener">Substackで読む${EXTERNAL_ICON}</a>
+      </div>
+    </article>`;
+}
+
+function renderShelf(){
+  const normalized = query.toLocaleLowerCase("ja");
+  const writers = DATA.writers.filter(writer =>
+    `${writer.name} ${writer.bio}`.toLocaleLowerCase("ja").includes(normalized)
+  );
+  const root = document.getElementById("shelfView");
+  const sections = categoryOrder().map(name => {
+    const items = writers.filter(writer => writer.category === name);
+    if(!items.length) return "";
+    const style = styleFor(name);
+    return `
+      <section class="shelf-section">
+        <div class="shelf-heading">
+          <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
+          <h2>${esc(name)}<span class="writer-count">${items.length}人</span></h2>
+          <span class="shelf-rule"></span>
+        </div>
+        <div class="writer-grid">${items.map(writerCard).join("")}</div>
+      </section>`;
+  }).join("");
+  root.innerHTML = sections || `
+    <div class="no-results">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <b>該当する書き手が見つかりません</b>
+      検索語を変えてください。
+    </div>`;
+}
+
+function periodMatches(value){
+  const elapsed = (Date.now() - new Date(value).getTime()) / 36e5;
+  return period === "all" ||
+    (period === "day" && elapsed <= 24) ||
+    (period === "week" && elapsed <= 24 * 7) ||
+    (period === "month" && elapsed <= 24 * 31);
+}
+
+function articleCard(article){
+  const style = styleFor(article.category);
+  const image = article.image ? `<img src="${esc(safeUrl(article.image))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
+  return `
+    <a class="article-card" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener">
+      <div class="thumb">
+        <span class="thumb-placeholder" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
+        ${image}
+      </div>
+      <div class="article-body">
+        <span class="badge" style="background:${style.bg};color:${style.fg}">${esc(article.category)}</span>
+        <h3>${esc(article.title)}</h3>
+        <p class="excerpt">${esc(article.excerpt)}</p>
+        <div class="article-meta">
+          <span class="article-writer">${esc(article.writer)}</span>
+          <span class="article-date">${esc(formatDate(article.published))}</span>
+        </div>
+      </div>
+    </a>`;
+}
+
+function filteredArticles(){
+  const normalized = query.toLocaleLowerCase("ja");
+  return DATA.articles.filter(article =>
+    (category === "すべて" || article.category === category) &&
+    (!selectedWriter || article.writer === selectedWriter) &&
+    periodMatches(article.published) &&
+    `${article.title} ${article.excerpt} ${article.writer}`.toLocaleLowerCase("ja").includes(normalized)
+  );
+}
+
+function renderArticles(){
+  const items = filteredArticles();
+  document.getElementById("articleGrid").innerHTML = items.slice(0,shown).map(articleCard).join("");
+  document.getElementById("articleCount").innerHTML = `<b>${items.length}</b>件の記事`;
+  document.getElementById("articleEmpty").hidden = items.length !== 0;
+  document.getElementById("moreButton").hidden = items.length <= shown;
+  document.querySelectorAll("#categoryPills .pill").forEach(button =>
+    button.classList.toggle("on", button.dataset.category === category)
+  );
+  document.querySelectorAll("#periodPills .pill").forEach(button =>
+    button.classList.toggle("on", button.dataset.period === period)
+  );
+}
+
+function setView(nextView, scroll = true){
+  view = nextView;
+  const shelf = view === "shelf";
+  document.getElementById("shelfView").hidden = !shelf;
+  document.getElementById("articleView").hidden = shelf;
+  document.getElementById("intro").hidden = !shelf;
+  document.getElementById("searchInput").placeholder = shelf ? "書き手を検索" : "記事を検索";
+  document.querySelectorAll("[data-view]").forEach(button =>
+    button.classList.toggle("on", button.dataset.view === view)
+  );
+  document.querySelectorAll("[data-mobile-view]").forEach(button =>
+    button.classList.toggle("on", button.dataset.mobileView === view)
+  );
+  if(shelf) renderShelf(); else renderArticles();
+  if(scroll) window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function initFilters(){
+  const categories = ["すべて", ...categoryOrder()];
+  document.getElementById("categoryPills").innerHTML = categories.map(name =>
+    `<button type="button" class="pill${name === category ? " on" : ""}" data-category="${esc(name)}">${esc(name)}</button>`
+  ).join("");
+  document.querySelectorAll("#categoryPills .pill").forEach(button => {
+    button.addEventListener("click", () => {
+      category = button.dataset.category;
+      shown = PAGE_SIZE;
+      renderArticles();
+    });
+  });
+
+  document.getElementById("periodPills").innerHTML = PERIODS.map(([key,label]) =>
+    `<button type="button" class="pill${key === period ? " on" : ""}" data-period="${key}">${label}</button>`
+  ).join("");
+  document.querySelectorAll("#periodPills .pill").forEach(button => {
+    button.addEventListener("click", () => {
+      period = button.dataset.period;
+      shown = PAGE_SIZE;
+      renderArticles();
+    });
+  });
+
+  const select = document.getElementById("writerSelect");
+  DATA.writers.forEach(writer => {
+    const option = document.createElement("option");
+    option.value = writer.name;
+    option.textContent = writer.name;
+    select.appendChild(option);
+  });
+  select.addEventListener("change", event => {
+    selectedWriter = event.target.value;
+    shown = PAGE_SIZE;
+    renderArticles();
+  });
+}
+
+function init(){
+  DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
+  document.getElementById("writerStat").textContent = DATA.writers.length;
+  document.getElementById("categoryStat").textContent = categoryOrder().length;
+  document.getElementById("updatedAt").textContent = DATA.updated_at
+    ? new Date(DATA.updated_at).toLocaleString("ja-JP")
+    : "サンプルデータ";
+  initFilters();
+  renderShelf();
+
+  document.querySelectorAll("[data-view]").forEach(button =>
+    button.addEventListener("click", () => setView(button.dataset.view))
+  );
+  document.querySelectorAll("[data-mobile-view]").forEach(button =>
+    button.addEventListener("click", () => setView(button.dataset.mobileView))
+  );
+  document.getElementById("searchInput").addEventListener("input", event => {
+    query = event.target.value.trim();
+    shown = PAGE_SIZE;
+    if(view === "shelf") renderShelf(); else renderArticles();
+  });
+  document.getElementById("mobileSearch").addEventListener("click", () => {
+    const input = document.getElementById("searchInput");
+    input.scrollIntoView({block:"center",behavior:"smooth"});
+    input.focus();
+  });
+  document.getElementById("moreButton").addEventListener("click", () => {
+    shown += PAGE_SIZE;
+    renderArticles();
+  });
+}
+
+async function load(){
+  let sample = false;
+  const [articlesResult, topicsResult] = await Promise.allSettled([
+    fetch("data/articles.json",{cache:"no-store"}),
+    fetch("data/topics.json",{cache:"no-store"})
+  ]);
+  try{
+    if(articlesResult.status !== "fulfilled") throw articlesResult.reason;
+    const response = articlesResult.value;
+    if(!response.ok) throw new Error("data request failed");
+    const loaded = await response.json();
+    if(!Array.isArray(loaded.writers) || loaded.writers.length === 0) throw new Error("writer data is empty");
+    DATA = {
+      updated_at: loaded.updated_at || "",
+      categories: Array.isArray(loaded.categories) ? loaded.categories : [],
+      writers: loaded.writers,
+      articles: Array.isArray(loaded.articles) ? loaded.articles : []
+    };
+  }catch(_){
+    DATA = SAMPLE;
+    sample = true;
+  }
+  if(topicsResult.status === "fulfilled" && topicsResult.value.ok){
+    try{
+      const loadedTopics = await topicsResult.value.json();
+      if(loadedTopics && typeof loadedTopics.writers === "object") TOPICS = loadedTopics;
+    }catch(_){
+      TOPICS = null;
+    }
+  }
+  document.getElementById("sampleBanner").hidden = !sample;
+  init();
+}
+
+load();
+</script>
+</body>
+</html>

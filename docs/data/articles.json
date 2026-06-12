@@ -1,0 +1,3084 @@
+{
+  "updated_at": "2026-06-12T05:27:31.843925+00:00",
+  "categories": [
+    "AI",
+    "テクノロジー",
+    "ビジネス",
+    "投資・経済",
+    "社会・文化",
+    "ライフスタイル",
+    "クリエイティブ",
+    "キャリア・働き方",
+    "健康・ウェルネス",
+    "教育・学び"
+  ],
+  "writers": [
+    {
+      "name": "サウスのAI活動報告書",
+      "url": "https://south0120.substack.com",
+      "feed_url": "https://south0120.substack.com/feed",
+      "category": "AI",
+      "bio": "「AIで仕事を半分に」をテーマに週次で活動報告。自作Chrome拡張の先行共有も。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!q7rp!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd792750f-d46d-4aca-9d0c-048e8f04c7e8_400x400.png",
+      "latest": [
+        {
+          "title": "AIアイドルは成立するか 『イン・ザ・メガチャーチ』を読んで",
+          "url": "https://south0120.substack.com/p/ai",
+          "published": "2026-06-09T22:01:08+00:00"
+        },
+        {
+          "title": "【週報#5】「推し活」とAIについて考えた週",
+          "url": "https://south0120.substack.com/p/5ai",
+          "published": "2026-06-07T09:01:16+00:00"
+        },
+        {
+          "title": "ドラえもんに人生を委ねてはいけない",
+          "url": "https://south0120.substack.com/p/8de",
+          "published": "2026-06-01T22:10:35+00:00"
+        }
+      ]
+    },
+    {
+      "name": "梶谷健人のニュースレター",
+      "url": "https://kajikent.substack.com",
+      "feed_url": "https://kajikent.substack.com/feed",
+      "category": "AI",
+      "bio": "AI時代の事業・組織・キャリア戦略をテーマにした探究と思考の共有。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!wx_G!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63c67165-3c09-42d2-8606-d1e27ef05400_1200x1200.png",
+      "latest": [
+        {
+          "title": "AIでスキルが溶ける時代の「ビルダー」という生き方と、「作りたいもの」が見つからないというボトルネック",
+          "url": "https://kajikent.substack.com/p/ai-7d1",
+          "published": "2026-06-04T06:46:54+00:00"
+        },
+        {
+          "title": "AI時代に「努力」はどこへ向かうのか？",
+          "url": "https://kajikent.substack.com/p/ai-b30",
+          "published": "2026-05-18T05:12:10+00:00"
+        },
+        {
+          "title": "Claude Design × Claude Code × Codexで、Biz職でも凝ったスマホアプリは作れる",
+          "url": "https://kajikent.substack.com/p/claude-design-claude-code-codexbiz",
+          "published": "2026-05-14T00:02:59+00:00"
+        }
+      ]
+    },
+    {
+      "name": "わど🐏最新AI情報",
+      "url": "https://wad0427.substack.com",
+      "feed_url": "https://wad0427.substack.com/feed",
+      "category": "AI",
+      "bio": "難しいAIを早く・優しく解説。Claude Codeでの自動化実践も発信。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!6SkX!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febad0110-8391-444c-862e-b7ff0f05c903_1280x1280.png",
+      "latest": [
+        {
+          "title": "【6/13 池袋】6/20からのチャレンジ企画を、最速で走り出す準備会",
+          "url": "https://wad0427.substack.com/p/613-620",
+          "published": "2026-06-11T06:38:56+00:00"
+        },
+        {
+          "title": "Ep.2 努力をやめた翌月、副業が10万になった。",
+          "url": "https://wad0427.substack.com/p/100",
+          "published": "2026-06-10T01:01:22+00:00"
+        },
+        {
+          "title": "Ep.1 FXで200万溶かした日、私がメモ帳に書いた一文",
+          "url": "https://wad0427.substack.com/p/ep1-fx200",
+          "published": "2026-06-09T01:00:45+00:00"
+        }
+      ]
+    },
+    {
+      "name": "くろの｜Claude Code ガチ勢",
+      "url": "https://kuronoaiagent.substack.com",
+      "feed_url": "https://kuronoaiagent.substack.com/feed",
+      "category": "AI",
+      "bio": "Claude Code 使用1500時間超。AIエージェント実践のノウハウを共有。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!p11F!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6eb38a97-09ae-4718-a6b8-2b2767e6d2b7_400x400.jpeg",
+      "latest": [
+        {
+          "title": "Hooksで反復作業を消す方法",
+          "url": "https://kuronoaiagent.substack.com/p/hooks",
+          "published": "2026-05-12T02:03:42+00:00"
+        },
+        {
+          "title": "購読者数が資産になる理由",
+          "url": "https://kuronoaiagent.substack.com/p/91e",
+          "published": "2026-05-11T09:03:14+00:00"
+        },
+        {
+          "title": "Substackで3ヶ月やっても伸びない人の共通パターン5つ",
+          "url": "https://kuronoaiagent.substack.com/p/substack35",
+          "published": "2026-05-11T04:22:25+00:00"
+        }
+      ]
+    },
+    {
+      "name": "テツメモの発信実験ログ",
+      "url": "https://tetumemo.substack.com",
+      "feed_url": "https://tetumemo.substack.com/feed",
+      "category": "テクノロジー",
+      "bio": "AI時代の発信・ニュースレター・個人メディアづくりの試行錯誤ログ。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!RaPy!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5a6e549-3473-4bdb-a8f5-25d8c50df448_1280x1280.png",
+      "latest": [
+        {
+          "title": "Claude Codeを使い始め頃、1時間ずっと「今どこにいますか」と聞き続けていた話",
+          "url": "https://tetumemo.substack.com/p/claude-code1",
+          "published": "2026-06-07T22:01:26+00:00"
+        },
+        {
+          "title": "「もうフォロワー数なんて意味がない」って話",
+          "url": "https://tetumemo.substack.com/p/2b2",
+          "published": "2026-06-06T03:19:50+00:00"
+        },
+        {
+          "title": "NotebookLM運用が10倍速くなる神拡張機能、「NotebookLM Web Importer」完全解剖",
+          "url": "https://tetumemo.substack.com/p/notebooklm10notebooklm-web-importer",
+          "published": "2026-05-31T01:08:04+00:00"
+        }
+      ]
+    },
+    {
+      "name": "週刊ソフトウェアエンジニアのリリースノート",
+      "url": "https://yujimine.substack.com",
+      "feed_url": "https://yujimine.substack.com/feed",
+      "category": "テクノロジー",
+      "bio": "現役ソフトウェアエンジニアの1週間の日誌を毎週月曜に配信。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "latest": [
+        {
+          "title": "幼稚園児と同じような働き方をするグーグル社員",
+          "url": "https://yujimine.substack.com/p/476",
+          "published": "2026-06-01T00:01:33+00:00"
+        },
+        {
+          "title": "我々は何のために計画しているのだろうか",
+          "url": "https://yujimine.substack.com/p/1bb",
+          "published": "2026-05-25T00:01:09+00:00"
+        },
+        {
+          "title": "Developerが陥りがちな初動対応の課題",
+          "url": "https://yujimine.substack.com/p/developer",
+          "published": "2026-05-18T00:00:51+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Lawrence's Newsletter",
+      "url": "https://lawrencesnewsletter.com",
+      "feed_url": "https://lawrencesnewsletter.com/feed",
+      "category": "テクノロジー",
+      "bio": "AI時代の生存戦略。3分でわかるテクノロジー最前線と戦略分析。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!IdKp!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62ebf9d5-e475-4ea4-9ee1-b9ba5f3538fc_256x256.png",
+      "latest": [
+        {
+          "title": "Amazonはなぜ「国家みたい」になったのか",
+          "url": "https://lawrencesnewsletter.com/p/amazon",
+          "published": "2026-02-08T10:51:49+00:00"
+        },
+        {
+          "title": "【CEO退任？】プライバシーを巡る政府との闘い、ティム・クックの決断｜Apple / ティム・クック後編",
+          "url": "https://lawrencesnewsletter.com/p/apple-timcook-2",
+          "published": "2026-02-01T09:02:57+00:00"
+        },
+        {
+          "title": "なぜジョブズはティム・クックを後継者に選んだのか｜Apple / ティム・クック前編",
+          "url": "https://lawrencesnewsletter.com/p/apple-timcook-1",
+          "published": "2026-01-25T09:02:10+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Andy Kondo - Innovation Analyst",
+      "url": "https://andykondo.substack.com",
+      "feed_url": "https://andykondo.substack.com/feed",
+      "category": "ビジネス",
+      "bio": "イノベーションアナリストによる欧州発のテクノロジー・産業分析。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!zpXf!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0aa84cd5-c6f9-4e41-ae28-2288ffd883c4_1002x1002.png",
+      "latest": [
+        {
+          "title": "「EVは儲からない」は本当か—VWが見つけた新しい稼ぎ方｜Andy's Weekly #15",
+          "url": "https://andykondo.substack.com/p/evvwandys-weekly-15",
+          "published": "2026-06-11T04:38:05+00:00"
+        },
+        {
+          "title": "過去最高益のトヨタが「逃げた」技術展—日産が見せた、世界水準の答え",
+          "url": "https://andykondo.substack.com/p/220",
+          "published": "2026-06-03T06:26:16+00:00"
+        },
+        {
+          "title": "自動車技術の展示会で、日本の大手メーカーが未来を見せなかった｜Andy's Weekly #14",
+          "url": "https://andykondo.substack.com/p/andys-weekly-14",
+          "published": "2026-06-03T02:35:03+00:00"
+        }
+      ]
+    },
+    {
+      "name": "週刊創業日記",
+      "url": "https://sogyonikki.substack.com",
+      "feed_url": "https://sogyonikki.substack.com/feed",
+      "category": "ビジネス",
+      "bio": "AIソロプレナーが事業と開発、テクノロジーと市場を毎週日曜に綴る。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!qQep!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa0d0c5ac-63f0-4ce6-afac-4791f858916d_800x800.png",
+      "latest": [
+        {
+          "title": "変な地名【京都編】",
+          "url": "https://sogyonikki.substack.com/p/chimei-kyoto",
+          "published": "2026-06-09T03:00:45+00:00"
+        },
+        {
+          "title": "AIが「再帰的自己改善の瀬戸際」とAnthropicが警告、Microsoft版OpenClaw「Scout」リリース、Codexがエンプラ向けワークフロー統合を強化、3Dプリントのイベントに参加してきました",
+          "url": "https://sogyonikki.substack.com/p/007",
+          "published": "2026-06-07T14:59:39+00:00"
+        },
+        {
+          "title": "『エフェクチュエーション』：不確実な時代を生き抜く起業家的思考",
+          "url": "https://sogyonikki.substack.com/p/effectuation",
+          "published": "2026-06-05T06:01:39+00:00"
+        }
+      ]
+    },
+    {
+      "name": "DEBUNK",
+      "url": "https://www.debunkresearch.com",
+      "feed_url": "https://www.debunkresearch.com/feed",
+      "category": "投資・経済",
+      "bio": "Agentic Web Research。Crypto版とAI版のリサーチ記事を毎朝更新。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
+      "latest": [
+        {
+          "title": "【6/10(水)~6/11(木)News Report】暗号資産の金商法移管法案が衆院委で可決 / 3メガバンクが共同ステーブルコイン発行へ / CFTCが予測市場に米国初の規則案など",
+          "url": "https://www.debunkresearch.com/p/crypto-news260610-11",
+          "published": "2026-06-11T21:02:04+00:00"
+        },
+        {
+          "title": "【6/10(水)~6/11(木)News Report】AnthropicがClaude Fable 5とMythos 5を発表 / OpenAIがオハイオ州10GWデータセンターを交渉中 / MetaがRelianceとインド初のAIデータセンター契約など",
+          "url": "https://www.debunkresearch.com/p/ai-news260610-11",
+          "published": "2026-06-11T21:01:34+00:00"
+        },
+        {
+          "title": "【Pump fun GO】Pump.funの次の一手 / 「誰にでも・何でも頼める」賞金市場 /",
+          "url": "https://www.debunkresearch.com/p/pump-fun-go",
+          "published": "2026-06-10T21:00:40+00:00"
+        }
+      ]
+    },
+    {
+      "name": "ポス鳥（日本語版）",
+      "url": "https://postorijapan.substack.com",
+      "feed_url": "https://postorijapan.substack.com/feed",
+      "category": "社会・文化",
+      "bio": "メディアと制度設計を切り口に、ニュースの裏側を国際比較で読み解く。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!_TaV!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8d5a5405-94e6-4b53-9dd8-ae2cdba33fe0_400x400.png",
+      "latest": [
+        {
+          "title": "ノルウェー42%、日本10%──ニュースに金を払う国と払わない国を分けているのは「国民性」ではなく「制度設計」",
+          "url": "https://postorijapan.substack.com/p/4210",
+          "published": "2026-06-09T11:05:12+00:00"
+        },
+        {
+          "title": "日本人が学校で学ぶ英語は実はアメリカ英語──海外Substackで書く前に知っておきたい米英語と英英語の違いと使い分け",
+          "url": "https://postorijapan.substack.com/p/substack-09e",
+          "published": "2026-06-06T13:14:20+00:00"
+        },
+        {
+          "title": "ヨーロッパで英語が通じる国、通じない国──EF EPI 2025の世界ランキングから読み解く、日本人発信者が「英語で書けば届く相手」",
+          "url": "https://postorijapan.substack.com/p/ef-epi-2025",
+          "published": "2026-06-04T09:10:14+00:00"
+        }
+      ]
+    },
+    {
+      "name": "せんとうとまちニュースレター",
+      "url": "https://sentotomachi.substack.com",
+      "feed_url": "https://sentotomachi.substack.com/feed",
+      "category": "社会・文化",
+      "bio": "銭湯の文化的価値と、銭湯がある街の生活文化を探求する活動報告。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!3MOW!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa42ec67f-299c-4d0c-926f-c8a501620769_1200x1200.png",
+      "latest": [
+        {
+          "title": "釜山の「韓日銭湯フォーラム」に参加、金沢での銭湯山車巡行も無事終了しました。｜せんとうとまちニュースレター vol.54",
+          "url": "https://sentotomachi.substack.com/p/vol54",
+          "published": "2026-06-07T00:00:51+00:00"
+        },
+        {
+          "title": "代官山のアートフェスに参加、NYTにて記事掲載、金沢21世紀美術館での展示等、銭湯を巡る活動に参加中｜せんとうとまちニュースレター vol.53",
+          "url": "https://sentotomachi.substack.com/p/nyt21-vol53",
+          "published": "2026-05-10T00:01:01+00:00"
+        },
+        {
+          "title": "北区事業の集大成 「わたしのせんとうとまち」展 開催報告 — 北区の銭湯とまちを巡る3年間を終えて｜せんとうとまちニュースレター vol.52",
+          "url": "https://sentotomachi.substack.com/p/3-vol52",
+          "published": "2026-04-12T00:00:42+00:00"
+        }
+      ]
+    },
+    {
+      "name": "シンプリィライフ・ノート",
+      "url": "https://simpleeelifecom.substack.com",
+      "feed_url": "https://simpleeelifecom.substack.com/feed",
+      "category": "ライフスタイル",
+      "bio": "ゆっくり心を整える。科学・寓話・作品考察と日々のあれこれ。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!Wdez!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fccc7ae81-46c7-4fa8-9395-9fc60c3fb670_540x540.png",
+      "latest": [
+        {
+          "title": "「終わらせたくない」という、めちゃくちゃ深い話",
+          "url": "https://simpleeelifecom.substack.com/p/47f",
+          "published": "2026-06-10T01:39:17+00:00"
+        },
+        {
+          "title": "「こわい」の正体",
+          "url": "https://simpleeelifecom.substack.com/p/8c5",
+          "published": "2026-06-08T09:54:05+00:00"
+        },
+        {
+          "title": "【👻】ゴーストの正体を探りました",
+          "url": "https://simpleeelifecom.substack.com/p/819",
+          "published": "2026-06-06T09:06:29+00:00"
+        }
+      ]
+    },
+    {
+      "name": "おゆわりのAIと暮らし日記",
+      "url": "https://oyuwarilife.substack.com",
+      "feed_url": "https://oyuwarilife.substack.com/feed",
+      "category": "ライフスタイル",
+      "bio": "AIを使って仕事・育児・暮らしを少しずつ整えていく等身大の日記。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "latest": [
+        {
+          "title": "その「食わず嫌い」、チャンス減らしてるかも",
+          "url": "https://oyuwarilife.substack.com/p/b11",
+          "published": "2026-06-12T00:08:28+00:00"
+        },
+        {
+          "title": "ランドセルが玄関に残ったあの朝のこと。",
+          "url": "https://oyuwarilife.substack.com/p/1c0",
+          "published": "2026-06-11T00:11:19+00:00"
+        },
+        {
+          "title": "自分のご機嫌をとる方が、100倍楽だと思った話",
+          "url": "https://oyuwarilife.substack.com/p/100",
+          "published": "2026-06-09T23:17:37+00:00"
+        }
+      ]
+    },
+    {
+      "name": "SEINO CHISATO JOURNAL",
+      "url": "https://seinochisato.substack.com",
+      "feed_url": "https://seinochisato.substack.com/feed",
+      "category": "クリエイティブ",
+      "bio": "アーティストの制作現場から、アイデア・裏話・展示情報を隔週配信。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!zLuG!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8233d736-2908-48a6-a557-5fee5905ce1b_1280x1280.png",
+      "latest": [
+        {
+          "title": "密度を上げていく/色鉛筆の魅力①",
+          "url": "https://seinochisato.substack.com/p/8c4",
+          "published": "2026-06-05T03:00:35+00:00"
+        },
+        {
+          "title": "背景をつくる/マスキングを極める③",
+          "url": "https://seinochisato.substack.com/p/d67",
+          "published": "2026-05-22T03:01:05+00:00"
+        },
+        {
+          "title": "密林の夢/マスキングを極める②",
+          "url": "https://seinochisato.substack.com/p/c80",
+          "published": "2026-05-08T03:01:11+00:00"
+        }
+      ]
+    },
+    {
+      "name": "斉藤ナミ／エッセイスト",
+      "url": "https://nami5711.substack.com",
+      "feed_url": "https://nami5711.substack.com/feed",
+      "category": "クリエイティブ",
+      "bio": "note創作大賞エッセイ部門大賞受賞。日常を綴るエッセイと日記。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!gwwI!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87f494bb-8617-4437-9cb4-2eea6ce6c0ac_400x400.jpeg",
+      "latest": [
+        {
+          "title": "日記　5月28日",
+          "url": "https://nami5711.substack.com/p/528",
+          "published": "2026-05-29T11:54:08+00:00"
+        },
+        {
+          "title": "日記　5月19日",
+          "url": "https://nami5711.substack.com/p/519",
+          "published": "2026-05-20T01:37:24+00:00"
+        },
+        {
+          "title": "日記　5月13日（いいんだ、ほうれい線さえ薄くしてくれれば）",
+          "url": "https://nami5711.substack.com/p/513",
+          "published": "2026-05-13T13:09:38+00:00"
+        }
+      ]
+    },
+    {
+      "name": "キャリア孔明",
+      "url": "https://careerkoumei.substack.com",
+      "feed_url": "https://careerkoumei.substack.com/feed",
+      "category": "キャリア・働き方",
+      "bio": "SNS時代を生き抜く戦略・発信ノウハウ・新しい働き方を毎日配信。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!UWsa!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0ab5e04-9edd-4909-9213-f6550295bab1_304x304.jpeg",
+      "latest": [
+        {
+          "title": "SNS（サブスタック）で読者が増える、プロフィールの書き方",
+          "url": "https://careerkoumei.substack.com/p/sns-441",
+          "published": "2026-06-11T22:01:11+00:00"
+        },
+        {
+          "title": "SNSでフォロワー増やすのに、いちばん効いたこと",
+          "url": "https://careerkoumei.substack.com/p/sns-1c0",
+          "published": "2026-06-11T06:47:51+00:00"
+        },
+        {
+          "title": "Xフォロワー10万人の私が、noteの値段をどう決めてるか全部話す",
+          "url": "https://careerkoumei.substack.com/p/x10note",
+          "published": "2026-06-09T10:43:22+00:00"
+        }
+      ]
+    },
+    {
+      "name": "週刊ソトワークスタイル",
+      "url": "https://nakalab.substack.com",
+      "feed_url": "https://nakalab.substack.com/feed",
+      "category": "キャリア・働き方",
+      "bio": "琵琶湖畔でのソトワーク実験から、身体と環境が生む働き方を探究。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!CDcf!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F481e8f67-5e12-4460-932e-3f6e2bc9261e_1024x1024.png",
+      "latest": [
+        {
+          "title": "ソトワークを科学する⑥",
+          "url": "https://nakalab.substack.com/p/988",
+          "published": "2026-05-29T20:00:47+00:00"
+        },
+        {
+          "title": "ソトワークを科学する！⑤",
+          "url": "https://nakalab.substack.com/p/359",
+          "published": "2026-05-19T10:13:42+00:00"
+        },
+        {
+          "title": "ソトワークを科学する！④ー余白が創造性を生む",
+          "url": "https://nakalab.substack.com/p/522",
+          "published": "2026-05-11T22:32:33+00:00"
+        }
+      ]
+    },
+    {
+      "name": "おやすみ前の自分ほぐしエッセイ",
+      "url": "https://itawaru.substack.com",
+      "feed_url": "https://itawaru.substack.com/feed",
+      "category": "健康・ウェルネス",
+      "bio": "自分をいたわり、人間関係の消耗から抜け出すためのエッセイ。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!B-v-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fitawaru.substack.com%2Fimg%2Fsubstack.png",
+      "latest": [
+        {
+          "title": "夫を理解しようとする前に、まず自分の疲れに気づいてほしい",
+          "url": "https://itawaru.substack.com/p/828",
+          "published": "2026-06-09T04:05:35+00:00"
+        },
+        {
+          "title": "昨日、完全にフリーズしていました",
+          "url": "https://itawaru.substack.com/p/274",
+          "published": "2026-06-05T04:46:32+00:00"
+        },
+        {
+          "title": "「これくらい我慢しなきゃ」と思う人ほど壊れる理由",
+          "url": "https://itawaru.substack.com/p/42c",
+          "published": "2026-06-02T03:28:17+00:00"
+        }
+      ]
+    },
+    {
+      "name": "カトちゃんの古代史考察",
+      "url": "https://ahoka1117.substack.com",
+      "feed_url": "https://ahoka1117.substack.com/feed",
+      "category": "教育・学び",
+      "bio": "ヤマト中枢の現地から、独自視点で読み解く日本古代史考察。",
+      "avatar": "https://substackcdn.com/image/fetch/$s_!9nO8!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6380910b-11b6-45b7-a8b6-e690ad08d417_1176x1176.png",
+      "latest": [
+        {
+          "title": "第6回いくつものクニは、なぜ一つにまとまろうとしたのか",
+          "url": "https://ahoka1117.substack.com/p/6",
+          "published": "2026-06-07T05:55:07+00:00"
+        },
+        {
+          "title": "第五回ムラはなぜ争い、クニへ向かったのか？",
+          "url": "https://ahoka1117.substack.com/p/31e",
+          "published": "2026-05-31T22:21:55+00:00"
+        },
+        {
+          "title": "寄り道：稲作は、本当に朝鮮半島から来たのか？",
+          "url": "https://ahoka1117.substack.com/p/2cf",
+          "published": "2026-05-24T14:25:01+00:00"
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "その「食わず嫌い」、チャンス減らしてるかも",
+      "url": "https://oyuwarilife.substack.com/p/b11",
+      "excerpt": "おはようございます、おゆわりです。",
+      "published": "2026-06-12T00:08:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "SNS（サブスタック）で読者が増える、プロフィールの書き方",
+      "url": "https://careerkoumei.substack.com/p/sns-441",
+      "excerpt": "",
+      "published": "2026-06-11T22:01:11+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!bCA3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F83ea3922-8776-4363-bd2b-07095ac1f3fc_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【6/10(水)~6/11(木)News Report】暗号資産の金商法移管法案が衆院委で可決 / 3メガバンクが共同ステーブルコイン発行へ / CFTCが予測市場に米国初の規則案など",
+      "url": "https://www.debunkresearch.com/p/crypto-news260610-11",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-11T21:02:04+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!8p8g!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46adf18e-d8d3-4189-9c62-2c71788d2a09_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【6/10(水)~6/11(木)News Report】AnthropicがClaude Fable 5とMythos 5を発表 / OpenAIがオハイオ州10GWデータセンターを交渉中 / MetaがRelianceとインド初のAIデータセンター契約など",
+      "url": "https://www.debunkresearch.com/p/ai-news260610-11",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-11T21:01:34+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!flTM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e191cbe-cdfa-4a70-83ab-e5c350408664_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "SNSでフォロワー増やすのに、いちばん効いたこと",
+      "url": "https://careerkoumei.substack.com/p/sns-1c0",
+      "excerpt": "",
+      "published": "2026-06-11T06:47:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!UWsa!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff0ab5e04-9edd-4909-9213-f6550295bab1_304x304.jpeg",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【6/13 池袋】6/20からのチャレンジ企画を、最速で走り出す準備会",
+      "url": "https://wad0427.substack.com/p/613-620",
+      "excerpt": "① イベント名",
+      "published": "2026-06-11T06:38:56+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!uO1-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F83242d92-4a55-42fb-8869-c44c8dc67117_920x450.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "「EVは儲からない」は本当か—VWが見つけた新しい稼ぎ方｜Andy's Weekly #15",
+      "url": "https://andykondo.substack.com/p/evvwandys-weekly-15",
+      "excerpt": "新しいものを、古いものさしで測っていないか",
+      "published": "2026-06-11T04:38:05+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/R-qjM3w89eA",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "ランドセルが玄関に残ったあの朝のこと。",
+      "url": "https://oyuwarilife.substack.com/p/1c0",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-06-11T00:11:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【Pump fun GO】Pump.funの次の一手 / 「誰にでも・何でも頼める」賞金市場 /",
+      "url": "https://www.debunkresearch.com/p/pump-fun-go",
+      "excerpt": "ミームコイン工場がバウンティ市場へ進出",
+      "published": "2026-06-10T21:00:40+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Unf1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd23927d3-cc87-440b-915f-3d557a52f48d_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【ハーネスエンジニアリング】プロンプトの次は「エージェントが走る環境」を設計する",
+      "url": "https://www.debunkresearch.com/p/harness",
+      "excerpt": "Claude Code作者の「もうClaudeにプロンプトを打っていない」から読み解く新設計論。",
+      "published": "2026-06-10T21:00:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ocu1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e337fe9-e36e-4592-8851-4645d422abf1_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "「終わらせたくない」という、めちゃくちゃ深い話",
+      "url": "https://simpleeelifecom.substack.com/p/47f",
+      "excerpt": "先日、ある人とのオンラインセッションでのことです。",
+      "published": "2026-06-10T01:39:17+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/7ee4f62c-8abf-4350-99f4-042cc75c674a_4032x2268.jpeg",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "Ep.2 努力をやめた翌月、副業が10万になった。",
+      "url": "https://wad0427.substack.com/p/100",
+      "excerpt": "今すぐ聴く | 痛み→変化: 「がんばっているのに数字が上がらない」焦燥 → 努力量ゼロで出力が変わる構造へのシフト",
+      "published": "2026-06-10T01:01:22+00:00",
+      "image": "https://api.substack.com/feed/podcast/201339109/1fc46b7315e3e3b47e5e32e7e94e934d.mp3",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "自分のご機嫌をとる方が、100倍楽だと思った話",
+      "url": "https://oyuwarilife.substack.com/p/100",
+      "excerpt": "おはようございます。おゆわりです。",
+      "published": "2026-06-09T23:17:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "AIアイドルは成立するか 『イン・ザ・メガチャーチ』を読んで",
+      "url": "https://south0120.substack.com/p/ai",
+      "excerpt": "推し活と信仰と、物語の行方",
+      "published": "2026-06-09T22:01:08+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/780e02e4-5225-451b-abd1-541e8977be21_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "【6/5(金)~6/9(火)News Report】AppleがWWDCで新SiriにGoogle Geminiを採用 / GoogleがSpaceXから月9.2億ドルでGPU約11万基を確保 / OpenAIがIPOを秘密裏に申請など",
+      "url": "https://www.debunkresearch.com/p/ai-26060605-09",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-09T21:00:45+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!kFyt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa10acb42-4803-4ecc-9f32-f11ce543ae87_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【6/5(金)~6/9(火)News Report】Strategyが1,550BTC追加で総保有84万BTC超 / ヒューマニティ・プロトコルが秘密鍵流出でHトークン85%超急落 / 米下院でクリプト税制ヒアリングなど",
+      "url": "https://www.debunkresearch.com/p/crypto-20260605-09",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-09T21:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!CuN2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48f5dfc2-f06e-41a3-9ebd-ec965fd6a4c1_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "ノルウェー42%、日本10%──ニュースに金を払う国と払わない国を分けているのは「国民性」ではなく「制度設計」",
+      "url": "https://postorijapan.substack.com/p/4210",
+      "excerpt": "「日本人はニュースに金を払わない」とよく言われますが、英国もドイツも日本並みに低い。何が国を分けているのか。海外発信で稼ぎたい日本人として、市場の地図を整理します。",
+      "published": "2026-06-09T11:05:12+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!3kDv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87cca84c-9176-4239-81e7-4d40dc2689d9_1536x1024.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "Xフォロワー10万人の私が、noteの値段をどう決めてるか全部話す",
+      "url": "https://careerkoumei.substack.com/p/x10note",
+      "excerpt": "2年でX10万人達成。SNS時代を生き抜く戦略・サブスタ攻略・新しい働き方、マーケ戦略などを毎日配信。発信者・マーケター・興味ある人、全員のための場所です。沖縄移住してSNSで生きてます。",
+      "published": "2026-06-09T10:43:22+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/d78d08ae-a631-4e82-abad-3dab4719a0a3_1280x670.webp",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "SNSで何を書くかより、誰に向けて書かないか",
+      "url": "https://careerkoumei.substack.com/p/sns-f2e",
+      "excerpt": "",
+      "published": "2026-06-09T09:02:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Jjjq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F215066ec-26dd-4673-8910-83918c9eeadc_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "夫を理解しようとする前に、まず自分の疲れに気づいてほしい",
+      "url": "https://itawaru.substack.com/p/828",
+      "excerpt": "こんにちは、マコです。",
+      "published": "2026-06-09T04:05:35+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/7e9ceecb-ddee-413a-950d-4a063c6a8ff4_1024x576.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "変な地名【京都編】",
+      "url": "https://sogyonikki.substack.com/p/chimei-kyoto",
+      "excerpt": "京都の怖い地名・10選",
+      "published": "2026-06-09T03:00:45+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!qQep!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa0d0c5ac-63f0-4ce6-afac-4791f858916d_800x800.png",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "初期から、SNSを伸ばすための方法",
+      "url": "https://careerkoumei.substack.com/p/sns-782",
+      "excerpt": "",
+      "published": "2026-06-09T02:07:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!cz3n!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb9d9a413-b838-4e0b-b2ec-7045a26d0222_1033x1176.jpeg",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "Ep.1 FXで200万溶かした日、私がメモ帳に書いた一文",
+      "url": "https://wad0427.substack.com/p/ep1-fx200",
+      "excerpt": "痛み→変化: 失敗が怖くて踏み出せない → 「2回失敗しない仕組み」が資産になる",
+      "published": "2026-06-09T01:00:45+00:00",
+      "image": "https://api.substack.com/feed/podcast/201154623/d4b23e8a9166506153bbdc72cd954a0d.mp3",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "在宅ワークの収入源について。私の場合はこうでした。",
+      "url": "https://oyuwarilife.substack.com/p/8e9",
+      "excerpt": "おはようございます。おゆわりです。",
+      "published": "2026-06-08T21:40:06+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【Playabl】言葉だけでゲームをつくるUGCゲームのTikTok / @Playabl_ai",
+      "url": "https://www.debunkresearch.com/p/playabl",
+      "excerpt": "プロンプトから即プレイ可能なWebゲームを生む、prompt-to-play型のAIゲームビルダーとは何か。",
+      "published": "2026-06-08T21:01:33+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!QhyO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff161fd91-dd70-4825-87ff-cae10dfc39bf_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Deel】EOR最大手が自社ステーブルコインに参入 / @deel",
+      "url": "https://www.debunkresearch.com/p/deel",
+      "excerpt": "EOR最大手が「DLUSD」を発表。総合HRプレイヤーがクリプト給与の土俵に本格参入しました。",
+      "published": "2026-06-08T21:01:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!8qIU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c3ccea5-58d0-438d-b7ee-6fbc9eee7e4c_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "「こわい」の正体",
+      "url": "https://simpleeelifecom.substack.com/p/8c5",
+      "excerpt": "柏崎刈羽原発とミネラルマルシェ",
+      "published": "2026-06-08T09:54:05+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!gYMF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44e369d5-0be7-44d4-b6b8-a1fb209af474_4032x2268.jpeg",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "健康セミナーで感じた、AI活用のリアル",
+      "url": "https://oyuwarilife.substack.com/p/ai-597",
+      "excerpt": "おはようございます。おゆわりです。",
+      "published": "2026-06-07T22:10:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "Claude Codeを使い始め頃、1時間ずっと「今どこにいますか」と聞き続けていた話",
+      "url": "https://tetumemo.substack.com/p/claude-code1",
+      "excerpt": "これ、2025年、Claude Codeが出たばかりでやっとWindows対応してくれて意気揚々とPCに向かった時の頃の話。たぶん、今でも同じ状況・気持ちの人、絶対いる。",
+      "published": "2026-06-07T22:01:26+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!07nS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77e8a03d-784f-4d60-94ff-0827b51a06c8_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "ノウハウ、全部サブスタックでタダで出していい。出し惜しみするやつから消えていくから",
+      "url": "https://careerkoumei.substack.com/p/1b1",
+      "excerpt": "",
+      "published": "2026-06-07T22:00:36+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!uaFM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9ad6592-e147-4311-839e-6f913680f7f6_1983x793.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/web35-16d",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-07T21:01:47+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Lxdz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fce8d83b0-ffef-48c5-bfba-bb24475fb1a8_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260531-0605",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-07T21:01:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!T3Os!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F860d41b1-54e1-4050-bf32-f013a9d72207_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "AIが「再帰的自己改善の瀬戸際」とAnthropicが警告、Microsoft版OpenClaw「Scout」リリース、Codexがエンプラ向けワークフロー統合を強化、3Dプリントのイベントに参加してきました",
+      "url": "https://sogyonikki.substack.com/p/007",
+      "excerpt": "週刊創業日記 第7号",
+      "published": "2026-06-07T14:59:39+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/Fbwn_yYpaio",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "【週報#5】「推し活」とAIについて考えた週",
+      "url": "https://south0120.substack.com/p/5ai",
+      "excerpt": "サウスのAI活動報告書、毎週日曜18時にお届けします",
+      "published": "2026-06-07T09:01:16+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/28938713-af43-4227-8ac2-71c3d4001672_1200x630.jpeg",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "第6回いくつものクニは、なぜ一つにまとまろうとしたのか",
+      "url": "https://ahoka1117.substack.com/p/6",
+      "excerpt": "前回は、ムラがなぜ争い、クニへ向かったのかを考えました。",
+      "published": "2026-06-07T05:55:07+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7F1j!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffdd549e6-2c77-4ae9-b63d-52ae0b1bf47a_1448x1086.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "20万分の本より、いいね3つの1本のほうが価値があった。",
+      "url": "https://careerkoumei.substack.com/p/2031",
+      "excerpt": "",
+      "published": "2026-06-07T02:27:34+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Ozuy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F849486c9-443b-4619-ae6f-4f93be0a4269_1983x793.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "釜山の「韓日銭湯フォーラム」に参加、金沢での銭湯山車巡行も無事終了しました。｜せんとうとまちニュースレター vol.54",
+      "url": "https://sentotomachi.substack.com/p/vol54",
+      "excerpt": "今号では、韓国・釜山で開催された「韓日銭湯フォーラム」への参加をはじめ、金沢での「銭湯山車巡行」、そして各地で広がる銭湯文化をめぐる取り組みをご紹介します。",
+      "published": "2026-06-07T00:00:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!APzY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7d65c7a-dbc3-4cca-8cfe-b0bba0a6346d_2048x1366.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "FlourishにJeff Bezos等が$500M出資、SupabaseにGICが$500M出資、など全9PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260531-0605",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-06T21:00:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!_U4_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21b430bf-d7d0-4138-8a20-994d8172a375_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "SignalPlusにHashKey Capitalが$50M出資、WasabiCardにVernal Capital等が$10M出資、など全12PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/crypto-wfr260531-0605",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-06T21:00:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ffx7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff88650dc-09e7-479a-8fc5-1511a695d4c0_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "日本人が学校で学ぶ英語は実はアメリカ英語──海外Substackで書く前に知っておきたい米英語と英英語の違いと使い分け",
+      "url": "https://postorijapan.substack.com/p/substack-09e",
+      "excerpt": "海外発信する前に押さえる米英語と英英語の違い、そして世界の基準。知らずに使い分けていなかった話。",
+      "published": "2026-06-06T13:14:20+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!DNGx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1489ab62-d47c-4417-b8c8-9507f2dd3162_1536x1024.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "【👻】ゴーストの正体を探りました",
+      "url": "https://simpleeelifecom.substack.com/p/819",
+      "excerpt": "『攻殻機動隊』原作者がタイトルに込めた400年の哲学的系譜",
+      "published": "2026-06-06T09:06:29+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/w7uJTzeVfJc",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "「もうフォロワー数なんて意味がない」って話",
+      "url": "https://tetumemo.substack.com/p/2b2",
+      "excerpt": "100万再生でたった2万円。絶望した男が見つけた「救命ボート」はニュースレターだった",
+      "published": "2026-06-06T03:19:50+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!_yXh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F748217f8-1209-440d-bcba-17d27c8a768c_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "SNSに何を書かないか、私の全ルール",
+      "url": "https://careerkoumei.substack.com/p/sns-a85",
+      "excerpt": "",
+      "published": "2026-06-05T22:01:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!wSKk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb814fdae-4c1b-49dc-b2b3-1b50b6a679f9_1731x909.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "クリプト暴落とAI",
+      "url": "https://www.debunkresearch.com/p/pc260606",
+      "excerpt": "1週間の振り返り",
+      "published": "2026-06-05T21:01:05+00:00",
+      "image": "https://api.substack.com/feed/podcast/200735311/47a05bd3ae0f053b292ea0d01f4b4f25.mp3",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "Xや他のSNSからサブスタに人を流す方法",
+      "url": "https://careerkoumei.substack.com/p/xsns",
+      "excerpt": "",
+      "published": "2026-06-05T09:01:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Lg_x!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F13c2dfdb-efac-4cc9-9136-48f0cad37d8d_1586x992.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "『エフェクチュエーション』：不確実な時代を生き抜く起業家的思考",
+      "url": "https://sogyonikki.substack.com/p/effectuation",
+      "excerpt": "予測不能な時代における「コントロール」の力",
+      "published": "2026-06-05T06:01:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!TIyT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F70358604-d5cb-44c6-a840-e7a947cf7d6d_361x522.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "「投稿ネタがない｣って言う人、ネタの探し方を1回も習ってないだけなんよ",
+      "url": "https://careerkoumei.substack.com/p/1",
+      "excerpt": "",
+      "published": "2026-06-05T05:08:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!66v_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F02cb2cd4-f1e4-4429-956c-c8f8bfcf1153_1200x480.jpeg",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "昨日、完全にフリーズしていました",
+      "url": "https://itawaru.substack.com/p/274",
+      "excerpt": "生きているだけで100点満点の日",
+      "published": "2026-06-05T04:46:32+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/24d79829-f910-4bb8-b368-ffcd21731f33_640x400.jpeg",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "密度を上げていく/色鉛筆の魅力①",
+      "url": "https://seinochisato.substack.com/p/8c4",
+      "excerpt": "扇芭蕉と虎を仕上げていく・色鉛筆の魅力について",
+      "published": "2026-06-05T03:00:35+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!oBRy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4df9608a-e323-41f8-bc0c-182fd8c8c41d_4032x3024.jpeg",
+      "writer": "SEINO CHISATO JOURNAL",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "予定通りにいかない日こそ、AIに頼っていい。",
+      "url": "https://oyuwarilife.substack.com/p/ai-a35",
+      "excerpt": "おはようございます。",
+      "published": "2026-06-04T22:00:47+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【6/3(水)~6/4(木) Crypto News Report】Mastercardが主要ステーブルコイン決済対応を拡大 / ベッセント財務長官がCLARITY法の夏季成立を要請 / GrayscaleがHYPE現物ETFをNasdaqに上場 など",
+      "url": "https://www.debunkresearch.com/p/crypto-news260603-04",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-04T21:01:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!T6JZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdecbac8d-a7ea-4257-8ab7-c250f1d0a423_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【6/3(水)~6/4(木) AI News Report】Microsoft Build 2026で自社モデル群「MAI-Thinking-1」など発表 / トランプがフロンティアモデルの安全レビュー大統領令 / Google DeepMindがGemmaをノートPCサイズに「Gemma 4」 など",
+      "url": "https://www.debunkresearch.com/p/ai-news260603-04",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-04T21:01:25+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!c0Jk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb81d6706-25ec-4b6b-998e-4e4d5b4f6a16_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "歯。 ―前歯の魅惑について―",
+      "url": "https://sogyonikki.substack.com/p/chi",
+      "excerpt": "『人はパンだけで生きるものではない。 神の口から出る一つ一つの言葉で生きる』（マタイによる福音書 4章4節）",
+      "published": "2026-06-04T11:15:33+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/62e6d57b-34df-40a4-8557-38caf0a79d0b_1080x600.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "ヨーロッパで英語が通じる国、通じない国──EF EPI 2025の世界ランキングから読み解く、日本人発信者が「英語で書けば届く相手」",
+      "url": "https://postorijapan.substack.com/p/ef-epi-2025",
+      "excerpt": "ヨーロッパの英語通用度を国別に整理し、日本人発信者の戦略に落としこむ。",
+      "published": "2026-06-04T09:10:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!28ym!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F993a60ab-91b3-43c8-9f66-c673edcc40ab_1254x1254.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "僕は、自分の過去をうまく思い出せない",
+      "url": "https://simpleeelifecom.substack.com/p/616",
+      "excerpt": "心臓の鼓動を感じることの大切さ",
+      "published": "2026-06-04T07:57:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!2A2B!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F853f967b-0fd8-45c6-8561-aef09d95099c_2752x1536.jpeg",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "AIでスキルが溶ける時代の「ビルダー」という生き方と、「作りたいもの」が見つからないというボトルネック",
+      "url": "https://kajikent.substack.com/p/ai-7d1",
+      "excerpt": "「デザイナー」「エンジニア」「マーケター」といった職種で明確に引かれていた境界線は、AIの急速な進化によって溶け始めています。",
+      "published": "2026-06-04T06:46:54+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f8676985-9ebe-4a8c-8ef8-ce094ea0b3ab_2400x1260.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "発信を続けるコツは、ネタ探しじゃなかった件",
+      "url": "https://oyuwarilife.substack.com/p/1e5",
+      "excerpt": "おはようございます。",
+      "published": "2026-06-03T22:26:44+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "サブスタは｢書くSNS｣じゃない、本当の正体",
+      "url": "https://careerkoumei.substack.com/p/sns",
+      "excerpt": "",
+      "published": "2026-06-03T22:01:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!2fNR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F960f4073-1771-4e0b-8173-db9824ff5043_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【Hex】Palantir出身者がつくる、AIエージェントが宿るデータ分析ワークスペース / @_hex_tech",
+      "url": "https://www.debunkresearch.com/p/hex",
+      "excerpt": "AIエージェントはBIの主役を入れ替えるか",
+      "published": "2026-06-03T21:01:20+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!G6aZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa806e71c-c8b1-42a8-9c2b-b195bf2a4c0d_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Didit】\"無料KYC\"で本人確認インフラを塗り替える、AI時代のアイデンティティ基盤 / @getdidit",
+      "url": "https://www.debunkresearch.com/p/didit",
+      "excerpt": "無料KYCは本人確認の常識を変えるか",
+      "published": "2026-06-03T21:01:15+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!q3-d!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1de4093f-d4b7-45e0-a9ed-588af3649ed0_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "過去最高益のトヨタが「逃げた」技術展—日産が見せた、世界水準の答え",
+      "url": "https://andykondo.substack.com/p/220",
+      "excerpt": "「生成AIで作成」 来場者をなめた展示",
+      "published": "2026-06-03T06:26:16+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/d83e6c40-6805-4905-9028-2b45919a8619_1280x720.png",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "自動車技術の展示会で、日本の大手メーカーが未来を見せなかった｜Andy's Weekly #14",
+      "url": "https://andykondo.substack.com/p/andys-weekly-14",
+      "excerpt": "600社が出展、8万人が集まる「異様な」現場から",
+      "published": "2026-06-03T02:35:03+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/8af233d9-9802-42fe-ab39-048b6fbf882e_1280x720.png",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "伸びている発信者が、絶対に口に出さない本音",
+      "url": "https://careerkoumei.substack.com/p/536",
+      "excerpt": "",
+      "published": "2026-06-03T02:06:18+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!znpG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5810fc71-fe52-45c2-807e-2b042f065da5_1731x909.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【体験記】いまさらだけど暗号通貨とNFTにチャレンジしてみた",
+      "url": "https://simpleeelifecom.substack.com/p/nft",
+      "excerpt": "CNP（クリプトニンジャ）購入までの道のり",
+      "published": "2026-06-03T01:31:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!y7wm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1badc4bc-ae11-493c-8747-a4897f6e3106_736x484.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【5/29(金)~6/2(火) Crypto News Report】改正資金決済法施行で「仮想通貨仲介業」の新登録制度スタート / FBIが国際詐欺網からBTCなど$8B超を押収 / StrategyがBitcoinを2022年以来初の売却 など",
+      "url": "https://www.debunkresearch.com/p/crypto-news260529-0602",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-02T21:01:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!DY_T!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9b3bd156-d9f8-4d24-aec1-d15556269a8b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【5/29(金)~6/2(火) AI News Report】AnthropicがIPOへ機密S-1を提出（$965B評価） / フロリダ州がOpenAIとSam Altmanを提訴（AI暴力事件巡る初の州訴訟） / NVIDIAがGTC TaipeiでフィジカルAIへ全面シフト など",
+      "url": "https://www.debunkresearch.com/p/ai-news260529-0602",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-02T21:01:21+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!phAG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F43e2ed2a-6592-4c69-b11b-c244713b83f0_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "「ママだから」を言い訳にしない働き方",
+      "url": "https://oyuwarilife.substack.com/p/7c4",
+      "excerpt": "おはようございます。",
+      "published": "2026-06-02T20:20:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "読者はいるのに、なぜ「アラブ版Substack」が存在しないのか",
+      "url": "https://postorijapan.substack.com/p/substack-853",
+      "excerpt": "決済・住所・配管から読み解く、海外発信者が知るべき市場の裏側",
+      "published": "2026-06-02T06:53:40+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ARF5!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff284a247-319e-4dc4-807b-fe9cec33d09b_1672x941.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "「これくらい我慢しなきゃ」と思う人ほど壊れる理由",
+      "url": "https://itawaru.substack.com/p/42c",
+      "excerpt": "こんにちは、マコです。",
+      "published": "2026-06-02T03:28:17+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/9515b3f8-43ea-4ab9-b51e-29452425b7ec_1280x670.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "フォロワー150人でもインプ30万出る。X記事の話をする。",
+      "url": "https://careerkoumei.substack.com/p/15030x",
+      "excerpt": "",
+      "published": "2026-06-02T02:23:52+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!KH4W!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9454e2b7-0348-4a90-8d68-2524b04905e0_1280x670.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "キャリア孔明が絶対やらないサブスタック10の動き",
+      "url": "https://careerkoumei.substack.com/p/10-0b8",
+      "excerpt": "",
+      "published": "2026-06-02T01:43:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Tq4W!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18dec57a-3306-43fc-b52f-e5a9e1ae68c0_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "ドラえもんに人生を委ねてはいけない",
+      "url": "https://south0120.substack.com/p/8de",
+      "excerpt": "のび太だって一人で立ち上がった",
+      "published": "2026-06-01T22:10:35+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f357f64d-43e1-4a72-843b-2c1bae0e583d_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "サブスタで最初の有料登録者を10人作るまでの動き",
+      "url": "https://careerkoumei.substack.com/p/10-832",
+      "excerpt": "",
+      "published": "2026-06-01T22:01:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jd3y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71356338-6e83-4af3-bda1-2b24987c94c2_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "5年前の私が、今の私にくれたもの",
+      "url": "https://oyuwarilife.substack.com/p/5-912",
+      "excerpt": "おはようございます。",
+      "published": "2026-06-01T21:57:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【Shift】無料の家事代行と引き換えに、ロボットの\"目\"を育てる / @joinshiftX",
+      "url": "https://www.debunkresearch.com/p/shift",
+      "excerpt": "データ収集を\"無料サービス\"として配る発想",
+      "published": "2026-06-01T21:01:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!3fH0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F690eb956-3d10-4055-b087-ca65e92bf930_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "レクサスの次世代EVが消えた—でも”EVが売れないから”じゃない。トヨタが”出せなかった”理由",
+      "url": "https://andykondo.substack.com/p/evev",
+      "excerpt": "レクサスの次世代EV、「LF-ZC」。開発中止。",
+      "published": "2026-06-01T12:28:23+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/IQzO0-UC6jQ",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "凡人は｢好きなことを仕事にするな｣。もっとずるく生きろ",
+      "url": "https://careerkoumei.substack.com/p/a1b",
+      "excerpt": "",
+      "published": "2026-06-01T07:33:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!faIV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14aec110-e73e-4d65-99fb-8d6627114203_1200x800.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "直感力を磨くコツ",
+      "url": "https://simpleeelifecom.substack.com/p/825",
+      "excerpt": "理研の「直感の更新メカニズムの解明」より",
+      "published": "2026-06-01T05:20:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!iEZF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F636bb84f-ee09-4dc5-8682-949109da4114_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "幼稚園児と同じような働き方をするグーグル社員",
+      "url": "https://yujimine.substack.com/p/476",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-06-01T00:01:33+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!p7_N!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F58e1650c-5beb-4811-9bb5-fc14583d2971_1515x1235.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "Claude Opus 4.8リリース、ダリオ・アモデイの予言的中で人間がコードを書く時代は終了、トークンマキシングで幸せになっているのは誰か、教皇レオ14世がAIに対する指針を明確化",
+      "url": "https://sogyonikki.substack.com/p/006",
+      "excerpt": "週刊創業日記 第6号",
+      "published": "2026-05-31T23:01:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!aoEb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf830a16-7c5c-4c7e-9e5b-90bc5192fc75_960x702.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "第五回ムラはなぜ争い、クニへ向かったのか？",
+      "url": "https://ahoka1117.substack.com/p/31e",
+      "excerpt": "― 水・米倉・リーダーから見るクニの始まり ―",
+      "published": "2026-05-31T22:21:55+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!HWCG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae3ec04d-180c-4169-a14f-55c000ee5f1a_1024x1536.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "【週報#4】コンテンツと文化について考えた週",
+      "url": "https://south0120.substack.com/p/4",
+      "excerpt": "サウスのAI活動報告書、毎週日曜18時にお届けします",
+      "published": "2026-05-31T09:01:29+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/94b23ea1-467a-4fd4-86f2-dc272c00ef6d_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "ある日Substackにアラブ圏フォロワーがついた──海外発信したい日本人が見落としている「話者5%、ネット0.6%」の空白市場",
+      "url": "https://postorijapan.substack.com/p/substack506",
+      "excerpt": "アラビア語話者は世界人口の約5%、しかしネット上のコンテンツはわずか0.6%。この10倍ギャップが意味する未開拓市場の構造",
+      "published": "2026-05-31T08:44:05+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!P0fh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F68c6a041-eff2-4a32-a48d-0ae40171a211_1672x941.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "NotebookLM運用が10倍速くなる神拡張機能、「NotebookLM Web Importer」完全解剖",
+      "url": "https://tetumemo.substack.com/p/notebooklm10notebooklm-web-importer",
+      "excerpt": "NotebookLMって無料で使えて便利すぎるけど、拡張機能を入れるだけで劇的に使いやすくなりますよ",
+      "published": "2026-05-31T01:08:04+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!iyyp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd1359b45-903b-43f4-9a40-28bf232b7222_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "【保存版】Substack創業者の思想を知る記事14選",
+      "url": "https://south0120.substack.com/p/substack-14",
+      "excerpt": "Substackは他のメディアやSNSと何が違うのか？を考える",
+      "published": "2026-05-30T12:30:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!duYO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa5673041-55db-4f4a-bb65-6f516470ab35_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "EVに乗って山に行こう。下りで電気が「戻ってくる」面白さ",
+      "url": "https://andykondo.substack.com/p/ev-a77",
+      "excerpt": "EV生活楽しいから、こっち側においで、という話",
+      "published": "2026-05-30T12:06:07+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/b8C55i8ZvIs",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "キャリ孔ファミリーで起きてる、発信者同士が引き上げ合う現象の中身",
+      "url": "https://careerkoumei.substack.com/p/e9c",
+      "excerpt": "",
+      "published": "2026-05-30T09:56:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!48QD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0033eda1-c6ff-4010-8169-1d470aca786f_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "ソトワークを科学する⑥",
+      "url": "https://nakalab.substack.com/p/988",
+      "excerpt": "自由からの逃走",
+      "published": "2026-05-29T20:00:47+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!V77D!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8fe24433-52b1-449e-a14d-edb3f427e4ee_4032x3024.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "日記　5月28日",
+      "url": "https://nami5711.substack.com/p/528",
+      "excerpt": "これ以上私にMBTIを教えないでほしい",
+      "published": "2026-05-29T11:54:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!XtFJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3024f784-ef71-41df-8f39-3e868581fe5c_960x1706.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "ドイツだけSubstackが弱い理由は「VAT」だった──多言語で海外発信する日本人が知るべきプラットフォームの選び方",
+      "url": "https://postorijapan.substack.com/p/substackvat",
+      "excerpt": "プラットフォーム選びの隠れた基準は「事務処理の吸収力」。ドイツのSteady、EUのVAT、米国のW-8BENを、貿易商視点で整理してみる。",
+      "published": "2026-05-29T05:31:17+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jf8C!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F939f74ab-3d89-4015-9991-3719771b8fd3_1673x940.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "寓話：「揺れる宝珠」",
+      "url": "https://simpleeelifecom.substack.com/p/086",
+      "excerpt": "森の中で出会う3つのまなざし",
+      "published": "2026-05-29T03:59:45+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!sEwb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F93ef28a9-5084-4ed1-814e-5513e033eed3_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "手取り22万から年収5倍〜。変えたのはスキルじゃなくて｢問い｣だった",
+      "url": "https://careerkoumei.substack.com/p/225",
+      "excerpt": "2年でX10万人達成。SNS時代を生き抜く戦略・サブスタ攻略・新しい働き方、マーケ戦略などを毎日配信。発信者・マーケター・興味ある人、全員のための場所です。沖縄移住してSNSで生きてます。",
+      "published": "2026-05-28T06:53:15+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f9cf46e7-a559-4d56-9166-d0273c86c8da_1448x1086.webp",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【予告】明日、「わたし、もう我慢しなくていいんだ」と思えるようになるワークをリリースします",
+      "url": "https://itawaru.substack.com/p/b8b",
+      "excerpt": "こんにちは、マコです。",
+      "published": "2026-05-28T04:56:21+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/788ac944-9b6e-46a6-a58c-199c8c8f5f9d_1200x630.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "サブスタで伸びない発信者、9割がアイコンで損してる",
+      "url": "https://careerkoumei.substack.com/p/9",
+      "excerpt": "",
+      "published": "2026-05-28T03:47:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!RaIM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46564a29-6926-4da6-a1fa-a486c9a540f3_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "記事投稿後、放置していませんか？noteとXの記事をニュースレターに変えるChrome拡張機能が便利すぎた件",
+      "url": "https://tetumemo.substack.com/p/notexchrome",
+      "excerpt": "X記事、note記事など記事は資産として横展開できる。その場所の1つとしてSubstackは最適解",
+      "published": "2026-05-28T03:31:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!TOPf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbcfd3516-d610-4d90-9536-d6e5698b9c74_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "AIは私たちの子供—今、何を学習させているのか｜Andy's Weekly #13",
+      "url": "https://andykondo.substack.com/p/aiandys-weekly-13",
+      "excerpt": "配信プラットフォームをSubstackに移しました",
+      "published": "2026-05-28T02:30:41+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/b7d7699f-3f71-4c11-a5fa-fefe52784fbb_1280x720.png",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "EV批判で中国が儲かる。─日本だけが気づいていない「電池の価値」の話",
+      "url": "https://andykondo.substack.com/p/ev",
+      "excerpt": "「EVを批判すると、結果的に中国を儲けさせている」感情的には受け入れがたいかもしれません。",
+      "published": "2026-05-27T12:25:44+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/Y9GXz5zdZOk",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "AIが人間を超えた後、世界はどう壊れ、どう救われるのか｜モー・ガウダット『Alive』を読み解く",
+      "url": "https://andykondo.substack.com/p/aialive",
+      "excerpt": "彼は本での出版を止め、Substackでの連載を選んだ。",
+      "published": "2026-05-27T12:00:49+00:00",
+      "image": "https://api.substack.com/feed/podcast/199451357/7d0d2487546c6b24762998fc150b0a4c.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "AIを「IA」と呼ぶ国、「KI」と呼ぶ国──略語ひとつでわかる、海外発信者が知るべき「言語の血筋」",
+      "url": "https://postorijapan.substack.com/p/aiiaki",
+      "excerpt": "ポルトガル語・スペイン語ではAIを「IA」と呼びます。なぜか。その理由を辿ると、海外発信で機械翻訳に丸投げしてはいけない理由。",
+      "published": "2026-05-27T10:15:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Kq4A!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc614c47e-87e4-472f-ad5f-2837b7c08685_1675x939.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "サブスタで売れない人の99%が同じノート出してる、5つのパターン",
+      "url": "https://careerkoumei.substack.com/p/995",
+      "excerpt": "",
+      "published": "2026-05-27T09:36:47+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!BiwV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a5de517-36ef-41f8-a7c3-42f69982a750_1672x941.png",
+      "writer": "キャリア孔明",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "回勅『マニフィカ・フマニタス』布告 教皇レオ14世による記者会見スピーチ全文（日本語訳）",
+      "url": "https://sogyonikki.substack.com/p/magnifica-humanitas-transcription",
+      "excerpt": "2026年5月25日（月）、バチカン世界代表司教会議（シノドス）において、回勅『マニフィカ・フマニタス』発表に伴う記者会見が開かれました。",
+      "published": "2026-05-27T09:01:23+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/JxcXcP6NyRM",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "“いい人”でいるほど、壊れていく理由",
+      "url": "https://itawaru.substack.com/p/e83",
+      "excerpt": "こんにちは、マコです。",
+      "published": "2026-05-27T01:20:31+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/e85525b1-d93a-403e-bb47-119ce1022888_1280x670.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "多忙というノイズの、向こう側",
+      "url": "https://simpleeelifecom.substack.com/p/3ad",
+      "excerpt": "本来の自分を彫り出す作業",
+      "published": "2026-05-26T22:56:02+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!d_FW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff70b995c-82eb-40d8-8c8f-1794df43cefb_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "発信って、ただ毎日投稿することじゃないと思うんです",
+      "url": "https://oyuwarilife.substack.com/p/733",
+      "excerpt": "おはようございます。おゆわりです。",
+      "published": "2026-05-26T22:29:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!YtQD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdac5b3eb-5ded-419d-b2e4-b86d80cc0207_1223x679.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "Substackでブックマーク・プロフメモ出来る拡張機能をつくりました",
+      "url": "https://south0120.substack.com/p/substack-assistant",
+      "excerpt": "Substackで出会った言葉を保存しておく拡張機能を作りました。出会った人、響いた言葉、後で自分の言葉でまとめたいメモなどご活用ください。",
+      "published": "2026-05-26T22:01:42+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/ac227945-ff97-4000-b09f-ed0d60246f2f_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "AIを学ぶべき人って、実はオンライン秘書かもしれないと思ふ。",
+      "url": "https://oyuwarilife.substack.com/p/ai-349",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-05-26T00:06:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "「私」なんてない",
+      "url": "https://simpleeelifecom.substack.com/p/696",
+      "excerpt": "攻殻機動隊の哲学、400年の系譜",
+      "published": "2026-05-25T23:01:11+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!3GsX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fecf30b13-c493-4032-bb8c-1aa17a19116d_1376x768.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "給料日前に「お金がない」と言う人が買い物する心理学",
+      "url": "https://wad0427.substack.com/p/0d1",
+      "excerpt": "実は接客現場で見えてきた、人間の購買パターンがある",
+      "published": "2026-05-25T11:04:16+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!6SkX!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febad0110-8391-444c-862e-b7ff0f05c903_1280x1280.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "「3歳までに人生が決まる」という研究への反論",
+      "url": "https://simpleeelifecom.substack.com/p/3",
+      "excerpt": "全員が自制心を備えた未来",
+      "published": "2026-05-25T02:55:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!PQ7S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8519d35-e62c-4aea-8a16-29c3fa348fdc_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "主婦が在宅ワークを始めるなら、まず知っておきたいこと",
+      "url": "https://oyuwarilife.substack.com/p/d93",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-05-25T02:31:34+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "我々は何のために計画しているのだろうか",
+      "url": "https://yujimine.substack.com/p/1bb",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-05-25T00:01:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!QU95!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc009ed64-b030-4cf2-a2da-9cd67c9f2c59_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "アンケートの作り方とテスト",
+      "url": "https://south0120.substack.com/p/8e3",
+      "excerpt": "アンケートが記事の中でどんな感じで動くのか実験です👀",
+      "published": "2026-05-24T15:12:11+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/506687a7-096b-4b99-8cf7-cef7e929a6c9_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "寄り道：稲作は、本当に朝鮮半島から来たのか？",
+      "url": "https://ahoka1117.substack.com/p/2cf",
+      "excerpt": "前回まで、稲作がムラを変え、やがてクニにつながっていく話をしてきました。",
+      "published": "2026-05-24T14:25:01+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!MTsN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F99467fd2-2dd7-46e7-95a5-538e91877c7c_1448x1086.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "自己紹介 イノベーションアナリスト Andy Kondo",
+      "url": "https://andykondo.substack.com/p/andy-kondo",
+      "excerpt": "次の世代に、贈り物を残すか。毒饅頭を残すか。",
+      "published": "2026-05-24T13:49:40+00:00",
+      "image": "https://api.substack.com/feed/podcast/199069261/730a48c0208ceb80fa84a112a476722a.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "EVで家族旅行。子連れ片道200kmの旅のリアル",
+      "url": "https://andykondo.substack.com/p/ev200km",
+      "excerpt": "横浜から軽井沢まで片道200km。大人2人+赤ちゃんのチャイルドシート、ベビーカーで荷物パンパン。EVで家族旅行は本当に「不便」なのか? 結論から言います。なんてことなかった。",
+      "published": "2026-05-24T13:42:15+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/b8C55i8ZvIs",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "平和・対立・勇気",
+      "url": "https://sogyonikki.substack.com/p/conflict-and-peace",
+      "excerpt": "「あなたがたは、わたしが平和をこの地上にもたらすためにきたと思っているのか。あなたがたに言っておく。そうではない。むしろ分裂である。」（ルカによる福音書 12章51節）",
+      "published": "2026-05-24T11:01:47+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!O6uy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5e582fc7-b58f-47ef-aad2-30015267849c_4080x3072.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "【週報#3】祭りの後の静けさ",
+      "url": "https://south0120.substack.com/p/3",
+      "excerpt": "このニュースレター「サウスのAI活動報告書」は、AIで仕事を半分にするをテーマに発信しており、その中で週1回、日曜日に今週の活動をまとめて週報としてお届けしていきます。",
+      "published": "2026-05-24T09:02:12+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/fdb94208-52e8-40f5-a507-3420d06a1e98_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "涙なしでは観られない、『BLUE GIANT』の感動の渦に飲み込まれた",
+      "url": "https://tetumemo.substack.com/p/blue-giant",
+      "excerpt": "アニメ好きの私がイチオシの映画を紹介。ニュースレターって自分の”好き”を突き詰めた発信も良いので、「あ、こんな記事でもニュースレターネタになるのね」という視点でも読んでみてください。",
+      "published": "2026-05-24T02:03:53+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ia66!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96992bd3-96cc-48da-940c-4e64b2d39b56_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "新しい趣味として登山に行ったら、頭の中まで整理された話",
+      "url": "https://oyuwarilife.substack.com/p/a8b",
+      "excerpt": "今回のテーマは、",
+      "published": "2026-05-23T21:08:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!JpeX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76b609d9-be78-40f1-9859-10cc3d60ca5e_1106x623.jpeg",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "海外Substackで「最初に固めること」と「走りながら直すこと」の線引き──完璧な戦略が要らない理由",
+      "url": "https://postorijapan.substack.com/p/substack",
+      "excerpt": "最初に固める「客層と商材」、走りながら直す「戦術」",
+      "published": "2026-05-23T04:22:25+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Yg0k!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1cb1cd5a-100d-41ea-8b03-752e65680207_1672x941.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "世にも奇妙な夢の話",
+      "url": "https://simpleeelifecom.substack.com/p/743",
+      "excerpt": "母親のお腹の中で見ていたもの",
+      "published": "2026-05-22T07:34:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vCf1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57a00d4b-5dc9-4737-a846-d43ea9b03de8_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "購読者1万人でも「いいね」は一桁。Substackで稼ぎたい日本人が、相互いいねを今すぐやめるべき理由",
+      "url": "https://postorijapan.substack.com/p/1substack",
+      "excerpt": "note・XのSNS感覚をSubstackに持ち込むと、なぜ伸びないのか。",
+      "published": "2026-05-22T05:52:46+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!j152!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F290a3b12-7ab9-4604-89c0-685df2394ca4_1672x941.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "背景をつくる/マスキングを極める③",
+      "url": "https://seinochisato.substack.com/p/d67",
+      "excerpt": "・特集は虎とオウギバショウの作品、背景をつくるプロセス ・マスキングの注意点やTIPSを解説 ・開催中のグループ展や販売情報について",
+      "published": "2026-05-22T03:01:05+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/57ebcd09-171f-42e1-bf61-f5bc9c4cd771_1600x900.jpeg",
+      "writer": "SEINO CHISATO JOURNAL",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "動けないときは、やる気より整理が先かも",
+      "url": "https://oyuwarilife.substack.com/p/d79",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-05-21T20:51:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!p_EF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6ec17bc-3b40-4a74-addd-04a2988e3557_1672x941.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "“離婚”が頭をよぎった夜のその先に｜わたしが決意した“本当の自立”",
+      "url": "https://itawaru.substack.com/p/dad",
+      "excerpt": "こんばんは、マコです。",
+      "published": "2026-05-21T12:03:15+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/dcb133c4-bdca-4ea0-bfc9-087453280f9b_1024x576.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "事実に基づいた虚構",
+      "url": "https://simpleeelifecom.substack.com/p/b2a",
+      "excerpt": "細木数子と両面宿儺の共通点",
+      "published": "2026-05-21T05:48:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!j0Z3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F051188b0-788d-4d09-851a-6d16f743eea9_1280x670.webp",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "不登校子育てで感じた「親の軸」の話",
+      "url": "https://oyuwarilife.substack.com/p/05f",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-05-20T20:12:30+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NVQJ!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc5ab2024-4f0a-40a6-8fb5-546fd7bf2e9e_500x500.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "「呪いの王」が、いまの私を映しだす【呪術廻戦】",
+      "url": "https://simpleeelifecom.substack.com/p/09c",
+      "excerpt": "両面宿儺の3つの顔",
+      "published": "2026-05-20T03:10:59+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!BR9A!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63f80829-2835-4a8d-92a8-c7ee9d67ef07_1672x941.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "日記　5月19日",
+      "url": "https://nami5711.substack.com/p/519",
+      "excerpt": "最大の攻撃は「フォロー外すからね！」",
+      "published": "2026-05-20T01:37:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!q8E-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c1a57fc-5ead-455d-b70e-e7819a9201e2_3024x4032.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "EV批判してる人ほど、中国に貢いでる ― 日本のEV否定が招く資源敗戦",
+      "url": "https://andykondo.substack.com/p/ev-ev-fa9",
+      "excerpt": "「リーフは3年で半額、リセール悪い。電池なんて産廃」そう言ってEVを批判する声、よく聞きます。その気持ちは理解できます。中国依存はマズいし、補助金は税金、リセールが安いのも現実。でも、ちょっと立ち止まって見てください。世界はもう、電池の価値",
+      "published": "2026-05-19T22:08:01+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701629/ba75ebef07e3cd283d80c46d1c370790.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "なかなか続かなかった私が、やっと気づいた習慣化の順番",
+      "url": "https://oyuwarilife.substack.com/p/060",
+      "excerpt": "今日は 音声配信がなかなか続かなかった私が、やっと気づいた習慣化の順番",
+      "published": "2026-05-19T20:19:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7wnD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a261f3c-546f-466f-b253-79d1aeb59bc0_1672x941.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "ソトワークを科学する！⑤",
+      "url": "https://nakalab.substack.com/p/359",
+      "excerpt": "弱いつながりが、世界をひらく",
+      "published": "2026-05-19T10:13:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ATnp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40141dc2-9046-4cd6-8453-e7728ca76b08_5712x4284.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "離婚が頭をよぎったら、わたしはひたすら家賃相場を調べていた",
+      "url": "https://itawaru.substack.com/p/e47",
+      "excerpt": "こんにちは、マコです。",
+      "published": "2026-05-19T03:08:07+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/9017127f-e9e8-4ed9-bac4-c196a0905a95_1024x1024.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "ペンを取れ。書け。",
+      "url": "https://simpleeelifecom.substack.com/p/0cc",
+      "excerpt": "ノルウェーの神経科学者が20年間かけて証明したこと",
+      "published": "2026-05-19T02:31:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!wfd1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F179ce49d-cd00-4ab5-8103-db928504c219_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "SNSで「応援される発信」と「依頼される発信」は違う、という話",
+      "url": "https://oyuwarilife.substack.com/p/sns",
+      "excerpt": "こんにちは、おゆわりです。",
+      "published": "2026-05-18T21:10:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!0_Fc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74d78e9f-c7c8-4fd2-bd85-4890e37b304c_1672x941.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "第４回お米を作ったら、なぜクニができたのか",
+      "url": "https://ahoka1117.substack.com/p/8f7",
+      "excerpt": "前回は、稲作が本当に「進歩」だったのかを考えました。",
+      "published": "2026-05-18T14:37:46+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!l4mg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7403961d-805d-42bc-9b60-54262402218c_1055x1491.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "初心者でも相手から見たらプロなんだよね、という話",
+      "url": "https://oyuwarilife.substack.com/p/a3f",
+      "excerpt": "今日は、在宅ワークを始めたい人や、これから仕事を受けていきたい人に向けて少し大事な話をしたいなと思います。",
+      "published": "2026-05-18T12:48:49+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5QQO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f746b7a-98f5-439c-acfd-d484a2242e62_1733x907.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "AI時代に「努力」はどこへ向かうのか？",
+      "url": "https://kajikent.substack.com/p/ai-b30",
+      "excerpt": "AIが賢くなると、個人の能力差や努力量の差は、相対的に「誤差」みたいなものになっていくかもしれません。",
+      "published": "2026-05-18T05:12:10+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/4cd597b3-3713-4311-9de2-e8d1bb2fd866_2400x1260.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "Developerが陥りがちな初動対応の課題",
+      "url": "https://yujimine.substack.com/p/developer",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-05-18T00:00:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ZMDa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62e8b5f7-338c-46f4-8b04-413716314623_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "在宅ワークは「自由」だけど「楽」ではない",
+      "url": "https://oyuwarilife.substack.com/p/94b",
+      "excerpt": "おはようございます。おゆわりです。",
+      "published": "2026-05-17T20:39:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!JghG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F31611848-76a8-4795-931d-eb0c9eb303bf_1733x907.png",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【週報#2】Substackの文化について考えた週",
+      "url": "https://south0120.substack.com/p/2substack",
+      "excerpt": "このニュースレター「サウスのAI活動報告書」は、AIで仕事を半分にするをテーマに発信しており、その中で週1回、日曜日に今週の活動をまとめて週報としてお届けしていきます。",
+      "published": "2026-05-17T09:02:04+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/1fc88381-d415-4434-b708-8bb34f219784_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "ポルトガル語話者の83%はブラジル人──海外Substackで稼ぎたい日本人発信者が見落としている『言語＝市場』の構造",
+      "url": "https://postorijapan.substack.com/p/83substack",
+      "excerpt": "『英語さえできればいい』は本当か？ 円安時代、日本人発信者が海外で外貨を稼ぐための3言語戦略を、 実践プロセスから共有します。",
+      "published": "2026-05-17T06:21:59+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!V-Jr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5def8d16-cc89-481f-9d6b-3781bc0368ac_1675x939.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "【記事を書く人必見】Googleが「AI検索対策」に出した答え。流行りのAIハックより大事なことと、不要なこと5つとは？",
+      "url": "https://tetumemo.substack.com/p/googleaiai5",
+      "excerpt": "Googleの答え、「AI検索向けの特別な裏技より、読者にとって本当に役立つ独自コンテンツを作ってください。」",
+      "published": "2026-05-17T01:44:52+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!17Qv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F27bbb658-2292-4404-8f71-995487420a05_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "焼け野から立ち上がる「共生」",
+      "url": "https://sogyonikki.substack.com/p/business-principles",
+      "excerpt": "ところが、神は知恵ある者に恥をかかせるため、世の無学な者を選び、力ある者に恥をかかせるため、世の無力な者を選ばれました。（コリントの信徒への手紙一 1章27節）",
+      "published": "2026-05-17T01:01:10+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NcBs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b4c5139-c094-422f-9886-6d57c146a8a3_462x360.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "【自己紹介②】嘘を、ついていました。",
+      "url": "https://simpleeelifecom.substack.com/p/124",
+      "excerpt": "2022年6月あたりからYouTubeチャンネルの視聴回数が伸びはじめました。",
+      "published": "2026-05-17T00:53:52+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!4NkG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f19a8cf-f024-4a2d-8c53-1969d345e3c8_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "「後悔のないように生きたい」と思っても難しいよね",
+      "url": "https://oyuwarilife.substack.com/p/f46",
+      "excerpt": "おゆわりです。",
+      "published": "2026-05-16T20:59:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!BBHJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc4a2a4d8-a351-456e-aa74-5335a5104a23_1374x773.jpeg",
+      "writer": "おゆわりのAIと暮らし日記",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "Substackがイーロン・マスクと対決し、Xに消されても生き残り1700億円企業になれた理由の話",
+      "url": "https://tetumemo.substack.com/p/substackx1700",
+      "excerpt": "「殺されるかもって思ったよ」と語るのは、テスラに乗るSubstackのCEOが、世界一の富豪イーロン・マスクとの対決を振り返って語った言葉",
+      "published": "2026-05-16T09:45:59+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!8w0x!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fffe2a327-ed00-4046-87df-23d0c7e00178_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "ガソリン車では絶対に味わえない—EVで山道を降りると、充電が戻ってくる",
+      "url": "https://andykondo.substack.com/p/ev-372",
+      "excerpt": "横浜から軽井沢まで片道200km。大人2人+赤ちゃんのチャイルドシート、ベビーカーで荷物パンパン。EVで家族旅行は本当に「不便」なのか?結論から言います。なんてことなかった。それどころか、山降りたら充電が戻ってくるという、ガソリン車では絶対",
+      "published": "2026-05-15T22:00:00+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701630/9e23db6c2d4eaa08ec40f53a56f150ca.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "サブスタが気になってしまう「私」へ",
+      "url": "https://simpleeelifecom.substack.com/p/3bc",
+      "excerpt": "真逆に自分を置いてみる",
+      "published": "2026-05-14T02:11:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!h-la!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdfdd5826-fab6-4103-946e-8fff72573e3a_1344x896.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "Claude Design × Claude Code × Codexで、Biz職でも凝ったスマホアプリは作れる",
+      "url": "https://kajikent.substack.com/p/claude-design-claude-code-codexbiz",
+      "excerpt": "最近、Claude Design と Claude Code の組み合わせでiOSアプリを作ってみたのですが、想像以上のクオリティのものが作れてしまって感動しています。",
+      "published": "2026-05-14T00:02:59+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/ba9a113e-07b5-4e4b-8078-de9351b74508_2400x1260.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "AI活用において「器の中の整理の話」か、「器を大きくする話」かは明確に区別しよう",
+      "url": "https://kajikent.substack.com/p/ai-4d8",
+      "excerpt": "仕事でもプライベートでも、「何かを良くする」というテーマに向き合う際、私たちは「器の中の陳列を最適化する話」と、「器自体を大きくする話」を混同してしまうという罠に陥りがちです。",
+      "published": "2026-05-13T23:01:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!t9Bg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5b0f125b-c940-459b-aa4e-8b2dfc790a36_1536x1024.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "LINEスタンプ36個作成の「手間」が バグレベルで消滅、GPT-Image-2とChatGPTだけでほぼ完結する秘訣",
+      "url": "https://tetumemo.substack.com/p/line36-gpt-image-2chatgpt",
+      "excerpt": "あれ？LINEスタンプってここまで簡単に作れちゃうの？",
+      "published": "2026-05-13T22:02:15+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!3Jhs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa33de32c-f549-44cc-a4b3-c6f8d0b4bb06_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "要望にお応え：TIpsでもnoteでも使えるManabi-readerにアップデート",
+      "url": "https://south0120.substack.com/p/tipsnotemanabi-reader",
+      "excerpt": "デジタル教材をより学びやすくするChrome拡張機能です",
+      "published": "2026-05-13T21:32:06+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/39ad3232-e444-4521-9c19-897b4057140c_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "日記　5月13日（いいんだ、ほうれい線さえ薄くしてくれれば）",
+      "url": "https://nami5711.substack.com/p/513",
+      "excerpt": "今日は美容クリニックへ行ってきた。毛穴洗浄やリフトアップ系の施術で毎月通っている。",
+      "published": "2026-05-13T13:09:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!aipT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a504032-2b45-4d06-83d3-f20da419607a_1280x669.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "自分が最も劣っている場所に身を置き続ける",
+      "url": "https://kajikent.substack.com/p/1f6",
+      "excerpt": "先日、とあるカメラメーカーが主催する写真表現講座に参加してきた。",
+      "published": "2026-05-13T02:20:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jz-2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9c58958-b323-4b60-89cd-732f5e3b81b8_7330x4871",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "Google AI Proの方へ、毎月もらえる$10クレジットをGETしてClaude Codeをさらに楽しむ方法",
+      "url": "https://tetumemo.substack.com/p/google-ai-pro10getclaude-code",
+      "excerpt": "Google AI Proで毎月$10分のクレジットを入手する方法",
+      "published": "2026-05-12T22:01:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!IHTK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7926eca-cfcb-4fbb-9758-6e05ca892cb8_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "【自己紹介①】YouTuberやめてます",
+      "url": "https://simpleeelifecom.substack.com/p/youtuber",
+      "excerpt": "こんばんは。 自己紹介も兼ねて、近況を書きます。",
+      "published": "2026-05-12T12:46:18+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!BTEv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48f7097b-8ecc-4a94-81b9-2065137b00c0_1080x720.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "5月11日　日記（そうか。私ってもう熟女なのだ）",
+      "url": "https://nami5711.substack.com/p/511",
+      "excerpt": "今朝は冷凍したパンのリベイクがうまくいかず、ちょっと冷たいところがあったけれど、早く食べたすぎて我慢できずにそのまま食べてしまった。",
+      "published": "2026-05-12T06:41:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5eDG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F650ec4da-6c6c-4b03-98e8-9c02836b0f95_3571x2741.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "Hooksで反復作業を消す方法",
+      "url": "https://kuronoaiagent.substack.com/p/hooks",
+      "excerpt": "Claude Codeでこんなことありませんか？",
+      "published": "2026-05-12T02:03:42+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/fec168ea-b7a8-4d72-81ea-c175f5314ccd_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "全固体電池—「リセール壊滅」が日本車を待ち受ける リサイクルできない不良債権電池になる未来",
+      "url": "https://andykondo.substack.com/p/ce2",
+      "excerpt": "━━━━━━━━━━━━━━━━━━📖 詳細記事(note メンバーシップ開始)━━━━━━━━━━━━━━━━━━動画では尺の都合で省略した内容、現地取材の細かい数字、比較表、追加データを含む完全版を、noteに記事として公開しています。",
+      "published": "2026-05-12T00:39:57+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701631/3144832c98b3a9cbcaffc6fa67646165.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "「第３回　稲作は本当に\"進歩\"だったのか」",
+      "url": "https://ahoka1117.substack.com/p/b1a",
+      "excerpt": "稲作は、たしかに“豊かさ”をもたらした",
+      "published": "2026-05-12T00:32:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!yFFK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2dbebcc-3c17-4121-91f0-5c17b225f55f_1055x1491.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "ソトワークを科学する！④ー余白が創造性を生む",
+      "url": "https://nakalab.substack.com/p/522",
+      "excerpt": "これまでの3回で書いてことの超要約。",
+      "published": "2026-05-11T22:32:33+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!CDcf!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F481e8f67-5e12-4460-932e-3f6e2bc9261e_1024x1024.png",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "購読者数が資産になる理由",
+      "url": "https://kuronoaiagent.substack.com/p/91e",
+      "excerpt": "結論、Substackの購読者数はただの見栄えじゃないです。",
+      "published": "2026-05-11T09:03:14+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/b73f61ca-4e54-4282-994c-7329f14321f5_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "Substackで3ヶ月やっても伸びない人の共通パターン5つ",
+      "url": "https://kuronoaiagent.substack.com/p/substack35",
+      "excerpt": "Substackを始めて3ヶ月。購読者が100人を超えない。正直、やめようかと思ってる。",
+      "published": "2026-05-11T04:22:25+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/b67e4c93-e043-46e7-a826-2bc1a62a718a_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "小さな修正は思いついた時にやっちゃいたい！",
+      "url": "https://yujimine.substack.com/p/78a",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-05-11T00:00:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "⁠⁠◆【日刊】26/5/10 最新AIトレンド情報サマリー⁠⁠⁠⁠⁠⁠⁠⁠⁠⁠ →Anthropic、Claudeの「脅迫」行動を倫理的トレーニングで排除",
+      "url": "https://tetumemo.substack.com/p/26510-ai-anthropicclaude",
+      "excerpt": "毎日Spotifyに配信しているAIニュースをSubstackでも配信する実験です",
+      "published": "2026-05-10T22:57:08+00:00",
+      "image": "https://api.substack.com/feed/podcast/197153536/dc549aeb3791e9e6cb8ab082a9f0f9e0.mp3",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "寓話：「宇宙のすべてを映す瞳」",
+      "url": "https://simpleeelifecom.substack.com/p/c4b",
+      "excerpt": "インドラの網",
+      "published": "2026-05-10T09:50:07+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!gDOT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2192edc0-2fe3-42f2-bfb2-002ea687e6f6_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "【週報#1】週間報告書はじめました",
+      "url": "https://south0120.substack.com/p/1",
+      "excerpt": "サウスのAI活動報告書、毎週日曜18時にお届けします",
+      "published": "2026-05-10T09:02:26+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/d079f19f-a331-4dad-ad07-f801f17055d2_1200x630.jpeg",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "日記　5月10日（母の日。ゴミ袋なんかで懐柔されない）",
+      "url": "https://nami5711.substack.com/p/510",
+      "excerpt": "今日は母の日なのに、家族全員に他の用事があったので、朝早くから私が町内の公園の草取りにいくハメになった。",
+      "published": "2026-05-10T07:01:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ntYw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbfca4f7e-4ae7-4f53-8b73-47fc6ce769d0_4032x2987.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "AIで仕事がつまらなくなった？",
+      "url": "https://kajikent.substack.com/p/ai-065",
+      "excerpt": "AIが仕事に入ってきて「仕事がつまらなくなった」という人が最近増えてきた。Xなどのタイムラインでもそのような投稿をよく目にする。",
+      "published": "2026-05-10T05:06:38+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/80949d2a-c8c0-4e6a-85c8-26549adc40b0_4800x2520.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "AI案件を取る最短ルート",
+      "url": "https://kuronoaiagent.substack.com/p/ai-e66",
+      "excerpt": "提案を20本送って0件だったのが、型を変えたら3件取れました。",
+      "published": "2026-05-10T02:03:30+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/4640c04d-6bda-4864-92a4-9b3a016d5a70_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "「AIに書かせる」人と「AIを使って書く」人。3年間で見てきた、その残酷な差の話",
+      "url": "https://tetumemo.substack.com/p/aiai3",
+      "excerpt": "「AIを使えば誰でも稼げる時代が来た」",
+      "published": "2026-05-10T01:31:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!F3PG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff670a2fe-2556-405e-8905-a53dfed286db_1280x670.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "一人会社のつくり方（ひとりでできる篇）",
+      "url": "https://sogyonikki.substack.com/p/launch-company",
+      "excerpt": "『家を建てる者の捨てた石、これが隅の親石となった。』（マタイによる福音書 21章42節）",
+      "published": "2026-05-10T00:45:11+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7GHg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F378503fe-a614-4091-8dc7-451fdebbc6d8_2000x1089.png",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "代官山のアートフェスに参加、NYTにて記事掲載、金沢21世紀美術館での展示等、銭湯を巡る活動に参加中｜せんとうとまちニュースレター vol.53",
+      "url": "https://sentotomachi.substack.com/p/nyt21-vol53",
+      "excerpt": "新緑がまぶしく、街を歩くのが心地よい季節となりました。少し汗ばむ日も増え、湯上がりの風が気持ちよく感じられる頃です。",
+      "published": "2026-05-10T00:01:01+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!mROg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Face0e986-9313-4e36-b5fb-255665807dfc_788x996.png",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "Substackの購読者を初日で100人獲得する戦略",
+      "url": "https://kuronoaiagent.substack.com/p/100",
+      "excerpt": "結論、Substackで最初の購読者を一気に増やしたいなら、記事だけでは遅いです。",
+      "published": "2026-05-09T10:33:33+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/751c73c0-cb23-48cf-a57d-6d2aad235d09_1216x880.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "「みんなのニュースレター」で2年間配信しながら、今さらSubstackも始める本当の理由",
+      "url": "https://tetumemo.substack.com/p/2substack",
+      "excerpt": "なぜ今Substackなのか。「みんなのニュースレター」で購読者を6,000人集めた2年間が教えてくれた「掛け合わせ」の重要性",
+      "published": "2026-05-09T09:46:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!rHcG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcda60c36-739e-46db-a518-9acc7239a274_1693x929.png",
+      "writer": "テツメモの発信実験ログ",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "YOASOBIの『アイドル』がゆっくり聴こえる謎現象に関するレポート",
+      "url": "https://simpleeelifecom.substack.com/p/yoasobi",
+      "excerpt": "不思議な話をします。",
+      "published": "2026-05-09T07:13:11+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!IZU9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F296f0201-3750-41e0-93cb-940e4bbac1f0_1456x816.png",
+      "writer": "シンプリィライフ・ノート",
+      "category": "ライフスタイル"
+    },
+    {
+      "title": "請求書を1クリック化した話",
+      "url": "https://kuronoaiagent.substack.com/p/1",
+      "excerpt": "Claude Codeで請求書作成をAIだけでやってみた結果がこれです。",
+      "published": "2026-05-09T02:04:03+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/b1e890a7-c54e-42ac-b7a1-2875e69902ae_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "「本当にやりたいこと」というのは、「探す」ものではなく、「育む」もの",
+      "url": "https://kajikent.substack.com/p/2b9",
+      "excerpt": "「やりたいことが見つからないんですけど、どうしたらいいですか？」",
+      "published": "2026-05-08T23:31:07+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!IHe4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fefb25b2d-b728-40e5-bee6-990005417f5e_6016x4016",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "Live with くろの｜Claude Code 1500時間超えガチ勢",
+      "url": "https://kuronoaiagent.substack.com/p/live-with-claude-code-1500",
+      "excerpt": "A recording from くろの｜Claude Code 1500時間超えガチ勢's live video",
+      "published": "2026-05-08T12:37:11+00:00",
+      "image": "https://api.substack.com/feed/podcast/196887910/e7433a04a38f5f9f6bd6786ca9f0b182.mp3",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "Substackは『5人組』が最速で伸びる理由",
+      "url": "https://kuronoaiagent.substack.com/p/5-451",
+      "excerpt": "結論、Substackを1人で伸ばすのは遅いです。",
+      "published": "2026-05-08T09:04:39+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/10c01cce-2121-433a-ba7f-f593402bc137_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "AI時代に本を読む意義は「◯◯の摂取」である",
+      "url": "https://kajikent.substack.com/p/ai-c8e",
+      "excerpt": "AIの急速な進化により、私たちの情報収集や学習の方法は根本的に変わりつつあります。ChatGPTやGeminiといった対話型AI、さらにはClaude CodeやCodexのようなAIエージェントの登場により、「AIに聞けばすぐに答えが得ら",
+      "published": "2026-05-08T05:59:02+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/7c7b453e-4315-4a66-98ea-afbaa882df7d_2560x1340.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "【コミック版】赤字続きの北陸貿易商が紙1枚の棚卸しで30の挑戦を発掘した夜。",
+      "url": "https://postorijapan.substack.com/p/130",
+      "excerpt": "コミックエッセイ・生成AI漫画版",
+      "published": "2026-05-08T05:05:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vh3y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0044d4a-c649-4df4-bbc9-c5aa36327145_941x1672.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "密林の夢/マスキングを極める②",
+      "url": "https://seinochisato.substack.com/p/c80",
+      "excerpt": "・いつか見たジャングルに思いを馳せながら、熱帯の動植物を描く ・マスキングの失敗は、マスキングテープだけではなく紙にも注目 ・グループ展&オンライン展示販売の最新情報",
+      "published": "2026-05-08T03:01:11+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/17b39b89-5512-40d4-9938-b465013f0626_1073x780.jpeg",
+      "writer": "SEINO CHISATO JOURNAL",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "【自分には何もないと思うたびに、じわじわ手が震えていたあなたへ】",
+      "url": "https://postorijapan.substack.com/p/df1",
+      "excerpt": "孫子が2,500年前に言った「己を知れ」の意味を、noteを始めたい人向けに全部翻訳した。5つの問いと3つの処方箋つき。",
+      "published": "2026-05-08T02:26:50+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!lZPn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F490ddb8e-09fb-46c0-8a9a-6c983abd60a9_1774x613.png",
+      "writer": "ポス鳥（日本語版）",
+      "category": "社会・文化"
+    },
+    {
+      "title": "AIの差は使い手で決まる",
+      "url": "https://kuronoaiagent.substack.com/p/ai-2a9",
+      "excerpt": "AIはもう武器じゃないです。",
+      "published": "2026-05-08T02:03:46+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/816df7d2-f609-4c0e-9b86-4f176528e2cd_1216x880.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "日記　5月7日（シャンプーする側の気持ち）",
+      "url": "https://nami5711.substack.com/p/57",
+      "excerpt": "今日は美容院へ行ってきた。私は17歳から22歳までの6年間、美容師だったので、ちょっとだけ「そっち側の苦労も知ってるよ」という顔で過ごす。",
+      "published": "2026-05-07T21:31:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!gwwI!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87f494bb-8617-4437-9cb4-2eea6ce6c0ac_400x400.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "ライブ配信テスト 〜GWに読んだ本について 〜",
+      "url": "https://kajikent.substack.com/p/gw",
+      "excerpt": "A recording from 梶谷健人's live video",
+      "published": "2026-05-07T09:06:03+00:00",
+      "image": "https://api.substack.com/feed/podcast/196753962/32753e57da6d9135ac95ac15f43b6608.mp3",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "1本で514人増やすNote設計",
+      "url": "https://kuronoaiagent.substack.com/p/1514note",
+      "excerpt": "結論、バイラルNoteは才能じゃないです。設計です。",
+      "published": "2026-05-07T09:05:16+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/cc9b9aa2-4995-43f1-b4d0-4d3994f7858f_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "伝わる指示は5つで決まる",
+      "url": "https://kuronoaiagent.substack.com/p/5-6c8",
+      "excerpt": "Claude Codeでこんなことありませんか？ 触ってるのに、なぜか思った通りの結果が返ってこない。",
+      "published": "2026-05-07T02:03:25+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/3f2544cc-91bb-4d3e-8375-91738ec8512c_1216x880.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "『ヨーロッパはEVを諦めた』は嘘——ドイツ現地で見たEVのリアル【雑談回】",
+      "url": "https://andykondo.substack.com/p/evev-74e",
+      "excerpt": "ヨーロッパから帰国しました。最後の最後で、レンタカーのヒョンデEV「IONIQ 6」が空港で文鎮化。トランクすら開かない緊急事態の中、なんとか飛行機に間に合った話から始めます。そして本題。日本のネットでよく見る「ヨーロッパはEVを諦めた」「",
+      "published": "2026-05-07T01:31:01+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701632/f31fe6b38e09d4faebf1283dbd61b1b7.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "Substackで購読者1,000人を最速で達成する3つの武器",
+      "url": "https://kuronoaiagent.substack.com/p/substack10003",
+      "excerpt": "Substackを始めたけど、購読者が全然増えない。",
+      "published": "2026-05-06T13:09:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!VOQr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb3db058-2b86-427f-afe8-20f2c3ba814d_1376x768.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "プロンプト末尾に1行足すだけで品質が変わる",
+      "url": "https://wad0427.substack.com/p/1",
+      "excerpt": "わど です。 短く書きます。",
+      "published": "2026-05-06T11:42:15+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/b98dcfa2-da46-427a-85f9-355b4f9e2b62_1729x910.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "日記　5月6日",
+      "url": "https://nami5711.substack.com/p/56",
+      "excerpt": "ネットフリックスの『地獄に堕ちるわよ』を観ている。戸田恵梨香演じる細木数子が、唇の端を指で触り「んぱあー」っと口を開ける仕草が、じっとりと不気味で生々しい。",
+      "published": "2026-05-06T10:49:55+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!gwwI!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87f494bb-8617-4437-9cb4-2eea6ce6c0ac_400x400.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "運は「粒子」のようなものである",
+      "url": "https://kajikent.substack.com/p/1f5",
+      "excerpt": "運は「サイコロ」や「女神」ではなく、「粒子」として捉えるとぐっと扱いやすくなる。世界中を漂う運の粒子は偏在し、衝突確率は自分の表面積に比例する。表面積を広げ、粒子の濃いエリアへ自ら移動する——この二つを意識した瞬間、運は祈りの対象から確率の",
+      "published": "2026-05-06T10:31:16+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/acbf8b47-5fab-4310-840d-bfd91facfbd2_1730x909.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "AI丸投げで止まった理由",
+      "url": "https://kuronoaiagent.substack.com/p/ai-ad4",
+      "excerpt": "AIを実際にやってみたら、速くなったのに全然勝てませんでした。",
+      "published": "2026-05-06T02:03:49+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/ec75c42a-a1a0-4d88-afae-bb87df2767ec_1216x880.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "Substack は「著者と話せる本屋さん」だ",
+      "url": "https://south0120.substack.com/p/substack-4c6",
+      "excerpt": "フォローまつりから生まれた、Substack の捉え方",
+      "published": "2026-05-05T03:06:07+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f720a219-64d9-44f6-9876-6b845bc24c09_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "非エンジニアでも月を変える方法",
+      "url": "https://kuronoaiagent.substack.com/p/332",
+      "excerpt": "3時間かかっていた副業作業が、仕組み化したら20分まで縮みました。",
+      "published": "2026-05-05T02:03:06+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/42830b2d-a0a2-4424-8127-cc71384b39a6_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "ソトワークを科学する！③ー環境は思考を設計する",
+      "url": "https://nakalab.substack.com/p/b13",
+      "excerpt": "これまでの連載で書いてきたこと。",
+      "published": "2026-05-05T01:34:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!N0Ug!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F798b33ed-ebe7-4315-9f6e-41c4ec3710c5_4032x3024.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "AIに論破される人と、使い倒す人の決定的な違い",
+      "url": "https://wad0427.substack.com/p/ai",
+      "excerpt": "AIは「真実」より「正しく聞こえる」を優先します。これ知らないと一瞬で丸め込まれます。",
+      "published": "2026-05-04T12:36:51+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/38925f85-28ba-486f-964a-45143b457f83_1729x910.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "「超知能AIをつくれば人類は絶滅する」読書メモ",
+      "url": "https://kajikent.substack.com/p/ai",
+      "excerpt": "AIアライメントの世界的権威が書いた強烈な警告の書",
+      "published": "2026-05-04T06:24:34+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/bccc8417-cff7-4f54-b89e-b34a2d2a06a8_1731x909.png",
+      "writer": "梶谷健人のニュースレター",
+      "category": "AI"
+    },
+    {
+      "title": "第2回：三内丸山は本当に「都市」だったのか",
+      "url": "https://ahoka1117.substack.com/p/2",
+      "excerpt": "〜都市の条件と縄文の“異質さ”〜",
+      "published": "2026-05-04T03:13:01+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!3osE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6cd86f80-75c7-42a7-8d3b-75185d126d97_1024x1536.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "SNS投稿を勝手に回す方法",
+      "url": "https://kuronoaiagent.substack.com/p/sns",
+      "excerpt": "Claude CodeでSNS投稿の自動化をAIだけでやってみた結果がこれ。",
+      "published": "2026-05-04T02:03:12+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f6ae3576-001d-41c3-ac07-d8ee62df091d_1216x864.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "Brainの学習サポート！「Brain Reader」という拡張機能を作りました【無料】",
+      "url": "https://south0120.substack.com/p/brainbrain-reader",
+      "excerpt": "無料で使えるChrome拡張機能です",
+      "published": "2026-05-03T23:48:20+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/9144e3cb-c61e-4453-9f90-96d2140d4ee6_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "速い人だけが使う5コマンド",
+      "url": "https://kuronoaiagent.substack.com/p/5",
+      "excerpt": "Claude Codeでこんなことありませんか？ 使っているのに、なぜか作業が速くならない。",
+      "published": "2026-05-03T02:02:34+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/bb4dbb6f-b5b3-4495-8f8f-2c39fdafc892_1216x880.png",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "上場直前期スタートアップのエンジニアを辞めた理由",
+      "url": "https://sogyonikki.substack.com/p/quit-startup-job",
+      "excerpt": "「あなたがたは、神と富とに仕えることはできない。」（ルカによる福音書 16章13節）",
+      "published": "2026-05-02T23:55:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!yybe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb4b3d58-7eb7-412c-90a0-a8f6ccd5485d_339x522.jpeg",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "AIで「作る」と「回す」は全く違う",
+      "url": "https://kuronoaiagent.substack.com/p/ai",
+      "excerpt": "「AIですごいの作りました。」",
+      "published": "2026-05-02T13:14:31+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Pnuq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa73130d5-07ca-42de-a225-40ae80adbe76_1376x768.webp",
+      "writer": "くろの｜Claude Code ガチ勢",
+      "category": "AI"
+    },
+    {
+      "title": "「プロンプトを書くな、ファイルを書け」がClaude運用の到達点だという話",
+      "url": "https://wad0427.substack.com/p/claude-66b",
+      "excerpt": "「プロンプトを書くな、ファイルを書け」がClaude運用の到達点だという話",
+      "published": "2026-05-02T08:03:57+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!6SkX!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febad0110-8391-444c-862e-b7ff0f05c903_1280x1280.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "NotebookLMのフォルダ管理機能をリリースしたら反響が大きく慌ててバージョンアップした話",
+      "url": "https://south0120.substack.com/p/notebooklm",
+      "excerpt": "はじめに — NotebookLMの「嬉しい悩み」",
+      "published": "2026-05-01T12:34:28+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/f20e4505-1f2b-4733-b416-9cdbcf81df06_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "Claudeに全振りしてた人、たぶん明日から損する話",
+      "url": "https://wad0427.substack.com/p/claude",
+      "excerpt": "英語圏のAI業界で「もうClaudeだけじゃ無理」と言われ始めた話を共有させてください。",
+      "published": "2026-05-01T11:23:27+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!6SkX!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Febad0110-8391-444c-862e-b7ff0f05c903_1280x1280.png",
+      "writer": "わど🐏最新AI情報",
+      "category": "AI"
+    },
+    {
+      "title": "【Chrome拡張機能】Notebookを管理する本棚「BookShelf for NotebookLM」を作成しました",
+      "url": "https://south0120.substack.com/p/chromenotebookbookshelf-for-notebooklm",
+      "excerpt": "NotebookLMって使ってますか？",
+      "published": "2026-05-01T09:33:34+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/8ad2d5a9-a911-44fb-87c5-3b3f20e933d0_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "嫉妬の教科書",
+      "url": "https://nami5711.substack.com/p/ba9",
+      "excerpt": "〜３つの型と、泥沼から抜け出すための処方箋〜",
+      "published": "2026-05-01T03:31:02+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!gwwI!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87f494bb-8617-4437-9cb4-2eea6ce6c0ac_400x400.jpeg",
+      "writer": "斉藤ナミ／エッセイスト",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "【警鐘】全固体電池があっても、日本は勝てないー本当の競争軸はそこじゃない",
+      "url": "https://andykondo.substack.com/p/bce",
+      "excerpt": "全固体電池が日本のEV復権の切り札 — メディアでも政府の話でも、よく聞きます。でも、この前提、もうほとんど成り立ってないんですよ。全固体電池の市場シェアは、2035年でも全電池の数%(Fraunhofer・TrendForce・SMM予測",
+      "published": "2026-05-01T02:36:02+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701633/2b9e904632da86ca3c9956eb95500d66.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "Substack 新規ユーザー向け 設定手順書",
+      "url": "https://south0120.substack.com/p/substack",
+      "excerpt": "とりあえず設定しておいたら良さそうな部分をまとめてみました",
+      "published": "2026-04-30T14:45:57+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7lzu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F94d146cc-6f8c-448c-8e6b-5c595e1760b2_1536x804.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "第1回：縄文に「王」はなぜ現れなかったのか",
+      "url": "https://ahoka1117.substack.com/p/1",
+      "excerpt": "三内丸山と貝塚が示す、国家以前の構造〜",
+      "published": "2026-04-30T12:24:25+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!XIT5!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a41b73a-27f9-423a-910e-26f57d4d9fa3_1024x1536.png",
+      "writer": "カトちゃんの古代史考察",
+      "category": "教育・学び"
+    },
+    {
+      "title": "立ち止まってもいい場所を作りたくて",
+      "url": "https://itawaru.substack.com/p/538",
+      "excerpt": "こんにちは、マコと申します。",
+      "published": "2026-04-27T07:48:05+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!0YjR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F322de5e0-01a3-4070-8323-463518a77535_1536x1024.png",
+      "writer": "おやすみ前の自分ほぐしエッセイ",
+      "category": "健康・ウェルネス"
+    },
+    {
+      "title": "フィーチャーチームが抱えるギャップ",
+      "url": "https://yujimine.substack.com/p/8ab",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-04-27T00:01:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "ソトワークを科学する②ー身体が思考をつくる",
+      "url": "https://nakalab.substack.com/p/9cc",
+      "excerpt": "前回、こんな話を書いた。能力は、その人の中に固定されているのではなく、環境と身体との関係の中で立ち上がると。今回は、「身体」と能力を支える思考の関係を掘り下げてみたい。",
+      "published": "2026-04-26T22:38:33+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5wUk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf3b8797-b322-4260-9b63-64e1d4447853_4032x3024.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "【爆速のAIモデル】Mercuryでコーディングしてみた話",
+      "url": "https://south0120.substack.com/p/diffusion-mercury",
+      "excerpt": "Mercury 2は速い。でも今のところ、信頼できる「速い」ではない。",
+      "published": "2026-04-26T22:01:01+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/c5c22c0a-a6df-41ec-9c21-545cfc1912df_1200x630.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "一人会社を設立しました",
+      "url": "https://sogyonikki.substack.com/p/manifesto",
+      "excerpt": "今に至るまで、わたしたちは世の屑、すべてのものの滓とされています。（コリントの信徒への手紙一 4章13節）",
+      "published": "2026-04-26T00:05:22+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!qQep!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa0d0c5ac-63f0-4ce6-afac-4791f858916d_800x800.png",
+      "writer": "週刊創業日記",
+      "category": "ビジネス"
+    },
+    {
+      "title": "熱帯植物の世界／マスキングを極める①",
+      "url": "https://seinochisato.substack.com/p/2f6",
+      "excerpt": "特集は最近の制作現場から今一番熱いトピックをお届け。植物園で熱帯植物を観察したりスケッチしたりの日々です。 ものづくりコラムではマスキングについて、詳しく掘り下げていきます。",
+      "published": "2026-04-24T03:01:09+00:00",
+      "image": "https://substack-post-media.s3.amazonaws.com/public/images/a98274f8-aa7e-4526-b186-1fd37ca50063_2024x1139.jpeg",
+      "writer": "SEINO CHISATO JOURNAL",
+      "category": "クリエイティブ"
+    },
+    {
+      "title": "エンジン最高！EV批判する人、実はクルマ好きじゃない—EVスーパーカーで日本車復活を",
+      "url": "https://andykondo.substack.com/p/evev-0fa",
+      "excerpt": "「エンジン最高!」と言いながら、乗ってるのは軽自動車かミニバン。日本のスポーツカーを消してきたのは、実はエンジン好きを自称するおじさんたちだった。本物のクルマ好きは今、テスラに乗っている——この真実をほどきます。━━━━━━━━━━━━━━",
+      "published": "2026-04-23T08:00:01+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701634/69a9a3dcf0578e1e2ee439704409cc02.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "サウスです。「AIで仕事を半分に」をテーマに発信します",
+      "url": "https://south0120.substack.com/p/7f6",
+      "excerpt": "AI × 個人開発で、ひとりでもビジネスは作れる",
+      "published": "2026-04-22T08:19:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!N88L!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8b72a85-92e1-463d-9135-5027aec8017f_1354x906.png",
+      "writer": "サウスのAI活動報告書",
+      "category": "AI"
+    },
+    {
+      "title": "スキルという言葉の危うさ",
+      "url": "https://yujimine.substack.com/p/778",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-04-20T00:00:49+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "日産は未来、ホンダは過去——同じ週、両方赤字、でも見てるものが違いすぎる",
+      "url": "https://andykondo.substack.com/p/d2b",
+      "excerpt": "日産は未来、ホンダは過去——同じ週、両方赤字、でも見てるものが違いすぎる2026年4月、たった2日違いで起きた2つの出来事。日産は「Re:Nissanを超えて未来へ」と宣言し、ジュークEVとスカイラインEV復活を発表。ホンダは軽EV「Sup",
+      "published": "2026-04-17T22:00:00+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701635/1bac715a1f4f2907d2043c7f4746808a.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "ソトワークを科学する①",
+      "url": "https://nakalab.substack.com/p/11f",
+      "excerpt": "湖畔で仕事をしていると、不思議なことが起きる。頭で考えようとしなくても、言葉が降りてくる。無理に集中しようとしなくても、自然と深く入っていく。そして気がつくと、いつもの自分よりも少しだけ、いい思考をしている。これは気のせいなのか。それとも、",
+      "published": "2026-04-15T23:14:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jlIl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86fd7b96-5def-4f6b-bf53-93083557784f_1716x1320.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "\"温暖化は嘘\"、”脱炭素は無意味”が国会で語られた。科学を捨てた国は産業も失う",
+      "url": "https://andykondo.substack.com/p/01b",
+      "excerpt": "国会で「温暖化は嘘」「脱炭素は無意味」という陰謀論めいた内容が語られた。その質疑がYouTubeで\"世界的詐欺の証拠\"として拡散されている。一人歩きする「0.006度」という数字。イノベーションアナリストが全データを検証します。━━━━━━",
+      "published": "2026-04-13T22:00:00+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701636/dca0dbf472114137a5ff4d92ea766b94.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "チームの信頼を取り戻すためのアプローチ方法",
+      "url": "https://yujimine.substack.com/p/668",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-04-13T00:01:06+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "北区事業の集大成 「わたしのせんとうとまち」展 開催報告 — 北区の銭湯とまちを巡る3年間を終えて｜せんとうとまちニュースレター vol.52",
+      "url": "https://sentotomachi.substack.com/p/3-vol52",
+      "excerpt": "桜舞う季節となり、春らしい陽気になってきました。新年度を迎え、新たな気持ちで4月をスタートさせている方も多いのではないでしょうか。",
+      "published": "2026-04-12T00:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!aE9C!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64f2f459-a2d9-4a52-8f0c-f92053c66ae9_2048x1365.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "明治時代のEVがスゴすぎた【前編】水車小屋で充電するから再エネ100％【ドイツ現地レポート】",
+      "url": "https://andykondo.substack.com/p/ev100-3ab",
+      "excerpt": "ドイツでとあるEVメーカーの最新モデルを試乗レポートしてきました。メーカーの名前は「フロッケン」。ドイツ・バイエルン州コーブルク発の、新進気鋭のEVメーカーです。……1888年製です。創業者アンドレアス・フロッケンは農業機械メーカーから独立",
+      "published": "2026-04-10T00:49:39+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701637/5483524209a6c000aa096b82835b8812.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "100年前のNYに1000台のEVタクシーがいた。なぜエンジンの世紀が来たのか",
+      "url": "https://andykondo.substack.com/p/100ny1000ev-03f",
+      "excerpt": "1888年、ドイツで世界初の電気自動車が生まれた年——ニューヨークでは毎日2400トンの馬糞が街を埋めていた。自動車は「馬糞問題の解決策」として登場した。そして最初に都市で選ばれたのは、ガソリン車ではなくEVだった。1897年、ニューヨーク",
+      "published": "2026-04-09T22:00:00+00:00",
+      "image": "https://api.substack.com/feed/podcast/198701638/b0c37f396c05b8aed748cae9234a2583.mp3",
+      "writer": "Andy Kondo - Innovation Analyst",
+      "category": "ビジネス"
+    },
+    {
+      "title": "コードは古くなる。日々のメンテナンスが大切",
+      "url": "https://yujimine.substack.com/p/822",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-04-06T00:02:22+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Hbny!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd7d4dc52-5199-45fa-bcc8-f34b3448d147_2978x2353.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "そんな筈はなかった...最大桁数溢れというボトルネック",
+      "url": "https://yujimine.substack.com/p/a0e",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-03-30T00:01:30+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9qWP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f1c41fd-e109-4e1d-aac1-ca956351ad0f_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "魂が喜ぶ働き方2",
+      "url": "https://nakalab.substack.com/p/2",
+      "excerpt": "■ 魂が喜ぶ働き方とは何か",
+      "published": "2026-03-27T23:10:06+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!EU80!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc221526e-7fa7-442c-8ce4-52dfe51f7463_4032x3024.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "テストカバレッジは高いはずなのに、ソフトウェアの品質が低いのは何故なのだろうか",
+      "url": "https://yujimine.substack.com/p/9b5",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-03-23T00:00:40+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9rLE!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb36969c-8b0d-4b4b-94fd-4a955b2ef7aa_400x400.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "エクストリーム・ソトワーク",
+      "url": "https://nakalab.substack.com/p/24b",
+      "excerpt": "自然の中で働くことの価値を、本当に理解したい。",
+      "published": "2026-03-17T08:07:23+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5VHs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9e5b2b7-2a4a-4f2c-bc22-364a76169297_1320x1718.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "箱の中ではなく、箱自体の改善が最も重要なのではないか",
+      "url": "https://yujimine.substack.com/p/c38",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-03-16T00:01:32+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Mrxf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54b6f779-2f9b-4d9a-ad92-a7e58ec6b812_4219x3471.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "魂が喜ぶ働き方-ソトワークという実験",
+      "url": "https://nakalab.substack.com/p/7b5",
+      "excerpt": "もし働く場所を少し変えるだけで、仕事の質や創造性が変わるとしたらどうでしょうか。",
+      "published": "2026-03-14T23:22:15+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!QwYc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F374e4c8f-688d-48c9-b679-3a1eb89339e6_1716x1320.jpeg",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "週刊ソトワークスタイルを始めました。",
+      "url": "https://nakalab.substack.com/p/coming-soon",
+      "excerpt": "長年、オフィスや働き方の研究に携わってきましたが、 近年は琵琶湖畔に「生きる場」という実験的な拠点をつくり、自然の中で働く「ソトワーク」という働き方を探究しています。 身体知、環境、対話。 人間の創造性は、頭の中だけではなく、身体と場の関係",
+      "published": "2026-03-14T21:57:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!sFoN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff4b0c515-168f-46b3-b462-a08cd5566d9c_1536x1024.heic",
+      "writer": "週刊ソトワークスタイル",
+      "category": "キャリア・働き方"
+    },
+    {
+      "title": "ルールやフレームワークとの最適な距離感とは",
+      "url": "https://yujimine.substack.com/p/1f7",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-03-09T00:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ywxz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F80c262cd-1562-4a41-84b9-11ab856c2369_1024x1024.png",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "ガバメントサービス導入基準として重要度が高まりつつある「ISMAP」とは",
+      "url": "https://yujimine.substack.com/p/ismap",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-03-02T00:01:15+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!yg4w!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F56bd27ab-e7a5-4d4c-9df1-d9d938570db3_3969x3286.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "号外「わたしのせんとうとまち」展　2箇所同時開催中！メイン会場は2/28(土）まで。お見逃しなく",
+      "url": "https://sentotomachi.substack.com/p/2228",
+      "excerpt": "いつも一般社団法人「せんとうとまち」をご支援いただきありがとうございます。",
+      "published": "2026-02-27T06:00:34+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!_YCh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F60adc00e-00d3-44ad-afeb-2d15237ad1e3_1600x1066.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "心理的安全性は日々の積み重ねによってもたらされる",
+      "url": "https://yujimine.substack.com/p/b1f",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-02-23T00:00:49+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!q7Tz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e893520-049f-42ba-adf1-f483ba2040b9_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "個人タスク化が進むことで崩れるスクラム",
+      "url": "https://yujimine.substack.com/p/b72",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-02-16T00:01:37+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NpAu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6da3109f-7956-498a-a928-2d1cdb2ce4bb_1102x1034.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "役割分離がもたらす作用と条件",
+      "url": "https://yujimine.substack.com/p/036",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-02-09T00:00:21+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!JBB8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc08a604f-c650-487b-9f69-1a933195598d_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "Amazonはなぜ「国家みたい」になったのか",
+      "url": "https://lawrencesnewsletter.com/p/amazon",
+      "excerpt": "自由な市場を作るはずだったインターネットは、なぜ「皇帝」を生むのか。",
+      "published": "2026-02-08T10:51:49+00:00",
+      "image": "https://api.substack.com/feed/podcast/187274805/553cfd30eaf6a4dd56af001324e482f7.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "影響調査の漏れを軽減するために、まず「対象範囲」を決める",
+      "url": "https://yujimine.substack.com/p/02c",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-02-02T00:00:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5VyP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc3bdb14d-6b4f-4339-b2bc-6c1b059bc906_4032x3024.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "【CEO退任？】プライバシーを巡る政府との闘い、ティム・クックの決断｜Apple / ティム・クック後編",
+      "url": "https://lawrencesnewsletter.com/p/apple-timcook-2",
+      "excerpt": "Listen now | ティム・クックが信じる“価値観”が、現実の圧力の中でどう試され、Appleにどう実装されていったのか。何億人の安全と、政府の権力の境界線をめぐる話。",
+      "published": "2026-02-01T09:02:57+00:00",
+      "image": "https://api.substack.com/feed/podcast/184195061/698ec4196baf9d62fbb2ffc6fcb3ef8a.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "北区の銭湯をめぐる3年間、いよいよ完結/「ふるさとづくり大賞（総務大臣賞）」受賞｜せんとうとまちニュースレター vol.51",
+      "url": "https://sentotomachi.substack.com/p/3-vol51",
+      "excerpt": "早くも2026年も1ヶ月が経ちました。肌寒い日も続き、各地でも大雪が降る寒さとなっています。皆様もお身体にはお気を付けてお過ごしください。",
+      "published": "2026-02-01T00:01:25+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!kRRA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5f7c06f1-5d85-446c-9af5-892f3ad23abd_1132x1600.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "AIで生産量が向上しない議論について思う",
+      "url": "https://yujimine.substack.com/p/ai-ff0",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-01-26T00:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!RQM-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F607c3ec9-d9aa-431a-995f-1b56be9ee306_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "なぜジョブズはティム・クックを後継者に選んだのか｜Apple / ティム・クック前編",
+      "url": "https://lawrencesnewsletter.com/p/apple-timcook-1",
+      "excerpt": "Listen now | ジョブズの“次”に必要だったのは、発明ではなく「会社を生かす力」だった。舞台裏の男が、Appleの“呼吸”を整えていく。",
+      "published": "2026-01-25T09:02:10+00:00",
+      "image": "https://api.substack.com/feed/podcast/184192564/43fa905feda047e2b1853d91d073808c.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "組織における「意識差」と向き合うということ",
+      "url": "https://yujimine.substack.com/p/dd9",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2026-01-19T00:00:54+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!e5gw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a606d96-f013-4d1a-9962-329c3c3427e8_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "NVIDIAの次の賭けは何か？ジェンスンが見ている次の10年｜NVIDIA編 第5話",
+      "url": "https://lawrencesnewsletter.com/p/nvidia10nvidia-5",
+      "excerpt": "Listen now | NVIDIAは“AIの勝者”で終わらない。次にどこへ賭けるのか──ジェンスンの発言とこれまでの物語から、次の10年の地図を引く（NVIDIA編・最終話）",
+      "published": "2026-01-18T09:02:00+00:00",
+      "image": "https://api.substack.com/feed/podcast/182624411/e28785e7f2ad34f0ba64453ef4ad091f.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "NVIDIAの流儀、AIの火付け役になれた理由｜NVIDIA編 第4話",
+      "url": "https://lawrencesnewsletter.com/p/nvidiaainvidia-4",
+      "excerpt": "Listen now | NVIDIAがAIの火付け役になれた理由は、技術だけじゃない。ジェンスンの「ミッションが究極のボス」という組織設計にあった。",
+      "published": "2026-01-11T09:01:33+00:00",
+      "image": "https://api.substack.com/feed/podcast/182623465/16e2b76504dd55d58fd6e82b1a6df966.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "3年間の北区政策提案協働事業の展示ご案内、今年も盛況だった初湯イベント｜せんとうとまちニュースレター vol.50",
+      "url": "https://sentotomachi.substack.com/p/3-vol50",
+      "excerpt": "新しい年を迎え、あっという間に1週間が経ちました。日頃より一般社団法人せんとうとまちの活動を支えてくださっている皆さまに、心より御礼申し上げます。",
+      "published": "2026-01-10T00:01:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Eqmt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbe1ef69-8e82-4bc6-a224-7f36bffc233b_1600x1066.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "「廃業30日前」から世界標準へ。NVIDIAを強くした起点は何か｜NVIDIA編 第3話",
+      "url": "https://lawrencesnewsletter.com/p/30nvidianvidia-3",
+      "excerpt": "Listen now | NVIDIAが強くなった理由は、技術より先に“勝ち方の設計”を変えたことにある",
+      "published": "2026-01-04T09:02:21+00:00",
+      "image": "https://api.substack.com/feed/podcast/182622154/afea2abb0349b5b1e9f5e507ad51fd5e.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "預金残高ギリギリ。NVIDIAはどう逆境から生き延びたのか｜NVIDIA編 第2話",
+      "url": "https://lawrencesnewsletter.com/p/nvidia2-2",
+      "excerpt": "Listen now | ファミレスで創業されたNVIDIA。彼らが最初に開発したチップは苦難の迎えることになる… 創業初期のギリギリからの一発大逆転！",
+      "published": "2025-12-28T09:00:40+00:00",
+      "image": "https://api.substack.com/feed/podcast/180920511/4d780867b5c0720ff68e785f88b123d2.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "必要性を測るためには、まず無くしてみるのが良いかもしれない",
+      "url": "https://yujimine.substack.com/p/1be",
+      "excerpt": "ソフトウェアエンジニアの日誌をヒントに、働き方や学び方を考える週刊ニュースレター",
+      "published": "2025-12-22T00:00:57+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!HUUh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b8e1d1c-a576-435c-8ba1-901682436d52_5712x4284.jpeg",
+      "writer": "週刊ソフトウェアエンジニアのリリースノート",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "倒産寸前のNVIDIAを救った男、ジェンスン・フアンの原点｜NVIDIA編 第1話",
+      "url": "https://lawrencesnewsletter.com/p/nvidia2-1",
+      "excerpt": "Listen now | 矯正施設、デニーズの皿洗い、半導体業界の闘争——世界一の時価総額企業をつくったCEOの「逆境をいくつも乗り越える」の物語",
+      "published": "2025-12-21T09:01:52+00:00",
+      "image": "https://api.substack.com/feed/podcast/180919614/6347448f7ca1f878941edab614c55cd1.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "光と影を持つ人物像考察、次に掛ける領域は｜サム・アルトマン編 第5話",
+      "url": "https://lawrencesnewsletter.com/p/1-5",
+      "excerpt": "サム・アルトマンとは一体どんな人物なのか。シリーズを通じて見える人物像を考察、彼が考える未来、投資先とは？シリーズ完結...！",
+      "published": "2025-12-14T09:00:34+00:00",
+      "image": "https://api.substack.com/feed/podcast/179625703/fb4b53177dfe958960399682b3ec765e.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "OpenAI理事会の反乱！なぜCEOを解任されたのか｜サム・アルトマン編 第4話",
+      "url": "https://lawrencesnewsletter.com/p/ceo-1-4",
+      "excerpt": "Listen now | 内部の緊張はピークに達するOpenAI。サムはCEOを解任されるも理事会の暴走と考える勢力が増え始め…。",
+      "published": "2025-12-07T09:01:01+00:00",
+      "image": "https://api.substack.com/feed/podcast/179625194/2fb83581bedbb13cd34d4d3c5def064b.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "稲荷湯長屋で培ったまちとの関係性で生まれた新店舗のご紹介と初湯のご案内｜せんとうとまちニュースレター vol.49",
+      "url": "https://sentotomachi.substack.com/p/vol49",
+      "excerpt": "冬の足音が近づき、湯気のぬくもりが恋しい季節になりました。師走の慌ただしさのなか、素敵な年末年始となるよう早めの準備をしたいものですね。",
+      "published": "2025-12-07T00:00:49+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!tmtt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fddf11c0c-5234-4513-91e4-a69918dcc59b_1023x1173.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "ChatGPT誕生秘話、アパートの一室から全ては始まった！｜サム・アルトマン編 第3話",
+      "url": "https://lawrencesnewsletter.com/p/sam-altman-3",
+      "excerpt": "マッチョなサム・アルトマンの右腕、ブロックマンのアパートの一室で始まったOpenAI。AIの安全性を強く考える効果的利他主義のメンバーの合流で、社内の緊張感は高まっており…。",
+      "published": "2025-11-30T09:00:45+00:00",
+      "image": "https://api.substack.com/feed/podcast/179624153/07ad3af7ac82403861c7d3f73146457c.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "なぜOpenAIは作られたのか？設立前夜の知られざる物語！｜サム・アルトマン編 第2話",
+      "url": "https://lawrencesnewsletter.com/p/sam-altman-2",
+      "excerpt": "ポール・グレアムからYコンビネータ社長を引き継いだサム・アルトマン。一方その頃、イーロン・マスクとAI研究所設立に向けた会談を重ね…。",
+      "published": "2025-11-23T09:00:54+00:00",
+      "image": "https://api.substack.com/feed/podcast/179623288/35295f646562bc5d0817651ff9cab565.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "ChatGPTを生んだ天才起業家、サム・アルトマンとは何者か｜サム・アルトマン編 第1話",
+      "url": "https://lawrencesnewsletter.com/p/chatgpt1-1",
+      "excerpt": "Listen now (37 mins) | その天才は、なぜ「資金調達の神」と呼ばれたのか？AI時代のテック・リーダーのすべてに迫るストーリー開幕！",
+      "published": "2025-11-21T09:01:53+00:00",
+      "image": "https://api.substack.com/feed/podcast/179458012/baf8bc5d8527027ff2e9dd80843b3f4f.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "銭湯の日に「東京型銭湯」の歴史的文化的価値を発信するイベントに登壇｜せんとうとまちニュースレター vol.48",
+      "url": "https://sentotomachi.substack.com/p/vol48",
+      "excerpt": "朝晩の風が少しずつ冷たくなり、湯気の立ちのぼる季節が近づいてきました。",
+      "published": "2025-11-02T00:01:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Yxhy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F500a8647-0d79-41bc-bd84-5aa88a7b7f48_1084x1084.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "AAスクールの銭湯ワークショップ報告、東京都が「東京型銭湯」の魅力を伝えるャンペーンを開始｜せんとうとまちニュースレター vol.47",
+      "url": "https://sentotomachi.substack.com/p/aa-vol47",
+      "excerpt": "10月となり、秋の行楽シーズンとなりました。紅葉狩りなどのおでかけに出てみてはいかがでしょうか？寒暖の差がでてきておりますので、お身体にはお気を付けてお過ごしください。",
+      "published": "2025-10-05T00:00:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!TvDw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffdb76db8-fdec-4151-88f7-4a782f191b48_1600x1200.png",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "Meta AIグラスは「次のデバイス勝者」になり得るか：「デバイスはプライベートで、控えめで、絶妙なものであるべき」",
+      "url": "https://lawrencesnewsletter.com/p/meta-ai-glasses",
+      "excerpt": "Meta Ray-Ban DisplayとNeural Bandの可能性",
+      "published": "2025-09-21T21:00:35+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!XYtb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1d2bbef-9b0b-4cc0-9a75-48314f4234ed_1280x720.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "音声生成AIの世界：Eleven Labsのボイスクローンと資産とUIになる音声の可能性",
+      "url": "https://lawrencesnewsletter.com/p/eleven-labs",
+      "excerpt": "自分の声のボイスクローンを作ってみました",
+      "published": "2025-09-16T21:00:27+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!RN5P!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65f44f18-53b5-4793-9a34-2a477d970010_1280x720.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "AI時代の「もう一つの勝者」：OpenAI × Oracle契約から見えるクラウドの収益爆発",
+      "url": "https://lawrencesnewsletter.com/p/aiopenai-oracle",
+      "excerpt": "表舞台の勝者と、見過ごされがちな裏側",
+      "published": "2025-09-14T21:01:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!NSZB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F20bd478a-f705-4f39-98f3-03d857563e5d_1280x720.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "「ユネスコ アジア太平洋文化遺産保全賞」最優秀賞受賞のお祝い、神楽坂で銭湯ワークショップに協力｜せんとうとまちニュースレター vol.46",
+      "url": "https://sentotomachi.substack.com/p/vol46",
+      "excerpt": "厳しい夏も過ぎ去り、少しずつ穏やかな残暑になりつつあります。季節の変わり目は体調も変わりやすい時期でもあります。どうぞ気をつけてお過ごしください。",
+      "published": "2025-09-14T00:00:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Z_-1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd8c722a-4fd6-4440-8331-313aab41a012_1108x1477.png",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "アトラシアンによるAIブラウザDiaの買収とエージェントブラウザ脆弱性の恐怖",
+      "url": "https://lawrencesnewsletter.com/p/acquiring-dia-by-atlassian",
+      "excerpt": "OpenAIの最新研究「なぜLLMはハルシネーションを起こすのか」、NVIDIAに対抗するGoogleのTPU戦略など",
+      "published": "2025-09-07T21:00:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!mdMq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff11805e1-9ca0-43e7-80a3-0e3e38d78fda_1280x720.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "検索もコンサルもAIに奪われる中、人間が選ばれる理由を考える",
+      "url": "https://lawrencesnewsletter.com/p/how-do-we-survive-ai-disruption",
+      "excerpt": "AIが正解を配る世界で、問いと物語を武器にする",
+      "published": "2025-09-01T21:00:33+00:00",
+      "image": "https://api.substack.com/feed/podcast/172377404/22d40db782fc06f00df503498534ad50.mp3",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "エヌビディア2025Q2決算、Nano Bananaの熱狂",
+      "url": "https://lawrencesnewsletter.com/p/nvidia-2025q2-nano-banana",
+      "excerpt": "n8nの創業者インタビュー、a16zAIコンシューマー向けアプリTOP100など",
+      "published": "2025-08-31T21:00:36+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!2rRc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F353ef40f-2514-41ec-9cfe-95620270e9f1_1280x720.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "米国政府、インテルに89億ドルの出資で約10％の株式を取得、背景と影響は？",
+      "url": "https://lawrencesnewsletter.com/p/8910",
+      "excerpt": "OpenAI チーフサイエンティストが語るAGIと現在など",
+      "published": "2025-08-24T21:00:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!weUo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a8194e3-0b7c-4ce2-a5ad-5db2777c0705_588x792.png",
+      "writer": "Lawrence's Newsletter",
+      "category": "テクノロジー"
+    },
+    {
+      "title": "「わたしのせんとうとまち―北区の記憶あつめ―」 展 紹介映像完成、今年も参加「銭湯サポーターフォーラム」｜せんとうとまちニュースレター vol.45",
+      "url": "https://sentotomachi.substack.com/p/vol45",
+      "excerpt": "全国各地で酷暑が続く日々となっています。皆さまにおかれましては、どうぞお身体にお気をつけてお過ごしください。体調を整える意味でも、涼しい夜風にあたりながら銭湯や周辺の地域やまちを巡ってみてはいかがでしょうか？",
+      "published": "2025-08-10T01:30:19+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/aVQQs3Lvq38",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "これからも「まちの湯上り処」を目指してー稲荷湯長屋が3周年を迎えます｜せんとうとまちニュースレター vol.44",
+      "url": "https://sentotomachi.substack.com/p/3-vol44",
+      "excerpt": "連日の猛暑により、体調を崩される方も増えてきました。暑さが厳しい時期ですので、無理をせず、体調には十分ご注意ください。",
+      "published": "2025-07-13T00:00:30+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!_HyS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8487c7b7-b83d-4eaa-8f73-e8390bc24537_1082x1600.png",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "足立区千住「タカラ湯」の建築調査報告、三重県伊勢市の方々の来訪｜せんとうとまちニュースレター vol.43",
+      "url": "https://sentotomachi.substack.com/p/vol43",
+      "excerpt": "新緑まぶしい気持ちの良い天気が続き、次第に初夏を感じさせる季節となってきました。今月も「せんとうとまち」の活動についてご案内いたします。",
+      "published": "2025-06-07T00:00:46+00:00",
+      "image": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F49734390-abb7-4dae-8e30-208828d0945d_6000x4000.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "3年目の北区政策提案協働事業、今年度の舞台は「王子」｜せんとうとまちニュースレター vol.42",
+      "url": "https://sentotomachi.substack.com/p/3-vol42",
+      "excerpt": "5月となり、今年は、長いゴールデンウィークを過ごしている方もいるのではないでしょうか。晴れ晴れとした天気で、お散歩やおでかけにも最適な季節です。お休みの日のおでかけ後の銭湯もオススメですので、ぜひ、近場の銭湯にお立ち寄りください。",
+      "published": "2025-05-04T00:00:38+00:00",
+      "image": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc80cc89e-4085-4dfb-9fca-fcdfd2c2df11_1080x1080.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "「わたしのせんとうとまち」3年目に突入、稲荷湯長屋再生プロジェクトを支援いただいたWMF関係者が来訪｜せんとうとまちニュースレター vol.41",
+      "url": "https://sentotomachi.substack.com/p/3wmf-vol41",
+      "excerpt": "年度が明け、春の陽気とともに新たな一年のはじまりとなりました。",
+      "published": "2025-04-13T00:00:50+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!aeNa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf76b642-c0e2-466e-89a7-f4f47f7ad9ae_1600x1200.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "盛況に開催した「わたしのせんとうとまち」、銭湯をきっかけに世代間の交流が生まれる「場」を目指して｜せんとうとまちニュースレター vol.40",
+      "url": "https://sentotomachi.substack.com/p/vol40",
+      "excerpt": "季節は3月となり、春からの新たな門出の準備に追われている人もいらっしゃるのではないでしょうか。年度末の慌ただしいなかではございますが、お身体にはお気を付けて春をお迎えください。",
+      "published": "2025-03-15T00:01:04+00:00",
+      "image": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5b6ddc7d-6261-40f7-ad1f-ef0ab063ef04_1600x1066.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "2年目の「わたしのせんとうとまち」、今年は赤羽の銭湯と界隈をまとめた新聞の発行、お披露目展示イベントを開催します｜せんとうとまちニュースレター vol.39",
+      "url": "https://sentotomachi.substack.com/p/2-vol39",
+      "excerpt": "2月となり、一部の地域では大雪となる天気も続いています。寒い日が続きますため、体調にはお気を付けてお過ごしください。",
+      "published": "2025-02-08T00:00:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!uao7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8681206e-0474-424b-b1b4-03073d3f20da_1131x1600.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "今年も長屋で「初湯」に合わせた湯上がり企画、電気湯で能登の今を伝える展示が開催中｜せんとうとまちニュースレター vol.38",
+      "url": "https://sentotomachi.substack.com/p/vol38",
+      "excerpt": "2025年を迎えました。今年も1月2日から各所の銭湯では初湯が行われ、一年の始まりを熱い湯で心癒された方も多かったことでしょう。",
+      "published": "2025-01-13T00:01:06+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!nELR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2d124ad9-74cb-4012-a14b-e72a82b67a31_1260x1600.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "祝！「稲荷湯修復再生プロジェクト」がユネスコアジア太平洋文化遺産保全賞の最優秀賞を受賞しました｜せんとうとまちニュースレター vol.37",
+      "url": "https://sentotomachi.substack.com/p/vol37",
+      "excerpt": "12月を迎え、暦は「師走」となり、年末年始の準備などで慌ただしくなりそうです。寒暖差による体調の変化にも十分に気を付けながら、良い年末年始を迎えられるよう、日々をお過ごしくださいませ。",
+      "published": "2024-12-08T00:00:40+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!T6TN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3da536c-0943-438e-bc45-2a92bd698c2b_610x610.png",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    },
+    {
+      "title": "今年度の「わたしのせんとうとまち」の活動内容を新聞として配布、東京大学との協働研究のお披露目会が実施｜せんとうとまちニュースレター vol.36",
+      "url": "https://sentotomachi.substack.com/p/vol36",
+      "excerpt": "2024年11月のせんとうとまちニュースレターをお届けします。",
+      "published": "2024-11-09T00:00:59+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!mUPj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbf56fd6-a6ae-47fa-9186-c6b4cf8d9df9_1440x960.jpeg",
+      "writer": "せんとうとまちニュースレター",
+      "category": "社会・文化"
+    }
+  ]
+}
