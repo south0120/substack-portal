@@ -1,4 +1,4 @@
-# Substackの棚
+# Substack Portal
 
 日本語で書く Substack の書き手を、本屋の棚のようにカテゴリ別で紹介する GitHub Pages サイトです。表示順は `feeds.json` の固定順で、ランキングやおすすめアルゴリズムはありません。記事一覧は補助的なビューとして提供します。
 
