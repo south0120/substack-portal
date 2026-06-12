@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import re
+import ssl
 import sys
 import time
 import urllib.request
@@ -14,6 +15,12 @@ from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+
+try:
+    import certifi
+    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    _SSL_CONTEXT = ssl.create_default_context()
 
 ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = ROOT / "feeds.json"
@@ -67,7 +74,7 @@ def fetch_bytes(url: str) -> bytes:
         url,
         headers={"User-Agent": UA, "Accept": "application/rss+xml, application/xml, text/xml"},
     )
-    with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+    with urllib.request.urlopen(request, timeout=TIMEOUT_SECONDS, context=_SSL_CONTEXT) as response:
         return response.read()
 
 
