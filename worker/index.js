@@ -1,6 +1,6 @@
 const FEEDS_URL = "https://raw.githubusercontent.com/south0120/substack-portal/main/feeds.json";
 const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
-const FEEDS_PER_RUN = 5; // Workers Free の CPU 制限対策で小さく保つ
+const FEEDS_PER_RUN = 20;
 const INGEST_MAX = 10;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
