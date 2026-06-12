@@ -1,25 +1,991 @@
 {
  "_comment": "棚に並べる書き手リスト。categories はカテゴリ名の配列で、先頭が記事に使う主カテゴリ。カテゴリ名は index.html の CAT_STYLE と同じキーを使う。bio は棚カードに出る一言紹介。",
  "feeds": [
-  {"name": "サウスのAI活動報告書", "feed_url": "https://south0120.substack.com/feed", "categories": ["AI", "テクノロジー"], "bio": "「AIで仕事を半分に」をテーマに週次で活動報告。自作Chrome拡張の先行共有も。"},
-  {"name": "梶谷健人のニュースレター", "feed_url": "https://kajikent.substack.com/feed", "categories": ["AI"], "bio": "AI時代の事業・組織・キャリア戦略をテーマにした探究と思考の共有。"},
-  {"name": "わど🐏最新AI情報", "feed_url": "https://wad0427.substack.com/feed", "categories": ["AI", "ビジネス"], "bio": "難しいAIを早く・優しく解説。Claude Codeでの自動化実践も発信。"},
-  {"name": "くろの｜Claude Code ガチ勢", "feed_url": "https://kuronoaiagent.substack.com/feed", "categories": ["AI", "ビジネス"], "bio": "Claude Code 使用1500時間超。AIエージェント実践のノウハウを共有。"},
-  {"name": "テツメモの発信実験ログ", "feed_url": "https://tetumemo.substack.com/feed", "categories": ["テクノロジー", "AI"], "bio": "AI時代の発信・ニュースレター・個人メディアづくりの試行錯誤ログ。"},
-  {"name": "週刊ソフトウェアエンジニアのリリースノート", "feed_url": "https://yujimine.substack.com/feed", "categories": ["テクノロジー"], "bio": "現役ソフトウェアエンジニアの1週間の日誌を毎週月曜に配信。"},
-  {"name": "Lawrence's Newsletter", "feed_url": "https://lawrencesnewsletter.com/feed", "categories": ["テクノロジー", "ビジネス"], "bio": "AI時代の生存戦略。3分でわかるテクノロジー最前線と戦略分析。"},
-  {"name": "Andy Kondo - Innovation Analyst", "feed_url": "https://andykondo.substack.com/feed", "categories": ["ビジネス", "テクノロジー"], "bio": "イノベーションアナリストによる欧州発のテクノロジー・産業分析。"},
-  {"name": "週刊創業日記", "feed_url": "https://sogyonikki.substack.com/feed", "categories": ["ビジネス"], "bio": "AIソロプレナーが事業と開発、テクノロジーと市場を毎週日曜に綴る。"},
-  {"name": "DEBUNK", "feed_url": "https://www.debunkresearch.com/feed", "categories": ["投資・経済", "AI"], "bio": "Agentic Web Research。Crypto版とAI版のリサーチ記事を毎朝更新。"},
-  {"name": "ポス鳥（日本語版）", "feed_url": "https://postorijapan.substack.com/feed", "categories": ["社会・文化", "ビジネス"], "bio": "メディアと制度設計を切り口に、ニュースの裏側を国際比較で読み解く。"},
-  {"name": "せんとうとまちニュースレター", "feed_url": "https://sentotomachi.substack.com/feed", "categories": ["社会・文化"], "bio": "銭湯の文化的価値と、銭湯がある街の生活文化を探求する活動報告。"},
-  {"name": "シンプリィライフ・ノート", "feed_url": "https://simpleeelifecom.substack.com/feed", "categories": ["ライフスタイル"], "bio": "ゆっくり心を整える。科学・寓話・作品考察と日々のあれこれ。"},
-  {"name": "おゆわりのAIと暮らし日記", "feed_url": "https://oyuwarilife.substack.com/feed", "categories": ["ライフスタイル", "キャリア・働き方"], "bio": "AIを使って仕事・育児・暮らしを少しずつ整えていく等身大の日記。"},
-  {"name": "SEINO CHISATO JOURNAL", "feed_url": "https://seinochisato.substack.com/feed", "categories": ["クリエイティブ"], "bio": "アーティストの制作現場から、アイデア・裏話・展示情報を隔週配信。"},
-  {"name": "斉藤ナミ／エッセイスト", "feed_url": "https://nami5711.substack.com/feed", "categories": ["クリエイティブ"], "bio": "note創作大賞エッセイ部門大賞受賞。日常を綴るエッセイと日記。"},
-  {"name": "キャリア孔明", "feed_url": "https://careerkoumei.substack.com/feed", "categories": ["キャリア・働き方", "ビジネス"], "bio": "SNS時代を生き抜く戦略・発信ノウハウ・新しい働き方を毎日配信。"},
-  {"name": "週刊ソトワークスタイル", "feed_url": "https://nakalab.substack.com/feed", "categories": ["キャリア・働き方"], "bio": "琵琶湖畔でのソトワーク実験から、身体と環境が生む働き方を探究。"},
-  {"name": "おやすみ前の自分ほぐしエッセイ", "feed_url": "https://itawaru.substack.com/feed", "categories": ["健康・ウェルネス"], "bio": "自分をいたわり、人間関係の消耗から抜け出すためのエッセイ。"},
-  {"name": "カトちゃんの古代史考察", "feed_url": "https://ahoka1117.substack.com/feed", "categories": ["教育・学び"], "bio": "ヤマト中枢の現地から、独自視点で読み解く日本古代史考察。"}
+  {
+   "name": "サウスのAI活動報告書",
+   "feed_url": "https://south0120.substack.com/feed",
+   "categories": [
+    "AI",
+    "テクノロジー"
+   ],
+   "bio": "「AIで仕事を半分に」をテーマに週次で活動報告。自作Chrome拡張の先行共有も。"
+  },
+  {
+   "name": "梶谷健人のニュースレター",
+   "feed_url": "https://kajikent.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": "AI時代の事業・組織・キャリア戦略をテーマにした探究と思考の共有。"
+  },
+  {
+   "name": "わど🐏最新AI情報",
+   "feed_url": "https://wad0427.substack.com/feed",
+   "categories": [
+    "AI",
+    "ビジネス"
+   ],
+   "bio": "難しいAIを早く・優しく解説。Claude Codeでの自動化実践も発信。"
+  },
+  {
+   "name": "くろの｜Claude Code ガチ勢",
+   "feed_url": "https://kuronoaiagent.substack.com/feed",
+   "categories": [
+    "AI",
+    "ビジネス"
+   ],
+   "bio": "Claude Code 使用1500時間超。AIエージェント実践のノウハウを共有。"
+  },
+  {
+   "name": "テツメモの発信実験ログ",
+   "feed_url": "https://tetumemo.substack.com/feed",
+   "categories": [
+    "テクノロジー",
+    "AI"
+   ],
+   "bio": "AI時代の発信・ニュースレター・個人メディアづくりの試行錯誤ログ。"
+  },
+  {
+   "name": "週刊ソフトウェアエンジニアのリリースノート",
+   "feed_url": "https://yujimine.substack.com/feed",
+   "categories": [
+    "テクノロジー"
+   ],
+   "bio": "現役ソフトウェアエンジニアの1週間の日誌を毎週月曜に配信。"
+  },
+  {
+   "name": "Lawrence's Newsletter",
+   "feed_url": "https://lawrencesnewsletter.com/feed",
+   "categories": [
+    "テクノロジー",
+    "ビジネス"
+   ],
+   "bio": "AI時代の生存戦略。3分でわかるテクノロジー最前線と戦略分析。"
+  },
+  {
+   "name": "Andy Kondo - Innovation Analyst",
+   "feed_url": "https://andykondo.substack.com/feed",
+   "categories": [
+    "ビジネス",
+    "テクノロジー"
+   ],
+   "bio": "イノベーションアナリストによる欧州発のテクノロジー・産業分析。"
+  },
+  {
+   "name": "週刊創業日記",
+   "feed_url": "https://sogyonikki.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": "AIソロプレナーが事業と開発、テクノロジーと市場を毎週日曜に綴る。"
+  },
+  {
+   "name": "DEBUNK",
+   "feed_url": "https://www.debunkresearch.com/feed",
+   "categories": [
+    "投資・経済",
+    "AI"
+   ],
+   "bio": "Agentic Web Research。Crypto版とAI版のリサーチ記事を毎朝更新。"
+  },
+  {
+   "name": "ポス鳥（日本語版）",
+   "feed_url": "https://postorijapan.substack.com/feed",
+   "categories": [
+    "社会・文化",
+    "ビジネス"
+   ],
+   "bio": "メディアと制度設計を切り口に、ニュースの裏側を国際比較で読み解く。"
+  },
+  {
+   "name": "せんとうとまちニュースレター",
+   "feed_url": "https://sentotomachi.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": "銭湯の文化的価値と、銭湯がある街の生活文化を探求する活動報告。"
+  },
+  {
+   "name": "シンプリィライフ・ノート",
+   "feed_url": "https://simpleeelifecom.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": "ゆっくり心を整える。科学・寓話・作品考察と日々のあれこれ。"
+  },
+  {
+   "name": "おゆわりのAIと暮らし日記",
+   "feed_url": "https://oyuwarilife.substack.com/feed",
+   "categories": [
+    "ライフスタイル",
+    "キャリア・働き方"
+   ],
+   "bio": "AIを使って仕事・育児・暮らしを少しずつ整えていく等身大の日記。"
+  },
+  {
+   "name": "SEINO CHISATO JOURNAL",
+   "feed_url": "https://seinochisato.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": "アーティストの制作現場から、アイデア・裏話・展示情報を隔週配信。"
+  },
+  {
+   "name": "斉藤ナミ／エッセイスト",
+   "feed_url": "https://nami5711.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": "note創作大賞エッセイ部門大賞受賞。日常を綴るエッセイと日記。"
+  },
+  {
+   "name": "キャリア孔明",
+   "feed_url": "https://careerkoumei.substack.com/feed",
+   "categories": [
+    "キャリア・働き方",
+    "ビジネス"
+   ],
+   "bio": "SNS時代を生き抜く戦略・発信ノウハウ・新しい働き方を毎日配信。"
+  },
+  {
+   "name": "週刊ソトワークスタイル",
+   "feed_url": "https://nakalab.substack.com/feed",
+   "categories": [
+    "キャリア・働き方"
+   ],
+   "bio": "琵琶湖畔でのソトワーク実験から、身体と環境が生む働き方を探究。"
+  },
+  {
+   "name": "おやすみ前の自分ほぐしエッセイ",
+   "feed_url": "https://itawaru.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": "自分をいたわり、人間関係の消耗から抜け出すためのエッセイ。"
+  },
+  {
+   "name": "カトちゃんの古代史考察",
+   "feed_url": "https://ahoka1117.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": "ヤマト中枢の現地から、独自視点で読み解く日本古代史考察。"
+  },
+  {
+   "name": "しものんからのお手紙",
+   "feed_url": "https://shimonon.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "かめ先生",
+   "feed_url": "https://kamesensei.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ルク｜踊り場からの再起動日記",
+   "feed_url": "https://rukupractice.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "いとんSubstackラボ",
+   "feed_url": "https://itonceo.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "長倉顕太＠会えるベストセラー作家",
+   "feed_url": "https://kentanagakura.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "落合正和のAI×現場ノート",
+   "feed_url": "https://masaochiai.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "manablog",
+   "feed_url": "https://mblog.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "イケハヤラジオ＆コラム",
+   "feed_url": "https://ihayato.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "EriQmapJapan's Newsletter",
+   "feed_url": "https://eriqmapjapan.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Substackビギナーズ倶楽部【SBC】",
+   "feed_url": "https://sabusuta.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "もちスラ｜ケツコラム🍑",
+   "feed_url": "https://mochitherapy.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "きゃさりんのワンオペ副業日記",
+   "feed_url": "https://catherine626.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ちなみ｜書を綴る道。",
+   "feed_url": "https://chinamimoon.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "チートン",
+   "feed_url": "https://cheaton5519.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "オカン。｜AI×アプリ開発",
+   "feed_url": "https://midoriokan.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゼノウォーリアー",
+   "feed_url": "https://zenouo59174.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "サブスタック攻略講座【2週間で2000フォロワー】",
+   "feed_url": "https://nabetaro.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "まい｜絵本のあるアトリエ🎨",
+   "feed_url": "https://maiipstudio.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "キッチンカーの現場から。",
+   "feed_url": "https://michikitchen.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ペスハム｜毎日30分のブラウザ作業をAIで減らす",
+   "feed_url": "https://pessham.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "久我レイジ",
+   "feed_url": "https://kugarage.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Atelier ひす鳥",
+   "feed_url": "https://kurumirekishi.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "罵尻ロマ子様@毒舌心理エッセイスト",
+   "feed_url": "https://romaco.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゆかりっく｜成熟カルチャー研究室",
+   "feed_url": "https://www.yukarik.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "徒然草4.0",
+   "feed_url": "https://booktokjapan.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "なかむラボ～シャンプー研究所～",
+   "feed_url": "https://nakamulab.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "「人と記事と繋がり」を作る人🔥",
+   "feed_url": "https://shiganaicpo.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "いぬいあおの途中の話",
+   "feed_url": "https://inuiao25.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "モロトメジョーの独白",
+   "feed_url": "https://joemorotome.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "再起Lab",
+   "feed_url": "https://yoshinarilab.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "リツトAI活用コラム「悠然に生きよう」",
+   "feed_url": "https://ritsuto.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゆるAI 納得設計ラボ｜ゆなラボ",
+   "feed_url": "https://bmp3c.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "びびで の Substack",
+   "feed_url": "https://yougrid.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "アースキーのDAOラボ｜薬剤師のAI実装実験室",
+   "feed_url": "https://earthkey.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "momoto（子育てエッセイ）",
+   "feed_url": "https://momoto.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "サブスタ継続オタク話",
+   "feed_url": "https://uojun.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゆずるぎのゆずれない思考",
+   "feed_url": "https://yuzurugi.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ひろみの声と言葉と文章と",
+   "feed_url": "https://ganko1980.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "たくわん先生｜労務と犬の先生🐶",
+   "feed_url": "https://aikentakuone.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "高知山奥×AI実践ノート",
+   "feed_url": "https://yukimaruai.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "miii毒親(父)虐待/DV/モラハラサバイバー",
+   "feed_url": "https://miiidv.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "りこ｜SNS×AIハックNews",
+   "feed_url": "https://rikoailabo.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "しん｜泡盛とデザイン",
+   "feed_url": "https://sinpander.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "きりん@読書研究家",
+   "feed_url": "https://morimotokirin.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "つきみ｜AIイラストを3倍楽しくする案内人",
+   "feed_url": "https://tukimi.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "toya desk",
+   "feed_url": "https://toyaworks.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "小関悠｜たよりない話",
+   "feed_url": "https://youkoseki.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "De-Silo",
+   "feed_url": "https://desilo.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ガメ・オベール｜日本語日記",
+   "feed_url": "https://gamayauber007.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "REALITIES｜Yuichi Mori Photography",
+   "feed_url": "https://yuichimori.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ブラックスワン出版",
+   "feed_url": "https://blkswnpublishers.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "藤田千彩のSubstack",
+   "feed_url": "https://chisaifujita.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Circular Design Praxis",
+   "feed_url": "https://circulardesignpraxis.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "夜中のクロスレビュー",
+   "feed_url": "https://crossreview.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "I&CO",
+   "feed_url": "https://iandco.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ナレッジスタック",
+   "feed_url": "https://knowledgestuck.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "iPad Worker｜はるな",
+   "feed_url": "https://ipadworkers.substack.com/feed",
+   "categories": [
+    "テクノロジー"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "アヲアヒル（アヲP）AIアニメクリエイター/プロデューサー",
+   "feed_url": "https://awoahiru.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "KEITOのメルマガ",
+   "feed_url": "https://keitoaiweb.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "脱・消耗思考",
+   "feed_url": "https://n8sunny.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "みむのまよてんなら聞きゃええやん！",
+   "feed_url": "https://meemhonoka.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ステラのページ",
+   "feed_url": "https://stellasns.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゆりしまみつき｜育児エッセイ",
+   "feed_url": "https://yurishima.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "おさるのマーケネタ帳",
+   "feed_url": "https://osaruproducer.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "りょうこ｜女性起業家のための星読みパートナー",
+   "feed_url": "https://ryoscope.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "まと｜AIとデザインときどきコンピューター部",
+   "feed_url": "https://mato11234.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "のり｜コミュニティ時代を生き抜くニュースレター",
+   "feed_url": "https://noriynt1103.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "こばだい｜サブスタ攻略",
+   "feed_url": "https://dai1k1.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "なるみ｜うつなズボラママ",
+   "feed_url": "https://narumimemo.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "かたこりくんの思考メルマガ",
+   "feed_url": "https://katakori.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "裏・Substackの教科書",
+   "feed_url": "https://uminoai.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "世界の解像度を上げるには",
+   "feed_url": "https://kei31.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "なー🍑 桃農家なのにネットビジネス副業",
+   "feed_url": "https://naaapoco.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "「note × Substack」研究室",
+   "feed_url": "https://masahironote.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "うりぽん@深夜に本気出す主婦",
+   "feed_url": "https://uripon0022.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "内側も外側も「自分を整える」メディア",
+   "feed_url": "https://seishinkaisho.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "AIで仕事をサボるコラム",
+   "feed_url": "https://shupeiman.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "おがわ｜余白を活かすマーケティング",
+   "feed_url": "https://ogazeen.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "頭の中がうるさい、よ。",
+   "feed_url": "https://kun1aki.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "なりふり構わず家計を支えるニュースレター",
+   "feed_url": "https://nmo22.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "豊田将大/AI漫画クリエイター",
+   "feed_url": "https://toyomasa.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Club G.O.S",
+   "feed_url": "https://clubgos.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Fujin",
+   "feed_url": "https://fujin.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Taiyo's Substack",
+   "feed_url": "https://taiyoai.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゆい＆ぷりん",
+   "feed_url": "https://yuiprin.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "お寿司職人｜AI創作工房",
+   "feed_url": "https://osushisan.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ゴリアス",
+   "feed_url": "https://goriasu.substack.com/feed",
+   "categories": [
+    "健康・ウェルネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "くま@ポッドキャスト集客のプロ",
+   "feed_url": "https://kumabiz.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "なおなお｜挑戦を動かす人",
+   "feed_url": "https://naonao70.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "仏教の教え",
+   "feed_url": "https://sou0069.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "中島大介@ウェブ職TV",
+   "feed_url": "https://merilinc.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "イケハヤ@サブアカウント",
+   "feed_url": "https://ikehaya.substack.com/feed",
+   "categories": [
+    "ビジネス"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "在宅ワークで自由に生きるメルマガ",
+   "feed_url": "https://imotoo.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "ケント",
+   "feed_url": "https://kent09.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "長寿ジュンジ",
+   "feed_url": "https://junjilongevity.substack.com/feed",
+   "categories": [
+    "ライフスタイル"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "まあちゅう｜AIを考えるより先に試す人",
+   "feed_url": "https://marcyu.substack.com/feed",
+   "categories": [
+    "AI"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "アラための資産再構築記",
+   "feed_url": "https://aratamesan.substack.com/feed",
+   "categories": [
+    "投資・経済"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "WORKSIGHT",
+   "feed_url": "https://worksight.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "LIFE UPDATE LETTER｜早川洋平",
+   "feed_url": "https://yoheihayakawa.substack.com/feed",
+   "categories": [
+    "クリエイティブ"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "日本語ピクニック",
+   "feed_url": "https://nihongopicnic.substack.com/feed",
+   "categories": [
+    "教育・学び"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "食事会グルメ（ogugourmet）",
+   "feed_url": "https://ogugourmet.substack.com/feed",
+   "categories": [
+    "グルメ・料理"
+   ],
+   "bio": ""
+  },
+  {
+   "name": "Ideas for Good",
+   "feed_url": "https://ideasforgood.substack.com/feed",
+   "categories": [
+    "社会・文化"
+   ],
+   "bio": ""
+  }
  ]
 }
