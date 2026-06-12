@@ -278,6 +278,7 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .order-modal p{color:var(--sub);font-size:.72rem;margin-top:3px}
 .order-list{list-style:none;display:grid;gap:7px;margin:15px 0}
 .order-row{display:flex;align-items:center;gap:8px;border:1px solid var(--line);
+  border-radius:11px;padding:4px 11px 4px 4px;
   transition:border-color .1s,opacity .15s;position:relative}
 .order-row.dragging{opacity:.45}
 .order-row.drop-before::before,.order-row.drop-after::after{
@@ -287,8 +288,8 @@ footer{max-width:1248px;margin:auto;border-top:1px solid var(--line);padding:24p
 .order-grip-touch{width:28px;height:44px;display:flex;align-items:center;justify-content:center;
   color:var(--faint);cursor:grab;touch-action:none}
 .order-grip-touch svg{width:14px;height:20px}
-  border-radius:11px;padding:4px 4px 4px 11px}
 .order-name{min-width:0;flex:1;font-size:.78rem;font-weight:700}
+.order-move-group{display:flex;gap:4px;margin-left:auto;flex:none}
 .order-move{width:44px;height:44px;border:0;border-radius:8px;background:var(--panel);
   color:var(--sub);font-weight:900}
 .order-move svg{width:17px;height:17px;vertical-align:middle}
@@ -841,10 +842,12 @@ function renderOrderList(){
     <li class="order-row" data-cat="${esc(name)}">
       <span class="order-grip-touch" aria-hidden="true">${gripIcon}</span>
       <span class="order-name">${esc(name)}</span>
-      <button type="button" class="order-move" data-index="${index}" data-shift="-1"
-        aria-label="${esc(name)}を上へ" ${index === 0 ? "disabled" : ""}>${upIcon}</button>
-      <button type="button" class="order-move" data-index="${index}" data-shift="1"
-        aria-label="${esc(name)}を下へ" ${index === order.length - 1 ? "disabled" : ""}>${downIcon}</button>
+      <span class="order-move-group">
+        <button type="button" class="order-move" data-index="${index}" data-shift="-1"
+          aria-label="${esc(name)}を上へ" ${index === 0 ? "disabled" : ""}>${upIcon}</button>
+        <button type="button" class="order-move" data-index="${index}" data-shift="1"
+          aria-label="${esc(name)}を下へ" ${index === order.length - 1 ? "disabled" : ""}>${downIcon}</button>
+      </span>
     </li>`).join("");
   document.querySelectorAll(".order-move").forEach(button => {
     button.addEventListener("click", () => {
