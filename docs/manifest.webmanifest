@@ -1,13 +1,13 @@
 {
-  "name": "Substack Portal",
-  "short_name": "S.Portal",
+  "name": "Find Your Letter",
+  "short_name": "FindYrLetter",
   "lang": "ja",
   "display": "standalone",
   "start_url": "./",
   "scope": "./",
   "background_color": "#F8F8F7",
   "theme_color": "#FF6719",
-  "description": "日本語で書くSubstackの書き手を、本屋の棚のように",
+  "description": "日本語ニュースレターをカテゴリで探せるキュレーションポータル",
   "icons": [
     {
       "src": "assets/icons/icon_192.png",

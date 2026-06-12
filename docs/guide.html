@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>使い方 | Newsletter Shelf</title>
-<meta name="description" content="Newsletter Shelfの使い方">
+<title>使い方 | Find Your Letter</title>
+<meta name="description" content="Find Your Letterの使い方">
 <meta name="theme-color" content="#FF6719">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <!-- Google Analytics: GA_MEASUREMENT_ID を実IDに置換してください (例: G-ABC123XYZ) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
@@ -34,7 +34,7 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .brand-mark{width:38px;height:38px;flex:none;border-radius:10px;overflow:hidden;
   box-shadow:0 5px 15px rgba(255,103,25,.23)}
 .brand-mark img{display:block;width:100%;height:100%}
-.titles h1{font-size:1.02rem;font-weight:900;line-height:1.25}
+.titles h1{font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;font-weight:900;line-height:1.2;letter-spacing:-.01em}
 .titles p{color:var(--sub);font-size:.7rem}
 .back-top{margin-left:auto;color:var(--brand);font-size:.75rem;font-weight:700}
 .main{max-width:760px;margin:auto;padding:38px 16px 64px}
@@ -81,11 +81,11 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
 <body>
 <header class="header">
   <div class="header-in">
-    <a class="brand-mark" href="./" aria-label="Newsletter Shelfへ戻る">
+    <a class="brand-mark" href="./" aria-label="Find Your Letterへ戻る">
       <img src="assets/icons/icon_192.png" alt="" width="38" height="38">
     </a>
     <div class="titles">
-      <h1>Newsletter Shelf</h1>
+      <h1>Find Your Letter</h1>
       <p>使い方ガイド</p>
     </div>
     <a class="back-top" href="./">← ポータルへ戻る</a>
@@ -95,7 +95,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
 <main class="main">
   <div class="intro">
     <p class="eyebrow">GUIDE</p>
-    <h2>Newsletter Shelfの使い方</h2>
+    <h2>Find Your Letterの使い方</h2>
     <p>気になる記事や書き手を、カテゴリの棚から見つけるための簡単なガイドです。</p>
   </div>
 
@@ -103,9 +103,9 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
     <section class="guide-section">
       <div class="section-head">
         <span class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4v16M20 4v16M4 7h16M4 17h16"/><path d="M8 7v10M15 7v10"/></svg></span>
-        <h3>1. Newsletter Shelf とは</h3>
+        <h3>1. Find Your Letter とは</h3>
       </div>
-      <p>日本語で書くSubstackの書き手を、本屋の棚のように紹介するポータルです。ランキングは設けず、編集部のキュレーションで掲載しています。</p>
+      <p>日本語ニュースレターをカテゴリで探せるキュレーションポータルです。ランキングは設けず、書き手ごとの記事や傾向を確認しながら、自分に合ったニュースレターを見つけられます。</p>
     </section>
 
     <section class="guide-section">
@@ -176,7 +176,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
   <a class="back-bottom" href="./">← ポータルへ戻る</a>
 </main>
 
-<footer>Newsletter Shelf</footer>
+<footer>Find Your Letter</footer>
 <script>
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
