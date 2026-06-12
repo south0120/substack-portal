@@ -28,7 +28,7 @@
   font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif
 }
 @media(prefers-color-scheme:dark){
-  :root{
+  :root:not([data-theme="light"]){
     --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
     --bg:#141417;--card:#1E1E23;--line:#2E2E35;
     --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
@@ -36,6 +36,15 @@
     --shadow:0 2px 10px rgba(0,0,0,.18);
   }
 }
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
+  --bg:#141417;--card:#1E1E23;--line:#2E2E35;
+  --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
+  --header-bg:rgba(22,22,26,.92);--panel:#28282E;
+  --shadow:0 2px 10px rgba(0,0,0,.18);
+}
+:root[data-theme="light"]{ color-scheme:light }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.75}
 a{color:inherit;text-decoration:none}
@@ -92,6 +101,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
+<script>(function(){try{var t=localStorage.getItem("sp_theme_v1");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(_){}})()</script>
 </head>
 <body>
 <header class="header">
@@ -100,7 +110,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
       <img src="assets/logo/logo_light.png" alt="Find Your Letter" class="site-logo site-logo--light">
       <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
     </a>
-    <a class="back-top" href="./">← ポータルへ戻る</a>
+    <a class="back-top" href="./">← Back</a>
   </div>
 </header>
 
@@ -185,7 +195,7 @@ footer{border-top:1px solid var(--line);padding:22px 16px;text-align:center;colo
     </section>
   </div>
 
-  <a class="back-bottom" href="./">← ポータルへ戻る</a>
+  <a class="back-bottom" href="./">← Back</a>
 </main>
 
 <footer>Find Your Letter</footer>

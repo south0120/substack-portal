@@ -41,7 +41,7 @@
   font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;
 }
 @media(prefers-color-scheme:dark){
-  :root{
+  :root:not([data-theme="light"]){
     --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
     --bg:#141417;--card:#1E1E23;--line:#2E2E35;
     --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
@@ -56,6 +56,22 @@
     --modal-backdrop:rgba(0,0,0,.58);
   }
 }
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
+  --bg:#141417;--card:#1E1E23;--line:#2E2E35;
+  --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
+  --header-bg:rgba(22,22,26,.92);--nav-bg:rgba(22,22,26,.92);
+  --tabs-bg:rgba(20,20,23,.96);--panel:#28282E;--brand-ink:#FF9A66;
+  --shadow:0 2px 10px rgba(0,0,0,.18);
+  --shadow-hover:0 14px 34px rgba(0,0,0,.28);
+  --control-shadow:0 1px 4px rgba(0,0,0,.28);
+  --tooltip-shadow:0 12px 30px rgba(0,0,0,.32);
+  --sheet-shadow:0 18px 48px rgba(0,0,0,.34);
+  --modal-shadow:0 24px 70px rgba(0,0,0,.4);
+  --modal-backdrop:rgba(0,0,0,.58);
+}
+:root[data-theme="light"]{ color-scheme:light }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.6;padding-bottom:68px}
@@ -373,11 +389,27 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
   .sample-banner,footer{max-width:calc(var(--maxw) - 64px)}
   .article-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
+.settings-section{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.settings-section:first-of-type{margin-top:12px;padding-top:0;border-top:none}
+.settings-section-label{font-size:.72rem;font-weight:900;color:var(--sub);letter-spacing:.06em;margin-bottom:8px}
+.theme-picker{display:flex;gap:6px}
+.theme-option{flex:1;border:1.5px solid var(--line);border-radius:9px;background:var(--card);
+  color:var(--sub);font-size:.78rem;font-weight:700;padding:8px 6px;
+  transition:border-color .15s,color .15s,background .15s}
+.theme-option.on{border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.settings-link{display:flex;align-items:center;gap:9px;padding:10px 11px;border:1px solid var(--line);
+  border-radius:10px;font-size:.82rem;font-weight:700;color:var(--ink);background:var(--card);
+  margin-top:8px;transition:border-color .15s,color .15s}
+.settings-link:hover{border-color:var(--brand-line);color:var(--brand)}
+.settings-link:first-of-type{margin-top:0}
+.settings-link-icon{width:18px;height:18px;flex:none;color:var(--sub)}
+.settings-link-arrow{margin-left:auto;width:16px;height:16px;color:var(--faint)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
 }
 </style>
+<script>(function(){try{var t=localStorage.getItem("sp_theme_v1");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(_){}})()</script>
 </head>
 <body>
 <header class="header">
@@ -394,10 +426,10 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
       <button type="button" data-view="articles" class="on">記事</button>
       <button type="button" data-view="shelf">書き手</button>
     </div>
-    <a class="guide-link" href="guide.html" aria-label="使い方">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.7 1.8c-.9.6-1.5 1-1.5 2.2M12 17h.01"/></svg>
-      <span>使い方</span>
-    </a>
+    <button type="button" id="settingsBtn" class="guide-link" aria-label="設定">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>設定</span>
+    </button>
   </div>
 </header>
 
@@ -482,6 +514,36 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
   </section>
 </div>
 
+<div class="modal-backdrop" id="settingsBackdrop" hidden>
+  <section class="order-modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" style="max-height:min(80vh,540px)">
+    <h2 id="settingsTitle">設定</h2>
+    <div class="settings-section">
+      <p class="settings-section-label">外観</p>
+      <div class="theme-picker" role="group" aria-label="カラーモード">
+        <button type="button" class="theme-option" data-theme="light">ライト</button>
+        <button type="button" class="theme-option" data-theme="auto">自動</button>
+        <button type="button" class="theme-option" data-theme="dark">ダーク</button>
+      </div>
+    </div>
+    <div class="settings-section">
+      <p class="settings-section-label">ヘルプ・お問い合わせ</p>
+      <a class="settings-link" href="guide.html">
+        <svg class="settings-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.3 2.3 0 1 1 3.7 1.8c-.9.6-1.5 1-1.5 2.2M12 17h.01"/></svg>
+        使い方を読む
+        <svg class="settings-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a class="settings-link" href="mailto:south0120@gmail.com?subject=%E6%8E%B2%E8%BC%89%E5%89%8A%E9%99%A4%E5%B8%8C%E6%9C%9B&amp;body=Substack%20URL%3A%20%0D%0A%E7%90%86%E7%94%B1%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%3A%20">
+        <svg class="settings-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 4 8 9 8-9"/></svg>
+        掲載削除を申請する
+        <svg class="settings-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+    <div class="modal-actions" style="margin-top:18px">
+      <button type="button" class="modal-action primary" id="settingsClose">閉じる</button>
+    </div>
+  </section>
+</div>
+
 <script src="config.js"></script>
 <script>
 const CAT_STYLE = {
@@ -541,6 +603,7 @@ const TOPIC_COLORS = {
 const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
 const CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
 const CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
+const THEME_KEY = "sp_theme_v1";
 const ORDER_KEY = "sp_category_order_v1";
 const CATEGORY_FILTER_KEY = "sp_category_filter_v1";
 const PERIODS = [["all","すべて"],["day","24時間"],["week","今週"],["month","今月"]];
@@ -998,6 +1061,35 @@ function initOrderTouchDnd(listEl){
   }, {passive:true});
 }
 
+function currentTheme(){
+  return document.documentElement.dataset.theme || "auto";
+}
+function setTheme(value){
+  if(value === "auto"){
+    delete document.documentElement.dataset.theme;
+    try{ localStorage.removeItem(THEME_KEY); }catch(_){}
+  }else{
+    document.documentElement.dataset.theme = value;
+    try{ localStorage.setItem(THEME_KEY, value); }catch(_){}
+  }
+  document.querySelectorAll(".theme-option").forEach(btn =>
+    btn.classList.toggle("on", btn.dataset.theme === (value || "auto"))
+  );
+}
+function updateThemePicker(){
+  const t = currentTheme();
+  document.querySelectorAll(".theme-option").forEach(btn =>
+    btn.classList.toggle("on", btn.dataset.theme === t)
+  );
+}
+function openSettingsModal(){
+  document.getElementById("settingsBackdrop").hidden = false;
+  updateThemePicker();
+  document.getElementById("settingsClose").focus();
+}
+function closeSettingsModal(){
+  document.getElementById("settingsBackdrop").hidden = true;
+}
 function openOrderModal(){
   renderOrderList();
   initOrderTouchDnd(document.getElementById("orderList"));
@@ -1545,8 +1637,19 @@ function init(){
   document.getElementById("orderBackdrop").addEventListener("click", event => {
     if(event.target === event.currentTarget) closeOrderModal();
   });
+  document.getElementById("settingsBtn").addEventListener("click", openSettingsModal);
+  document.getElementById("settingsClose").addEventListener("click", closeSettingsModal);
+  document.getElementById("settingsBackdrop").addEventListener("click", event => {
+    if(event.target === event.currentTarget) closeSettingsModal();
+  });
+  document.querySelectorAll(".theme-option").forEach(btn => {
+    btn.addEventListener("click", () => setTheme(btn.dataset.theme));
+  });
   document.addEventListener("keydown", event => {
-    if(event.key === "Escape" && !document.getElementById("orderBackdrop").hidden) closeOrderModal();
+    if(event.key === "Escape"){
+      if(!document.getElementById("settingsBackdrop").hidden) closeSettingsModal();
+      else if(!document.getElementById("orderBackdrop").hidden) closeOrderModal();
+    }
   });
   window.addEventListener("resize", () => {
     updateHeaderHeight();
