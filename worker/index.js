@@ -4,10 +4,19 @@ const FEEDS_PER_RUN = 5; // Workers Free の CPU 制限対策で小さく保つ
 const INGEST_MAX = 10;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
+const GITHUB_OWNER = "south0120";
+const GITHUB_REPO = "substack-portal";
+const GITHUB_API = "https://api.github.com";
+const MASTER_CATEGORIES = new Set([
+  "AI", "テクノロジー", "ビジネス", "投資・経済", "社会・文化", "ライフスタイル",
+  "クリエイティブ", "キャリア・働き方", "健康・ウェルネス", "教育・学び",
+  "エンタメ", "旅行・おでかけ", "グルメ・料理", "スポーツ", "子育て・家族",
+  "マンガ・アニメ", "音楽", "読書", "ゲーム", "ファッション・美容", "その他",
+]);
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, tally-signature",
 };
 
 export default {
@@ -19,17 +28,21 @@ export default {
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
-    if (request.method !== "GET") {
-      return jsonResponse({ error: "Method not allowed" }, 405);
-    }
 
     try {
       const url = new URL(request.url);
+      if (url.pathname === "/api/apply" && request.method === "POST") {
+        return handleApplication(request, env);
+      }
+      if (request.method !== "GET") {
+        return jsonResponse({ error: "Method not allowed" }, 405, "no-store");
+      }
       if (url.pathname === "/api/articles") return getArticles(url, env);
       if (url.pathname === "/api/writers") return getWriters(url, env);
       if (url.pathname === "/api/categories") return getCategories(env);
       if (url.pathname === "/api/health") return getHealth(env);
       if (url.pathname === "/api/ingest") return runIngest(url, env);
+      if (url.pathname === "/api/applications") return getApplications(env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -37,6 +50,307 @@ export default {
     }
   },
 };
+
+async function handleApplication(request, env) {
+  try {
+    const rawBody = await request.text();
+    if (env.TALLY_SIGNING_SECRET) {
+      const valid = await verifyTallySignature(
+        rawBody,
+        env.TALLY_SIGNING_SECRET,
+        request.headers.get("tally-signature"),
+      );
+      if (!valid) return jsonResponse({ error: "invalid_signature" }, 401, "no-store");
+    }
+
+    let payload;
+    try {
+      payload = JSON.parse(rawBody);
+    } catch {
+      return jsonResponse({ error: "invalid_json" }, 400, "no-store");
+    }
+
+    const fields = extractTallyFields(payload);
+    if (!fields.name || !fields.rawUrl) {
+      return jsonResponse({ error: "name_and_url_required" }, 400, "no-store");
+    }
+
+    let feedUrl;
+    try {
+      feedUrl = normalizeFeedUrl(fields.rawUrl);
+    } catch {
+      return jsonResponse({ error: "invalid_feed_url" }, 400, "no-store");
+    }
+    const category = MASTER_CATEGORIES.has(fields.category) ? fields.category : "その他";
+
+    if (!(await verifyJapaneseFeed(feedUrl))) {
+      return jsonResponse({ error: "feed_unreachable_or_not_japanese" }, 422, "no-store");
+    }
+
+    const feedsResponse = await fetch(FEEDS_URL, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!feedsResponse.ok) throw new Error(`feeds.json: HTTP ${feedsResponse.status}`);
+    const feedsPayload = await feedsResponse.json();
+    const feeds = Array.isArray(feedsPayload.feeds) ? feedsPayload.feeds : [];
+    const alreadyListed = feeds.some((feed) =>
+      String(feed?.name || "").trim() === fields.name
+      || comparableFeedUrl(feed?.feed_url) === feedUrl
+    );
+    if (alreadyListed) {
+      return jsonResponse({ error: "already_listed" }, 409, "no-store");
+    }
+
+    const pending = await env.DB.prepare(`
+      SELECT id FROM applications WHERE feed_url = ? AND status = 'pending' LIMIT 1
+    `).bind(feedUrl).first();
+    if (pending) {
+      return jsonResponse({ error: "already_pending" }, 409, "no-store");
+    }
+
+    const timestamp = new Date().toISOString();
+    const id = await sha256(`${feedUrl}${timestamp}`);
+    await env.DB.prepare(`
+      INSERT INTO applications (id, name, feed_url, category, bio, status, created_at)
+      VALUES (?, ?, ?, ?, ?, 'pending', ?)
+    `).bind(id, fields.name, feedUrl, category, fields.bio, timestamp).run();
+
+    if (!env.GITHUB_TOKEN) {
+      return jsonResponse(
+        { ok: true, pr: null, note: "GITHUB_TOKEN未設定" },
+        200,
+        "no-store",
+      );
+    }
+
+    const result = await publishApplication(env, {
+      id,
+      name: fields.name,
+      feed_url: feedUrl,
+      category,
+      bio: fields.bio,
+    });
+    await env.DB.prepare(`
+      UPDATE applications SET status = 'pr_created', pr_url = ? WHERE id = ?
+    `).bind(result.url, id).run();
+    return jsonResponse({ ok: true, pr: result.url }, 200, "no-store");
+  } catch (error) {
+    console.error("Application webhook failed", error);
+    return jsonResponse({ error: "Internal server error" }, 500, "no-store");
+  }
+}
+
+async function getApplications(env) {
+  const rows = await env.DB.prepare(`
+    SELECT id, name, feed_url, category, status, pr_url, created_at
+    FROM applications
+    ORDER BY created_at DESC
+    LIMIT 50
+  `).all();
+  return jsonResponse({ applications: rows.results || [] }, 200, "no-store");
+}
+
+export function extractTallyFields(payload) {
+  const result = { name: "", rawUrl: "", category: "", bio: "" };
+  const fields = Array.isArray(payload?.data?.fields) ? payload.data.fields : [];
+  for (const field of fields) {
+    const label = String(field?.label || "").toLowerCase().replace(/\s+/g, "");
+    const value = Array.isArray(field?.value) ? field.value[0] : field?.value;
+    const text = String(value ?? "").trim();
+    if (!text) continue;
+    if (!result.rawUrl && (label.includes("url") || label.includes("substack"))) {
+      result.rawUrl = text;
+    } else if (!result.category && (label.includes("カテゴリ") || label.includes("category"))) {
+      result.category = text.slice(0, 30);
+    } else if (!result.bio && (label.includes("自己紹介") || label.includes("紹介") || label.includes("bio"))) {
+      result.bio = text.slice(0, 200);
+    } else if (!result.name && (label.includes("掲載名") || label.includes("名前") || label.includes("name"))) {
+      result.name = text.slice(0, 80);
+    }
+  }
+  return result;
+}
+
+export function normalizeFeedUrl(rawUrl) {
+  let value = String(rawUrl || "").trim();
+  if (!/^[a-z][a-z\d+.-]*:\/\//i.test(value)) value = `https://${value}`;
+  const url = new URL(value);
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    throw new Error("Feed URL must use HTTP(S)");
+  }
+  url.protocol = "https:";
+  url.username = "";
+  url.password = "";
+  url.pathname = /\/feed\/?$/i.test(url.pathname)
+    ? url.pathname.replace(/\/+$/, "")
+    : "/feed";
+  url.search = "";
+  url.hash = "";
+  return url.href.replace(/\/$/, "");
+}
+
+function comparableFeedUrl(value) {
+  try {
+    return normalizeFeedUrl(value);
+  } catch {
+    return "";
+  }
+}
+
+async function verifyTallySignature(rawBody, secret, signature) {
+  if (!signature) return false;
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const digest = new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(rawBody)));
+  return bytesToBase64(digest) === signature.trim();
+}
+
+async function verifyJapaneseFeed(feedUrl) {
+  try {
+    const response = await fetch(feedUrl, {
+      headers: {
+        "User-Agent": USER_AGENT,
+        Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
+      },
+      signal: AbortSignal.timeout(10000),
+    });
+    if (response.status !== 200) return false;
+    const xml = await response.text();
+    if (!/<(?:rss|feed)\b/i.test(xml)) return false;
+    const itemBlocks = allTags(xml, "item");
+    const entryBlocks = itemBlocks.length ? [] : allTags(xml, "entry");
+    const titles = [...itemBlocks, ...entryBlocks]
+      .slice(0, 3)
+      .map((item) => cleanText(firstTag(item, "title")))
+      .join("");
+    return (titles.match(/[ぁ-ゟ]/g) || []).length >= 3;
+  } catch {
+    return false;
+  }
+}
+
+async function publishApplication(env, application) {
+  const token = env.GITHUB_TOKEN;
+  const contents = await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/feeds.json?ref=main`);
+  const parsed = JSON.parse(decodeBase64Utf8(contents.content));
+  const feeds = Array.isArray(parsed.feeds) ? parsed.feeds : [];
+  feeds.push({
+    name: application.name,
+    feed_url: application.feed_url,
+    categories: [application.category],
+    bio: application.bio,
+  });
+  parsed.feeds = feeds;
+  const encodedContent = encodeBase64Utf8(`${JSON.stringify(parsed, null, 1)}\n`);
+  const message = `apply: ${application.name} を追加`;
+
+  if (env.AUTO_COMMIT === "true") {
+    await githubRequest(
+      token,
+      `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/feeds.json`,
+      {
+        method: "PUT",
+        body: {
+          message,
+          content: encodedContent,
+          sha: contents.sha,
+          branch: "main",
+        },
+      },
+    );
+    return { url: null };
+  }
+
+  const mainRef = await githubRequest(
+    token,
+    `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/ref/heads/main`,
+  );
+  const slug = application.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 40) || "writer";
+  const branch = `apply/${slug}-${application.id.slice(0, 8)}`;
+  await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/refs`, {
+    method: "POST",
+    body: { ref: `refs/heads/${branch}`, sha: mainRef.object.sha },
+  });
+  await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/feeds.json`, {
+    method: "PUT",
+    body: {
+      message,
+      content: encodedContent,
+      sha: contents.sha,
+      branch,
+    },
+  });
+  const pull = await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/pulls`, {
+    method: "POST",
+    body: {
+      title: `掲載申請: ${application.name}`,
+      body: [
+        "## 申請内容",
+        "",
+        `- 掲載名: ${application.name}`,
+        `- Feed URL: ${application.feed_url}`,
+        `- カテゴリ: ${application.category}`,
+        `- 自己紹介: ${application.bio || "（未記入）"}`,
+        "",
+        "## 確認チェックリスト",
+        "",
+        "- [ ] フィードと掲載名が申請者のものか",
+        "- [ ] 日本語コンテンツとして掲載可能か",
+        "- [ ] カテゴリと自己紹介が適切か",
+      ].join("\n"),
+      head: branch,
+      base: "main",
+    },
+  });
+  return { url: pull.html_url || null };
+}
+
+async function githubRequest(token, path, options = {}) {
+  const response = await fetch(`${GITHUB_API}${path}`, {
+    method: options.method || "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "User-Agent": USER_AGENT,
+      Accept: "application/vnd.github+json",
+      "Content-Type": "application/json",
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+    body: options.body ? JSON.stringify(options.body) : undefined,
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`GitHub ${options.method || "GET"} ${path}: HTTP ${response.status} ${detail.slice(0, 500)}`);
+  }
+  return response.json();
+}
+
+function encodeBase64Utf8(value) {
+  return bytesToBase64(new TextEncoder().encode(value));
+}
+
+function decodeBase64Utf8(value) {
+  const binary = atob(String(value || "").replace(/\s+/g, ""));
+  const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+  return new TextDecoder().decode(bytes);
+}
+
+function bytesToBase64(bytes) {
+  let binary = "";
+  for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary);
+}
 
 async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
   // フィードを1件ずつ処理し、その都度 cursor を進める。
