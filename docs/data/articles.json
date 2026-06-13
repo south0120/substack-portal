@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T20:42:46.431493+00:00",
+  "updated_at": "2026-06-13T22:32:47.390894+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -149,19 +149,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "PrometheusにBezos・BlackRock等が$12B出資、NEURA RoboticsにTetherが最大$1.4B出資、など全18PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/ai-wfr260605-12",
+          "published": "2026-06-13T21:00:42+00:00"
+        },
+        {
+          "title": "Digital Assetにa16z等が$355M出資、MorphoにParadigm等が$175M出資、など全13PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/crypto-wfr260605-12",
+          "published": "2026-06-13T21:00:40+00:00"
+        },
+        {
           "title": "【6/10(水)~6/11(木)News Report】暗号資産の金商法移管法案が衆院委で可決 / 3メガバンクが共同ステーブルコイン発行へ / CFTCが予測市場に米国初の規則案など",
           "url": "https://www.debunkresearch.com/p/crypto-news260610-11",
           "published": "2026-06-11T21:02:04+00:00"
-        },
-        {
-          "title": "【6/10(水)~6/11(木)News Report】AnthropicがClaude Fable 5とMythos 5を発表 / OpenAIがオハイオ州10GWデータセンターを交渉中 / MetaがRelianceとインド初のAIデータセンター契約など",
-          "url": "https://www.debunkresearch.com/p/ai-news260610-11",
-          "published": "2026-06-11T21:01:34+00:00"
-        },
-        {
-          "title": "【Pump fun GO】Pump.funの次の一手 / 「誰にでも・何でも頼める」賞金市場 /",
-          "url": "https://www.debunkresearch.com/p/pump-fun-go",
-          "published": "2026-06-10T21:00:40+00:00"
         }
       ]
     },
@@ -1529,6 +1529,24 @@
   ],
   "articles": [
     {
+      "title": "PrometheusにBezos・BlackRock等が$12B出資、NEURA RoboticsにTetherが最大$1.4B出資、など全18PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260605-12",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-13T21:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!k3ai!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F081a717a-6489-491e-a49d-7d23eee2867e_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "Digital Assetにa16z等が$355M出資、MorphoにParadigm等が$175M出資、など全13PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/crypto-wfr260605-12",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-13T21:00:40+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!CVsY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffc8ddb7f-05af-4a63-84d4-ce0846bee2a4_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "成功する人の共通点 〜0.8%の人になるシンプルな方法〜",
       "url": "https://www.yukarik.com/p/08",
       "excerpt": "99.2%が途中でやめて失敗する",
@@ -1808,15 +1826,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【5/29(金)~6/2(火) AI News Report】AnthropicがIPOへ機密S-1を提出（$965B評価） / フロリダ州がOpenAIとSam Altmanを提訴（AI暴力事件巡る初の州訴訟） / NVIDIAがGTC TaipeiでフィジカルAIへ全面シフト など",
-      "url": "https://www.debunkresearch.com/p/ai-news260529-0602",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-02T21:01:21+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!phAG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F43e2ed2a-6592-4c69-b11b-c244713b83f0_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "子育てママが直面する、子育てと発信の両立とは？",
       "url": "https://www.yukarik.com/p/5ae",
       "excerpt": "Podcast「大人の夜会」ゲストのしょうこさんさんが見つけた『私を後回しにしない』生き方",
@@ -1824,15 +1833,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!LHp2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9de35e36-b46f-4794-bac5-4702f2ee5c24_1672x941.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
-    },
-    {
-      "title": "【Shift】無料の家事代行と引き換えに、ロボットの\"目\"を育てる / @joinshiftX",
-      "url": "https://www.debunkresearch.com/p/shift",
-      "excerpt": "データ収集を\"無料サービス\"として配る発想",
-      "published": "2026-06-01T21:01:08+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!3fH0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F690eb956-3d10-4055-b087-ca65e92bf930_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "大人の夜会 第2回目 ゲスト:しょうこさん",
