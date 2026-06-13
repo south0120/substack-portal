@@ -144,13 +144,7 @@ def d1_query(account_id: str, database_id: str, token: str, queries: list[dict])
 def upsert_writer(account_id: str, db_id: str, token: str, feed: dict, site_url: str, avatar: str) -> None:
     categories = feed_categories(feed)
     d1_query(account_id, db_id, token, {
-        "sql": """
-            INSERT INTO writers (name, url, feed_url, avatar, bio, categories, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(name) DO UPDATE SET
-              url=excluded.url, feed_url=excluded.feed_url, avatar=excluded.avatar,
-              bio=excluded.bio, categories=excluded.categories, updated_at=excluded.updated_at
-        """,
+        "sql": "INSERT INTO writers (name,url,feed_url,avatar,bio,categories,updated_at) VALUES (?,?,?,?,?,?,?) ON CONFLICT(name) DO UPDATE SET url=excluded.url,feed_url=excluded.feed_url,avatar=excluded.avatar,bio=excluded.bio,categories=excluded.categories,updated_at=excluded.updated_at",
         "params": [
             feed["name"], site_url, feed["feed_url"], avatar,
             feed.get("bio", ""), json.dumps(categories, ensure_ascii=False),
@@ -162,23 +156,12 @@ def upsert_writer(account_id: str, db_id: str, token: str, feed: dict, site_url:
 def upsert_articles(account_id: str, db_id: str, token: str, articles: list[dict]) -> None:
     for i in range(0, len(articles), D1_BATCH_SIZE):
         batch = articles[i:i + D1_BATCH_SIZE]
-        queries = [
-            {
-                "sql": "INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES (?,?,?,?,?,?,?,?) ON CONFLICT(url) DO NOTHING",
-                "params": [a["id"], a["url"], a["title"], a["excerpt"], a["image"], a["published"], a["writer"], a["category"]],
-            }
-            for a in batch
-        ]
-        # D1 batch endpoint accepts array
-        url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/d1/database/{db_id}/query"
-        body = json.dumps(queries).encode()
-        req = urllib.request.Request(
-            url, data=body,
-            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-            method="POST",
-        )
-        with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
-            r.read()
+        placeholders = ",".join(["(?,?,?,?,?,?,?,?)"] * len(batch))
+        params = [v for a in batch for v in (a["id"], a["url"], a["title"], a["excerpt"], a["image"], a["published"], a["writer"], a["category"])]
+        d1_query(account_id, db_id, token, {
+            "sql": f"INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES {placeholders} ON CONFLICT(url) DO NOTHING",
+            "params": params,
+        })
 
 
 def main() -> int:
@@ -218,8 +201,8 @@ def main() -> int:
 
     # update last_run in meta
     d1_query(account_id, db_id, token, {
-        "sql": "INSERT INTO meta(key,value) VALUES('last_run',?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",
-        "params": [datetime.now(timezone.utc).isoformat()],
+        "sql": "INSERT INTO meta (key,value) VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+        "params": ["last_run", datetime.now(timezone.utc).isoformat()],
     })
 
     print(f"\nDone: {successes}/{len(feeds)} writers, {total_articles} articles upserted")
