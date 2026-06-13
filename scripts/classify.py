@@ -12,9 +12,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import ssl
+import urllib.request
+
+try:
+    import certifi
+    _SSL_CONTEXT = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    _SSL_CONTEXT = ssl.create_default_context()
+
 ROOT = Path(__file__).resolve().parent.parent
-ARTICLES_FILE = ROOT / "docs" / "data" / "articles.json"
 TOPICS_FILE = ROOT / "docs" / "data" / "topics.json"
+API_BASE = "https://fyl-api.south0120.workers.dev"
 
 TOPIC_LABELS = ["AI", "テクノロジー", "ビジネス", "ライフスタイル", "読書", "その他"]
 MAX_ARTICLES_PER_WRITER = 18
@@ -115,9 +124,29 @@ def main() -> int:
 
     import anthropic
 
-    payload = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
-    writers = payload.get("writers", [])
-    articles = payload.get("articles", [])
+    # Fetch writers from D1 API
+    req = urllib.request.Request(f"{API_BASE}/api/writers", headers={"User-Agent": "fyl-classifier/1.0"})
+    with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
+        writers_data = json.loads(r.read())
+    writers = writers_data.get("writers", [])
+    print(f"Fetched {len(writers)} writers from API")
+
+    # Fetch all articles from D1 API via pagination
+    articles: list[dict[str, Any]] = []
+    page = 1
+    while True:
+        req = urllib.request.Request(
+            f"{API_BASE}/api/articles?limit=200&page={page}",
+            headers={"User-Agent": "fyl-classifier/1.0"},
+        )
+        with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
+            data = json.loads(r.read())
+        batch = data.get("articles", [])
+        articles.extend(batch)
+        if not data.get("hasMore"):
+            break
+        page += 1
+    print(f"Fetched {len(articles)} articles from API")
     existing = load_existing()
     existing_writers = existing.get("writers", {})
     if not isinstance(existing_writers, dict):

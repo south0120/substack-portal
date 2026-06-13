@@ -21,10 +21,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install classifier dependency
-        run: pip install anthropic
-
-      - name: Fetch RSS feeds
-        run: python scripts/fetch.py
+        run: pip install anthropic certifi
 
       - name: Classify writer topics
         env:
@@ -36,7 +33,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
-          git add docs/data/*.json
+          git add docs/data/topics.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: update shelf topics"
           git rebase origin/main
