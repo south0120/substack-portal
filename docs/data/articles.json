@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T01:36:18.317741+00:00",
+  "updated_at": "2026-06-13T03:22:00.169764+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -552,9 +552,9 @@
           "published": "2026-06-12T03:15:03+00:00"
         },
         {
-          "title": "大人の夜会　ゲストBMPさん",
-          "url": "https://www.yukarik.com/p/bmp",
-          "published": "2026-06-11T13:38:39+00:00"
+          "title": "【保存版】Substack初心者向け完全ガイド｜始め方・使い方の記事一覧",
+          "url": "https://www.yukarik.com/p/substack-32b",
+          "published": "2026-06-11T14:44:36+00:00"
         }
       ]
     },
@@ -1565,6 +1565,15 @@
       "category": "投資・経済"
     },
     {
+      "title": "【保存版】Substack初心者向け完全ガイド｜始め方・使い方の記事一覧",
+      "url": "https://www.yukarik.com/p/substack-32b",
+      "excerpt": "サブスタックの始め方 目次一覧",
+      "published": "2026-06-11T14:44:36+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!v0i-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139954b7-5cdf-4a8c-8161-1843622c8024_1448x1086.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "健康・ウェルネス"
+    },
+    {
       "title": "大人の夜会　ゲストBMPさん",
       "url": "https://www.yukarik.com/p/bmp",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -1876,15 +1885,6 @@
       "excerpt": "Live Podcastで、速さより、深さ。数より、温度",
       "published": "2026-05-25T12:47:19+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!NYRL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae8057be-6a05-4fc2-ab63-e087d51f3c20_1254x1254.png",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "健康・ウェルネス"
-    },
-    {
-      "title": "大人の夜会　テスト配信w/ゆかりっく｜",
-      "url": "https://www.yukarik.com/p/w",
-      "excerpt": "A recording from ゆかりっく｜大人の自由ライフ革命ラボ's live video",
-      "published": "2026-05-24T12:14:18+00:00",
-      "image": "https://api.substack.com/feed/podcast/199060230/c2b37a5a4b24f06e5a9eda1ae3a00a74.mp3",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
     },
