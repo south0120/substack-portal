@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Find Your Letter — 日本人Substackキュレーション</title>
-<meta name="description" content="日本人Substackライターの記事を毎日更新。AI・テクノロジー・ビジネス・ライフスタイルなど130名以上のニュースレターを一覧できるキュレーションポータル。">
+<title>Find Your Letter — 読みたいニュースレターに出会う場所</title>
+<meta name="description" content="読みたいニュースレターに出会う場所。日本人Substackライターの記事を毎日更新し、AI・テクノロジー・ビジネス・ライフスタイルなど300名以上のニュースレターから自分に合う一通を見つけられるキュレーションポータル。">
 <meta name="keywords" content="Substack,日本語ニュースレター,日本人Substack,ニュースレターまとめ,Substackキュレーション">
 <meta name="theme-color" content="#FF6719">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141417">
@@ -12,8 +12,8 @@
 <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon_192.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-<meta property="og:title" content="Find Your Letter — 日本人Substackキュレーション">
-<meta property="og:description" content="日本人Substackライターの記事を毎日更新。AI・テクノロジー・ビジネス・ライフスタイルなど130名以上のニュースレターを一覧できるキュレーションポータル。">
+<meta property="og:title" content="Find Your Letter — 読みたいニュースレターに出会う場所">
+<meta property="og:description" content="読みたいニュースレターに出会う場所。日本人Substackライターの記事を毎日更新し、AI・テクノロジー・ビジネス・ライフスタイルなど300名以上のニュースレターから自分に合う一通を見つけられるキュレーションポータル。">
 <meta property="og:image" content="https://findyourletter.com/assets/icons/icon_512.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://findyourletter.com/">
@@ -92,6 +92,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .header-in{max-width:var(--maxw);margin:auto;padding:11px 16px;display:flex;align-items:center;gap:12px}
 .site-logo-link{flex:none;display:flex;align-items:center;text-decoration:none}
 .site-logo{height:32px;width:auto;display:block}
+.site-tagline{flex:none;font-size:.72rem;color:var(--sub);font-weight:600;white-space:nowrap;
+  padding-left:12px;border-left:1px solid var(--line);line-height:1.2}
 .site-logo--dark{display:none}
 @media(prefers-color-scheme:dark){
   :root:not([data-theme="light"]) .site-logo--light{display:none}
@@ -104,6 +106,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 /* モバイル: ロゴを検索バーの上に全幅で表示 */
 @media(max-width:699px){
   .header-in{flex-wrap:wrap;padding:10px 14px 8px;gap:8px}
+  .site-tagline{display:none}
   .site-logo-link{width:100%;justify-content:center}
   .site-logo{height:26px}
   .search{max-width:none}
@@ -426,6 +429,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
       <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
       <span class="beta-badge">β版</span>
     </a>
+    <span class="site-tagline">読みたいニュースレターに出会う場所</span>
     <label class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       <input id="searchInput" type="search" placeholder="記事を検索" aria-label="検索">
