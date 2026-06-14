@@ -802,6 +802,17 @@ function writerCard(writer){
     </article>`;
 }
 
+// 書き手の最終更新＝最新記事の公開日時（ミリ秒）。記事が無ければ0で末尾に回る。
+function writerLastUpdated(writer){
+  const arr = Array.isArray(writer.latest) ? writer.latest : [];
+  let max = 0;
+  for(const article of arr){
+    const t = new Date(article.published).getTime();
+    if(!Number.isNaN(t) && t > max) max = t;
+  }
+  return max;
+}
+
 function renderShelf(){
   const normalized = query.toLocaleLowerCase("ja");
   const writers = DATA.writers.filter(writer =>
@@ -809,7 +820,9 @@ function renderShelf(){
   );
   const root = document.getElementById("shelfView");
   const sections = categoryOrder().map(name => {
-    const items = writers.filter(writer => writerCategories(writer).includes(name));
+    const items = writers
+      .filter(writer => writerCategories(writer).includes(name))
+      .sort((a, b) => writerLastUpdated(b) - writerLastUpdated(a));
     if(!items.length) return "";
     const style = styleFor(name);
     return `
