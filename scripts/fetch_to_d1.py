@@ -213,7 +213,7 @@ def upsert_articles(account_id: str, db_id: str, token: str, articles: list[dict
             for v in (a["id"], a["url"], a["title"], a["excerpt"], a["image"], a["published"], a["writer"], a["category"])
         ]
         d1_query(account_id, db_id, token, {
-            "sql": f"INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES {placeholders} ON CONFLICT(url) DO NOTHING",
+            "sql": f"INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES {placeholders} ON CONFLICT(url) DO UPDATE SET published=excluded.published",
             "params": params,
         })
 
