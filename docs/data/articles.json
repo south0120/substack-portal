@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T20:45:34.328016+00:00",
+  "updated_at": "2026-06-14T22:39:12.812502+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,19 +152,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/crypto-wr260606-12",
+          "published": "2026-06-14T21:01:07+00:00"
+        },
+        {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/ai-wr260606-12",
+          "published": "2026-06-14T21:01:05+00:00"
+        },
+        {
           "title": "PrometheusにBezos・BlackRock等が$12B出資、NEURA RoboticsにTetherが最大$1.4B出資、など全18PJ【資金調達PJまとめ】",
           "url": "https://www.debunkresearch.com/p/ai-wfr260605-12",
           "published": "2026-06-13T21:00:42+00:00"
-        },
-        {
-          "title": "Digital Assetにa16z等が$355M出資、MorphoにParadigm等が$175M出資、など全13PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/crypto-wfr260605-12",
-          "published": "2026-06-13T21:00:40+00:00"
-        },
-        {
-          "title": "【6/10(水)~6/11(木)News Report】暗号資産の金商法移管法案が衆院委で可決 / 3メガバンクが共同ステーブルコイン発行へ / CFTCが予測市場に米国初の規則案など",
-          "url": "https://www.debunkresearch.com/p/crypto-news260610-11",
-          "published": "2026-06-11T21:02:04+00:00"
         }
       ]
     },
@@ -4292,6 +4292,24 @@
   ],
   "articles": [
     {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/crypto-wr260606-12",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-14T21:01:07+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!u9_y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbae806d9-f055-470c-bc6e-bf5a009f2d1b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260606-12",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-14T21:01:05+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Bwx7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F70cc76cd-52ce-4121-bfe5-8a185bdf3f4a_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "大人の夜会　相談室",
       "url": "https://www.yukarik.com/p/18c",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -4571,15 +4589,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【Didit】\"無料KYC\"で本人確認インフラを塗り替える、AI時代のアイデンティティ基盤 / @getdidit",
-      "url": "https://www.debunkresearch.com/p/didit",
-      "excerpt": "無料KYCは本人確認の常識を変えるか",
-      "published": "2026-06-03T21:01:15+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!q3-d!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1de4093f-d4b7-45e0-a9ed-588af3649ed0_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "50代以上のシニアが使えるサブスタック　〜上手に育てる自分のメディア",
       "url": "https://www.yukarik.com/p/substack-246",
       "excerpt": "初めに〜このガイドについて Subustackとは？",
@@ -4587,15 +4596,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!08K-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e513929-461b-40e8-a676-1827e865a1c6_1672x941.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
-    },
-    {
-      "title": "【5/29(金)~6/2(火) Crypto News Report】改正資金決済法施行で「仮想通貨仲介業」の新登録制度スタート / FBIが国際詐欺網からBTCなど$8B超を押収 / StrategyがBitcoinを2022年以来初の売却 など",
-      "url": "https://www.debunkresearch.com/p/crypto-news260529-0602",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-02T21:01:41+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!DY_T!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9b3bd156-d9f8-4d24-aec1-d15556269a8b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "子育てママが直面する、子育てと発信の両立とは？",
