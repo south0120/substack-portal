@@ -43,6 +43,7 @@ export default {
       if (url.pathname === "/api/health") return getHealth(env);
       if (url.pathname === "/api/ingest") return runIngest(url, env);
       if (url.pathname === "/api/applications") return getApplications(env);
+      if (url.pathname === "/api/proxy") return handleProxy(url, request, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -139,6 +140,40 @@ async function handleApplication(request, env) {
     console.error("Application webhook failed", error);
     return jsonResponse({ error: "Internal server error" }, 500, "no-store");
   }
+}
+
+async function handleProxy(url, request, env) {
+  const secret = request.headers.get("x-proxy-secret");
+  if (!env.PROXY_SECRET || secret !== env.PROXY_SECRET) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+  const targetUrl = url.searchParams.get("url");
+  if (!targetUrl) {
+    return new Response("url parameter required", { status: 400 });
+  }
+  let parsedTarget;
+  try {
+    parsedTarget = new URL(targetUrl);
+    if (parsedTarget.protocol !== "https:" && parsedTarget.protocol !== "http:") {
+      throw new Error("invalid protocol");
+    }
+  } catch {
+    return new Response("Invalid URL", { status: 400 });
+  }
+  const response = await fetch(parsedTarget.href, {
+    headers: {
+      "User-Agent": USER_AGENT,
+      Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
+    },
+    signal: AbortSignal.timeout(15000),
+  });
+  const body = await response.arrayBuffer();
+  return new Response(body, {
+    status: response.status,
+    headers: {
+      "Content-Type": response.headers.get("Content-Type") || "application/xml; charset=utf-8",
+    },
+  });
 }
 
 async function getApplications(env) {

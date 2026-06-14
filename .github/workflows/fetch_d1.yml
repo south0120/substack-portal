@@ -16,10 +16,11 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install certifi substack-api
+        run: pip install certifi
 
       - name: Fetch RSS feeds to D1
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          FYL_PROXY_SECRET: ${{ secrets.FYL_PROXY_SECRET }}
         run: python scripts/fetch_to_d1.py
