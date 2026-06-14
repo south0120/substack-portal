@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T17:03:19.483998+00:00",
+  "generated_at": "2026-06-14T18:54:08.052484+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -9358,6 +9358,82 @@
       "source_hash": "f7072c74313bd225f67eeff8b744ac218fd1e68ae07d8b5c231518a3b503a5c4",
       "labels_version": "ef54d97c",
       "classified_at": "2026-06-14T17:03:19.483986+00:00"
+    },
+    "まるさん｜50代フリーランスの生き残り戦略": {
+      "topics": [
+        {
+          "label": "キャリア・働き方",
+          "pct": 25.0
+        },
+        {
+          "label": "子育て・家族",
+          "pct": 16.7
+        },
+        {
+          "label": "読書",
+          "pct": 16.7
+        },
+        {
+          "label": "AI",
+          "pct": 8.3
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 8.3
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 8.3
+        },
+        {
+          "label": "教育・学び",
+          "pct": 8.3
+        },
+        {
+          "label": "クリエイティブ",
+          "pct": 8.3
+        }
+      ],
+      "sample_n": 12,
+      "source_hash": "88de44fc35b990926d7c7cc963e32ea6502b9b1675a38ce9971bfb0402a6b185",
+      "labels_version": "ef54d97c",
+      "classified_at": "2026-06-14T18:54:05.491068+00:00"
+    },
+    "難しいことはしない副業実験中": {
+      "topics": [
+        {
+          "label": "テクノロジー",
+          "pct": 25.0
+        },
+        {
+          "label": "ビジネス",
+          "pct": 25.0
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 25.0
+        },
+        {
+          "label": "教育・学び",
+          "pct": 25.0
+        }
+      ],
+      "sample_n": 4,
+      "source_hash": "2ad6f27fcec77317d825f6d9dee9fbc7fac9c5473322941f9b01d88ff4de54ce",
+      "labels_version": "ef54d97c",
+      "classified_at": "2026-06-14T18:54:06.536744+00:00"
+    },
+    "はぐくむ|子どもの育ちを【信じて待つ】人": {
+      "topics": [
+        {
+          "label": "子育て・家族",
+          "pct": 100.0
+        }
+      ],
+      "sample_n": 7,
+      "source_hash": "dc734328cbbf19187a5a326e71a34b01b3b894dafb12322970ea83f4d820ba41",
+      "labels_version": "ef54d97c",
+      "classified_at": "2026-06-14T18:54:08.052469+00:00"
     }
   }
 }
