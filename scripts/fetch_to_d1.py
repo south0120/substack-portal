@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import email.utils
 import hashlib
 import json
 import os
@@ -139,8 +140,8 @@ def fetch_via_proxy(feed: dict, proxy_base: str, proxy_secret: str) -> tuple[str
         )
         pub_raw = _clean_text(_first_tag(item, "pubDate"))
         try:
-            pub = datetime.strptime(pub_raw, "%a, %d %b %Y %H:%M:%S %z").isoformat()
-        except ValueError:
+            pub = email.utils.parsedate_to_datetime(pub_raw).isoformat()
+        except Exception:
             pub = now
         articles.append({
             "id": sha256_id(url),
