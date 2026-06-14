@@ -137,8 +137,12 @@ def d1_query(account_id: str, database_id: str, token: str, queries: list[dict])
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
+            return json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        body_text = e.read().decode("utf-8", errors="replace")[:300]
+        raise RuntimeError(f"D1 API HTTP {e.code} for account={account_id}: {body_text}") from e
 
 
 def upsert_writer(account_id: str, db_id: str, token: str, feed: dict, site_url: str, avatar: str) -> None:
@@ -193,8 +197,10 @@ def main() -> int:
             total_articles += len(articles)
             successes += 1
             print(f"  → {len(articles)} articles")
+        except RuntimeError as e:
+            print(f"  WARN [D1]: {e}", file=sys.stderr)
         except Exception as e:
-            print(f"  WARN: {e}", file=sys.stderr)
+            print(f"  WARN [RSS]: {type(e).__name__}: {e}", file=sys.stderr)
 
         if index < len(feeds) - 1:
             time.sleep(SLEEP_BETWEEN_FEEDS)
