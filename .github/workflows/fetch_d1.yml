@@ -2,7 +2,8 @@ name: Fetch RSS to D1
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/10 * * * *"          # 通常: 10分ごと
+    - cron: "*/5 22-23 * * *"       # 朝の更新ラッシュ窓(7:00-8:59 JST=22-23時UTC)は5分ごとに密に
   workflow_dispatch:
 
 jobs:
