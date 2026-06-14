@@ -260,6 +260,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .article-order-button{margin-left:auto}
 .article-count{margin-left:auto;color:var(--sub);font-size:.75rem}
 .article-count b{color:var(--ink)}
+.article-fetch{color:var(--faint);font-size:.72rem;white-space:nowrap}
+.article-fetch:not(:empty){margin-left:10px}
 .article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 .article-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0;
@@ -442,7 +444,6 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </a>
   </div>
-  <div class="header-meta" id="fetchStatus" hidden></div>
 </header>
 
 <div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
@@ -466,6 +467,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
           <div class="filter-row">
             <div class="pills" id="periodPills" aria-label="期間"></div>
             <span class="article-count" id="articleCount"></span>
+            <span class="article-fetch" id="fetchInline"></span>
             <button type="button" class="order-button article-order-button" id="articleOrderOpen">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
               並び替え
@@ -1538,10 +1540,9 @@ function init(){
   const updatedStr = DATA.updated_at ? new Date(DATA.updated_at).toLocaleString("ja-JP") : "サンプルデータ";
   document.getElementById("updatedAt").textContent = updatedStr;
   if(DATA.updated_at){
-    const fetchEl = document.getElementById("fetchStatus");
+    const fetchEl = document.getElementById("fetchInline");
     const d = new Date(DATA.updated_at);
     fetchEl.textContent = `最終取得 ${d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}`;
-    fetchEl.hidden = false;
   }
   initFilters();
   initArticleSwipe();
