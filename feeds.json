@@ -1079,7 +1079,7 @@
    "name": "ブックカタリスト",
    "feed_url": "https://bookcatalyst.substack.com/feed",
    "categories": [
-    "教育・学び"
+    "読書"
    ],
    "bio": "おもしろかった本について語るPodcast&ニュースレターです"
   },
@@ -1087,7 +1087,7 @@
    "name": "鳥井弘文のSubstack",
    "feed_url": "https://hirofumi21.substack.com/feed",
    "categories": [
-    "ライフスタイル"
+    "社会・文化"
    ],
    "bio": "鳥井弘文のSubstack"
   },
@@ -1112,7 +1112,7 @@
    "name": "はむ｜ポンコツの森",
    "feed_url": "https://humstar1993.substack.com/feed",
    "categories": [
-    "ビジネス"
+    "その他"
    ],
    "bio": "パワハラで同僚と一斉退職🫠2児ママ🤝 ✴︎no+e開始2ヶ月で月43ﾏｿ円 ✴︎Etsyデジタル販売500㌦突破 ポンコツの森への入り口👇🐹🌳 https://lin.ee/qwRIE5S"
   },
@@ -1128,7 +1128,8 @@
    "name": "くりちゃん | 終活アドバイザー",
    "feed_url": "https://kurichan272.substack.com/feed",
    "categories": [
-    "健康・ウェルネス"
+    "ライフスタイル",
+    "社会・文化"
    ],
    "bio": "終活アドバイザーとして発信しています。 終活にはいろいろな側面がありますが、まずは体のことが大切。 冷えとり健康法のセミナーをしています。 75歳で体年齢34歳のくりちゃんが みなさまと一緒に楽しい終活をやっていきたいと思っています。"
   },
@@ -1144,7 +1145,6 @@
    "name": "マナミのLINEスタンプ × AI 実験室",
    "feed_url": "https://mana2518.substack.com/feed",
    "categories": [
-    "AI",
     "ビジネス"
    ],
    "bio": "3人の未就学児を子育てしながらAI×LINEスタンプで収入を作るリアルな試行錯誤を発信！"
@@ -1162,6 +1162,7 @@
    "feed_url": "https://naochan1125.substack.com/feed",
    "categories": [
     "AI",
+    "ビジネス",
     "投資・経済"
    ],
    "bio": "AIと経済の未来について。危機感から、プログラミングのド素人がAI使ってアプリ作っちゃいました😂 世界を変えちゃおう😍金融でのキャリアは20年です。"
@@ -1204,7 +1205,8 @@
    "name": "前田徳彦|星空写真家",
    "feed_url": "https://starwalker0202.substack.com/feed",
    "categories": [
-    "クリエイティブ"
+    "キャリア・働き方",
+    "ライフスタイル"
    ],
    "bio": "【星景写真家・星空動画クリエイター】49年前から星空撮影｜2004年「星空のある風景写真BLOG」を開始→晴れたら毎週星空撮影→YouTubeで星空動画｜誠文堂新光社 写真集「星空風景」｜翔泳社「星空のある風景カレンダー2026」｜Amazon「星景写真ガイドブック」｜ストアカ星景写真講座｜"
   },
@@ -1220,7 +1222,8 @@
    "name": "若月翼",
    "feed_url": "https://wakatsubasa.substack.com/feed",
    "categories": [
-    "キャリア・働き方"
+    "クリエイティブ",
+    "グルメ・料理"
    ],
    "bio": "\"私たちのはたらくを問い続ける\"がテーマの対話型コミュニティ「Wasei Salon」運営メンバー。SaaS CS・人材/組織開発。趣味はランニング・料理・読書。「AI時代にどう生きたいか？」を考えがち。"
   },
@@ -1245,7 +1248,8 @@
    "name": "会社に頼らない家収益のつくり方",
    "feed_url": "https://miukei25.substack.com/feed",
    "categories": [
-    "ビジネス"
+    "ビジネス",
+    "クリエイティブ"
    ],
    "bio": "定年前に会社を早期退職し、家で収益化を実現した私が、会社だけに頼らず収益の柱を作りたい大人世代へ、AI活用・情報発信・メルマガ・SNSを組み合わせながら、実際に私がたどってきた道筋をお伝えします。"
   },
@@ -1277,7 +1281,7 @@
    "name": "CNP偏愛マガジン",
    "feed_url": "https://16snow.substack.com/feed",
    "categories": [
-    "投資・経済"
+    "ビジネス"
    ],
    "bio": "4年間CNPを見続けてきた16snowの偏愛出版"
   },
@@ -1285,7 +1289,7 @@
    "name": "バク然らいぶらり サテライトスタジオ",
    "feed_url": "https://89burari.substack.com/feed",
    "categories": [
-    "ライフスタイル"
+    "グルメ・料理"
    ],
    "bio": "忙しい日常の中でふと去来する“漠然”を紙折り・ハマナカと物書き・どてらい、感受性豊かな漠然マイスターたちが拾い集め、そっと収蔵する秘密のPodcast『バク然らいぶらり』。 毎週金曜日20時放送。ネタがあったら火曜も放送！ 上質な漠然トークに花を咲かせながら、夜は更けてゆく……。"
   },
@@ -1333,7 +1337,8 @@
    "name": "Awa | 難病と暮らす",
    "feed_url": "https://awa3.substack.com/feed",
    "categories": [
-    "ライフスタイル"
+    "ライフスタイル",
+    "健康・ウェルネス"
    ],
    "bio": "Living with rheumatoid arthritis and lupus, I share gentle tips for everyday life with chronic illness. I hope this space brings comfort to others on a similar journey. リウマチやSLEと暮らしながら、無理しすぎない毎日を発信しています。 同じように病気と向き合う人の、ほっとできる場所になれたらうれしいです。"
   },
@@ -1381,7 +1386,7 @@
    "name": "高見知英しんぶん",
    "feed_url": "https://chie.substack.com/feed",
    "categories": [
-    "その他"
+    "AI"
    ],
    "bio": "高見知英の日々の活動やポッドキャスト配信をまとめた情報をおとどけ"
   },
@@ -1429,7 +1434,8 @@
    "name": "野田村悠加",
    "feed_url": "https://dcharuka.substack.com/feed",
    "categories": [
-    "ライフスタイル"
+    "キャリア・働き方",
+    "教育・学び"
    ],
    "bio": "合同会社ルールブルー代表｜著書『いつだって、あなたはまだ夜明け前』『小夏のブルペン』｜Kindle無料ランキング8部門1位獲得｜note×マイナビ主催コンテスト受賞&漫画化｜14年間の野球生活→6年間の会社員→4年間の個人事業主→法人設立｜ひたすら文章発信するパラレルワーカー"
   },
@@ -1613,7 +1619,7 @@
    "name": "ジロウ",
    "feed_url": "https://jiro5026.substack.com/feed",
    "categories": [
-    "マンガ・アニメ"
+    "AI"
    ],
    "bio": "AIイラスト漫画×手描き補正 術師🧑‍🔧 in CLIP STUDIO PAINT & Photoshop✍️｜🌸#SOZO美術館 コンペ 第12回＆14回グランプリ受賞🥇｜AI漫画帝国３期生｜NEXUS 14期生｜過去の漫画はハイライトで♪｜漫画、アニメ、映画、小説、猫、イラスト好き♪😃"
   },
@@ -1621,7 +1627,8 @@
    "name": "鴨葱あひる│だいたい考えすぎ。",
    "feed_url": "https://kamonegiahiru.substack.com/feed",
    "categories": [
-    "その他"
+    "ライフスタイル",
+    "AI"
    ],
    "bio": "強い言葉より、長く残る視点を。"
   },
@@ -1741,7 +1748,9 @@
    "name": "KITAGAWA/LUDOLOGY",
    "feed_url": "https://lolgaren.substack.com/feed",
    "categories": [
-    "その他"
+    "キャリア・働き方",
+    "ライフスタイル",
+    "健康・ウェルネス"
    ],
    "bio": "誰も求めていない。それでも書く。"
   },
@@ -1821,7 +1830,7 @@
    "name": "森のくまの小さな森へようこそ🧸",
    "feed_url": "https://morinokuma.substack.com/feed",
    "categories": [
-    "AI"
+    "その他"
    ],
    "bio": "森のくまの小さな森は、 AI、教育、ことば、紅茶、そして時々人生について。 森の小径を歩くように考える場所です。"
   },
@@ -1853,7 +1862,7 @@
    "name": "Letters of Yohaku",
    "feed_url": "https://natsukoshibasaki.substack.com/feed",
    "categories": [
-    "その他"
+    "ライフスタイル"
    ],
    "bio": "Photo & Essay on \"Yohaku\" (the beauty of empty space), art, and ordinary days in Kobe, Japan."
   },
@@ -1885,7 +1894,8 @@
    "name": "お肉の妖精 の Substack",
    "feed_url": "https://onikunoyousei.substack.com/feed",
    "categories": [
-    "AI"
+    "社会・文化",
+    "ライフスタイル"
    ],
    "bio": "AI活用、業務改善したこと、作ったもの、日々感じたこと等。"
   },
@@ -1901,7 +1911,7 @@
    "name": "おうし",
    "feed_url": "https://oushi67.substack.com/feed",
    "categories": [
-    "ライフスタイル"
+    "キャリア・働き方"
    ],
    "bio": "おうしです。東南アジアでリモートワークしてます。 高卒手取り15万→海外移住して気づいたこと書きます。ストレスゼロの人生設計に命かけてます。最近は子供のほうが英語力高くて焦って類人猿。"
   },
@@ -1909,7 +1919,8 @@
    "name": "Owner Vet 〜「飼い主総獣医師時代」の実現〜",
    "feed_url": "https://ownervet.substack.com/feed",
    "categories": [
-    "その他"
+    "健康・ウェルネス",
+    "教育・学び"
    ],
    "bio": "飼い主が、ペットを治す時代へ。全ての飼い主が獣医師を超える話——"
   },
@@ -1941,6 +1952,7 @@
    "name": "Ririo",
    "feed_url": "https://ririotarot.substack.com/feed",
    "categories": [
+    "社会・文化",
     "クリエイティブ"
    ],
    "bio": "黒曜の間 主宰。 恋札、GlassHeartTarotDeck、GARDEN oracle card 制作。 占い、詩、映像、言葉を通して人の心と物語を描く。"
@@ -1997,6 +2009,7 @@
    "name": "スピるバグ",
    "feed_url": "https://spirubug.substack.com/feed",
    "categories": [
+    "クリエイティブ",
     "AI"
    ],
    "bio": "開運、都市伝説、宇宙人、超能力、心霊、無意識、AI——人間が思わず『スピって』しまう、まだ誰もちゃんと言葉にできていない世界の『バグ』。本当かどうかは脇に置いて、再現する条件ごと言葉にしていきます。"
@@ -2117,7 +2130,8 @@
    "name": "【THE★昭和女子】人生後半の発信秘密基地",
    "feed_url": "https://warako0987.substack.com/feed",
    "categories": [
-    "その他"
+    "キャリア・働き方",
+    "クリエイティブ"
    ],
    "bio": "家庭でもない。 職場でもない。 誰にも邪魔されない、自分だけの居場所。 私たち昭和女子に必要だと思いませんか❓ 私はそれを 【発信秘密基地】 と呼んでいます😊"
   },
@@ -2197,7 +2211,7 @@
    "name": "ユヤの心豊かコラム",
    "feed_url": "https://yuyasetsuyaku.substack.com/feed",
    "categories": [
-    "その他"
+    "ライフスタイル"
    ],
    "bio": "YouTubeでは伝えきれない、一人の人間ユヤとしての心豊かに生きるためのマインドセットや今後の想いなどを配信していきます。"
   },
@@ -2205,7 +2219,8 @@
    "name": "全生新舎",
    "feed_url": "https://zenseishinsha.substack.com/feed",
    "categories": [
-    "社会・文化"
+    "クリエイティブ",
+    "音楽"
    ],
    "bio": "東京都狛江市某所。野口整体の創始者、野口晴哉の旧自邸に構えた二つの「場」——ヴィンテージオーディオが敷き詰められた野口晴哉記念音楽室と、本と喫茶と対話の場、坐坐奔奔。さまざまな文化が交差するこの場所から生まれるものを、全生新舎は記録し、発信します。"
   },
