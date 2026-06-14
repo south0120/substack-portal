@@ -1,0 +1,9 @@
+name = "fyl-email"
+main = "index.js"
+compatibility_date = "2026-05-01"
+
+# 受信した生メール(.eml)を貯める R2 バケット。
+# 事前に `npx wrangler r2 bucket create fyl-emails` で作成しておくこと。
+[[r2_buckets]]
+binding = "EMAILS"
+bucket_name = "fyl-emails"
