@@ -49,7 +49,7 @@ def is_japanese(title: str, description: str) -> bool:
     return len(HIRAGANA.findall(f"{title}{description}")) >= 3
 
 
-def parse_published(value: str) -> str:
+def parse_published(value: str) -> str | None:
     """Normalize an RSS date to an ISO 8601 UTC timestamp."""
     try:
         parsed = parsedate_to_datetime(value)
@@ -57,7 +57,7 @@ def parse_published(value: str) -> str:
             parsed = parsed.replace(tzinfo=timezone.utc)
         return parsed.astimezone(timezone.utc).isoformat()
     except (TypeError, ValueError, OverflowError):
-        return datetime.now(timezone.utc).isoformat()
+        return None
 
 
 def fallback_site_url(feed_url: str) -> str:
@@ -123,7 +123,7 @@ def parse_feed(xml_bytes: bytes, writer: dict[str, object]) -> tuple[str, str, l
             }
         )
 
-    articles.sort(key=lambda article: article["published"], reverse=True)
+    articles.sort(key=lambda article: article["published"] or "", reverse=True)
     return site_url, avatar, articles
 
 
@@ -168,7 +168,7 @@ def main() -> int:
         if index < len(feeds) - 1:
             time.sleep(SLEEP_SECONDS)
 
-    all_articles.sort(key=lambda article: article["published"], reverse=True)
+    all_articles.sort(key=lambda article: article["published"] or "", reverse=True)
     payload = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "categories": unique_categories(feeds),

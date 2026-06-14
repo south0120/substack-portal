@@ -2,14 +2,16 @@
 """全ライターの過去記事URLを Substack アーカイブAPI から収集し、D1 投入用 SQL を生成する。
 
 - RSS は直近 ~20件しか返さないため、/api/v1/archive (offset ページング) で全履歴を取得
-- 日本語フィルタ（ひらがな3文字以上）・url 重複は ON CONFLICT DO NOTHING で D1 側でも防護
+- 日本語フィルタ（ひらがな3文字以上）・url 重複は D1 側でも防護
 - 出力: worker/backfill/backfill_XX.sql（2000行ごとに分割）
 
 使い方:
   python3 scripts/backfill_archive.py            # 収集 + SQL生成
+  python3 scripts/backfill_archive.py --refresh  # キャッシュを無視して再収集 + SQL生成
   npx wrangler d1 execute fyl-articles --remote --file=worker/backfill/backfill_01.sql  # 投入
 """
 
+import argparse
 import hashlib
 import json
 import re
@@ -63,6 +65,8 @@ def collect_writer(feed):
             posts = get_json(url)
         except Exception as e:
             print(f"    page {page}: {e}", file=sys.stderr)
+            if page == 0:
+                raise
             break
         if not posts:
             break
@@ -72,11 +76,11 @@ def collect_writer(feed):
             desc = excerpt_of(p.get("description") or "")
             if not title or not curl or not is_ja(f"{title}{desc}"):
                 continue
-            published = p.get("post_date") or ""
+            published = p.get("post_date")
             try:
                 published = datetime.fromisoformat(published.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
-            except Exception:
-                published = datetime.now(timezone.utc).isoformat()
+            except (AttributeError, TypeError, ValueError):
+                published = None
             rows.append({
                 "id": hashlib.sha256(curl.encode()).hexdigest(),
                 "url": curl,
@@ -94,13 +98,20 @@ def collect_writer(feed):
 
 
 def sql_quote(value):
+    if value is None:
+        return "NULL"
     return "'" + str(value).replace("'", "''") + "'"
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--refresh", action="store_true", help="ignore collected.json and re-fetch every writer")
+    args = parser.parse_args()
+
     feeds = json.loads(FEEDS.read_text())["feeds"]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    collected = json.loads(STATE.read_text()) if STATE.exists() else {}
+    collected = {} if args.refresh else (json.loads(STATE.read_text()) if STATE.exists() else {})
+    failed = []
 
     for i, feed in enumerate(feeds, 1):
         name = feed["name"]
@@ -112,9 +123,16 @@ def main():
             print(f"    {len(collected[name])} 記事")
         except Exception as e:
             print(f"    FAILED: {e}", file=sys.stderr)
-            collected[name] = []
-        STATE.write_text(json.dumps(collected, ensure_ascii=False))
+            failed.append(name)
+            continue
+        if not args.refresh:
+            STATE.write_text(json.dumps(collected, ensure_ascii=False))
         time.sleep(SLEEP)
+
+    if args.refresh and failed:
+        print(f"refresh aborted: {len(failed)} writer(s) failed; cache and SQL were not replaced", file=sys.stderr)
+        return 1
+    STATE.write_text(json.dumps(collected, ensure_ascii=False))
 
     # 重複排除して SQL 生成
     seen = set()
@@ -125,7 +143,7 @@ def main():
                 continue
             seen.add(r["url"])
             rows.append(r)
-    rows.sort(key=lambda r: r["published"], reverse=True)
+    rows.sort(key=lambda r: r["published"] or "", reverse=True)
     print(f"total unique articles: {len(rows)}")
 
     for f in OUT_DIR.glob("backfill_*.sql"):
@@ -136,12 +154,16 @@ def main():
         for r in chunk:
             values = ", ".join(sql_quote(r[k]) for k in ("id", "url", "title", "excerpt", "image", "published", "writer", "category"))
             lines.append(
-                f"INSERT INTO articles (id, url, title, excerpt, image, published, writer, category) VALUES ({values}) ON CONFLICT(url) DO NOTHING;"
+                f"INSERT INTO articles (id, url, title, excerpt, image, published, writer, category) VALUES ({values}) "
+                "ON CONFLICT(url) DO UPDATE SET "
+                "published=COALESCE(excluded.published, articles.published), "
+                "title=excluded.title, excerpt=excluded.excerpt, image=excluded.image;"
             )
         out = OUT_DIR / f"backfill_{chunk_index // ROWS_PER_FILE + 1:02d}.sql"
         out.write_text("\n".join(lines) + "\n")
         print(f"wrote {out.name}: {len(chunk)} rows")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

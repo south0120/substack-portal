@@ -126,7 +126,6 @@ def fetch_via_proxy(feed: dict, proxy_base: str, proxy_secret: str) -> tuple[str
 
     categories = feed_categories(feed)
     category = categories[0] if categories else ""
-    now = datetime.now(timezone.utc).isoformat()
     articles: list[dict] = []
 
     for item in _all_tags(channel, "item"):
@@ -142,7 +141,7 @@ def fetch_via_proxy(feed: dict, proxy_base: str, proxy_secret: str) -> tuple[str
         try:
             pub = email.utils.parsedate_to_datetime(pub_raw).isoformat()
         except Exception:
-            pub = now
+            pub = None
         articles.append({
             "id": sha256_id(url),
             "url": url,
@@ -213,7 +212,11 @@ def upsert_articles(account_id: str, db_id: str, token: str, articles: list[dict
             for v in (a["id"], a["url"], a["title"], a["excerpt"], a["image"], a["published"], a["writer"], a["category"])
         ]
         d1_query(account_id, db_id, token, {
-            "sql": f"INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES {placeholders} ON CONFLICT(url) DO UPDATE SET published=excluded.published",
+            "sql": (
+                f"INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES {placeholders} "
+                "ON CONFLICT(url) DO UPDATE SET "
+                "published=COALESCE(excluded.published, articles.published)"
+            ),
             "params": params,
         })
 

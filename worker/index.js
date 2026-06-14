@@ -456,7 +456,8 @@ async function upsertParsedFeed(env, parsed) {
       INSERT INTO articles
         (id, url, title, excerpt, image, published, writer, category)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      ON CONFLICT(url) DO NOTHING
+      ON CONFLICT(url) DO UPDATE SET
+        published = COALESCE(excluded.published, articles.published)
     `).bind(
       article.id,
       article.url,
@@ -546,7 +547,7 @@ async function fetchAndParseFeed(feed) {
       title,
       excerpt,
       image: decodeEntities(enclosure?.[1] || enclosure?.[2] || ""),
-      published: Number.isNaN(date.getTime()) ? now : date.toISOString(),
+      published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
       writer: feed.name,
       category: categories[0],
     });
