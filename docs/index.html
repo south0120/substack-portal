@@ -1557,6 +1557,16 @@ function init(){
     input.scrollIntoView({block:"center",behavior:"smooth"});
     input.focus();
   });
+  document.querySelector(".site-logo-link").addEventListener("click", () => {
+    const input = document.getElementById("searchInput");
+    if(!input.value) return;
+    input.value = "";
+    query = "";
+    shown = PAGE_SIZE;
+    if(view === "shelf") renderShelf();
+    else if(API_MODE) resetApiArticles();
+    else renderArticles();
+  });
   document.getElementById("moreButton").addEventListener("click", async () => {
     if(API_MODE) await loadNextApiPage();
     else{
