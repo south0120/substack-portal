@@ -25,9 +25,17 @@ ROOT = Path(__file__).resolve().parent.parent
 TOPICS_FILE = ROOT / "docs" / "data" / "topics.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
 
-TOPIC_LABELS = ["AI", "テクノロジー", "ビジネス", "ライフスタイル", "読書", "その他"]
+# 棚カテゴリ（index.html の CAT_STYLE）と揃えた分類ラベル。バーの成分がそのまま棚カテゴリに使われる。
+TOPIC_LABELS = [
+    "AI", "テクノロジー", "ビジネス", "投資・経済", "キャリア・働き方",
+    "社会・文化", "ライフスタイル", "子育て・家族", "健康・ウェルネス",
+    "教育・学び", "クリエイティブ", "音楽", "グルメ・料理", "旅行・おでかけ",
+    "読書", "その他",
+]
 MAX_ARTICLES_PER_WRITER = 18
 EXCERPT_LENGTH = 120
+# ラベル集合が変わったらキャッシュを無効化して再分類するための署名
+LABELS_VERSION = hashlib.sha256("|".join(TOPIC_LABELS).encode("utf-8")).hexdigest()[:8]
 
 SCHEMA = {
     "type": "object",
@@ -73,7 +81,8 @@ def source_hash(articles: list[dict[str, Any]]) -> str:
 
 def prompt_for(articles: list[dict[str, Any]]) -> str:
     lines = [
-        "以下の各記事を、指定されたトピックのうち最も適切な1つに分類してください。",
+        "以下の各記事を、次のトピックのうち最も適切な1つに分類してください。",
+        "トピック: " + " / ".join(TOPIC_LABELS),
         "すべてのindexを1回ずつ分類してください。",
         "",
     ]
@@ -167,7 +176,11 @@ def main() -> int:
 
         article_hash = source_hash(recent)
         previous = existing_writers.get(name)
-        if isinstance(previous, dict) and previous.get("source_hash") == article_hash:
+        if (
+            isinstance(previous, dict)
+            and previous.get("source_hash") == article_hash
+            and previous.get("labels_version") == LABELS_VERSION
+        ):
             output_writers[name] = previous
             print(f"Cached: {name}")
             continue
@@ -188,6 +201,7 @@ def main() -> int:
                 "topics": ratios_from(data, len(recent)),
                 "sample_n": len(recent),
                 "source_hash": article_hash,
+                "labels_version": LABELS_VERSION,
                 "classified_at": now_iso(),
             }
         except anthropic.APIError as error:
