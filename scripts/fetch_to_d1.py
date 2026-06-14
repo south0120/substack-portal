@@ -27,11 +27,11 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = ROOT / "feeds.json"
 
-UA = "find-your-letter/1.0 (+https://findyourletter.com)"
+UA = "Mozilla/5.0 (compatible; FindYourLetter/1.0; +https://findyourletter.com)"
 TIMEOUT_SECONDS = 20
 SLEEP_BETWEEN_FEEDS = 0.3
 EXCERPT_LENGTH = 120
-D1_BATCH_SIZE = 50
+D1_BATCH_SIZE = 40
 
 HIRAGANA = re.compile(r"[ぁ-ゟ]")
 HTML_TAG = re.compile(r"<[^>]*>")
