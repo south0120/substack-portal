@@ -16,7 +16,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install certifi
+        run: pip install certifi substack-api
 
       - name: Fetch RSS feeds to D1
         env:
