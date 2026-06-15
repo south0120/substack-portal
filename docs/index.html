@@ -142,7 +142,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);
   border-radius:5px;padding:2px 5px}
 .main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
-.shelf-tools{display:flex;justify-content:flex-end;padding:20px 0 0}
+.shelf-tools{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0 2px}
+.shelf-note{margin:0;flex:1;min-width:0;color:var(--sub);font-size:.76rem;line-height:1.6}
+@media(max-width:640px){.shelf-tools{flex-wrap:wrap}.shelf-note{flex-basis:100%;order:2}}
 .order-button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
   border-radius:10px;background:var(--card);color:var(--sub);font-size:.72rem;font-weight:700;padding:7px 10px}
 .order-button:hover{border-color:var(--brand-line);color:var(--brand)}
@@ -599,6 +601,32 @@ const MASTER_CATEGORIES = [
   "ファッション・美容",
   "その他"
 ];
+// 書き手ページのカテゴリ表示名。「情報の分類」ではなく「いま、何を書いている人か」という voice に翻訳
+// （mckenzieとの設計議論より：書き手を固定せず、最近の記事の傾向＝いまの動きとして見せる）
+const SHELF_VOICE = {
+  "AI":"いま、AIを書いている人たち",
+  "テクノロジー":"いま、技術と生き方を結んでいる人たち",
+  "ビジネス":"いま、ビジネスを書いている人たち",
+  "投資・経済":"いま、お金との距離を測りなおしている人たち",
+  "社会・文化":"いま、この時代を記録している人たち",
+  "ライフスタイル":"いま、日々を観察している人たち",
+  "クリエイティブ":"いま、つくる手応えを書いている人たち",
+  "キャリア・働き方":"いま、働き方を問いなおしている人たち",
+  "健康・ウェルネス":"いま、からだの声を聴いている人たち",
+  "教育・学び":"いま、学びについて書いている人たち",
+  "エンタメ":"いま、楽しさを書いている人たち",
+  "旅行・おでかけ":"いま、旅から書き起こしている人たち",
+  "グルメ・料理":"いま、食卓を観察している人たち",
+  "スポーツ":"いま、からだを動かすことを書く人たち",
+  "子育て・家族":"いま、家族のなかで考えている人たち",
+  "マンガ・アニメ":"いま、物語に向き合っている人たち",
+  "音楽":"いま、音から書き出している人たち",
+  "読書":"いま、本と対話している人たち",
+  "ゲーム":"いま、遊びを書いている人たち",
+  "ファッション・美容":"いま、装いを書いている人たち",
+  "その他":"いま、ジャンルを越えて書いている人たち"
+};
+function shelfVoice(name){ return SHELF_VOICE[name] || `いま、${name}を書いている人たち`; }
 const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
 const CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
 const CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
@@ -858,7 +886,7 @@ function renderShelf(){
         <div class="shelf-heading" title="ドラッグで棚の順番を入れ替え">
           <svg class="shelf-grip" viewBox="0 0 12 18" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/><circle cx="3" cy="14" r="1.2"/><circle cx="9" cy="14" r="1.2"/></svg>
           <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
-          <h2>${esc(name)}<span class="writer-count">${items.length}人</span></h2>
+          <h2>${esc(shelfVoice(name))}<span class="writer-count">${items.length}人</span></h2>
           <span class="shelf-rule"></span>
           <div class="shelf-arrows">
             <button type="button" class="shelf-arrow" data-direction="-1" aria-label="${esc(name)}を前へ">${CHEVRON_LEFT}</button>
@@ -870,6 +898,7 @@ function renderShelf(){
   }).join("");
   root.innerHTML = `
     <div class="shelf-tools">
+      ${query ? "" : `<p class="shelf-note">ここに並ぶ書き手は、最近の記事の傾向から自動で振り分けています。新しい記事を書くと再判定されるので、固定のジャンル分けではなく「いまの書き手の動き」を映しています。</p>`}
       <button type="button" class="order-button" id="orderOpen">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
         並び替え
