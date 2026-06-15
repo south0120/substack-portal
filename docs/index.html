@@ -262,13 +262,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .article-count b{color:var(--ink)}
 .article-fetch{color:var(--faint);font-size:.72rem;white-space:nowrap}
 .article-fetch:not(:empty){margin-left:10px}
-.refresh-button{flex:none;width:30px;height:30px;margin-left:6px;display:grid;place-items:center;
-  border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--sub);cursor:pointer;
-  transition:border-color .12s,color .12s}
-.refresh-button:hover{border-color:var(--brand-line);color:var(--brand)}
-.refresh-button svg{width:16px;height:16px}
-.refresh-button.refreshing{pointer-events:none;color:var(--brand)}
-.refresh-button.refreshing svg{animation:refresh-spin .7s linear infinite}
+/* 引っ張って更新（pull-to-refresh）。PWA/iOSでもネイティブに頼らず動くよう自前実装 */
+.ptr{position:fixed;top:0;left:50%;transform:translate(-50%,-44px);z-index:60;
+  width:36px;height:36px;display:grid;place-items:center;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow-hover);
+  color:var(--brand);opacity:0;pointer-events:none}
+.ptr svg{width:18px;height:18px}
+.ptr.spinning svg{animation:refresh-spin .7s linear infinite}
 @keyframes refresh-spin{to{transform:rotate(360deg)}}
 .article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 .article-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
@@ -431,6 +431,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 <script>(function(){try{var t=localStorage.getItem("sp_theme_v1");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(_){}})()</script>
 </head>
 <body>
+<div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></div>
 <div class="beta-banner" role="status">🚧 現在ベータ版として公開中です。<a href="https://tally.so/r/gDOWGD" target="_blank" rel="noopener">ご意見・ご要望はこちら</a></div>
 <header class="header">
   <div class="header-in">
@@ -476,9 +477,6 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
             <div class="pills" id="periodPills" aria-label="期間"></div>
             <span class="article-count" id="articleCount"></span>
             <span class="article-fetch" id="fetchInline"></span>
-            <button type="button" class="refresh-button" id="refreshButton" aria-label="最新の状態に更新" title="最新の状態に更新">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
-            </button>
             <button type="button" class="order-button article-order-button" id="articleOrderOpen">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
               並び替え
@@ -1586,12 +1584,7 @@ function init(){
     input.scrollIntoView({block:"center",behavior:"smooth"});
     input.focus();
   });
-  document.getElementById("refreshButton").addEventListener("click", async event => {
-    const btn = event.currentTarget;
-    btn.classList.add("refreshing");
-    try{ await refreshData(); }
-    finally{ btn.classList.remove("refreshing"); }
-  });
+  initPullToRefresh();
   // タブに戻ってきた時、前回更新から2分以上経ってたら自動で最新を取得
   document.addEventListener("visibilitychange", () => {
     if(document.visibilityState === "visible" && API_MODE && Date.now() - lastRefresh > 120000){
@@ -1713,6 +1706,49 @@ async function refreshData(){
   }catch(error){ console.warn("Find Your Letter refresh failed",error); }
   await resetApiArticles();
   if(view === "shelf") renderShelf();
+}
+
+function initPullToRefresh(){
+  const ptr = document.getElementById("ptr");
+  if(!ptr) return;
+  const THRESHOLD = 70, MAX = 116, RESIST = 0.5;
+  let startY = 0, pulling = false, dist = 0, refreshing = false;
+  const atTop = () => (window.scrollY || document.documentElement.scrollTop || 0) <= 0;
+  const reset = () => {
+    ptr.style.transition = "transform .25s ease, opacity .25s ease";
+    ptr.style.transform = "translate(-50%,-44px)";
+    ptr.style.opacity = "0";
+    setTimeout(() => { ptr.style.transition = ""; }, 280);
+  };
+  window.addEventListener("touchstart", e => {
+    if(refreshing || e.touches.length !== 1 || !atTop()){ pulling = false; return; }
+    startY = e.touches[0].clientY; pulling = true; dist = 0;
+    ptr.style.transition = "";
+  }, {passive:true});
+  window.addEventListener("touchmove", e => {
+    if(!pulling || refreshing) return;
+    dist = e.touches[0].clientY - startY;
+    if(dist <= 0 || !atTop()){ pulling = false; ptr.style.opacity = "0"; return; }
+    e.preventDefault();
+    const y = Math.min(dist * RESIST, MAX);
+    ptr.style.transform = `translate(-50%,${y - 44}px) rotate(${y * 3}deg)`;
+    ptr.style.opacity = String(Math.min(1, y / THRESHOLD));
+  }, {passive:false});
+  window.addEventListener("touchend", async () => {
+    if(!pulling || refreshing){ pulling = false; return; }
+    pulling = false;
+    if(dist * RESIST >= THRESHOLD){
+      refreshing = true;
+      ptr.style.transition = "transform .2s ease, opacity .2s ease";
+      ptr.style.transform = "translate(-50%,18px)";
+      ptr.style.opacity = "1";
+      ptr.classList.add("spinning");
+      try{ await refreshData(); }
+      finally{ ptr.classList.remove("spinning"); refreshing = false; reset(); }
+    } else {
+      reset();
+    }
+  }, {passive:true});
 }
 
 async function loadNextApiPage(){
