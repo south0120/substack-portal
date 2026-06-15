@@ -469,6 +469,23 @@ async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
 }
 
 async function upsertParsedFeed(env, parsed) {
+  // パブリケーション名の変更(rename)対応。書き手はnameをキーに記録しているが、
+  // Substackは名前を変えてもfeed_url(サブドメイン)は不変。よって同じfeed_urlが
+  // 別名で既に登録されていたら「名前変更」とみなし、旧記事を新名へ張り替えて
+  // 旧writer行を削除する（旧名・新名の重複表示を防ぎ、同一人として更新扱いにする）。
+  const renameStatements = [];
+  if (parsed.writer.feed_url) {
+    const priors = await env.DB.prepare(
+      "SELECT name FROM writers WHERE feed_url = ? AND name <> ?"
+    ).bind(parsed.writer.feed_url, parsed.writer.name).all();
+    for (const row of priors.results || []) {
+      if (!row.name) continue;
+      renameStatements.push(
+        env.DB.prepare("UPDATE articles SET writer = ? WHERE writer = ?").bind(parsed.writer.name, row.name),
+        env.DB.prepare("DELETE FROM writers WHERE name = ?").bind(row.name),
+      );
+    }
+  }
   const writerStatement = env.DB.prepare(`
     INSERT INTO writers (name, url, feed_url, avatar, bio, categories, updated_at)
     VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -506,7 +523,7 @@ async function upsertParsedFeed(env, parsed) {
       article.category,
     ),
   );
-  await runBatches(env.DB, [writerStatement, ...articleStatements]);
+  await runBatches(env.DB, [...renameStatements, writerStatement, ...articleStatements]);
 }
 
 async function setMeta(env, key, value) {

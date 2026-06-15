@@ -27,3 +27,5 @@ CREATE TABLE IF NOT EXISTS applications (
 CREATE INDEX IF NOT EXISTS idx_cat ON articles(category);
 CREATE INDEX IF NOT EXISTS idx_pub ON articles(published DESC);
 CREATE INDEX IF NOT EXISTS idx_writer ON articles(writer);
+-- 名前変更(rename)検知のため feed_url で書き手を引けるように
+CREATE INDEX IF NOT EXISTS idx_writer_feed ON writers(feed_url);
