@@ -1,6 +1,6 @@
 const FEEDS_URL = "https://raw.githubusercontent.com/south0120/substack-portal/main/feeds.json";
 const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
-const FEEDS_PER_RUN = 22;
+const FEEDS_PER_RUN = 30;
 const INGEST_MAX = 22;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
@@ -402,14 +402,44 @@ async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
       return stats;
     }
 
-    const cursorRow = await env.DB.prepare("SELECT value FROM meta WHERE key = ?")
-      .bind("cursor").first();
-    let cursor = normalizeCursor(cursorRow?.value, feeds.length);
+    const cursorValue = await getMeta(env, "cursor");
+    let cursor = normalizeCursor(cursorValue, feeds.length);
     stats.cursorStart = cursor;
     const count = Math.min(perRun, feeds.length);
+    const feedsByUrl = new Map(feeds.map((feed) => [feed.feed_url, feed]));
+    let retryQueue = [];
+    try {
+      const parsedRetryQueue = JSON.parse(await getMeta(env, "retry_queue") || "[]");
+      if (Array.isArray(parsedRetryQueue)) {
+        retryQueue = parsedRetryQueue.filter((feedUrl) => feedsByUrl.has(feedUrl));
+      }
+    } catch {
+      console.warn("Invalid retry_queue meta value; resetting");
+    }
 
-    for (let index = 0; index < count; index += 1) {
+    const batch = [];
+    const batchUrls = new Set();
+    for (const feedUrl of retryQueue) {
+      if (batch.length >= count || batchUrls.has(feedUrl)) continue;
+      batch.push(feedsByUrl.get(feedUrl));
+      batchUrls.add(feedUrl);
+    }
+
+    let cursorAdvances = 0;
+    const normalCursorValues = new Map();
+    while (batch.length < count && cursorAdvances < feeds.length) {
       const feed = feeds[cursor];
+      cursor = (cursor + 1) % feeds.length;
+      cursorAdvances += 1;
+      if (!batchUrls.has(feed.feed_url)) {
+        batch.push(feed);
+        batchUrls.add(feed.feed_url);
+        normalCursorValues.set(feed.feed_url, cursor);
+      }
+    }
+
+    const failedUrls = [];
+    for (const feed of batch) {
       stats.feeds += 1;
       try {
         const parsed = await fetchAndParseFeed(feed);
@@ -417,11 +447,18 @@ async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
         stats.feedSuccesses += 1;
         stats.articlesProcessed += parsed.articles.length;
       } catch (error) {
+        failedUrls.push(feed.feed_url);
         console.warn(`Feed failed: ${feed?.name || feed?.feed_url || "unknown"}`, error);
       }
-      cursor = (cursor + 1) % feeds.length;
-      await setMeta(env, "cursor", String(cursor));
+      if (normalCursorValues.has(feed.feed_url)) {
+        await setMeta(env, "cursor", String(normalCursorValues.get(feed.feed_url)));
+      }
     }
+    const unprocessedRetryUrls = retryQueue.filter((feedUrl) => !batchUrls.has(feedUrl));
+    const uniqueFailedUrls = [...new Set(failedUrls)];
+    const retainedRetryUrls = unprocessedRetryUrls.slice(-(60 - uniqueFailedUrls.length));
+    const nextRetryQueue = [...uniqueFailedUrls, ...retainedRetryUrls];
+    await setMeta(env, "retry_queue", JSON.stringify(nextRetryQueue));
     stats.cursorEnd = cursor;
     await setMeta(env, "last_run", new Date().toISOString());
     console.log(JSON.stringify(stats));
@@ -502,9 +539,10 @@ async function fetchAndParseFeed(feed) {
   if (!feed?.name || !feed?.feed_url || !categories.length) {
     throw new Error("Feed is missing name, feed_url, or categories");
   }
-  // Substack が Cloudflare の共有IPを確率的に拒否するため、失敗時は1回だけリトライ
+  // Substack が Cloudflare の共有IPを確率的に拒否するため、429は指数バックオフでリトライ
   let response = null;
-  for (let attempt = 0; attempt < 2; attempt += 1) {
+  let rateLimitRetries = 0;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
       response = await fetch(feed.feed_url, {
         headers: {
@@ -514,11 +552,17 @@ async function fetchAndParseFeed(feed) {
         signal: AbortSignal.timeout(15000),
       });
       if (response.ok) break;
+      if (response.status === 429 && rateLimitRetries < 2 && attempt < 2) {
+        await new Promise((resolve) => setTimeout(resolve, 2000 * (2 ** rateLimitRetries)));
+        rateLimitRetries += 1;
+        continue;
+      }
     } catch (error) {
-      if (attempt === 1) throw error;
+      if (attempt >= 1) throw error;
       response = null;
     }
     if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 1500));
+    else break;
   }
   if (!response || !response.ok) throw new Error(`HTTP ${response ? response.status : "fetch_failed"}`);
   const xml = await response.text();
