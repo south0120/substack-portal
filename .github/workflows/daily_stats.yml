@@ -1,0 +1,42 @@
+name: Daily stats
+
+# 毎朝 8:00 JST に /api/health の記事数・ライター数を記録し、
+# reports/daily_stats.md（人が読める表）と daily_stats.csv に追記する。
+on:
+  schedule:
+    - cron: "0 23 * * *"   # 23:00 UTC = 8:00 JST（毎日）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-stats
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install certifi
+
+      - name: Record daily stats
+        run: python scripts/record_stats.py
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/daily_stats.md reports/daily_stats.csv
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -m "chore(report): 日次レポート記録 ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
+          git fetch origin main
+          git rebase origin/main
+          git push
