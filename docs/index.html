@@ -459,7 +459,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
       <button type="button" data-view="articles" class="on">記事</button>
       <button type="button" data-view="shelf">書き手</button>
     </div>
-    <a class="guide-link" href="guide.html" aria-label="使い方・設定">
+    <a class="guide-link" href="guide.html" aria-label="使い方・設定" data-ga="guide_open">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </a>
   </div>
@@ -778,7 +778,8 @@ function writerCard(writer){
   }));
   const legendTopics = [...topics].sort((a,b) => Number(b.pct) - Number(a.pct)).slice(0,2);
   const latestHtml = latest.length ? latest.map(article => `
-    <a class="latest-link" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener">
+    <a class="latest-link" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener"
+      data-ga="article_open" data-ga-writer="${esc(writer.name)}" data-ga-cat="${esc(writerCategories(writer)[0] || "その他")}" data-ga-title="${esc(article.title)}">
       <span class="latest-title">${esc(article.title)}</span>
     </a>`).join("") : '<p class="latest-empty">最近の記事はまだありません</p>';
   const avatar = writer.avatar ? `<img class="avatar" src="${esc(safeUrl(writer.avatar))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
@@ -819,7 +820,8 @@ function writerCard(writer){
       </div>
       ${topicsHtml}
       <div class="writer-footer">
-        <a class="writer-button" href="${esc(safeUrl(writer.url))}" target="_blank" rel="noopener">Substackで読む${EXTERNAL_ICON}</a>
+        <a class="writer-button" href="${esc(safeUrl(writer.url))}" target="_blank" rel="noopener"
+          data-ga="writer_read" data-ga-writer="${esc(writer.name)}" data-ga-cat="${esc(writerCategories(writer)[0] || "その他")}">Substackで読む${EXTERNAL_ICON}</a>
       </div>
     </article>`;
 }
@@ -1101,7 +1103,8 @@ function articleCard(article){
   const style = styleFor(articleCategory);
   const image = article.image ? `<img src="${esc(safeUrl(article.image))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
   return `
-    <a class="article-card" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener">
+    <a class="article-card" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener"
+      data-ga="article_open" data-ga-writer="${esc(article.writer)}" data-ga-cat="${esc(articleCategory)}" data-ga-title="${esc(article.title)}">
       <div class="thumb">
         <span class="thumb-placeholder" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
         ${image}
@@ -1176,8 +1179,26 @@ function setCategory(nextCategory, scrollTab = true){
   if(scrollTab) requestAnimationFrame(scrollActiveCategoryTab);
 }
 
+// --- GA4 イベント計測 ---
+function track(name, params){
+  if(typeof gtag === "function"){
+    try{ gtag("event", name, params || {}); }catch(_){}
+  }
+}
+// data-ga 属性付きリンク（記事カード/Substackで読む/最近の記事）のクリックを計測
+document.addEventListener("click", event => {
+  const el = event.target.closest("[data-ga]");
+  if(!el) return;
+  track(el.dataset.ga, {
+    writer: el.dataset.gaWriter || undefined,
+    item_category: el.dataset.gaCat || undefined,
+    item_title: el.dataset.gaTitle || undefined
+  });
+}, true);
+
 function toggleCategoryFilter(name){
   if(!categoryOrder().includes(name)) return;
+  track("category_filter", { item_category: name });
   if(categoryFilters.has(name)) categoryFilters.delete(name);
   else categoryFilters.add(name);
   category = categoryFilters.size === 1 ? [...categoryFilters][0] : "すべて";
@@ -1192,6 +1213,7 @@ function toggleCategoryFilter(name){
 
 function setView(nextView, scroll = true){
   const previousView = view;
+  if(nextView !== previousView) track("view_switch", { view: nextView });
   view = nextView;
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
@@ -1582,7 +1604,10 @@ function init(){
     button.addEventListener("click", () => setView(button.dataset.mobileView))
   );
   document.getElementById("searchInput").addEventListener("keydown", e => {
-    if(e.key === "Enter") e.currentTarget.blur();
+    if(e.key === "Enter"){
+      if(query) track("search", { search_term: query });
+      e.currentTarget.blur();
+    }
   });
   document.getElementById("searchInput").addEventListener("input", event => {
     query = event.target.value.trim();
