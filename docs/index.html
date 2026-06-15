@@ -336,7 +336,8 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 .modal-backdrop{position:fixed;z-index:60;inset:0;background:var(--modal-backdrop);
   display:grid;place-items:end center;padding:16px}
 .order-modal{width:min(100%,430px);max-height:min(82vh,680px);overflow:auto;background:var(--card);
-  border-radius:18px;padding:18px;box-shadow:var(--modal-shadow)}
+  border-radius:18px;padding:18px;box-shadow:var(--modal-shadow);
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .order-modal h2{font-size:1rem;font-weight:900}
 .order-modal p{color:var(--sub);font-size:.72rem;margin-top:3px}
 .order-list{list-style:none;display:grid;gap:7px;margin:15px 0}
@@ -1122,15 +1123,36 @@ function initOrderTouchDnd(listEl){
   });
 }
 
+// モーダル表示中は背景ページのスクロールを止める（iOS Safari対策でposition:fixed方式）
+let modalSavedScrollY = 0;
+function lockBodyScroll(){
+  modalSavedScrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${modalSavedScrollY}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+}
+function unlockBodyScroll(){
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo(0, modalSavedScrollY);
+}
+
 function openOrderModal(){
   renderOrderList();
   initOrderTouchDnd(document.getElementById("orderList"));
   document.getElementById("orderBackdrop").hidden = false;
+  lockBodyScroll();
   document.getElementById("orderClose").focus();
 }
 
 function closeOrderModal(){
   document.getElementById("orderBackdrop").hidden = true;
+  unlockBodyScroll();
 }
 
 function periodMatches(value){
