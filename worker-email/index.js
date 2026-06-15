@@ -71,6 +71,20 @@ export default {
         .sort((a, b) => String(b.uploaded).localeCompare(String(a.uploaded)));
       return Response.json({ count: items.length, truncated: listed.truncated, items });
     }
+    // 受信メールの生本文を取得（監視/デバッグ用）。i=新しい順のインデックス
+    if (url.pathname === "/get") {
+      if (!env.LIST_TOKEN || url.searchParams.get("token") !== env.LIST_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      const listed = await env.EMAILS.list({ limit: 100 });
+      const sorted = listed.objects.sort((a, b) => String(b.uploaded).localeCompare(String(a.uploaded)));
+      const i = Math.max(0, parseInt(url.searchParams.get("i") || "0", 10));
+      const obj = sorted[i];
+      if (!obj) return new Response("no object", { status: 404 });
+      const data = await env.EMAILS.get(obj.key);
+      if (!data) return new Response("not found", { status: 404 });
+      return new Response(data.body, { headers: { "content-type": "text/plain; charset=utf-8" } });
+    }
     return new Response("fyl-email: inbound email -> R2 store. See /health.", {
       headers: { "content-type": "text/plain; charset=utf-8" },
     });
