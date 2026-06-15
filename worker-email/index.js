@@ -53,6 +53,24 @@ export default {
         headers: { "content-type": "application/json" },
       });
     }
+    // R2に貯まった受信メールの一覧（監視用）。LIST_TOKEN secret で保護
+    if (url.pathname === "/list") {
+      if (!env.LIST_TOKEN || url.searchParams.get("token") !== env.LIST_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      const listed = await env.EMAILS.list({ limit: 100, include: ["customMetadata"] });
+      const items = listed.objects
+        .map((o) => ({
+          key: o.key,
+          size: o.size,
+          uploaded: o.uploaded,
+          from: o.customMetadata?.from || "",
+          subject: o.customMetadata?.subject || "",
+          date: o.customMetadata?.date || "",
+        }))
+        .sort((a, b) => String(b.uploaded).localeCompare(String(a.uploaded)));
+      return Response.json({ count: items.length, truncated: listed.truncated, items });
+    }
     return new Response("fyl-email: inbound email -> R2 store. See /health.", {
       headers: { "content-type": "text/plain; charset=utf-8" },
     });
