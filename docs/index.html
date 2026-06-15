@@ -183,9 +183,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .writer-card{flex:0 0 min(72vw,232px);width:232px;scroll-snap-align:start;background:var(--card);
   border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
   padding:14px;display:flex;flex-direction:column;min-height:360px;
-  transition:transform .2s,box-shadow .2s,border-color .2s;
-  content-visibility:auto;contain-intrinsic-size:232px 380px}
-#shelfView.refresh-content .writer-card{content-visibility:visible}
+  transition:transform .2s,box-shadow .2s,border-color .2s}
 .writer-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--brand-line)}
 .writer-identity{margin-bottom:8px}
 .writer-top{display:flex;align-items:center;gap:9px}
@@ -1049,21 +1047,35 @@ function initOrderTouchDnd(listEl){
   if(listEl.dataset.touchDndReady === "true") return;
   listEl.dataset.touchDndReady = "true";
   let dragging = null;
+  let pointerId = null;
+  let startX = 0;
+  let startY = 0;
+  let dragStarted = false;
   function rows(){ return [...listEl.querySelectorAll(".order-row")]; }
   function clearIndicators(){ rows().forEach(r => r.classList.remove("drop-before","drop-after")); }
 
-  listEl.addEventListener("touchstart", e => {
+  listEl.addEventListener("pointerdown", e => {
     if(!e.target.closest(".order-grip-touch")) return;
+    if(dragging || (e.pointerType === "mouse" && e.button !== 0)) return;
     const row = e.target.closest(".order-row");
     if(!row) return;
     dragging = row;
-    row.classList.add("dragging");
-  }, {passive:true});
+    pointerId = e.pointerId;
+    startX = e.clientX;
+    startY = e.clientY;
+    dragStarted = false;
+    try{ listEl.setPointerCapture(e.pointerId); }catch(_){}
+  });
 
-  listEl.addEventListener("touchmove", e => {
-    if(!dragging) return;
+  listEl.addEventListener("pointermove", e => {
+    if(!dragging || e.pointerId !== pointerId) return;
+    if(!dragStarted){
+      if(Math.hypot(e.clientX - startX, e.clientY - startY) <= 5) return;
+      dragStarted = true;
+      dragging.classList.add("dragging");
+    }
     e.preventDefault();
-    const y = e.touches[0].clientY;
+    const y = e.clientY;
     clearIndicators();
     const others = rows().filter(r => r !== dragging);
     let placed = false;
@@ -1076,29 +1088,38 @@ function initOrderTouchDnd(listEl){
       }
     }
     if(!placed && others.length) others[others.length - 1].classList.add("drop-after");
-  }, {passive:false});
+  });
 
-  listEl.addEventListener("touchend", () => {
-    if(!dragging) return;
-    dragging.classList.remove("dragging");
-    const before = listEl.querySelector(".order-row.drop-before");
-    const after  = listEl.querySelector(".order-row.drop-after");
-    if(before) listEl.insertBefore(dragging, before);
-    else if(after) listEl.insertBefore(dragging, after.nextSibling);
+  listEl.addEventListener("pointerup", e => {
+    if(!dragging || e.pointerId !== pointerId) return;
+    try{ listEl.releasePointerCapture(e.pointerId); }catch(_){}
+    if(dragStarted){
+      dragging.classList.remove("dragging");
+      const before = listEl.querySelector(".order-row.drop-before");
+      const after  = listEl.querySelector(".order-row.drop-after");
+      if(before) listEl.insertBefore(dragging, before);
+      else if(after) listEl.insertBefore(dragging, after.nextSibling);
+      const newOrder = rows().map(r => r.dataset.cat).filter(Boolean);
+      saveCategoryOrder(newOrder);
+      renderShelf(true);
+      renderCategoryPills();
+      renderCategorySidebar();
+    }
     clearIndicators();
-    const newOrder = rows().map(r => r.dataset.cat).filter(Boolean);
-    saveCategoryOrder(newOrder);
-    renderShelf(true);
-    renderCategoryPills();
-    renderCategorySidebar();
     dragging = null;
-  }, {passive:true});
+    pointerId = null;
+    dragStarted = false;
+  });
 
-  listEl.addEventListener("touchcancel", () => {
+  listEl.addEventListener("pointercancel", e => {
+    if(e.pointerId !== pointerId) return;
+    try{ listEl.releasePointerCapture(e.pointerId); }catch(_){}
     if(dragging) dragging.classList.remove("dragging");
     clearIndicators();
     dragging = null;
-  }, {passive:true});
+    pointerId = null;
+    dragStarted = false;
+  });
 }
 
 function openOrderModal(){
