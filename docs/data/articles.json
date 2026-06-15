@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T22:39:12.812502+00:00",
+  "updated_at": "2026-06-15T01:44:51.204651+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "Substack 30分で設定する始め方〜アカウント開設から初期設定まで",
+          "url": "https://www.yukarik.com/p/substack-f2a",
+          "published": "2026-06-14T23:15:24+00:00"
+        },
+        {
           "title": "大人の夜会　相談室",
           "url": "https://www.yukarik.com/p/18c",
           "published": "2026-06-14T13:43:04+00:00"
@@ -553,11 +558,6 @@
           "title": "成功する人の共通点 〜0.8%の人になるシンプルな方法〜",
           "url": "https://www.yukarik.com/p/08",
           "published": "2026-06-12T05:37:16+00:00"
-        },
-        {
-          "title": "AIと心理学とSubstackと〜大人の夜会",
-          "url": "https://www.yukarik.com/p/aisubstack",
-          "published": "2026-06-12T03:15:03+00:00"
         }
       ]
     },
@@ -4292,6 +4292,15 @@
   ],
   "articles": [
     {
+      "title": "Substack 30分で設定する始め方〜アカウント開設から初期設定まで",
+      "url": "https://www.yukarik.com/p/substack-f2a",
+      "excerpt": "第二部 1回目 Substackアカウント作成手順｜最初にやるべき設定まとめ",
+      "published": "2026-06-14T23:15:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!0Da6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50c716a8-a676-4325-b072-52649795b09c_1536x1024.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "健康・ウェルネス"
+    },
+    {
       "title": "先週のweb3市場を5分で振り返り",
       "url": "https://www.debunkresearch.com/p/crypto-wr260606-12",
       "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
@@ -4639,15 +4648,6 @@
       "excerpt": "A recording from ゆかりっく｜大人の自由ライフ革命ラボ's live video",
       "published": "2026-05-26T12:48:01+00:00",
       "image": "https://api.substack.com/feed/podcast/199309811/27c9d3cfbc416b1b7f4a719a6c26f897.mp3",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "健康・ウェルネス"
-    },
-    {
-      "title": "Substackはブログ、メルマガ、SNS、ニュースレター、音声配信、動画配信、コミュニティが一体化",
-      "url": "https://www.yukarik.com/p/substack-424",
-      "excerpt": "今までのSNSとはまるで違う！出来る機能がいっぱい",
-      "published": "2026-05-26T10:37:49+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!9dkI!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F855ef4ef-ce93-434a-bae7-137adf1256a1_1254x1254.png",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
     },
