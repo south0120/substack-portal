@@ -185,6 +185,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   padding:14px;display:flex;flex-direction:column;min-height:360px;
   transition:transform .2s,box-shadow .2s,border-color .2s;
   content-visibility:auto;contain-intrinsic-size:232px 380px}
+#shelfView.refresh-content .writer-card{content-visibility:visible}
 .writer-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--brand-line)}
 .writer-identity{margin-bottom:8px}
 .writer-top{display:flex;align-items:center;gap:9px}
@@ -250,7 +251,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   gap:22px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px;
   background:var(--tabs-bg);border-bottom:1px solid var(--line);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  overscroll-behavior-inline:contain;touch-action:pan-x}
+  overscroll-behavior-inline:contain;touch-action:pan-y}
 .category-tabs::-webkit-scrollbar{display:none}
 .category-tab{position:relative;flex:none;border:0;background:transparent;color:var(--sub);
   padding:12px 1px 10px;font-size:.82rem;font-weight:700;white-space:nowrap}
@@ -848,7 +849,7 @@ function writerLastUpdated(writer){
   return max;
 }
 
-function renderShelf(){
+function renderShelf(refreshContent = false){
   const normalized = query.toLocaleLowerCase("ja");
   const writers = DATA.writers.filter(writer =>
     `${writer.name} ${writer.bio}`.toLocaleLowerCase("ja").includes(normalized)
@@ -906,6 +907,15 @@ function renderShelf(){
     enableDragScroll(row);
   });
   enableShelfDnD(root);
+  if(refreshContent){
+    const refreshToken = String((Number(root.dataset.refreshToken) || 0) + 1);
+    root.dataset.refreshToken = refreshToken;
+    root.classList.add("refresh-content");
+    void root.offsetHeight;
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if(root.dataset.refreshToken === refreshToken) root.classList.remove("refresh-content");
+    }));
+  }
 }
 
 // 棚の見出しをポインタドラッグしてカテゴリ順を入れ替える（HTML5 DnD不使用・タッチ対応）
@@ -953,7 +963,7 @@ function enableShelfDnD(root){
           const index = next.indexOf(target.dataset.shelfCategory);
           next.splice(before ? index : index + 1, 0, name);
           saveCategoryOrder(next);
-          renderShelf();
+          renderShelf(true);
           renderCategorySidebar();
           renderCategoryPills();
           return;
@@ -1025,7 +1035,7 @@ function renderOrderList(){
       [next[index], next[target]] = [next[target], next[index]];
       saveCategoryOrder(next);
       renderOrderList();
-      renderShelf();
+      renderShelf(true);
       renderCategoryPills();
       renderCategorySidebar();
     });
@@ -1078,7 +1088,7 @@ function initOrderTouchDnd(listEl){
     clearIndicators();
     const newOrder = rows().map(r => r.dataset.cat).filter(Boolean);
     saveCategoryOrder(newOrder);
-    renderShelf();
+    renderShelf(true);
     renderCategoryPills();
     renderCategorySidebar();
     dragging = null;
@@ -1333,7 +1343,7 @@ function renderCategorySidebar(){
       draggedCategory = "";
       renderCategorySidebar();
       renderCategoryPills();
-      renderShelf();
+      renderShelf(true);
     });
   });
 }
@@ -1682,7 +1692,7 @@ function init(){
   document.getElementById("orderReset").addEventListener("click", () => {
     saveCategoryOrder([]);
     renderOrderList();
-    renderShelf();
+    renderShelf(true);
     renderCategoryPills();
     renderCategorySidebar();
   });
@@ -1895,24 +1905,29 @@ async function load(){
   init();
 }
 
-/* 横スクロール要素の縦移動ロック: touchmoveの途中タッチも含めて制御 */
+/* カテゴリタブは最初に決めた軸をジェスチャー終了まで維持する */
 (function(){
-  let startX=0, startY=0, locked=null, target=null;
+  let startX=0, startY=0, startLeft=0, locked=null, target=null;
   document.addEventListener("touchstart", e => {
     target = e.target.closest(".category-tabs");
     if(!target || e.touches.length !== 1){ locked=null; return; }
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
+    startLeft = target.scrollLeft;
     locked = null;
   }, {passive:true});
   document.addEventListener("touchmove", e => {
     if(!target || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
     if(locked === null){
-      const dx = Math.abs(e.touches[0].clientX - startX);
-      const dy = Math.abs(e.touches[0].clientY - startY);
-      if(dx > 4 || dy > 4) locked = dx > dy;
+      if(Math.abs(dx) > 4 || Math.abs(dy) > 4) locked = Math.abs(dx) > Math.abs(dy);
     }
-    if(locked === false) e.preventDefault();
+    if(locked === true){
+      e.preventDefault();
+      const maxLeft = Math.max(0, target.scrollWidth - target.clientWidth);
+      target.scrollLeft = Math.max(0, Math.min(maxLeft, startLeft - dx));
+    }
   }, {passive:false});
   const reset = () => { locked=null; target=null; };
   document.addEventListener("touchend", reset, {passive:true});
