@@ -166,6 +166,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .category-icon svg{width:20px;height:20px}
 .shelf-heading h2{font-size:1.08rem;font-weight:900}
 .writer-count{font-size:.72rem;color:var(--faint);font-weight:500;margin-left:5px}
+.shelf-cat-key{font-size:.68rem;font-weight:700;color:var(--faint);background:var(--panel);
+  padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle;white-space:nowrap}
 .shelf-rule{height:1px;background:var(--line);flex:1;margin-left:8px}
 .shelf-arrows{display:none;align-items:center;gap:5px}
 .shelf-arrow{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);
@@ -886,7 +888,7 @@ function renderShelf(){
         <div class="shelf-heading" title="ドラッグで棚の順番を入れ替え">
           <svg class="shelf-grip" viewBox="0 0 12 18" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/><circle cx="3" cy="14" r="1.2"/><circle cx="9" cy="14" r="1.2"/></svg>
           <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
-          <h2>${esc(shelfVoice(name))}<span class="writer-count">${items.length}人</span></h2>
+          <h2>${esc(shelfVoice(name))} <span class="shelf-cat-key">${esc(name)}</span><span class="writer-count">${items.length}人</span></h2>
           <span class="shelf-rule"></span>
           <div class="shelf-arrows">
             <button type="button" class="shelf-arrow" data-direction="-1" aria-label="${esc(name)}を前へ">${CHEVRON_LEFT}</button>
