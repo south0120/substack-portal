@@ -841,7 +841,11 @@ function renderShelf(){
     `${writer.name} ${writer.bio}`.toLocaleLowerCase("ja").includes(normalized)
   );
   const root = document.getElementById("shelfView");
-  const sections = categoryOrder().map(name => {
+  // カテゴリにチェックが入っていれば、そのカテゴリの棚だけに絞る（順序は維持）
+  const visibleCategories = categoryFilters.size > 0
+    ? categoryOrder().filter(name => categoryFilters.has(name))
+    : categoryOrder();
+  const sections = visibleCategories.map(name => {
     const items = writers
       .filter(writer => writerCategories(writer).includes(name))
       .sort((a, b) => writerLastUpdated(b) - writerLastUpdated(a));
@@ -1182,6 +1186,7 @@ function toggleCategoryFilter(name){
   renderCategoryPills();
   renderCategorySidebar();
   if(!document.getElementById("orderBackdrop").hidden) renderOrderList();
+  if(view === "shelf") renderShelf();
   if(API_MODE) resetApiArticles(); else renderArticles();
 }
 
