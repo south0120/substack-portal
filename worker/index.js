@@ -590,6 +590,10 @@ async function fetchAndParseFeed(feed) {
   const imageBlock = firstTag(channelWithoutItems, "image");
   const writerUrl = cleanText(firstTag(channelWithoutItems, "link")) || fallbackSiteUrl(feed.feed_url);
   const avatar = cleanText(firstTag(imageBlock, "url"));
+  // 書き手名は RSS の発行名(channel title)を優先。これで Substack 側で名前を
+  // 変更すると自動で追従する（拾えなければ feeds.json の name にフォールバック）。
+  const channelTitle = cleanText(firstTag(channelWithoutItems, "title"));
+  const writerName = channelTitle || feed.name;
   const now = new Date().toISOString();
   const articles = [];
 
@@ -609,14 +613,14 @@ async function fetchAndParseFeed(feed) {
       excerpt,
       image: decodeEntities(enclosure?.[1] || enclosure?.[2] || ""),
       published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
-      writer: feed.name,
+      writer: writerName,
       category: categories[0],
     });
   }
 
   return {
     writer: {
-      name: feed.name,
+      name: writerName,
       url: writerUrl,
       feed_url: feed.feed_url,
       avatar,
