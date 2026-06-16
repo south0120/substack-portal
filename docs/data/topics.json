@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T06:18:58.304362+00:00",
+  "generated_at": "2026-06-16T11:57:10.255195+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -3283,15 +3283,15 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 44.4
-        },
-        {
-          "label": "健康・ウェルネス",
-          "pct": 22.2
+          "pct": 50.0
         },
         {
           "label": "投資・経済",
           "pct": 16.7
+        },
+        {
+          "label": "健康・ウェルネス",
+          "pct": 11.1
         },
         {
           "label": "子育て・家族",
@@ -3304,12 +3304,16 @@
         {
           "label": "グルメ・料理",
           "pct": 5.6
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "6cf6919d9824be15bdd37259edf3026c5d813bcda844ff7d9e965402d3a54963",
+      "source_hash": "ba652e0077059bcbfda85db96b5c124420b19588b733edf699069efc286661fe",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T10:39:31.874136+00:00"
+      "classified_at": "2026-06-16T11:56:56.992922+00:00"
     },
     "Awa | 難病と暮らす": {
       "topics": [
@@ -4563,29 +4567,29 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 33.3
+          "pct": 42.9
         },
         {
           "label": "キャリア・働き方",
-          "pct": 16.7
+          "pct": 14.3
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 16.7
+          "pct": 14.3
         },
         {
           "label": "旅行・おでかけ",
-          "pct": 16.7
+          "pct": 14.3
         },
         {
           "label": "読書",
-          "pct": 16.7
+          "pct": 14.3
         }
       ],
-      "sample_n": 6,
-      "source_hash": "f10a9c7cf319c167b80be33b600db1b109cf12733af89732d1722bf8f6107e85",
+      "sample_n": 7,
+      "source_hash": "00a2e96918d9c59855905192a0809aad88d03c0354404d2ab79775d6808d0119",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T14:49:14.794986+00:00"
+      "classified_at": "2026-06-16T11:56:59.844445+00:00"
     },
     "Owner Vet 〜「飼い主総獣医師時代」の実現〜": {
       "topics": [
@@ -4935,29 +4939,37 @@
       "topics": [
         {
           "label": "AI",
-          "pct": 72.2
+          "pct": 27.8
         },
         {
-          "label": "ビジネス",
-          "pct": 11.1
+          "label": "ライフスタイル",
+          "pct": 22.2
+        },
+        {
+          "label": "社会・文化",
+          "pct": 16.7
+        },
+        {
+          "label": "クリエイティブ",
+          "pct": 16.7
         },
         {
           "label": "テクノロジー",
           "pct": 5.6
         },
         {
-          "label": "キャリア・働き方",
+          "label": "ビジネス",
           "pct": 5.6
         },
         {
-          "label": "ライフスタイル",
+          "label": "キャリア・働き方",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "331fee6761b252f0fd63d81d4ccece86ce39098d8cb293d79ad4cdee3b1bfd22",
+      "source_hash": "4391778aa73c883cda8a44482c58eb2601951d70e5176b70fb62cb1f3ce427de",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T19:31:53.180504+00:00"
+      "classified_at": "2026-06-16T11:57:02.009575+00:00"
     },
     "ユヤの心豊かコラム": {
       "topics": [
@@ -5191,9 +5203,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "9e7e34cef57e1b8fd70fa4590dde435a466dd0ba18d0bcbd896fb7c0f39acd6e",
+      "source_hash": "41a90937fa495753633107b0895f445a00d0ddd1bed116a53f6c1fa14172337e",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T10:40:18.820374+00:00"
+      "classified_at": "2026-06-16T11:57:03.728130+00:00"
     },
     "アナーバー便り | Letters from Ann Arbor": {
       "topics": [
@@ -5967,9 +5979,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "fca3bf3c018ad4698b742b47e364fd6433f36474231fc92aa1c135856f34858a",
+      "source_hash": "8df5c49c622db45b8b0ec85ce93eb73bca9ee382218da312e460560ed1476d6d",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T08:41:42.773963+00:00"
+      "classified_at": "2026-06-16T11:57:05.738525+00:00"
     },
     "AIで無理せず楽しむシニアライフ・ラボラトリー": {
       "topics": [
@@ -6190,12 +6202,12 @@
     "きの の Substack": {
       "topics": [
         {
-          "label": "社会・文化",
-          "pct": 38.9
+          "label": "ビジネス",
+          "pct": 22.2
         },
         {
-          "label": "ビジネス",
-          "pct": 16.7
+          "label": "社会・文化",
+          "pct": 22.2
         },
         {
           "label": "AI",
@@ -6210,18 +6222,26 @@
           "pct": 11.1
         },
         {
+          "label": "投資・経済",
+          "pct": 5.6
+        },
+        {
           "label": "ライフスタイル",
           "pct": 5.6
         },
         {
           "label": "子育て・家族",
           "pct": 5.6
+        },
+        {
+          "label": "その他",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "71fe80cbd6d02ba17f1d1b8697f7e0d36f6a3892cb3bb74f00fc13d8ed50569a",
+      "source_hash": "26e4d7376ac8c899f3742e9adc2f881a318835c422bb01793e631ed654e6be71",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T12:30:51.542704+00:00"
+      "classified_at": "2026-06-16T11:57:08.679330+00:00"
     },
     "おとめ｜ゆる投資でちょっと良い暮らし": {
       "topics": [
@@ -6747,17 +6767,13 @@
       "topics": [
         {
           "label": "音楽",
-          "pct": 75.0
-        },
-        {
-          "label": "クリエイティブ",
-          "pct": 25.0
+          "pct": 100.0
         }
       ],
-      "sample_n": 4,
-      "source_hash": "60f2617572c0a10d494f3bcb0948fa0b41dcfcdc912fb18ed3226c7b2396de92",
+      "sample_n": 5,
+      "source_hash": "41d3584540b699ef91b69e703ae8c64bb1b290458b6acda745dce5e0725f4894",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T14:58:44.160867+00:00"
+      "classified_at": "2026-06-16T11:57:10.191182+00:00"
     },
     "taishiyadeの個人開発研究室 | グローバルで年間収益1億目指す": {
       "topics": [
