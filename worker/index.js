@@ -469,10 +469,11 @@ async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
 }
 
 async function upsertParsedFeed(env, parsed) {
-  // パブリケーション名の変更(rename)対応。書き手はnameをキーに記録しているが、
-  // Substackは名前を変えてもfeed_url(サブドメイン)は不変。よって同じfeed_urlが
-  // 別名で既に登録されていたら「名前変更」とみなし、旧記事を新名へ張り替えて
-  // 旧writer行を削除する（旧名・新名の重複表示を防ぎ、同一人として更新扱いにする）。
+  // パブリケーション名の変更(rename)対応 + 重複の自己修復。書き手はnameをキーに
+  // 記録しているが、Substackは名前を変えてもfeed_url(サブドメイン)は不変。
+  // 同じfeed_urlが別名で登録されていたら、その旧記事を現名へ張り替え(relink)し、
+  // 最後に同一feed_urlの別名行をまとめて削除する(cleanupStatement)。これで名前変更や
+  // 表記ゆれで生じた重複(旧名+新名)を毎回の取込で確実に1人へ統合する。
   const renameStatements = [];
   if (parsed.writer.feed_url) {
     const priors = await env.DB.prepare(
@@ -482,10 +483,12 @@ async function upsertParsedFeed(env, parsed) {
       if (!row.name) continue;
       renameStatements.push(
         env.DB.prepare("UPDATE articles SET writer = ? WHERE writer = ?").bind(parsed.writer.name, row.name),
-        env.DB.prepare("DELETE FROM writers WHERE name = ?").bind(row.name),
       );
     }
   }
+  const cleanupStatement = parsed.writer.feed_url
+    ? env.DB.prepare("DELETE FROM writers WHERE feed_url = ? AND name <> ?").bind(parsed.writer.feed_url, parsed.writer.name)
+    : null;
   const writerStatement = env.DB.prepare(`
     INSERT INTO writers (name, url, feed_url, avatar, bio, categories, updated_at)
     VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -523,7 +526,12 @@ async function upsertParsedFeed(env, parsed) {
       article.category,
     ),
   );
-  await runBatches(env.DB, [...renameStatements, writerStatement, ...articleStatements]);
+  await runBatches(env.DB, [
+    ...renameStatements,
+    writerStatement,
+    ...articleStatements,
+    ...(cleanupStatement ? [cleanupStatement] : []),
+  ]);
 }
 
 async function setMeta(env, key, value) {
@@ -590,10 +598,10 @@ async function fetchAndParseFeed(feed) {
   const imageBlock = firstTag(channelWithoutItems, "image");
   const writerUrl = cleanText(firstTag(channelWithoutItems, "link")) || fallbackSiteUrl(feed.feed_url);
   const avatar = cleanText(firstTag(imageBlock, "url"));
-  // 書き手名は RSS の発行名(channel title)を優先。これで Substack 側で名前を
-  // 変更すると自動で追従する（拾えなければ feeds.json の name にフォールバック）。
-  const channelTitle = cleanText(firstTag(channelWithoutItems, "title"));
-  const writerName = channelTitle || feed.name;
+  // 書き手名は feeds.json の整形済み name を使う（安定）。RSS の channel title は
+  // フェッチ毎に表記ゆれ（記号/空白差）があり、採用すると名前が揺れて重複の原因に
+  // なるため使わない。意図的な改名は feeds.json を更新して反映する運用。
+  const writerName = feed.name;
   const now = new Date().toISOString();
   const articles = [];
 
