@@ -1,0 +1,62 @@
+name: Daily Discord report
+
+# 毎朝 8:05 JST に FYL の新着記事数・新規発見ライター(名前付き)を Discord に投稿する。
+# セッションに依存しない恒久版（Discord Webhook 経由）。
+# 必要な Secret: DISCORD_REPORT_WEBHOOK（報告先チャンネルのウェブフックURL）
+on:
+  schedule:
+    - cron: "5 23 * * *"   # 23:05 UTC = 8:05 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-discord
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    env:
+      WEBHOOK: ${{ secrets.DISCORD_REPORT_WEBHOOK }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install certifi
+
+      - name: Build report
+        env:
+          FYL_SNAPSHOT: reports/.discord_snapshot.json
+        run: |
+          python scripts/report_daily_discord.py > /tmp/report.txt
+          echo "---- report ----"; cat /tmp/report.txt
+
+      - name: Post to Discord
+        if: ${{ env.WEBHOOK != '' }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          msg = open("/tmp/report.txt", encoding="utf-8").read().strip()[:1900]
+          data = json.dumps({"content": msg, "allowed_mentions": {"parse": []}}).encode("utf-8")
+          req = urllib.request.Request(os.environ["WEBHOOK"], data=data,
+                                       headers={"Content-Type": "application/json"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print("posted:", r.status)
+          PY
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/.discord_snapshot.json
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -m "chore(report): daily discord snapshot"
+          git fetch origin main
+          git rebase origin/main
+          git push
