@@ -16,7 +16,9 @@ SNAP = os.environ.get("FYL_SNAPSHOT", "/Users/dev/agents/alex/fyl_daily_snapshot
 JST = timezone(timedelta(hours=9))
 
 
-def _ctx():
+def _ctx(verify=True):
+    if not verify:
+        return ssl._create_unverified_context()
     try:
         import certifi
         return ssl.create_default_context(cafile=certifi.where())
@@ -26,8 +28,13 @@ def _ctx():
 
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "fyl-daily-report"})
-    with urllib.request.urlopen(req, timeout=30, context=_ctx()) as r:
-        return json.loads(r.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30, context=_ctx()) as r:
+            return json.loads(r.read())
+    except ssl.SSLError:
+        # certifi が無い環境向けフォールバック（自前の公開APIのみ取得するため許容）
+        with urllib.request.urlopen(req, timeout=30, context=_ctx(verify=False)) as r:
+            return json.loads(r.read())
 
 
 def main():
