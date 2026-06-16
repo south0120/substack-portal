@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T17:26:58.148403+00:00",
+  "updated_at": "2026-06-16T21:25:07.636337+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,19 +152,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
+          "url": "https://www.debunkresearch.com/p/ai-news260612-16",
+          "published": "2026-06-16T21:01:14+00:00"
+        },
+        {
+          "title": "【06/12(金)~06/16(火)News Report】MiCA移行期限が7/1に終了 / KrakenとCoinbaseが米国向けパーペチュアル投入 / 北陸銀行のDCJPYが商用化へなど",
+          "url": "https://www.debunkresearch.com/p/crypto-news260612-16",
+          "published": "2026-06-16T21:00:43+00:00"
+        },
+        {
           "title": "【AI Pay with Crypto】AIエージェントに実店舗QR決済を可能にするプロジェクト / @aipaywithcrypto",
           "url": "https://www.debunkresearch.com/p/apc",
           "published": "2026-06-15T21:01:30+00:00"
-        },
-        {
-          "title": "【webmcp】エージェントが「スクレイプせず操作する」ウェブへ",
-          "url": "https://www.debunkresearch.com/p/webmcp",
-          "published": "2026-06-15T21:01:21+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/crypto-wr260606-12",
-          "published": "2026-06-14T21:01:07+00:00"
         }
       ]
     },
@@ -4984,6 +4984,24 @@
   ],
   "articles": [
     {
+      "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
+      "url": "https://www.debunkresearch.com/p/ai-news260612-16",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-16T21:01:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vFnH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf4e0e48-0271-4807-b557-91658e8fb330_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【06/12(金)~06/16(火)News Report】MiCA移行期限が7/1に終了 / KrakenとCoinbaseが米国向けパーペチュアル投入 / 北陸銀行のDCJPYが商用化へなど",
+      "url": "https://www.debunkresearch.com/p/crypto-news260612-16",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-16T21:00:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!09ia!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb4463fb6-b14f-48fa-8d61-5059a5ab2f97_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【AI Pay with Crypto】AIエージェントに実店舗QR決済を可能にするプロジェクト / @aipaywithcrypto",
       "url": "https://www.debunkresearch.com/p/apc",
       "excerpt": "「実需つきエージェント決済」は本物か、仮説どまりか",
@@ -5254,15 +5272,6 @@
       "category": "健康・ウェルネス"
     },
     {
-      "title": "クリプト暴落とAI",
-      "url": "https://www.debunkresearch.com/p/pc260606",
-      "excerpt": "1週間の振り返り",
-      "published": "2026-06-05T21:01:05+00:00",
-      "image": "https://api.substack.com/feed/podcast/200735311/47a05bd3ae0f053b292ea0d01f4b4f25.mp3",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "Substackで成功する3つの条件 〜Substackの使い方 実践ガイド 〜",
       "url": "https://www.yukarik.com/p/substack3-substack",
       "excerpt": "【Substackの使い方 実践ガイド】第１部 2回目",
@@ -5270,15 +5279,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!hFjG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6b9d4ca7-21ae-4d34-8756-0e3d97e46d0c_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
-    },
-    {
-      "title": "【6/3(水)~6/4(木) Crypto News Report】Mastercardが主要ステーブルコイン決済対応を拡大 / ベッセント財務長官がCLARITY法の夏季成立を要請 / GrayscaleがHYPE現物ETFをNasdaqに上場 など",
-      "url": "https://www.debunkresearch.com/p/crypto-news260603-04",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-04T21:01:39+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!T6JZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdecbac8d-a7ea-4257-8ab7-c250f1d0a423_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "大人の夜会 3回目",
