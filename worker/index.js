@@ -44,6 +44,7 @@ export default {
       if (url.pathname === "/api/ingest") return runIngest(url, env);
       if (url.pathname === "/api/applications") return getApplications(env);
       if (url.pathname === "/api/proxy") return handleProxy(url, request, env);
+      if (url.pathname === "/api/dedupe") return runDedupe(url, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -727,6 +728,42 @@ async function getWriters(url, env) {
     latest: latestByWriter.get(writer.name) || [],
   }));
   return jsonResponse({ writers });
+}
+
+// 一回限りの重複統合（同一feed_urlで複数行を、記事数が最大の行へ統合）。
+// 過去のauto-name期/別取込経路で生じた重複の掃除用。DEDUPE_TOKENで保護。
+async function runDedupe(url, env) {
+  const token = url.searchParams.get("token") || "";
+  if (!env.DEDUPE_TOKEN || token !== env.DEDUPE_TOKEN) {
+    return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  }
+  const dupFeeds = await env.DB.prepare(
+    "SELECT feed_url FROM writers WHERE feed_url IS NOT NULL AND feed_url <> '' GROUP BY feed_url HAVING COUNT(*) > 1"
+  ).all();
+  let mergedFeeds = 0;
+  let deletedRows = 0;
+  for (const { feed_url } of dupFeeds.results || []) {
+    const rows = await env.DB.prepare("SELECT name FROM writers WHERE feed_url = ?").bind(feed_url).all();
+    let keep = null;
+    let keepCount = -1;
+    const all = [];
+    for (const { name } of rows.results || []) {
+      const c = await env.DB.prepare("SELECT COUNT(*) AS n FROM articles WHERE writer = ?").bind(name).first();
+      const n = Number(c?.n || 0);
+      all.push({ name, n });
+      if (n > keepCount) { keepCount = n; keep = name; }
+    }
+    if (!keep) continue;
+    const stmts = [];
+    for (const { name } of all) {
+      if (name === keep) continue;
+      stmts.push(env.DB.prepare("UPDATE articles SET writer = ? WHERE writer = ?").bind(keep, name));
+      stmts.push(env.DB.prepare("DELETE FROM writers WHERE name = ?").bind(name));
+      deletedRows += 1;
+    }
+    if (stmts.length) { await runBatches(env.DB, stmts); mergedFeeds += 1; }
+  }
+  return jsonResponse({ ok: true, dupFeeds: (dupFeeds.results || []).length, mergedFeeds, deletedRows }, 200, "no-store");
 }
 
 async function getCategories(env) {
