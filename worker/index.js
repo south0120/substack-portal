@@ -420,8 +420,12 @@ async function refreshFeeds(env, perRun = FEEDS_PER_RUN) {
 
     const batch = [];
     const batchUrls = new Set();
+    // リトライ枠はbatchの半分まで。残りは必ず新規フィードに使い、cursorを前進させる。
+    // （retry_queueが満杯になると毎回同じ失敗フィードだけ処理してcursorが進まず、
+    //   他フィードの新着が取り込まれない＝取得遅延の原因になっていたため上限を設ける）
+    const retryCap = Math.max(1, Math.floor(count / 2));
     for (const feedUrl of retryQueue) {
-      if (batch.length >= count || batchUrls.has(feedUrl)) continue;
+      if (batch.length >= retryCap || batchUrls.has(feedUrl)) continue;
       batch.push(feedsByUrl.get(feedUrl));
       batchUrls.add(feedUrl);
     }
