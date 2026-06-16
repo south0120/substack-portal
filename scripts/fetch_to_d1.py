@@ -201,6 +201,16 @@ def upsert_writer(account_id: str, db_id: str, token: str, feed: dict, site_url:
             datetime.now(timezone.utc).isoformat(),
         ],
     })
+    # 重複の自己修復（worker側と同じ）: 同一feed_urlで別名の行があれば、その記事を
+    # 現名へ張り替えてから別名行を削除し、1フィード=1書き手に統合する。
+    d1_query(account_id, db_id, token, {
+        "sql": "UPDATE articles SET writer=? WHERE writer IN (SELECT name FROM writers WHERE feed_url=? AND name<>?)",
+        "params": [feed["name"], feed["feed_url"], feed["name"]],
+    })
+    d1_query(account_id, db_id, token, {
+        "sql": "DELETE FROM writers WHERE feed_url=? AND name<>?",
+        "params": [feed["feed_url"], feed["name"]],
+    })
 
 
 def upsert_articles(account_id: str, db_id: str, token: str, articles: list[dict]) -> None:
