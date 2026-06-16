@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T20:31:32.980365+00:00",
+  "generated_at": "2026-06-16T22:34:42.088473+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -4622,11 +4622,15 @@
     "Paloj’s Newsletter": {
       "topics": [
         {
-          "label": "グルメ・料理",
-          "pct": 22.2
+          "label": "テクノロジー",
+          "pct": 16.7
         },
         {
-          "label": "テクノロジー",
+          "label": "ライフスタイル",
+          "pct": 16.7
+        },
+        {
+          "label": "グルメ・料理",
           "pct": 16.7
         },
         {
@@ -4634,7 +4638,7 @@
           "pct": 11.1
         },
         {
-          "label": "キャリア・働き方",
+          "label": "社会・文化",
           "pct": 11.1
         },
         {
@@ -4642,11 +4646,7 @@
           "pct": 5.6
         },
         {
-          "label": "社会・文化",
-          "pct": 5.6
-        },
-        {
-          "label": "ライフスタイル",
+          "label": "キャリア・働き方",
           "pct": 5.6
         },
         {
@@ -4660,16 +4660,12 @@
         {
           "label": "旅行・おでかけ",
           "pct": 5.6
-        },
-        {
-          "label": "その他",
-          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "333606636630088443eea167888859fbbde3d52d32a2b270db6bd7e553f4c7b5",
+      "source_hash": "582a4351b97b6eb9fc0f1080c799be4167d4ab69c4c6b80b0af7f6181261d94b",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:16:06.789917+00:00"
+      "classified_at": "2026-06-16T22:34:31.738843+00:00"
     },
     "Ririo": {
       "topics": [
@@ -4834,38 +4830,34 @@
     "医学部受験の名門 TMPS医学館": {
       "topics": [
         {
-          "label": "AI",
-          "pct": 27.8
-        },
-        {
           "label": "教育・学び",
           "pct": 27.8
         },
         {
+          "label": "AI",
+          "pct": 22.2
+        },
+        {
           "label": "ライフスタイル",
-          "pct": 16.7
+          "pct": 22.2
         },
         {
           "label": "キャリア・働き方",
-          "pct": 11.1
-        },
-        {
-          "label": "テクノロジー",
-          "pct": 5.6
+          "pct": 16.7
         },
         {
           "label": "ビジネス",
           "pct": 5.6
         },
         {
-          "label": "社会・文化",
+          "label": "その他",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "b6081949dea5c9af362b0c4d9851b3ab6bd94c924c3c6e5a53e97fe2d3cbf15f",
+      "source_hash": "8cf907a9a368e08ce354dbb6e04ab7863f2d715a57773709be08cb84b6a16855",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:16:11.626125+00:00"
+      "classified_at": "2026-06-16T22:34:34.326917+00:00"
     },
     "【THE★昭和女子】人生後半の発信秘密基地": {
       "topics": [
@@ -5046,34 +5038,38 @@
     "ルコン｜会社員のAI×思考によるキャリア形成記録": {
       "topics": [
         {
-          "label": "AI",
-          "pct": 40.0
+          "label": "テクノロジー",
+          "pct": 36.4
         },
         {
           "label": "キャリア・働き方",
-          "pct": 20.0
+          "pct": 18.2
         },
         {
-          "label": "テクノロジー",
-          "pct": 10.0
+          "label": "AI",
+          "pct": 9.1
+        },
+        {
+          "label": "ビジネス",
+          "pct": 9.1
         },
         {
           "label": "ライフスタイル",
-          "pct": 10.0
+          "pct": 9.1
         },
         {
           "label": "教育・学び",
-          "pct": 10.0
+          "pct": 9.1
         },
         {
           "label": "読書",
-          "pct": 10.0
+          "pct": 9.1
         }
       ],
-      "sample_n": 10,
-      "source_hash": "28e54d9ba9e7bf8638cab75656412d2b725c483a69aede54da744618a01a6866",
+      "sample_n": 11,
+      "source_hash": "2ed6ba3099814c193e49a06c95dad310f33443341c1168a2971730cc0cfb0f18",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T06:17:41.193498+00:00"
+      "classified_at": "2026-06-16T22:34:35.804088+00:00"
     },
     "ハッチ": {
       "topics": [
@@ -5450,19 +5446,23 @@
     "ハム活ロウシュトローム・ニーエンゲット": {
       "topics": [
         {
-          "label": "ライフスタイル",
-          "pct": 33.3
-        },
-        {
           "label": "クリエイティブ",
           "pct": 27.8
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 22.2
+        },
+        {
+          "label": "AI",
+          "pct": 11.1
         },
         {
           "label": "健康・ウェルネス",
           "pct": 11.1
         },
         {
-          "label": "AI",
+          "label": "子育て・家族",
           "pct": 5.6
         },
         {
@@ -5483,9 +5483,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "c1ff030fd7820d4738d1296a926fe92ea6c94826be2513da3b6f1ef325bbe71b",
+      "source_hash": "4f15d4c10e71f04991362f604cf04e8b5497518cdbc7a17c44320d9102207877",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:16:14.060242+00:00"
+      "classified_at": "2026-06-16T22:34:37.956488+00:00"
     },
     "Hatchy": {
       "topics": [
@@ -5875,25 +5875,25 @@
       "topics": [
         {
           "label": "投資・経済",
-          "pct": 42.9
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 28.6
+          "pct": 37.5
         },
         {
           "label": "キャリア・働き方",
-          "pct": 14.3
+          "pct": 25.0
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 25.0
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 14.3
+          "pct": 12.5
         }
       ],
-      "sample_n": 7,
-      "source_hash": "ef0a969f66de547f3d9315fe8d88e7a9439a4f4aba6a6bfded4cd32b975b94ed",
+      "sample_n": 8,
+      "source_hash": "5bcec246db7b6083a997e6d708b375163d3d9439214c29a3b907cc4509a9e3d8",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T08:41:36.256816+00:00"
+      "classified_at": "2026-06-16T22:34:39.356003+00:00"
     },
     "朝活・習慣化の極意": {
       "topics": [
@@ -6546,10 +6546,10 @@
           "pct": 100.0
         }
       ],
-      "sample_n": 9,
-      "source_hash": "214cd066b224f452aef660dfd324e343831a3c4bd4d83256cab8e5faf5eec18f",
+      "sample_n": 10,
+      "source_hash": "cf1263e3b03c3bada59e3a1849fb99cf084d6abeb02598afd289c5f539ee1050",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:16:27.549727+00:00"
+      "classified_at": "2026-06-16T22:34:40.796094+00:00"
     },
     "Twilight Letters": {
       "topics": [
@@ -7151,37 +7151,41 @@
       "topics": [
         {
           "label": "クリエイティブ",
-          "pct": 25.0
+          "pct": 22.2
         },
         {
           "label": "AI",
-          "pct": 12.5
+          "pct": 11.1
         },
         {
           "label": "テクノロジー",
-          "pct": 12.5
+          "pct": 11.1
         },
         {
           "label": "投資・経済",
-          "pct": 12.5
+          "pct": 11.1
         },
         {
           "label": "社会・文化",
-          "pct": 12.5
+          "pct": 11.1
         },
         {
           "label": "ライフスタイル",
-          "pct": 12.5
+          "pct": 11.1
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 12.5
+          "pct": 11.1
+        },
+        {
+          "label": "教育・学び",
+          "pct": 11.1
         }
       ],
-      "sample_n": 8,
-      "source_hash": "f7f7290c07ef75eecf2f9c69f87ff3b3dac39fb58b3623a2fb46cf4209654a0f",
+      "sample_n": 9,
+      "source_hash": "83011a8d8d0137216e3a4af175ab505a0474b67c0e8eb6a3b3d8072fd853ebda",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T14:58:59.805449+00:00"
+      "classified_at": "2026-06-16T22:34:42.031939+00:00"
     },
     "EYE hate SNS": {
       "topics": [
