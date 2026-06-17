@@ -31,8 +31,8 @@ def get(url):
     try:
         with urllib.request.urlopen(req, timeout=30, context=_ctx()) as r:
             return json.loads(r.read())
-    except ssl.SSLError:
-        # certifi が無い環境向けフォールバック（自前の公開APIのみ取得するため許容）
+    except (ssl.SSLError, urllib.error.URLError):
+        # certifi が無い環境向けフォールバック（urllibはSSLErrorをURLErrorで包むため両方捕捉）
         with urllib.request.urlopen(req, timeout=30, context=_ctx(verify=False)) as r:
             return json.loads(r.read())
 
