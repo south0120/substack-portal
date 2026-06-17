@@ -16,7 +16,7 @@ feeds.json に追加する自動ディスカバリー。
 GitHub IP は Substack に弾かれるため、Actionで回す時は FYL_PROXY_* を渡してプロキシ経由にする。
 """
 import argparse, json, os, re, sys, time, urllib.parse, urllib.request, urllib.error
-from collections import deque
+from collections import deque, defaultdict
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -130,7 +130,7 @@ def check_feed(feed_url):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, default=40, help="種にする既存pub数（feeds.json先頭から）")
-    ap.add_argument("--hops", type=int, default=2, help="推薦グラフを辿る深さ")
+    ap.add_argument("--hops", type=int, default=3, help="推薦グラフを辿る深さ")
     ap.add_argument("--max-new", type=int, default=80, help="1回で追加する最大数")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
@@ -144,8 +144,34 @@ def main():
             existing_subs.add(m.group(1))
     existing_urls = {f.get("feed_url", "") for f in feeds}
 
-    # 種の publication_id を取得（アクティブそうな先頭 seeds 件）
-    seed_subs = [s for s in list(existing_subs)][: args.seeds]
+    # 種を「カテゴリ横断」で多様に選ぶ（先頭固定だと推薦グラフの到達範囲が偏るため、
+    # 各カテゴリから round-robin で均等に拾って seeds 件にする）。
+    by_cat = defaultdict(list)
+    for f in feeds:
+        m = re.search(r"https://([a-z0-9-]+)\.substack\.com", f.get("feed_url", "") or "")
+        if not m:
+            continue
+        cat = (f.get("categories") or ["その他"])[0]
+        by_cat[cat].append(m.group(1))
+    seed_subs = []
+    seen_seed = set()
+    pointers = {c: 0 for c in by_cat}
+    cats = list(by_cat.keys())
+    while len(seed_subs) < args.seeds:
+        progressed = False
+        for c in cats:
+            if len(seed_subs) >= args.seeds:
+                break
+            p = pointers[c]
+            if p < len(by_cat[c]):
+                pointers[c] += 1
+                progressed = True
+                s = by_cat[c][p]
+                if s not in seen_seed:
+                    seen_seed.add(s)
+                    seed_subs.append(s)
+        if not progressed:
+            break
     print(f"resolving {len(seed_subs)} seed publication ids...", flush=True)
     queue = deque()
     visited_ids = set()

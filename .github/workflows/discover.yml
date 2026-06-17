@@ -12,7 +12,7 @@ on:
         default: "40"
       hops:
         description: "推薦グラフを辿る深さ"
-        default: "2"
+        default: "3"
       max_new:
         description: "1回で追加する最大数"
         default: "60"
@@ -41,7 +41,7 @@ jobs:
         run: |
           python scripts/discover.py \
             --seeds "${{ github.event.inputs.seeds || '40' }}" \
-            --hops "${{ github.event.inputs.hops || '2' }}" \
+            --hops "${{ github.event.inputs.hops || '3' }}" \
             --max-new "${{ github.event.inputs.max_new || '60' }}"
 
       - name: Commit new writers
