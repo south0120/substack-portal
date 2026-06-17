@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T23:53:44.068345+00:00",
+  "updated_at": "2026-06-17T05:22:13.375105+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "サブスタックの海外人気クリエイターに学ぶ発信テーマ",
+          "url": "https://www.yukarik.com/p/69d",
+          "published": "2026-06-17T02:56:00+00:00"
+        },
+        {
           "title": "Substack 30分で設定する始め方〜アカウント開設から初期設定まで",
           "url": "https://www.yukarik.com/p/substack-f2a",
           "published": "2026-06-14T23:15:24+00:00"
@@ -553,11 +558,6 @@
           "title": "大人の夜会　相談室",
           "url": "https://www.yukarik.com/p/18c",
           "published": "2026-06-14T13:43:04+00:00"
-        },
-        {
-          "title": "成功する人の共通点 〜0.8%の人になるシンプルな方法〜",
-          "url": "https://www.yukarik.com/p/08",
-          "published": "2026-06-12T05:37:16+00:00"
         }
       ]
     },
@@ -4984,6 +4984,15 @@
   ],
   "articles": [
     {
+      "title": "サブスタックの海外人気クリエイターに学ぶ発信テーマ",
+      "url": "https://www.yukarik.com/p/69d",
+      "excerpt": "「発信テーマ」の見つけ方〜実践ガイド第一部5回目|Substackで何を書けばいいの？と思っている人に",
+      "published": "2026-06-17T02:56:00+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!nK1v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd357b27b-3a57-4cec-9146-0d4c459ba5d6_1536x1024.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "健康・ウェルネス"
+    },
+    {
       "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
       "url": "https://www.debunkresearch.com/p/ai-news260612-16",
       "excerpt": "主要ニュースまとめ",
@@ -5358,15 +5367,6 @@
       "excerpt": "あなたが「記事を書く」その瞬間に、エゴは何をしているのか",
       "published": "2026-05-29T01:48:10+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!lE7_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a98af83-b5b9-4ca5-9355-d05946e573dd_1672x941.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "健康・ウェルネス"
-    },
-    {
-      "title": "大人の夜会 第1回　Live with ゆかりっく",
-      "url": "https://www.yukarik.com/p/live-with",
-      "excerpt": "A recording from ゆかりっく｜大人の自由ライフ革命ラボ's live video",
-      "published": "2026-05-26T12:48:01+00:00",
-      "image": "https://api.substack.com/feed/podcast/199309811/27c9d3cfbc416b1b7f4a719a6c26f897.mp3",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
     },
