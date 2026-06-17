@@ -104,7 +104,7 @@
     <h2><span>書き手一覧（<span id="writerCount">0</span>名）<span class="period" id="writerPeriod">｜記事数は全期間の累計</span></span> <button class="csv" data-csv="writers">CSV</button></h2>
     <div class="tablewrap">
       <table id="writerTable">
-        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最終投稿</th></tr></thead>
+        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最古記事</th><th>最新投稿</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -187,6 +187,7 @@ function renderWriters(ws){
     <td>${w.url?`<a href="${w.url}" target="_blank" rel="noopener">${esc(w.name)}</a>`:esc(w.name)}</td>
     <td>${(w.categories||[]).join("・")||"-"}</td>
     <td class="num">${fmt(w.articleCount)}</td>
+    <td>${dateJp(w.firstArticle)}</td>
     <td>${dateJp(w.lastArticle)}</td></tr>`).join("");
 }
 function esc(s){ return String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
@@ -238,8 +239,8 @@ document.querySelectorAll("[data-csv]").forEach(btn=>btn.addEventListener("click
   if(t==="category" && DATA.overview){
     downloadCsv("fyl_categories.csv", [["カテゴリ","記事数","書き手数"], ...DATA.overview.byCategory.map(c=>[c.category,c.articles,c.writers])]);
   } else if(t==="writers" && DATA.writers){
-    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最終投稿","URL"],
-      ...DATA.writers.map(w=>[w.name,(w.categories||[]).join("・"),w.articleCount,w.lastArticle||"",w.url||""])]);
+    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最古記事","最新投稿","URL"],
+      ...DATA.writers.map(w=>[w.name,(w.categories||[]).join("・"),w.articleCount,w.firstArticle||"",w.lastArticle||"",w.url||""])]);
   }
 }));
 
@@ -255,11 +256,6 @@ async function init(){
     const p2 = (n)=>String(n).padStart(2,"0");
     document.getElementById("asof").textContent =
       `集計時点 ${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} ${p2(now.getHours())}:${p2(now.getMinutes())}　｜　全期間累計（日次グラフは ${range}）`;
-    const dr = overview.dateRange || {};
-    if(dr.oldest && dr.newest){
-      document.getElementById("writerPeriod").textContent =
-        `｜記事数は全期間の累計（観測: 最古 ${dateJp(dr.oldest)} 〜 最新 ${dateJp(dr.newest)}）`;
-    }
     renderKpis(overview);
     bar("hourChart", overview.byHour.map(h=>h.hour+"時"), overview.byHour.map(h=>h.count), "#FF6719", "投稿数");
     bar("dayChart", overview.perDay.map(d=>d.date.slice(5)), overview.perDay.map(d=>d.articles), "#3a86c8", "新着記事");

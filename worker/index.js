@@ -864,6 +864,7 @@ async function getAdminWriters(url, request, env) {
   const rows = await env.DB.prepare(`
     SELECT w.name, w.categories, w.url, w.updated_at,
       (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name) AS articleCount,
+      (SELECT MIN(published) FROM articles a WHERE a.writer = w.name) AS firstArticle,
       (SELECT MAX(published) FROM articles a WHERE a.writer = w.name) AS lastArticle
     FROM writers w
     ORDER BY articleCount DESC, w.name
@@ -874,6 +875,7 @@ async function getAdminWriters(url, request, env) {
       categories: parseCategories(r.categories),
       url: r.url,
       articleCount: r.articleCount || 0,
+      firstArticle: r.firstArticle,
       lastArticle: r.lastArticle,
       updatedAt: r.updated_at,
     })),
