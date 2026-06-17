@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>FYL 管理ダッシュボード</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{--brand:#FF6719;--brand-soft:#FFF1E8;--ink:#2b2622;--sub:#8a7f74;--line:#ece6dd;--card:#fff;--bg:#f7f4ef}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN",sans-serif;background:var(--bg);color:var(--ink)}
+  a{color:var(--brand)}
+  /* ログイン */
+  #login{min-height:100vh;display:grid;place-items:center;padding:20px}
+  .login-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;width:min(100%,360px);box-shadow:0 10px 30px rgba(80,60,30,.08);text-align:center}
+  .login-card h1{font-size:1.15rem;margin:0 0 4px}
+  .login-card p{color:var(--sub);font-size:.82rem;margin:0 0 18px}
+  .login-card input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;margin-bottom:12px}
+  .login-card input:focus{outline:none;border-color:var(--brand)}
+  .btn{background:var(--brand);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:700;font-size:.95rem;cursor:pointer;width:100%}
+  .btn:hover{background:#e85c12}
+  .err{color:#d6452f;font-size:.82rem;margin-top:10px;min-height:1em}
+  /* ダッシュボード */
+  #dash{display:none;max-width:1100px;margin:0 auto;padding:18px 16px 60px}
+  header.bar{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 16px}
+  header.bar h1{font-size:1.1rem;margin:0}
+  header.bar .logout{background:none;border:1px solid var(--line);color:var(--sub);border-radius:8px;padding:7px 12px;font-size:.8rem;cursor:pointer}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .kpi .label{color:var(--sub);font-size:.74rem;font-weight:700}
+  .kpi .val{font-size:1.7rem;font-weight:900;margin-top:4px}
+  .kpi .val small{font-size:.8rem;color:var(--sub);font-weight:700}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+  .panel h2{font-size:.9rem;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
+  .panel h2 .csv{font-size:.72rem;font-weight:700;background:var(--brand-soft);color:#9A410F;border:0;border-radius:7px;padding:5px 9px;cursor:pointer}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:.8rem}
+  th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{color:var(--sub);font-size:.72rem;position:sticky;top:0;background:var(--card)}
+  td.num,th.num{text-align:right}
+  .tablewrap{max-height:460px;overflow:auto;border:1px solid var(--line);border-radius:10px}
+  .cat-list .row{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:.8rem}
+  .cat-list .bar{height:9px;border-radius:5px;background:var(--brand)}
+  .cat-list .nm{width:96px;flex:none;font-weight:700}
+  .cat-list .ct{color:var(--sub);font-size:.74rem;white-space:nowrap}
+  .muted{color:var(--sub);font-size:.78rem}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <form class="login-card" id="loginForm">
+    <h1>FYL 管理ダッシュボード</h1>
+    <p>パスワードでログイン</p>
+    <input type="password" id="pw" placeholder="パスワード" autocomplete="current-password" required>
+    <button class="btn" type="submit">ログイン</button>
+    <div class="err" id="loginErr"></div>
+  </form>
+</div>
+
+<div id="dash">
+  <header class="bar">
+    <h1>📊 Find Your Letter 管理ダッシュボード</h1>
+    <button class="logout" id="logout">ログアウト</button>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>投稿が多い時間帯（JST）</h2>
+      <canvas id="hourChart" height="160"></canvas>
+    </div>
+    <div class="panel">
+      <h2>日次の新着記事数（直近30日）</h2>
+      <canvas id="dayChart" height="160"></canvas>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>記事数・ライター数の推移（毎朝記録）</h2>
+    <canvas id="trendChart" height="120"></canvas>
+    <div class="muted" id="trendNote" style="margin-top:8px"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>カテゴリ別 <button class="csv" data-csv="category">CSV</button></h2>
+      <div class="cat-list" id="catList"></div>
+    </div>
+    <div class="panel">
+      <h2>サマリー</h2>
+      <div id="summary" class="muted"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>書き手一覧（<span id="writerCount">0</span>名） <button class="csv" data-csv="writers">CSV</button></h2>
+    <div class="tablewrap">
+      <table id="writerTable">
+        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最終投稿</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = "https://fyl-api.south0120.workers.dev";
+const DAILY_CSV = "https://raw.githubusercontent.com/south0120/substack-portal/main/reports/daily_stats.csv";
+const TKEY = "fyl_admin_token";
+let DATA = { overview:null, writers:null };
+
+function token(){ return localStorage.getItem(TKEY) || ""; }
+function authHeaders(){ return { "Authorization": "Bearer " + token() }; }
+
+async function api(path){
+  const r = await fetch(API + path, { headers: authHeaders() });
+  if(r.status === 401){ logout(); throw new Error("unauthorized"); }
+  if(!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}
+
+function showLogin(){ document.getElementById("login").style.display="grid"; document.getElementById("dash").style.display="none"; }
+function showDash(){ document.getElementById("login").style.display="none"; document.getElementById("dash").style.display="block"; }
+function logout(){ localStorage.removeItem(TKEY); showLogin(); }
+
+document.getElementById("logout").addEventListener("click", logout);
+
+document.getElementById("loginForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const err = document.getElementById("loginErr"); err.textContent="";
+  try{
+    const r = await fetch(API + "/api/admin/login", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ password: document.getElementById("pw").value })
+    });
+    if(!r.ok){ err.textContent = "パスワードが違います"; return; }
+    const d = await r.json();
+    localStorage.setItem(TKEY, d.token);
+    document.getElementById("pw").value="";
+    init();
+  }catch(_){ err.textContent = "接続エラー。少し待って再度お試しください"; }
+});
+
+const fmt = (n)=> (n==null?"-":Number(n).toLocaleString());
+const dateJp = (s)=>{ if(!s) return "-"; const d=new Date(s); return Number.isNaN(d.getTime())?"-":`${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`; };
+
+function renderKpis(o){
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi"><div class="label">総記事数</div><div class="val">${fmt(o.totals.articles)}</div></div>
+    <div class="kpi"><div class="label">総ライター数</div><div class="val">${fmt(o.totals.writers)}</div></div>
+    <div class="kpi"><div class="label">本日の新着記事</div><div class="val">${fmt((o.perDay[o.perDay.length-1]||{}).articles)} <small>件</small></div></div>
+    <div class="kpi"><div class="label">カテゴリ数</div><div class="val">${o.byCategory.length}</div></div>`;
+}
+
+const CCOL = ["#FF6719","#3a86c8","#4caf6e","#ef8aa6","#f7c948","#7b5ea7","#e8543e","#5bb0d6","#caa030","#9b6dc4"];
+function renderCatList(o){
+  const max = Math.max(1, ...o.byCategory.map(c=>c.articles));
+  document.getElementById("catList").innerHTML = o.byCategory.map((c,i)=>`
+    <div class="row"><span class="nm" title="${c.category}">${c.category}</span>
+      <span class="bar" style="width:${Math.round(c.articles/max*160)}px;background:${CCOL[i%CCOL.length]}"></span>
+      <span class="ct">記事${fmt(c.articles)} / 書き手${fmt(c.writers)}</span></div>`).join("");
+}
+
+function renderSummary(o){
+  const topHour = [...o.byHour].sort((a,b)=>b.count-a.count)[0];
+  const topCat = o.byCategory[0];
+  document.getElementById("summary").innerHTML = `
+    ・最も投稿が多い時間帯：<b>${topHour?topHour.hour:"-"}時台</b>（${fmt(topHour&&topHour.count)}件）<br>
+    ・記事数が最も多いカテゴリ：<b>${topCat?topCat.category:"-"}</b>（${fmt(topCat&&topCat.articles)}件）<br>
+    ・書き手が最も多いカテゴリ：<b>${[...o.byCategory].sort((a,b)=>b.writers-a.writers)[0]?.category||"-"}</b><br>
+    ・1書き手あたり平均記事数：<b>${(o.totals.articles/Math.max(1,o.totals.writers)).toFixed(1)}</b>件`;
+}
+
+function renderWriters(ws){
+  document.getElementById("writerCount").textContent = ws.length;
+  const tb = document.querySelector("#writerTable tbody");
+  tb.innerHTML = ws.map((w,i)=>`<tr>
+    <td>${i+1}</td>
+    <td>${w.url?`<a href="${w.url}" target="_blank" rel="noopener">${esc(w.name)}</a>`:esc(w.name)}</td>
+    <td>${(w.categories||[]).join("・")||"-"}</td>
+    <td class="num">${fmt(w.articleCount)}</td>
+    <td>${dateJp(w.lastArticle)}</td></tr>`).join("");
+}
+function esc(s){ return String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+let charts = {};
+function bar(id, labels, data, color, label){
+  if(charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id), {
+    type:"bar",
+    data:{ labels, datasets:[{ label, data, backgroundColor:color, borderRadius:4 }] },
+    options:{ plugins:{legend:{display:false}}, scales:{ y:{beginAtZero:true,ticks:{precision:0}} } }
+  });
+}
+function line(id, labels, datasets){
+  if(charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id), {
+    type:"line",
+    data:{ labels, datasets },
+    options:{ plugins:{legend:{display:datasets.length>1}}, scales:{ y:{beginAtZero:false,ticks:{precision:0}} },
+      elements:{point:{radius:2}}, interaction:{intersect:false,mode:"index"} }
+  });
+}
+
+async function renderTrend(){
+  try{
+    const txt = await (await fetch(DAILY_CSV + "?cb=" + Date.now())).text();
+    const rows = txt.trim().split("\n").slice(1).map(l=>l.split(","));
+    const labels = rows.map(r=>r[0]);
+    const arts = rows.map(r=>Number(r[1])), wrs = rows.map(r=>Number(r[2]));
+    line("trendChart", labels, [
+      { label:"記事数", data:arts, borderColor:"#FF6719", backgroundColor:"rgba(255,103,25,.08)", yAxisID:"y", fill:true, tension:.3 },
+      { label:"ライター数", data:wrs, borderColor:"#3a86c8", yAxisID:"y2", tension:.3 }
+    ]);
+    charts.trendChart.options.scales.y2 = { position:"right", beginAtZero:false, grid:{drawOnChartArea:false}, ticks:{precision:0} };
+    charts.trendChart.update();
+    document.getElementById("trendNote").textContent = `${labels[0]} 〜 ${labels[labels.length-1]} の毎朝8:00記録`;
+  }catch(_){ document.getElementById("trendNote").textContent = "推移データはまだ記録が少ないか取得に失敗しました"; }
+}
+
+function downloadCsv(name, rows){
+  const csv = rows.map(r=>r.map(c=>`"${String(c==null?"":c).replace(/"/g,'""')}"`).join(",")).join("\r\n");
+  const blob = new Blob(["﻿"+csv], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name; a.click();
+  URL.revokeObjectURL(a.href);
+}
+document.querySelectorAll("[data-csv]").forEach(btn=>btn.addEventListener("click",()=>{
+  const t = btn.dataset.csv;
+  if(t==="category" && DATA.overview){
+    downloadCsv("fyl_categories.csv", [["カテゴリ","記事数","書き手数"], ...DATA.overview.byCategory.map(c=>[c.category,c.articles,c.writers])]);
+  } else if(t==="writers" && DATA.writers){
+    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最終投稿","URL"],
+      ...DATA.writers.map(w=>[w.name,(w.categories||[]).join("・"),w.articleCount,w.lastArticle||"",w.url||""])]);
+  }
+}));
+
+async function init(){
+  if(!token()){ showLogin(); return; }
+  try{
+    const [overview, writersResp] = await Promise.all([ api("/api/admin/overview"), api("/api/admin/writers") ]);
+    DATA.overview = overview; DATA.writers = writersResp.writers;
+    showDash();
+    renderKpis(overview);
+    bar("hourChart", overview.byHour.map(h=>h.hour+"時"), overview.byHour.map(h=>h.count), "#FF6719", "投稿数");
+    bar("dayChart", overview.perDay.map(d=>d.date.slice(5)), overview.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
+    renderCatList(overview);
+    renderSummary(overview);
+    renderWriters(writersResp.writers);
+    renderTrend();
+  }catch(e){ if(String(e.message)!=="unauthorized"){ showLogin(); } }
+}
+init();
+</script>
+</body>
+</html>
