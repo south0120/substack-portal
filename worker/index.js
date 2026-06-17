@@ -833,13 +833,14 @@ async function runAdminLogin(request, env) {
 
 async function getAdminOverview(url, request, env) {
   if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
-  const [totalA, totalW, byCatArticles, byHour, perDay, writerRows] = await Promise.all([
+  const [totalA, totalW, byCatArticles, byHour, perDay, writerRows, dateRange] = await Promise.all([
     env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
     env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
     env.DB.prepare("SELECT category, COUNT(*) AS n FROM articles WHERE category <> '' GROUP BY category ORDER BY n DESC").all(),
     env.DB.prepare("SELECT CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY h ORDER BY h").all(),
     env.DB.prepare("SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY d ORDER BY d DESC LIMIT 30").all(),
     env.DB.prepare("SELECT categories FROM writers").all(),
+    env.DB.prepare("SELECT MIN(published) AS oldest, MAX(published) AS newest FROM articles WHERE published IS NOT NULL").first(),
   ]);
   const writerCat = {};
   for (const row of writerRows.results || []) {
@@ -851,6 +852,7 @@ async function getAdminOverview(url, request, env) {
   }
   return jsonResponse({
     totals: { articles: totalA?.n || 0, writers: totalW?.n || 0 },
+    dateRange: { oldest: dateRange?.oldest || null, newest: dateRange?.newest || null },
     byCategory: (byCatArticles.results || []).map((r) => ({ category: r.category, articles: r.n, writers: writerCat[r.category] || 0 })),
     byHour: hours,
     perDay: (perDay.results || []).map((r) => ({ date: r.d, articles: r.n })).reverse(),
