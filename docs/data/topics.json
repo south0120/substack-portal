@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T14:11:30.221686+00:00",
+  "generated_at": "2026-06-17T17:39:16.361337+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -2358,20 +2358,20 @@
     "リツトAI活用コラム「悠然に生きよう」": {
       "topics": [
         {
-          "label": "AI",
-          "pct": 16.7
+          "label": "キャリア・働き方",
+          "pct": 27.8
+        },
+        {
+          "label": "教育・学び",
+          "pct": 22.2
         },
         {
           "label": "ビジネス",
           "pct": 16.7
         },
         {
-          "label": "キャリア・働き方",
-          "pct": 16.7
-        },
-        {
-          "label": "教育・学び",
-          "pct": 16.7
+          "label": "AI",
+          "pct": 11.1
         },
         {
           "label": "社会・文化",
@@ -2382,22 +2382,14 @@
           "pct": 5.6
         },
         {
-          "label": "ライフスタイル",
-          "pct": 5.6
-        },
-        {
-          "label": "クリエイティブ",
-          "pct": 5.6
-        },
-        {
           "label": "その他",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "8d0cd1ab8e67acb7fcb482c435004d747372e521ded6790eb245fe07c2a902e1",
+      "source_hash": "4d1441ef0b40948b547d8453c10c956de3c672f719d55eaf133bc1c1e1af0759",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T17:38:58.263322+00:00"
+      "classified_at": "2026-06-17T17:38:59.635518+00:00"
     },
     "toya desk": {
       "topics": [
@@ -4371,21 +4363,21 @@
       "topics": [
         {
           "label": "社会・文化",
-          "pct": 83.3
-        },
-        {
-          "label": "教育・学び",
-          "pct": 11.1
+          "pct": 88.9
         },
         {
           "label": "AI",
           "pct": 5.6
+        },
+        {
+          "label": "教育・学び",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "968ce59a4a5846f256cfe552e11e65547d83a4ddbf410857bff1e456d7bc2059",
+      "source_hash": "31f6b2a74e37b00cc8084ad543a026705eec499dbede95cee0f591ecbb64f68d",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T22:48:24.741883+00:00"
+      "classified_at": "2026-06-17T17:39:01.803435+00:00"
     },
     "Letters of Yohaku": {
       "topics": [
@@ -5931,17 +5923,17 @@
       "topics": [
         {
           "label": "投資・経済",
-          "pct": 77.8
+          "pct": 94.4
         },
         {
           "label": "AI",
-          "pct": 22.2
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "8df5c49c622db45b8b0ec85ce93eb73bca9ee382218da312e460560ed1476d6d",
+      "source_hash": "562fb81dd0c65db52ff97b6c678686a8d2ca956a0b03bebda84b1790eb3ae360",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T11:57:05.738525+00:00"
+      "classified_at": "2026-06-17T17:39:03.548498+00:00"
     },
     "AIで無理せず楽しむシニアライフ・ラボラトリー": {
       "topics": [
@@ -6667,17 +6659,13 @@
       "topics": [
         {
           "label": "旅行・おでかけ",
-          "pct": 93.8
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 6.2
+          "pct": 100.0
         }
       ],
-      "sample_n": 16,
-      "source_hash": "0c5bcf92d99d8360ffd26bc7fbe5eb2b822ba0ea1ba971561160b38396cc44f8",
+      "sample_n": 17,
+      "source_hash": "cdf2e7b978f8c3ba8092286a27eca96d6e234ddac291369e37a905e5f51127dd",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T19:32:02.397298+00:00"
+      "classified_at": "2026-06-17T17:39:05.569890+00:00"
     },
     "奇才のたまご": {
       "topics": [
@@ -8950,10 +8938,10 @@
           "pct": 100.0
         }
       ],
-      "sample_n": 8,
-      "source_hash": "299e77379d9da318e8464bbbbebe9402c7723e2c0d753d93a622b3773f4d8053",
+      "sample_n": 9,
+      "source_hash": "a2786aafdb4a26edd985e4b678993503c81fff011ae51d4bc5a42d54b43c35e4",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T17:41:04.154600+00:00"
+      "classified_at": "2026-06-17T17:39:06.982348+00:00"
     },
     "KYOKO先生メルマガ": {
       "topics": [
@@ -9111,41 +9099,41 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 30.8
-        },
-        {
-          "label": "子育て・家族",
-          "pct": 15.4
-        },
-        {
-          "label": "旅行・おでかけ",
-          "pct": 15.4
-        },
-        {
-          "label": "ビジネス",
-          "pct": 7.7
-        },
-        {
-          "label": "キャリア・働き方",
-          "pct": 7.7
+          "pct": 28.6
         },
         {
           "label": "社会・文化",
-          "pct": 7.7
+          "pct": 14.3
+        },
+        {
+          "label": "子育て・家族",
+          "pct": 14.3
+        },
+        {
+          "label": "旅行・おでかけ",
+          "pct": 14.3
+        },
+        {
+          "label": "ビジネス",
+          "pct": 7.1
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 7.1
         },
         {
           "label": "読書",
-          "pct": 7.7
+          "pct": 7.1
         },
         {
           "label": "その他",
-          "pct": 7.7
+          "pct": 7.1
         }
       ],
-      "sample_n": 13,
-      "source_hash": "7c931570ef124f1b14ddd287b44bde0848c37f9e60df86802f491096c188455d",
+      "sample_n": 14,
+      "source_hash": "cf239089a57138a97a78e2101cd2eec9fb8b9b1b13a45834d81a687402a85f28",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T02:05:27.630810+00:00"
+      "classified_at": "2026-06-17T17:39:09.123784+00:00"
     },
     "ほしの｜AIサロン運営": {
       "topics": [
@@ -9315,25 +9303,21 @@
       "topics": [
         {
           "label": "その他",
-          "pct": 53.8
+          "pct": 50.0
         },
         {
-          "label": "教育・学び",
-          "pct": 23.1
+          "label": "テクノロジー",
+          "pct": 35.7
         },
         {
           "label": "AI",
-          "pct": 15.4
-        },
-        {
-          "label": "ビジネス",
-          "pct": 7.7
+          "pct": 14.3
         }
       ],
-      "sample_n": 13,
-      "source_hash": "dc5ffac7198af164676d2c13ffee6df51cfdec88f3b15f739c0ebd5e5a3f2bbe",
+      "sample_n": 14,
+      "source_hash": "7586846166e440b3db135b4f0c2c2945ac24416641e72c2abd89dfc2b9083785",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:16:31.372610+00:00"
+      "classified_at": "2026-06-17T17:39:10.948609+00:00"
     },
     "こっこ｜自己肯定感は最後に満たせ 【人間心理学】": {
       "topics": [
@@ -10187,9 +10171,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "8363a192bf168bd4bc00462928b49d59c12a6a885aad627bdc5c5505b683de66",
+      "source_hash": "74666b49f44324956e75a4aafcac57ff55d9a67b5a2ff66f7118de149b245c0b",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-17T00:03:24.490993+00:00"
+      "classified_at": "2026-06-17T17:39:12.907837+00:00"
     },
     "永野ヨウ｜Yoh Nagano": {
       "topics": [
@@ -10339,14 +10323,26 @@
       "topics": [
         {
           "label": "社会・文化",
-          "pct": 77.8
+          "pct": 44.4
         },
         {
           "label": "ライフスタイル",
+          "pct": 16.7
+        },
+        {
+          "label": "教育・学び",
           "pct": 11.1
         },
         {
-          "label": "子育て・家族",
+          "label": "クリエイティブ",
+          "pct": 11.1
+        },
+        {
+          "label": "健康・ウェルネス",
+          "pct": 5.6
+        },
+        {
+          "label": "旅行・おでかけ",
           "pct": 5.6
         },
         {
@@ -10355,9 +10351,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "dbc03adeafdf449230a60dd609149ee6522d545e0e0933675696fe2e501892cc",
+      "source_hash": "9d019814de569fb74ef1908dbf9682ccb526f9cafc31b28af550ad65a6a087be",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T20:31:27.680523+00:00"
+      "classified_at": "2026-06-17T17:39:15.150421+00:00"
     },
     "Umuco": {
       "topics": [
@@ -10443,13 +10439,17 @@
       "topics": [
         {
           "label": "ビジネス",
-          "pct": 100.0
+          "pct": 80.0
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 20.0
         }
       ],
-      "sample_n": 4,
-      "source_hash": "8c0709ac13c2f274a7806691224a646c596fc64194d8fb54016a0cd59e0bc9fc",
+      "sample_n": 5,
+      "source_hash": "32987bc88faed5baa12728fbd50b02abdf48d8aaad7e3d5a776987c25f6fb60a",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T00:17:30.867495+00:00"
+      "classified_at": "2026-06-17T17:39:16.344565+00:00"
     },
     "はこぱぱ@みんなのNISA応援マン": {
       "topics": [
