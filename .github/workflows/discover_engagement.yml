@@ -1,0 +1,56 @@
+name: Discover writers (engagement)
+
+# 既存書き手の投稿の「コメント欄」を辿って、推薦グラフでは届かない日本語アクティブ書き手を
+# 発掘して feeds.json に追加する（A: 反応マイニング）。週次（手動実行も可）。
+on:
+  schedule:
+    - cron: "30 16 * * 4"   # 毎週木曜 16:30 UTC（≒金曜 1:30 JST。推薦グラフ巡回(月)と分散）
+  workflow_dispatch:
+    inputs:
+      writers:
+        description: "起点にする既存書き手の数"
+        default: "40"
+      posts:
+        description: "各書き手の最近の投稿をいくつ見るか"
+        default: "3"
+      max_new:
+        description: "1回で追加する最大数"
+        default: "60"
+
+permissions:
+  contents: write
+
+jobs:
+  discover-engagement:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install certifi
+
+      - name: Discover via engagement (comments)
+        env:
+          # GitHub の IP は Substack に弾かれるため Worker プロキシ経由で取得する
+          FYL_PROXY_URL: https://fyl-api.south0120.workers.dev
+          FYL_PROXY_SECRET: ${{ secrets.FYL_PROXY_SECRET }}
+        run: |
+          python scripts/discover_engagement.py \
+            --writers "${{ github.event.inputs.writers || '40' }}" \
+            --posts "${{ github.event.inputs.posts || '3' }}" \
+            --max-new "${{ github.event.inputs.max_new || '60' }}"
+
+      - name: Commit new writers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feeds.json
+          git diff --cached --quiet && echo "no new writers" && exit 0
+          git commit -m "chore: discover new writers via engagement (comments)"
+          git fetch origin main
+          git rebase origin/main
+          git push
