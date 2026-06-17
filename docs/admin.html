@@ -104,7 +104,7 @@
     <h2><span>書き手一覧（<span id="writerCount">0</span>名）<span class="period" id="writerPeriod">｜記事数は全期間の累計</span></span> <button class="csv" data-csv="writers">CSV</button></h2>
     <div class="tablewrap">
       <table id="writerTable">
-        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最古記事</th><th>最新投稿</th></tr></thead>
+        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最古記事(取得済)</th><th>最新投稿</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -239,7 +239,7 @@ document.querySelectorAll("[data-csv]").forEach(btn=>btn.addEventListener("click
   if(t==="category" && DATA.overview){
     downloadCsv("fyl_categories.csv", [["カテゴリ","記事数","書き手数"], ...DATA.overview.byCategory.map(c=>[c.category,c.articles,c.writers])]);
   } else if(t==="writers" && DATA.writers){
-    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最古記事","最新投稿","URL"],
+    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最古記事(取得済)","最新投稿","URL"],
       ...DATA.writers.map(w=>[w.name,(w.categories||[]).join("・"),w.articleCount,w.firstArticle||"",w.lastArticle||"",w.url||""])]);
   }
 }));

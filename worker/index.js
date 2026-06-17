@@ -21,7 +21,15 @@ const CORS_HEADERS = {
 
 export default {
   async scheduled(_controller, env, ctx) {
-    ctx.waitUntil(refreshFeeds(env));
+    ctx.waitUntil((async () => {
+      await refreshFeeds(env);
+      // 各runで1書き手だけ archive 過去記事を補完（負荷分散）。失敗しても取込本体に影響させない。
+      try {
+        await backfillStep(env);
+      } catch (error) {
+        console.warn("backfill step failed", error);
+      }
+    })());
   },
 
   async fetch(request, env) {
@@ -48,6 +56,7 @@ export default {
       if (url.pathname === "/api/applications") return getApplications(env);
       if (url.pathname === "/api/proxy") return handleProxy(url, request, env);
       if (url.pathname === "/api/dedupe") return runDedupe(url, env);
+      if (url.pathname === "/api/backfill-step") return runBackfillStep(url, env);
       if (url.pathname === "/api/admin/overview") return getAdminOverview(url, request, env);
       if (url.pathname === "/api/admin/writers") return getAdminWriters(url, request, env);
       return jsonResponse({ error: "Not found" }, 404);
@@ -542,6 +551,96 @@ async function upsertParsedFeed(env, parsed) {
     ...articleStatements,
     ...(cleanupStatement ? [cleanupStatement] : []),
   ]);
+}
+
+// ===== archive バックフィル（分散）: 1回の巡回ごとに1書き手の過去記事を遡って取り込む =====
+// RSSは直近~20件しか返さないため、archive API を辿って過去記事を補完する。負荷分散のため
+// scheduled の各runで1人ずつ進める（feedsを一巡したらループして新規/差分も拾う）。
+async function fetchArchive(feed, maxPages = 3) {
+  if (!feed?.feed_url || !feed.feed_url.endsWith("/feed")) return [];
+  const base = feed.feed_url.slice(0, -"/feed".length);
+  const categories = feedCategories(feed);
+  if (!categories.length) return [];
+  const articles = [];
+  for (let page = 0; page < maxPages; page++) {
+    let resp;
+    try {
+      resp = await fetch(`${base}/api/v1/archive?sort=new&limit=50&offset=${page * 50}`, {
+        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+        signal: AbortSignal.timeout(12000),
+      });
+    } catch {
+      break;
+    }
+    if (!resp.ok) break;
+    let posts;
+    try {
+      posts = await resp.json();
+    } catch {
+      break;
+    }
+    if (!Array.isArray(posts) || !posts.length) break;
+    for (const p of posts) {
+      const url = p.canonical_url || "";
+      const title = cleanText(p.title || "");
+      if (!url || !title) continue;
+      const excerpt = stripHtml(p.description || p.subtitle || "").slice(0, 120);
+      if ((`${title}${excerpt}`.match(/[ぁ-ゟ]/g) || []).length < 3) continue;
+      const date = new Date(p.post_date || p.published_at || "");
+      articles.push({
+        id: await sha256(url),
+        url,
+        title,
+        excerpt,
+        image: p.cover_image || "",
+        published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
+        writer: feed.name,
+        category: categories[0],
+      });
+    }
+    if (posts.length < 50) break;
+  }
+  return articles;
+}
+
+async function upsertArticlesOnly(env, articles) {
+  if (!articles.length) return;
+  const statements = articles.map((a) =>
+    env.DB.prepare(
+      "INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES (?,?,?,?,?,?,?,?) " +
+      "ON CONFLICT(url) DO UPDATE SET published = COALESCE(excluded.published, articles.published)",
+    ).bind(a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category),
+  );
+  await runBatches(env.DB, statements);
+}
+
+async function backfillStep(env) {
+  let feeds = [];
+  try {
+    const resp = await fetch(FEEDS_URL, { signal: AbortSignal.timeout(15000) });
+    if (resp.ok) {
+      const payload = await resp.json();
+      feeds = Array.isArray(payload.feeds) ? payload.feeds : [];
+    }
+  } catch {
+    return { ok: false, reason: "feeds_fetch_failed" };
+  }
+  if (!feeds.length) return { ok: false, reason: "no_feeds" };
+  const cursor = normalizeCursor(await getMeta(env, "backfill_cursor"), feeds.length);
+  const feed = feeds[cursor];
+  const articles = await fetchArchive(feed);
+  await upsertArticlesOnly(env, articles);
+  await setMeta(env, "backfill_cursor", String((cursor + 1) % feeds.length));
+  return { ok: true, writer: feed?.name, cursor, articles: articles.length };
+}
+
+async function runBackfillStep(url, env) {
+  const token = url.searchParams.get("token") || "";
+  if (!env.DEDUPE_TOKEN || token !== env.DEDUPE_TOKEN) {
+    return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  }
+  const result = await backfillStep(env);
+  return jsonResponse(result, 200, "no-store");
 }
 
 async function setMeta(env, key, value) {
