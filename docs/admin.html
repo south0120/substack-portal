@@ -33,7 +33,8 @@
   .kpi .val small{font-size:.8rem;color:var(--sub);font-weight:700}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
   .panel h2{font-size:.9rem;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
-  .panel h2 .csv{font-size:.72rem;font-weight:700;background:var(--brand-soft);color:#9A410F;border:0;border-radius:7px;padding:5px 9px;cursor:pointer}
+  .panel h2 .csv{font-size:.72rem;font-weight:700;background:var(--brand-soft);color:#9A410F;border:0;border-radius:7px;padding:5px 9px;cursor:pointer;flex:none}
+  .panel h2 .period{font-weight:400;font-size:.72rem;color:var(--sub);margin-left:6px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media(max-width:720px){.grid2{grid-template-columns:1fr}}
   table{width:100%;border-collapse:collapse;font-size:.8rem}
@@ -62,7 +63,10 @@
 
 <div id="dash">
   <header class="bar">
-    <h1>📊 Find Your Letter 管理ダッシュボード</h1>
+    <div>
+      <h1>📊 Find Your Letter 管理ダッシュボード</h1>
+      <div class="muted" id="asof" style="font-size:.72rem;margin-top:3px"></div>
+    </div>
     <button class="logout" id="logout">ログアウト</button>
   </header>
 
@@ -97,7 +101,7 @@
   </div>
 
   <div class="panel">
-    <h2>書き手一覧（<span id="writerCount">0</span>名） <button class="csv" data-csv="writers">CSV</button></h2>
+    <h2><span>書き手一覧（<span id="writerCount">0</span>名）<span class="period">｜記事数は全期間の累計</span></span> <button class="csv" data-csv="writers">CSV</button></h2>
     <div class="tablewrap">
       <table id="writerTable">
         <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最終投稿</th></tr></thead>
@@ -245,6 +249,12 @@ async function init(){
     const [overview, writersResp] = await Promise.all([ api("/api/admin/overview"), api("/api/admin/writers") ]);
     DATA.overview = overview; DATA.writers = writersResp.writers;
     showDash();
+    const now = new Date();
+    const pd = overview.perDay || [];
+    const range = pd.length ? `${pd[0].date} 〜 ${pd[pd.length-1].date}` : "-";
+    const p2 = (n)=>String(n).padStart(2,"0");
+    document.getElementById("asof").textContent =
+      `集計時点 ${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} ${p2(now.getHours())}:${p2(now.getMinutes())}　｜　全期間累計（日次グラフは ${range}）`;
     renderKpis(overview);
     bar("hourChart", overview.byHour.map(h=>h.hour+"時"), overview.byHour.map(h=>h.count), "#FF6719", "投稿数");
     bar("dayChart", overview.perDay.map(d=>d.date.slice(5)), overview.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
