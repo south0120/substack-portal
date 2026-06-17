@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T19:50:01.236552+00:00",
+  "generated_at": "2026-06-17T22:25:06.377915+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -4610,15 +4610,11 @@
     "Paloj’s Newsletter": {
       "topics": [
         {
-          "label": "テクノロジー",
-          "pct": 16.7
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 16.7
-        },
-        {
           "label": "グルメ・料理",
+          "pct": 22.2
+        },
+        {
+          "label": "テクノロジー",
           "pct": 16.7
         },
         {
@@ -4626,7 +4622,11 @@
           "pct": 11.1
         },
         {
-          "label": "社会・文化",
+          "label": "ライフスタイル",
+          "pct": 11.1
+        },
+        {
+          "label": "その他",
           "pct": 11.1
         },
         {
@@ -4638,7 +4638,7 @@
           "pct": 5.6
         },
         {
-          "label": "クリエイティブ",
+          "label": "社会・文化",
           "pct": 5.6
         },
         {
@@ -4651,9 +4651,9 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "582a4351b97b6eb9fc0f1080c799be4167d4ab69c4c6b80b0af7f6181261d94b",
+      "source_hash": "e0864a19463d3c68652d9d745aa099aef928288e5e05d111898c33b517d6dcc2",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T22:34:31.738843+00:00"
+      "classified_at": "2026-06-17T22:24:56.791519+00:00"
     },
     "Ririo": {
       "topics": [
@@ -5538,26 +5538,26 @@
           "pct": 22.2
         },
         {
-          "label": "ライフスタイル",
+          "label": "その他",
           "pct": 16.7
         },
         {
-          "label": "その他",
+          "label": "健康・ウェルネス",
           "pct": 11.1
         },
         {
-          "label": "AI",
+          "label": "テクノロジー",
           "pct": 5.6
         },
         {
-          "label": "健康・ウェルネス",
+          "label": "キャリア・働き方",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "fa878a6d5914b9d44d2a7f31f21dd07360cf3033be653242d6aca97abce1ee0d",
+      "source_hash": "49a7816bb5c1ca17d9c82d05e9dd97a9b6f11ea9c00cf562e069233b3b3b54d3",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-15T19:31:55.409139+00:00"
+      "classified_at": "2026-06-17T22:24:59.216302+00:00"
     },
     "カズ/AI×スマホドクター": {
       "topics": [
@@ -5855,25 +5855,25 @@
       "topics": [
         {
           "label": "投資・経済",
-          "pct": 37.5
-        },
-        {
-          "label": "キャリア・働き方",
-          "pct": 25.0
+          "pct": 33.3
         },
         {
           "label": "ライフスタイル",
-          "pct": 25.0
+          "pct": 33.3
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 22.2
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 12.5
+          "pct": 11.1
         }
       ],
-      "sample_n": 8,
-      "source_hash": "5bcec246db7b6083a997e6d708b375163d3d9439214c29a3b907cc4509a9e3d8",
+      "sample_n": 9,
+      "source_hash": "9e004ed13328f9a3ecd4147afcb92e4ae091b53c3ca5def9cf6f2f7b66fb5e2e",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-16T22:34:39.356003+00:00"
+      "classified_at": "2026-06-17T22:25:00.781457+00:00"
     },
     "朝活・習慣化の極意": {
       "topics": [
@@ -6138,8 +6138,12 @@
     "深夜のログアウト｜ゲーム反省会ポッドキャスト": {
       "topics": [
         {
+          "label": "その他",
+          "pct": 50.0
+        },
+        {
           "label": "クリエイティブ",
-          "pct": 83.3
+          "pct": 33.3
         },
         {
           "label": "テクノロジー",
@@ -6150,14 +6154,14 @@
           "pct": 5.6
         },
         {
-          "label": "ライフスタイル",
+          "label": "社会・文化",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "7ef606ccadf52d30515e2f034f76b0ee384953ee1a5d796ea0256274c7ba1da0",
+      "source_hash": "b387665a0667f637d260babb082fd4e8dcf8be8d3fbd6d6563e7a741d5554b10",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T12:30:49.545034+00:00"
+      "classified_at": "2026-06-17T22:25:03.042542+00:00"
     },
     "きの の Substack": {
       "topics": [
@@ -6943,37 +6947,41 @@
       "topics": [
         {
           "label": "AI",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "ビジネス",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "キャリア・働き方",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "ライフスタイル",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "子育て・家族",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 14.3
+          "pct": 12.5
+        },
+        {
+          "label": "教育・学び",
+          "pct": 12.5
         },
         {
           "label": "クリエイティブ",
-          "pct": 14.3
+          "pct": 12.5
         }
       ],
-      "sample_n": 7,
-      "source_hash": "989092346aa0db4bf7b2bff1e7c9e3fc171db72fd6db2c5c81cc731db94442f4",
+      "sample_n": 8,
+      "source_hash": "5b7c52a9a13252e2e35f454338055063afd40929c7b655c7e287e8fa76fed77f",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-14T14:58:53.963825+00:00"
+      "classified_at": "2026-06-17T22:25:04.566615+00:00"
     },
     "しゃべるだけで仕事が終わるAI活用&テレビ局独立日誌": {
       "topics": [
@@ -9010,34 +9018,30 @@
     "タクヤ@不真面目DX通信": {
       "topics": [
         {
-          "label": "AI",
-          "pct": 30.0
+          "label": "キャリア・働き方",
+          "pct": 45.5
         },
         {
-          "label": "キャリア・働き方",
-          "pct": 30.0
+          "label": "AI",
+          "pct": 27.3
         },
         {
           "label": "テクノロジー",
-          "pct": 10.0
+          "pct": 9.1
         },
         {
           "label": "ビジネス",
-          "pct": 10.0
-        },
-        {
-          "label": "社会・文化",
-          "pct": 10.0
+          "pct": 9.1
         },
         {
           "label": "ライフスタイル",
-          "pct": 10.0
+          "pct": 9.1
         }
       ],
-      "sample_n": 10,
-      "source_hash": "0e7b316e62117888e045e7609c5aec4e8fea68678f35099761b4b6fe5353cf72",
+      "sample_n": 11,
+      "source_hash": "7e60abf934efb9ae956e8454bf252bb65644be50346b279e5c408175613eefa2",
       "labels_version": "ef54d97c",
-      "classified_at": "2026-06-17T10:19:12.862467+00:00"
+      "classified_at": "2026-06-17T22:25:06.339539+00:00"
     },
     "ここ": {
       "topics": [
