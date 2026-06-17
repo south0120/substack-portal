@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T20:35:15.378314+00:00",
+  "updated_at": "2026-06-17T22:57:35.070628+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,19 +152,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
+          "url": "https://www.debunkresearch.com/p/osaurus",
+          "published": "2026-06-17T21:01:20+00:00"
+        },
+        {
+          "title": "【inc.fun】AIが運営する会社を立ち上げ出資するローンチパッド / @incdotfun",
+          "url": "https://www.debunkresearch.com/p/incfun",
+          "published": "2026-06-17T21:01:13+00:00"
+        },
+        {
           "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
           "url": "https://www.debunkresearch.com/p/ai-news260612-16",
           "published": "2026-06-16T21:01:14+00:00"
-        },
-        {
-          "title": "【06/12(金)~06/16(火)News Report】MiCA移行期限が7/1に終了 / KrakenとCoinbaseが米国向けパーペチュアル投入 / 北陸銀行のDCJPYが商用化へなど",
-          "url": "https://www.debunkresearch.com/p/crypto-news260612-16",
-          "published": "2026-06-16T21:00:43+00:00"
-        },
-        {
-          "title": "【AI Pay with Crypto】AIエージェントに実店舗QR決済を可能にするプロジェクト / @aipaywithcrypto",
-          "url": "https://www.debunkresearch.com/p/apc",
-          "published": "2026-06-15T21:01:30+00:00"
         }
       ]
     },
@@ -5017,6 +5017,24 @@
   ],
   "articles": [
     {
+      "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
+      "url": "https://www.debunkresearch.com/p/osaurus",
+      "excerpt": "クラウドに預けるのではなく、Macの中でエージェントを動かす。\"Own your AI\" を掲げるローカルAIランタイムとは何か。",
+      "published": "2026-06-17T21:01:20+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!hLIe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F391d197b-99b8-464e-9ef8-fb67c25708a0_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【inc.fun】AIが運営する会社を立ち上げ出資するローンチパッド / @incdotfun",
+      "url": "https://www.debunkresearch.com/p/incfun",
+      "excerpt": "ミームコインの次は「アイデアからAgentic Companyを生む」ローンチパッドです。",
+      "published": "2026-06-17T21:01:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!cwTD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa4b03b3-b66e-44eb-8ba0-51c1768ad40b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "サブスタックの海外人気クリエイターに学ぶ発信テーマ",
       "url": "https://www.yukarik.com/p/69d",
       "excerpt": "「発信テーマ」の見つけ方〜実践ガイド第一部5回目|Substackで何を書けばいいの？と思っている人に",
@@ -5285,24 +5303,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!OOBz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba027536-5dcc-4d55-aaf2-9cc3e73a6dfd_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
-    },
-    {
-      "title": "FlourishにJeff Bezos等が$500M出資、SupabaseにGICが$500M出資、など全9PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260531-0605",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-06-06T21:00:51+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!_U4_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21b430bf-d7d0-4138-8a20-994d8172a375_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "SignalPlusにHashKey Capitalが$50M出資、WasabiCardにVernal Capital等が$10M出資、など全12PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/crypto-wfr260531-0605",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-06-06T21:00:51+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!ffx7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff88650dc-09e7-479a-8fc5-1511a695d4c0_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "Substackの日本語化による、サブスタックに感じる未来",
