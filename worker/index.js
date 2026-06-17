@@ -16,7 +16,7 @@ const MASTER_CATEGORIES = new Set([
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, tally-signature",
+  "Access-Control-Allow-Headers": "Content-Type, tally-signature, Authorization",
 };
 
 export default {
@@ -34,6 +34,9 @@ export default {
       if (url.pathname === "/api/apply" && request.method === "POST") {
         return handleApplication(request, env);
       }
+      if (url.pathname === "/api/admin/login" && request.method === "POST") {
+        return runAdminLogin(request, env);
+      }
       if (request.method !== "GET") {
         return jsonResponse({ error: "Method not allowed" }, 405, "no-store");
       }
@@ -45,6 +48,8 @@ export default {
       if (url.pathname === "/api/applications") return getApplications(env);
       if (url.pathname === "/api/proxy") return handleProxy(url, request, env);
       if (url.pathname === "/api/dedupe") return runDedupe(url, env);
+      if (url.pathname === "/api/admin/overview") return getAdminOverview(url, request, env);
+      if (url.pathname === "/api/admin/writers") return getAdminWriters(url, request, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -768,6 +773,106 @@ async function runDedupe(url, env) {
     if (stmts.length) { await runBatches(env.DB, stmts); mergedFeeds += 1; }
   }
   return jsonResponse({ ok: true, dupFeeds: (dupFeeds.results || []).length, mergedFeeds, deletedRows }, 200, "no-store");
+}
+
+// ===== 管理ダッシュボード：認証（自前パスワード→HMAC署名トークン）＋集計API =====
+const ADMIN_TOKEN_TTL_MS = 12 * 60 * 60 * 1000;
+
+function adminB64Url(bytesB64) {
+  return bytesB64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function adminEncodePayload(obj) {
+  return adminB64Url(btoa(unescape(encodeURIComponent(JSON.stringify(obj)))));
+}
+function adminDecodePayload(payload) {
+  const s = payload.replace(/-/g, "+").replace(/_/g, "/");
+  return JSON.parse(decodeURIComponent(escape(atob(s + "=".repeat((4 - (s.length % 4)) % 4)))));
+}
+async function adminHmac(message, secret) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey("raw", encoder.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const digest = new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(message)));
+  return adminB64Url(bytesToBase64(digest));
+}
+async function signAdminToken(env) {
+  const payload = adminEncodePayload({ exp: Date.now() + ADMIN_TOKEN_TTL_MS });
+  const sig = await adminHmac(payload, env.ADMIN_TOKEN_SECRET || "");
+  return `${payload}.${sig}`;
+}
+async function verifyAdminToken(token, env) {
+  if (!token || !env.ADMIN_TOKEN_SECRET) return false;
+  const [payload, sig] = String(token).split(".");
+  if (!payload || !sig) return false;
+  if (sig !== (await adminHmac(payload, env.ADMIN_TOKEN_SECRET))) return false;
+  try {
+    const { exp } = adminDecodePayload(payload);
+    return typeof exp === "number" && Date.now() < exp;
+  } catch {
+    return false;
+  }
+}
+async function requireAdmin(url, request, env) {
+  const auth = request.headers.get("Authorization") || "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : (url.searchParams.get("token") || "");
+  return verifyAdminToken(token, env);
+}
+
+async function runAdminLogin(request, env) {
+  let body = {};
+  try { body = await request.json(); } catch { /* noop */ }
+  const password = String(body.password || "");
+  if (!env.ADMIN_PASSWORD || password !== env.ADMIN_PASSWORD) {
+    return jsonResponse({ error: "invalid_password" }, 401, "no-store");
+  }
+  const token = await signAdminToken(env);
+  return jsonResponse({ ok: true, token, expiresInMs: ADMIN_TOKEN_TTL_MS }, 200, "no-store");
+}
+
+async function getAdminOverview(url, request, env) {
+  if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  const [totalA, totalW, byCatArticles, byHour, perDay, writerRows] = await Promise.all([
+    env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+    env.DB.prepare("SELECT category, COUNT(*) AS n FROM articles WHERE category <> '' GROUP BY category ORDER BY n DESC").all(),
+    env.DB.prepare("SELECT CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY h ORDER BY h").all(),
+    env.DB.prepare("SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY d ORDER BY d DESC LIMIT 30").all(),
+    env.DB.prepare("SELECT categories FROM writers").all(),
+  ]);
+  const writerCat = {};
+  for (const row of writerRows.results || []) {
+    for (const c of parseCategories(row.categories)) writerCat[c] = (writerCat[c] || 0) + 1;
+  }
+  const hours = Array.from({ length: 24 }, (_, h) => ({ hour: h, count: 0 }));
+  for (const r of byHour.results || []) {
+    if (r.h >= 0 && r.h < 24) hours[r.h].count = r.n;
+  }
+  return jsonResponse({
+    totals: { articles: totalA?.n || 0, writers: totalW?.n || 0 },
+    byCategory: (byCatArticles.results || []).map((r) => ({ category: r.category, articles: r.n, writers: writerCat[r.category] || 0 })),
+    byHour: hours,
+    perDay: (perDay.results || []).map((r) => ({ date: r.d, articles: r.n })).reverse(),
+  }, 200, "no-store");
+}
+
+async function getAdminWriters(url, request, env) {
+  if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  const rows = await env.DB.prepare(`
+    SELECT w.name, w.categories, w.url, w.updated_at,
+      (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name) AS articleCount,
+      (SELECT MAX(published) FROM articles a WHERE a.writer = w.name) AS lastArticle
+    FROM writers w
+    ORDER BY articleCount DESC, w.name
+  `).all();
+  return jsonResponse({
+    writers: (rows.results || []).map((r) => ({
+      name: r.name,
+      categories: parseCategories(r.categories),
+      url: r.url,
+      articleCount: r.articleCount || 0,
+      lastArticle: r.lastArticle,
+      updatedAt: r.updated_at,
+    })),
+  }, 200, "no-store");
 }
 
 async function getCategories(env) {
