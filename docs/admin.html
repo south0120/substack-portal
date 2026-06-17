@@ -240,7 +240,7 @@ document.querySelectorAll("[data-csv]").forEach(btn=>btn.addEventListener("click
 }));
 
 async function init(){
-  if(!token()){ showLogin(); return; }
+  // トークンが無くても一度APIを試す（開放モードなら401にならず表示できる）。
   try{
     const [overview, writersResp] = await Promise.all([ api("/api/admin/overview"), api("/api/admin/writers") ]);
     DATA.overview = overview; DATA.writers = writersResp.writers;

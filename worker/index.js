@@ -812,6 +812,9 @@ async function verifyAdminToken(token, env) {
   }
 }
 async function requireAdmin(url, request, env) {
+  // 一時開放モード（ADMIN_OPEN=true の間はパスワード無しで集計APIを許可）。
+  // 読み取り専用の分析データのみ。運用が固まったら ADMIN_OPEN を外して認証必須に戻す。
+  if (env.ADMIN_OPEN === "true") return true;
   const auth = request.headers.get("Authorization") || "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : (url.searchParams.get("token") || "");
   return verifyAdminToken(token, env);
