@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T17:47:07.328394+00:00",
+  "generated_at": "2026-06-18T21:10:15.969737+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -1605,12 +1605,8 @@
     "再起Lab": {
       "topics": [
         {
-          "label": "ライフスタイル",
-          "pct": 27.8
-        },
-        {
           "label": "ビジネス",
-          "pct": 22.2
+          "pct": 33.3
         },
         {
           "label": "キャリア・働き方",
@@ -1618,22 +1614,18 @@
         },
         {
           "label": "社会・文化",
-          "pct": 11.1
+          "pct": 22.2
         },
         {
-          "label": "クリエイティブ",
-          "pct": 11.1
-        },
-        {
-          "label": "その他",
-          "pct": 5.6
+          "label": "ライフスタイル",
+          "pct": 22.2
         }
       ],
       "sample_n": 18,
-      "source_hash": "c7fa4c0d11178b076898e6e1aad6d43dfe3e5af2a782b35b9e85e6dd4f149583",
+      "source_hash": "b42e9636c2fa5f36c1033bce4371a7278ddc015d4716100ad964b8e8fb397680",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:00:36.704225+00:00"
+      "classified_at": "2026-06-18T21:10:10.201703+00:00"
     },
     "びびで の Substack": {
       "topics": [
@@ -4986,19 +4978,23 @@
           "pct": 11.1
         },
         {
-          "label": "キャリア・働き方",
-          "pct": 11.1
+          "label": "AI",
+          "pct": 5.6
         },
         {
-          "label": "AI",
+          "label": "キャリア・働き方",
+          "pct": 5.6
+        },
+        {
+          "label": "社会・文化",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "ab664d14118b158443062dbc4276d73c24c68239fb7232da12d32cf3429bf44d",
+      "source_hash": "a2b90517e0d8cb03aa639d2b7f16b8512345fc17dee969e69c187855041ad30d",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:04:44.353376+00:00"
+      "classified_at": "2026-06-18T21:10:12.176866+00:00"
     },
     "恋せよ乙女(ebifurai55) ひとり起業log": {
       "topics": [
@@ -6182,10 +6178,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "ed3b46966cd53dba697d16f7fbc15ed0e634dfee89d236e108274bcfb57d2a5b",
+      "source_hash": "4160221ce4d8b30b1c4f1985494c615a3259f559ec401e28d101fe7ef277b3c5",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:06:12.212904+00:00"
+      "classified_at": "2026-06-18T21:10:14.034867+00:00"
     },
     "ホタル農園｜誇りのカケラ|農業で人生の誇りを取り戻す": {
       "topics": [
@@ -8128,8 +8124,8 @@
     "ハラペーのニュースレター": {
       "topics": [
         {
-          "label": "その他",
-          "pct": 66.7
+          "label": "社会・文化",
+          "pct": 61.1
         },
         {
           "label": "投資・経済",
@@ -8140,19 +8136,23 @@
           "pct": 11.1
         },
         {
-          "label": "ビジネス",
+          "label": "健康・ウェルネス",
           "pct": 5.6
         },
         {
-          "label": "健康・ウェルネス",
+          "label": "クリエイティブ",
+          "pct": 5.6
+        },
+        {
+          "label": "その他",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "659a1eb37a169db4042f2fb295534fd9fca835757f44e4c7a4429a15b665ec48",
+      "source_hash": "adba82100b1af371695f97a0acc71fbcb6fa018b34c1cbc5d8bcf2ae96cda91f",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:08:57.221799+00:00"
+      "classified_at": "2026-06-18T21:10:15.919479+00:00"
     },
     "GASMETER NOSTALGIA": {
       "topics": [
