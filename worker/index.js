@@ -973,29 +973,97 @@ async function runAdminLogin(request, env) {
 
 async function getAdminOverview(url, request, env) {
   if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
-  const [totalA, totalW, byCatArticles, byHour, perDay, writerRows, dateRange] = await Promise.all([
+  const fromParam = url.searchParams.get("from");
+  const toParam = url.searchParams.get("to");
+  const validDate = (value) => {
+    if (!value) return true;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const date = new Date(`${value}T00:00:00Z`);
+    return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  };
+  if (!validDate(fromParam) || !validDate(toParam) || (fromParam && toParam && fromParam > toParam)) {
+    return jsonResponse({ error: "invalid_range" }, 400, "no-store");
+  }
+  const [totalA, totalW, dateRange] = await Promise.all([
     env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
     env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
-    env.DB.prepare("SELECT category, COUNT(*) AS n FROM articles WHERE category <> '' GROUP BY category ORDER BY n DESC").all(),
-    env.DB.prepare("SELECT CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY h ORDER BY h").all(),
-    env.DB.prepare("SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n FROM articles WHERE published IS NOT NULL GROUP BY d ORDER BY d DESC LIMIT 30").all(),
-    env.DB.prepare("SELECT categories FROM writers").all(),
-    env.DB.prepare("SELECT MIN(published) AS oldest, MAX(published) AS newest FROM articles WHERE published IS NOT NULL").first(),
+    env.DB.prepare(`
+      SELECT MIN(published) AS oldest, MAX(published) AS newest,
+        MIN(date(datetime(published, '+9 hours'))) AS oldestJst,
+        MAX(date(datetime(published, '+9 hours'))) AS newestJst
+      FROM articles WHERE published IS NOT NULL
+    `).first(),
   ]);
-  const writerCat = {};
-  for (const row of writerRows.results || []) {
-    for (const c of parseCategories(row.categories)) writerCat[c] = (writerCat[c] || 0) + 1;
+  const hasRange = Boolean(fromParam || toParam);
+  const resolvedFrom = fromParam || (hasRange ? dateRange?.oldestJst || null : null);
+  const resolvedTo = toParam || (hasRange ? dateRange?.newestJst || null : null);
+  const rangeWhere = hasRange
+    ? "published IS NOT NULL AND date(datetime(published, '+9 hours')) BETWEEN ? AND ?"
+    : "1 = 1";
+  const rangeBindings = hasRange
+    ? [resolvedFrom || "0001-01-01", resolvedTo || "9999-12-31"]
+    : [];
+  const prepareRange = (sql) => {
+    const statement = env.DB.prepare(sql);
+    return rangeBindings.length ? statement.bind(...rangeBindings) : statement;
+  };
+  const [byCatArticles, byHour, perDay, rangeTotal, articleCounts] = await Promise.all([
+    prepareRange(`
+      SELECT category, COUNT(*) AS n, COUNT(DISTINCT writer) AS writer_n
+      FROM articles WHERE category <> '' AND ${rangeWhere}
+      GROUP BY category ORDER BY n DESC
+    `).all(),
+    prepareRange(`
+      SELECT CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h, COUNT(*) AS n
+      FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
+      GROUP BY h ORDER BY h
+    `).all(),
+    prepareRange(`
+      SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n
+      FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
+      GROUP BY d ORDER BY d DESC ${hasRange ? "" : "LIMIT 90"}
+    `).all(),
+    prepareRange(`
+      SELECT COUNT(*) AS articles, COUNT(DISTINCT writer) AS writers
+      FROM articles WHERE ${rangeWhere}
+    `).first(),
+    prepareRange(`
+      SELECT writer, COUNT(*) AS n FROM articles
+      WHERE writer IS NOT NULL AND writer <> '' AND ${rangeWhere}
+      GROUP BY writer
+    `).all(),
+  ]);
+  const bucketOrder = ["1", "2-5", "6-10", "11-20", "21-50", "51+"];
+  const bucketCounts = Object.fromEntries(bucketOrder.map((bucket) => [bucket, 0]));
+  for (const row of articleCounts.results || []) {
+    const n = Number(row.n || 0);
+    const bucket = n === 1 ? "1" : n <= 5 ? "2-5" : n <= 10 ? "6-10" : n <= 20 ? "11-20" : n <= 50 ? "21-50" : "51+";
+    bucketCounts[bucket] += 1;
   }
   const hours = Array.from({ length: 24 }, (_, h) => ({ hour: h, count: 0 }));
   for (const r of byHour.results || []) {
     if (r.h >= 0 && r.h < 24) hours[r.h].count = r.n;
   }
+  let daily = (perDay.results || []).map((r) => ({ date: r.d, articles: r.n })).reverse();
+  if (hasRange && resolvedFrom && resolvedTo) {
+    const counts = Object.fromEntries(daily.map((row) => [row.date, row.articles]));
+    daily = [];
+    for (let day = resolvedFrom; day <= resolvedTo;) {
+      daily.push({ date: day, articles: counts[day] || 0 });
+      const next = new Date(`${day}T00:00:00Z`);
+      next.setUTCDate(next.getUTCDate() + 1);
+      day = next.toISOString().slice(0, 10);
+    }
+  }
   return jsonResponse({
     totals: { articles: totalA?.n || 0, writers: totalW?.n || 0 },
+    rangeTotals: { articles: rangeTotal?.articles || 0, writers: rangeTotal?.writers || 0 },
+    range: { from: resolvedFrom, to: resolvedTo },
     dateRange: { oldest: dateRange?.oldest || null, newest: dateRange?.newest || null },
-    byCategory: (byCatArticles.results || []).map((r) => ({ category: r.category, articles: r.n, writers: writerCat[r.category] || 0 })),
+    byCategory: (byCatArticles.results || []).map((r) => ({ category: r.category, articles: r.n, writers: r.writer_n || 0 })),
     byHour: hours,
-    perDay: (perDay.results || []).map((r) => ({ date: r.d, articles: r.n })).reverse(),
+    perDay: daily,
+    articleCountDistribution: bucketOrder.map((bucket) => ({ bucket, writers: bucketCounts[bucket] })),
   }, 200, "no-store");
 }
 

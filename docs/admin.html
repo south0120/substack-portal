@@ -26,6 +26,11 @@
   header.bar{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 16px}
   header.bar h1{font-size:1.1rem;margin:0}
   header.bar .logout{background:none;border:1px solid var(--line);color:var(--sub);border-radius:8px;padding:7px 12px;font-size:.8rem;cursor:pointer}
+  .range-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+  .range-filter button{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 11px;font-weight:700;cursor:pointer}
+  .range-filter button.active,.range-filter .apply{background:var(--brand);border-color:var(--brand);color:#fff}
+  .range-filter input{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+  .range-filter .current{color:var(--sub);font-size:.76rem;margin-left:auto}
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .kpi .label{color:var(--sub);font-size:.74rem;font-weight:700}
@@ -47,6 +52,7 @@
   .cat-list .nm{width:96px;flex:none;font-weight:700}
   .cat-list .ct{color:var(--sub);font-size:.74rem;white-space:nowrap}
   .muted{color:var(--sub);font-size:.78rem}
+  @media(max-width:720px){.range-filter .current{width:100%;margin-left:0}}
 </style>
 </head>
 <body>
@@ -70,6 +76,18 @@
     <button class="logout" id="logout">ログアウト</button>
   </header>
 
+  <div class="range-filter">
+    <button type="button" data-range-days="7">7d</button>
+    <button type="button" data-range-days="30">30d</button>
+    <button type="button" data-range-days="90">90d</button>
+    <button type="button" data-range-all>All</button>
+    <input type="date" id="rangeFrom" aria-label="開始日">
+    <span>〜</span>
+    <input type="date" id="rangeTo" aria-label="終了日">
+    <button type="button" class="apply" id="rangeApply">適用</button>
+    <span class="current" id="rangeLabel">全期間</span>
+  </div>
+
   <div class="kpis" id="kpis"></div>
 
   <div class="panel" id="costPanel" style="display:none">
@@ -84,9 +102,14 @@
       <canvas id="hourChart" height="160"></canvas>
     </div>
     <div class="panel">
-      <h2>日次の新着記事数（直近30日）</h2>
+      <h2>日次の新着記事数（選択期間）</h2>
       <canvas id="dayChart" height="160"></canvas>
     </div>
+  </div>
+
+  <div class="panel" id="distributionPanel" style="display:none">
+    <h2>書き手ごとの記事数分布（選択期間）</h2>
+    <canvas id="distributionChart" height="120"></canvas>
   </div>
 
   <div class="panel">
@@ -122,7 +145,8 @@ const API = "https://fyl-api.south0120.workers.dev";
 const DAILY_CSV = "https://raw.githubusercontent.com/south0120/substack-portal/main/reports/daily_stats.csv";
 const USAGE_URL = "data/api_usage.json";
 const TKEY = "fyl_admin_token";
-let DATA = { overview:null, writers:null };
+let DATA = { overview:null, writers:null, trend:null };
+let RANGE = { from:null, to:null };
 
 function token(){ return localStorage.getItem(TKEY) || ""; }
 function authHeaders(){ return { "Authorization": "Bearer " + token() }; }
@@ -158,11 +182,22 @@ document.getElementById("loginForm").addEventListener("submit", async (e)=>{
 
 const fmt = (n)=> (n==null?"-":Number(n).toLocaleString());
 const dateJp = (s)=>{ if(!s) return "-"; const d=new Date(s); return Number.isNaN(d.getTime())?"-":`${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}`; };
+const isoDay = (d)=> d.toISOString().slice(0,10);
+function jstDay(s){
+  if(!s) return "";
+  const normalized = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(s) ? s.replace(" ","T")+"Z" : s;
+  const d = new Date(normalized);
+  return Number.isNaN(d.getTime()) ? String(s).slice(0,10) : isoDay(new Date(d.getTime()+9*60*60*1000));
+}
 
 function renderKpis(o){
+  const ranged = o.rangeTotals ? `
+    <div class="kpi"><div class="label">選択期間の記事数</div><div class="val">${fmt(o.rangeTotals.articles)}</div></div>
+    <div class="kpi"><div class="label">選択期間のライター数</div><div class="val">${fmt(o.rangeTotals.writers)}</div></div>` : "";
   document.getElementById("kpis").innerHTML = `
     <div class="kpi"><div class="label">総記事数</div><div class="val">${fmt(o.totals.articles)}</div></div>
     <div class="kpi"><div class="label">総ライター数</div><div class="val">${fmt(o.totals.writers)}</div></div>
+    ${ranged}
     <div class="kpi"><div class="label">本日の新着記事</div><div class="val">${fmt((o.perDay[o.perDay.length-1]||{}).articles)} <small>件</small></div></div>
     <div class="kpi"><div class="label">カテゴリ数</div><div class="val">${o.byCategory.length}</div></div>`;
 }
@@ -179,11 +214,12 @@ function renderCatList(o){
 function renderSummary(o){
   const topHour = [...o.byHour].sort((a,b)=>b.count-a.count)[0];
   const topCat = o.byCategory[0];
+  const totals = o.rangeTotals || o.totals;
   document.getElementById("summary").innerHTML = `
     ・最も投稿が多い時間帯：<b>${topHour?topHour.hour:"-"}時台</b>（${fmt(topHour&&topHour.count)}件）<br>
     ・記事数が最も多いカテゴリ：<b>${topCat?topCat.category:"-"}</b>（${fmt(topCat&&topCat.articles)}件）<br>
     ・書き手が最も多いカテゴリ：<b>${[...o.byCategory].sort((a,b)=>b.writers-a.writers)[0]?.category||"-"}</b><br>
-    ・1書き手あたり平均記事数：<b>${(o.totals.articles/Math.max(1,o.totals.writers)).toFixed(1)}</b>件`;
+    ・1書き手あたり平均記事数：<b>${(totals.articles/Math.max(1,totals.writers)).toFixed(1)}</b>件`;
 }
 
 function renderWriters(ws){
@@ -241,8 +277,11 @@ async function renderCost(){
 
 async function renderTrend(){
   try{
-    const txt = await (await fetch(DAILY_CSV + "?cb=" + Date.now())).text();
-    const rows = txt.trim().split("\n").slice(1).map(l=>l.split(","));
+    if(!DATA.trend){
+      const txt = await (await fetch(DAILY_CSV + "?cb=" + Date.now())).text();
+      DATA.trend = txt.trim().split("\n").slice(1).map(l=>l.split(","));
+    }
+    const rows = DATA.trend.filter(r=>(!RANGE.from||r[0]>=RANGE.from)&&(!RANGE.to||r[0]<=RANGE.to));
     const labels = rows.map(r=>r[0]);
     const arts = rows.map(r=>Number(r[1])), wrs = rows.map(r=>Number(r[2]));
     line("trendChart", labels, [
@@ -251,9 +290,83 @@ async function renderTrend(){
     ]);
     charts.trendChart.options.scales.y2 = { position:"right", beginAtZero:false, grid:{drawOnChartArea:false}, ticks:{precision:0} };
     charts.trendChart.update();
-    document.getElementById("trendNote").textContent = `${labels[0]} 〜 ${labels[labels.length-1]} の毎朝8:00記録`;
+    document.getElementById("trendNote").textContent = labels.length
+      ? `${labels[0]} 〜 ${labels[labels.length-1]} の毎朝8:00記録`
+      : "選択期間の推移データはありません";
   }catch(_){ document.getElementById("trendNote").textContent = "推移データはまだ記録が少ないか取得に失敗しました"; }
 }
+
+function renderRangeControls(o){
+  const oldest = jstDay(o.dateRange&&o.dateRange.oldest);
+  const newest = jstDay(o.dateRange&&o.dateRange.newest);
+  for(const id of ["rangeFrom","rangeTo"]){
+    const el = document.getElementById(id);
+    el.min = oldest; el.max = newest;
+  }
+  document.getElementById("rangeFrom").value = RANGE.from || "";
+  document.getElementById("rangeTo").value = RANGE.to || "";
+  document.getElementById("rangeLabel").textContent = RANGE.from||RANGE.to
+    ? `${RANGE.from||oldest||"開始"} 〜 ${RANGE.to||newest||"終了"}`
+    : "全期間";
+  document.querySelectorAll("[data-range-days],[data-range-all]").forEach(btn=>btn.classList.remove("active"));
+  if(!RANGE.from&&!RANGE.to) document.querySelector("[data-range-all]").classList.add("active");
+}
+
+function renderOverview(o){
+  DATA.overview = o;
+  const now = new Date();
+  const pd = o.perDay || [];
+  const shown = pd.length ? `${pd[0].date} 〜 ${pd[pd.length-1].date}` : "-";
+  const p2 = (n)=>String(n).padStart(2,"0");
+  document.getElementById("asof").textContent =
+    `集計時点 ${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} ${p2(now.getHours())}:${p2(now.getMinutes())}　｜　グラフ表示 ${shown}`;
+  renderRangeControls(o);
+  renderKpis(o);
+  bar("hourChart", o.byHour.map(h=>h.hour+"時"), o.byHour.map(h=>h.count), "#FF6719", "投稿数");
+  bar("dayChart", o.perDay.map(d=>d.date.slice(5)), o.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
+  renderCatList(o);
+  renderSummary(o);
+  const distribution = Array.isArray(o.articleCountDistribution) ? o.articleCountDistribution : null;
+  document.getElementById("distributionPanel").style.display = distribution ? "block" : "none";
+  if(distribution){
+    bar("distributionChart", distribution.map(d=>d.bucket), distribution.map(d=>d.writers), "#7b5ea7", "書き手数");
+  }else if(charts.distributionChart){
+    charts.distributionChart.destroy(); delete charts.distributionChart;
+  }
+  renderTrend();
+}
+
+async function loadOverview(){
+  const qs = new URLSearchParams();
+  if(RANGE.from) qs.set("from",RANGE.from);
+  if(RANGE.to) qs.set("to",RANGE.to);
+  const overview = await api("/api/admin/overview" + (qs.size ? "?"+qs : ""));
+  renderOverview(overview);
+}
+
+document.querySelectorAll("[data-range-days]").forEach(btn=>btn.addEventListener("click",async ()=>{
+  const max = document.getElementById("rangeTo").max || isoDay(new Date());
+  const from = new Date(max+"T00:00:00Z");
+  from.setUTCDate(from.getUTCDate()-Number(btn.dataset.rangeDays)+1);
+  RANGE = { from:isoDay(from), to:max };
+  await loadOverview();
+}));
+document.querySelector("[data-range-all]").addEventListener("click",async ()=>{
+  RANGE = { from:null, to:null };
+  await loadOverview();
+});
+document.getElementById("rangeApply").addEventListener("click",async ()=>{
+  const from = document.getElementById("rangeFrom").value||null;
+  const to = document.getElementById("rangeTo").value||null;
+  if(from&&to&&from>to){
+    document.getElementById("rangeFrom").setCustomValidity("開始日は終了日以前にしてください");
+    document.getElementById("rangeFrom").reportValidity();
+    return;
+  }
+  document.getElementById("rangeFrom").setCustomValidity("");
+  RANGE = { from, to };
+  await loadOverview();
+});
 
 function downloadCsv(name, rows){
   const csv = rows.map(r=>r.map(c=>`"${String(c==null?"":c).replace(/"/g,'""')}"`).join(",")).join("\r\n");
@@ -278,19 +391,8 @@ async function init(){
     const [overview, writersResp] = await Promise.all([ api("/api/admin/overview"), api("/api/admin/writers") ]);
     DATA.overview = overview; DATA.writers = writersResp.writers;
     showDash();
-    const now = new Date();
-    const pd = overview.perDay || [];
-    const range = pd.length ? `${pd[0].date} 〜 ${pd[pd.length-1].date}` : "-";
-    const p2 = (n)=>String(n).padStart(2,"0");
-    document.getElementById("asof").textContent =
-      `集計時点 ${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()} ${p2(now.getHours())}:${p2(now.getMinutes())}　｜　全期間累計（日次グラフは ${range}）`;
-    renderKpis(overview);
-    bar("hourChart", overview.byHour.map(h=>h.hour+"時"), overview.byHour.map(h=>h.count), "#FF6719", "投稿数");
-    bar("dayChart", overview.perDay.map(d=>d.date.slice(5)), overview.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
-    renderCatList(overview);
-    renderSummary(overview);
+    renderOverview(overview);
     renderWriters(writersResp.writers);
-    renderTrend();
     renderCost();
   }catch(e){ if(String(e.message)!=="unauthorized"){ showLogin(); } }
 }
