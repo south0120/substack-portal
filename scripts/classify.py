@@ -34,6 +34,8 @@ TOPIC_LABELS = [
 ]
 MAX_ARTICLES_PER_WRITER = 18
 EXCERPT_LENGTH = 120
+# プロンプト（判定ルール）を更新したらキャッシュを無効化して再分類するためのバージョン
+PROMPT_VERSION = "v2"
 # ラベル集合が変わったらキャッシュを無効化して再分類するための署名
 LABELS_VERSION = hashlib.sha256("|".join(TOPIC_LABELS).encode("utf-8")).hexdigest()[:8]
 
@@ -81,9 +83,18 @@ def source_hash(articles: list[dict[str, Any]]) -> str:
 
 def prompt_for(articles: list[dict[str, Any]]) -> str:
     lines = [
-        "以下の各記事を、次のトピックのうち最も適切な1つに分類してください。",
+        "以下の各記事を、その記事の『主題』に最も合うトピック1つに分類してください。",
         "トピック: " + " / ".join(TOPIC_LABELS),
-        "すべてのindexを1回ずつ分類してください。",
+        "",
+        "判定ルール:",
+        "- 記事が主に何について書かれているか（主題）で選ぶ。手段・道具として軽く触れているだけの話題では選ばない。",
+        "- 「AI」「テクノロジー」は、記事の主題がAI・技術そのものの場合のみ選ぶ。"
+        "趣味・仕事・運動などでAIやアプリを道具として使っているだけなら、その趣味・仕事・運動の主題で分類する"
+        "（例: AIで作ったトライアスロンの記録 → 健康・ウェルネス）。",
+        "- スポーツ・運動・健康（トライアスロン/ランニング等）は『健康・ウェルネス』。"
+        "集客・売上・マーケティング・流入・起業などは『ビジネス』。",
+        "- タイトルだけで判断せず抜粋（内容）も踏まえる。どれにも明確に当てはまらない場合のみ『その他』。",
+        "- すべてのindexを1回ずつ分類してください。",
         "",
     ]
     for index, article in enumerate(articles, start=1):
@@ -180,6 +191,7 @@ def main() -> int:
             isinstance(previous, dict)
             and previous.get("source_hash") == article_hash
             and previous.get("labels_version") == LABELS_VERSION
+            and previous.get("prompt_version") == PROMPT_VERSION
         ):
             output_writers[name] = previous
             print(f"Cached: {name}")
@@ -191,7 +203,11 @@ def main() -> int:
             resp = client.messages.create(
                 model="claude-haiku-4-5-20251001",
                 max_tokens=4000,
-                system="あなたは日本語ニュースレター記事のトピック分類器です。各記事を最も適切なトピック1つに分類してください。",
+                system=(
+                    "あなたは日本語ニュースレター記事のトピック分類器です。"
+                    "各記事を、その記事の主題（主に何について書かれているか）に最も合うトピック1つに分類してください。"
+                    "道具・手段として軽く触れているだけの要素では分類しないでください。"
+                ),
                 messages=[{"role": "user", "content": prompt_text}],
                 output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
             )
@@ -202,6 +218,7 @@ def main() -> int:
                 "sample_n": len(recent),
                 "source_hash": article_hash,
                 "labels_version": LABELS_VERSION,
+                "prompt_version": PROMPT_VERSION,
                 "classified_at": now_iso(),
             }
         except anthropic.APIError as error:
