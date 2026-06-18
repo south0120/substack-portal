@@ -72,6 +72,12 @@
 
   <div class="kpis" id="kpis"></div>
 
+  <div class="panel" id="costPanel" style="display:none">
+    <h2>API料金（記事カテゴリ判定 / Claude Haiku）</h2>
+    <div class="kpis" id="costKpis" style="margin-bottom:8px"></div>
+    <div class="muted" id="costNote" style="font-size:.72rem"></div>
+  </div>
+
   <div class="grid2">
     <div class="panel">
       <h2>投稿が多い時間帯（JST）</h2>
@@ -114,6 +120,7 @@
 <script>
 const API = "https://fyl-api.south0120.workers.dev";
 const DAILY_CSV = "https://raw.githubusercontent.com/south0120/substack-portal/main/reports/daily_stats.csv";
+const USAGE_URL = "data/api_usage.json";
 const TKEY = "fyl_admin_token";
 let DATA = { overview:null, writers:null };
 
@@ -211,6 +218,27 @@ function line(id, labels, datasets){
   });
 }
 
+async function renderCost(){
+  let u;
+  try{ u = await (await fetch(USAGE_URL + "?cb=" + Date.now())).json(); }catch(_){ return; }
+  if(!u) return;
+  const usd = (n)=> "$" + Number(n||0).toFixed(2);
+  const cum = u.cumulative || {};
+  const month = new Date().toISOString().slice(0,7);
+  const m = (u.monthly || {})[month] || {};
+  const last = u.last_run || {};
+  document.getElementById("costKpis").innerHTML = `
+    <div class="kpi"><div class="label">今月（${month}）</div><div class="val">${usd(m.cost_usd)}</div></div>
+    <div class="kpi"><div class="label">累計</div><div class="val">${usd(cum.cost_usd)}</div></div>
+    <div class="kpi"><div class="label">累計トークン</div><div class="val" style="font-size:1.1rem">${fmt(cum.input_tokens)} <small>in</small> / ${fmt(cum.output_tokens)} <small>out</small></div></div>
+    <div class="kpi"><div class="label">前回の判定</div><div class="val" style="font-size:1.1rem">${usd(last.cost_usd)} <small>${fmt(last.writers_classified)}名</small></div></div>`;
+  const r = u.rates_usd_per_mtok || {};
+  const upd = u.updated_at ? dateJp(u.updated_at) : "未集計";
+  document.getElementById("costNote").textContent =
+    `モデル ${u.model||"-"}（入力 $${r.input}/出力 $${r.output} per 1Mトークン）　｜　最終集計 ${upd}　｜　記事の自動カテゴリ判定にかかるAI APIの実費`;
+  document.getElementById("costPanel").style.display = "block";
+}
+
 async function renderTrend(){
   try{
     const txt = await (await fetch(DAILY_CSV + "?cb=" + Date.now())).text();
@@ -263,6 +291,7 @@ async function init(){
     renderSummary(overview);
     renderWriters(writersResp.writers);
     renderTrend();
+    renderCost();
   }catch(e){ if(String(e.message)!=="unauthorized"){ showLogin(); } }
 }
 init();

@@ -23,7 +23,13 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS_FILE = ROOT / "docs" / "data" / "topics.json"
+USAGE_FILE = ROOT / "docs" / "data" / "api_usage.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
+
+MODEL_NAME = "claude-haiku-4-5-20251001"
+# Claude Haiku 4.5 の料金（USD / 100万トークン）。変わったらここを更新。
+RATE_IN_USD_PER_MTOK = 1.0
+RATE_OUT_USD_PER_MTOK = 5.0
 
 # 棚カテゴリ（index.html の CAT_STYLE）と揃えた分類ラベル。バーの成分がそのまま棚カテゴリに使われる。
 TOPIC_LABELS = [
@@ -137,6 +143,56 @@ def ratios_from(data: dict[str, Any], sample_n: int) -> list[dict[str, Any]]:
     return sorted(topics, key=lambda topic: (-topic["pct"], TOPIC_LABELS.index(topic["label"])))
 
 
+def _cost_usd(input_tokens: int, output_tokens: int) -> float:
+    return round(
+        input_tokens / 1_000_000 * RATE_IN_USD_PER_MTOK
+        + output_tokens / 1_000_000 * RATE_OUT_USD_PER_MTOK,
+        4,
+    )
+
+
+def update_usage(input_tokens: int, output_tokens: int, api_calls: int, classified: int) -> None:
+    """このrunのトークン使用量・コストを api_usage.json に累積する（ダッシュボード表示用）。"""
+    now = datetime.now(timezone.utc)
+    month = now.strftime("%Y-%m")
+    try:
+        usage = json.loads(USAGE_FILE.read_text(encoding="utf-8")) if USAGE_FILE.exists() else {}
+    except (OSError, json.JSONDecodeError):
+        usage = {}
+    cum = usage.get("cumulative") or {}
+    monthly = usage.get("monthly") or {}
+    mrow = monthly.get(month) or {}
+
+    def add(dst: dict[str, Any]) -> dict[str, Any]:
+        it = int(dst.get("input_tokens", 0)) + input_tokens
+        ot = int(dst.get("output_tokens", 0)) + output_tokens
+        return {
+            "input_tokens": it,
+            "output_tokens": ot,
+            "api_calls": int(dst.get("api_calls", 0)) + api_calls,
+            "cost_usd": _cost_usd(it, ot),
+        }
+
+    monthly[month] = add(mrow)
+    usage.update({
+        "updated_at": now.isoformat(),
+        "model": MODEL_NAME,
+        "rates_usd_per_mtok": {"input": RATE_IN_USD_PER_MTOK, "output": RATE_OUT_USD_PER_MTOK},
+        "cumulative": add(cum),
+        "monthly": monthly,
+        "last_run": {
+            "at": now.isoformat(),
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "cost_usd": _cost_usd(input_tokens, output_tokens),
+            "writers_classified": classified,
+        },
+    })
+    USAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    USAGE_FILE.write_text(json.dumps(usage, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Usage this run: in={input_tokens} out={output_tokens} cost=${_cost_usd(input_tokens, output_tokens)}")
+
+
 def main() -> int:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ANTHROPIC_API_KEY is not set; skipping topic classification.")
@@ -174,6 +230,7 @@ def main() -> int:
 
     client = anthropic.Anthropic()
     output_writers: dict[str, Any] = {}
+    run_in = run_out = api_calls = classified = 0
 
     for writer in writers:
         name = str(writer.get("name", ""))
@@ -211,6 +268,12 @@ def main() -> int:
                 messages=[{"role": "user", "content": prompt_text}],
                 output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
             )
+            usage = getattr(resp, "usage", None)
+            if usage is not None:
+                run_in += int(getattr(usage, "input_tokens", 0) or 0)
+                run_out += int(getattr(usage, "output_tokens", 0) or 0)
+            api_calls += 1
+            classified += 1
             text = next(b.text for b in resp.content if b.type == "text")
             data = json.loads(text)
             output_writers[name] = {
@@ -229,6 +292,9 @@ def main() -> int:
             print(f"Warning: invalid classification for {name}: {error}", file=sys.stderr)
             if isinstance(previous, dict):
                 output_writers[name] = previous
+
+    if api_calls:
+        update_usage(run_in, run_out, api_calls, classified)
 
     result = {
         "generated_at": now_iso(),
