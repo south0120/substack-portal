@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-18T20:44:16.950855+00:00",
+  "updated_at": "2026-06-18T23:15:07.707481+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,19 +152,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
+          "url": "https://www.debunkresearch.com/p/ai-260617-18",
+          "published": "2026-06-18T21:01:26+00:00"
+        },
+        {
+          "title": "【06/17(水)~06/18(木)News Report】CMEがパーペ承認をめぐりCFTCを提訴へ / SBIレミットがFassetとステーブルコイン送金で基本合意 / ムーディーズがSolanaで信用格付け開始など",
+          "url": "https://www.debunkresearch.com/p/crypto-260617-18",
+          "published": "2026-06-18T21:01:17+00:00"
+        },
+        {
           "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
           "url": "https://www.debunkresearch.com/p/osaurus",
           "published": "2026-06-17T21:01:20+00:00"
-        },
-        {
-          "title": "【inc.fun】AIが運営する会社を立ち上げ出資するローンチパッド / @incdotfun",
-          "url": "https://www.debunkresearch.com/p/incfun",
-          "published": "2026-06-17T21:01:13+00:00"
-        },
-        {
-          "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
-          "url": "https://www.debunkresearch.com/p/ai-news260612-16",
-          "published": "2026-06-16T21:01:14+00:00"
         }
       ]
     },
@@ -5292,6 +5292,24 @@
   ],
   "articles": [
     {
+      "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
+      "url": "https://www.debunkresearch.com/p/ai-260617-18",
+      "excerpt": "主要ニュースをまとめました。",
+      "published": "2026-06-18T21:01:26+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7Z9K!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a6b7cd2-15d9-4439-b594-1cb777e6db07_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【06/17(水)~06/18(木)News Report】CMEがパーペ承認をめぐりCFTCを提訴へ / SBIレミットがFassetとステーブルコイン送金で基本合意 / ムーディーズがSolanaで信用格付け開始など",
+      "url": "https://www.debunkresearch.com/p/crypto-260617-18",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-18T21:01:17+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!qJkf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa1510f0-f907-404d-a3b3-34052cb9b8e6_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
       "url": "https://www.debunkresearch.com/p/osaurus",
       "excerpt": "クラウドに預けるのではなく、Macの中でエージェントを動かす。\"Own your AI\" を掲げるローカルAIランタイムとは何か。",
@@ -5551,24 +5569,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
       "category": "その他"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/web35-16d",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-07T21:01:47+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Lxdz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fce8d83b0-ffef-48c5-bfba-bb24475fb1a8_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/ai-wr260531-0605",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-07T21:01:39+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!T3Os!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F860d41b1-54e1-4050-bf32-f013a9d72207_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "サブスタックで1秒で出来るあなたのアクション〜Substackで透明人間になる呪文",
