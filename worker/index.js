@@ -57,6 +57,7 @@ export default {
       if (url.pathname === "/api/proxy") return handleProxy(url, request, env);
       if (url.pathname === "/api/dedupe") return runDedupe(url, env);
       if (url.pathname === "/api/backfill-step") return runBackfillStep(url, env);
+      if (url.pathname === "/api/backfill") return getBackfill(env);
       if (url.pathname === "/api/admin/overview") return getAdminOverview(url, request, env);
       if (url.pathname === "/api/admin/writers") return getAdminWriters(url, request, env);
       return jsonResponse({ error: "Not found" }, 404);
@@ -629,9 +630,24 @@ async function backfillStep(env) {
   const cursor = normalizeCursor(await getMeta(env, "backfill_cursor"), feeds.length);
   const feed = feeds[cursor];
   const articles = await fetchArchive(feed);
+  // 新規に追加される件数を数える（既存urlを除く）
+  let added = 0;
+  if (articles.length) {
+    const existing = await env.DB.prepare(
+      `SELECT url FROM articles WHERE url IN (${articles.map(() => "?").join(",")})`,
+    ).bind(...articles.map((a) => a.url)).all();
+    const have = new Set((existing.results || []).map((r) => r.url));
+    added = articles.filter((a) => !have.has(a.url)).length;
+  }
   await upsertArticlesOnly(env, articles);
   await setMeta(env, "backfill_cursor", String((cursor + 1) % feeds.length));
-  return { ok: true, writer: feed?.name, cursor, articles: articles.length };
+  await bumpBackfillStats(env, articles.length, added);
+  return { ok: true, writer: feed?.name, cursor, articles: articles.length, added };
+}
+
+async function getBackfill(env) {
+  const [today, yesterday] = await Promise.all([getBackfillStat(env, 0), getBackfillStat(env, -1)]);
+  return jsonResponse({ ok: true, today, yesterday }, 200, "no-store");
 }
 
 async function runBackfillStep(url, env) {
@@ -653,6 +669,31 @@ async function setMeta(env, key, value) {
 async function getMeta(env, key) {
   const row = await env.DB.prepare("SELECT value FROM meta WHERE key = ?").bind(key).first();
   return row?.value ?? null;
+}
+
+// JSTの日付(YYYY-MM-DD)。offsetDaysで前日等。
+function jstDay(offsetDays = 0) {
+  const ms = Date.now() + 9 * 3600 * 1000 + offsetDays * 86400 * 1000;
+  return new Date(ms).toISOString().slice(0, 10);
+}
+
+// 過去記事バックフィルの日次集計（人数=処理した書き手数 / fetched=取得した記事数 / added=新規追加数）
+async function bumpBackfillStats(env, fetched, added) {
+  const key = `backfill:${jstDay(0)}`;
+  let cur = {};
+  try { cur = JSON.parse((await getMeta(env, key)) || "{}"); } catch { cur = {}; }
+  await setMeta(env, key, JSON.stringify({
+    writers: (cur.writers || 0) + 1,
+    fetched: (cur.fetched || 0) + fetched,
+    added: (cur.added || 0) + added,
+  }));
+}
+
+async function getBackfillStat(env, offsetDays) {
+  const day = jstDay(offsetDays);
+  let v = {};
+  try { v = JSON.parse((await getMeta(env, `backfill:${day}`)) || "{}"); } catch { v = {}; }
+  return { date: day, writers: v.writers || 0, fetched: v.fetched || 0, added: v.added || 0 };
 }
 
 // 手動バックフィル用: GET /api/ingest?n=5 （60秒スロットル付き）
@@ -1006,11 +1047,13 @@ async function getCategories(env) {
 }
 
 async function getHealth(env) {
-  const [articleRow, writerRow, cursor, lastRun] = await Promise.all([
+  const [articleRow, writerRow, cursor, lastRun, bfToday, bfYest] = await Promise.all([
     env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
     env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
     getMeta(env, "cursor"),
     getMeta(env, "last_run"),
+    getBackfillStat(env, 0),
+    getBackfillStat(env, -1),
   ]);
   return jsonResponse({
     ok: true,
@@ -1018,6 +1061,7 @@ async function getHealth(env) {
     writers: Number(writerRow?.n || 0),
     cursor: Number(cursor) || 0,
     lastRun: lastRun || null,
+    backfill: { today: bfToday, yesterday: bfYest },
   }, 200, "no-store");
 }
 

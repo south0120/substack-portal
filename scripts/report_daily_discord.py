@@ -78,6 +78,15 @@ def main():
         lines.append(f"記事数：**{today['articles']:,}** ／ ライター数：**{today['writers']}**")
         lines.append("_（初回記録。明日から前日比＋新規書き手を表示します）_")
 
+    # 過去記事バックフィルの前日実績（人数＝処理した書き手数 / 新規取得＝新たに追加された過去記事数）
+    bf = (health.get("backfill") or {}).get("yesterday") or {}
+    if bf and (bf.get("writers") or bf.get("added") or bf.get("fetched")):
+        lines.append("")
+        lines.append(
+            f"📚 過去記事の取得（前日）：**{bf.get('writers', 0)}名** ／ "
+            f"新規取得 **+{bf.get('added', 0)}件**（走査 {bf.get('fetched', 0):,}件）"
+        )
+
     json.dump(today, open(SNAP, "w", encoding="utf-8"), ensure_ascii=False)
     sys.stdout.write("\n".join(lines) + "\n")
 
