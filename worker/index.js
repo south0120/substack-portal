@@ -588,7 +588,7 @@ async function fetchArchive(feed, maxPages = 3) {
       const url = p.canonical_url || "";
       const title = cleanText(p.title || "");
       if (!url || !title) continue;
-      const excerpt = stripHtml(p.description || p.subtitle || "").slice(0, 120);
+      const excerpt = stripHtml(p.description || p.subtitle || "").slice(0, 500);
       if ((`${title}${excerpt}`.match(/[ぁ-ゟ]/g) || []).length < 3) continue;
       const date = new Date(p.post_date || p.published_at || "");
       articles.push({
@@ -761,7 +761,8 @@ async function fetchAndParseFeed(feed) {
   for (const item of allTags(channel, "item")) {
     const title = cleanText(firstTag(item, "title"));
     const url = cleanText(firstTag(item, "link"));
-    const excerpt = stripHtml(firstTag(item, "description")).slice(0, 120);
+    // 本文(content:encoded)優先で先頭500字を保存（カテゴリ判定の精度向上。表示はline-clampで省略）
+    const excerpt = stripHtml(firstTag(item, "content:encoded") || firstTag(item, "description")).slice(0, 500);
     const hiragana = `${title}${excerpt}`.match(/[ぁ-ゟ]/g) || [];
     if (!title || !url || hiragana.length < 3) continue;
 

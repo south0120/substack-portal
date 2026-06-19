@@ -26,7 +26,9 @@ ROOT = Path(__file__).resolve().parent.parent
 FEEDS_FILE = ROOT / "feeds.json"
 
 SLEEP_BETWEEN_FEEDS = 0.3
-EXCERPT_LENGTH = 120
+# 記事カテゴリ判定の精度を上げるため本文先頭を保存する。RSSの<description>はサブタイトル(~数十字)
+# しか無いので、全文が入る<content:encoded>を優先して使う。表示はフロントのline-clampで省略される。
+EXCERPT_LENGTH = 500
 D1_BATCH_SIZE = 40
 POSTS_PER_FEED = 20
 
@@ -131,7 +133,9 @@ def fetch_via_proxy(feed: dict, proxy_base: str, proxy_secret: str) -> tuple[str
     for item in _all_tags(channel, "item"):
         title = _clean_text(_first_tag(item, "title"))
         url = _clean_text(_first_tag(item, "link"))
-        excerpt = _strip_html(_first_tag(item, "description"))[:EXCERPT_LENGTH]
+        excerpt = _strip_html(
+            _first_tag(item, "content:encoded") or _first_tag(item, "description")
+        )[:EXCERPT_LENGTH]
         if not title or not url or not is_japanese(f"{title}{excerpt}"):
             continue
         enc = re.search(
