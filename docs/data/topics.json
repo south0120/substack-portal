@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T18:21:11.945223+00:00",
+  "generated_at": "2026-06-19T20:19:44.211557+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -4667,31 +4667,27 @@
     "スピるバグ": {
       "topics": [
         {
-          "label": "AI",
-          "pct": 27.3
+          "label": "その他",
+          "pct": 50.0
         },
         {
-          "label": "ライフスタイル",
-          "pct": 27.3
+          "label": "AI",
+          "pct": 33.3
         },
         {
           "label": "キャリア・働き方",
-          "pct": 18.2
+          "pct": 8.3
         },
         {
           "label": "教育・学び",
-          "pct": 18.2
-        },
-        {
-          "label": "その他",
-          "pct": 9.1
+          "pct": 8.3
         }
       ],
-      "sample_n": 11,
-      "source_hash": "2487920614f35bbc2b07c257d1d38451f4a4198ff9621a79c3990655f8902ee8",
+      "sample_n": 12,
+      "source_hash": "c33ad588c7fd1f4d5d91b09660d453f50ba4685f852eca40c210b9526f22eabd",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:04:19.977778+00:00"
+      "classified_at": "2026-06-19T20:19:42.799621+00:00"
     },
     "権堂竹虎 の Substack": {
       "topics": [
@@ -10459,23 +10455,23 @@
     "希来kikorotto占い師": {
       "topics": [
         {
+          "label": "その他",
+          "pct": 66.7
+        },
+        {
           "label": "ライフスタイル",
-          "pct": 50.0
+          "pct": 16.7
         },
         {
           "label": "子育て・家族",
-          "pct": 25.0
-        },
-        {
-          "label": "その他",
-          "pct": 25.0
+          "pct": 16.7
         }
       ],
-      "sample_n": 4,
-      "source_hash": "c22009b4cf6f23cc7c8e9a6f713d35261114c7e2e742e3d373b934cc2b6d5298",
+      "sample_n": 6,
+      "source_hash": "9fd0b81ae35f11e81da14d5ad9bf70ef41f4ccb2ff257698f03ea499e9066635",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T08:18:56.441177+00:00"
+      "classified_at": "2026-06-19T20:19:44.183415+00:00"
     },
     "KKのわくわくラボ通信": {
       "topics": [
