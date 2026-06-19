@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T20:19:44.211557+00:00",
+  "generated_at": "2026-06-19T21:48:45.813955+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -3062,26 +3062,26 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 63.6
+          "pct": 50.0
         },
         {
           "label": "旅行・おでかけ",
-          "pct": 18.2
-        },
-        {
-          "label": "テクノロジー",
-          "pct": 9.1
+          "pct": 25.0
         },
         {
           "label": "その他",
-          "pct": 9.1
+          "pct": 16.7
+        },
+        {
+          "label": "テクノロジー",
+          "pct": 8.3
         }
       ],
-      "sample_n": 11,
-      "source_hash": "aec6bac54735cbb1d61e6334d19cef53040e883a1b6e30ab51bebf7dfe77a514",
+      "sample_n": 12,
+      "source_hash": "6680997d95ae52141d06e0edb4bae037691ce96dd454e86f1d2e54afa16c4885",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:02:30.368560+00:00"
+      "classified_at": "2026-06-19T21:48:42.628675+00:00"
     },
     "遠山桂（tohyama) の Substack": {
       "topics": [
@@ -5380,23 +5380,23 @@
     "Hatchy": {
       "topics": [
         {
-          "label": "健康・ウェルネス",
-          "pct": 22.2
-        },
-        {
           "label": "投資・経済",
           "pct": 16.7
         },
         {
-          "label": "ライフスタイル",
+          "label": "健康・ウェルネス",
           "pct": 16.7
         },
         {
-          "label": "子育て・家族",
+          "label": "音楽",
+          "pct": 16.7
+        },
+        {
+          "label": "ライフスタイル",
           "pct": 11.1
         },
         {
-          "label": "音楽",
+          "label": "子育て・家族",
           "pct": 11.1
         },
         {
@@ -5414,13 +5414,17 @@
         {
           "label": "グルメ・料理",
           "pct": 5.6
+        },
+        {
+          "label": "その他",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "14e73b022fb015e25ca902f907d3a48594e52aff9af923e7f75750bf6cc8c155",
+      "source_hash": "f798cb557ae4f3c834faa0536f8b152dcfe8de9be794f915162f8668433853fa",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T23:23:22.801131+00:00"
+      "classified_at": "2026-06-19T21:48:44.646952+00:00"
     },
     "ひろしとあんずの気づき帳": {
       "topics": [
@@ -8204,22 +8208,26 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 50.0
+          "pct": 40.0
         },
         {
           "label": "キャリア・働き方",
-          "pct": 25.0
+          "pct": 20.0
         },
         {
           "label": "音楽",
-          "pct": 25.0
+          "pct": 20.0
+        },
+        {
+          "label": "その他",
+          "pct": 20.0
         }
       ],
-      "sample_n": 4,
-      "source_hash": "d536d9fb99fb935ff117774e378e5bb4bfb85619a6bff0dc405b2aac1666b7d2",
+      "sample_n": 5,
+      "source_hash": "dfccc954ee046d424a41c034bebdca84a17206c66abaf773866cac5fa3cfe2d0",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:09:06.683867+00:00"
+      "classified_at": "2026-06-19T21:48:45.750044+00:00"
     },
     "りんね｜思考と感情を整える場所": {
       "topics": [
