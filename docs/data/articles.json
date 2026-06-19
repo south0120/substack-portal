@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T20:08:57.124492+00:00",
+  "updated_at": "2026-06-19T21:41:00.170470+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,6 +152,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "1週間の記事振り返り",
+          "url": "https://www.debunkresearch.com/p/260613-19",
+          "published": "2026-06-19T21:01:32+00:00"
+        },
+        {
           "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
           "url": "https://www.debunkresearch.com/p/ai-260617-18",
           "published": "2026-06-18T21:01:26+00:00"
@@ -160,11 +165,6 @@
           "title": "【06/17(水)~06/18(木)News Report】CMEがパーペ承認をめぐりCFTCを提訴へ / SBIレミットがFassetとステーブルコイン送金で基本合意 / ムーディーズがSolanaで信用格付け開始など",
           "url": "https://www.debunkresearch.com/p/crypto-260617-18",
           "published": "2026-06-18T21:01:17+00:00"
-        },
-        {
-          "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
-          "url": "https://www.debunkresearch.com/p/osaurus",
-          "published": "2026-06-17T21:01:20+00:00"
         }
       ]
     },
@@ -5292,6 +5292,15 @@
   ],
   "articles": [
     {
+      "title": "1週間の記事振り返り",
+      "url": "https://www.debunkresearch.com/p/260613-19",
+      "excerpt": "毎週土曜は1週間の振り返りをお届けします。",
+      "published": "2026-06-19T21:01:32+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!BYBw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
       "url": "https://www.debunkresearch.com/p/ai-260617-18",
       "excerpt": "主要ニュースをまとめました。",
@@ -5540,15 +5549,6 @@
       "excerpt": "プロンプトから即プレイ可能なWebゲームを生む、prompt-to-play型のAIゲームビルダーとは何か。",
       "published": "2026-06-08T21:01:33+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!QhyO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff161fd91-dd70-4825-87ff-cae10dfc39bf_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Deel】EOR最大手が自社ステーブルコインに参入 / @deel",
-      "url": "https://www.debunkresearch.com/p/deel",
-      "excerpt": "EOR最大手が「DLUSD」を発表。総合HRプレイヤーがクリプト給与の土俵に本格参入しました。",
-      "published": "2026-06-08T21:01:19+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!8qIU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c3ccea5-58d0-438d-b7ee-6fbc9eee7e4c_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
