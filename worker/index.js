@@ -45,6 +45,9 @@ export default {
       if (url.pathname === "/api/admin/login" && request.method === "POST") {
         return runAdminLogin(request, env);
       }
+      if (url.pathname === "/api/admin/apply-article-categories" && request.method === "POST") {
+        return applyArticleCategories(url, request, env);
+      }
       if (request.method !== "GET") {
         return jsonResponse({ error: "Method not allowed" }, 405, "no-store");
       }
@@ -913,6 +916,51 @@ async function runDedupe(url, env) {
     if (stmts.length) { await runBatches(env.DB, stmts); mergedFeeds += 1; }
   }
   return jsonResponse({ ok: true, dupFeeds: (dupFeeds.results || []).length, mergedFeeds, deletedRows }, 200, "no-store");
+}
+
+async function applyArticleCategories(url, request, env) {
+  const auth = request.headers.get("Authorization") || "";
+  const provided = url.searchParams.get("token")
+    || (auth.startsWith("Bearer ") ? auth.slice(7) : "");
+  if (!env.CLASSIFY_TOKEN || provided !== env.CLASSIFY_TOKEN) {
+    return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return jsonResponse({ error: "invalid_json" }, 400, "no-store");
+  }
+  const items = body?.items;
+  if (!Array.isArray(items) || !items.length) {
+    return jsonResponse({ error: "items_required" }, 400, "no-store");
+  }
+  if (items.length > 5000) {
+    return jsonResponse({ error: "too_many_items" }, 413, "no-store");
+  }
+  const skipped = [];
+  const stmts = [];
+  for (const item of items) {
+    const itemUrl = typeof item?.url === "string" ? item.url : "";
+    if (!itemUrl.trim()) {
+      skipped.push({ url: itemUrl, reason: "missing_url" });
+      continue;
+    }
+    if (!MASTER_CATEGORIES.has(item?.category)) {
+      skipped.push({ url: itemUrl, reason: "invalid_category" });
+      continue;
+    }
+    stmts.push(
+      env.DB.prepare("UPDATE articles SET category = ? WHERE url = ?").bind(item.category, item.url),
+    );
+  }
+  await runBatches(env.DB, stmts);
+  return jsonResponse({
+    ok: true,
+    received: items.length,
+    applied: stmts.length,
+    skipped,
+  }, 200, "no-store");
 }
 
 // ===== 管理ダッシュボード：認証（自前パスワード→HMAC署名トークン）＋集計API =====
