@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T05:01:16.191718+00:00",
+  "generated_at": "2026-06-20T08:35:26.663702+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -731,34 +731,34 @@
         },
         {
           "label": "テクノロジー",
-          "pct": 27.8
+          "pct": 16.7
         },
         {
-          "label": "社会・文化",
-          "pct": 11.1
+          "label": "ビジネス",
+          "pct": 16.7
         },
         {
           "label": "教育・学び",
-          "pct": 11.1
+          "pct": 16.7
         },
         {
           "label": "読書",
           "pct": 11.1
         },
         {
-          "label": "ビジネス",
+          "label": "社会・文化",
           "pct": 5.6
         },
         {
-          "label": "その他",
+          "label": "健康・ウェルネス",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "b74815df3b2a842ffa41ef7a720bc3eb7d95bda9abde6e90d9ac34a6f677bc8b",
+      "source_hash": "df76ed9a8b46b37540b8bff9e4c7e6715c9cf1d31d38b0a78b34336178500405",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T09:59:19.699885+00:00"
+      "classified_at": "2026-06-20T08:35:00.160600+00:00"
     },
     "梶谷健人のニュースレター": {
       "topics": [
@@ -1643,26 +1643,30 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 57.1
+          "pct": 50.0
         },
         {
           "label": "AI",
-          "pct": 14.3
+          "pct": 12.5
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 12.5
         },
         {
           "label": "子育て・家族",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "教育・学び",
-          "pct": 14.3
+          "pct": 12.5
         }
       ],
-      "sample_n": 7,
-      "source_hash": "5ac21a004fb8292e967335199da30a113b29d9c2de561ed51c6d813e0aa5803e",
+      "sample_n": 8,
+      "source_hash": "a051d18ac10922a6818be7ce99b6350c439ab43cc68b7fdcfa3206e09f785548",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T17:46:29.032755+00:00"
+      "classified_at": "2026-06-20T08:35:01.860640+00:00"
     },
     "高知山奥×AI実践ノート": {
       "topics": [
@@ -2215,26 +2219,38 @@
       "topics": [
         {
           "label": "ビジネス",
-          "pct": 81.2
-        },
-        {
-          "label": "キャリア・働き方",
-          "pct": 6.2
+          "pct": 47.1
         },
         {
           "label": "教育・学び",
-          "pct": 6.2
+          "pct": 23.5
         },
         {
-          "label": "クリエイティブ",
-          "pct": 6.2
+          "label": "投資・経済",
+          "pct": 5.9
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 5.9
+        },
+        {
+          "label": "社会・文化",
+          "pct": 5.9
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 5.9
+        },
+        {
+          "label": "その他",
+          "pct": 5.9
         }
       ],
-      "sample_n": 16,
-      "source_hash": "f5898be17b6488091c671d1434dd48657385735e1a9c5633b4471671dd50c3b6",
+      "sample_n": 17,
+      "source_hash": "d4738aa28ce8df0f68ff60f1abbd66f025cf4b12cd22ec74cc72b52b820bb4a8",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T17:46:32.054439+00:00"
+      "classified_at": "2026-06-20T08:35:04.599481+00:00"
     },
     "斉藤ナミ／エッセイスト": {
       "topics": [
@@ -2307,38 +2323,26 @@
       "topics": [
         {
           "label": "ビジネス",
-          "pct": 33.3
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 22.2
-        },
-        {
-          "label": "社会・文化",
-          "pct": 11.1
-        },
-        {
-          "label": "クリエイティブ",
-          "pct": 11.1
+          "pct": 55.6
         },
         {
           "label": "その他",
+          "pct": 27.8
+        },
+        {
+          "label": "ライフスタイル",
           "pct": 11.1
         },
         {
-          "label": "子育て・家族",
-          "pct": 5.6
-        },
-        {
-          "label": "健康・ウェルネス",
+          "label": "テクノロジー",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "76134783c4016058bbf6a5544fbb4794dfaa476e8f23041fb638ec26a803aa08",
+      "source_hash": "046a1d4f9efb6b7d7707e53a2688128d9020986291ad750fa18951f8d8229a0b",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:01:26.926749+00:00"
+      "classified_at": "2026-06-20T08:35:06.979499+00:00"
     },
     "リツトAI活用コラム「悠然に生きよう」": {
       "topics": [
@@ -7502,16 +7506,16 @@
     "しょうこ": {
       "topics": [
         {
+          "label": "ライフスタイル",
+          "pct": 38.9
+        },
+        {
           "label": "子育て・家族",
           "pct": 38.9
         },
         {
-          "label": "ライフスタイル",
-          "pct": 27.8
-        },
-        {
           "label": "社会・文化",
-          "pct": 22.2
+          "pct": 11.1
         },
         {
           "label": "その他",
@@ -7519,10 +7523,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "779ac85ebed9f32960be5d97847b2f51e02bc52b1381df52172cfbeaf06513fd",
+      "source_hash": "342b87cfb8123ed83009cc0ac177a246609a5a4af2ad6c1e94c1709d055437bb",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T23:23:30.966343+00:00"
+      "classified_at": "2026-06-20T08:35:09.021135+00:00"
     },
     "Terra の Substack": {
       "topics": [
@@ -7720,34 +7724,34 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 28.6
+          "pct": 37.5
         },
         {
           "label": "AI",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "キャリア・働き方",
-          "pct": 14.3
+          "pct": 12.5
+        },
+        {
+          "label": "クリエイティブ",
+          "pct": 12.5
         },
         {
           "label": "旅行・おでかけ",
-          "pct": 14.3
+          "pct": 12.5
         },
         {
           "label": "読書",
-          "pct": 14.3
-        },
-        {
-          "label": "その他",
-          "pct": 14.3
+          "pct": 12.5
         }
       ],
-      "sample_n": 7,
-      "source_hash": "d24ed6a0d7b8c05e5ce64824714625c5f4da210c10d52caa01e2c03a8fba7770",
+      "sample_n": 8,
+      "source_hash": "c15139bda4c30017935b90febe706dc8beca0748896e5c76bfcb35d8437bd17e",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:08:22.406412+00:00"
+      "classified_at": "2026-06-20T08:35:10.355782+00:00"
     },
     "みお｜小さなアカウント戦略": {
       "topics": [
@@ -8071,11 +8075,11 @@
       "topics": [
         {
           "label": "クリエイティブ",
-          "pct": 77.8
+          "pct": 88.9
         },
         {
           "label": "キャリア・働き方",
-          "pct": 16.7
+          "pct": 5.6
         },
         {
           "label": "ライフスタイル",
@@ -8083,10 +8087,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "e659cecf8691e74e7ccdfbc8f90f0ca5ced8b500cd367b8ea6b04208424ceb82",
+      "source_hash": "08e81a1d2739115113bb87be9431a64a55d40f587078a927e16c51ba29123009",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:08:50.416089+00:00"
+      "classified_at": "2026-06-20T08:35:12.502053+00:00"
     },
     "たけし｜再起の人": {
       "topics": [
@@ -8279,30 +8283,30 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 33.3
+          "pct": 66.7
         },
         {
           "label": "キャリア・働き方",
-          "pct": 27.8
-        },
-        {
-          "label": "社会・文化",
           "pct": 16.7
         },
         {
-          "label": "教育・学び",
-          "pct": 11.1
+          "label": "社会・文化",
+          "pct": 5.6
         },
         {
-          "label": "クリエイティブ",
-          "pct": 11.1
+          "label": "教育・学び",
+          "pct": 5.6
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "7c3dac6d1125a749a0fc5b67e781027d7e026ae2ba5251fbeb93e1421d97d214",
+      "source_hash": "ac30482f8bd455a61812d425646ddfba04f2b1583aba8d6cb92a4a4dccd320b3",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T15:52:20.639581+00:00"
+      "classified_at": "2026-06-20T08:35:14.448691+00:00"
     },
     "健太郎｜貧乏サラリーマン": {
       "topics": [
@@ -9226,12 +9230,16 @@
     "ほしの｜AIサロン運営": {
       "topics": [
         {
-          "label": "AI",
+          "label": "テクノロジー",
           "pct": 77.8
         },
         {
           "label": "キャリア・働き方",
-          "pct": 16.7
+          "pct": 11.1
+        },
+        {
+          "label": "AI",
+          "pct": 5.6
         },
         {
           "label": "教育・学び",
@@ -9239,10 +9247,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "43d04b47e0684f255222aefd64786a565014357e3b558c119f21501db39439cb",
+      "source_hash": "d2185435e071e77e0a69bc4d56310b419db4e15819d96ab7b3c99f326452739a",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T08:18:38.824773+00:00"
+      "classified_at": "2026-06-20T08:35:16.550699+00:00"
     },
     "trilinear ｜ トリリニア": {
       "topics": [
@@ -9410,8 +9418,12 @@
     "こっこ｜自己肯定感は最後に満たせ 【人間心理学】": {
       "topics": [
         {
+          "label": "ライフスタイル",
+          "pct": 61.1
+        },
+        {
           "label": "健康・ウェルネス",
-          "pct": 83.3
+          "pct": 22.2
         },
         {
           "label": "社会・文化",
@@ -9423,10 +9435,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "185c6972b0f3fb664a87993f380ee999fde9b9f86687888bb028e801707341d4",
+      "source_hash": "bdcf807cbbbdea8a4ce40dd6683747523f6d566cc6495769d36832405b21c637",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T08:18:41.086358+00:00"
+      "classified_at": "2026-06-20T08:35:18.801444+00:00"
     },
     "Katouのかげつぎ制作録": {
       "topics": [
@@ -9596,22 +9608,18 @@
       "topics": [
         {
           "label": "ライフスタイル",
-          "pct": 66.7
-        },
-        {
-          "label": "ビジネス",
-          "pct": 16.7
+          "pct": 85.7
         },
         {
           "label": "キャリア・働き方",
-          "pct": 16.7
+          "pct": 14.3
         }
       ],
-      "sample_n": 6,
-      "source_hash": "54e6ca401f40576e8582f6f96c9f584a8cbb252f152864735d536369a2ff89e9",
+      "sample_n": 7,
+      "source_hash": "3acc03feca71ef87ce3cb97c9bfd1d89692e23301790d5f644ab8035a14b397f",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:10:43.023788+00:00"
+      "classified_at": "2026-06-20T08:35:20.102518+00:00"
     },
     "ちはるた｜今日からできる資産づくり": {
       "topics": [
@@ -9834,12 +9842,16 @@
     "赤髪のあかり noteで楽しく生きる": {
       "topics": [
         {
-          "label": "その他",
-          "pct": 44.4
+          "label": "ライフスタイル",
+          "pct": 38.9
         },
         {
           "label": "グルメ・料理",
-          "pct": 33.3
+          "pct": 27.8
+        },
+        {
+          "label": "クリエイティブ",
+          "pct": 16.7
         },
         {
           "label": "ビジネス",
@@ -9850,19 +9862,15 @@
           "pct": 5.6
         },
         {
-          "label": "ライフスタイル",
-          "pct": 5.6
-        },
-        {
-          "label": "クリエイティブ",
+          "label": "社会・文化",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "f72ebf2dfe365812d3ad55e334915ebe25c60ea68f0d1d642bd13217e75cdda7",
+      "source_hash": "4447c86d7047d24a574166a510b5f740e4290e90a93b54b5810751260441cde5",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-20T05:00:36.802865+00:00"
+      "classified_at": "2026-06-20T08:35:22.137260+00:00"
     },
     "遠方の〝イエロー〟| ポンコツの森🌳": {
       "topics": [
@@ -10101,7 +10109,11 @@
       "topics": [
         {
           "label": "ビジネス",
-          "pct": 50.0
+          "pct": 44.4
+        },
+        {
+          "label": "キャリア・働き方",
+          "pct": 16.7
         },
         {
           "label": "ライフスタイル",
@@ -10112,15 +10124,7 @@
           "pct": 11.1
         },
         {
-          "label": "キャリア・働き方",
-          "pct": 5.6
-        },
-        {
           "label": "子育て・家族",
-          "pct": 5.6
-        },
-        {
-          "label": "教育・学び",
           "pct": 5.6
         },
         {
@@ -10129,10 +10133,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "4fb4afbf1b78a0d9b4194a761dbac491aaebeea57df3a30aad16b6a7b420a1b0",
+      "source_hash": "a3bbbcadc6c89b9e2a509ff315a1bd3b915ca730b9bf004139a602d53f20d067",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T17:46:59.235260+00:00"
+      "classified_at": "2026-06-20T08:35:24.399157+00:00"
     },
     "ナナゼロの縁側": {
       "topics": [
@@ -10947,19 +10951,23 @@
           "pct": 22.2
         },
         {
-          "label": "読書",
+          "label": "子育て・家族",
           "pct": 16.7
         },
         {
-          "label": "子育て・家族",
-          "pct": 11.1
+          "label": "クリエイティブ",
+          "pct": 5.6
+        },
+        {
+          "label": "読書",
+          "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "0ad3b54c664b95382e861daafdde692a275b4cdd41d17882adde3a538d0cd2ec",
+      "source_hash": "acb2f6559a861bae355b80222c1e5c8820033dc8371f6a52271daa16536dbbfb",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T12:35:55.391703+00:00"
+      "classified_at": "2026-06-20T08:35:26.643485+00:00"
     },
     "サブスタック攻略講座【2週間で2000フォロワー】": {
       "topics": [
