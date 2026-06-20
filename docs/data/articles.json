@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T20:46:12.423550+00:00",
+  "updated_at": "2026-06-20T22:40:39.531730+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -152,19 +152,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "Trace FinanceにCoinFund等が$32M出資、EarnOSに1kx等が$18.5M出資、など全11PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/c-wfr260613-19",
+          "published": "2026-06-20T21:01:00+00:00"
+        },
+        {
+          "title": "BasetenにAltimeter等が$1.5B出資、CuspAIにBezos等が$400M出資、など全21PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/ai-wfr260613-19",
+          "published": "2026-06-20T21:00:57+00:00"
+        },
+        {
           "title": "1週間の記事振り返り",
           "url": "https://www.debunkresearch.com/p/260613-19",
           "published": "2026-06-19T21:01:32+00:00"
-        },
-        {
-          "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
-          "url": "https://www.debunkresearch.com/p/ai-260617-18",
-          "published": "2026-06-18T21:01:26+00:00"
-        },
-        {
-          "title": "【06/17(水)~06/18(木)News Report】CMEがパーペ承認をめぐりCFTCを提訴へ / SBIレミットがFassetとステーブルコイン送金で基本合意 / ムーディーズがSolanaで信用格付け開始など",
-          "url": "https://www.debunkresearch.com/p/crypto-260617-18",
-          "published": "2026-06-18T21:01:17+00:00"
         }
       ]
     },
@@ -5292,6 +5292,24 @@
   ],
   "articles": [
     {
+      "title": "Trace FinanceにCoinFund等が$32M出資、EarnOSに1kx等が$18.5M出資、など全11PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/c-wfr260613-19",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-20T21:01:00+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!HZup!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9ec62e24-7b4e-4414-8d4e-9ec74ab2cf91_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "BasetenにAltimeter等が$1.5B出資、CuspAIにBezos等が$400M出資、など全21PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260613-19",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-20T21:00:57+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!IYWn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4e37dbce-108c-42a6-9a5d-8f8917db9ae7_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "大人の夜会　withもちスラさん",
       "url": "https://www.yukarik.com/p/with",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -5535,15 +5553,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【6/5(金)~6/9(火)News Report】Strategyが1,550BTC追加で総保有84万BTC超 / ヒューマニティ・プロトコルが秘密鍵流出でHトークン85%超急落 / 米下院でクリプト税制ヒアリングなど",
-      "url": "https://www.debunkresearch.com/p/crypto-20260605-09",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-09T21:00:42+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!CuN2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F48f5dfc2-f06e-41a3-9ebd-ec965fd6a4c1_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "世界の激震を超えてゆけ〜内なる平和の炎",
       "url": "https://www.yukarik.com/p/69e",
       "excerpt": "スピリチュアル視点から観る火の時代",
@@ -5551,15 +5560,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!WyCr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c301328-3f6d-4228-9e67-9cc8fa614a4d_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "健康・ウェルネス"
-    },
-    {
-      "title": "【Playabl】言葉だけでゲームをつくるUGCゲームのTikTok / @Playabl_ai",
-      "url": "https://www.debunkresearch.com/p/playabl",
-      "excerpt": "プロンプトから即プレイ可能なWebゲームを生む、prompt-to-play型のAIゲームビルダーとは何か。",
-      "published": "2026-06-08T21:01:33+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!QhyO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff161fd91-dd70-4825-87ff-cae10dfc39bf_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "従来のSNSとサブスタックはどう違うの？ 〜本質的なものはゆっくり育つ〜",
