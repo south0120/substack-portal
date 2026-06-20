@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T15:25:18.116180+00:00",
+  "generated_at": "2026-06-20T17:07:44.057411+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -9058,11 +9058,11 @@
           "pct": 100.0
         }
       ],
-      "sample_n": 9,
-      "source_hash": "a2786aafdb4a26edd985e4b678993503c81fff011ae51d4bc5a42d54b43c35e4",
+      "sample_n": 10,
+      "source_hash": "39ccd4cccb8267af9c5530738a548a69d3306105192a068611bc90d44e2af8f4",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:09:56.629735+00:00"
+      "classified_at": "2026-06-20T17:07:44.001607+00:00"
     },
     "KYOKO先生メルマガ": {
       "topics": [
