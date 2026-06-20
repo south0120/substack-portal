@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T17:07:44.057411+00:00",
+  "generated_at": "2026-06-20T18:58:17.116676+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -4740,16 +4740,8 @@
     "権堂竹虎 の Substack": {
       "topics": [
         {
-          "label": "キャリア・働き方",
-          "pct": 44.4
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 22.2
-        },
-        {
           "label": "教育・学び",
-          "pct": 22.2
+          "pct": 88.9
         },
         {
           "label": "社会・文化",
@@ -4757,10 +4749,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "49d458c5bf197fe62253f797812b22e3e8a981b8ed7ee61f6d48ef354e7b7290",
+      "source_hash": "16becb426ae644beb93586c6d57b73b5fb35162479a989e1db0cc7b8f253693e",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T17:46:37.215929+00:00"
+      "classified_at": "2026-06-20T18:58:15.150601+00:00"
     },
     "じぶん軸婚活のすすめ": {
       "topics": [
@@ -6627,11 +6619,7 @@
       "topics": [
         {
           "label": "旅行・おでかけ",
-          "pct": 88.9
-        },
-        {
-          "label": "社会・文化",
-          "pct": 5.6
+          "pct": 94.4
         },
         {
           "label": "ライフスタイル",
@@ -6639,10 +6627,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "627206234c0e96ff6454e9c6b6bca9387afe4d34d824a35fe247181c43138731",
+      "source_hash": "3779aa2cc80f84de4e8f247b6e6947a7132ccd5f6ebf10240b68122701c59c1f",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-20T15:25:14.543759+00:00"
+      "classified_at": "2026-06-20T18:58:17.032818+00:00"
     },
     "奇才のたまご": {
       "topics": [
