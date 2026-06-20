@@ -37,6 +37,12 @@
   .kpi .val{font-size:1.7rem;font-weight:900;margin-top:4px}
   .kpi .val small{font-size:.8rem;color:var(--sub);font-weight:700}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+  .heatmap{display:grid;grid-template-columns:auto repeat(24,1fr);gap:3px;overflow-x:auto;font-size:.62rem}
+  .heatmap .hcell{aspect-ratio:1/1;border-radius:3px;min-width:13px;background:var(--brand-soft)}
+  .heatmap .hlabel{color:var(--sub);display:flex;align-items:center;justify-content:center;white-space:nowrap;padding:0 4px}
+  .heatmap .hcol{color:var(--sub);text-align:center}
+  .heat-legend{display:flex;align-items:center;gap:6px;margin-top:10px;color:var(--sub);font-size:.72rem}
+  .heat-scale{display:inline-block;width:120px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--brand-soft),#FF6719)}
   .panel h2{font-size:.9rem;margin:0 0 12px;display:flex;align-items:center;justify-content:space-between}
   .panel h2 .csv{font-size:.72rem;font-weight:700;background:var(--brand-soft);color:#9A410F;border:0;border-radius:7px;padding:5px 9px;cursor:pointer;flex:none}
   .panel h2 .period{font-weight:400;font-size:.72rem;color:var(--sub);margin-left:6px}
@@ -105,6 +111,13 @@
       <h2>日次の新着記事数（選択期間）</h2>
       <canvas id="dayChart" height="160"></canvas>
     </div>
+  </div>
+
+  <div class="panel" id="heatmapPanel">
+    <h2>曜日 × 時間帯の投稿件数（JST）</h2>
+    <div class="muted" style="font-size:.72rem;margin-bottom:10px">マスの色が濃いほど、その曜日・時間帯に公開された記事が多いことを表します</div>
+    <div id="heatmap" class="heatmap"></div>
+    <div class="heat-legend"><span>少</span><span class="heat-scale"></span><span>多</span><span id="heatMax" class="muted" style="font-size:.72rem;margin-left:8px"></span></div>
   </div>
 
   <div class="panel" id="distributionPanel" style="display:none">
@@ -312,6 +325,34 @@ function renderRangeControls(o){
   if(!RANGE.from&&!RANGE.to) document.querySelector("[data-range-all]").classList.add("active");
 }
 
+const DOW_JP = ["日","月","火","水","木","金","土"];
+function heatColor(ratio){
+  const c0=[255,241,232], c1=[255,103,25];
+  const t = Math.pow(Math.max(0,Math.min(1,ratio)), 0.6); // 件数の少ないマスも見えるようガンマ補正
+  const ch=(i)=>Math.round(c0[i]+(c1[i]-c0[i])*t);
+  return `rgb(${ch(0)},${ch(1)},${ch(2)})`;
+}
+function renderHeatmap(o){
+  const m = o.dowHour;
+  const panel = document.getElementById("heatmapPanel");
+  if(!Array.isArray(m) || m.length!==7){ panel.style.display="none"; return; }
+  panel.style.display="block";
+  let max=0;
+  for(const row of m) for(const v of row) if(v>max) max=v;
+  let html = `<div class="hcol"></div>`;
+  for(let h=0;h<24;h++) html += `<div class="hcol">${h%3===0?h:""}</div>`;
+  for(let d=0;d<7;d++){
+    html += `<div class="hlabel">${DOW_JP[d]}</div>`;
+    for(let h=0;h<24;h++){
+      const v = Number((m[d]||[])[h]||0);
+      const bg = v ? heatColor(max?v/max:0) : "var(--brand-soft)";
+      html += `<div class="hcell" style="background:${bg}" title="${DOW_JP[d]}曜 ${h}時台：${v}件"></div>`;
+    }
+  }
+  document.getElementById("heatmap").innerHTML = html;
+  document.getElementById("heatMax").textContent = max ? `最大 ${fmt(max)}件/マス` : "";
+}
+
 function renderOverview(o){
   DATA.overview = o;
   const now = new Date();
@@ -324,6 +365,7 @@ function renderOverview(o){
   renderKpis(o);
   bar("hourChart", o.byHour.map(h=>h.hour+"時"), o.byHour.map(h=>h.count), "#FF6719", "投稿数");
   bar("dayChart", o.perDay.map(d=>d.date.slice(5)), o.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
+  renderHeatmap(o);
   renderCatList(o);
   renderSummary(o);
   const distribution = Array.isArray(o.articleCountDistribution) ? o.articleCountDistribution : null;

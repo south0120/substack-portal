@@ -1056,7 +1056,7 @@ async function getAdminOverview(url, request, env) {
     const statement = env.DB.prepare(sql);
     return rangeBindings.length ? statement.bind(...rangeBindings) : statement;
   };
-  const [byCatArticles, byHour, perDay, rangeTotal, articleCounts] = await Promise.all([
+  const [byCatArticles, byHour, byDowHour, perDay, rangeTotal, articleCounts] = await Promise.all([
     prepareRange(`
       SELECT category, COUNT(*) AS n, COUNT(DISTINCT writer) AS writer_n
       FROM articles WHERE category <> '' AND ${rangeWhere}
@@ -1066,6 +1066,13 @@ async function getAdminOverview(url, request, env) {
       SELECT CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h, COUNT(*) AS n
       FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
       GROUP BY h ORDER BY h
+    `).all(),
+    prepareRange(`
+      SELECT CAST(strftime('%w', datetime(published, '+9 hours')) AS INTEGER) AS dow,
+             CAST(strftime('%H', datetime(published, '+9 hours')) AS INTEGER) AS h,
+             COUNT(*) AS n
+      FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
+      GROUP BY dow, h
     `).all(),
     prepareRange(`
       SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n
@@ -1093,6 +1100,11 @@ async function getAdminOverview(url, request, env) {
   for (const r of byHour.results || []) {
     if (r.h >= 0 && r.h < 24) hours[r.h].count = r.n;
   }
+  // 曜日(0=日〜6=土, JST)×時間帯(0〜23)のマトリクス。ヒートマップ用。
+  const dowHour = Array.from({ length: 7 }, () => Array.from({ length: 24 }, () => 0));
+  for (const r of byDowHour.results || []) {
+    if (r.dow >= 0 && r.dow < 7 && r.h >= 0 && r.h < 24) dowHour[r.dow][r.h] = r.n;
+  }
   let daily = (perDay.results || []).map((r) => ({ date: r.d, articles: r.n })).reverse();
   if (hasRange && resolvedFrom && resolvedTo) {
     const counts = Object.fromEntries(daily.map((row) => [row.date, row.articles]));
@@ -1111,6 +1123,7 @@ async function getAdminOverview(url, request, env) {
     dateRange: { oldest: dateRange?.oldest || null, newest: dateRange?.newest || null },
     byCategory: (byCatArticles.results || []).map((r) => ({ category: r.category, articles: r.n, writers: r.writer_n || 0 })),
     byHour: hours,
+    dowHour,
     perDay: daily,
     articleCountDistribution: bucketOrder.map((bucket) => ({ bucket, writers: bucketCounts[bucket] })),
   }, 200, "no-store");
