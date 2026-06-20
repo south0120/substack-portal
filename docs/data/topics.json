@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T20:53:27.392276+00:00",
+  "generated_at": "2026-06-20T22:47:27.365415+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -8248,19 +8248,19 @@
     "Road │ サブスタ収益化ラボ": {
       "topics": [
         {
-          "label": "ビジネス",
-          "pct": 92.9
+          "label": "その他",
+          "pct": 83.3
         },
         {
-          "label": "キャリア・働き方",
-          "pct": 7.1
+          "label": "ビジネス",
+          "pct": 16.7
         }
       ],
-      "sample_n": 14,
-      "source_hash": "2fdc93461cb86e0f82760668136e90bba4f7a0d959646e57c7c3b9f837ad15b9",
+      "sample_n": 18,
+      "source_hash": "9466a01e9250868d942847076a91181269d46fe8ed46dab8e3fb337846c93c3d",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:09:01.386183+00:00"
+      "classified_at": "2026-06-20T22:47:21.183816+00:00"
     },
     "どうちょー｜50代の経験をAIで商品に変える人": {
       "topics": [
@@ -9005,23 +9005,19 @@
     "クコの花養生堂": {
       "topics": [
         {
-          "label": "ライフスタイル",
+          "label": "クリエイティブ",
           "pct": 61.1
         },
         {
           "label": "グルメ・料理",
-          "pct": 16.7
+          "pct": 22.2
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 5.6
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 5.6
-        },
-        {
-          "label": "教育・学び",
-          "pct": 5.6
-        },
-        {
-          "label": "クリエイティブ",
           "pct": 5.6
         },
         {
@@ -9030,10 +9026,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "ee00cbdcdc4b20da40162e056dbb0c962ef2cde40cc9bfb81c0f89e43f785082",
+      "source_hash": "08feb2cb25bd6017eecc3825a8728748d13e4372c3af1b92d062ed3eae21641e",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T17:46:53.600511+00:00"
+      "classified_at": "2026-06-20T22:47:23.198787+00:00"
     },
     "はぐくむ|子どもの育ちを【信じて待つ】人": {
       "topics": [
@@ -9255,11 +9251,11 @@
     "trilinear ｜ トリリニア": {
       "topics": [
         {
-          "label": "その他",
-          "pct": 50.0
+          "label": "ライフスタイル",
+          "pct": 61.1
         },
         {
-          "label": "ライフスタイル",
+          "label": "その他",
           "pct": 22.2
         },
         {
@@ -9268,18 +9264,14 @@
         },
         {
           "label": "健康・ウェルネス",
-          "pct": 11.1
-        },
-        {
-          "label": "社会・文化",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "b2fe455fdd407030424eb7c79eec2cadd26c8e73e7e4feca62e86715c1591bbd",
+      "source_hash": "ed6a58bca302a757555e442a60c3ddf85b8f67c4118c57bbf43839ee7a0dfd01",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T15:52:30.784309+00:00"
+      "classified_at": "2026-06-20T22:47:25.459433+00:00"
     },
     "すぎちゃん先生｜Google AIの専門家": {
       "topics": [
@@ -9397,23 +9389,23 @@
     "おじぎねこ🐱ししょー【裏】": {
       "topics": [
         {
-          "label": "その他",
-          "pct": 64.3
+          "label": "ビジネス",
+          "pct": 53.3
         },
         {
-          "label": "教育・学び",
-          "pct": 21.4
+          "label": "社会・文化",
+          "pct": 33.3
         },
         {
           "label": "AI",
-          "pct": 14.3
+          "pct": 13.3
         }
       ],
-      "sample_n": 14,
-      "source_hash": "7586846166e440b3db135b4f0c2c2945ac24416641e72c2abd89dfc2b9083785",
+      "sample_n": 15,
+      "source_hash": "16e80016b4adb241bfe73b6947af569e45961d39540a299e58f680cb95d31d46",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:10:23.611226+00:00"
+      "classified_at": "2026-06-20T22:47:27.318666+00:00"
     },
     "こっこ｜自己肯定感は最後に満たせ 【人間心理学】": {
       "topics": [
