@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T18:58:17.116676+00:00",
+  "generated_at": "2026-06-20T20:53:27.392276+00:00",
   "labels": [
     "AI",
     "テクノロジー",
@@ -188,31 +188,39 @@
     "いぬいあおの途中の話": {
       "topics": [
         {
-          "label": "その他",
-          "pct": 44.4
-        },
-        {
           "label": "ライフスタイル",
-          "pct": 22.2
+          "pct": 38.9
         },
         {
           "label": "読書",
           "pct": 22.2
         },
         {
-          "label": "クリエイティブ",
+          "label": "グルメ・料理",
+          "pct": 11.1
+        },
+        {
+          "label": "その他",
+          "pct": 11.1
+        },
+        {
+          "label": "キャリア・働き方",
           "pct": 5.6
         },
         {
-          "label": "グルメ・料理",
+          "label": "健康・ウェルネス",
+          "pct": 5.6
+        },
+        {
+          "label": "教育・学び",
           "pct": 5.6
         }
       ],
       "sample_n": 18,
-      "source_hash": "e1d0a8ede14ee8e5e4527827d1e65181883ec6d914f0df9b075bf8a72d87ab72",
+      "source_hash": "bd74d35305d79ff94dfcc47cac8748b84ec288b94e9bbac9f94e40505cafca9c",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-19T18:20:51.973536+00:00"
+      "classified_at": "2026-06-20T20:53:15.157591+00:00"
     },
     "ゆるAI 納得設計ラボ｜ゆなラボ": {
       "topics": [
@@ -5748,19 +5756,19 @@
     "A Voundaly": {
       "topics": [
         {
-          "label": "社会・文化",
-          "pct": 27.8
+          "label": "その他",
+          "pct": 44.4
         },
         {
-          "label": "ビジネス",
+          "label": "社会・文化",
           "pct": 16.7
         },
         {
-          "label": "教育・学び",
+          "label": "ライフスタイル",
           "pct": 11.1
         },
         {
-          "label": "その他",
+          "label": "教育・学び",
           "pct": 11.1
         },
         {
@@ -5768,19 +5776,7 @@
           "pct": 5.6
         },
         {
-          "label": "ライフスタイル",
-          "pct": 5.6
-        },
-        {
-          "label": "子育て・家族",
-          "pct": 5.6
-        },
-        {
           "label": "クリエイティブ",
-          "pct": 5.6
-        },
-        {
-          "label": "グルメ・料理",
           "pct": 5.6
         },
         {
@@ -5789,10 +5785,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "dcab9a6052d06e6b18c1bc9fe0d0403f0a62d3a97eeb298adcfd4047ff88a783",
+      "source_hash": "71ba86a696c7089da3d08eac5fdcc5e15ead421550a745d6dddb11a35ac2b147",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-20T05:00:03.653886+00:00"
+      "classified_at": "2026-06-20T20:53:17.355102+00:00"
     },
     "あーき｜福祉事業成長設計士 の Substack": {
       "topics": [
@@ -7212,11 +7208,15 @@
       "topics": [
         {
           "label": "健康・ウェルネス",
-          "pct": 77.8
+          "pct": 72.2
         },
         {
           "label": "その他",
           "pct": 16.7
+        },
+        {
+          "label": "ライフスタイル",
+          "pct": 5.6
         },
         {
           "label": "グルメ・料理",
@@ -7224,10 +7224,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "2139c0bd1222cd61b80c095e7441146de0d7628951b0fe765075050aa4232d12",
+      "source_hash": "53c9a64e7cedb2c37e84e16fe581f68fd56f2057b10b03c22643d78398994f1b",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:07:38.375152+00:00"
+      "classified_at": "2026-06-20T20:53:20.261278+00:00"
     },
     "門田瑠衣子｜AI時代の非営利組織経営": {
       "topics": [
@@ -7773,31 +7773,31 @@
     "TOKIORI": {
       "topics": [
         {
+          "label": "ライフスタイル",
+          "pct": 33.3
+        },
+        {
           "label": "クリエイティブ",
-          "pct": 28.6
+          "pct": 22.2
         },
         {
           "label": "旅行・おでかけ",
-          "pct": 28.6
-        },
-        {
-          "label": "ライフスタイル",
-          "pct": 21.4
-        },
-        {
-          "label": "健康・ウェルネス",
-          "pct": 14.3
+          "pct": 22.2
         },
         {
           "label": "キャリア・働き方",
-          "pct": 7.1
+          "pct": 11.1
+        },
+        {
+          "label": "健康・ウェルネス",
+          "pct": 11.1
         }
       ],
-      "sample_n": 14,
-      "source_hash": "c1a0c31f47e9407df2fd38cb9ef7e332f3402fcf73dc44171bc60bcc8225d3d5",
+      "sample_n": 18,
+      "source_hash": "a62ca023caeb2c14e0cde851d60db456e7926513dc7bd50f7f4f2c1941c2c4c3",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:08:25.257106+00:00"
+      "classified_at": "2026-06-20T20:53:23.329252+00:00"
     },
     "ゆう": {
       "topics": [
@@ -7954,11 +7954,11 @@
       "topics": [
         {
           "label": "ビジネス",
-          "pct": 33.3
+          "pct": 55.6
         },
         {
           "label": "キャリア・働き方",
-          "pct": 27.8
+          "pct": 16.7
         },
         {
           "label": "ライフスタイル",
@@ -7967,17 +7967,13 @@
         {
           "label": "テクノロジー",
           "pct": 11.1
-        },
-        {
-          "label": "社会・文化",
-          "pct": 11.1
         }
       ],
       "sample_n": 18,
-      "source_hash": "f7bb71f1bb295eccc0fea77b6013ce14924a4eb242f890f9ce1c3c39cbfe3084",
+      "source_hash": "563bb4c22ddfce10cacfc36d259d6db1db53415d850d3cf062024f6f232e0493",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T13:52:01.650645+00:00"
+      "classified_at": "2026-06-20T20:53:25.366808+00:00"
     },
     "國光宏尚 クリプトおじさん (Hiro Kunimitsu)": {
       "topics": [
@@ -8070,10 +8066,10 @@
         }
       ],
       "sample_n": 18,
-      "source_hash": "bce6f6cc67571508881bdb582c938f25ff3661c06926a0ce070db02d85efcbb0",
+      "source_hash": "bc6fb9d4a25393c473439978d405c63c2d803cdcbc234064b274b54b92565e98",
       "labels_version": "ef54d97c",
       "prompt_version": "v2",
-      "classified_at": "2026-06-18T10:08:47.891924+00:00"
+      "classified_at": "2026-06-20T20:53:27.326717+00:00"
     },
     "よかっぱ通信｜伝わらなかったものを、届けるために": {
       "topics": [

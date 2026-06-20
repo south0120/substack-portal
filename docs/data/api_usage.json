@@ -1,29 +1,29 @@
 {
-  "updated_at": "2026-06-20T18:58:17.116182+00:00",
+  "updated_at": "2026-06-20T20:53:27.391837+00:00",
   "model": "claude-haiku-4-5-20251001",
   "rates_usd_per_mtok": {
     "input": 1.0,
     "output": 5.0
   },
   "cumulative": {
-    "input_tokens": 1731955,
-    "output_tokens": 193529,
-    "api_calls": 829,
-    "cost_usd": 2.6996
+    "input_tokens": 1745539,
+    "output_tokens": 195435,
+    "api_calls": 835,
+    "cost_usd": 2.7227
   },
   "monthly": {
     "2026-06": {
-      "input_tokens": 1731955,
-      "output_tokens": 193529,
-      "api_calls": 829,
-      "cost_usd": 2.6996
+      "input_tokens": 1745539,
+      "output_tokens": 195435,
+      "api_calls": 835,
+      "cost_usd": 2.7227
     }
   },
   "last_run": {
-    "at": "2026-06-20T18:58:17.116182+00:00",
-    "input_tokens": 4835,
-    "output_tokens": 625,
-    "cost_usd": 0.008,
-    "writers_classified": 2
+    "at": "2026-06-20T20:53:27.391837+00:00",
+    "input_tokens": 13584,
+    "output_tokens": 1906,
+    "cost_usd": 0.0231,
+    "writers_classified": 6
   }
 }
