@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20T18:52:38.890103+00:00",
+  "updated_at": "2026-06-20T20:46:12.423550+00:00",
   "categories": [
     "AI",
     "テクノロジー",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "大人の夜会　withもちスラさん",
+          "url": "https://www.yukarik.com/p/with",
+          "published": "2026-06-20T20:26:07+00:00"
+        },
+        {
           "title": "サブスタックの海外人気クリエイターに学ぶ発信テーマ",
           "url": "https://www.yukarik.com/p/69d",
           "published": "2026-06-17T02:56:00+00:00"
@@ -553,11 +558,6 @@
           "title": "Substack 30分で設定する始め方〜アカウント開設から初期設定まで",
           "url": "https://www.yukarik.com/p/substack-f2a",
           "published": "2026-06-14T23:15:24+00:00"
-        },
-        {
-          "title": "大人の夜会　相談室",
-          "url": "https://www.yukarik.com/p/18c",
-          "published": "2026-06-14T13:43:04+00:00"
         }
       ]
     },
@@ -5292,6 +5292,15 @@
   ],
   "articles": [
     {
+      "title": "大人の夜会　withもちスラさん",
+      "url": "https://www.yukarik.com/p/with",
+      "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
+      "published": "2026-06-20T20:26:07+00:00",
+      "image": "https://api.substack.com/feed/podcast/202834166/7744d9b174db7f47ce63aa8a8f962364.mp3",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "健康・ウェルネス"
+    },
+    {
       "title": "1週間の記事振り返り",
       "url": "https://www.debunkresearch.com/p/260613-19",
       "excerpt": "毎週土曜は1週間の振り返りをお届けします。",
@@ -5668,15 +5677,6 @@
       "image": "https://api.substack.com/feed/podcast/199711174/ff9eb9a07cdabe09ba747ada34a941a1.mp3",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
       "category": "その他"
-    },
-    {
-      "title": "Substackであなたが記事を書けない理由",
-      "url": "https://www.yukarik.com/p/substack-dec",
-      "excerpt": "あなたが「記事を書く」その瞬間に、エゴは何をしているのか",
-      "published": "2026-05-29T01:48:10+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!lE7_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a98af83-b5b9-4ca5-9355-d05946e573dd_1672x941.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "健康・ウェルネス"
     },
     {
       "title": "Consomeさんの最近の事業について",
