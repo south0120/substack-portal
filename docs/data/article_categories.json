@@ -68562,6 +68562,30 @@
       "hash": "9fa28227bc61a1f0a59e75936878825c544edf04685626bfc9738bcfd59ad688",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/61b": {
+      "category": "読書",
+      "hash": "7f60d466cfe8f72986367090fef691b97c1d7ea618fb8a66599c3f3b0630f073",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/chatgtp": {
+      "category": "AI",
+      "hash": "a3b95315d6dd9011554120ce0b8d5db39dec920262523fd4be803faed4114365",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kamesensei.substack.com/p/1": {
+      "category": "ライフスタイル",
+      "hash": "3b16bfffc1b0d8328dd1e9f6c20bfa6d74f90c38f9287b14a56dcc8ea756f3db",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itonceo.substack.com/p/86f": {
+      "category": "キャリア・働き方",
+      "hash": "3e403a865edd3ca095a05e74b98b69224d21a9be2c24942ce1c61f1324501b55",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
