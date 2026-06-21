@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Classify each writer's recent articles into topic ratios with Claude."""
+"""Classify articles and calculate each writer's topic ratios with Claude."""
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import os
@@ -13,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 import ssl
+import urllib.error
 import urllib.request
 
 try:
@@ -23,6 +25,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS_FILE = ROOT / "docs" / "data" / "topics.json"
+ARTICLE_CATEGORIES_FILE = ROOT / "docs" / "data" / "article_categories.json"
 USAGE_FILE = ROOT / "docs" / "data" / "api_usage.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
 
@@ -33,17 +36,20 @@ RATE_OUT_USD_PER_MTOK = 5.0
 
 # 棚カテゴリ（index.html の CAT_STYLE）と揃えた分類ラベル。バーの成分がそのまま棚カテゴリに使われる。
 TOPIC_LABELS = [
-    "AI", "テクノロジー", "ビジネス", "投資・経済", "キャリア・働き方",
-    "社会・文化", "ライフスタイル", "子育て・家族", "健康・ウェルネス",
-    "教育・学び", "クリエイティブ", "音楽", "グルメ・料理", "旅行・おでかけ",
-    "読書", "その他",
+    "AI", "テクノロジー", "ビジネス", "投資・経済", "社会・文化",
+    "ライフスタイル", "クリエイティブ", "キャリア・働き方", "健康・ウェルネス",
+    "教育・学び", "エンタメ", "旅行・おでかけ", "グルメ・料理", "スポーツ",
+    "子育て・家族", "マンガ・アニメ", "音楽", "読書", "ゲーム",
+    "ファッション・美容", "その他",
 ]
-MAX_ARTICLES_PER_WRITER = 18
-EXCERPT_LENGTH = 120
+EXCERPT_LENGTH = 500
 # プロンプト（判定ルール）を更新したらキャッシュを無効化して再分類するためのバージョン
-PROMPT_VERSION = "v2"
+PROMPT_VERSION = "v3"
 # ラベル集合が変わったらキャッシュを無効化して再分類するための署名
 LABELS_VERSION = hashlib.sha256("|".join(TOPIC_LABELS).encode("utf-8")).hexdigest()[:8]
+ARTICLE_CACHE_VERSION = 1
+BATCH_SIZE = 30
+WRITE_BACK_BATCH_SIZE = 2000
 
 SCHEMA = {
     "type": "object",
@@ -70,21 +76,29 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def load_existing() -> dict[str, Any]:
-    if not TOPICS_FILE.exists():
-        return {}
+def load_article_cache() -> dict[str, Any]:
+    if not ARTICLE_CATEGORIES_FILE.exists():
+        return {"version": ARTICLE_CACHE_VERSION, "articles": {}}
     try:
-        data = json.loads(TOPICS_FILE.read_text(encoding="utf-8"))
-        return data if isinstance(data, dict) else {}
+        data = json.loads(ARTICLE_CATEGORIES_FILE.read_text(encoding="utf-8"))
+        if not isinstance(data, dict) or not isinstance(data.get("articles"), dict):
+            return {"version": ARTICLE_CACHE_VERSION, "articles": {}}
+        return data
     except (OSError, json.JSONDecodeError) as error:
-        print(f"Warning: could not read {TOPICS_FILE}: {error}", file=sys.stderr)
-        return {}
+        print(f"Warning: could not read {ARTICLE_CATEGORIES_FILE}: {error}", file=sys.stderr)
+        return {"version": ARTICLE_CACHE_VERSION, "articles": {}}
 
 
 def source_hash(articles: list[dict[str, Any]]) -> str:
     urls = sorted(str(article.get("url", "")) for article in articles)
     encoded = json.dumps(urls, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
+
+def article_hash(article: dict[str, Any]) -> str:
+    title = str(article.get("title", ""))
+    excerpt = str(article.get("excerpt", ""))[:EXCERPT_LENGTH]
+    return hashlib.sha256((title + excerpt).encode("utf-8")).hexdigest()
 
 
 def prompt_for(articles: list[dict[str, Any]]) -> str:
@@ -96,9 +110,11 @@ def prompt_for(articles: list[dict[str, Any]]) -> str:
         "- 記事が主に何について書かれているか（主題）で選ぶ。手段・道具として軽く触れているだけの話題では選ばない。",
         "- 「AI」「テクノロジー」は、記事の主題がAI・技術そのものの場合のみ選ぶ。"
         "趣味・仕事・運動などでAIやアプリを道具として使っているだけなら、その趣味・仕事・運動の主題で分類する"
-        "（例: AIで作ったトライアスロンの記録 → 健康・ウェルネス）。",
-        "- スポーツ・運動・健康（トライアスロン/ランニング等）は『健康・ウェルネス』。"
-        "集客・売上・マーケティング・流入・起業などは『ビジネス』。",
+        "（例: AIで作ったトライアスロンの記録 → スポーツ）。",
+        "- ランニング・トライアスロンなど競技や運動が主題なら『スポーツ』。"
+        "健康管理・医療・心身のウェルビーイングが主題なら『健康・ウェルネス』。",
+        "- 『マンガ・アニメ』『ゲーム』『エンタメ』『ファッション・美容』は、それぞれ独立したカテゴリとして区別する。",
+        "- 集客・売上・マーケティング・流入・起業などは『ビジネス』。",
         "- タイトルだけで判断せず抜粋（内容）も踏まえる。どれにも明確に当てはまらない場合のみ『その他』。",
         "- すべてのindexを1回ずつ分類してください。",
         "",
@@ -110,7 +126,7 @@ def prompt_for(articles: list[dict[str, Any]]) -> str:
     return "\n".join(lines)
 
 
-def ratios_from(data: dict[str, Any], sample_n: int) -> list[dict[str, Any]]:
+def classifications_from(data: dict[str, Any], sample_n: int) -> dict[int, str]:
     classifications = data.get("classifications")
     if not isinstance(classifications, list):
         raise ValueError("classifications is not an array")
@@ -134,7 +150,12 @@ def ratios_from(data: dict[str, Any], sample_n: int) -> list[dict[str, Any]]:
     if set(by_index) != set(range(1, sample_n + 1)):
         raise ValueError("not every article index was classified")
 
-    counts = Counter(by_index.values())
+    return by_index
+
+
+def ratios_from(categories: list[str]) -> list[dict[str, Any]]:
+    sample_n = len(categories)
+    counts = Counter(categories)
     topics = [
         {"label": label, "pct": round(count / sample_n * 100, 1)}
         for label, count in counts.items()
@@ -193,7 +214,49 @@ def update_usage(input_tokens: int, output_tokens: int, api_calls: int, classifi
     print(f"Usage this run: in={input_tokens} out={output_tokens} cost=${_cost_usd(input_tokens, output_tokens)}")
 
 
+def apply_article_categories(items: list[dict[str, str]], token: str) -> None:
+    for start in range(0, len(items), WRITE_BACK_BATCH_SIZE):
+        chunk = items[start:start + WRITE_BACK_BATCH_SIZE]
+        body = json.dumps({"items": chunk}, ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request(
+            f"{API_BASE}/api/admin/apply-article-categories",
+            data=body,
+            headers={
+                "User-Agent": "fyl-classifier/1.0",
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {token}",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=60, context=_SSL_CONTEXT) as response:
+                data = json.loads(response.read())
+            print(
+                "Applied category chunk: "
+                f"received={data.get('received', 0)} "
+                f"applied={data.get('applied', 0)} "
+                f"skipped={data.get('skipped', 0)}"
+            )
+        except urllib.error.HTTPError as error:
+            print(
+                f"Warning: category write-back failed with HTTP {error.code}: {error.reason}",
+                file=sys.stderr,
+            )
+        except Exception as error:
+            print(f"Warning: category write-back failed: {error}", file=sys.stderr)
+
+
+def parse_args() -> argparse.Namespace:
+    env_limit = os.environ.get("CLASSIFY_LIMIT", "").strip()
+    default_limit = int(env_limit) if env_limit else None
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=default_limit)
+    parser.add_argument("--dry-run", action="store_true")
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ANTHROPIC_API_KEY is not set; skipping topic classification.")
         return 0
@@ -223,40 +286,55 @@ def main() -> int:
             break
         page += 1
     print(f"Fetched {len(articles)} articles from API")
-    existing = load_existing()
-    existing_writers = existing.get("writers", {})
-    if not isinstance(existing_writers, dict):
-        existing_writers = {}
+
+    cache = load_article_cache()
+    cached_articles = cache["articles"]
+    to_classify: list[dict[str, Any]] = []
+    for article in articles:
+        url = str(article.get("url", "")).strip()
+        if not url:
+            print("Warning: skipping article without URL", file=sys.stderr)
+            continue
+        current_hash = article_hash(article)
+        previous = cached_articles.get(url)
+        if (
+            not isinstance(previous, dict)
+            or previous.get("hash") != current_hash
+            or previous.get("labels_version") != LABELS_VERSION
+            or previous.get("prompt_version") != PROMPT_VERSION
+        ):
+            to_classify.append(article)
+
+    if args.limit is not None:
+        to_classify = to_classify[:max(args.limit, 0)]
+    print(f"Articles needing classification this run: {len(to_classify)}")
 
     client = anthropic.Anthropic()
-    output_writers: dict[str, Any] = {}
     run_in = run_out = api_calls = classified = 0
+    updated_items: list[dict[str, str]] = []
+    api_articles: list[dict[str, Any]] = []
 
-    for writer in writers:
-        name = str(writer.get("name", ""))
-        recent = sorted(
-            (article for article in articles if article.get("writer") == name),
-            key=lambda article: str(article.get("published", "")),
-            reverse=True,
-        )[:MAX_ARTICLES_PER_WRITER]
-        if not recent:
+    for article in to_classify:
+        title = str(article.get("title", "")).strip()
+        excerpt = str(article.get("excerpt", "")).strip()
+        if title or excerpt:
+            api_articles.append(article)
             continue
+        url = str(article.get("url", "")).strip()
+        cached_articles[url] = {
+            "category": "その他",
+            "hash": article_hash(article),
+            "labels_version": LABELS_VERSION,
+            "prompt_version": PROMPT_VERSION,
+        }
+        updated_items.append({"url": url, "category": "その他"})
+        classified += 1
 
-        article_hash = source_hash(recent)
-        previous = existing_writers.get(name)
-        if (
-            isinstance(previous, dict)
-            and previous.get("source_hash") == article_hash
-            and previous.get("labels_version") == LABELS_VERSION
-            and previous.get("prompt_version") == PROMPT_VERSION
-        ):
-            output_writers[name] = previous
-            print(f"Cached: {name}")
-            continue
-
-        print(f"Classifying: {name} ({len(recent)} article(s))")
+    for start in range(0, len(api_articles), BATCH_SIZE):
+        batch = api_articles[start:start + BATCH_SIZE]
+        print(f"Classifying article batch: {start + 1}-{start + len(batch)}")
         try:
-            prompt_text = prompt_for(recent)
+            prompt_text = prompt_for(batch)
             resp = client.messages.create(
                 model="claude-haiku-4-5-20251001",
                 max_tokens=4000,
@@ -273,28 +351,80 @@ def main() -> int:
                 run_in += int(getattr(usage, "input_tokens", 0) or 0)
                 run_out += int(getattr(usage, "output_tokens", 0) or 0)
             api_calls += 1
-            classified += 1
             text = next(b.text for b in resp.content if b.type == "text")
             data = json.loads(text)
-            output_writers[name] = {
-                "topics": ratios_from(data, len(recent)),
-                "sample_n": len(recent),
-                "source_hash": article_hash,
-                "labels_version": LABELS_VERSION,
-                "prompt_version": PROMPT_VERSION,
-                "classified_at": now_iso(),
-            }
+            by_index = classifications_from(data, len(batch))
+            for index, article in enumerate(batch, start=1):
+                url = str(article.get("url", "")).strip()
+                category = by_index[index]
+                cached_articles[url] = {
+                    "category": category,
+                    "hash": article_hash(article),
+                    "labels_version": LABELS_VERSION,
+                    "prompt_version": PROMPT_VERSION,
+                }
+                updated_items.append({"url": url, "category": category})
+                classified += 1
         except anthropic.APIError as error:
-            print(f"Warning: API classification failed for {name}: {error}", file=sys.stderr)
-            if isinstance(previous, dict):
-                output_writers[name] = previous
+            print(f"Warning: API classification failed for article batch: {error}", file=sys.stderr)
         except Exception as error:
-            print(f"Warning: invalid classification for {name}: {error}", file=sys.stderr)
-            if isinstance(previous, dict):
-                output_writers[name] = previous
+            print(f"Warning: invalid article batch classification: {error}", file=sys.stderr)
 
     if api_calls:
         update_usage(run_in, run_out, api_calls, classified)
+
+    cache["version"] = ARTICLE_CACHE_VERSION
+    ARTICLE_CATEGORIES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    ARTICLE_CATEGORIES_FILE.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {ARTICLE_CATEGORIES_FILE} with {len(cached_articles)} article entries")
+
+    token = os.environ.get("CLASSIFY_TOKEN")
+    if args.dry_run:
+        print("Dry run; skipping category write-back.")
+    elif not token:
+        print("Warning: CLASSIFY_TOKEN is not set; skipping category write-back.", file=sys.stderr)
+    elif updated_items:
+        apply_article_categories(updated_items, token)
+
+    writer_names = {
+        str(writer.get("name", "")).strip()
+        for writer in writers
+        if str(writer.get("name", "")).strip()
+    }
+    writer_names.update(
+        str(article.get("writer", "")).strip()
+        for article in articles
+        if str(article.get("writer", "")).strip()
+    )
+    output_writers: dict[str, Any] = {}
+    classified_at = now_iso()
+    for name in sorted(writer_names):
+        writer_articles = [article for article in articles if str(article.get("writer", "")).strip() == name]
+        categories: list[str] = []
+        for article in writer_articles:
+            url = str(article.get("url", "")).strip()
+            cached = cached_articles.get(url)
+            if (
+                isinstance(cached, dict)
+                and cached.get("category") in TOPIC_LABELS
+                and cached.get("hash") == article_hash(article)
+                and cached.get("labels_version") == LABELS_VERSION
+                and cached.get("prompt_version") == PROMPT_VERSION
+            ):
+                categories.append(cached["category"])
+        if not categories:
+            continue
+        output_writers[name] = {
+            "topics": ratios_from(categories),
+            "sample_n": len(categories),
+            "source_hash": source_hash(writer_articles),
+            "labels_version": LABELS_VERSION,
+            "prompt_version": PROMPT_VERSION,
+            "classified_at": classified_at,
+        }
 
     result = {
         "generated_at": now_iso(),
