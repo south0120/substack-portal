@@ -68538,6 +68538,30 @@
       "hash": "0dc58b383ce2f9df1a3e4d48258dee4969f6fb4c666cee1eb333927bf4840e75",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://ryokan24.substack.com/p/397": {
+      "category": "ライフスタイル",
+      "hash": "addc694ad74335e3e0ace5b417526de18241cc596dff97123bae81f87ca65701",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://debujukucho.substack.com/p/ai803": {
+      "category": "AI",
+      "hash": "e1b506dc0e96c05afae0813015c3f72ac263faf8cfd5e8bdfe71768462368b43",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yohaku2026.substack.com/p/3be": {
+      "category": "ライフスタイル",
+      "hash": "5c3bfa0243e4db2c6287bb914d74f08636ebb246324de436a09da49c502db641",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yohaku2026.substack.com/p/3b2": {
+      "category": "子育て・家族",
+      "hash": "9fa28227bc61a1f0a59e75936878825c544edf04685626bfc9738bcfd59ad688",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
