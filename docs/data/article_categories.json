@@ -87078,6 +87078,354 @@
       "hash": "5be40e0c7c311d271f7d2e11b5b37b6d79ed7d2ac6a51c590bb241cf19742a5e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kakemane.substack.com/p/51642": {
+      "category": "投資・経済",
+      "hash": "d8f42cb9a5c93d59998c3d4e093edd6f01803cf6a2c4cbdec66ecc519af6ba80",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshizu.substack.com/p/953": {
+      "category": "健康・ウェルネス",
+      "hash": "f2c565eaa7e9f7604af8ca63aa1b0c41a9382c87569bad8e4765a9f1af631eee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noanote.substack.com/p/ac7": {
+      "category": "キャリア・働き方",
+      "hash": "337ed7738073e27881fcd41b791fd47874b678c57cf55a42f6bb5ff817b5564b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shufukka.substack.com/p/1": {
+      "category": "キャリア・働き方",
+      "hash": "898015b612d8f0e2019e31e48b208050672693981f507352d409a544bdcc6880",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pawplanet.substack.com/p/a2a": {
+      "category": "旅行・おでかけ",
+      "hash": "60b80844447868817ad92d5acbf7ff7e22854792adcf9cab5b4f36baa8ec6fb2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://satokoprecioswedding.substack.com/p/ec3": {
+      "category": "ビジネス",
+      "hash": "ea86990988b5959df26be9c8f72ba292779e1dc31f8f5c04dc3fa77f3dacac25",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://petitlysoguro.substack.com/p/5a0": {
+      "category": "子育て・家族",
+      "hash": "1bd64866c4d57d3a3858cf741fcf99236223af4e941f586d3fd522f00576fd53",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://miyua.substack.com/p/4bf": {
+      "category": "ゲーム",
+      "hash": "e479cfa97e0ceb5fb17deb8d80e53445f26abbda7a9ae453f01e2e1a46a63d5d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://norafreelance.substack.com/p/3e9": {
+      "category": "クリエイティブ",
+      "hash": "0b18ad5ce65e470ef38142a1a50d5d4443f76a64366b382db3622cfd38ebb183",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://slowtimesjp.substack.com/p/3-ai-dishwasher-problem": {
+      "category": "AI",
+      "hash": "5bdfc3fe6ab9d82cb7fd8a8ccbd3f88b7dae7b2fb0aff2e3ced15937c19c38da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://slowtimesjp.substack.com/p/2-slow-times": {
+      "category": "ビジネス",
+      "hash": "8b71fa9b6a7416861c0c5414670a4236bf71fd90b40e0c2578f1016e3fe3bf87",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/8cf": {
+      "category": "教育・学び",
+      "hash": "ccaf36965a55c37265a6e7cbdc310fc2f02bc3da8902ab653f6d3e208d0dcc92",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://slowtimesjp.substack.com/p/1-slow-times-and-the-age-of-new-media": {
+      "category": "ビジネス",
+      "hash": "655a12e4978730badd4ae85e6a35d3e02373dc23644fc686f18127589e2a7891",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp-314": {
+      "category": "子育て・家族",
+      "hash": "756dbb9d0c98e265dcb8941c19f34be57f908b67c2056d0c829a2e44affc5790",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/a9a": {
+      "category": "読書",
+      "hash": "fd09a0e01111b612bdd259c775d7e8754044d73c63501d8e38b52e6715a152c2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/41d": {
+      "category": "読書",
+      "hash": "97567b98b7e48f4b80ef27adfc4600c338188048e03d201de631e6ab6edf6520",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/2026nft": {
+      "category": "その他",
+      "hash": "368ad9c747fab9f04123b8d75ebda80c01a7c6fc871128724c68dda7174ab51c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshinyade.substack.com/p/26b": {
+      "category": "キャリア・働き方",
+      "hash": "934c6dffddb24c7df868ed0a766fa062efcd597c97c320d910a60527b8644310",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/07d": {
+      "category": "投資・経済",
+      "hash": "3f22995f1a702e6042434229211ec25af0277f2b773f7161ff6349232dc1da44",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp-050": {
+      "category": "その他",
+      "hash": "31b6e10bafe238ca90b33008eae4ba4ad06af1d6161fc1f61e913a6c46c76303",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cre8with.substack.com/p/b7b": {
+      "category": "旅行・おでかけ",
+      "hash": "8f7fe9677a06d02100ee0826f0b2cb1fd8a7013c9ba93d029973f1972a730f4d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/8d0": {
+      "category": "投資・経済",
+      "hash": "f3aa9f8e6d315b66c3770f0db68b4abc3803d83b770a9724e9a9a615142f7565",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cre8with.substack.com/p/051": {
+      "category": "ファッション・美容",
+      "hash": "09993bdf139957fc9b291a528ef54f5664344b4675c65ffb2e4b0df74e880a2f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cre8with.substack.com/p/49a": {
+      "category": "ライフスタイル",
+      "hash": "04ce6963c3c92490311aaa6e857cf4249d2df82a4d36ba7a69b0627bc57d84e4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshinyade.substack.com/p/pta": {
+      "category": "子育て・家族",
+      "hash": "4e94727f761e3b036eadeb9c500f1838acdfe37f121b693173df11dd450540bf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cre8with.substack.com/p/35": {
+      "category": "ライフスタイル",
+      "hash": "f73ecccf50159ad7912b4ba31c4cf654e07358100fdf2b6a01930b4a1ee074df",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshinyade.substack.com/p/line": {
+      "category": "ライフスタイル",
+      "hash": "45758c6e20e096efeb0cf9badabc9b0a1cfd97163bebb53d3d76dcec22196fe3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/e5c": {
+      "category": "投資・経済",
+      "hash": "76289534cf7ebefc8f3ca91ff3de4589ce0749a9ab4ac1c9bca4ae689cf2f988",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnpnft": {
+      "category": "その他",
+      "hash": "627feb30f413669377548bf35f93025bb84155f9d305e1e4bcd1b3379a6cf042",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshinyade.substack.com/p/w": {
+      "category": "社会・文化",
+      "hash": "12f0642cb7b5584dd28f84d03586e0d05bf106093a6c2f27c28ea23ff2a47753",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/aa5": {
+      "category": "読書",
+      "hash": "10804bcfb00a37b3a2b0af558d5bbd2523a99c0ed66e94c27075eff9b9d23533",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/roadshow": {
+      "category": "その他",
+      "hash": "c34b00dc1ef69d80f2021144b0a30c5c7ad14458e23c272aeede5a51df34f43c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/609": {
+      "category": "ライフスタイル",
+      "hash": "01e9030b254eb50f9b6a49f64adf72dca697f7782fceeb05221283580eb8bb44",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/df3": {
+      "category": "投資・経済",
+      "hash": "ecbabe25104ffce4d9ce6a0ed7f074cb215421f54117d6fcbaf4ca5afe082f3a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cre8with.substack.com/p/a5f": {
+      "category": "子育て・家族",
+      "hash": "f84e04781cba6d8f302297a5f64ba3168899fd2f4248eb48e353442c5ce5319b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/f6b": {
+      "category": "ビジネス",
+      "hash": "cfe6cf75a18b6e2bb5e022b073931c548ae42ce00fb92bb8d3e5d3e22d5d1273",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp": {
+      "category": "その他",
+      "hash": "d5fad155cf6362a05f6de9f137f875e17cf7cadfe4881b435c7cba729549c356",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/a26": {
+      "category": "音楽",
+      "hash": "31e67a5b86373097ed9f4db97e4a5e85de995168c341ad1b2c9ae020d9c6b6ab",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/1c3": {
+      "category": "子育て・家族",
+      "hash": "289cc98f40338d902dbd1b11644e4189dba0dfb66c354bd9c9ebbf2cb65b7065",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp-3": {
+      "category": "その他",
+      "hash": "ed00106d25b965bcf42f982dee65d459ed8d17eac050ce1752ad3c38076181a6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/477": {
+      "category": "ライフスタイル",
+      "hash": "3fdc57f6b0ba7de1136b1abc0b8ebf4ac16417bece6d4bbd5609b63d3bb07d2b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp-magazine-2f1": {
+      "category": "その他",
+      "hash": "bbb4c9da36e129459fa283943ad9c753e74d270dd1893fd85ed08c076a9cbe5c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpmagazine.substack.com/p/cnp-magazine": {
+      "category": "その他",
+      "hash": "8be18caa68c873bbc92edf3a5335591fc279603bbb79482f084ae8a6dcb137c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/688": {
+      "category": "投資・経済",
+      "hash": "00149d734d6569304ed033454c0e88b6e685473aacbac3ce998288219335069e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/infj": {
+      "category": "キャリア・働き方",
+      "hash": "5de0d873888be1a0021775f71997fff96c4248485f652bbe14f494bc7707d556",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/pop02-cfc": {
+      "category": "読書",
+      "hash": "7159bb309de0e71bf462fd9547e4597c134260cc720ab22d77cc344b8d80df93",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/1": {
+      "category": "投資・経済",
+      "hash": "72f3dd994e13839cb7113a9b29032817f413be0cfa4d788befdbce6aef4027e1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/pop02": {
+      "category": "読書",
+      "hash": "336f4932992ac705e41b5a80baa88d652c8cb79a924f03703870f73c10ec74da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/87d": {
+      "category": "投資・経済",
+      "hash": "33c700344027994469b9b8e7b41c1990a6f467625ad0ebf9caec0bb74ec825e3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/a84": {
+      "category": "投資・経済",
+      "hash": "960d1c2dd9b8055a8c708ec762f677152bb1be63bfe53f9d16a158c0454675d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mimojinojinsei.substack.com/p/fc3": {
+      "category": "キャリア・働き方",
+      "hash": "45325e289e4022e12608ba77ffc7a8c35147b6b29d51d670e102b483810d232b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mm0o.substack.com/p/episode43": {
+      "category": "子育て・家族",
+      "hash": "4d0ccce7d2f2ca242c42b4d9fd4acaf2fc6dc0c7b14bfaa7a1d15a94b3ce95e4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mm0o.substack.com/p/episode3": {
+      "category": "子育て・家族",
+      "hash": "b3c39664d5a694adcb9935fe99b237c5c6baab06d490c159d5f68cc58ab4f309",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mm0o.substack.com/p/episode2": {
+      "category": "子育て・家族",
+      "hash": "8c16468e5079fb571353fc5da61c6b58737050b220bd206916d8cd1a9168ce28",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mm0o.substack.com/p/episode": {
+      "category": "子育て・家族",
+      "hash": "14eaba5e98c6f2ca1b0178bdb5193f9c94d36f6998dea3a9419b17fbbf893924",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/pop01-c37": {
+      "category": "ファッション・美容",
+      "hash": "6592249383a7dc8a3a96bafc612a27d66de65e4ecf2cb457b3416c982aebd455",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://oshinyade.substack.com/p/pta3pta": {
+      "category": "社会・文化",
+      "hash": "37c7125837a070a8b130321fccd9c1804b656831fe92050f90850473a7b88b8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukiusagi.substack.com/p/pop01": {
+      "category": "ライフスタイル",
+      "hash": "26703afa61eaea2a416f77e1cab5441de61a43ff1db1cb09020519041179092c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
