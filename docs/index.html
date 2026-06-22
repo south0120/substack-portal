@@ -240,6 +240,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .article-content{min-width:0}
 .article-tools{padding:12px 0 14px}
 .filter-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.audio-filter{display:inline-flex;align-items:center;gap:6px;color:var(--sub);font-size:.76rem;font-weight:700;white-space:nowrap;cursor:pointer}
+.audio-filter input{accent-color:var(--brand)}
 .pills{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px 0 9px}
 .pills::-webkit-scrollbar{display:none}
 .pill{flex:none;border:1px solid var(--line);border-radius:999px;background:var(--card);
@@ -495,6 +497,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
         <div class="article-tools">
           <div class="filter-row">
             <div class="pills" id="periodPills" aria-label="期間"></div>
+            <label class="audio-filter"><input type="checkbox" id="excludeAudio" checked>音声配信を除く</label>
             <span class="article-count" id="articleCount"></span>
             <span class="article-fetch" id="fetchInline"></span>
             <span class="fetch-note" id="fetchNote" tabindex="0" role="button" aria-label="更新タイミングについて">
@@ -621,6 +624,7 @@ const CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
 const ORDER_KEY = "sp_category_order_v1";
 const CATEGORY_FILTER_KEY = "sp_category_filter_v1";
+const EXCLUDE_AUDIO_KEY = "sp_exclude_audio_v1";
 const PERIODS = [["all","すべて"],["day","24時間"],["week","今週"],["month","今月"]];
 const PAGE_SIZE = 24;
 const API_PAGE_SIZE = 30;
@@ -658,6 +662,7 @@ let period = "all";
 let shown = PAGE_SIZE;
 let customCategoryOrder = [];
 let categoryFilters = new Set();
+let excludeAudio = true;
 let draggedCategory = "";
 let API_MODE = Boolean(WORKER_URL);
 let apiPage = 1;
@@ -759,6 +764,22 @@ function saveCategoryFilters(){
   }catch(_){}
 }
 
+function loadExcludeAudio(){
+  try{
+    const saved = localStorage.getItem(EXCLUDE_AUDIO_KEY);
+    excludeAudio = saved === null ? true : saved === "true";
+  }catch(_){
+    excludeAudio = true;
+  }
+  document.getElementById("excludeAudio").checked = excludeAudio;
+}
+
+function saveExcludeAudio(){
+  try{
+    localStorage.setItem(EXCLUDE_AUDIO_KEY, String(excludeAudio));
+  }catch(_){}
+}
+
 function categoryMatches(article){
   return categoryFilters.size === 0 || categoryFilters.has(normalizedCategory(article.category));
 }
@@ -781,7 +802,9 @@ function writerCard(writer){
   const primaryCategory = writerCategories(writer)[0] || "その他";
   const style = styleFor(primaryCategory);
   const initial = String(writer.name || "?").slice(0,1);
-  const latest = Array.isArray(writer.latest) ? writer.latest.slice(0,3) : [];
+  const latest = Array.isArray(writer.latest)
+    ? writer.latest.filter(article => !excludeAudio || !article.is_audio).slice(0,3)
+    : [];
   const topicEntry = TOPICS && TOPICS.writers ? TOPICS.writers[writer.name] : null;
   const topics = topicEntry && Array.isArray(topicEntry.topics)
     ? topicEntry.topics.filter(topic => Number.isFinite(Number(topic.pct)) && Number(topic.pct) > 0)
@@ -845,7 +868,9 @@ function writerCard(writer){
 
 // 発行物の最終更新＝最新記事の公開日時（ミリ秒）。記事が無ければ0で末尾に回る。
 function writerLastUpdated(writer){
-  const arr = Array.isArray(writer.latest) ? writer.latest : [];
+  const arr = Array.isArray(writer.latest)
+    ? writer.latest.filter(article => !excludeAudio || !article.is_audio)
+    : [];
   let max = 0;
   for(const article of arr){
     const t = new Date(article.published).getTime();
@@ -854,9 +879,19 @@ function writerLastUpdated(writer){
   return max;
 }
 
+function writerHasVisibleArticles(writer){
+  if(!excludeAudio) return true;
+  if(typeof writer.hasNonAudio === "boolean") return writer.hasNonAudio;
+  const articles = DATA.articles.filter(article => article.writer === writer.name);
+  if(articles.length) return articles.some(article => !article.is_audio);
+  const latest = Array.isArray(writer.latest) ? writer.latest : [];
+  return !latest.length || latest.some(article => !article.is_audio);
+}
+
 function renderShelf(refreshContent = false){
   const normalized = query.toLocaleLowerCase("ja");
   const writers = DATA.writers.filter(writer =>
+    writerHasVisibleArticles(writer) &&
     `${writer.name} ${writer.bio}`.toLocaleLowerCase("ja").includes(normalized)
   );
   const root = document.getElementById("shelfView");
@@ -1194,6 +1229,7 @@ function articleCard(article){
 function filteredArticles(){
   const normalized = query.toLocaleLowerCase("ja");
   return DATA.articles.filter(article =>
+    (!excludeAudio || !article.is_audio) &&
     categoryMatches(article) &&
     periodMatches(article.published) &&
     (API_MODE || `${article.title} ${article.excerpt} ${article.writer}`.toLocaleLowerCase("ja").includes(normalized))
@@ -1204,7 +1240,7 @@ function renderArticles(){
   const items = filteredArticles();
   const visible = API_MODE ? items : items.slice(0,shown);
   document.getElementById("articleGrid").innerHTML = visible.map(articleCard).join("");
-  const useApiTotal = API_MODE && period === "all" && categoryFilters.size < 2;
+  const useApiTotal = API_MODE && !excludeAudio && period === "all" && categoryFilters.size < 2;
   document.getElementById("articleCount").innerHTML = `<b>${useApiTotal ? apiTotal : items.length}</b>件の記事`;
   document.getElementById("articleEmpty").hidden = items.length !== 0;
   document.getElementById("moreButton").hidden = API_MODE ? !apiHasMore : items.length <= shown;
@@ -1657,6 +1693,7 @@ function init(){
   DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
   loadCategoryOrder();
   loadCategoryFilters();
+  loadExcludeAudio();
   const updatedStr = DATA.updated_at ? new Date(DATA.updated_at).toLocaleString("ja-JP") : "サンプルデータ";
   document.getElementById("updatedAt").textContent = updatedStr;
   if(DATA.updated_at){
@@ -1691,6 +1728,13 @@ function init(){
     shown = PAGE_SIZE;
     if(view === "shelf") renderShelf();
     else if(API_MODE) resetApiArticles();
+    else renderArticles();
+  });
+  document.getElementById("excludeAudio").addEventListener("change", event => {
+    excludeAudio = event.target.checked;
+    saveExcludeAudio();
+    shown = PAGE_SIZE;
+    if(view === "shelf") renderShelf();
     else renderArticles();
   });
   document.getElementById("mobileSearch").addEventListener("click", () => {
@@ -1768,6 +1812,7 @@ function init(){
 
 function apiArticlesUrl(page){
   const params = new URLSearchParams({limit:String(API_PAGE_SIZE),page:String(page)});
+  params.set("includeAudio","1");
   if(categoryFilters.size === 1) params.set("category",[...categoryFilters][0]);
   if(query) params.set("q",query);
   return `${WORKER_URL}/api/articles?${params}`;
@@ -1796,7 +1841,7 @@ async function resetApiArticles(){
     apiHasMore = Boolean(loaded.hasMore);
     apiTotal = Number(loaded.total) || 0;
     renderArticles();
-    shouldLoadMore = categoryFilters.size >= 2 && filteredArticles().length < 10 && apiHasMore;
+    shouldLoadMore = (categoryFilters.size >= 2 || excludeAudio) && filteredArticles().length < 10 && apiHasMore;
   }catch(error){
     if(requestId === apiRequestId) console.warn("Find Your Letter API request failed",error);
   }finally{
@@ -1891,7 +1936,7 @@ async function loadNextApiPage(){
   }finally{
     if(requestId === apiRequestId) apiLoading = false;
   }
-  if(requestId === apiRequestId && loadedPage && categoryFilters.size >= 2 &&
+  if(requestId === apiRequestId && loadedPage && (categoryFilters.size >= 2 || excludeAudio) &&
     filteredArticles().length - matchingBefore < 10 && apiHasMore){
     await loadNextApiPage();
   }
@@ -1918,7 +1963,7 @@ async function load(){
   try{
     if(API_MODE){
       const [articles, writers, health] = await Promise.all([
-        fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1`),
+        fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`),
         fetchJson(`${WORKER_URL}/api/writers`),
         fetchJson(`${WORKER_URL}/api/health`)
       ]);

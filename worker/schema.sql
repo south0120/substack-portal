@@ -7,8 +7,10 @@ CREATE TABLE IF NOT EXISTS articles (
   published TEXT,
   writer TEXT NOT NULL,
   category TEXT NOT NULL,
+  is_audio INTEGER NOT NULL DEFAULT 0,
   created_at TEXT DEFAULT (datetime('now'))
 );
+-- Existing D1 databases require: ALTER TABLE articles ADD COLUMN is_audio INTEGER NOT NULL DEFAULT 0;
 CREATE TABLE IF NOT EXISTS writers (
   name TEXT PRIMARY KEY,
   url TEXT, feed_url TEXT, avatar TEXT, bio TEXT, categories TEXT, updated_at TEXT

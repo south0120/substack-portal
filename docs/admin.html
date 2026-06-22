@@ -91,6 +91,7 @@
     <span>〜</span>
     <input type="date" id="rangeTo" aria-label="終了日">
     <button type="button" class="apply" id="rangeApply">適用</button>
+    <label style="display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;color:var(--sub);cursor:pointer;margin-left:6px"><input type="checkbox" id="excludeAudio" checked style="accent-color:var(--brand)">音声配信を除く</label>
     <span class="current" id="rangeLabel">全期間</span>
   </div>
 
@@ -160,6 +161,7 @@ const USAGE_URL = "data/api_usage.json";
 const TKEY = "fyl_admin_token";
 let DATA = { overview:null, writers:null, trend:null };
 let RANGE = { from:null, to:null };
+let excludeAudio = true;
 
 function token(){ return localStorage.getItem(TKEY) || ""; }
 function authHeaders(){ return { "Authorization": "Bearer " + token() }; }
@@ -382,9 +384,18 @@ async function loadOverview(){
   const qs = new URLSearchParams();
   if(RANGE.from) qs.set("from",RANGE.from);
   if(RANGE.to) qs.set("to",RANGE.to);
+  if(!excludeAudio) qs.set("includeAudio","1");
   const overview = await api("/api/admin/overview" + (qs.size ? "?"+qs : ""));
   renderOverview(overview);
 }
+async function reloadWriters(){
+  const w = await api("/api/admin/writers" + (excludeAudio ? "" : "?includeAudio=1"));
+  DATA.writers = w.writers; renderWriters(w.writers);
+}
+document.getElementById("excludeAudio").addEventListener("change", async (e)=>{
+  excludeAudio = e.target.checked;
+  await Promise.all([loadOverview(), reloadWriters()]);
+});
 
 document.querySelectorAll("[data-range-days]").forEach(btn=>btn.addEventListener("click",async ()=>{
   const max = document.getElementById("rangeTo").max || isoDay(new Date());

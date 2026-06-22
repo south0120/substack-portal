@@ -85,6 +85,7 @@ def collect_writer(feed):
                 published = datetime.fromisoformat(published.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
             except (AttributeError, TypeError, ValueError):
                 published = None
+            is_audio = 1 if (p.get("podcast_url") or p.get("audio_items")) else 0
             rows.append({
                 "id": hashlib.sha256(curl.encode()).hexdigest(),
                 "url": curl,
@@ -94,6 +95,7 @@ def collect_writer(feed):
                 "published": published,
                 "writer": feed["name"],
                 "category": category,
+                "is_audio": is_audio,
             })
         offset += len(posts)  # 実際の取得件数で前進（offset=0 の短いページでも続行）
         time.sleep(SLEEP)
@@ -103,6 +105,8 @@ def collect_writer(feed):
 def sql_quote(value):
     if value is None:
         return "NULL"
+    if isinstance(value, int):
+        return str(value)
     return "'" + str(value).replace("'", "''") + "'"
 
 
@@ -155,12 +159,12 @@ def main():
         chunk = rows[chunk_index:chunk_index + ROWS_PER_FILE]
         lines = []
         for r in chunk:
-            values = ", ".join(sql_quote(r[k]) for k in ("id", "url", "title", "excerpt", "image", "published", "writer", "category"))
+            values = ", ".join(sql_quote(r[k]) for k in ("id", "url", "title", "excerpt", "image", "published", "writer", "category", "is_audio"))
             lines.append(
-                f"INSERT INTO articles (id, url, title, excerpt, image, published, writer, category) VALUES ({values}) "
+                f"INSERT INTO articles (id, url, title, excerpt, image, published, writer, category, is_audio) VALUES ({values}) "
                 "ON CONFLICT(url) DO UPDATE SET "
                 "published=COALESCE(excluded.published, articles.published), "
-                "title=excluded.title, excerpt=excluded.excerpt, image=excluded.image;"
+                "title=excluded.title, excerpt=excluded.excerpt, image=excluded.image, is_audio=excluded.is_audio;"
             )
         out = OUT_DIR / f"backfill_{chunk_index // ROWS_PER_FILE + 1:02d}.sql"
         out.write_text("\n".join(lines) + "\n")

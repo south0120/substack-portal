@@ -534,10 +534,11 @@ async function upsertParsedFeed(env, parsed) {
   const articleStatements = parsed.articles.map((article) =>
     env.DB.prepare(`
       INSERT INTO articles
-        (id, url, title, excerpt, image, published, writer, category)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        (id, url, title, excerpt, image, published, writer, category, is_audio)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(url) DO UPDATE SET
-        published = COALESCE(excluded.published, articles.published)
+        published = COALESCE(excluded.published, articles.published),
+        is_audio = excluded.is_audio
     `).bind(
       article.id,
       article.url,
@@ -547,6 +548,7 @@ async function upsertParsedFeed(env, parsed) {
       article.published,
       article.writer,
       article.category,
+      article.is_audio,
     ),
   );
   await runBatches(env.DB, [
@@ -600,6 +602,7 @@ async function fetchArchive(feed, maxPages = 3) {
         published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
         writer: feed.name,
         category: categories[0],
+        is_audio: p.podcast_url || p.audio_items ? 1 : 0,
       });
     }
     if (posts.length < 50) break;
@@ -611,9 +614,9 @@ async function upsertArticlesOnly(env, articles) {
   if (!articles.length) return;
   const statements = articles.map((a) =>
     env.DB.prepare(
-      "INSERT INTO articles (id,url,title,excerpt,image,published,writer,category) VALUES (?,?,?,?,?,?,?,?) " +
-      "ON CONFLICT(url) DO UPDATE SET published = COALESCE(excluded.published, articles.published)",
-    ).bind(a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category),
+      "INSERT INTO articles (id,url,title,excerpt,image,published,writer,category,is_audio) VALUES (?,?,?,?,?,?,?,?,?) " +
+      "ON CONFLICT(url) DO UPDATE SET published = COALESCE(excluded.published, articles.published), is_audio = excluded.is_audio",
+    ).bind(a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category, a.is_audio),
   );
   await runBatches(env.DB, statements);
 }
@@ -767,6 +770,7 @@ async function fetchAndParseFeed(feed) {
     if (!title || !url || hiragana.length < 3) continue;
 
     const enclosure = item.match(/<enclosure\b[^>]*\burl\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>/i);
+    const isAudio = /<enclosure[^>]*type=["']audio/.test(item);
     const date = new Date(cleanText(firstTag(item, "pubDate")));
     articles.push({
       id: await sha256(url),
@@ -777,6 +781,7 @@ async function fetchAndParseFeed(feed) {
       published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
       writer: writerName,
       category: categories[0],
+      is_audio: isAudio ? 1 : 0,
     });
   }
 
@@ -802,6 +807,11 @@ async function getArticles(url, env) {
   const limit = Math.min(60, Math.max(1, positiveInt(url.searchParams.get("limit"), 30)));
   const clauses = [];
   const params = [];
+  const includeAudio = ["1", "true"].includes((url.searchParams.get("includeAudio") || "").toLowerCase());
+
+  if (!includeAudio) {
+    clauses.push("is_audio = 0");
+  }
 
   if (category && category !== "すべて") {
     clauses.push("category = ?");
@@ -821,7 +831,7 @@ async function getArticles(url, env) {
   const offset = (page - 1) * limit;
   const [rows, countRow] = await Promise.all([
     env.DB.prepare(`
-      SELECT id, url, title, excerpt, image, published, writer, category
+      SELECT id, url, title, excerpt, image, published, writer, category, is_audio
       FROM articles${where}
       ORDER BY published DESC
       LIMIT ? OFFSET ?
@@ -850,14 +860,15 @@ async function getWriters(url, env) {
 
   const [writersResult, latestResult] = await Promise.all([
     env.DB.prepare(`
-      SELECT name, url, feed_url, avatar, bio, categories
+      SELECT name, url, feed_url, avatar, bio, categories,
+        EXISTS(SELECT 1 FROM articles a WHERE a.writer = writers.name AND a.is_audio = 0) AS has_non_audio
       FROM writers${where}
       ORDER BY rowid
     `).bind(...params).all(),
     env.DB.prepare(`
-      SELECT writer, title, url, published
+      SELECT writer, title, url, published, is_audio
       FROM (
-        SELECT writer, title, url, published,
+        SELECT writer, title, url, published, is_audio,
           ROW_NUMBER() OVER (PARTITION BY writer ORDER BY published DESC) AS position
         FROM articles
       )
@@ -873,12 +884,14 @@ async function getWriters(url, env) {
       title: article.title,
       url: article.url,
       published: article.published,
+      is_audio: article.is_audio,
     });
   }
   const writers = (writersResult.results || []).map((writer) => ({
     ...writer,
     categories: parseCategories(writer.categories),
     latest: latestByWriter.get(writer.name) || [],
+    hasNonAudio: Boolean(writer.has_non_audio),
   }));
   return jsonResponse({ writers });
 }
@@ -1024,6 +1037,8 @@ async function getAdminOverview(url, request, env) {
   if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
   const fromParam = url.searchParams.get("from");
   const toParam = url.searchParams.get("to");
+  const includeAudio = ["1", "true"].includes((url.searchParams.get("includeAudio") || "").toLowerCase());
+  const audioWhere = includeAudio ? "1 = 1" : "is_audio = 0";
   const validDate = (value) => {
     if (!value) return true;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -1034,21 +1049,21 @@ async function getAdminOverview(url, request, env) {
     return jsonResponse({ error: "invalid_range" }, 400, "no-store");
   }
   const [totalA, totalW, dateRange] = await Promise.all([
-    env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
-    env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+    env.DB.prepare(`SELECT COUNT(*) AS n FROM articles WHERE ${audioWhere}`).first(),
+    env.DB.prepare(`SELECT COUNT(DISTINCT writer) AS n FROM articles WHERE ${audioWhere}`).first(),
     env.DB.prepare(`
       SELECT MIN(published) AS oldest, MAX(published) AS newest,
         MIN(date(datetime(published, '+9 hours'))) AS oldestJst,
         MAX(date(datetime(published, '+9 hours'))) AS newestJst
-      FROM articles WHERE published IS NOT NULL
+      FROM articles WHERE published IS NOT NULL AND ${audioWhere}
     `).first(),
   ]);
   const hasRange = Boolean(fromParam || toParam);
   const resolvedFrom = fromParam || (hasRange ? dateRange?.oldestJst || null : null);
   const resolvedTo = toParam || (hasRange ? dateRange?.newestJst || null : null);
   const rangeWhere = hasRange
-    ? "published IS NOT NULL AND date(datetime(published, '+9 hours')) BETWEEN ? AND ?"
-    : "1 = 1";
+    ? `${audioWhere} AND published IS NOT NULL AND date(datetime(published, '+9 hours')) BETWEEN ? AND ?`
+    : audioWhere;
   const rangeBindings = hasRange
     ? [resolvedFrom || "0001-01-01", resolvedTo || "9999-12-31"]
     : [];
@@ -1131,12 +1146,15 @@ async function getAdminOverview(url, request, env) {
 
 async function getAdminWriters(url, request, env) {
   if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  const includeAudio = ["1", "true"].includes((url.searchParams.get("includeAudio") || "").toLowerCase());
+  const audioWhere = includeAudio ? "1 = 1" : "a.is_audio = 0";
   const rows = await env.DB.prepare(`
     SELECT w.name, w.categories, w.url, w.updated_at,
-      (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name) AS articleCount,
-      (SELECT MIN(published) FROM articles a WHERE a.writer = w.name) AS firstArticle,
-      (SELECT MAX(published) FROM articles a WHERE a.writer = w.name) AS lastArticle
+      (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS articleCount,
+      (SELECT MIN(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS firstArticle,
+      (SELECT MAX(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS lastArticle
     FROM writers w
+    WHERE EXISTS(SELECT 1 FROM articles a WHERE a.writer = w.name AND ${audioWhere})
     ORDER BY articleCount DESC, w.name
   `).all();
   return jsonResponse({
