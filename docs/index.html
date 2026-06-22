@@ -467,7 +467,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
     </label>
     <div class="view-toggle" aria-label="表示切り替え">
       <button type="button" data-view="articles" class="on">記事</button>
-      <button type="button" data-view="shelf">書き手</button>
+      <button type="button" data-view="shelf">発行物</button>
     </div>
     <a class="guide-link" href="guide.html" aria-label="使い方・設定" data-ga="guide_open">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -531,7 +531,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>記事
   </button>
   <button type="button" data-mobile-view="shelf">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4v16M20 4v16M4 7h16M4 17h16"/><path d="M8 7v10M15 7v10"/></svg>書き手
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4v16M20 4v16M4 7h16M4 17h16"/><path d="M8 7v10M15 7v10"/></svg>発行物
   </button>
   <button type="button" id="mobileSearch">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>検索
@@ -553,7 +553,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 <div class="modal-backdrop" id="orderBackdrop" hidden>
   <section class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
     <h2 id="orderTitle">カテゴリを並び替え</h2>
-    <p>チェックしたカテゴリの記事を表示します。並び順は書き手の棚にも反映されます。</p>
+    <p>チェックしたカテゴリの記事を表示します。並び順は発行物の棚にも反映されます。</p>
     <ol class="order-list" id="orderList"></ol>
     <div class="modal-actions">
       <button type="button" class="modal-action" id="orderReset">リセット</button>
@@ -610,11 +610,11 @@ const MASTER_CATEGORIES = [
   "ファッション・美容",
   "その他"
 ];
-// 書き手ページのカテゴリ表示名。「いま、〇〇系の記事を書いている人たち」＝最近の記事の傾向（いまの動き）として見せる
-// （mckenzieとの設計議論＋サウスさんのvoice調整より：固定ジャンルではなく動的、かつ自然な日本語に）
+// 発行物ページのカテゴリ表示名。「いま、〇〇系の記事が多い発行物」＝最近の記事の傾向（いまの動き）として見せる
+// （mckenzieとの設計議論＋サウスさんのvoice調整より：固定ジャンルではなく動的、かつ自然な日本語に。単位は人ではなく発行物）
 function shelfVoice(name){
-  if(name === "その他") return "いま、ジャンルを越えて書いている人たち";
-  return `いま、${name}系の記事を書いている人たち`;
+  if(name === "その他") return "いま、ジャンルを越えて発信している発行物";
+  return `いま、${name}系の記事が多い発行物`;
 }
 const EXTERNAL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>';
 const CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
@@ -843,7 +843,7 @@ function writerCard(writer){
     </article>`;
 }
 
-// 書き手の最終更新＝最新記事の公開日時（ミリ秒）。記事が無ければ0で末尾に回る。
+// 発行物の最終更新＝最新記事の公開日時（ミリ秒）。記事が無ければ0で末尾に回る。
 function writerLastUpdated(writer){
   const arr = Array.isArray(writer.latest) ? writer.latest : [];
   let max = 0;
@@ -875,7 +875,7 @@ function renderShelf(refreshContent = false){
         <div class="shelf-heading" title="ドラッグで棚の順番を入れ替え">
           <svg class="shelf-grip" viewBox="0 0 12 18" fill="currentColor" stroke="none" aria-hidden="true"><circle cx="3" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/><circle cx="3" cy="14" r="1.2"/><circle cx="9" cy="14" r="1.2"/></svg>
           <span class="category-icon" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
-          <h2>${esc(shelfVoice(name))} <span class="shelf-cat-key">${esc(name)}</span><span class="writer-count">${items.length}人</span></h2>
+          <h2>${esc(shelfVoice(name))} <span class="shelf-cat-key">${esc(name)}</span><span class="writer-count">${items.length}発行物</span></h2>
           <span class="shelf-rule"></span>
           <div class="shelf-arrows">
             <button type="button" class="shelf-arrow" data-direction="-1" aria-label="${esc(name)}を前へ">${CHEVRON_LEFT}</button>
@@ -887,7 +887,7 @@ function renderShelf(refreshContent = false){
   }).join("");
   root.innerHTML = `
     <div class="shelf-tools">
-      ${query ? "" : `<p class="shelf-note">ここに並ぶ書き手は、最近の記事の傾向から自動で振り分けています。新しい記事を書くと再判定されるので、固定のジャンル分けではなく「いまの書き手の動き」を映しています。</p>`}
+      ${query ? "" : `<p class="shelf-note">ここに並ぶ発行物は、最近の記事の傾向から自動で振り分けています。新しい記事が出ると再判定されるので、固定のジャンル分けではなく「いまの発行物の動き」を映しています。</p>`}
       <button type="button" class="order-button" id="orderOpen">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
         並び替え
@@ -896,7 +896,7 @@ function renderShelf(refreshContent = false){
     ${sections || `
     <div class="no-results">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <b>該当する書き手が見つかりません</b>
+      <b>該当する発行物が見つかりません</b>
       検索語を変えてください。
     </div>`}`;
   document.getElementById("orderOpen").addEventListener("click", openOrderModal);
@@ -1295,7 +1295,7 @@ function setView(nextView, scroll = true){
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
   document.getElementById("articleView").hidden = shelf;
-  document.getElementById("searchInput").placeholder = shelf ? "書き手を検索" : "記事を検索";
+  document.getElementById("searchInput").placeholder = shelf ? "発行物を検索" : "記事を検索";
   document.querySelectorAll("[data-view]").forEach(button =>
     button.classList.toggle("on", button.dataset.view === view)
   );

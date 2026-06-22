@@ -121,12 +121,12 @@
   </div>
 
   <div class="panel" id="distributionPanel" style="display:none">
-    <h2>書き手ごとの記事数分布（選択期間）</h2>
+    <h2>発行物ごとの記事数分布（選択期間）</h2>
     <canvas id="distributionChart" height="120"></canvas>
   </div>
 
   <div class="panel">
-    <h2>記事数・ライター数の推移（毎朝記録）</h2>
+    <h2>記事数・発行物数の推移（毎朝記録）</h2>
     <canvas id="trendChart" height="120"></canvas>
     <div class="muted" id="trendNote" style="margin-top:8px"></div>
   </div>
@@ -143,10 +143,10 @@
   </div>
 
   <div class="panel">
-    <h2><span>書き手一覧（<span id="writerCount">0</span>名）<span class="period" id="writerPeriod">｜記事数は全期間の累計</span></span> <button class="csv" data-csv="writers">CSV</button></h2>
+    <h2><span>発行物一覧（<span id="writerCount">0</span>名）<span class="period" id="writerPeriod">｜記事数は全期間の累計</span></span> <button class="csv" data-csv="writers">CSV</button></h2>
     <div class="tablewrap">
       <table id="writerTable">
-        <thead><tr><th>#</th><th>書き手</th><th>カテゴリ</th><th class="num">記事数</th><th>最古記事(取得済)</th><th>最新投稿</th></tr></thead>
+        <thead><tr><th>#</th><th>発行物</th><th>カテゴリ</th><th class="num">記事数</th><th>最古記事(取得済)</th><th>最新投稿</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -206,10 +206,10 @@ function jstDay(s){
 function renderKpis(o){
   const ranged = o.rangeTotals ? `
     <div class="kpi"><div class="label">選択期間の記事数</div><div class="val">${fmt(o.rangeTotals.articles)}</div></div>
-    <div class="kpi"><div class="label">選択期間のライター数</div><div class="val">${fmt(o.rangeTotals.writers)}</div></div>` : "";
+    <div class="kpi"><div class="label">選択期間の発行物数</div><div class="val">${fmt(o.rangeTotals.writers)}</div></div>` : "";
   document.getElementById("kpis").innerHTML = `
     <div class="kpi"><div class="label">総記事数</div><div class="val">${fmt(o.totals.articles)}</div></div>
-    <div class="kpi"><div class="label">総ライター数</div><div class="val">${fmt(o.totals.writers)}</div></div>
+    <div class="kpi"><div class="label">総発行物数</div><div class="val">${fmt(o.totals.writers)}</div></div>
     ${ranged}
     <div class="kpi"><div class="label">本日の新着記事</div><div class="val">${fmt((o.perDay[o.perDay.length-1]||{}).articles)} <small>件</small></div></div>
     <div class="kpi"><div class="label">カテゴリ数</div><div class="val">${o.byCategory.length}</div></div>`;
@@ -221,7 +221,7 @@ function renderCatList(o){
   document.getElementById("catList").innerHTML = o.byCategory.map((c,i)=>`
     <div class="row"><span class="nm" title="${c.category}">${c.category}</span>
       <span class="bar" style="width:${Math.round(c.articles/max*160)}px;background:${CCOL[i%CCOL.length]}"></span>
-      <span class="ct">記事${fmt(c.articles)} / 書き手${fmt(c.writers)}</span></div>`).join("");
+      <span class="ct">記事${fmt(c.articles)} / 発行物${fmt(c.writers)}</span></div>`).join("");
 }
 
 function renderSummary(o){
@@ -231,8 +231,8 @@ function renderSummary(o){
   document.getElementById("summary").innerHTML = `
     ・最も投稿が多い時間帯：<b>${topHour?topHour.hour:"-"}時台</b>（${fmt(topHour&&topHour.count)}件）<br>
     ・記事数が最も多いカテゴリ：<b>${topCat?topCat.category:"-"}</b>（${fmt(topCat&&topCat.articles)}件）<br>
-    ・書き手が最も多いカテゴリ：<b>${[...o.byCategory].sort((a,b)=>b.writers-a.writers)[0]?.category||"-"}</b><br>
-    ・1書き手あたり平均記事数：<b>${(totals.articles/Math.max(1,totals.writers)).toFixed(1)}</b>件`;
+    ・発行物が最も多いカテゴリ：<b>${[...o.byCategory].sort((a,b)=>b.writers-a.writers)[0]?.category||"-"}</b><br>
+    ・1発行物あたり平均記事数：<b>${(totals.articles/Math.max(1,totals.writers)).toFixed(1)}</b>件`;
 }
 
 function renderWriters(ws){
@@ -299,7 +299,7 @@ async function renderTrend(){
     const arts = rows.map(r=>Number(r[1])), wrs = rows.map(r=>Number(r[2]));
     line("trendChart", labels, [
       { label:"記事数", data:arts, borderColor:"#FF6719", backgroundColor:"rgba(255,103,25,.08)", yAxisID:"y", fill:true, tension:.3 },
-      { label:"ライター数", data:wrs, borderColor:"#3a86c8", yAxisID:"y2", tension:.3 }
+      { label:"発行物数", data:wrs, borderColor:"#3a86c8", yAxisID:"y2", tension:.3 }
     ]);
     charts.trendChart.options.scales.y2 = { position:"right", beginAtZero:false, grid:{drawOnChartArea:false}, ticks:{precision:0} };
     charts.trendChart.update();
@@ -371,7 +371,7 @@ function renderOverview(o){
   const distribution = Array.isArray(o.articleCountDistribution) ? o.articleCountDistribution : null;
   document.getElementById("distributionPanel").style.display = distribution ? "block" : "none";
   if(distribution){
-    bar("distributionChart", distribution.map(d=>d.bucket), distribution.map(d=>d.writers), "#7b5ea7", "書き手数");
+    bar("distributionChart", distribution.map(d=>d.bucket), distribution.map(d=>d.writers), "#7b5ea7", "発行物数");
   }else if(charts.distributionChart){
     charts.distributionChart.destroy(); delete charts.distributionChart;
   }
@@ -420,9 +420,9 @@ function downloadCsv(name, rows){
 document.querySelectorAll("[data-csv]").forEach(btn=>btn.addEventListener("click",()=>{
   const t = btn.dataset.csv;
   if(t==="category" && DATA.overview){
-    downloadCsv("fyl_categories.csv", [["カテゴリ","記事数","書き手数"], ...DATA.overview.byCategory.map(c=>[c.category,c.articles,c.writers])]);
+    downloadCsv("fyl_categories.csv", [["カテゴリ","記事数","発行物数"], ...DATA.overview.byCategory.map(c=>[c.category,c.articles,c.writers])]);
   } else if(t==="writers" && DATA.writers){
-    downloadCsv("fyl_writers.csv", [["書き手","カテゴリ","記事数","最古記事(取得済)","最新投稿","URL"],
+    downloadCsv("fyl_writers.csv", [["発行物","カテゴリ","記事数","最古記事(取得済)","最新投稿","URL"],
       ...DATA.writers.map(w=>[w.name,(w.categories||[]).join("・"),w.articleCount,w.firstArticle||"",w.lastArticle||"",w.url||""])]);
   }
 }));
