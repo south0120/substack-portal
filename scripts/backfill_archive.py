@@ -59,13 +59,17 @@ def collect_writer(feed):
     base = base_url(feed["feed_url"])
     cats = feed.get("categories") or [feed.get("category", "その他")]
     category = cats[0] if isinstance(cats, list) else cats
-    for page in range(MAX_PAGES):
-        url = f"{base}/api/v1/archive?sort=new&offset={page * PAGE}&limit={PAGE}"
+    # archive?sort=new は offset=0 で 50未満(例23件)を返すことがあるが、ページは続く。
+    # 固定の page*PAGE では「最初の短いページ＝最後」と誤判定して打ち切ってしまうため、
+    # 実際の取得件数で offset を進め、空が返るまで続ける（重複は呼び出し側の seen で除外）。
+    offset = 0
+    for _ in range(MAX_PAGES * 2):  # 反復回数の安全上限
+        url = f"{base}/api/v1/archive?sort=new&offset={offset}&limit={PAGE}"
         try:
             posts = get_json(url)
         except Exception as e:
-            print(f"    page {page}: {e}", file=sys.stderr)
-            if page == 0:
+            print(f"    offset {offset}: {e}", file=sys.stderr)
+            if offset == 0:
                 raise
             break
         if not posts:
@@ -91,8 +95,7 @@ def collect_writer(feed):
                 "writer": feed["name"],
                 "category": category,
             })
-        if len(posts) < PAGE:
-            break
+        offset += len(posts)  # 実際の取得件数で前進（offset=0 の短いページでも続行）
         time.sleep(SLEEP)
     return rows
 
