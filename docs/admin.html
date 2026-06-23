@@ -239,6 +239,7 @@ function renderSummary(o){
 
 function renderWriters(ws){
   document.getElementById("writerCount").textContent = ws.length;
+  document.getElementById("writerPeriod").textContent = RANGE.from||RANGE.to ? "｜記事数は選択期間" : "｜記事数は全期間の累計";
   const tb = document.querySelector("#writerTable tbody");
   tb.innerHTML = ws.map((w,i)=>`<tr>
     <td>${i+1}</td>
@@ -389,7 +390,11 @@ async function loadOverview(){
   renderOverview(overview);
 }
 async function reloadWriters(){
-  const w = await api("/api/admin/writers" + (excludeAudio ? "" : "?includeAudio=1"));
+  const qs = new URLSearchParams();
+  if(RANGE.from) qs.set("from",RANGE.from);
+  if(RANGE.to) qs.set("to",RANGE.to);
+  if(!excludeAudio) qs.set("includeAudio","1");
+  const w = await api("/api/admin/writers" + (qs.size ? "?"+qs : ""));
   DATA.writers = w.writers; renderWriters(w.writers);
 }
 document.getElementById("excludeAudio").addEventListener("change", async (e)=>{
@@ -402,11 +407,11 @@ document.querySelectorAll("[data-range-days]").forEach(btn=>btn.addEventListener
   const from = new Date(max+"T00:00:00Z");
   from.setUTCDate(from.getUTCDate()-Number(btn.dataset.rangeDays)+1);
   RANGE = { from:isoDay(from), to:max };
-  await loadOverview();
+  await Promise.all([loadOverview(), reloadWriters()]);
 }));
 document.querySelector("[data-range-all]").addEventListener("click",async ()=>{
   RANGE = { from:null, to:null };
-  await loadOverview();
+  await Promise.all([loadOverview(), reloadWriters()]);
 });
 document.getElementById("rangeApply").addEventListener("click",async ()=>{
   const from = document.getElementById("rangeFrom").value||null;
@@ -418,7 +423,7 @@ document.getElementById("rangeApply").addEventListener("click",async ()=>{
   }
   document.getElementById("rangeFrom").setCustomValidity("");
   RANGE = { from, to };
-  await loadOverview();
+  await Promise.all([loadOverview(), reloadWriters()]);
 });
 
 function downloadCsv(name, rows){
