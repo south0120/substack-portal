@@ -54,6 +54,10 @@ def excerpt_of(desc):
     return re.sub(r"\s+", " ", text).strip()[:120]
 
 
+def _real_audio(items):
+    return any((it or {}).get("type") != "tts" for it in (items or []))
+
+
 def collect_writer(feed):
     rows = []
     base = base_url(feed["feed_url"])
@@ -85,7 +89,7 @@ def collect_writer(feed):
                 published = datetime.fromisoformat(published.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
             except (AttributeError, TypeError, ValueError):
                 published = None
-            is_audio = 1 if (p.get("podcast_url") or p.get("audio_items")) else 0
+            is_audio = 1 if (p.get("podcast_url") or p.get("type") == "podcast" or _real_audio(p.get("audio_items"))) else 0
             rows.append({
                 "id": hashlib.sha256(curl.encode()).hexdigest(),
                 "url": curl,

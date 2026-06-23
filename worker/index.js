@@ -602,7 +602,7 @@ async function fetchArchive(feed, maxPages = 3) {
         published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
         writer: feed.name,
         category: categories[0],
-        is_audio: p.podcast_url || p.audio_items ? 1 : 0,
+        is_audio: (p.podcast_url || p.type === 'podcast' || (Array.isArray(p.audio_items) && p.audio_items.some(function(it){ return it && it.type !== 'tts'; }))) ? 1 : 0,
       });
     }
     if (posts.length < 50) break;
@@ -1146,17 +1146,46 @@ async function getAdminOverview(url, request, env) {
 
 async function getAdminWriters(url, request, env) {
   if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  const fromParam = url.searchParams.get("from");
+  const toParam = url.searchParams.get("to");
   const includeAudio = ["1", "true"].includes((url.searchParams.get("includeAudio") || "").toLowerCase());
   const audioWhere = includeAudio ? "1 = 1" : "a.is_audio = 0";
-  const rows = await env.DB.prepare(`
+  const validDate = (value) => {
+    if (!value) return true;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+    const date = new Date(`${value}T00:00:00Z`);
+    return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  };
+  if (!validDate(fromParam) || !validDate(toParam) || (fromParam && toParam && fromParam > toParam)) {
+    return jsonResponse({ error: "invalid_range" }, 400, "no-store");
+  }
+  const hasRange = Boolean(fromParam || toParam);
+  const dateRange = hasRange ? await env.DB.prepare(`
+    SELECT MIN(date(datetime(published, '+9 hours'))) AS oldestJst,
+      MAX(date(datetime(published, '+9 hours'))) AS newestJst
+    FROM articles a WHERE published IS NOT NULL AND ${audioWhere}
+  `).first() : null;
+  const resolvedFrom = fromParam || (hasRange ? dateRange?.oldestJst || null : null);
+  const resolvedTo = toParam || (hasRange ? dateRange?.newestJst || null : null);
+  const periodWhere = hasRange
+    ? " AND published IS NOT NULL AND date(datetime(published, '+9 hours')) BETWEEN ? AND ?"
+    : "";
+  const rangeBindings = hasRange
+    ? [resolvedFrom || "0001-01-01", resolvedTo || "9999-12-31"]
+    : [];
+  const statement = env.DB.prepare(`
     SELECT w.name, w.categories, w.url, w.updated_at,
-      (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS articleCount,
-      (SELECT MIN(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS firstArticle,
-      (SELECT MAX(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}) AS lastArticle
+      (SELECT COUNT(*) FROM articles a WHERE a.writer = w.name AND ${audioWhere}${periodWhere}) AS articleCount,
+      (SELECT MIN(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}${periodWhere}) AS firstArticle,
+      (SELECT MAX(published) FROM articles a WHERE a.writer = w.name AND ${audioWhere}${periodWhere}) AS lastArticle
     FROM writers w
-    WHERE EXISTS(SELECT 1 FROM articles a WHERE a.writer = w.name AND ${audioWhere})
+    WHERE EXISTS(SELECT 1 FROM articles a WHERE a.writer = w.name AND ${audioWhere}${periodWhere})
     ORDER BY articleCount DESC, w.name
-  `).all();
+  `);
+  const rows = await (rangeBindings.length
+    ? statement.bind(...rangeBindings, ...rangeBindings, ...rangeBindings, ...rangeBindings)
+    : statement
+  ).all();
   return jsonResponse({
     writers: (rows.results || []).map((r) => ({
       name: r.name,
