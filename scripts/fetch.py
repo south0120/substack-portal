@@ -146,7 +146,7 @@ def main() -> int:
             "url": fallback_site_url(feed["feed_url"]),
             "feed_url": feed["feed_url"],
             "categories": categories,
-            "bio": feed["bio"],
+            "bio": feed.get("bio", ""),
             "avatar": "",
             "latest": [],
         }
