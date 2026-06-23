@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T22:00:35.110926+00:00",
+  "updated_at": "2026-06-23T23:41:23.047051+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【6/19(金)~6/23(火)News Report】ノーベル賞のJ.ジャンパーがDeepMindからAnthropicへ移籍 / AnthropicとMicronが次世代AIメモリで戦略提携 / Five EyesがフロンティアAIのサイバー脅威を「数カ月」と警告など",
+          "url": "https://www.debunkresearch.com/p/ainews260619-23",
+          "published": "2026-06-23T23:01:10+00:00"
+        },
+        {
+          "title": "【06/19(金)~06/23(火)News Report】SBI新生信託銀行が信託型ステーブルコイン「JPYSC」を国内初発行へ / NYSE親会社ICEとOKXがトークン化証券で合弁 / イーサリアム財団が人員2割削減・Ethlabs始動など",
+          "url": "https://www.debunkresearch.com/p/cnews260619-23",
+          "published": "2026-06-23T23:01:09+00:00"
+        },
+        {
           "title": "【Palmier Pro】AIエージェントが操作するビデオエディター / @Palmier_io",
           "url": "https://www.debunkresearch.com/p/palmier-pro",
           "published": "2026-06-22T21:01:47+00:00"
-        },
-        {
-          "title": "先週のAI市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/ai-wr260613-19",
-          "published": "2026-06-21T21:01:35+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/c-wr260613-19",
-          "published": "2026-06-21T21:01:28+00:00"
         }
       ]
     },
@@ -11277,6 +11277,24 @@
   ],
   "articles": [
     {
+      "title": "【6/19(金)~6/23(火)News Report】ノーベル賞のJ.ジャンパーがDeepMindからAnthropicへ移籍 / AnthropicとMicronが次世代AIメモリで戦略提携 / Five EyesがフロンティアAIのサイバー脅威を「数カ月」と警告など",
+      "url": "https://www.debunkresearch.com/p/ainews260619-23",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-23T23:01:10+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Xfhv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff45b9c65-94cf-4072-811c-48ee0488f824_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【06/19(金)~06/23(火)News Report】SBI新生信託銀行が信託型ステーブルコイン「JPYSC」を国内初発行へ / NYSE親会社ICEとOKXがトークン化証券で合弁 / イーサリアム財団が人員2割削減・Ethlabs始動など",
+      "url": "https://www.debunkresearch.com/p/cnews260619-23",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-23T23:01:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!axUK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb7d018c-4966-41ae-b08e-4d71cc4892aa_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Palmier Pro】AIエージェントが操作するビデオエディター / @Palmier_io",
       "url": "https://www.debunkresearch.com/p/palmier-pro",
       "excerpt": "コード解析AIから大胆ピボット。元五輪候補スイマー × YouTuber × エンジニアのYC創業者が、Claudeがタイムラインを直接操作するOSSビデオエディターを作った。",
@@ -11545,24 +11563,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!okvK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa4c7488b-f515-42d2-9684-2de03bdf6c33_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "【6/10(水)~6/11(木)News Report】暗号資産の金商法移管法案が衆院委で可決 / 3メガバンクが共同ステーブルコイン発行へ / CFTCが予測市場に米国初の規則案など",
-      "url": "https://www.debunkresearch.com/p/crypto-news260610-11",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-11T21:02:04+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!8p8g!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F46adf18e-d8d3-4189-9c62-2c71788d2a09_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【6/10(水)~6/11(木)News Report】AnthropicがClaude Fable 5とMythos 5を発表 / OpenAIがオハイオ州10GWデータセンターを交渉中 / MetaがRelianceとインド初のAIデータセンター契約など",
-      "url": "https://www.debunkresearch.com/p/ai-news260610-11",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-11T21:01:34+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!flTM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6e191cbe-cdfa-4a70-83ab-e5c350408664_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "【保存版】Substack初心者向け完全ガイド｜始め方・使い方の記事一覧",
