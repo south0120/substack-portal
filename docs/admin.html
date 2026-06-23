@@ -106,6 +106,10 @@
       <h2>日次の新着記事数（選択期間）</h2>
       <canvas id="dayChart" height="160"></canvas>
     </div>
+    <div class="panel">
+      <h2>日次の更新発行物数（選択期間）</h2>
+      <canvas id="writersDayChart" height="160"></canvas>
+    </div>
   </div>
 
   <div class="panel" id="heatmapPanel">
@@ -368,6 +372,7 @@ function renderOverview(o){
   renderKpis(o);
   bar("hourChart", o.byHour.map(h=>h.hour+"時"), o.byHour.map(h=>h.count), "#FF6719", "投稿数");
   bar("dayChart", o.perDay.map(d=>d.date.slice(5)), o.perDay.map(d=>d.articles), "#3a86c8", "新着記事");
+  bar("writersDayChart", (o.perDayWriters||[]).map(d=>d.date.slice(5)), (o.perDayWriters||[]).map(d=>d.writers), "#4caf6e", "更新発行物");
   renderHeatmap(o);
   renderCatList(o);
   renderSummary(o);

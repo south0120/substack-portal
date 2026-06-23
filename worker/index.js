@@ -1071,7 +1071,7 @@ async function getAdminOverview(url, request, env) {
     const statement = env.DB.prepare(sql);
     return rangeBindings.length ? statement.bind(...rangeBindings) : statement;
   };
-  const [byCatArticles, byHour, byDowHour, perDay, rangeTotal, articleCounts] = await Promise.all([
+  const [byCatArticles, byHour, byDowHour, perDay, perDayWriters, rangeTotal, articleCounts] = await Promise.all([
     prepareRange(`
       SELECT category, COUNT(*) AS n, COUNT(DISTINCT writer) AS writer_n
       FROM articles WHERE category <> '' AND ${rangeWhere}
@@ -1091,6 +1091,11 @@ async function getAdminOverview(url, request, env) {
     `).all(),
     prepareRange(`
       SELECT date(datetime(published, '+9 hours')) AS d, COUNT(*) AS n
+      FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
+      GROUP BY d ORDER BY d DESC ${hasRange ? "" : "LIMIT 90"}
+    `).all(),
+    prepareRange(`
+      SELECT date(datetime(published, '+9 hours')) AS d, COUNT(DISTINCT writer) AS n
       FROM articles WHERE published IS NOT NULL AND ${rangeWhere}
       GROUP BY d ORDER BY d DESC ${hasRange ? "" : "LIMIT 90"}
     `).all(),
@@ -1131,6 +1136,17 @@ async function getAdminOverview(url, request, env) {
       day = next.toISOString().slice(0, 10);
     }
   }
+  let dailyWriters = (perDayWriters.results || []).map((r) => ({ date: r.d, writers: r.n })).reverse();
+  if (hasRange && resolvedFrom && resolvedTo) {
+    const counts = Object.fromEntries(dailyWriters.map((row) => [row.date, row.writers]));
+    dailyWriters = [];
+    for (let day = resolvedFrom; day <= resolvedTo;) {
+      dailyWriters.push({ date: day, writers: counts[day] || 0 });
+      const next = new Date(`${day}T00:00:00Z`);
+      next.setUTCDate(next.getUTCDate() + 1);
+      day = next.toISOString().slice(0, 10);
+    }
+  }
   return jsonResponse({
     totals: { articles: totalA?.n || 0, writers: totalW?.n || 0 },
     rangeTotals: { articles: rangeTotal?.articles || 0, writers: rangeTotal?.writers || 0 },
@@ -1140,6 +1156,7 @@ async function getAdminOverview(url, request, env) {
     byHour: hours,
     dowHour,
     perDay: daily,
+    perDayWriters: dailyWriters,
     articleCountDistribution: bucketOrder.map((bucket) => ({ bucket, writers: bucketCounts[bucket] })),
   }, 200, "no-store");
 }
