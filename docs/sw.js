@@ -1,4 +1,4 @@
-const CACHE_NAME = "fyl-v1";
+const CACHE_NAME = "fyl-v2";
 const SHELL = [
   "./",
   "./index.html",
