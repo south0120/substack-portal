@@ -72,6 +72,15 @@
   #netCanvas{cursor:grab;touch-action:none}
   #netCanvas.grabbing{cursor:grabbing}
   .net-tip{position:fixed;pointer-events:none;background:#1b1714;color:#fff;border:1px solid #3a322c;border-radius:7px;padding:5px 9px;font-size:.74rem;z-index:50;display:none;max-width:260px;line-height:1.4}
+  .net-detail{position:absolute;top:10px;right:10px;width:min(264px,74%);max-height:calc(100% - 20px);overflow:auto;background:rgba(20,16,13,0.95);color:#eee;border:1px solid #3a322c;border-radius:11px;padding:12px 13px;font-size:.76rem;line-height:1.5}
+  .net-detail h3{margin:0 8px 2px 0;font-size:.92rem;color:#fff}
+  .net-detail .nd-cat{color:#b0a89e;font-size:.72rem;margin-bottom:6px}
+  .net-detail .nd-sec{margin-top:9px;font-weight:700;color:#ff9a52;font-size:.72rem}
+  .net-detail .nd-list{margin:3px 0 0;padding:0;list-style:none}
+  .net-detail .nd-list li[data-net-go]{padding:2px 0;color:#dcd6cf;cursor:pointer}
+  .net-detail .nd-list li[data-net-go]:hover{color:#fff;text-decoration:underline}
+  .net-detail .nd-open{display:inline-block;margin-top:11px;color:#ff9a52;font-weight:700;text-decoration:none}
+  .net-detail .nd-close{position:absolute;top:7px;right:11px;cursor:pointer;color:#b0a89e;font-size:1.1rem;line-height:1}
   .disc-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;font-size:.8rem}
   .disc-controls input,.disc-controls select{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
   #discoveryTable th[data-sort]{cursor:pointer;user-select:none;white-space:nowrap}
@@ -219,7 +228,7 @@
   <div id="tabNetwork" hidden>
     <div class="panel">
       <h2>ライター相関ネットワーク</h2>
-      <div class="muted" style="font-size:.74rem;margin-bottom:10px;line-height:1.5">Substackの「推薦」でつながった発行物どうしの相関図。<b>点</b>＝発行物（大きいほど多く推薦されてる人気ハブ／色＝カテゴリ）、<b>線</b>＝推薦の向き。点ドラッグで動かせる・ホイールでズーム・背景ドラッグで移動・点クリックでそのSubstackを開く。<span id="netMeta"></span></div>
+      <div class="muted" style="font-size:.74rem;margin-bottom:10px;line-height:1.5">Substackの「推薦」でつながった発行物どうしの相関図。<b>点</b>＝発行物（大きいほど多く推薦されてる人気ハブ／色＝カテゴリ）、<b>線</b>＝推薦の向き。<b>点をクリック/タップ</b>でその発行物を中心に絞り込み（つながりだけ表示・詳細カードで相手一覧）。点ドラッグで動かす・ホイール/ピンチでズーム・背景ドラッグで移動・背景タップで全体に戻る。<span id="netMeta"></span></div>
       <div class="net-controls">
         <input type="search" id="netSearch" placeholder="発行物を探してハイライト">
         <label><input type="checkbox" id="netExt"> 外部の推薦先も表示</label>
@@ -228,7 +237,10 @@
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
-      <canvas id="netCanvas" height="600" style="width:100%;height:600px;display:block;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)"></canvas>
+      <div class="net-stage" style="position:relative">
+        <canvas id="netCanvas" height="600" style="width:100%;height:600px;display:block;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)"></canvas>
+        <div id="netDetail" class="net-detail" hidden></div>
+      </div>
     </div>
   </div>
 </div>
@@ -629,7 +641,7 @@ document.querySelector("[data-disc-csv]").addEventListener("click",()=>{
 // ===== ネットワークタブ（力学グラフ / canvas） =====
 const NET = { raw:null, started:false, nodes:[], edges:[], byId:{}, alpha:0, raf:null,
   view:{x:0,y:0,k:1}, drag:null, panning:null, hover:null, moved:false, down:null,
-  canvas:null, ctx:null, W:0, H:0, highlight:"" };
+  canvas:null, ctx:null, W:0, H:0, highlight:"", focus:null, focusSet:null };
 const NET_CATCOLORS = {"AI":"#8b6cff","テクノロジー":"#39a0ff","ビジネス":"#ff8a3d","投資・経済":"#ffc73d","クリエイティブ":"#ff5e9c","エンタメ":"#ff5252","ライフスタイル":"#37d99b","健康・ウェルネス":"#26c6a6","社会・文化":"#a99bff","キャリア・働き方":"#ffab40","スポーツ":"#4dd0e1","学び・教育":"#9ccc65","旅行・地域":"#7ed957","フード":"#ffd54f","子育て":"#f06fa0","スピリチュアル":"#b39ddb","外部":"#6b645c","その他":"#b0a89e"};
 function netColor(c){ return NET_CATCOLORS[c] || "#b0a89e"; }
 
@@ -643,6 +655,7 @@ async function loadNetwork(){
   buildNet(); setupNetCanvas(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet();
 }
 function buildNet(){
+  NET.focus=null; NET.focusSet=null; const _dd=document.getElementById("netDetail"); if(_dd) _dd.hidden=true;
   const showExt = document.getElementById("netExt").checked;
   const edges = (NET.raw.edges||[]).filter(e=> showExt ? true : !e.ext);
   const used = new Set(); edges.forEach(e=>{ used.add(e.s); used.add(e.t); });
@@ -707,18 +720,23 @@ function sx_(x){ return x*NET.view.k+NET.view.x+NET.W/2; }
 function sy_(y){ return y*NET.view.k+NET.view.y+NET.H/2; }
 function toWorld(sx,sy){ return [(sx-NET.view.x-NET.W/2)/NET.view.k, (sy-NET.view.y-NET.H/2)/NET.view.k]; }
 function drawNet(){
-  const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight; ctx.clearRect(0,0,NET.W,NET.H);
+  const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight, fc=NET.focus, fset=NET.focusSet;
+  ctx.clearRect(0,0,NET.W,NET.H);
   ctx.lineWidth=Math.max(0.4,0.55*k);
   for(const e of NET.edges){
-    const on = !hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover;
-    ctx.strokeStyle = on ? "rgba(255,150,80,0.32)" : "rgba(255,255,255,0.05)";
+    if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
+    const on = fc ? true : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover);
+    ctx.strokeStyle = on ? "rgba(255,150,80,0.40)" : "rgba(255,255,255,0.05)";
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
   for(const n of NET.nodes){
-    const x=sx_(n.x), y=sy_(n.y), r=Math.max(1.5,n.r*k), col=netColor(n.cat);
-    const on = !hl || n.name.toLowerCase().includes(hl);
-    ctx.globalAlpha=on?1:0.22; ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(20,11*k):3; ctx.fillStyle=col;
-    ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill(); ctx.shadowBlur=0; ctx.globalAlpha=1;
+    const x=sx_(n.x), y=sy_(n.y), col=netColor(n.cat); let r=Math.max(1.5,n.r*k);
+    const on = fc ? fset.has(n.id) : (!hl || n.name.toLowerCase().includes(hl));
+    ctx.globalAlpha = on?1:(fc?0.09:0.22);
+    ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(20,11*k):3; ctx.fillStyle=col;
+    ctx.beginPath(); ctx.arc(x,y,(fc&&on)?r*1.12:r,0,7); ctx.fill(); ctx.shadowBlur=0;
+    if(fc && n===fc){ ctx.globalAlpha=1; ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(x,y,r*1.12+3,0,7); ctx.stroke(); ctx.lineWidth=Math.max(0.4,0.55*k); }
+    ctx.globalAlpha=1;
   }
   ctx.font="11px system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
   const drawn=[];
@@ -730,9 +748,43 @@ function drawNet(){
     ctx.fillStyle="rgba(0,0,0,0.5)"; ctx.fillRect(bx-2,by,w+4,13);
     ctx.fillStyle="rgba(255,255,255,0.92)"; ctx.fillText(txt,x,y);
   };
-  if(NET.hover) labelNode(NET.hover,true);
-  if(hl) for(const n of NET.nodes){ if(n!==NET.hover && n.name.toLowerCase().includes(hl)) labelNode(n,true); }
-  if(k>0.35) for(const n of NET.nodes){ if(NET.topLabels && NET.topLabels.has(n.id) && n!==NET.hover) labelNode(n,false); }
+  if(fc){
+    labelNode(fc,true);
+    for(const n of NET.nodes){ if(n!==fc && fset.has(n.id)) labelNode(n,false); }
+  } else {
+    if(NET.hover) labelNode(NET.hover,true);
+    if(hl) for(const n of NET.nodes){ if(n!==NET.hover && n.name.toLowerCase().includes(hl)) labelNode(n,true); }
+    if(k>0.35) for(const n of NET.nodes){ if(NET.topLabels && NET.topLabels.has(n.id) && n!==NET.hover) labelNode(n,false); }
+  }
+}
+function focusNode(node){
+  NET.focus=node;
+  const out=[], inc=[];
+  for(const e of NET.edges){ if(e.s===node && e.t!==node) out.push(e.t); if(e.t===node && e.s!==node) inc.push(e.s); }
+  NET.focusSet=new Set([node.id, ...out.map(n=>n.id), ...inc.map(n=>n.id)]);
+  NET.view.k=Math.max(NET.view.k,0.95);
+  NET.view.x=-node.x*NET.view.k; NET.view.y=-node.y*NET.view.k;
+  renderNetDetail(node,out,inc);
+  drawNet();
+}
+function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; drawNet(); }
+function renderNetDetail(node,out,inc){
+  const uniq=arr=>{ const s=new Set(),r=[]; for(const n of arr){ if(!s.has(n.id)){ s.add(n.id); r.push(n); } } return r; };
+  out=uniq(out); inc=uniq(inc);
+  const li=n=>`<li data-net-go="${esc(n.id)}">${esc(n.name)}${n.ext?'<span style="color:#6b645c">（外部）</span>':''}</li>`;
+  const none='<li style="color:#6b645c">なし</li>';
+  const d=document.getElementById("netDetail");
+  d.innerHTML=`<span class="nd-close" data-net-close>×</span>
+    <h3>${esc(node.name)}</h3>
+    <div class="nd-cat">${esc(node.cat)}・被推薦 ${node.indeg}</div>
+    <div class="nd-sec">推薦している先（${out.length}）</div>
+    <ul class="nd-list">${out.length?out.map(li).join(""):none}</ul>
+    <div class="nd-sec">推薦されている元（${inc.length}）</div>
+    <ul class="nd-list">${inc.length?inc.map(li).join(""):none}</ul>
+    <a class="nd-open" href="https://${esc(node.id)}.substack.com" target="_blank" rel="noopener">${esc(node.name)} を開く →</a>`;
+  d.hidden=false;
+  d.querySelector("[data-net-close]").onclick=clearFocus;
+  d.querySelectorAll("[data-net-go]").forEach(el=>el.onclick=()=>{ const n=NET.byId[el.dataset.netGo]; if(n) focusNode(n); });
 }
 function nodeAt(sx,sy){
   let best=null, bestD=1e9;
@@ -771,7 +823,7 @@ function bindNetEvents(){
     const wasNode=NET.down;
     if(NET.drag){ NET.drag.fx=null; NET.drag.fy=null; NET.drag=null; }
     NET.panning=null; NET.down=null; c.classList.remove("grabbing");
-    if(wasNode && !NET.moved){ window.open(`https://${wasNode.id}.substack.com`,"_blank","noopener"); }
+    if(!NET.moved){ if(wasNode) focusNode(wasNode); else clearFocus(); }
   });
   c.addEventListener("wheel",ev=>{
     ev.preventDefault();
@@ -817,7 +869,7 @@ function bindNetEvents(){
       const wasNode=NET.down;
       if(NET.drag){ NET.drag.fx=null; NET.drag.fy=null; NET.drag=null; }
       NET.panning=null; NET.down=null;
-      if(wasNode && !NET.moved) window.open(`https://${wasNode.id}.substack.com`,"_blank","noopener");
+      if(!NET.moved){ if(wasNode) focusNode(wasNode); else clearFocus(); }
     }
   });
 }
