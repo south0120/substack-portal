@@ -91782,6 +91782,54 @@
       "hash": "da4d10a1bd587ba9248e011e0ac905a6c74eb8ec34dd432c8d3de965059a158e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://stdev0.substack.com/p/anthropicccaf": {
+      "category": "キャリア・働き方",
+      "hash": "f2c61f2162b7e41862c55a55d7d9ba7f87b6df53f339bc6bda70c783a518cab8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/6f1": {
+      "category": "教育・学び",
+      "hash": "7dfad297baf7e649c87e2d8821d6c6c41bbf6d969c8c388a23c8307370c5eb23",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chaiaiart.substack.com/p/d85": {
+      "category": "クリエイティブ",
+      "hash": "8bb32f4a1a355906873b62c7fbd61c70bd87a4fd618a307f16b8228ecfe31f7d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mitsukolu.substack.com/p/4a6": {
+      "category": "ライフスタイル",
+      "hash": "e8afd6db0355a20a239c2ed2efdcc5a7cfe043a548689135c98dcdeec27da104",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tetsu4suimei.substack.com/p/346": {
+      "category": "その他",
+      "hash": "d8ab36a8918fcf83d6e5a0e65c998d4ff618fc197d64a1ba0a4de92339ddc949",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://taketoragondo.substack.com/p/2b2": {
+      "category": "ライフスタイル",
+      "hash": "f177d4c925d2d5c22f914f458a5739272ef1596280bd444ee00b2d81afd4379a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takeworks.substack.com/p/ai-433": {
+      "category": "ビジネス",
+      "hash": "db4b489ef946abfc6ca2e06555a60b5210fdfa078b065336bd64afe39919ba2d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://taketoragondo.substack.com/p/00c": {
+      "category": "ライフスタイル",
+      "hash": "db6344a5f3124ca7f361c2a8d4104533180489ab4581588fd0a27c1723ea7d9a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
