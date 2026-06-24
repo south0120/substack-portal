@@ -662,7 +662,9 @@ let category = "すべて";
 let period = "all";
 let shown = PAGE_SIZE;
 let customCategoryOrder = [];
-let categoryFilters = new Set();
+// カテゴリ絞り込みは記事ビューと発行物ビューで独立させる（片方の選択をもう片方に引きずらない）
+const FILTERS_BY_VIEW = { articles: new Set(), shelf: new Set() };
+let categoryFilters = FILTERS_BY_VIEW.articles;   // 現在アクティブなビューの絞り込みを指す
 let excludeAudio = true;
 let draggedCategory = "";
 let API_MODE = Boolean(WORKER_URL);
@@ -748,18 +750,24 @@ function saveCategoryOrder(order){
 }
 
 function loadCategoryFilters(){
+  let loaded;
   try{
     const saved = JSON.parse(localStorage.getItem(CATEGORY_FILTER_KEY) || "[]");
-    categoryFilters = new Set(Array.isArray(saved)
+    loaded = new Set(Array.isArray(saved)
       ? saved.filter(name => typeof name === "string" && categoryOrder().includes(name))
       : []);
   }catch(_){
-    categoryFilters = new Set();
+    loaded = new Set();
   }
+  // 永続化するのは記事ビューの絞り込みだけ。発行物ビューは常に未選択から始める
+  FILTERS_BY_VIEW.articles = loaded;
+  FILTERS_BY_VIEW.shelf = new Set();
+  categoryFilters = FILTERS_BY_VIEW.articles;
   category = categoryFilters.size === 1 ? [...categoryFilters][0] : "すべて";
 }
 
 function saveCategoryFilters(){
+  if(view !== "articles") return;   // 発行物ビューの絞り込みは永続化しない（記事の選択と混ざらないように）
   try{
     localStorage.setItem(CATEGORY_FILTER_KEY, JSON.stringify([...categoryFilters]));
   }catch(_){}
@@ -1336,7 +1344,16 @@ function toggleCategoryFilter(name){
 
 function setView(nextView, scroll = true){
   const previousView = view;
-  if(nextView !== previousView) track("view_switch", { view: nextView });
+  if(nextView !== previousView){
+    track("view_switch", { view: nextView });
+    // アクティブだったビューの絞り込みを退避し、切替先ビューの絞り込みを復元（引きずり防止）
+    FILTERS_BY_VIEW[previousView] = categoryFilters;
+    categoryFilters = FILTERS_BY_VIEW[nextView] || new Set();
+    category = categoryFilters.size === 1 ? [...categoryFilters][0] : "すべて";
+    renderCategoryPills();
+    renderCategorySidebar();
+    if(!document.getElementById("orderBackdrop").hidden) renderOrderList();
+  }
   view = nextView;
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
@@ -1769,12 +1786,15 @@ function init(){
     input.value = "";
     query = "";
     shown = PAGE_SIZE;
-    categoryFilters = new Set();
+    // 両ビューの絞り込みを在席のまま空に（オブジェクト参照を壊さず確実にクリア）
+    categoryFilters.clear();
+    FILTERS_BY_VIEW.articles.clear();
+    FILTERS_BY_VIEW.shelf.clear();
     category = "すべて";
-    saveCategoryFilters();
     renderCategoryPills();
     renderCategorySidebar();
     setView("articles");                              // 記事ビューへ切替＋描画＋トップへスクロール
+    saveCategoryFilters();                            // 記事ビューになってから空状態を永続化
     if(API_MODE && wasArticles) resetApiArticles();   // 既に記事ビューでも絞り込み解除を反映
   });
   document.getElementById("moreButton").addEventListener("click", async () => {
