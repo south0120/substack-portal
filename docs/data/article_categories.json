@@ -91518,6 +91518,36 @@
       "hash": "49f67e8384bf7c4010c93492e3a4eddf4b1bb4ea10fb72c5fc7913240e2226d1",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://voundaly.substack.com/p/974": {
+      "category": "子育て・家族",
+      "hash": "ab9c707cdc74cf75f0be785150aa3501a6ce03f204747e2a053f6332de004f34",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ryokan24.substack.com/p/ceb": {
+      "category": "ライフスタイル",
+      "hash": "b0f7f8acc697e17d271750f3218e9464e8f76212195a14f931e786f29cafed38",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://lolgaren.substack.com/p/bd9": {
+      "category": "ゲーム",
+      "hash": "39e1be24403db046b5739ce1ce5f93ff696b387195fb9bb11d436f85736fc0ed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maonyan.substack.com/p/77e": {
+      "category": "ビジネス",
+      "hash": "6feb394adf28dc06fddf90d6cec7ad3f88d33264e28ed1916444274d69c46d2c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cuscusism.substack.com/p/0f5": {
+      "category": "ビジネス",
+      "hash": "d79649c3749a256dc82f78f5a2782707b44f68d159ef8c476ddb14ba57204a75",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
