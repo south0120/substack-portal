@@ -91482,6 +91482,42 @@
       "hash": "be0640398f3a34c5dd51ffccd0efe5830a18dcd8a6768f3fb13c3f06fe789076",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://shitsumongata.substack.com/p/ai": {
+      "category": "教育・学び",
+      "hash": "904b08b900fef74b5d8ae744f15c13e1230383b4ae7bc3fa604eea8f0d540473",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mitsubishipoor.substack.com/p/substack": {
+      "category": "ビジネス",
+      "hash": "77495f6e3eb686281080af800815a525621f708260d00b3ef7d12c904be25318",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hadashiinsta.substack.com/p/3be": {
+      "category": "ビジネス",
+      "hash": "ada7ce8479f41dc62b41dec3f2f42c4108e0f58410e9e59762cbb51dcae66fd2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuaiagent.substack.com/p/10-50ai": {
+      "category": "キャリア・働き方",
+      "hash": "8e25138b9fc539c3b6f124c8fdb6a236248239ca62afcebe049e1d0de4193592",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://linkloop.substack.com/p/a56": {
+      "category": "読書",
+      "hash": "f5a8ef91901463e211737156901760a9db2aefdca24593fe6b11fb95fca8c0db",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234997345.substack.com/p/0ef": {
+      "category": "旅行・おでかけ",
+      "hash": "49f67e8384bf7c4010c93492e3a4eddf4b1bb4ea10fb72c5fc7913240e2226d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
