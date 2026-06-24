@@ -59,6 +59,15 @@
   .cat-list .ct{color:var(--sub);font-size:.74rem;white-space:nowrap}
   .muted{color:var(--sub);font-size:.78rem}
   @media(max-width:720px){.range-filter .current{width:100%;margin-left:0}}
+  .admin-tabs{display:flex;gap:8px;margin:0 0 14px}
+  .admin-tab{background:var(--card);color:var(--sub);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-weight:700;font-size:.85rem;cursor:pointer}
+  .admin-tab.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .disc-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;font-size:.8rem}
+  .disc-controls input,.disc-controls select{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
+  #discoveryTable th[data-sort]{cursor:pointer;user-select:none;white-space:nowrap}
+  #discoveryTable th.sorted{color:var(--brand)}
+  #discoveryTable td.num,#discoveryTable th.num{text-align:right}
+  #discoveryTable td.name{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -82,6 +91,12 @@
     <button class="logout" id="logout">ログアウト</button>
   </header>
 
+  <div class="admin-tabs">
+    <button type="button" class="admin-tab on" data-tab="dashboard">📊 ダッシュボード</button>
+    <button type="button" class="admin-tab" data-tab="discovery">🔍 発見</button>
+  </div>
+
+  <div id="tabDashboard">
   <div class="range-filter">
     <button type="button" data-range-days="7">7d</button>
     <button type="button" data-range-days="30">30d</button>
@@ -155,6 +170,39 @@
     <h2>API料金（記事カテゴリ判定 / Claude Haiku）</h2>
     <div class="kpis" id="costKpis" style="margin-bottom:8px"></div>
     <div class="muted" id="costNote" style="font-size:.72rem"></div>
+  </div>
+  </div><!-- /tabDashboard -->
+
+  <div id="tabDiscovery" hidden>
+    <div class="panel">
+      <h2>🔍 発見 — 小規模・新興の発行物</h2>
+      <div class="muted" style="font-size:.74rem;margin-bottom:10px;line-height:1.5">Substackは購読者数を公開していないため、直近記事のエンゲージメント（❤・💬・リスタック・被推薦数）から算出した複合スコアで規模・勢いを近似しています。<b>スコアが小さいほど小規模・新興の傾向</b>。列ヘッダーで並び替え。<span id="discMeta"></span></div>
+      <div class="disc-controls">
+        <input type="search" id="discSearch" placeholder="発行物名で絞り込み">
+        <label>カテゴリ <select id="discCat"><option value="">すべて</option></select></label>
+        <label><input type="checkbox" id="discActive"> 直近90日に投稿あり</label>
+        <label>最大スコア <input type="number" id="discMaxScore" min="0" style="width:84px" placeholder="制限なし"></label>
+        <button type="button" class="csv" data-disc-csv>CSV</button>
+        <span class="muted" id="discCount"></span>
+      </div>
+      <div class="tablewrap">
+        <table id="discoveryTable">
+          <thead><tr>
+            <th>#</th>
+            <th data-sort="name">発行物</th>
+            <th data-sort="categories">カテゴリ</th>
+            <th class="num" data-sort="score">スコア</th>
+            <th class="num" data-sort="avg_reactions">平均❤</th>
+            <th class="num" data-sort="avg_comments">平均💬</th>
+            <th class="num" data-sort="avg_restacks">リスタック</th>
+            <th class="num" data-sort="recommendations">被推薦</th>
+            <th class="num" data-sort="recent_posts">記事数</th>
+            <th data-sort="last_post">最新投稿</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -459,6 +507,86 @@ async function init(){
     renderCost();
   }catch(e){ if(String(e.message)!=="unauthorized"){ showLogin(); } }
 }
+
+// ===== 発見タブ =====
+let DISC = { rows:null, sortKey:"score", sortAsc:true, loaded:false };
+function dfmt(v){ return (v===null||v===undefined)?"-":v; }
+function showTab(name){
+  document.querySelectorAll(".admin-tab").forEach(b=>b.classList.toggle("on", b.dataset.tab===name));
+  document.getElementById("tabDashboard").hidden = name!=="dashboard";
+  document.getElementById("tabDiscovery").hidden = name!=="discovery";
+  if(name==="discovery" && !DISC.loaded) loadDiscovery();
+}
+document.querySelectorAll(".admin-tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+
+async function loadDiscovery(){
+  DISC.loaded = true;
+  const tb = document.querySelector("#discoveryTable tbody");
+  tb.innerHTML = '<tr><td colspan="10" class="muted">読み込み中…</td></tr>';
+  let data;
+  try{ data = await (await fetch("data/discovery.json?cb="+Date.now())).json(); }
+  catch(_){ DISC.loaded=false; tb.innerHTML='<tr><td colspan="10" class="muted">discovery.json を読み込めませんでした（まだ生成途中の可能性）。少し待って発見タブを開き直してください。</td></tr>'; return; }
+  DISC.rows = data.writers||[];
+  document.getElementById("discMeta").textContent = data.generated ? `（${data.count}件 / 生成 ${new Date(data.generated).toLocaleString("ja-JP")}）` : "";
+  const cats = [...new Set(DISC.rows.flatMap(r=>r.categories||[]))].sort((a,b)=>a.localeCompare(b,"ja"));
+  document.getElementById("discCat").innerHTML = '<option value="">すべて</option>' + cats.map(c=>`<option>${esc(c)}</option>`).join("");
+  renderDiscovery();
+}
+function discFiltered(){
+  const q=(document.getElementById("discSearch").value||"").toLowerCase();
+  const cat=document.getElementById("discCat").value;
+  const active=document.getElementById("discActive").checked;
+  const maxS=document.getElementById("discMaxScore").value;
+  const cutoff=Date.now()-90*864e5;
+  return (DISC.rows||[]).filter(r=>{
+    if(q && !(r.name||"").toLowerCase().includes(q)) return false;
+    if(cat && !(r.categories||[]).includes(cat)) return false;
+    if(active){ if(!r.last_post || new Date(r.last_post).getTime()<cutoff) return false; }
+    if(maxS!=="" && (r.score==null || r.score>Number(maxS))) return false;
+    return true;
+  });
+}
+function renderDiscovery(){
+  if(!DISC.rows) return;
+  const k=DISC.sortKey, asc=DISC.sortAsc, rows=discFiltered();
+  rows.sort((a,b)=>{
+    if(k==="name"||k==="last_post"||k==="categories"){
+      const x=(Array.isArray(a[k])?a[k].join():a[k])||"", y=(Array.isArray(b[k])?b[k].join():b[k])||"";
+      return asc?String(x).localeCompare(String(y),"ja"):String(y).localeCompare(String(x),"ja");
+    }
+    const x=a[k]==null?-1:a[k], y=b[k]==null?-1:b[k];
+    return asc?x-y:y-x;
+  });
+  document.querySelectorAll("#discoveryTable th[data-sort]").forEach(th=>th.classList.toggle("sorted", th.dataset.sort===k));
+  document.getElementById("discCount").textContent = `${rows.length}件`;
+  document.querySelector("#discoveryTable tbody").innerHTML = rows.map((r,i)=>`<tr>
+    <td>${i+1}</td>
+    <td class="name"><a href="${esc(r.url||"#")}" target="_blank" rel="noopener">${esc(r.name||r.handle)}</a></td>
+    <td>${esc((r.categories||[]).join("・"))}</td>
+    <td class="num">${dfmt(r.score)}</td>
+    <td class="num">${dfmt(r.avg_reactions)}</td>
+    <td class="num">${dfmt(r.avg_comments)}</td>
+    <td class="num">${dfmt(r.avg_restacks)}</td>
+    <td class="num">${dfmt(r.recommendations)}</td>
+    <td class="num">${dfmt(r.recent_posts)}</td>
+    <td>${r.last_post||"-"}</td>
+  </tr>`).join("") || '<tr><td colspan="10" class="muted">該当なし</td></tr>';
+}
+document.querySelectorAll("#discoveryTable th[data-sort]").forEach(th=>th.addEventListener("click",()=>{
+  const k=th.dataset.sort;
+  if(DISC.sortKey===k) DISC.sortAsc=!DISC.sortAsc; else { DISC.sortKey=k; DISC.sortAsc=(k==="name"||k==="categories"); }
+  renderDiscovery();
+}));
+["discSearch","discCat","discActive","discMaxScore"].forEach(id=>{
+  const el=document.getElementById(id);
+  el.addEventListener((el.tagName==="INPUT"&&el.type!=="checkbox")?"input":"change", renderDiscovery);
+});
+document.querySelector("[data-disc-csv]").addEventListener("click",()=>{
+  const rows=discFiltered();
+  downloadCsv("fyl_discovery.csv", [["発行物","カテゴリ","スコア","平均いいね","平均コメント","リスタック","被推薦","記事数","最新投稿","URL"],
+    ...rows.map(r=>[r.name,(r.categories||[]).join("・"),r.score,r.avg_reactions,r.avg_comments,r.avg_restacks,r.recommendations,r.recent_posts,r.last_post||"",r.url||""])]);
+});
+
 init();
 </script>
 </body>
