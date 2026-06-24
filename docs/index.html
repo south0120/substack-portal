@@ -478,7 +478,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
   </div>
 </header>
 
-<div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
+<div id="sampleBanner" class="sample-banner" hidden></div>
 
 <main class="main">
   <div id="shelfView" hidden></div>
@@ -514,8 +514,8 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
         <div class="article-grid" id="articleGrid"></div>
         <div class="no-results" id="articleEmpty" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v12H4z"/><path d="M4 13h4l2 3h4l2-3h4"/></svg>
-          <b>該当する記事がありません</b>
-          検索語や絞り込みを変えてください。
+          <b>条件に合う記事が見つかりませんでした</b>
+          検索語や絞り込みを変えてみてください。
         </div>
         <button class="more" id="moreButton" type="button" hidden>さらに記事を読み込む</button>
         <div id="loadSentinel" style="height:1px"></div>
@@ -526,7 +526,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 
 <footer>
   <p class="footer-note">Substack上で公開されているニュースレターを見つけやすくする<strong>非公式</strong>の個人サイトです。<span class="footer-en">An unofficial fan site to help you discover newsletters published on Substack.</span></p>
-  各記事と画像の権利は配信元に帰属します。Find Your Letter は Substack 社の公式サービスではありません。最終更新: <span id="updatedAt">未取得</span>
+  各記事と画像の権利は配信元に帰属します。Find Your Letter は Substack 社の公式サービスではありません。最終更新: <span id="updatedAt">準備中</span>
   <span class="footer-links"><a href="guide.html">使い方</a> · <a href="privacy.html">プライバシーポリシー</a> · <a href="terms.html">利用規約</a> · <a href="https://tally.so/r/ODVANg" target="_blank" rel="noopener">掲載削除</a></span>
 </footer>
 
@@ -949,8 +949,8 @@ function renderShelf(refreshContent = false){
     ${sections || `
     <div class="no-results">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <b>該当する発行物が見つかりません</b>
-      検索語を変えてください。
+      <b>条件に合う発行物が見つかりませんでした</b>
+      検索語を変えてみてください。
     </div>`}`;
   document.getElementById("orderOpen").addEventListener("click", openOrderModal);
   root.querySelectorAll("[data-shelf]").forEach(shelf => {
@@ -1721,7 +1721,7 @@ function init(){
   loadCategoryOrder();
   loadCategoryFilters();
   loadExcludeAudio();
-  const updatedStr = DATA.updated_at ? new Date(DATA.updated_at).toLocaleString("ja-JP") : "サンプルデータ";
+  const updatedStr = DATA.updated_at ? new Date(DATA.updated_at).toLocaleString("ja-JP") : "準備中";
   document.getElementById("updatedAt").textContent = updatedStr;
   if(DATA.updated_at){
     const fetchEl = document.getElementById("fetchInline");
@@ -2033,7 +2033,9 @@ async function load(){
       TOPICS = null;
     }
   }
-  document.getElementById("sampleBanner").hidden = !sample;
+  const sampleBanner = document.getElementById("sampleBanner");
+  sampleBanner.hidden = !sample;
+  if(sample) sampleBanner.textContent = "現在データを読み込めませんでした。暫定的な内容を表示しています。";
   init();
 }
 
