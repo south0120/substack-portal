@@ -91464,6 +91464,18 @@
       "hash": "202b0ed6110277ea4af0a00dbe3b0637aaa4e137e0e4ce2b1945eb5061258cd6",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://ryotaroswc.substack.com/p/ryotaro-6ea": {
+      "category": "読書",
+      "hash": "2663fd9201cfbdeb14b37766661933253cf25472e422fd11f1227a820281cbe5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://katazukepanda.substack.com/p/425": {
+      "category": "ライフスタイル",
+      "hash": "2fa65249be8c9f0acc075cfd4775df8c08ca17a876a0f144fb355397ecf67214",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
