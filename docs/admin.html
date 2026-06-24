@@ -654,6 +654,9 @@ function buildNet(){
     NET.byId[n.id]=o; return o;
   });
   NET.edges = edges.filter(e=>NET.byId[e.s]&&NET.byId[e.t]).map(e=>({s:NET.byId[e.s], t:NET.byId[e.t], ext:e.ext}));
+  // ラベルは被推薦数の上位ハブだけに絞る（重なり防止。狭い画面ではさらに少なく）
+  const topN = (window.innerWidth < 560) ? 8 : 16;
+  NET.topLabels = new Set([...NET.nodes].sort((a,b)=>(b.indeg||0)-(a.indeg||0)).slice(0,topN).filter(n=>(n.indeg||0)>=2).map(n=>n.id));
   document.getElementById("netStats").textContent = `${NET.nodes.length}発行物 / ${NET.edges.length}本の推薦`;
 }
 function renderNetLegend(){
@@ -681,7 +684,7 @@ function stepNet(){
   if(NET.alpha>0.02 || NET.drag) NET.raf=requestAnimationFrame(stepNet); else NET.raf=null;
 }
 function tickNet(){
-  const ns=NET.nodes, a=NET.alpha, charge=900, link=0.025, linkDist=55, gravity=0.015, damp=0.86;
+  const ns=NET.nodes, a=NET.alpha, charge=1700, link=0.022, linkDist=72, gravity=0.011, damp=0.86;
   for(let i=0;i<ns.length;i++){ const ni=ns[i];
     for(let j=i+1;j<ns.length;j++){ const nj=ns[j];
       let dx=ni.x-nj.x, dy=ni.y-nj.y, d2=dx*dx+dy*dy;
@@ -717,11 +720,19 @@ function drawNet(){
     ctx.globalAlpha=on?1:0.22; ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(20,11*k):3; ctx.fillStyle=col;
     ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill(); ctx.shadowBlur=0; ctx.globalAlpha=1;
   }
-  ctx.fillStyle="rgba(255,255,255,0.85)"; ctx.font="11px system-ui,sans-serif"; ctx.textAlign="center";
-  for(const n of NET.nodes){
-    if(n.r>=8 || n===NET.hover || (hl && n.name.toLowerCase().includes(hl)))
-      ctx.fillText(n.name.slice(0,16), sx_(n.x), sy_(n.y)-Math.max(1.5,n.r*k)-4);
-  }
+  ctx.font="11px system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+  const drawn=[];
+  const labelNode=(n,force)=>{
+    const x=sx_(n.x), y=sy_(n.y)-Math.max(1.5,n.r*k)-4, txt=n.name.slice(0,16);
+    const w=ctx.measureText(txt).width, bx=x-w/2, by=y-11;
+    if(!force){ for(const r of drawn){ if(bx<r.x+r.w && bx+w>r.x && by<r.y+r.h && by+13>r.y) return; } }
+    drawn.push({x:bx,y:by,w,h:14});
+    ctx.fillStyle="rgba(0,0,0,0.5)"; ctx.fillRect(bx-2,by,w+4,13);
+    ctx.fillStyle="rgba(255,255,255,0.92)"; ctx.fillText(txt,x,y);
+  };
+  if(NET.hover) labelNode(NET.hover,true);
+  if(hl) for(const n of NET.nodes){ if(n!==NET.hover && n.name.toLowerCase().includes(hl)) labelNode(n,true); }
+  if(k>0.35) for(const n of NET.nodes){ if(NET.topLabels && NET.topLabels.has(n.id) && n!==NET.hover) labelNode(n,false); }
 }
 function nodeAt(sx,sy){
   let best=null, bestD=1e9;
@@ -769,6 +780,46 @@ function bindNetEvents(){
     NET.view.x=sx-NET.W/2-w[0]*NET.view.k; NET.view.y=sy-NET.H/2-w[1]*NET.view.k;
     drawNet();
   },{passive:false});
+  // --- タッチ操作（スマホ：1本指=ドラッグ/パン、2本指=ピンチズーム、タップ=リンク） ---
+  const tXY=t=>{ const r=c.getBoundingClientRect(); return [t.clientX-r.left, t.clientY-r.top]; };
+  let pinch=null;
+  c.addEventListener("touchstart",ev=>{
+    ev.preventDefault();
+    if(ev.touches.length>=2){
+      const [ax,ay]=tXY(ev.touches[0]), [bx,by]=tXY(ev.touches[1]);
+      const mx=(ax+bx)/2, my=(ay+by)/2, wp=toWorld(mx,my);
+      pinch={d:Math.hypot(ax-bx,ay-by)||1, mx, my, k:NET.view.k, wx:wp[0], wy:wp[1]};
+      NET.drag=null; NET.panning=null; NET.down=null;
+    } else {
+      const [sx,sy]=tXY(ev.touches[0]), n=nodeAt(sx,sy);
+      NET.moved=false; NET.down=n;
+      if(n){ NET.drag=n; const w=toWorld(sx,sy); n.fx=w[0]; n.fy=w[1]; reheatNet(); }
+      else NET.panning={sx:ev.touches[0].clientX, sy:ev.touches[0].clientY, vx:NET.view.x, vy:NET.view.y};
+    }
+  },{passive:false});
+  c.addEventListener("touchmove",ev=>{
+    ev.preventDefault();
+    if(pinch && ev.touches.length>=2){
+      const [ax,ay]=tXY(ev.touches[0]), [bx,by]=tXY(ev.touches[1]);
+      const d=Math.hypot(ax-bx,ay-by)||1;
+      NET.view.k=Math.max(0.15,Math.min(6, pinch.k*(d/pinch.d)));
+      NET.view.x=pinch.mx-NET.W/2-pinch.wx*NET.view.k; NET.view.y=pinch.my-NET.H/2-pinch.wy*NET.view.k;
+      drawNet(); return;
+    }
+    if(!ev.touches.length) return;
+    const [sx,sy]=tXY(ev.touches[0]);
+    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.fx=w[0]; NET.drag.fy=w[1]; NET.moved=true; }
+    else if(NET.panning){ NET.view.x=NET.panning.vx+(ev.touches[0].clientX-NET.panning.sx); NET.view.y=NET.panning.vy+(ev.touches[0].clientY-NET.panning.sy); NET.moved=true; drawNet(); }
+  },{passive:false});
+  c.addEventListener("touchend",ev=>{
+    if(pinch && ev.touches.length<2) pinch=null;
+    if(ev.touches.length===0){
+      const wasNode=NET.down;
+      if(NET.drag){ NET.drag.fx=null; NET.drag.fy=null; NET.drag=null; }
+      NET.panning=null; NET.down=null;
+      if(wasNode && !NET.moved) window.open(`https://${wasNode.id}.substack.com`,"_blank","noopener");
+    }
+  });
 }
 document.getElementById("netExt").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netReheat").addEventListener("click",()=>{ if(NET.raw){ buildNet(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
