@@ -142,6 +142,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);
   border-radius:5px;padding:2px 5px}
 .main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
+.shelf-audio-tools{display:flex;justify-content:flex-end;align-items:center;padding:12px 0 0}
 .shelf-tools{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0 2px}
 .shelf-note{margin:0;flex:1;min-width:0;color:var(--sub);font-size:.76rem;line-height:1.6}
 @media(max-width:640px){.shelf-tools{flex-wrap:wrap}.shelf-note{flex-basis:100%;order:2}}
@@ -480,6 +481,9 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 <div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
 
 <main class="main">
+  <div class="shelf-audio-tools" id="shelfAudioTools" hidden>
+    <label class="audio-filter"><input type="checkbox" id="excludeAudioShelf" checked>音声配信を除く</label>
+  </div>
   <div id="shelfView" hidden></div>
 
   <section id="articleView">
@@ -771,13 +775,19 @@ function loadExcludeAudio(){
   }catch(_){
     excludeAudio = true;
   }
-  document.getElementById("excludeAudio").checked = excludeAudio;
+  syncExcludeAudioInputs();
 }
 
 function saveExcludeAudio(){
   try{
     localStorage.setItem(EXCLUDE_AUDIO_KEY, String(excludeAudio));
   }catch(_){}
+}
+
+function syncExcludeAudioInputs(){
+  document.querySelectorAll("#excludeAudio,#excludeAudioShelf").forEach(input => {
+    input.checked = excludeAudio;
+  });
 }
 
 function categoryMatches(article){
@@ -1330,6 +1340,7 @@ function setView(nextView, scroll = true){
   view = nextView;
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
+  document.getElementById("shelfAudioTools").hidden = !shelf;
   document.getElementById("articleView").hidden = shelf;
   document.getElementById("searchInput").placeholder = shelf ? "発行物を検索" : "記事を検索";
   document.querySelectorAll("[data-view]").forEach(button =>
@@ -1730,13 +1741,16 @@ function init(){
     else if(API_MODE) resetApiArticles();
     else renderArticles();
   });
-  document.getElementById("excludeAudio").addEventListener("change", event => {
-    excludeAudio = event.target.checked;
-    saveExcludeAudio();
-    shown = PAGE_SIZE;
-    if(view === "shelf") renderShelf();
-    else renderArticles();
-  });
+  document.querySelectorAll("#excludeAudio,#excludeAudioShelf").forEach(input =>
+    input.addEventListener("change", event => {
+      excludeAudio = event.target.checked;
+      saveExcludeAudio();
+      syncExcludeAudioInputs();
+      shown = PAGE_SIZE;
+      if(view === "shelf") renderShelf();
+      else renderArticles();
+    })
+  );
   document.getElementById("mobileSearch").addEventListener("click", () => {
     const input = document.getElementById("searchInput");
     input.scrollIntoView({block:"center",behavior:"smooth"});
