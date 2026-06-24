@@ -59,9 +59,19 @@
   .cat-list .ct{color:var(--sub);font-size:.74rem;white-space:nowrap}
   .muted{color:var(--sub);font-size:.78rem}
   @media(max-width:720px){.range-filter .current{width:100%;margin-left:0}}
-  .admin-tabs{display:flex;gap:8px;margin:0 0 14px}
-  .admin-tab{background:var(--card);color:var(--sub);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-weight:700;font-size:.85rem;cursor:pointer}
+  .admin-tabs{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+  .admin-tab{display:inline-flex;align-items:center;gap:6px;background:var(--card);color:var(--sub);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-weight:700;font-size:.85rem;cursor:pointer}
   .admin-tab.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .admin-tab svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .net-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;font-size:.8rem}
+  .net-controls input[type=search]{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
+  .net-controls button{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;color:var(--ink)}
+  .net-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin-bottom:10px;font-size:.72rem;color:var(--sub)}
+  .net-legend span{display:inline-flex;align-items:center;gap:5px}
+  .net-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  #netCanvas{cursor:grab;touch-action:none}
+  #netCanvas.grabbing{cursor:grabbing}
+  .net-tip{position:fixed;pointer-events:none;background:#1b1714;color:#fff;border:1px solid #3a322c;border-radius:7px;padding:5px 9px;font-size:.74rem;z-index:50;display:none;max-width:260px;line-height:1.4}
   .disc-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;font-size:.8rem}
   .disc-controls input,.disc-controls select{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
   #discoveryTable th[data-sort]{cursor:pointer;user-select:none;white-space:nowrap}
@@ -92,8 +102,9 @@
   </header>
 
   <div class="admin-tabs">
-    <button type="button" class="admin-tab on" data-tab="dashboard">📊 ダッシュボード</button>
-    <button type="button" class="admin-tab" data-tab="discovery">🔍 発見</button>
+    <button type="button" class="admin-tab on" data-tab="dashboard"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V11M10 20V4M16 20v-6M21 20H3"/></svg>ダッシュボード</button>
+    <button type="button" class="admin-tab" data-tab="discovery"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.1-4.1"/></svg>発見</button>
+    <button type="button" class="admin-tab" data-tab="network"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6.7 7.2l3.8 10.1M17.2 9.3l-3.6 8M7 6.5l10 1.1"/></svg>ネットワーク</button>
   </div>
 
   <div id="tabDashboard">
@@ -196,7 +207,7 @@
             <th class="num" data-sort="avg_comments">平均💬</th>
             <th class="num" data-sort="avg_restacks">リスタック</th>
             <th class="num" data-sort="recommendations">被推薦</th>
-            <th class="num" data-sort="recent_posts">記事数</th>
+            <th class="num" data-sort="fyl_articles">記事数(FYL保有)</th>
             <th data-sort="last_post">最新投稿</th>
           </tr></thead>
           <tbody></tbody>
@@ -204,7 +215,25 @@
       </div>
     </div>
   </div>
+
+  <div id="tabNetwork" hidden>
+    <div class="panel">
+      <h2>ライター相関ネットワーク</h2>
+      <div class="muted" style="font-size:.74rem;margin-bottom:10px;line-height:1.5">Substackの「推薦」でつながった発行物どうしの相関図。<b>点</b>＝発行物（大きいほど多く推薦されてる人気ハブ／色＝カテゴリ）、<b>線</b>＝推薦の向き。点ドラッグで動かせる・ホイールでズーム・背景ドラッグで移動・点クリックでそのSubstackを開く。<span id="netMeta"></span></div>
+      <div class="net-controls">
+        <input type="search" id="netSearch" placeholder="発行物を探してハイライト">
+        <label><input type="checkbox" id="netExt"> 外部の推薦先も表示</label>
+        <button type="button" id="netReheat">再配置</button>
+        <button type="button" id="netFit">全体表示</button>
+        <span class="muted" id="netStats"></span>
+      </div>
+      <div class="net-legend" id="netLegend"></div>
+      <canvas id="netCanvas" height="600" style="width:100%;height:600px;display:block;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)"></canvas>
+    </div>
+  </div>
 </div>
+
+<div class="net-tip" id="netTip"></div>
 
 <script>
 const API = "https://fyl-api.south0120.workers.dev";
@@ -515,7 +544,9 @@ function showTab(name){
   document.querySelectorAll(".admin-tab").forEach(b=>b.classList.toggle("on", b.dataset.tab===name));
   document.getElementById("tabDashboard").hidden = name!=="dashboard";
   document.getElementById("tabDiscovery").hidden = name!=="discovery";
+  document.getElementById("tabNetwork").hidden = name!=="network";
   if(name==="discovery" && !DISC.loaded) loadDiscovery();
+  if(name==="network" && !NET.started) loadNetwork();
 }
 document.querySelectorAll(".admin-tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
 
@@ -527,6 +558,14 @@ async function loadDiscovery(){
   try{ data = await (await fetch("data/discovery.json?cb="+Date.now())).json(); }
   catch(_){ DISC.loaded=false; tb.innerHTML='<tr><td colspan="10" class="muted">discovery.json を読み込めませんでした（まだ生成途中の可能性）。少し待って発見タブを開き直してください。</td></tr>'; return; }
   DISC.rows = data.writers||[];
+  // FYLが実際に保有する記事数を突き合わせる（クロールのrecent_postsは直近12件上限なので総数には使わない）
+  const fylMap = {};
+  (DATA.writers||[]).forEach(w=>{
+    const m=(w.url||"").match(/\/\/([a-z0-9-]+)\.substack\.com/);
+    if(m) fylMap[m[1]]=w.articleCount;
+    if(w.name) fylMap["n:"+w.name]=w.articleCount;
+  });
+  DISC.rows.forEach(r=>{ const v=fylMap[r.handle]; r.fyl_articles=(v!=null)?v:(fylMap["n:"+r.name]!=null?fylMap["n:"+r.name]:null); });
   document.getElementById("discMeta").textContent = data.generated ? `（${data.count}件 / 生成 ${new Date(data.generated).toLocaleString("ja-JP")}）` : "";
   const cats = [...new Set(DISC.rows.flatMap(r=>r.categories||[]))].sort((a,b)=>a.localeCompare(b,"ja"));
   document.getElementById("discCat").innerHTML = '<option value="">すべて</option>' + cats.map(c=>`<option>${esc(c)}</option>`).join("");
@@ -568,7 +607,7 @@ function renderDiscovery(){
     <td class="num">${dfmt(r.avg_comments)}</td>
     <td class="num">${dfmt(r.avg_restacks)}</td>
     <td class="num">${dfmt(r.recommendations)}</td>
-    <td class="num">${dfmt(r.recent_posts)}</td>
+    <td class="num">${dfmt(r.fyl_articles)}</td>
     <td>${r.last_post||"-"}</td>
   </tr>`).join("") || '<tr><td colspan="10" class="muted">該当なし</td></tr>';
 }
@@ -583,9 +622,158 @@ document.querySelectorAll("#discoveryTable th[data-sort]").forEach(th=>th.addEve
 });
 document.querySelector("[data-disc-csv]").addEventListener("click",()=>{
   const rows=discFiltered();
-  downloadCsv("fyl_discovery.csv", [["発行物","カテゴリ","スコア","平均いいね","平均コメント","リスタック","被推薦","記事数","最新投稿","URL"],
-    ...rows.map(r=>[r.name,(r.categories||[]).join("・"),r.score,r.avg_reactions,r.avg_comments,r.avg_restacks,r.recommendations,r.recent_posts,r.last_post||"",r.url||""])]);
+  downloadCsv("fyl_discovery.csv", [["発行物","カテゴリ","スコア","平均いいね","平均コメント","リスタック","被推薦","記事数(FYL保有)","直近サンプル数","最新投稿","URL"],
+    ...rows.map(r=>[r.name,(r.categories||[]).join("・"),r.score,r.avg_reactions,r.avg_comments,r.avg_restacks,r.recommendations,r.fyl_articles,r.recent_posts,r.last_post||"",r.url||""])]);
 });
+
+// ===== ネットワークタブ（力学グラフ / canvas） =====
+const NET = { raw:null, started:false, nodes:[], edges:[], byId:{}, alpha:0, raf:null,
+  view:{x:0,y:0,k:1}, drag:null, panning:null, hover:null, moved:false, down:null,
+  canvas:null, ctx:null, W:0, H:0, highlight:"" };
+const NET_CATCOLORS = {"AI":"#8b6cff","テクノロジー":"#39a0ff","ビジネス":"#ff8a3d","投資・経済":"#ffc73d","クリエイティブ":"#ff5e9c","エンタメ":"#ff5252","ライフスタイル":"#37d99b","健康・ウェルネス":"#26c6a6","社会・文化":"#a99bff","キャリア・働き方":"#ffab40","スポーツ":"#4dd0e1","学び・教育":"#9ccc65","旅行・地域":"#7ed957","フード":"#ffd54f","子育て":"#f06fa0","スピリチュアル":"#b39ddb","外部":"#6b645c","その他":"#b0a89e"};
+function netColor(c){ return NET_CATCOLORS[c] || "#b0a89e"; }
+
+async function loadNetwork(){
+  NET.started = true;
+  let data;
+  try{ data = await (await fetch("data/network.json?cb="+Date.now())).json(); }
+  catch(_){ document.getElementById("netMeta").textContent=" — network.json を読み込めませんでした（生成途中の可能性）。少し待って開き直してください。"; NET.started=false; return; }
+  NET.raw = data;
+  document.getElementById("netMeta").textContent = data.generated ? `（生成 ${new Date(data.generated).toLocaleString("ja-JP")}）` : "";
+  buildNet(); setupNetCanvas(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet();
+}
+function buildNet(){
+  const showExt = document.getElementById("netExt").checked;
+  const edges = (NET.raw.edges||[]).filter(e=> showExt ? true : !e.ext);
+  const used = new Set(); edges.forEach(e=>{ used.add(e.s); used.add(e.t); });
+  NET.byId = {};
+  const total = Math.max(1, used.size);
+  NET.nodes = (NET.raw.nodes||[]).filter(n=>used.has(n.id)).map((n,i)=>{
+    const ang=i*2.39996, rad=260*Math.sqrt(i/total);
+    const o={...n, x:Math.cos(ang)*rad, y:Math.sin(ang)*rad, vx:0, vy:0, r:3.5+Math.sqrt(n.indeg||0)*2.4, fx:null, fy:null};
+    NET.byId[n.id]=o; return o;
+  });
+  NET.edges = edges.filter(e=>NET.byId[e.s]&&NET.byId[e.t]).map(e=>({s:NET.byId[e.s], t:NET.byId[e.t], ext:e.ext}));
+  document.getElementById("netStats").textContent = `${NET.nodes.length}発行物 / ${NET.edges.length}本の推薦`;
+}
+function renderNetLegend(){
+  const cats=[...new Set(NET.nodes.map(n=>n.cat))];
+  document.getElementById("netLegend").innerHTML = cats.map(c=>`<span><i style="background:${netColor(c)}"></i>${esc(c)}</span>`).join("");
+}
+function setupNetCanvas(){
+  if(NET.canvas) return;
+  NET.canvas=document.getElementById("netCanvas"); NET.ctx=NET.canvas.getContext("2d");
+  resizeNet();
+  window.addEventListener("resize", ()=>{ if(!document.getElementById("tabNetwork").hidden){ resizeNet(); drawNet(); } });
+  bindNetEvents();
+}
+function resizeNet(){
+  const c=NET.canvas, dpr=window.devicePixelRatio||1, rect=c.getBoundingClientRect();
+  const w=rect.width||c.parentElement.clientWidth||800, h=rect.height||600;
+  NET.W=w; NET.H=h;
+  c.width=w*dpr; c.height=h*dpr;
+  NET.ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+function reheatNet(){ resizeNet(); NET.alpha=1; if(NET.raf) cancelAnimationFrame(NET.raf); if(NET.view.k===1&&NET.view.x===0&&NET.view.y===0) fitNet(false); stepNet(); requestAnimationFrame(()=>{ resizeNet(); fitNet(false); }); }
+function stepNet(){
+  if(document.getElementById("tabNetwork").hidden){ NET.raf=null; return; }
+  tickNet(); drawNet(); NET.alpha*=0.985;
+  if(NET.alpha>0.02 || NET.drag) NET.raf=requestAnimationFrame(stepNet); else NET.raf=null;
+}
+function tickNet(){
+  const ns=NET.nodes, a=NET.alpha, charge=900, link=0.025, linkDist=55, gravity=0.015, damp=0.86;
+  for(let i=0;i<ns.length;i++){ const ni=ns[i];
+    for(let j=i+1;j<ns.length;j++){ const nj=ns[j];
+      let dx=ni.x-nj.x, dy=ni.y-nj.y, d2=dx*dx+dy*dy;
+      if(d2<0.01){ dx=Math.random()-0.5; dy=Math.random()-0.5; d2=dx*dx+dy*dy+0.01; }
+      const dist=Math.sqrt(d2), f=charge*a/d2, fx=dx/dist*f, fy=dy/dist*f;
+      ni.vx+=fx; ni.vy+=fy; nj.vx-=fx; nj.vy-=fy;
+    }
+  }
+  for(const e of NET.edges){
+    let dx=e.t.x-e.s.x, dy=e.t.y-e.s.y, dist=Math.sqrt(dx*dx+dy*dy)||0.01;
+    const f=(dist-linkDist)*link*a, fx=dx/dist*f, fy=dy/dist*f;
+    e.s.vx+=fx; e.s.vy+=fy; e.t.vx-=fx; e.t.vy-=fy;
+  }
+  for(const n of ns){
+    if(n===NET.drag){ n.x=n.fx; n.y=n.fy; n.vx=0; n.vy=0; continue; }
+    n.vx+=-n.x*gravity*a; n.vy+=-n.y*gravity*a; n.vx*=damp; n.vy*=damp; n.x+=n.vx; n.y+=n.vy;
+  }
+}
+function sx_(x){ return x*NET.view.k+NET.view.x+NET.W/2; }
+function sy_(y){ return y*NET.view.k+NET.view.y+NET.H/2; }
+function toWorld(sx,sy){ return [(sx-NET.view.x-NET.W/2)/NET.view.k, (sy-NET.view.y-NET.H/2)/NET.view.k]; }
+function drawNet(){
+  const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight; ctx.clearRect(0,0,NET.W,NET.H);
+  ctx.lineWidth=Math.max(0.4,0.55*k);
+  for(const e of NET.edges){
+    const on = !hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover;
+    ctx.strokeStyle = on ? "rgba(255,150,80,0.32)" : "rgba(255,255,255,0.05)";
+    ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
+  }
+  for(const n of NET.nodes){
+    const x=sx_(n.x), y=sy_(n.y), r=Math.max(1.5,n.r*k), col=netColor(n.cat);
+    const on = !hl || n.name.toLowerCase().includes(hl);
+    ctx.globalAlpha=on?1:0.22; ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(20,11*k):3; ctx.fillStyle=col;
+    ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill(); ctx.shadowBlur=0; ctx.globalAlpha=1;
+  }
+  ctx.fillStyle="rgba(255,255,255,0.85)"; ctx.font="11px system-ui,sans-serif"; ctx.textAlign="center";
+  for(const n of NET.nodes){
+    if(n.r>=8 || n===NET.hover || (hl && n.name.toLowerCase().includes(hl)))
+      ctx.fillText(n.name.slice(0,16), sx_(n.x), sy_(n.y)-Math.max(1.5,n.r*k)-4);
+  }
+}
+function nodeAt(sx,sy){
+  let best=null, bestD=1e9;
+  for(const n of NET.nodes){ const d=Math.hypot(sx_(n.x)-sx, sy_(n.y)-sy), rr=Math.max(7,n.r*NET.view.k+4); if(d<=rr && d<bestD){ bestD=d; best=n; } }
+  return best;
+}
+function fitNet(draw=true){
+  if(!NET.nodes.length) return;
+  let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+  for(const n of NET.nodes){ mnx=Math.min(mnx,n.x); mny=Math.min(mny,n.y); mxx=Math.max(mxx,n.x); mxy=Math.max(mxy,n.y); }
+  const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+80), NET.H/(h+80), 2.2);
+  NET.view.k=k; NET.view.x=-((mnx+mxx)/2)*k; NET.view.y=-((mny+mxy)/2)*k;
+  if(draw) drawNet();
+}
+function bindNetEvents(){
+  const c=NET.canvas, tip=document.getElementById("netTip");
+  c.addEventListener("mousedown",ev=>{
+    const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top, n=nodeAt(sx,sy);
+    NET.moved=false; NET.down=n;
+    if(n){ NET.drag=n; const w=toWorld(sx,sy); n.fx=w[0]; n.fy=w[1]; reheatNet(); }
+    else NET.panning={sx:ev.clientX,sy:ev.clientY,vx:NET.view.x,vy:NET.view.y};
+    c.classList.add("grabbing");
+  });
+  window.addEventListener("mousemove",ev=>{
+    if(document.getElementById("tabNetwork").hidden) return;
+    const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top;
+    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.fx=w[0]; NET.drag.fy=w[1]; NET.moved=true; }
+    else if(NET.panning){ NET.view.x=NET.panning.vx+(ev.clientX-NET.panning.sx); NET.view.y=NET.panning.vy+(ev.clientY-NET.panning.sy); NET.moved=true; drawNet(); }
+    else { const n=nodeAt(sx,sy); const changed=n!==NET.hover; NET.hover=n;
+      if(n){ tip.style.display="block"; tip.style.left=(ev.clientX+12)+"px"; tip.style.top=(ev.clientY+12)+"px"; tip.innerHTML=`<b>${esc(n.name)}</b><br>${esc(n.cat)}・被推薦 ${n.indeg}${n.ext?"・外部":""}`; }
+      else tip.style.display="none";
+      if(changed) drawNet();
+    }
+  });
+  window.addEventListener("mouseup",ev=>{
+    const wasNode=NET.down;
+    if(NET.drag){ NET.drag.fx=null; NET.drag.fy=null; NET.drag=null; }
+    NET.panning=null; NET.down=null; c.classList.remove("grabbing");
+    if(wasNode && !NET.moved){ window.open(`https://${wasNode.id}.substack.com`,"_blank","noopener"); }
+  });
+  c.addEventListener("wheel",ev=>{
+    ev.preventDefault();
+    const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top, w=toWorld(sx,sy);
+    NET.view.k=Math.max(0.15,Math.min(6,NET.view.k*Math.exp(-ev.deltaY*0.0015)));
+    NET.view.x=sx-NET.W/2-w[0]*NET.view.k; NET.view.y=sy-NET.H/2-w[1]*NET.view.k;
+    drawNet();
+  },{passive:false});
+}
+document.getElementById("netExt").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
+document.getElementById("netReheat").addEventListener("click",()=>{ if(NET.raw){ buildNet(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
+document.getElementById("netFit").addEventListener("click",()=>{ fitNet(); });
+document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
 
 init();
 </script>
