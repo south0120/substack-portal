@@ -144,6 +144,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
 .shelf-tools{display:flex;flex-direction:column;gap:0;padding:14px 0 2px}
 .shelf-note{margin:0;color:var(--sub);font-size:.76rem;line-height:1.6}
+.reflect-note{margin:2px 2px 12px;color:var(--faint);font-size:.72rem;line-height:1.5}
 .shelf-controls{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .shelf-note + .shelf-controls{margin-top:8px}
 .order-button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
@@ -511,6 +512,7 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
             </button>
           </div>
         </div>
+        <p class="reflect-note">新着記事はリアルタイム反映ではありません。RSSを定期的に巡回して取り込むため、公開から反映まで時間がかかる場合があります。</p>
         <div class="article-grid" id="articleGrid"></div>
         <div class="no-results" id="articleEmpty" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v12H4z"/><path d="M4 13h4l2 3h4l2-3h4"/></svg>
