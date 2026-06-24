@@ -142,10 +142,10 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);
   border-radius:5px;padding:2px 5px}
 .main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
-.shelf-audio-tools{display:flex;justify-content:flex-end;align-items:center;padding:12px 0 0}
-.shelf-tools{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0 2px}
-.shelf-note{margin:0;flex:1;min-width:0;color:var(--sub);font-size:.76rem;line-height:1.6}
-@media(max-width:640px){.shelf-tools{flex-wrap:wrap}.shelf-note{flex-basis:100%;order:2}}
+.shelf-tools{display:flex;flex-direction:column;gap:0;padding:14px 0 2px}
+.shelf-note{margin:0;color:var(--sub);font-size:.76rem;line-height:1.6}
+.shelf-controls{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.shelf-note + .shelf-controls{margin-top:8px}
 .order-button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);
   border-radius:10px;background:var(--card);color:var(--sub);font-size:.72rem;font-weight:700;padding:7px 10px}
 .order-button:hover{border-color:var(--brand-line);color:var(--brand)}
@@ -481,9 +481,6 @@ footer{max-width:calc(var(--maxw) - 48px);margin:auto;border-top:1px solid var(-
 <div id="sampleBanner" class="sample-banner" hidden>サンプル表示中</div>
 
 <main class="main">
-  <div class="shelf-audio-tools" id="shelfAudioTools" hidden>
-    <label class="audio-filter"><input type="checkbox" id="excludeAudioShelf" checked>音声配信を除く</label>
-  </div>
   <div id="shelfView" hidden></div>
 
   <section id="articleView">
@@ -933,10 +930,13 @@ function renderShelf(refreshContent = false){
   root.innerHTML = `
     <div class="shelf-tools">
       ${query ? "" : `<p class="shelf-note">ここに並ぶ発行物は、最近の記事の傾向から自動で振り分けています。新しい記事が出ると再判定されるので、固定のジャンル分けではなく「いまの発行物の動き」を映しています。</p>`}
-      <button type="button" class="order-button" id="orderOpen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
-        並び替え
-      </button>
+      <div class="shelf-controls">
+        <label class="audio-filter"><input type="checkbox" id="excludeAudioShelf" ${excludeAudio ? "checked" : ""}>音声配信を除く</label>
+        <button type="button" class="order-button" id="orderOpen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+          並び替え
+        </button>
+      </div>
     </div>
     ${sections || `
     <div class="no-results">
@@ -1340,7 +1340,6 @@ function setView(nextView, scroll = true){
   view = nextView;
   const shelf = view === "shelf";
   document.getElementById("shelfView").hidden = !shelf;
-  document.getElementById("shelfAudioTools").hidden = !shelf;
   document.getElementById("articleView").hidden = shelf;
   document.getElementById("searchInput").placeholder = shelf ? "発行物を検索" : "記事を検索";
   document.querySelectorAll("[data-view]").forEach(button =>
@@ -1741,16 +1740,15 @@ function init(){
     else if(API_MODE) resetApiArticles();
     else renderArticles();
   });
-  document.querySelectorAll("#excludeAudio,#excludeAudioShelf").forEach(input =>
-    input.addEventListener("change", event => {
-      excludeAudio = event.target.checked;
-      saveExcludeAudio();
-      syncExcludeAudioInputs();
-      shown = PAGE_SIZE;
-      if(view === "shelf") renderShelf();
-      else renderArticles();
-    })
-  );
+  document.addEventListener("change", event => {
+    if(!event.target || !event.target.matches || !event.target.matches("#excludeAudio,#excludeAudioShelf")) return;
+    excludeAudio = event.target.checked;
+    saveExcludeAudio();
+    syncExcludeAudioInputs();
+    shown = PAGE_SIZE;
+    if(view === "shelf") renderShelf();
+    else renderArticles();
+  });
   document.getElementById("mobileSearch").addEventListener("click", () => {
     const input = document.getElementById("searchInput");
     input.scrollIntoView({block:"center",behavior:"smooth"});
