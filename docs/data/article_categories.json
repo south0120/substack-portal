@@ -92796,6 +92796,336 @@
       "hash": "fc4f38e875a2ef2bf6fdb2926af0908e7d423029f42e7b42de42640fdaf9a564",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234997345.substack.com/p/907": {
+      "category": "ライフスタイル",
+      "hash": "0c4fdd70ba1cb6a99cb734dcf9a7255826b584dde48d93217e9de3eab2277223",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuiweb.substack.com/p/f67": {
+      "category": "クリエイティブ",
+      "hash": "92d463d79981a2309b1f068bb60ae655ebb644b40763bf80addf964db46a281a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://postorijapan.substack.com/p/notesubstack": {
+      "category": "ビジネス",
+      "hash": "53ad7277d3fd4f89e42525545349625be9be3e2d66db845a52833326f3d00b14",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ameri0213.substack.com/p/live": {
+      "category": "AI",
+      "hash": "5b28e916c1949b48433f9bc2259bc8e89290feb3729d56ccdda66fbb0d658e2f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/310": {
+      "category": "ライフスタイル",
+      "hash": "07d2ccdcf181aeeb65e8ddcc99a8ca02586367f0b580c641fa6e52f1d6e3993a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cuscusism.substack.com/p/334": {
+      "category": "ビジネス",
+      "hash": "81a024427686a933cd7daff01e7c9bcd9fab06055f4d27c3fe83bfc417be2543",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://satobeautyandhealth.substack.com/p/216": {
+      "category": "健康・ウェルネス",
+      "hash": "8ac07f6911f0e3ebbb4eb2ad9d138383d8acc332fa2f7e43437e7d19273b8a65",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234997345.substack.com/p/bd1": {
+      "category": "グルメ・料理",
+      "hash": "860cdfc1cd50ffa50dd10e82823cd9aec2907d3e8266bc50fe586e8d9474a4f1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://souseinv.substack.com/p/9f9": {
+      "category": "ゲーム",
+      "hash": "a26f010a02f422369c97d21c7573e4f66a14a505966a17dcc46e6036b87c2a48",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okirakukai.substack.com/p/500": {
+      "category": "社会・文化",
+      "hash": "5fe72feeae7e8d7e9ca7305db7e1bf76816384a5cbbad9e2193b35df605cef5a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://elpatioaco.substack.com/p/a45": {
+      "category": "教育・学び",
+      "hash": "fd352e209bb477cd4ca0d0135a8f72de290bd2c3dd9aa112f938cd2e702d01b8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kyoumoney.substack.com/p/803": {
+      "category": "テクノロジー",
+      "hash": "f51adc45c91e7e4e6accc35b8ea704ea43a625d534df6a4f304f948960c796e5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/627": {
+      "category": "ライフスタイル",
+      "hash": "6154ba0813ab06307fe26d03f0b3610be5f3f0e982655c9a0868d085d7d94daa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://skyshar.substack.com/p/anthropicai": {
+      "category": "AI",
+      "hash": "88e40911572d876e23891fff3f27352261c103a264349287dfb3955cf7e7ccf8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-crm-airtable-1hour": {
+      "category": "AI",
+      "hash": "c7567512945e1b2fb0176d1c4a42c81fe7afdf19b4a9e2ef8bc5991637797f8a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-beginner-course-free-release": {
+      "category": "AI",
+      "hash": "614936936cad3cb4d4b549441b10785966a46d2250c9187ba60d531f1434d23b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/fa3": {
+      "category": "キャリア・働き方",
+      "hash": "d4202fbae54185f0f788b02c054c0d0c066fd22ddc94524e907113daf5147bed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-webinar-6-19": {
+      "category": "AI",
+      "hash": "0fbeb48eacd8db056d0bbfc952d7822f14af519f4300b28b25f3a3d87b7e4437",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/means-of-claude-models": {
+      "category": "AI",
+      "hash": "63bb4f36fd4767dd3a9c5626006d662ce845adcfd4d2a2559f4c819f648283f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/eb7": {
+      "category": "社会・文化",
+      "hash": "afafc02f9439793a1f4cd665b4be09755653905539de9d432c9392d9abaef7d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/cmc-1-abstract-of-claude": {
+      "category": "AI",
+      "hash": "e3e8194ea0ec65c752cf41232bb5ea769b701497e2281cb068abc0da521b7445",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/dxfaq": {
+      "category": "ビジネス",
+      "hash": "394448d7760cad02077d1d80932bc53ac99cb935d0da7b90f1d52eedb5fa6bc0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/dx": {
+      "category": "ビジネス",
+      "hash": "810a0f648599507c4149d04886a0e108efde1a150ce0d0fb01a0e41ddab9107c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/bf1": {
+      "category": "ライフスタイル",
+      "hash": "b0d21fa429a3d50e5ca979ced08b1124ff26493189cb71466599052d1e31606d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-model-effort-adaptive-thinking-guide": {
+      "category": "AI",
+      "hash": "ef231536910e01efc0b2859335c9f252580eae9e2688cb9c346562bd5fc6d17e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/substack-backup-by-claude-code": {
+      "category": "AI",
+      "hash": "2ae4a0c753519a64925985d3eb7b1adc3c73b93da6b594996bfe7425dc22ce48",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/30": {
+      "category": "投資・経済",
+      "hash": "ad255c176554d5318ddcc6d6852e0a20acf64e35305266b98893a38986a9b848",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-project-wordpress-transformation": {
+      "category": "テクノロジー",
+      "hash": "35cc982d5816bf08f46858ae2fcc827883630920e09452383592d5f5ea8cfa72",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/substack-livepc": {
+      "category": "ビジネス",
+      "hash": "76b45accdff2c6c274a3549ea78ae40b702357cb039b0a98f5b23bbbd7f585c2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/substack": {
+      "category": "ビジネス",
+      "hash": "b87541a8c6b0fd5b241c355ef4cdf025d396114c2e11adddd9afac52a69b6ad8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/lazy-substack-skill-3steps": {
+      "category": "AI",
+      "hash": "ab6c2759cc390d8b0c6789f19d773bb9b5e6bc84c51fdb6ab8c9eb7b55d9a794",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/688": {
+      "category": "社会・文化",
+      "hash": "4fdb91fea48faf39aff80933d892518a456ec10f22a568be838477324b1102d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-connector-and-skills": {
+      "category": "AI",
+      "hash": "213a30df3783ad17707039cf4c03d3310cefbfcbdd83443d4ba91cca85ff8f5b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/how-to-use-coach-me-skill": {
+      "category": "AI",
+      "hash": "c5deff777f9723735ffde5990e77870a575a7c339dd98ba613b6cfec5e59ace4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/4d-framework-report-in-japanese": {
+      "category": "AI",
+      "hash": "bfbb4d40f735c03196117402f7e7fe7d0f85984a4ff8fecd9f2c464f24e53fe3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/9fe": {
+      "category": "ファッション・美容",
+      "hash": "c22bf382d7b5bbc4e83dbc39c720ca595484096e9a2a70b05f173da0e09b979b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/skill-gap-exmaple-on-powerpoint": {
+      "category": "AI",
+      "hash": "6ec03bfcb385225b67e876363fee005c786b49c761d985c221ab00778292bed1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/c88": {
+      "category": "ビジネス",
+      "hash": "30336002382ca0ddd91a341035c694610591ad2715c71f833b75cfd903ee14c9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/relation-between-cycling-and-ai-fluency": {
+      "category": "AI",
+      "hash": "7ab6241f0eaec330c9ff23c0c8cd81bd7070b83c5c291fde6df3f5699dcf6369",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/claude-cowork-structure": {
+      "category": "AI",
+      "hash": "71b416e48248d424b6d9e7124854bc3999b3358086b5300ce6a5d81aa0b581f4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/84c": {
+      "category": "ビジネス",
+      "hash": "a88fa1ac2635e1e51c670d9026213d73e43cb64c52cf3fe4bfd0e07211d35d14",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/paper-work-by-claude-cowork": {
+      "category": "AI",
+      "hash": "dead857191fcb3a99e5e58cdbfe38835fe879a10aa43bfbac9841de8cb9519a0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/ce8": {
+      "category": "社会・文化",
+      "hash": "083232ea4524db891ed169232bb491ee9f956b231d8c52d2658ba886b7ce641b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/diff-of-claude-chat-cowork-code": {
+      "category": "AI",
+      "hash": "3a7ad81912e611a5ed5d6a173d770c73655e6da398e28f8cf185326a4d602af1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/faq": {
+      "category": "社会・文化",
+      "hash": "fc873667118d644ed325e30eb3829a37799701adee3a2fb4b42e86e36426d8af",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/40c": {
+      "category": "社会・文化",
+      "hash": "ced48612fc88c9076eb3d1b72df9f88fcfae4408e5bfc350141e6c9b789732ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/198": {
+      "category": "ビジネス",
+      "hash": "89ae37ecf2a648df868eb8772b747c4f71807df1165566c29dc3c7119fd0b6ed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/802": {
+      "category": "クリエイティブ",
+      "hash": "04f811aa39fd49b4a377d6549ec57c2d9d9ef654d01c7708b2ffda45d0cee560",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/before-claude-code": {
+      "category": "AI",
+      "hash": "743e3162336e6e9fc001459001bf6eeecd630dab7b1b08b87e61de6b1ca33709",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/ai-fluency-action-top-five": {
+      "category": "AI",
+      "hash": "a134be89cd9a06c42a4ff70a975d6d5f7150a8557e52d5ace289912a82068bd0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ccwm.substack.com/p/ai-fluency-lesson-release": {
+      "category": "AI",
+      "hash": "2d06a58d847050c040714fe5b18a37fb5b9f374c93294f4653f6c5ad8d3878d2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuminakamura.substack.com/p/b54": {
+      "category": "子育て・家族",
+      "hash": "5a3de484595187ab07b4614a46e8b600fe4a0e27e4bf2f6e838955e5e34b9eb9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/487": {
+      "category": "社会・文化",
+      "hash": "9639eafca1fc4954e33474167a2f798189c4ba310c5d7ed39365577558570215",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/ef5": {
+      "category": "社会・文化",
+      "hash": "df7dde1ced663cdd3ee3a051aace19ded47727e354d0b99a8424dc49136db027",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naokiota.substack.com/p/0ce": {
+      "category": "ビジネス",
+      "hash": "5db6d3040c91697c7f585fe88eb3fd6d61db6b796c91ed2639ca75d5de5e80ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
