@@ -92760,6 +92760,42 @@
       "hash": "7d8aadc00d88089e1d1fc749a45f758eaec8fe8f033a9e88deb46f2711b1876f",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://miimoney.substack.com/p/nisa": {
+      "category": "投資・経済",
+      "hash": "31c7144def3f831f19d99e4be54b572b79aa7a5c6d631efe13d169f74c76c40a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sabukowork.substack.com/p/203": {
+      "category": "キャリア・働き方",
+      "hash": "926fcbd44d896d0cd6c1a9e2ccd4c37769d85fa44a893d8a396b74b5fb77868a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/11": {
+      "category": "読書",
+      "hash": "d4041d1809d3535d7957c923bfccc27ae00e863ee2b1fff25c2472da378de917",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/a1a": {
+      "category": "健康・ウェルネス",
+      "hash": "4d9eb9735fdd388be011886e77b79417833c2281e04720696a9ca368576c27fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/mellow-art-award-2020": {
+      "category": "クリエイティブ",
+      "hash": "5ff60e1c597492249cda12c452d8d5ae3f8d4de580c0f1260de24e073cfa085d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/shift-ai-ai": {
+      "category": "AI",
+      "hash": "fc4f38e875a2ef2bf6fdb2926af0908e7d423029f42e7b42de42640fdaf9a564",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
