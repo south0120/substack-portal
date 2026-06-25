@@ -31,8 +31,9 @@ USAGE_FILE = ROOT / "docs" / "data" / "api_usage.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
 
 # 分類は Google Gemini API（無料tier対象・従量でも安価）。MODEL_NAMEを変えれば差し替え可。
-# 安さ優先なら "gemini-2.0-flash-lite"、精度寄りなら "gemini-2.0-flash"。
-MODEL_NAME = "gemini-2.0-flash"
+# 安さ優先なら "gemini-2.5-flash-lite"、精度寄りなら "gemini-2.5-flash"。
+# ※モデルが提供終了(404)した場合は、起動時診断が利用可能モデル一覧をログに出すのでそれを見て更新する。
+MODEL_NAME = "gemini-2.5-flash-lite"
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # Gemini 2.0 Flash の概算料金（USD / 100万トークン）。無料tier内なら実課金は$0。変わったらここを更新。
 RATE_IN_USD_PER_MTOK = 0.10
@@ -73,6 +74,23 @@ GEMINI_SCHEMA = {
     },
     "required": ["classifications"],
 }
+
+
+def list_generate_models(api_key: str) -> list[str]:
+    """このキーで generateContent に使えるモデル名を取得（モデル404の診断用）。"""
+    try:
+        req = urllib.request.Request(f"{GEMINI_API_BASE}?key={api_key}&pageSize=200",
+                                     headers={"User-Agent": "fyl-classifier/2.0"})
+        with urllib.request.urlopen(req, timeout=30, context=_SSL_CONTEXT) as r:
+            payload = json.loads(r.read())
+        out = []
+        for mdl in payload.get("models", []):
+            if "generateContent" in (mdl.get("supportedGenerationMethods") or []):
+                out.append(str(mdl.get("name", "")).replace("models/", ""))
+        return out
+    except Exception as error:
+        print(f"Warning: could not list models: {error}", file=sys.stderr)
+        return []
 
 
 def gemini_generate(api_key: str, system_text: str, user_text: str, schema: dict,
@@ -414,6 +432,13 @@ def main() -> int:
             except Exception:
                 pass
             print(f"Warning: Gemini API classification failed (HTTP {error.code}) for article batch: {detail}", file=sys.stderr)
+            if error.code == 404 and not getattr(main, "_listed", False):
+                main._listed = True  # type: ignore[attr-defined]
+                avail = list_generate_models(api_key)
+                flash = [n for n in avail if "flash" in n.lower()]
+                print(f"Available generateContent models (flash): {flash}", file=sys.stderr)
+                print(f"All available: {avail}", file=sys.stderr)
+                break  # モデル不正なら全バッチ同じ404なので打ち切り
         except Exception as error:
             print(f"Warning: invalid article batch classification: {error}", file=sys.stderr)
 
