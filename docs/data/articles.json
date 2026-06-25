@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T10:30:11.774125+00:00",
+  "updated_at": "2026-06-25T13:36:04.965454+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -93,31 +93,15 @@
     },
     {
       "name": "Lawrence's Newsletter",
-      "url": "https://lawrencesnewsletter.com",
+      "url": "https://lawrencesnewsletter.com/",
       "feed_url": "https://lawrencesnewsletter.com/feed",
       "categories": [
         "AI",
         "ビジネス"
       ],
       "bio": "AI時代の生存戦略。3分でわかるテクノロジーの最前線と戦略分析を届ける無料ニュースレター。月4本ほどお届けします。",
-      "avatar": "https://substackcdn.com/image/fetch/$s_!IdKp!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F62ebf9d5-e475-4ea4-9ee1-b9ba5f3538fc_256x256.png",
-      "latest": [
-        {
-          "title": "Amazonはなぜ「国家みたい」になったのか",
-          "url": "https://lawrencesnewsletter.com/p/amazon",
-          "published": "2026-02-08T10:51:49+00:00"
-        },
-        {
-          "title": "【CEO退任？】プライバシーを巡る政府との闘い、ティム・クックの決断｜Apple / ティム・クック後編",
-          "url": "https://lawrencesnewsletter.com/p/apple-timcook-2",
-          "published": "2026-02-01T09:02:57+00:00"
-        },
-        {
-          "title": "なぜジョブズはティム・クックを後継者に選んだのか｜Apple / ティム・クック前編",
-          "url": "https://lawrencesnewsletter.com/p/apple-timcook-1",
-          "published": "2026-01-25T09:02:10+00:00"
-        }
-      ]
+      "avatar": "",
+      "latest": []
     },
     {
       "name": "Andy Kondo - Innovation Analyst",
@@ -11952,24 +11936,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "Amazonはなぜ「国家みたい」になったのか",
-      "url": "https://lawrencesnewsletter.com/p/amazon",
-      "excerpt": "自由な市場を作るはずだったインターネットは、なぜ「皇帝」を生むのか。",
-      "published": "2026-02-08T10:51:49+00:00",
-      "image": "https://api.substack.com/feed/podcast/187274805/553cfd30eaf6a4dd56af001324e482f7.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "【CEO退任？】プライバシーを巡る政府との闘い、ティム・クックの決断｜Apple / ティム・クック後編",
-      "url": "https://lawrencesnewsletter.com/p/apple-timcook-2",
-      "excerpt": "Listen now | ティム・クックが信じる“価値観”が、現実の圧力の中でどう試され、Appleにどう実装されていったのか。何億人の安全と、政府の権力の境界線をめぐる話。",
-      "published": "2026-02-01T09:02:57+00:00",
-      "image": "https://api.substack.com/feed/podcast/184195061/698ec4196baf9d62fbb2ffc6fcb3ef8a.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
       "title": "Nadoのエアドロップを狙ってみた【世界的取引所Krakenが開発するPerpDEX】",
       "url": "https://www.bankeradao.com/p/nadokrakenperpdex",
       "excerpt": "まだまだアーリー！レイヤー2「Inkチェーン」特化のトレードサービスでポイントを狙うために情報を集めました。",
@@ -11977,15 +11943,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!_7cK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54982e5a-4fde-426c-9c82-03509053ffa1_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
       "category": "投資・経済"
-    },
-    {
-      "title": "なぜジョブズはティム・クックを後継者に選んだのか｜Apple / ティム・クック前編",
-      "url": "https://lawrencesnewsletter.com/p/apple-timcook-1",
-      "excerpt": "Listen now | ジョブズの“次”に必要だったのは、発明ではなく「会社を生かす力」だった。舞台裏の男が、Appleの“呼吸”を整えていく。",
-      "published": "2026-01-25T09:02:10+00:00",
-      "image": "https://api.substack.com/feed/podcast/184192564/43fa905feda047e2b1853d91d073808c.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
     },
     {
       "title": "Geniusのエアドロップ戦略【バイナンス創業者が言及した取引ターミナル】",
@@ -12006,33 +11963,6 @@
       "category": "その他"
     },
     {
-      "title": "NVIDIAの次の賭けは何か？ジェンスンが見ている次の10年｜NVIDIA編 第5話",
-      "url": "https://lawrencesnewsletter.com/p/nvidia10nvidia-5",
-      "excerpt": "Listen now | NVIDIAは“AIの勝者”で終わらない。次にどこへ賭けるのか──ジェンスンの発言とこれまでの物語から、次の10年の地図を引く（NVIDIA編・最終話）",
-      "published": "2026-01-18T09:02:00+00:00",
-      "image": "https://api.substack.com/feed/podcast/182624411/e28785e7f2ad34f0ba64453ef4ad091f.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "NVIDIAの流儀、AIの火付け役になれた理由｜NVIDIA編 第4話",
-      "url": "https://lawrencesnewsletter.com/p/nvidiaainvidia-4",
-      "excerpt": "Listen now | NVIDIAがAIの火付け役になれた理由は、技術だけじゃない。ジェンスンの「ミッションが究極のボス」という組織設計にあった。",
-      "published": "2026-01-11T09:01:33+00:00",
-      "image": "https://api.substack.com/feed/podcast/182623465/16e2b76504dd55d58fd6e82b1a6df966.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "「廃業30日前」から世界標準へ。NVIDIAを強くした起点は何か｜NVIDIA編 第3話",
-      "url": "https://lawrencesnewsletter.com/p/30nvidianvidia-3",
-      "excerpt": "Listen now | NVIDIAが強くなった理由は、技術より先に“勝ち方の設計”を変えたことにある",
-      "published": "2026-01-04T09:02:21+00:00",
-      "image": "https://api.substack.com/feed/podcast/182622154/afea2abb0349b5b1e9f5e507ad51fd5e.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
       "title": "予測市場のエアドロップってどうなの？",
       "url": "https://www.bankeradao.com/p/polymarket",
       "excerpt": "ネクストトレンド期待「予測市場」｜マーケットやエアドロップ事例・注目プラットフォーム情報をまとめました",
@@ -12051,33 +11981,6 @@
       "category": "その他"
     },
     {
-      "title": "預金残高ギリギリ。NVIDIAはどう逆境から生き延びたのか｜NVIDIA編 第2話",
-      "url": "https://lawrencesnewsletter.com/p/nvidia2-2",
-      "excerpt": "Listen now | ファミレスで創業されたNVIDIA。彼らが最初に開発したチップは苦難の迎えることになる… 創業初期のギリギリからの一発大逆転！",
-      "published": "2025-12-28T09:00:40+00:00",
-      "image": "https://api.substack.com/feed/podcast/180920511/4d780867b5c0720ff68e785f88b123d2.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "倒産寸前のNVIDIAを救った男、ジェンスン・フアンの原点｜NVIDIA編 第1話",
-      "url": "https://lawrencesnewsletter.com/p/nvidia2-1",
-      "excerpt": "Listen now | 矯正施設、デニーズの皿洗い、半導体業界の闘争——世界一の時価総額企業をつくったCEOの「逆境をいくつも乗り越える」の物語",
-      "published": "2025-12-21T09:01:52+00:00",
-      "image": "https://api.substack.com/feed/podcast/180919614/6347448f7ca1f878941edab614c55cd1.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "光と影を持つ人物像考察、次に掛ける領域は｜サム・アルトマン編 第5話",
-      "url": "https://lawrencesnewsletter.com/p/1-5",
-      "excerpt": "サム・アルトマンとは一体どんな人物なのか。シリーズを通じて見える人物像を考察、彼が考える未来、投資先とは？シリーズ完結...！",
-      "published": "2025-12-14T09:00:34+00:00",
-      "image": "https://api.substack.com/feed/podcast/179625703/fb4b53177dfe958960399682b3ec765e.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
       "title": "Ethereal エアドロップやってみた！【裏シーズン中に3000万ドル取引したらポイントが・・・】",
       "url": "https://www.bankeradao.com/p/ethereal-airdrop",
       "excerpt": "Ethena Labsのステーブルコイン「USDe」を基盤としたPerpDEX。裏シーズン中に3000万ドルの取引をして獲得したポイント公開 & 終わった噂について考えてみた",
@@ -12087,24 +11990,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "OpenAI理事会の反乱！なぜCEOを解任されたのか｜サム・アルトマン編 第4話",
-      "url": "https://lawrencesnewsletter.com/p/ceo-1-4",
-      "excerpt": "Listen now | 内部の緊張はピークに達するOpenAI。サムはCEOを解任されるも理事会の暴走と考える勢力が増え始め…。",
-      "published": "2025-12-07T09:01:01+00:00",
-      "image": "https://api.substack.com/feed/podcast/179625194/2fb83581bedbb13cd34d4d3c5def064b.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "ChatGPT誕生秘話、アパートの一室から全ては始まった！｜サム・アルトマン編 第3話",
-      "url": "https://lawrencesnewsletter.com/p/sam-altman-3",
-      "excerpt": "マッチョなサム・アルトマンの右腕、ブロックマンのアパートの一室で始まったOpenAI。AIの安全性を強く考える効果的利他主義のメンバーの合流で、社内の緊張感は高まっており…。",
-      "published": "2025-11-30T09:00:45+00:00",
-      "image": "https://api.substack.com/feed/podcast/179624153/07ad3af7ac82403861c7d3f73146457c.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
       "title": "Grvt エアドロップ戦略【2026年にトークンが確定してるDEXの使い方】",
       "url": "https://www.bankeradao.com/p/grvt-2026dex",
       "excerpt": "日本で話題のハイブリッドDEXの使い方とポイントを稼ぐ戦略について解説します！",
@@ -12112,24 +11997,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!pORx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb13d1723-bad5-4b04-b819-3e3d34dec304_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
       "category": "投資・経済"
-    },
-    {
-      "title": "なぜOpenAIは作られたのか？設立前夜の知られざる物語！｜サム・アルトマン編 第2話",
-      "url": "https://lawrencesnewsletter.com/p/sam-altman-2",
-      "excerpt": "ポール・グレアムからYコンビネータ社長を引き継いだサム・アルトマン。一方その頃、イーロン・マスクとAI研究所設立に向けた会談を重ね…。",
-      "published": "2025-11-23T09:00:54+00:00",
-      "image": "https://api.substack.com/feed/podcast/179623288/35295f646562bc5d0817651ff9cab565.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "ChatGPTを生んだ天才起業家、サム・アルトマンとは何者か｜サム・アルトマン編 第1話",
-      "url": "https://lawrencesnewsletter.com/p/chatgpt1-1",
-      "excerpt": "Listen now (37 mins) | その天才は、なぜ「資金調達の神」と呼ばれたのか？AI時代のテック・リーダーのすべてに迫るストーリー開幕！",
-      "published": "2025-11-21T09:01:53+00:00",
-      "image": "https://api.substack.com/feed/podcast/179458012/baf8bc5d8527027ff2e9dd80843b3f4f.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
     },
     {
       "title": "Unitのエアドロップ戦略【ハイリキのBTC/ETHを支えるインフラプロトコル】",
@@ -12177,15 +12044,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "Meta AIグラスは「次のデバイス勝者」になり得るか：「デバイスはプライベートで、控えめで、絶妙なものであるべき」",
-      "url": "https://lawrencesnewsletter.com/p/meta-ai-glasses",
-      "excerpt": "Meta Ray-Ban DisplayとNeural Bandの可能性",
-      "published": "2025-09-21T21:00:35+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!XYtb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1d2bbef-9b0b-4cc0-9a75-48314f4234ed_1280x720.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
       "title": "Basedのエアドロップ【2000万ドル取引した結果…】",
       "url": "https://www.bankeradao.com/p/based2000",
       "excerpt": "大量のエアドロップを狙いながらハイリキのトレードも刻める話題のPerpsプラットフォームのやり方とXPを狙ってみた結果をまとめました。",
@@ -12193,60 +12051,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!9ooU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa390e44-87c8-4acb-8fa8-0c83675a897a_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
       "category": "投資・経済"
-    },
-    {
-      "title": "音声生成AIの世界：Eleven Labsのボイスクローンと資産とUIになる音声の可能性",
-      "url": "https://lawrencesnewsletter.com/p/eleven-labs",
-      "excerpt": "自分の声のボイスクローンを作ってみました",
-      "published": "2025-09-16T21:00:27+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!RN5P!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F65f44f18-53b5-4793-9a34-2a477d970010_1280x720.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "AI時代の「もう一つの勝者」：OpenAI × Oracle契約から見えるクラウドの収益爆発",
-      "url": "https://lawrencesnewsletter.com/p/aiopenai-oracle",
-      "excerpt": "表舞台の勝者と、見過ごされがちな裏側",
-      "published": "2025-09-14T21:01:09+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!NSZB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F20bd478a-f705-4f39-98f3-03d857563e5d_1280x720.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "アトラシアンによるAIブラウザDiaの買収とエージェントブラウザ脆弱性の恐怖",
-      "url": "https://lawrencesnewsletter.com/p/acquiring-dia-by-atlassian",
-      "excerpt": "OpenAIの最新研究「なぜLLMはハルシネーションを起こすのか」、NVIDIAに対抗するGoogleのTPU戦略など",
-      "published": "2025-09-07T21:00:41+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!mdMq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff11805e1-9ca0-43e7-80a3-0e3e38d78fda_1280x720.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "検索もコンサルもAIに奪われる中、人間が選ばれる理由を考える",
-      "url": "https://lawrencesnewsletter.com/p/how-do-we-survive-ai-disruption",
-      "excerpt": "AIが正解を配る世界で、問いと物語を武器にする",
-      "published": "2025-09-01T21:00:33+00:00",
-      "image": "https://api.substack.com/feed/podcast/172377404/22d40db782fc06f00df503498534ad50.mp3",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "エヌビディア2025Q2決算、Nano Bananaの熱狂",
-      "url": "https://lawrencesnewsletter.com/p/nvidia-2025q2-nano-banana",
-      "excerpt": "n8nの創業者インタビュー、a16zAIコンシューマー向けアプリTOP100など",
-      "published": "2025-08-31T21:00:36+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!2rRc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F353ef40f-2514-41ec-9cfe-95620270e9f1_1280x720.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
-    },
-    {
-      "title": "米国政府、インテルに89億ドルの出資で約10％の株式を取得、背景と影響は？",
-      "url": "https://lawrencesnewsletter.com/p/8910",
-      "excerpt": "OpenAI チーフサイエンティストが語るAGIと現在など",
-      "published": "2025-08-24T21:00:51+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!weUo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1a8194e3-0b7c-4ce2-a5ad-5db2777c0705_588x792.png",
-      "writer": "Lawrence's Newsletter",
-      "category": "AI"
     }
   ]
 }
