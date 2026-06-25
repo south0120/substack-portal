@@ -715,7 +715,7 @@ function stepNet(){
   if(NET.alpha>0.02 || NET.drag) NET.raf=requestAnimationFrame(stepNet); else NET.raf=null;
 }
 function tickNet(){
-  const ns=NET.nodes, a=NET.alpha, charge=1400, link=0.016, linkDist=66, cluster=0.025, damp=0.86;
+  const ns=NET.nodes, a=NET.alpha, charge=1300, link=0.009, linkDist=60, cluster=0.05, damp=0.86;
   for(let i=0;i<ns.length;i++){ const ni=ns[i];
     for(let j=i+1;j<ns.length;j++){ const nj=ns[j];
       let dx=ni.x-nj.x, dy=ni.y-nj.y, d2=dx*dx+dy*dy;
@@ -746,7 +746,7 @@ function drawNet(){
   for(const e of NET.edges){
     if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
     const on = fc ? true : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover);
-    ctx.strokeStyle = on ? "rgba(255,150,80,0.42)" : "rgba(255,255,255,0.03)";
+    ctx.strokeStyle = on ? "rgba(255,150,80,0.45)" : "rgba(255,255,255,0.018)";
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
   const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
@@ -877,7 +877,7 @@ function bindNetEvents(){
   const c=NET.canvas, tip=document.getElementById("netTip");
   c.addEventListener("mousedown",ev=>{
     const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top, n=nodeAt(sx,sy);
-    NET.moved=false; NET.down=n;
+    NET.moved=false; NET.down=n; NET.gestureOnCanvas=true;
     if(n){ NET.drag=n; }
     else NET.panning={sx:ev.clientX,sy:ev.clientY,vx:NET.view.x,vy:NET.view.y};
     c.classList.add("grabbing");
@@ -894,10 +894,10 @@ function bindNetEvents(){
     }
   });
   window.addEventListener("mouseup",ev=>{
-    const wasNode=NET.down;
+    const wasNode=NET.down, onCanvas=NET.gestureOnCanvas;
     if(NET.drag){ NET.drag.fx=null; NET.drag.fy=null; NET.drag=null; }
-    NET.panning=null; NET.down=null; c.classList.remove("grabbing");
-    if(!NET.moved){ if(wasNode) focusNode(wasNode); else clearFocus(); }
+    NET.panning=null; NET.down=null; NET.gestureOnCanvas=false; c.classList.remove("grabbing");
+    if(onCanvas && !NET.moved){ if(wasNode) focusNode(wasNode); else clearFocus(); }   // canvas上で始まった操作の時だけ選択/解除（ボタン等の誤解除を防ぐ）
   });
   c.addEventListener("wheel",ev=>{
     ev.preventDefault();
