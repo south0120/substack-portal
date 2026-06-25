@@ -253,6 +253,7 @@
         <label><input type="checkbox" id="netRadial" checked> 放射状に整列</label>
         <label>重み <select id="netWeight"><option value="indeg">被推薦</option><option value="pagerank">PageRank</option></select></label>
         <label>クラスタ <select id="netClusterBy"><option value="cat">カテゴリ</option><option value="community">界隈(自動検出)</option></select></label>
+        <label>界隈で絞る <select id="netCommunityFilter"><option value="">すべて</option></select></label>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -697,9 +698,13 @@ function renderNetAnalysis(A){
   html+=card("界隈（コミュニティ検出 / Louvain）","カテゴリでなく実際の推薦の繋がりから自動検出した界隈（代表3名）",
     `<ul class="na-list">${A.communities.slice(0,8).map(c=>`<li><span>${esc(c.top.join(" / "))}</span><b>${c.size}</b></li>`).join("")}</ul>`);
   body.innerHTML=html;
+  // 界隈フィルタのセレクタを populate
+  const sel=document.getElementById("netCommunityFilter");
+  if(sel) sel.innerHTML='<option value="">すべて</option>'+A.communities.map(c=>`<option value="${c.id}">界隈${c.id+1}（${esc((c.top[0]||"").slice(0,10))}… ${c.size}人）</option>`).join("");
 }
 function buildNet(){
-  NET.focus=null; NET.focusSet=null; const _dd=document.getElementById("netDetail"); if(_dd) _dd.hidden=true;
+  NET.focus=null; NET.focusSet=null; NET.commFilter=null; const _dd=document.getElementById("netDetail"); if(_dd) _dd.hidden=true;
+  const _cf=document.getElementById("netCommunityFilter"); if(_cf) _cf.value="";
   const showExt = document.getElementById("netExt").checked;
   let edges = (NET.raw.edges||[]).filter(e=> showExt ? true : !e.ext);
   if(showExt){
@@ -796,23 +801,23 @@ function sx_(x){ return x*NET.view.k+NET.view.x+NET.W/2; }
 function sy_(y){ return y*NET.view.k+NET.view.y+NET.H/2; }
 function toWorld(sx,sy){ return [(sx-NET.view.x-NET.W/2)/NET.view.k, (sy-NET.view.y-NET.H/2)/NET.view.k]; }
 function drawNet(){
-  const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight, fc=NET.focus, fset=NET.focusSet;
+  const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight, fc=NET.focus, fset=NET.focusSet, cf=NET.commFilter;
   ctx.clearRect(0,0,NET.W,NET.H);
   ctx.lineWidth=Math.max(0.3,0.4*k);
   const showEdges = !document.getElementById("netShowEdges") || document.getElementById("netShowEdges").checked;
   for(const e of NET.edges){
     if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
     else if(!showEdges) continue;                                // 全体表示で「線を表示」OFFなら線を描かない
-    const on = fc ? true : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover);
+    const on = fc ? true : (cf!=null ? (e.s.community===cf && e.t.community===cf) : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover));
     ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.05)";   // 白い細い線（全体はかろうじて見える程度）
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
   const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
   for(const n of NET.nodes){
-    const on = fc ? fset.has(n.id) : (!hl || n.name.toLowerCase().includes(hl));
+    const on = fc ? fset.has(n.id) : (cf!=null ? (n.community===cf) : (!hl || n.name.toLowerCase().includes(hl)));
     if(!on && hideBg) continue;                              // 背景を隠す: 非エゴノードを描かない
     const x=sx_(n.x), y=sy_(n.y), col=n.color||netColor(n.cat); let r=Math.max(1.5,n.r*k);
-    ctx.globalAlpha = on?1:(fc?0.09:0.22);
+    ctx.globalAlpha = on?1:((fc||cf!=null)?0.09:0.22);
     ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(5+Math.sqrt(n.w||0)*2.5,30):3; ctx.fillStyle=col;  // 大きさは控えめ・magnitudeは光の強さで
     ctx.beginPath(); ctx.arc(x,y,(fc&&on)?r*1.12:r,0,7); ctx.fill(); ctx.shadowBlur=0;
     if(fc && n===fc){ ctx.globalAlpha=1; ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(x,y,r*1.12+3,0,7); ctx.stroke(); ctx.lineWidth=Math.max(0.3,0.4*k); }
@@ -1014,6 +1019,31 @@ function bindNetEvents(){
 document.getElementById("netExt").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netWeight").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netClusterBy").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
+document.getElementById("netCommunityFilter").addEventListener("change",function(){
+  NET.commFilter = this.value===""? null : Number(this.value);
+  NET.focus=null; NET.focusSet=null;   // 界隈絞り込みとノードフォーカスは排他
+  if(NET.commFilter!=null){
+    renderCommunityMembers(NET.commFilter);
+    const ms=NET.nodes.filter(n=>n.community===NET.commFilter);
+    if(ms.length){
+      let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+      for(const n of ms){ mnx=Math.min(mnx,n.x);mny=Math.min(mny,n.y);mxx=Math.max(mxx,n.x);mxy=Math.max(mxy,n.y); }
+      const w=mxx-mnx||1,h=mxy-mny||1,k=Math.min(NET.W/(w+150),NET.H/(h+150),1.8);
+      tweenView(-((mnx+mxx)/2)*k,-((mny+mxy)/2)*k,k,420);
+    } else drawNet();
+  } else { document.getElementById("netDetail").hidden=true; drawNet(); }
+});
+function renderCommunityMembers(cid){
+  const ms=NET.nodes.filter(n=>n.community===cid && !n.ext).sort((a,b)=>(b.indeg||0)-(a.indeg||0));
+  const d=document.getElementById("netDetail");
+  d.innerHTML=`<span class="nd-close" data-net-close>×</span>
+    <h3>界隈${cid+1}（${ms.length}発行物）</h3>
+    <div class="nd-cat">推薦の繋がりから自動検出した界隈・被推薦順</div>
+    <ul class="nd-list">${ms.slice(0,50).map(n=>`<li data-net-go="${esc(n.id)}">${esc(n.name)}<span style="color:#b0a89e">被推薦${n.indeg}</span></li>`).join("")}</ul>`;
+  d.hidden=false;
+  d.querySelector("[data-net-close]").onclick=()=>{ document.getElementById("netCommunityFilter").value=""; NET.commFilter=null; d.hidden=true; drawNet(); };
+  d.querySelectorAll("[data-net-go]").forEach(el=>el.onclick=()=>{ const n=NET.byId[el.dataset.netGo]; if(n) focusNode(n); });
+}
 document.getElementById("netReheat").addEventListener("click",()=>{ if(NET.raw){ buildNet(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netFit").addEventListener("click",()=>{ fitNet(true); });
 document.getElementById("netFull").addEventListener("click",()=>{
