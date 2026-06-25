@@ -240,6 +240,7 @@
         <label><input type="checkbox" id="netHideBg"> 背景を隠す</label>
         <label><input type="checkbox" id="netHideList"> リストを隠す</label>
         <label><input type="checkbox" id="netNeighborLabels" checked> 関連名を表示</label>
+        <label><input type="checkbox" id="netShowEdges" checked> 線を表示</label>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -742,11 +743,13 @@ function toWorld(sx,sy){ return [(sx-NET.view.x-NET.W/2)/NET.view.k, (sy-NET.vie
 function drawNet(){
   const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight, fc=NET.focus, fset=NET.focusSet;
   ctx.clearRect(0,0,NET.W,NET.H);
-  ctx.lineWidth=Math.max(0.4,0.55*k);
+  ctx.lineWidth=Math.max(0.3,0.4*k);
+  const showEdges = !document.getElementById("netShowEdges") || document.getElementById("netShowEdges").checked;
   for(const e of NET.edges){
     if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
+    else if(!showEdges) continue;                                // 全体表示で「線を表示」OFFなら線を描かない
     const on = fc ? true : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover);
-    ctx.strokeStyle = on ? "rgba(255,150,80,0.45)" : "rgba(255,255,255,0.018)";
+    ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.10)";   // 白い細い線
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
   const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
@@ -757,7 +760,7 @@ function drawNet(){
     ctx.globalAlpha = on?1:(fc?0.09:0.22);
     ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(5+Math.sqrt(n.indeg||0)*2.5,30):3; ctx.fillStyle=col;  // 大きさは控えめ・magnitudeは光の強さで
     ctx.beginPath(); ctx.arc(x,y,(fc&&on)?r*1.12:r,0,7); ctx.fill(); ctx.shadowBlur=0;
-    if(fc && n===fc){ ctx.globalAlpha=1; ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(x,y,r*1.12+3,0,7); ctx.stroke(); ctx.lineWidth=Math.max(0.4,0.55*k); }
+    if(fc && n===fc){ ctx.globalAlpha=1; ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(x,y,r*1.12+3,0,7); ctx.stroke(); ctx.lineWidth=Math.max(0.3,0.4*k); }
     ctx.globalAlpha=1;
   }
   ctx.font="11px system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
@@ -961,6 +964,7 @@ document.addEventListener("fullscreenchange",()=>{
 });
 document.getElementById("netHideBg").addEventListener("change", drawNet);
 document.getElementById("netNeighborLabels").addEventListener("change", drawNet);
+document.getElementById("netShowEdges").addEventListener("change", drawNet);
 document.getElementById("netHideList").addEventListener("change",()=>{
   document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;
 });
