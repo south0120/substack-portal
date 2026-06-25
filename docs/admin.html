@@ -237,6 +237,8 @@
         <button type="button" id="netReheat">再配置</button>
         <button type="button" id="netFit">全体表示</button>
         <button type="button" id="netFull">全画面</button>
+        <label><input type="checkbox" id="netHideBg"> 背景を隠す</label>
+        <label><input type="checkbox" id="netHideList"> リストを隠す</label>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -732,9 +734,11 @@ function drawNet(){
     ctx.strokeStyle = on ? "rgba(255,150,80,0.40)" : "rgba(255,255,255,0.05)";
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
+  const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
   for(const n of NET.nodes){
-    const x=sx_(n.x), y=sy_(n.y), col=netColor(n.cat); let r=Math.max(1.5,n.r*k);
     const on = fc ? fset.has(n.id) : (!hl || n.name.toLowerCase().includes(hl));
+    if(!on && hideBg) continue;                              // 背景を隠す: 非エゴノードを描かない
+    const x=sx_(n.x), y=sy_(n.y), col=netColor(n.cat); let r=Math.max(1.5,n.r*k);
     ctx.globalAlpha = on?1:(fc?0.09:0.22);
     ctx.shadowColor=col; ctx.shadowBlur=on?Math.min(20,11*k):3; ctx.fillStyle=col;
     ctx.beginPath(); ctx.arc(x,y,(fc&&on)?r*1.12:r,0,7); ctx.fill(); ctx.shadowBlur=0;
@@ -836,7 +840,7 @@ function renderNetDetail(node,out,inc){
     <div class="nd-sec">推薦されている元（${inc.length}）</div>
     <ul class="nd-list">${inc.length?inc.map(li).join(""):none}</ul>
     <a class="nd-open" href="https://${esc(node.id)}.substack.com" target="_blank" rel="noopener">${esc(node.name)} を開く →</a>`;
-  d.hidden=false;
+  d.hidden = document.getElementById("netHideList").checked;
   d.querySelector("[data-net-close]").onclick=clearFocus;
   d.querySelectorAll("[data-net-go]").forEach(el=>el.onclick=()=>{ const n=NET.byId[el.dataset.netGo]; if(n) focusNode(n); });
 }
@@ -938,6 +942,10 @@ document.getElementById("netFull").addEventListener("click",()=>{
 document.addEventListener("fullscreenchange",()=>{
   const fb=document.getElementById("netFull"); if(fb) fb.textContent=document.fullscreenElement?"全画面解除":"全画面";
   if(!document.getElementById("tabNetwork").hidden){ setTimeout(()=>{ resizeNet(); fitNet(false); }, 80); }
+});
+document.getElementById("netHideBg").addEventListener("change", drawNet);
+document.getElementById("netHideList").addEventListener("change",()=>{
+  document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;
 });
 document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
 
