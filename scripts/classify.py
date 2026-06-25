@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 import ssl
+import time
 import urllib.error
 import urllib.request
 
@@ -29,10 +30,13 @@ ARTICLE_CATEGORIES_FILE = ROOT / "docs" / "data" / "article_categories.json"
 USAGE_FILE = ROOT / "docs" / "data" / "api_usage.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
 
-MODEL_NAME = "claude-haiku-4-5-20251001"
-# Claude Haiku 4.5 の料金（USD / 100万トークン）。変わったらここを更新。
-RATE_IN_USD_PER_MTOK = 1.0
-RATE_OUT_USD_PER_MTOK = 5.0
+# 分類は Google Gemini API（無料tier対象・従量でも安価）。MODEL_NAMEを変えれば差し替え可。
+# 安さ優先なら "gemini-2.0-flash-lite"、精度寄りなら "gemini-2.0-flash"。
+MODEL_NAME = "gemini-2.0-flash"
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+# Gemini 2.0 Flash の概算料金（USD / 100万トークン）。無料tier内なら実課金は$0。変わったらここを更新。
+RATE_IN_USD_PER_MTOK = 0.10
+RATE_OUT_USD_PER_MTOK = 0.40
 
 # 棚カテゴリ（index.html の CAT_STYLE）と揃えた分類ラベル。バーの成分がそのまま棚カテゴリに使われる。
 TOPIC_LABELS = [
@@ -51,25 +55,73 @@ ARTICLE_CACHE_VERSION = 1
 BATCH_SIZE = 30
 WRITE_BACK_BATCH_SIZE = 2000
 
-SCHEMA = {
-    "type": "object",
+# Gemini の responseSchema（OpenAPI サブセット。型は大文字、additionalProperties/enumはそのまま使える）。
+GEMINI_SCHEMA = {
+    "type": "OBJECT",
     "properties": {
         "classifications": {
-            "type": "array",
+            "type": "ARRAY",
             "items": {
-                "type": "object",
+                "type": "OBJECT",
                 "properties": {
-                    "index": {"type": "integer"},
-                    "topic": {"type": "string", "enum": TOPIC_LABELS},
+                    "index": {"type": "INTEGER"},
+                    "topic": {"type": "STRING", "enum": TOPIC_LABELS},
                 },
                 "required": ["index", "topic"],
-                "additionalProperties": False,
             },
         }
     },
     "required": ["classifications"],
-    "additionalProperties": False,
 }
+
+
+def gemini_generate(api_key: str, system_text: str, user_text: str, schema: dict,
+                    max_out: int = 4000, retries: int = 4) -> tuple[str, int, int]:
+    """Gemini generateContent を叩いて (JSONテキスト, 入力トークン, 出力トークン) を返す。
+    429/5xx はバックオフして再試行（無料tierのレート制限対策）。"""
+    url = f"{GEMINI_API_BASE}/{MODEL_NAME}:generateContent?key={api_key}"
+    body = {
+        "systemInstruction": {"parts": [{"text": system_text}]},
+        "contents": [{"role": "user", "parts": [{"text": user_text}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": schema,
+            "temperature": 0,
+            "maxOutputTokens": max_out,
+        },
+    }
+    data = json.dumps(body, ensure_ascii=False).encode("utf-8")
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(
+                url, data=data, method="POST",
+                headers={"Content-Type": "application/json", "User-Agent": "fyl-classifier/2.0"},
+            )
+            with urllib.request.urlopen(req, timeout=120, context=_SSL_CONTEXT) as r:
+                payload = json.loads(r.read())
+            candidates = payload.get("candidates") or []
+            if not candidates:
+                raise ValueError(f"no candidates: {json.dumps(payload)[:200]}")
+            parts = (candidates[0].get("content") or {}).get("parts") or []
+            text = "".join(p.get("text", "") for p in parts)
+            if not text:
+                raise ValueError(f"empty text (finishReason={candidates[0].get('finishReason')})")
+            um = payload.get("usageMetadata") or {}
+            return text, int(um.get("promptTokenCount", 0) or 0), int(um.get("candidatesTokenCount", 0) or 0)
+        except urllib.error.HTTPError as error:
+            last_err = error
+            if error.code in (429, 500, 503) and attempt < retries - 1:
+                time.sleep(min((2 ** attempt) * 3, 30))
+                continue
+            raise
+        except (urllib.error.URLError, TimeoutError) as error:
+            last_err = error
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            raise
+    raise last_err if last_err else RuntimeError("gemini_generate failed")
 
 
 def now_iso() -> str:
@@ -257,11 +309,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY is not set; skipping topic classification.")
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        print("GEMINI_API_KEY is not set; skipping topic classification.")
         return 0
-
-    import anthropic
 
     # Fetch writers from D1 API
     req = urllib.request.Request(f"{API_BASE}/api/writers", headers={"User-Agent": "fyl-classifier/1.0"})
@@ -309,7 +360,6 @@ def main() -> int:
         to_classify = to_classify[:max(args.limit, 0)]
     print(f"Articles needing classification this run: {len(to_classify)}")
 
-    client = anthropic.Anthropic()
     run_in = run_out = api_calls = classified = 0
     updated_items: list[dict[str, str]] = []
     api_articles: list[dict[str, Any]] = []
@@ -335,23 +385,15 @@ def main() -> int:
         print(f"Classifying article batch: {start + 1}-{start + len(batch)}")
         try:
             prompt_text = prompt_for(batch)
-            resp = client.messages.create(
-                model="claude-haiku-4-5-20251001",
-                max_tokens=4000,
-                system=(
-                    "あなたは日本語ニュースレター記事のトピック分類器です。"
-                    "各記事を、その記事の主題（主に何について書かれているか）に最も合うトピック1つに分類してください。"
-                    "道具・手段として軽く触れているだけの要素では分類しないでください。"
-                ),
-                messages=[{"role": "user", "content": prompt_text}],
-                output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
+            system_text = (
+                "あなたは日本語ニュースレター記事のトピック分類器です。"
+                "各記事を、その記事の主題（主に何について書かれているか）に最も合うトピック1つに分類してください。"
+                "道具・手段として軽く触れているだけの要素では分類しないでください。"
             )
-            usage = getattr(resp, "usage", None)
-            if usage is not None:
-                run_in += int(getattr(usage, "input_tokens", 0) or 0)
-                run_out += int(getattr(usage, "output_tokens", 0) or 0)
+            text, in_tok, out_tok = gemini_generate(api_key, system_text, prompt_text, GEMINI_SCHEMA)
+            run_in += in_tok
+            run_out += out_tok
             api_calls += 1
-            text = next(b.text for b in resp.content if b.type == "text")
             data = json.loads(text)
             by_index = classifications_from(data, len(batch))
             for index, article in enumerate(batch, start=1):
@@ -365,8 +407,13 @@ def main() -> int:
                 }
                 updated_items.append({"url": url, "category": category})
                 classified += 1
-        except anthropic.APIError as error:
-            print(f"Warning: API classification failed for article batch: {error}", file=sys.stderr)
+        except urllib.error.HTTPError as error:
+            detail = ""
+            try:
+                detail = error.read().decode("utf-8", "ignore")[:200]
+            except Exception:
+                pass
+            print(f"Warning: Gemini API classification failed (HTTP {error.code}) for article batch: {detail}", file=sys.stderr)
         except Exception as error:
             print(f"Warning: invalid article batch classification: {error}", file=sys.stderr)
 
