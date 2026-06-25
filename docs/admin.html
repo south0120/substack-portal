@@ -83,6 +83,15 @@
   .net-detail .nd-list li[data-net-go]:hover{color:#fff;text-decoration:underline}
   .net-detail .nd-open{display:inline-block;margin-top:11px;color:#ff9a52;font-weight:700;text-decoration:none}
   .net-detail .nd-close{position:absolute;top:7px;right:11px;cursor:pointer;color:#b0a89e;font-size:1.1rem;line-height:1}
+  .net-analysis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:14px}
+  .na-card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--bg)}
+  .na-card h3{margin:0 0 2px;font-size:.85rem;color:var(--ink)}
+  .na-card .na-sub{font-size:.69rem;color:var(--sub);margin:0 0 8px}
+  .na-list{margin:0;padding:0;list-style:none;font-size:.78rem}
+  .na-list li{display:flex;justify-content:space-between;gap:10px;padding:3px 0;border-bottom:1px solid var(--line)}
+  .na-list li>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .na-list li b{color:var(--brand);font-variant-numeric:tabular-nums;flex:none}
+  .na-stat{font-size:1.5rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
   .disc-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;font-size:.8rem}
   .disc-controls input,.disc-controls select{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
   #discoveryTable th[data-sort]{cursor:pointer;user-select:none;white-space:nowrap}
@@ -249,6 +258,11 @@
         <canvas id="netCanvas" height="600" style="width:100%;height:600px;display:block;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)"></canvas>
         <div id="netDetail" class="net-detail" hidden></div>
       </div>
+    </div>
+    <div class="panel" id="netAnalysisPanel">
+      <h2>ネットワーク分析（推薦グラフの構造）</h2>
+      <div class="muted" style="font-size:.74rem;margin-bottom:12px">推薦の有向グラフをグラフ理論で分析。被推薦の単純な数ではなく「影響力・橋渡し・界隈・関係の質」を定量化。<span id="netAnalysisMeta"></span></div>
+      <div id="netAnalysisBody" class="net-analysis-grid"></div>
     </div>
   </div>
 </div>
@@ -660,7 +674,26 @@ async function loadNetwork(){
   catch(_){ document.getElementById("netMeta").textContent=" — network.json を読み込めませんでした（生成途中の可能性）。少し待って開き直してください。"; NET.started=false; return; }
   NET.raw = data;
   document.getElementById("netMeta").textContent = data.generated ? `（生成 ${new Date(data.generated).toLocaleString("ja-JP")}）` : "";
-  buildNet(); setupNetCanvas(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet();
+  buildNet(); setupNetCanvas(); renderNetLegend(); renderNetAnalysis(data.analysis); NET.view={x:0,y:0,k:1}; reheatNet();
+}
+function renderNetAnalysis(A){
+  const body=document.getElementById("netAnalysisBody");
+  if(!A){ body.innerHTML='<div class="muted" style="grid-column:1/-1">分析データがありません（network.jsonの再生成が必要）。</div>'; return; }
+  document.getElementById("netAnalysisMeta").textContent = `｜コミュニティ${A.communities.length}・相互推薦${A.mutual_count}ペア・片想い${A.oneway_count}`;
+  const li=(name,val)=>`<li><span>${esc(name)}</span><b>${val}</b></li>`;
+  const card=(title,sub,inner)=>`<div class="na-card"><h3>${esc(title)}</h3>${sub?`<div class="na-sub">${esc(sub)}</div>`:""}${inner}</div>`;
+  let html="";
+  html+=card("影響力ランキング（PageRank）","影響力ある発行物から推薦されてる度。被推薦の単純数より精度が高い",
+    `<ul class="na-list">${A.top_pagerank.slice(0,8).map(x=>li(x.name,x.pagerank)).join("")}</ul>`);
+  html+=card("橋渡し役（媒介中心性）","界隈と界隈を繋ぐ中継ハブ。被推薦が少なくても情報の要になってる発行物",
+    `<ul class="na-list">${A.top_bridges.slice(0,8).map(x=>li(x.name,x.betweenness)).join("")}</ul>`);
+  html+=card("関係の質（相互/片想い）","推薦の双方向性。相互＝両思い、片想い＝一方通行",
+    `<div style="display:flex;gap:20px;margin-bottom:8px"><div><div class="na-stat">${A.mutual_count}</div><div class="na-sub">相互推薦ペア</div></div><div><div class="na-stat">${A.oneway_count}</div><div class="na-sub">片想い</div></div></div><div class="na-sub">相互推薦の例</div><ul class="na-list">${A.mutual_examples.slice(0,6).map(p=>`<li><span>${esc(p[0])} ⇔ ${esc(p[1])}</span></li>`).join("")}</ul>`);
+  html+=card("おすすめ推薦ペア（リンク予測）","共通の推薦先が多く、今後お互いを推薦しそうな未接続ペア",
+    `<ul class="na-list">${A.link_predictions.slice(0,8).map(x=>`<li><span>${esc(x.a)} ⇔ ${esc(x.b)}</span><b>${x.score}</b></li>`).join("")}</ul>`);
+  html+=card("界隈（コミュニティ検出 / Louvain）","カテゴリでなく実際の推薦の繋がりから自動検出した界隈（代表3名）",
+    `<ul class="na-list">${A.communities.slice(0,8).map(c=>`<li><span>${esc(c.top.join(" / "))}</span><b>${c.size}</b></li>`).join("")}</ul>`);
+  body.innerHTML=html;
 }
 function buildNet(){
   NET.focus=null; NET.focusSet=null; const _dd=document.getElementById("netDetail"); if(_dd) _dd.hidden=true;
