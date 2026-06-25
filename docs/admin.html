@@ -147,6 +147,10 @@
       <h2>日次の更新発行物数（選択期間）</h2>
       <canvas id="writersDayChart" height="160"></canvas>
     </div>
+    <div class="panel" id="distributionPanel" style="display:none">
+      <h2>発行物ごとの記事数分布（選択期間）</h2>
+      <canvas id="distributionChart" height="160"></canvas>
+    </div>
   </div>
 
   <div class="panel" id="heatmapPanel">
@@ -156,10 +160,6 @@
     <div class="heat-legend"><span>少</span><span class="heat-scale"></span><span>多</span><span id="heatMax" class="muted" style="font-size:.72rem;margin-left:8px"></span></div>
   </div>
 
-  <div class="panel" id="distributionPanel" style="display:none">
-    <h2>発行物ごとの記事数分布（選択期間）</h2>
-    <canvas id="distributionChart" height="120"></canvas>
-  </div>
 
   <div class="panel">
     <h2>記事数・発行物数の推移（毎朝記録）</h2>
