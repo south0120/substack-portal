@@ -30,10 +30,11 @@ ARTICLE_CATEGORIES_FILE = ROOT / "docs" / "data" / "article_categories.json"
 USAGE_FILE = ROOT / "docs" / "data" / "api_usage.json"
 API_BASE = "https://fyl-api.south0120.workers.dev"
 
-# 分類は Google Gemini API（無料tier対象・従量でも安価）。MODEL_NAMEを変えれば差し替え可。
-# 安さ優先なら "gemini-2.5-flash-lite"、精度寄りなら "gemini-2.5-flash"。
-# ※モデルが提供終了(404)した場合は、起動時診断が利用可能モデル一覧をログに出すのでそれを見て更新する。
-MODEL_NAME = "gemini-2.5-flash-lite"
+# 分類は Google Gemini API（無料tier対象・従量でも安価）。
+# まず安い flash-lite を試し、503(過負荷)が続いたら容量に余裕のある flash にフォールバック。
+# ※モデルが提供終了(404)した場合は、診断が利用可能モデル一覧をログに出すのでそれを見て更新する。
+MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
+MODEL_NAME = MODELS[0]  # usage表示用ラベル（primary）
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 # Gemini 2.0 Flash の概算料金（USD / 100万トークン）。無料tier内なら実課金は$0。変わったらここを更新。
 RATE_IN_USD_PER_MTOK = 0.10
@@ -94,10 +95,9 @@ def list_generate_models(api_key: str) -> list[str]:
 
 
 def gemini_generate(api_key: str, system_text: str, user_text: str, schema: dict,
-                    max_out: int = 4000, retries: int = 4) -> tuple[str, int, int]:
-    """Gemini generateContent を叩いて (JSONテキスト, 入力トークン, 出力トークン) を返す。
-    429/5xx はバックオフして再試行（無料tierのレート制限対策）。"""
-    url = f"{GEMINI_API_BASE}/{MODEL_NAME}:generateContent?key={api_key}"
+                    max_out: int = 4000, retries: int = 5) -> tuple[str, int, int, str]:
+    """Gemini generateContent を叩いて (JSONテキスト, 入力tok, 出力tok, 使ったモデル) を返す。
+    429/5xx はバックオフ再試行し、過負荷が続いたら次のモデルへフォールバック。"""
     body = {
         "systemInstruction": {"parts": [{"text": system_text}]},
         "contents": [{"role": "user", "parts": [{"text": user_text}]}],
@@ -110,35 +110,41 @@ def gemini_generate(api_key: str, system_text: str, user_text: str, schema: dict
     }
     data = json.dumps(body, ensure_ascii=False).encode("utf-8")
     last_err: Exception | None = None
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(
-                url, data=data, method="POST",
-                headers={"Content-Type": "application/json", "User-Agent": "fyl-classifier/2.0"},
-            )
-            with urllib.request.urlopen(req, timeout=120, context=_SSL_CONTEXT) as r:
-                payload = json.loads(r.read())
-            candidates = payload.get("candidates") or []
-            if not candidates:
-                raise ValueError(f"no candidates: {json.dumps(payload)[:200]}")
-            parts = (candidates[0].get("content") or {}).get("parts") or []
-            text = "".join(p.get("text", "") for p in parts)
-            if not text:
-                raise ValueError(f"empty text (finishReason={candidates[0].get('finishReason')})")
-            um = payload.get("usageMetadata") or {}
-            return text, int(um.get("promptTokenCount", 0) or 0), int(um.get("candidatesTokenCount", 0) or 0)
-        except urllib.error.HTTPError as error:
-            last_err = error
-            if error.code in (429, 500, 503) and attempt < retries - 1:
-                time.sleep(min((2 ** attempt) * 3, 30))
-                continue
-            raise
-        except (urllib.error.URLError, TimeoutError) as error:
-            last_err = error
-            if attempt < retries - 1:
-                time.sleep(2 ** attempt)
-                continue
-            raise
+    for model in MODELS:
+        url = f"{GEMINI_API_BASE}/{model}:generateContent?key={api_key}"
+        for attempt in range(retries):
+            try:
+                req = urllib.request.Request(
+                    url, data=data, method="POST",
+                    headers={"Content-Type": "application/json", "User-Agent": "fyl-classifier/2.0"},
+                )
+                with urllib.request.urlopen(req, timeout=120, context=_SSL_CONTEXT) as r:
+                    payload = json.loads(r.read())
+                candidates = payload.get("candidates") or []
+                if not candidates:
+                    raise ValueError(f"no candidates: {json.dumps(payload)[:200]}")
+                parts = (candidates[0].get("content") or {}).get("parts") or []
+                text = "".join(p.get("text", "") for p in parts)
+                if not text:
+                    raise ValueError(f"empty text (finishReason={candidates[0].get('finishReason')})")
+                um = payload.get("usageMetadata") or {}
+                return (text, int(um.get("promptTokenCount", 0) or 0),
+                        int(um.get("candidatesTokenCount", 0) or 0), model)
+            except urllib.error.HTTPError as error:
+                last_err = error
+                if error.code in (429, 500, 503) and attempt < retries - 1:
+                    time.sleep(min((2 ** attempt) * 4, 40))
+                    continue
+                if error.code in (429, 500, 503):
+                    print(f"Info: {model} unavailable after retries (HTTP {error.code}); trying next model", file=sys.stderr)
+                    break  # このモデルは諦めて次のモデルへ
+                raise  # 4xx等は即raise（404=モデル不正はmain側で診断）
+            except (urllib.error.URLError, TimeoutError) as error:
+                last_err = error
+                if attempt < retries - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                break
     raise last_err if last_err else RuntimeError("gemini_generate failed")
 
 
@@ -408,7 +414,7 @@ def main() -> int:
                 "各記事を、その記事の主題（主に何について書かれているか）に最も合うトピック1つに分類してください。"
                 "道具・手段として軽く触れているだけの要素では分類しないでください。"
             )
-            text, in_tok, out_tok = gemini_generate(api_key, system_text, prompt_text, GEMINI_SCHEMA)
+            text, in_tok, out_tok, used_model = gemini_generate(api_key, system_text, prompt_text, GEMINI_SCHEMA)
             run_in += in_tok
             run_out += out_tok
             api_calls += 1
