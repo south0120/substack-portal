@@ -71,6 +71,8 @@
   .net-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
   #netCanvas{cursor:grab;touch-action:none}
   #netCanvas.grabbing{cursor:grabbing}
+  .net-stage:fullscreen{width:100vw;height:100vh;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)}
+  .net-stage:fullscreen #netCanvas{height:100vh !important;border-radius:0}
   .net-tip{position:fixed;pointer-events:none;background:#1b1714;color:#fff;border:1px solid #3a322c;border-radius:7px;padding:5px 9px;font-size:.74rem;z-index:50;display:none;max-width:260px;line-height:1.4}
   .net-detail{position:absolute;top:10px;right:10px;width:min(264px,74%);max-height:calc(100% - 20px);overflow:auto;background:rgba(20,16,13,0.95);color:#eee;border:1px solid #3a322c;border-radius:11px;padding:12px 13px;font-size:.76rem;line-height:1.5}
   .net-detail h3{margin:0 8px 2px 0;font-size:.92rem;color:#fff}
@@ -234,6 +236,7 @@
         <label><input type="checkbox" id="netExt"> 外部の推薦先も表示</label>
         <button type="button" id="netReheat">再配置</button>
         <button type="button" id="netFit">全体表示</button>
+        <button type="button" id="netFull">全画面</button>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -927,6 +930,15 @@ function bindNetEvents(){
 document.getElementById("netExt").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netReheat").addEventListener("click",()=>{ if(NET.raw){ buildNet(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netFit").addEventListener("click",()=>{ fitNet(true); });
+document.getElementById("netFull").addEventListener("click",()=>{
+  const stage=document.querySelector(".net-stage");
+  if(!document.fullscreenElement){ (stage.requestFullscreen||stage.webkitRequestFullscreen||(()=>{})).call(stage); }
+  else { (document.exitFullscreen||document.webkitExitFullscreen||(()=>{})).call(document); }
+});
+document.addEventListener("fullscreenchange",()=>{
+  const fb=document.getElementById("netFull"); if(fb) fb.textContent=document.fullscreenElement?"全画面解除":"全画面";
+  if(!document.getElementById("tabNetwork").hidden){ setTimeout(()=>{ resizeNet(); fitNet(false); }, 80); }
+});
 document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
 
 init();
