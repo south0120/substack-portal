@@ -733,8 +733,10 @@ async function fetchAndParseFeed(feed) {
         signal: AbortSignal.timeout(15000),
       });
       if (response.ok) break;
-      if (response.status === 429 && rateLimitRetries < 2 && attempt < 2) {
-        await new Promise((resolve) => setTimeout(resolve, 2000 * (2 ** rateLimitRetries)));
+      if (response.status === 429 && rateLimitRetries < 1 && attempt < 2) {
+        // 429は長く粘らず即retry_queue行き。次のcron(10分後)で再挑戦する方がCF共有IPの
+        // 429解消を待てて、1回のrun時間も短く保てる（=runが時間制限で殺されず完走できる）。
+        await new Promise((resolve) => setTimeout(resolve, 400));
         rateLimitRetries += 1;
         continue;
       }
@@ -742,7 +744,7 @@ async function fetchAndParseFeed(feed) {
       if (attempt >= 1) throw error;
       response = null;
     }
-    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 1500));
+    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 400));
     else break;
   }
   if (!response || !response.ok) throw new Error(`HTTP ${response ? response.status : "fetch_failed"}`);
