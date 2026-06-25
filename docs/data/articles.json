@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T22:49:41.270074+00:00",
+  "updated_at": "2026-06-25T10:30:11.774125+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
+          "url": "https://www.debunkresearch.com/p/okara",
+          "published": "2026-06-24T23:01:41+00:00"
+        },
+        {
           "title": "【Coinbase】21製品を一挙発表、「最後のマネーアプリ」宣言",
           "url": "https://www.debunkresearch.com/p/coinbase21",
           "published": "2026-06-24T21:01:17+00:00"
@@ -161,11 +166,6 @@
           "title": "【6/19(金)~6/23(火)News Report】ノーベル賞のJ.ジャンパーがDeepMindからAnthropicへ移籍 / AnthropicとMicronが次世代AIメモリで戦略提携 / Five EyesがフロンティアAIのサイバー脅威を「数カ月」と警告など",
           "url": "https://www.debunkresearch.com/p/ainews260619-23",
           "published": "2026-06-23T23:01:10+00:00"
-        },
-        {
-          "title": "【06/19(金)~06/23(火)News Report】SBI新生信託銀行が信託型ステーブルコイン「JPYSC」を国内初発行へ / NYSE親会社ICEとOKXがトークン化証券で合弁 / イーサリアム財団が人員2割削減・Ethlabs始動など",
-          "url": "https://www.debunkresearch.com/p/cnews260619-23",
-          "published": "2026-06-23T23:01:09+00:00"
         }
       ]
     },
@@ -11277,6 +11277,15 @@
   ],
   "articles": [
     {
+      "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
+      "url": "https://www.debunkresearch.com/p/okara",
+      "excerpt": "ウェブサイトのURLを入れるだけで10体超のエージェントがSEO・Reddit・Xを回す",
+      "published": "2026-06-24T23:01:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Oger!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F289dfa30-7ee5-42c2-b13a-f8694f75fe1c_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Coinbase】21製品を一挙発表、「最後のマネーアプリ」宣言",
       "url": "https://www.debunkresearch.com/p/coinbase21",
       "excerpt": "暗号資産取引所が証券・銀行・予測市場・AIアドバイザーを吸収する。創業14年で最大のプロダクトローンチ、その全容と死角。",
@@ -11554,15 +11563,6 @@
       "image": "https://api.substack.com/feed/podcast/201976160/44e44330d9470ecf494ed47cfeb4b05c.mp3",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "PrometheusにBezos・BlackRock等が$12B出資、NEURA RoboticsにTetherが最大$1.4B出資、など全18PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260605-12",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-06-13T21:00:42+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!k3ai!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F081a717a-6489-491e-a49d-7d23eee2867e_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "成功する人の共通点 〜0.8%の人になるシンプルな方法〜",
