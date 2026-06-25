@@ -241,6 +241,7 @@
         <label><input type="checkbox" id="netHideList"> リストを隠す</label>
         <label><input type="checkbox" id="netNeighborLabels" checked> 関連名を表示</label>
         <label><input type="checkbox" id="netShowEdges" checked> 線を表示</label>
+        <label><input type="checkbox" id="netRadial" checked> 放射状に整列</label>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -749,7 +750,7 @@ function drawNet(){
     if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
     else if(!showEdges) continue;                                // 全体表示で「線を表示」OFFなら線を描かない
     const on = fc ? true : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover);
-    ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.10)";   // 白い細い線
+    ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.05)";   // 白い細い線（全体はかろうじて見える程度）
     ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
   }
   const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
@@ -823,26 +824,32 @@ function focusNode(node){
   for(const n of [...out, ...inc]){ if(!seen.has(n.id)){ seen.add(n.id); neighbors.push(n); } }
   neighbors.sort((a,b)=>(b.indeg||0)-(a.indeg||0));
   NET.focusSet=new Set([node.id, ...neighbors.map(n=>n.id)]);
-  // 元位置を保存して、放射状（中心＋同心円リング）の目標位置を計算
-  const cx=node.x, cy=node.y, targets=new Map();
-  for(const n of [node,...neighbors]){ n._ox=n.x; n._oy=n.y; }
-  targets.set(node,{x:cx,y:cy});
-  const N=neighbors.length; let i=0, ring=0;
-  while(i<N){
-    const cap=8+ring*6, take=Math.min(cap, N-i), radius=82+ring*68;
-    for(let j=0;j<take;j++){
-      const ang=(j/take)*Math.PI*2 + (ring%2)*0.32;
-      targets.set(neighbors[i+j],{x:cx+Math.cos(ang)*radius, y:cy+Math.sin(ang)*radius});
-    }
-    i+=take; ring++;
-  }
   renderNetDetail(node,out,inc);
-  animateNodes(targets,440);
-  // 放射ネットワークの範囲にビューを合わせる（滑らかに）
-  let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
-  for(const [,t] of targets){ mnx=Math.min(mnx,t.x); mny=Math.min(mny,t.y); mxx=Math.max(mxx,t.x); mxy=Math.max(mxy,t.y); }
-  const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+130), NET.H/(h+130), 1.8);
-  tweenView(-((mnx+mxx)/2)*k, -((mny+mxy)/2)*k, k, 440);
+  const radial = !document.getElementById("netRadial") || document.getElementById("netRadial").checked;
+  if(radial){
+    // 放射状（中心＋同心円リング）に整列。元位置を保存して滑らかに移動
+    const cx=node.x, cy=node.y, targets=new Map();
+    for(const n of [node,...neighbors]){ n._ox=n.x; n._oy=n.y; }
+    targets.set(node,{x:cx,y:cy});
+    const N=neighbors.length; let i=0, ring=0;
+    while(i<N){
+      const cap=8+ring*6, take=Math.min(cap, N-i), radius=82+ring*68;
+      for(let j=0;j<take;j++){
+        const ang=(j/take)*Math.PI*2 + (ring%2)*0.32;
+        targets.set(neighbors[i+j],{x:cx+Math.cos(ang)*radius, y:cy+Math.sin(ang)*radius});
+      }
+      i+=take; ring++;
+    }
+    animateNodes(targets,440);
+    let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+    for(const [,t] of targets){ mnx=Math.min(mnx,t.x); mny=Math.min(mny,t.y); mxx=Math.max(mxx,t.x); mxy=Math.max(mxy,t.y); }
+    const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+130), NET.H/(h+130), 1.8);
+    tweenView(-((mnx+mxx)/2)*k, -((mny+mxy)/2)*k, k, 440);
+  } else {
+    // 全体マップのまま選択: 位置は動かさず、ビューだけそのノード中心へ寄せる
+    const tk=Math.max(NET.view.k, 0.9);
+    tweenView(-node.x*tk, -node.y*tk, tk, 360);
+  }
 }
 function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; restoreEgo(true); }
 function renderNetDetail(node,out,inc){
@@ -965,6 +972,7 @@ document.addEventListener("fullscreenchange",()=>{
 document.getElementById("netHideBg").addEventListener("change", drawNet);
 document.getElementById("netNeighborLabels").addEventListener("change", drawNet);
 document.getElementById("netShowEdges").addEventListener("change", drawNet);
+document.getElementById("netRadial").addEventListener("change",()=>{ if(NET.focus) focusNode(NET.focus); });
 document.getElementById("netHideList").addEventListener("change",()=>{
   document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;
 });
