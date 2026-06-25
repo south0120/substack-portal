@@ -662,7 +662,14 @@ async function loadNetwork(){
 function buildNet(){
   NET.focus=null; NET.focusSet=null; const _dd=document.getElementById("netDetail"); if(_dd) _dd.hidden=true;
   const showExt = document.getElementById("netExt").checked;
-  const edges = (NET.raw.edges||[]).filter(e=> showExt ? true : !e.ext);
+  let edges = (NET.raw.edges||[]).filter(e=> showExt ? true : !e.ext);
+  if(showExt){
+    // 外部ノードの長い尾（FYL1誌からしか推薦されてない葉）を間引く＝描画負荷とノイズを抑える
+    const fylset = new Set((NET.raw.nodes||[]).filter(n=>!n.ext).map(n=>n.id));
+    const extDeg = {};
+    for(const e of edges){ if(!fylset.has(e.s)) extDeg[e.s]=(extDeg[e.s]||0)+1; if(!fylset.has(e.t)) extDeg[e.t]=(extDeg[e.t]||0)+1; }
+    edges = edges.filter(e=> (fylset.has(e.s)||extDeg[e.s]>=2) && (fylset.has(e.t)||extDeg[e.t]>=2));
+  }
   const used = new Set(); edges.forEach(e=>{ used.add(e.s); used.add(e.t); });
   NET.byId = {};
   const total = Math.max(1, used.size);
