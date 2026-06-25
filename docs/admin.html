@@ -712,7 +712,7 @@ function tickNet(){
     e.s.vx+=fx; e.s.vy+=fy; e.t.vx-=fx; e.t.vy-=fy;
   }
   for(const n of ns){
-    if(n===NET.drag){ n.x=n.fx; n.y=n.fy; n.vx=0; n.vy=0; continue; }
+    if(n===NET.drag){ n.vx=0; n.vy=0; continue; }   // ドラッグ中ノードは固定（x/yは直接更新済み）
     n.vx+=-n.x*gravity*a; n.vy+=-n.y*gravity*a; n.vx*=damp; n.vy*=damp; n.x+=n.vx; n.y+=n.vy;
   }
 }
@@ -757,15 +757,26 @@ function drawNet(){
     if(k>0.35) for(const n of NET.nodes){ if(NET.topLabels && NET.topLabels.has(n.id) && n!==NET.hover) labelNode(n,false); }
   }
 }
+function tweenView(tx,ty,tk,dur){
+  if(NET._tween) cancelAnimationFrame(NET._tween);
+  const sx=NET.view.x, sy=NET.view.y, sk=NET.view.k, t0=performance.now(), ease=t=>1-Math.pow(1-t,3);
+  const step=(now)=>{
+    const t=Math.min(1,(now-t0)/dur), e=ease(t);
+    NET.view.x=sx+(tx-sx)*e; NET.view.y=sy+(ty-sy)*e; NET.view.k=sk+(tk-sk)*e;
+    drawNet();
+    NET._tween = t<1 ? requestAnimationFrame(step) : null;
+  };
+  NET._tween=requestAnimationFrame(step);
+}
 function focusNode(node){
   NET.focus=node;
   const out=[], inc=[];
   for(const e of NET.edges){ if(e.s===node && e.t!==node) out.push(e.t); if(e.t===node && e.s!==node) inc.push(e.s); }
   NET.focusSet=new Set([node.id, ...out.map(n=>n.id), ...inc.map(n=>n.id)]);
-  NET.view.k=Math.max(NET.view.k,0.95);
-  NET.view.x=-node.x*NET.view.k; NET.view.y=-node.y*NET.view.k;
   renderNetDetail(node,out,inc);
-  drawNet();
+  // 物理は動かさず（ガチャガチャ防止）、ビューだけ滑らかに中心へ寄せる
+  const tk=Math.max(NET.view.k,0.9);
+  tweenView(-node.x*tk, -node.y*tk, tk, 320);
 }
 function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; drawNet(); }
 function renderNetDetail(node,out,inc){
@@ -791,27 +802,27 @@ function nodeAt(sx,sy){
   for(const n of NET.nodes){ const d=Math.hypot(sx_(n.x)-sx, sy_(n.y)-sy), rr=Math.max(7,n.r*NET.view.k+4); if(d<=rr && d<bestD){ bestD=d; best=n; } }
   return best;
 }
-function fitNet(draw=true){
+function fitNet(animate=false){
   if(!NET.nodes.length) return;
   let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
   for(const n of NET.nodes){ mnx=Math.min(mnx,n.x); mny=Math.min(mny,n.y); mxx=Math.max(mxx,n.x); mxy=Math.max(mxy,n.y); }
   const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+80), NET.H/(h+80), 2.2);
-  NET.view.k=k; NET.view.x=-((mnx+mxx)/2)*k; NET.view.y=-((mny+mxy)/2)*k;
-  if(draw) drawNet();
+  const tx=-((mnx+mxx)/2)*k, ty=-((mny+mxy)/2)*k;
+  if(animate){ tweenView(tx,ty,k,420); } else { NET.view.k=k; NET.view.x=tx; NET.view.y=ty; drawNet(); }
 }
 function bindNetEvents(){
   const c=NET.canvas, tip=document.getElementById("netTip");
   c.addEventListener("mousedown",ev=>{
     const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top, n=nodeAt(sx,sy);
     NET.moved=false; NET.down=n;
-    if(n){ NET.drag=n; const w=toWorld(sx,sy); n.fx=w[0]; n.fy=w[1]; reheatNet(); }
+    if(n){ NET.drag=n; }
     else NET.panning={sx:ev.clientX,sy:ev.clientY,vx:NET.view.x,vy:NET.view.y};
     c.classList.add("grabbing");
   });
   window.addEventListener("mousemove",ev=>{
     if(document.getElementById("tabNetwork").hidden) return;
     const r=c.getBoundingClientRect(), sx=ev.clientX-r.left, sy=ev.clientY-r.top;
-    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.fx=w[0]; NET.drag.fy=w[1]; NET.moved=true; }
+    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.x=w[0]; NET.drag.y=w[1]; NET.drag.vx=0; NET.drag.vy=0; NET.moved=true; drawNet(); }
     else if(NET.panning){ NET.view.x=NET.panning.vx+(ev.clientX-NET.panning.sx); NET.view.y=NET.panning.vy+(ev.clientY-NET.panning.sy); NET.moved=true; drawNet(); }
     else { const n=nodeAt(sx,sy); const changed=n!==NET.hover; NET.hover=n;
       if(n){ tip.style.display="block"; tip.style.left=(ev.clientX+12)+"px"; tip.style.top=(ev.clientY+12)+"px"; tip.innerHTML=`<b>${esc(n.name)}</b><br>${esc(n.cat)}・被推薦 ${n.indeg}${n.ext?"・外部":""}`; }
@@ -845,7 +856,7 @@ function bindNetEvents(){
     } else {
       const [sx,sy]=tXY(ev.touches[0]), n=nodeAt(sx,sy);
       NET.moved=false; NET.down=n;
-      if(n){ NET.drag=n; const w=toWorld(sx,sy); n.fx=w[0]; n.fy=w[1]; reheatNet(); }
+      if(n){ NET.drag=n; }
       else NET.panning={sx:ev.touches[0].clientX, sy:ev.touches[0].clientY, vx:NET.view.x, vy:NET.view.y};
     }
   },{passive:false});
@@ -860,7 +871,7 @@ function bindNetEvents(){
     }
     if(!ev.touches.length) return;
     const [sx,sy]=tXY(ev.touches[0]);
-    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.fx=w[0]; NET.drag.fy=w[1]; NET.moved=true; }
+    if(NET.drag){ const w=toWorld(sx,sy); NET.drag.x=w[0]; NET.drag.y=w[1]; NET.drag.vx=0; NET.drag.vy=0; NET.moved=true; drawNet(); }
     else if(NET.panning){ NET.view.x=NET.panning.vx+(ev.touches[0].clientX-NET.panning.sx); NET.view.y=NET.panning.vy+(ev.touches[0].clientY-NET.panning.sy); NET.moved=true; drawNet(); }
   },{passive:false});
   c.addEventListener("touchend",ev=>{
@@ -875,7 +886,7 @@ function bindNetEvents(){
 }
 document.getElementById("netExt").addEventListener("change",()=>{ if(NET.raw){ buildNet(); renderNetLegend(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
 document.getElementById("netReheat").addEventListener("click",()=>{ if(NET.raw){ buildNet(); NET.view={x:0,y:0,k:1}; reheatNet(); } });
-document.getElementById("netFit").addEventListener("click",()=>{ fitNet(); });
+document.getElementById("netFit").addEventListener("click",()=>{ fitNet(true); });
 document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
 
 init();
