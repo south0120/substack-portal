@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-25T19:27:04.532819+00:00",
+  "updated_at": "2026-06-25T21:13:41.122117+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
+          "url": "https://www.debunkresearch.com/p/ainews260624-25",
+          "published": "2026-06-25T21:01:53+00:00"
+        },
+        {
+          "title": "【6/24(水)~6/25(木)News Report】SBIがビットバンクを467億円で完全子会社化へ / KDDIとSecuritize JapanがRWAトークン化で基本合意 / トランプ大統領がCBDC禁止条項を含む住宅法案の署名を拒否など",
+          "url": "https://www.debunkresearch.com/p/cnews260624-25",
+          "published": "2026-06-25T21:01:52+00:00"
+        },
+        {
           "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
           "url": "https://www.debunkresearch.com/p/okara",
           "published": "2026-06-24T23:01:41+00:00"
-        },
-        {
-          "title": "【Coinbase】21製品を一挙発表、「最後のマネーアプリ」宣言",
-          "url": "https://www.debunkresearch.com/p/coinbase21",
-          "published": "2026-06-24T21:01:17+00:00"
-        },
-        {
-          "title": "【6/19(金)~6/23(火)News Report】ノーベル賞のJ.ジャンパーがDeepMindからAnthropicへ移籍 / AnthropicとMicronが次世代AIメモリで戦略提携 / Five EyesがフロンティアAIのサイバー脅威を「数カ月」と警告など",
-          "url": "https://www.debunkresearch.com/p/ainews260619-23",
-          "published": "2026-06-23T23:01:10+00:00"
         }
       ]
     },
@@ -11273,9 +11273,115 @@
       "bio": "妻だって母だって自分の人生も諦めない‼️SNS副業1年で9000万売り上げて脱サラしたわたしが、ワーママ達が自分の人生を取り戻すためのSNS副業について発信しています❤️‍🔥",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "アクセル太郎＠SHOW0815",
+      "url": "https://show0815.substack.com/",
+      "feed_url": "https://show0815.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "ドローンを軸に一次産業活性化、地域創生活動/ 🇯🇵OSAKA📸DRONE,fpvdrone,LUMIX,SONY 📸官民連携、農業/林業支援、PV撮影、UX/DX 💼観光三重 みえ旅アンバサダー 🏆ドローンムービー世界大会Pre2021 優秀賞",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "よつば",
+      "url": "https://1116clover.substack.com/",
+      "feed_url": "https://1116clover.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "子育てのあれこれ、色々思う事を綴るアカウント。 サブスタでは、40代、小6男子を育てている中で、考えている事、やった事などを色々とまとめておこうかな🍀*゜",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "月猫（灰）",
+      "url": "https://aiart2025.substack.com/",
+      "feed_url": "https://aiart2025.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIで生まれたイメージの記録。 幻想的な風景や、物語を感じるビジュアルを投稿しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "なお＠50代から育てるサブスタ",
+      "url": "https://nao55start.substack.com/",
+      "feed_url": "https://nao55start.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "50代・小中学生の子育て・在宅ワーク中。 AIを“発信を助けてくれる相棒”として使いながら、 「自分の声」で発信を続ける試行錯誤を書いています。 完璧じゃなくても、小さく続ける。 Substack実践・AIとの付き合い方・50代からの挑戦を発信中。 「もう遅いかも」と思っている人へ。 一緒に少しずつ前に進みませんか？",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "布留川はやせ",
+      "url": "https://hayasefurukawa.substack.com/",
+      "feed_url": "https://hayasefurukawa.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "「時間術」や「ライフハック」という言葉にワクワクしてしまう文房具とガジェット好きなシニアです。最近はAIを使ったWebアプリ開発の面白さに目覚め、夜な夜な画面に向かっています。当面の大きな目標は**「自作アプリをApp Storeに登録すること」**。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "noapapa",
+      "url": "https://noapapa.substack.com/",
+      "feed_url": "https://noapapa.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "50代の現役バス運転手。 AIの専門家でもプログラマーでもない普通の会社員です。 朝4時起きの仕事をしながら、ChatGPTやCodexなどのAIに挑戦中。 初心者だからこそ感じる疑問、失敗、発見を正直に発信しています。 「AIに興味はあるけど何から始めればいいかわからない」 そんな方と一緒に成長していけたら嬉しいです。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "​まこやん ｜ 「1分1動」で自分軸を整える",
+      "url": "https://macoyann.substack.com/",
+      "feed_url": "https://macoyann.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "​まこやん。 40代の自分軸設計。 「1分1動」を合言葉に、心を整え、明日を変えるための小さな知恵を配信中。 朝は人生の新しい1ページ。今日はどんな物語を描こうか？ 🌿 note：https://note.com/maco_yan8343",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "リュウジ👨‍🦰アニメ∫中間管理職∫家事育児",
+      "url": "https://koyomikoto.substack.com/",
+      "feed_url": "https://koyomikoto.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "リュウジ👨‍🦰アニメ∫中間管理職∫家事育児",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
+      "url": "https://www.debunkresearch.com/p/ainews260624-25",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-25T21:01:53+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jd2S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad16b112-d855-477e-8f3e-af5d9ef967c7_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【6/24(水)~6/25(木)News Report】SBIがビットバンクを467億円で完全子会社化へ / KDDIとSecuritize JapanがRWAトークン化で基本合意 / トランプ大統領がCBDC禁止条項を含む住宅法案の署名を拒否など",
+      "url": "https://www.debunkresearch.com/p/cnews260624-25",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-06-25T21:01:52+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!thON!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6624da61-c415-4618-b0b8-e9e68491e14d_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
       "url": "https://www.debunkresearch.com/p/okara",
@@ -11536,24 +11642,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!0Da6!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50c716a8-a676-4325-b072-52649795b09c_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/crypto-wr260606-12",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-14T21:01:07+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!u9_y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbae806d9-f055-470c-bc6e-bf5a009f2d1b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/ai-wr260606-12",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-14T21:01:05+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Bwx7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F70cc76cd-52ce-4121-bfe5-8a185bdf3f4a_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "大人の夜会　相談室",
