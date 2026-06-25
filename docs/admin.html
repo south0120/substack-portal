@@ -768,17 +768,57 @@ function tweenView(tx,ty,tk,dur){
   };
   NET._tween=requestAnimationFrame(step);
 }
+// ノード位置を目標へ滑らかにtween（物理ではなく決定的アニメーション）
+function animateNodes(targets, dur){
+  if(NET._nodeTween) cancelAnimationFrame(NET._nodeTween);
+  const starts=new Map(); for(const n of targets.keys()) starts.set(n,{x:n.x,y:n.y});
+  const t0=performance.now(), ease=t=>1-Math.pow(1-t,3);
+  const step=(now)=>{
+    const t=Math.min(1,(now-t0)/dur), e=ease(t);
+    for(const [n,tg] of targets){ const s=starts.get(n); n.x=s.x+(tg.x-s.x)*e; n.y=s.y+(tg.y-s.y)*e; n.vx=0; n.vy=0; }
+    drawNet();
+    NET._nodeTween = t<1 ? requestAnimationFrame(step) : null;
+  };
+  NET._nodeTween=requestAnimationFrame(step);
+}
+// 放射状にずらしたノードを元の位置へ戻す
+function restoreEgo(animate){
+  const targets=new Map();
+  for(const n of NET.nodes){ if(n._ox!==undefined){ targets.set(n,{x:n._ox,y:n._oy}); } }
+  if(animate){ animateNodes(targets,360); } else { for(const [n,t] of targets){ n.x=t.x; n.y=t.y; } }
+  for(const n of targets.keys()){ delete n._ox; delete n._oy; }
+}
 function focusNode(node){
+  if(NET.focus) restoreEgo(false);           // 直前のフォーカスを瞬時に元へ戻してから組み直す
   NET.focus=node;
   const out=[], inc=[];
   for(const e of NET.edges){ if(e.s===node && e.t!==node) out.push(e.t); if(e.t===node && e.s!==node) inc.push(e.s); }
-  NET.focusSet=new Set([node.id, ...out.map(n=>n.id), ...inc.map(n=>n.id)]);
+  const seen=new Set([node.id]); const neighbors=[];
+  for(const n of [...out, ...inc]){ if(!seen.has(n.id)){ seen.add(n.id); neighbors.push(n); } }
+  neighbors.sort((a,b)=>(b.indeg||0)-(a.indeg||0));
+  NET.focusSet=new Set([node.id, ...neighbors.map(n=>n.id)]);
+  // 元位置を保存して、放射状（中心＋同心円リング）の目標位置を計算
+  const cx=node.x, cy=node.y, targets=new Map();
+  for(const n of [node,...neighbors]){ n._ox=n.x; n._oy=n.y; }
+  targets.set(node,{x:cx,y:cy});
+  const N=neighbors.length; let i=0, ring=0;
+  while(i<N){
+    const cap=8+ring*6, take=Math.min(cap, N-i), radius=82+ring*68;
+    for(let j=0;j<take;j++){
+      const ang=(j/take)*Math.PI*2 + (ring%2)*0.32;
+      targets.set(neighbors[i+j],{x:cx+Math.cos(ang)*radius, y:cy+Math.sin(ang)*radius});
+    }
+    i+=take; ring++;
+  }
   renderNetDetail(node,out,inc);
-  // 物理は動かさず（ガチャガチャ防止）、ビューだけ滑らかに中心へ寄せる
-  const tk=Math.max(NET.view.k,0.9);
-  tweenView(-node.x*tk, -node.y*tk, tk, 320);
+  animateNodes(targets,440);
+  // 放射ネットワークの範囲にビューを合わせる（滑らかに）
+  let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+  for(const [,t] of targets){ mnx=Math.min(mnx,t.x); mny=Math.min(mny,t.y); mxx=Math.max(mxx,t.x); mxy=Math.max(mxy,t.y); }
+  const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+130), NET.H/(h+130), 1.8);
+  tweenView(-((mnx+mxx)/2)*k, -((mny+mxy)/2)*k, k, 440);
 }
-function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; drawNet(); }
+function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; restoreEgo(true); }
 function renderNetDetail(node,out,inc){
   const uniq=arr=>{ const s=new Set(),r=[]; for(const n of arr){ if(!s.has(n.id)){ s.add(n.id); r.push(n); } } return r; };
   out=uniq(out); inc=uniq(inc);
