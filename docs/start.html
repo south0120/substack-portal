@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご紹介と使い方 | Find Your Letter</title>
+<meta name="description" content="Find Your Letter のご紹介と使い方。日本語ニュースレターをカテゴリの棚から探せるキュレーションポータルの記事ページ・発行物ページの使い方を、画面つきで説明します。">
+<meta name="theme-color" content="#FF6719">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141417">
+<meta property="og:title" content="ご紹介と使い方 | Find Your Letter">
+<meta property="og:description" content="日本語ニュースレターをカテゴリの棚から探せるポータル。記事ページ・発行物ページの使い方を画面つきで紹介します。">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon_192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KG8D95691"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9KG8D95691');</script>
+<style>
+:root{
+  --brand:#FF6719;--brand-soft:#FFF1E8;--brand-line:#FFD9C2;
+  --bg:#F8F8F7;--card:#FFFFFF;--line:#E9E9E7;
+  --ink:#1B1B1F;--sub:#60656E;--faint:#969CA5;
+  --header-bg:rgba(255,255,255,.92);--panel:#F7F7F8;
+  --shadow:0 2px 10px rgba(24,24,32,.04);
+  --shadow-lg:0 12px 36px rgba(24,24,32,.10);
+  color-scheme:light dark;
+  font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
+    --bg:#141417;--card:#1E1E23;--line:#2E2E35;
+    --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
+    --header-bg:rgba(22,22,26,.92);--panel:#28282E;
+    --shadow:0 2px 10px rgba(0,0,0,.18);--shadow-lg:0 12px 36px rgba(0,0,0,.40);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --brand:#FF6719;--brand-soft:rgba(255,103,25,.16);--brand-line:rgba(255,103,25,.4);
+  --bg:#141417;--card:#1E1E23;--line:#2E2E35;
+  --ink:#ECECEF;--sub:#A7ACB6;--faint:#71767F;
+  --header-bg:rgba(22,22,26,.92);--panel:#28282E;
+  --shadow:0 2px 10px rgba(0,0,0,.18);--shadow-lg:0 12px 36px rgba(0,0,0,.40);
+}
+:root[data-theme="light"]{ color-scheme:light }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.78}
+a{color:inherit;text-decoration:none}
+svg{stroke-linecap:round;stroke-linejoin:round}
+a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.header{position:sticky;top:0;z-index:10;background:var(--header-bg);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.header-in{max-width:920px;margin:auto;padding:11px 16px;display:flex;align-items:center;gap:11px}
+.site-logo-link{flex:none;display:flex;align-items:center}
+.site-logo{height:32px;width:auto;display:block}
+.site-logo--dark{display:none}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .site-logo--light{display:none}
+  :root:not([data-theme="light"]) .site-logo--dark{display:block}
+}
+:root[data-theme="dark"] .site-logo--light{display:none}
+:root[data-theme="dark"] .site-logo--dark{display:block}
+:root[data-theme="light"] .site-logo--light{display:block}
+:root[data-theme="light"] .site-logo--dark{display:none}
+.back-top{margin-left:auto;color:var(--brand);font-size:.75rem;font-weight:700}
+.main{max-width:760px;margin:auto;padding:34px 16px 64px}
+
+/* hero */
+.hero{text-align:center;padding:8px 0 6px}
+.eyebrow{color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.12em}
+.hero h1{margin-top:8px;font-size:clamp(1.8rem,5.4vw,2.5rem);line-height:1.28;font-weight:900}
+.hero p{margin:14px auto 0;max-width:30em;color:var(--sub);font-size:.94rem}
+.hero-cta{display:inline-flex;align-items:center;gap:7px;margin-top:20px;
+  background:var(--brand);color:#fff;font-weight:900;font-size:.9rem;
+  padding:12px 22px;border-radius:12px;box-shadow:0 6px 18px rgba(255,103,25,.28)}
+.hero-cta svg{width:16px;height:16px}
+.hero-shot{margin:26px auto 0;max-width:100%;border-radius:14px;border:1px solid var(--line);
+  box-shadow:var(--shadow-lg);overflow:hidden;display:block}
+.hero-shot img{width:100%;display:block}
+
+/* section */
+.sec{margin-top:42px}
+.sec-num{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-size:.74rem;font-weight:900;letter-spacing:.06em}
+.sec-num i{width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:var(--brand-soft);font-style:normal}
+.sec h2{margin-top:9px;font-size:clamp(1.25rem,3.6vw,1.55rem);font-weight:900;line-height:1.34}
+.sec>p{margin-top:10px;color:var(--sub);font-size:.9rem}
+
+/* figure */
+figure{margin:18px 0 0}
+figure .frame{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden;background:var(--card)}
+figure img{width:100%;display:block}
+figcaption{margin-top:9px;color:var(--faint);font-size:.74rem;text-align:center}
+
+/* feature list */
+.feat{margin-top:18px;display:grid;gap:11px}
+.feat-row{display:flex;gap:12px;align-items:flex-start;background:var(--card);
+  border:1px solid var(--line);border-radius:13px;padding:14px 15px;box-shadow:var(--shadow)}
+.feat-ic{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:9px;
+  background:var(--brand-soft);color:var(--brand)}
+.feat-ic svg{width:19px;height:19px}
+.feat-row b{font-size:.9rem}
+.feat-row p{margin-top:3px;color:var(--sub);font-size:.82rem}
+
+/* split (card detail) */
+.split{display:grid;gap:18px;margin-top:18px;align-items:center}
+@media(min-width:620px){ .split{grid-template-columns:230px 1fr} }
+.split .card-shot{max-width:230px;margin:0 auto;border-radius:14px;border:1px solid var(--line);
+  box-shadow:var(--shadow-lg);overflow:hidden}
+.split .card-shot img{width:100%;display:block}
+.split ul{list-style:none;display:grid;gap:9px}
+.split li{display:flex;gap:9px;color:var(--sub);font-size:.85rem}
+.split li b{color:var(--ink)}
+.split li svg{width:17px;height:17px;flex:none;color:var(--brand);margin-top:3px}
+
+/* criteria */
+.criteria{margin-top:18px;background:var(--card);border:1px solid var(--line);
+  border-radius:15px;padding:20px;box-shadow:var(--shadow)}
+.criteria h3{font-size:.95rem;font-weight:900;margin-bottom:11px;display:flex;align-items:center;gap:8px}
+.criteria h3 svg{width:18px;height:18px;color:var(--brand)}
+.crit-list{display:grid;gap:9px}
+.crit-item{display:flex;gap:10px;align-items:flex-start}
+.crit-item .n{width:21px;height:21px;flex:none;border-radius:50%;background:var(--brand);color:#fff;
+  font-size:.72rem;font-weight:900;display:grid;place-items:center}
+.crit-item p{font-size:.85rem;color:var(--sub)}
+.crit-item b{color:var(--ink)}
+.crit-note{margin-top:13px;padding:11px 13px;border-radius:10px;background:var(--brand-soft);
+  color:var(--sub);font-size:.8rem;line-height:1.7}
+.crit-note b{color:var(--brand)}
+
+/* forms */
+.form-toggle{margin-top:13px}
+.form-toggle>summary{cursor:pointer;display:flex;align-items:center;gap:7px;
+  padding:11px 14px;border:1.5px solid var(--brand-line);border-radius:11px;
+  background:var(--brand-soft);color:var(--brand);font-size:.85rem;font-weight:900;
+  list-style:none;user-select:none}
+.form-toggle>summary::-webkit-details-marker{display:none}
+.form-toggle>summary::after{content:"▼";margin-left:auto;font-size:.66rem;transition:transform .2s}
+.form-toggle[open]>summary::after{transform:rotate(180deg)}
+.form-toggle>summary svg{width:15px;height:15px;flex:none}
+.tally-wrap{background:#fff;border-radius:0 0 11px 11px;overflow:hidden;padding:4px 0;margin-top:-2px}
+.form-row{display:grid;gap:11px;margin-top:14px}
+@media(min-width:560px){ .form-row{grid-template-columns:1fr 1fr} .form-row .form-toggle{margin-top:0} }
+
+.cta-final{margin-top:40px;text-align:center;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:28px 20px;box-shadow:var(--shadow)}
+.cta-final h2{font-size:1.2rem;font-weight:900}
+.cta-final p{margin-top:8px;color:var(--sub);font-size:.86rem}
+.cta-final a.btn{display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+  background:var(--brand);color:#fff;font-weight:900;font-size:.9rem;padding:12px 24px;
+  border-radius:12px;box-shadow:0 6px 18px rgba(255,103,25,.28)}
+.cta-final a.btn svg{width:16px;height:16px}
+.back-bottom{display:inline-flex;margin-top:30px;color:var(--brand);font-size:.82rem;font-weight:900}
+footer{border-top:1px solid var(--line);text-align:center;color:var(--sub);font-size:.82rem;padding:24px 16px 40px;line-height:1.9;margin-top:46px}
+footer a{color:var(--sub)}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<script>(function(){try{var t=localStorage.getItem("sp_theme_v1");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(_){}})()</script>
+</head>
+<body>
+<header class="header">
+  <div class="header-in">
+    <a class="site-logo-link" href="./" aria-label="Find Your Letter">
+      <img src="assets/logo/logo_light.png" alt="Find Your Letter" class="site-logo site-logo--light">
+      <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
+    </a>
+    <a class="back-top" href="./">← サイトへ戻る</a>
+  </div>
+</header>
+
+<main class="main">
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">ABOUT &amp; GUIDE</p>
+    <h1>読みたい日本語ニュースレターを、<br>カテゴリの棚から見つける。</h1>
+    <p>Find Your Letter は、日本語の Substack ニュースレターをカテゴリごとに集めたキュレーションポータルです。記事から探す・発行物から探す、2つの見方で、まだ知らない書き手に出会えます。</p>
+    <a class="hero-cta" href="./">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      さっそく探してみる
+    </a>
+    <span class="hero-shot"><img src="assets/guide/guide_hero.png" alt="Find Your Letter のトップ画面" loading="lazy"></span>
+  </section>
+
+  <!-- 1. 記事ページ -->
+  <section class="sec">
+    <span class="sec-num"><i>1</i>記事ページの使い方</span>
+    <h2>新着記事を、カテゴリ・検索で絞って読む</h2>
+    <p>トップは「記事ビュー」。投稿日時が新しい順に記事カードが並びます。上部のカテゴリタブや検索を使って、興味のあるテーマだけに絞り込めます。気になったカードを選ぶと、配信元（Substack）の記事ページが開きます。</p>
+    <figure>
+      <span class="frame"><img src="assets/guide/guide_articles.png" alt="記事ビューの画面。上部にカテゴリタブ、本文に記事カードが並ぶ" loading="lazy"></span>
+      <figcaption>記事ビュー：カテゴリタブ・検索・期間で絞り込み、カードから記事へ</figcaption>
+    </figure>
+    <div class="feat">
+      <div class="feat-row">
+        <span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+        <div><b>カテゴリタブ</b><p>「すべて」「ビジネス」「AI」など、上部のタブでジャンルを切り替え。スマホでは記事一覧を左右スワイプでも切り替えられます。</p></div>
+      </div>
+      <div class="feat-row">
+        <span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.1-4.1"/></svg></span>
+        <div><b>検索・期間フィルタ</b><p>キーワード検索や期間の絞り込みで、読みたい記事だけを表示。</p></div>
+      </div>
+      <div class="feat-row">
+        <span class="feat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16"/></svg></span>
+        <div><b>記事カード</b><p>サムネイル・タイトル・発行物名が一覧で見え、選ぶと配信元の記事が開きます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 発行物ページ -->
+  <section class="sec">
+    <span class="sec-num"><i>2</i>発行物ページの使い方</span>
+    <h2>「いま、何を書いている人か」で書き手と出会う</h2>
+    <p>右上のトグルで「発行物ビュー」に切り替えると、発行物（書き手）がカテゴリごとの棚に並びます。棚は「最近そのジャンルの記事が多い発行物」が先頭に来るよう自動で並び替わります。固定のジャンル分けではなく、最近の発信内容で動的に振り分けています。</p>
+    <figure>
+      <span class="frame"><img src="assets/guide/guide_shelf.png" alt="発行物ビューの画面。カテゴリごとの棚に発行物カードが並ぶ" loading="lazy"></span>
+      <figcaption>発行物ビュー：カテゴリの棚に発行物カードが並ぶ</figcaption>
+    </figure>
+    <div class="split">
+      <span class="card-shot"><img src="assets/guide/guide_card.png" alt="発行物カード。名前・カテゴリ・最近の記事・カテゴリバランスバー・Substackで読むボタン" loading="lazy"></span>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>名前とカテゴリバッジ</b>で、どんな発行物かひと目で分かる</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>最近の記事</b>のタイトルが数件並ぶ</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>カテゴリバランスバー</b>＝直近の記事をAIが分類した「最近の傾向」。ホバー／タップで内訳が見られます</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>「Substackで読む」</b>から、その発行物のページへ</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. 掲載基準 -->
+  <section class="sec">
+    <span class="sec-num"><i>3</i>掲載について</span>
+    <h2>どんな発行物が掲載されるか</h2>
+    <div class="criteria">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>掲載基準</h3>
+      <div class="crit-list">
+        <div class="crit-item"><span class="n">1</span><p><b>日本語で発信している Substack の発行物</b>であること</p></div>
+        <div class="crit-item"><span class="n">2</span><p><b>直近に更新がある（活動中）</b>こと</p></div>
+        <div class="crit-item"><span class="n">3</span><p><b>実体のある記事がある</b>こと</p></div>
+      </div>
+      <div class="crit-note">
+        <b>規模（購読者数）は問いません。</b> 小さい・新しい発行物こそ見つけてもらうのが Find Your Letter の目的です。掲載は推薦ネットワーク等からの自動収集と人手の確認で行っており、順位付けや優劣はつけません。掲載を希望しない場合は、下の「掲載削除フォーム」から取り下げできます。
+      </div>
+    </div>
+    <div class="form-row">
+      <details class="form-toggle">
+        <summary>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          掲載依頼フォームを開く
+        </summary>
+        <div class="tally-wrap">
+          <iframe data-tally-src="https://tally.so/embed/zxbKk0?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="211" frameborder="0" marginheight="0" marginwidth="0" title="掲載依頼フォーム"></iframe>
+        </div>
+      </details>
+      <details class="form-toggle">
+        <summary>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          掲載削除フォームを開く
+        </summary>
+        <div class="tally-wrap">
+          <iframe data-tally-src="https://tally.so/embed/ODVANg?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="374" frameborder="0" marginheight="0" marginwidth="0" title="掲載削除申請フォーム"></iframe>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- final cta -->
+  <div class="cta-final">
+    <h2>あなたの「ちょうどいい一通」を見つけよう</h2>
+    <p>まだ知らない書き手が、きっといます。</p>
+    <a class="btn" href="./">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      Find Your Letter を開く
+    </a>
+  </div>
+
+  <a class="back-bottom" href="./">← サイトへ戻る</a>
+</main>
+
+<footer>
+  <a href="guide.html">使い方</a> · <a href="privacy.html">プライバシーポリシー</a> · <a href="terms.html">利用規約・免責事項</a><br>
+  Find Your Letter は Substack 社の公式サービスではありません。
+</footer>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
