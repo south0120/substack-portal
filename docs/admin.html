@@ -744,6 +744,9 @@ function buildNet(){
   // ラベルは被推薦数の上位ハブだけに絞る（重なり防止。狭い画面ではさらに少なく）
   const topN = (window.innerWidth < 560) ? 8 : 16;
   NET.topLabels = new Set([...NET.nodes].sort((a,b)=>(b.indeg||0)-(a.indeg||0)).slice(0,topN).filter(n=>(n.indeg||0)>=2).map(n=>n.id));
+  // 界隈ごとの代表名（被推薦トップ）＝ホバー時に「何の界隈か」を示すため
+  NET.commName={};
+  for(const n of NET.nodes){ if(n.ext || n.community==null) continue; const c=NET.commName[n.community]; if(!c || (n.indeg||0)>c.indeg) NET.commName[n.community]={name:n.name,indeg:n.indeg||0}; }
   document.getElementById("netStats").textContent = `${NET.nodes.length}発行物 / ${NET.edges.length}本の推薦`;
 }
 function renderNetLegend(){
@@ -976,7 +979,10 @@ function bindNetEvents(){
     if(NET.drag){ const w=toWorld(sx,sy); NET.drag.x=w[0]; NET.drag.y=w[1]; NET.drag.vx=0; NET.drag.vy=0; NET.moved=true; drawNet(); }
     else if(NET.panning){ NET.view.x=NET.panning.vx+(ev.clientX-NET.panning.sx); NET.view.y=NET.panning.vy+(ev.clientY-NET.panning.sy); NET.moved=true; drawNet(); }
     else { const n=nodeAt(sx,sy); const changed=n!==NET.hover; NET.hover=n;
-      if(n){ tip.style.display="block"; tip.style.left=(ev.clientX+12)+"px"; tip.style.top=(ev.clientY+12)+"px"; tip.innerHTML=`<b>${esc(n.name)}</b><br>${esc(n.cat)}・被推薦 ${n.indeg}${n.ext?"・外部":""}`; }
+      if(n){ tip.style.display="block"; tip.style.left=(ev.clientX+12)+"px"; tip.style.top=(ev.clientY+12)+"px";
+        let comm="";
+        if(NET.cmode==="community" && n.community!=null && n.community>=0){ const rep=NET.commName&&NET.commName[n.community]; comm=`<br><span style="color:${communityColor(n.community)}">●</span> 界隈${n.community+1}${rep&&rep.name!==n.name?`（代表: ${esc(rep.name)}）`:""}`; }
+        tip.innerHTML=`<b>${esc(n.name)}</b><br>${esc(n.cat)}・被推薦 ${n.indeg}${n.ext?"・外部":""}${comm}`; }
       else tip.style.display="none";
       if(changed) drawNet();
     }
