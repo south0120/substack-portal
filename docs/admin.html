@@ -155,6 +155,14 @@
 
   <div class="kpis" id="kpis"></div>
 
+  <div class="panel" id="writerCardPanel">
+    <h2>書き手カルテ（個人の投稿傾向）</h2>
+    <div class="muted" style="font-size:.72rem;margin-bottom:10px">発行物名を選ぶと、その書き手の<b>記事数・投稿時間帯・曜日・投稿頻度・カテゴリ内訳</b>を表示します（レポートを作らなくても確認できます）。</div>
+    <input type="search" id="wcSearch" list="wcWriterList" placeholder="発行物名で選択／入力" style="width:min(320px,100%);padding:8px 11px;border:1px solid var(--line);border-radius:9px;font-size:.85rem;background:var(--card);color:var(--ink)">
+    <datalist id="wcWriterList"></datalist>
+    <div id="wcBody" style="margin-top:14px"></div>
+  </div>
+
   <div class="grid2">
     <div class="panel">
       <h2>投稿が多い時間帯（JST）</h2>
@@ -496,6 +504,73 @@ function renderHeatmap(o){
   }
   document.getElementById("heatmap").innerHTML = html;
   document.getElementById("heatMax").textContent = max ? `最大 ${fmt(max)}件/マス` : "";
+}
+
+// ===== 書き手カルテ（個人の投稿傾向） =====
+let WC_WRITERS = null;
+async function wcLoadWriters(){
+  if(WC_WRITERS) return WC_WRITERS;
+  try{ const d = await api("/api/writers"); WC_WRITERS = (d.writers||[]).map(w=>w.name||w.writer||"").filter(Boolean); }
+  catch(_){ WC_WRITERS = []; }
+  const dl = document.getElementById("wcWriterList");
+  if(dl) dl.innerHTML = WC_WRITERS.map(n=>`<option value="${esc(n)}">`).join("");
+  return WC_WRITERS;
+}
+async function wcShow(name){
+  const body = document.getElementById("wcBody");
+  body.innerHTML = `<div class="muted">読み込み中…</div>`;
+  let arts = [], page = 1;
+  while(page <= 12){
+    let d;
+    try{ d = await api(`/api/articles?writer=${encodeURIComponent(name)}&includeAudio=1&limit=60&page=${page}`); }
+    catch(_){ body.innerHTML = `<div class="muted">取得に失敗しました</div>`; return; }
+    const batch = d.articles || []; arts = arts.concat(batch);
+    if(!d.hasMore || batch.length < 60) break;
+    page++;
+  }
+  if(!arts.length){ body.innerHTML = `<div class="muted">「${esc(name)}」の記事が見つかりませんでした（発行物名が正確か確認してください）</div>`; return; }
+  const hours = Array(24).fill(0), dow = Array(7).fill(0), dowHour = Array.from({length:7},()=>Array(24).fill(0));
+  const cat = {}; let audio = 0; const dates = [];
+  for(const a of arts){
+    if(a.is_audio) audio++;
+    if(a.category) cat[a.category] = (cat[a.category]||0) + 1;
+    if(a.published){ const t = new Date(a.published); if(!isNaN(t)){ const j = new Date(t.getTime()+9*3600*1000); const h=j.getUTCHours(), wd=j.getUTCDay(); hours[h]++; dow[wd]++; dowHour[wd][h]++; dates.push(t.getTime()); } }
+  }
+  const total = arts.length;
+  dates.sort((a,b)=>a-b);
+  const spanDays = dates.length>1 ? (dates[dates.length-1]-dates[0])/86400000 : 0;
+  const freq = spanDays>20 ? (total/(spanDays/30.44)) : null;   // 期間が短すぎる時は頻度を出さない
+  const last = dates.length ? new Date(dates[dates.length-1]) : null;
+  const first = dates.length ? new Date(dates[0]) : null;
+  const audioPct = Math.round(100*audio/total);
+  const peakHour = hours.indexOf(Math.max(...hours));
+  const ymd = d => d ? `${d.getFullYear()}/${d.getMonth()+1}/${d.getDate()}` : "-";
+  const kpi = (v,l)=>`<div class="kpi"><div class="label">${l}</div><div class="val">${v}</div></div>`;
+  body.innerHTML = `
+    <div class="kpis">
+      ${kpi(fmt(total), "記事数（FYL保有）")}
+      ${kpi(freq!=null ? freq.toFixed(1) : "—", "投稿頻度（月あたり）")}
+      ${kpi(peakHour+"時台", "最も多い時間帯")}
+      ${kpi(audioPct+"%", "音声あり")}
+      ${kpi(last ? `${last.getMonth()+1}/${last.getDate()}` : "-", "最新投稿")}
+    </div>
+    <div class="muted" style="font-size:.7rem;margin:2px 0 10px">対象期間：${ymd(first)} 〜 ${ymd(last)}（FYLが保有する記事に基づく）</div>
+    <div class="grid2">
+      <div class="panel"><h2 style="font-size:.92rem">投稿が多い時間帯（JST）</h2><canvas id="wcHour" height="150"></canvas></div>
+      <div class="panel"><h2 style="font-size:.92rem">曜日別 投稿数</h2><canvas id="wcDow" height="150"></canvas></div>
+    </div>
+    <div class="panel" style="margin-top:12px"><h2 style="font-size:.92rem">曜日 × 時間帯（JST）</h2><div id="wcHeat" class="heatmap"></div></div>
+    <div class="panel" style="margin-top:12px"><h2 style="font-size:.92rem">カテゴリ内訳</h2><div id="wcCat"></div></div>
+  `;
+  bar("wcHour", hours.map((_,h)=>h+"時"), hours, "#FF6719", "投稿数");
+  bar("wcDow", DOW_JP.slice(), dow, "#3a86c8", "投稿数");
+  let max = 0; for(const r of dowHour) for(const v of r) if(v>max) max=v;
+  let hm = `<div class="hcol"></div>`;
+  for(let h=0;h<24;h++) hm += `<div class="hcol">${h%3===0?h:""}</div>`;
+  for(let d=0;d<7;d++){ hm += `<div class="hlabel">${DOW_JP[d]}</div>`; for(let h=0;h<24;h++){ const v=dowHour[d][h]; hm += `<div class="hcell" style="background:${v?heatColor(max?v/max:0):"var(--brand-soft)"}" title="${DOW_JP[d]}曜 ${h}時台：${v}件"></div>`; } }
+  document.getElementById("wcHeat").innerHTML = hm;
+  const ce = Object.entries(cat).sort((a,b)=>b[1]-a[1]);
+  document.getElementById("wcCat").innerHTML = ce.length ? ce.map(([c,n])=>{ const pct=Math.round(100*n/total); return `<div style="display:flex;align-items:center;gap:8px;margin:4px 0;font-size:.78rem"><span style="width:104px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(c)}</span><span style="flex:1;background:var(--brand-soft);border-radius:4px;overflow:hidden"><span style="display:block;height:9px;width:${pct}%;background:#FF6719"></span></span><span style="width:78px;text-align:right;color:var(--sub)">${n}件 (${pct}%)</span></div>`; }).join("") : `<div class="muted">分類前</div>`;
 }
 
 function renderOverview(o){
@@ -1115,6 +1190,11 @@ document.getElementById("netRadial").addEventListener("change",()=>{ if(NET.focu
 document.getElementById("netHideList").addEventListener("change",()=>{
   document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;
 });
+// 書き手カルテ: 入力欄フォーカスで候補ロード、選択/確定で表示
+(function(){ const wc=document.getElementById("wcSearch"); if(wc){
+  wc.addEventListener("focus", wcLoadWriters, { once:true });
+  wc.addEventListener("change", function(){ const v=(this.value||"").trim(); if(v) wcShow(v); });
+} })();
 document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
 // ユーザーで絞る: 発行物名を選択/入力 → そのユーザーのエゴネットワークにフォーカス
 document.getElementById("netUserFilter").addEventListener("change",function(){
