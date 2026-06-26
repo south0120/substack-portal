@@ -80,6 +80,12 @@ a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
   background:var(--brand);color:#fff;font-weight:900;font-size:.9rem;
   padding:12px 22px;border-radius:12px;box-shadow:0 6px 18px rgba(255,103,25,.28)}
 .hero-cta svg{width:16px;height:16px}
+.cta-2{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.cta-2 a{display:inline-flex;align-items:center;gap:7px;font-weight:900;font-size:.9rem;padding:12px 22px;border-radius:12px;transition:transform .12s}
+.cta-2 a:active{transform:scale(.97)}
+.cta-2 a.primary{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(255,103,25,.28)}
+.cta-2 a.ghost{background:var(--card);color:var(--brand);border:1.5px solid var(--brand)}
+.cta-2 a svg{width:16px;height:16px}
 .hero-shot{margin:26px auto 0;max-width:100%;border-radius:14px;border:1px solid var(--line);
   box-shadow:var(--shadow-lg);overflow:hidden;display:block}
 .hero-shot img{width:100%;display:block}
@@ -179,10 +185,16 @@ footer a{color:var(--sub)}
     <p class="eyebrow">ABOUT &amp; GUIDE</p>
     <h1><span class="hl">読みたい日本語ニュースレターを、</span><span class="hl">カテゴリの棚から見つける。</span></h1>
     <p>Find Your Letter は、日本語の Substack ニュースレターをカテゴリごとに集めたキュレーションポータルです。記事から探す・発行物から探す、2つの見方で、まだ知らない書き手に出会えます。</p>
-    <a class="hero-cta" href="./">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      さっそく探してみる
-    </a>
+    <div class="cta-2">
+      <a class="primary" href="./">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+        記事から探す
+      </a>
+      <a class="ghost" href="./#writers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1.5a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4V20M16 5.2a3 3 0 0 1 0 5.6"/></svg>
+        発行物から探す
+      </a>
+    </div>
     <span class="hero-shot"><img src="assets/guide/guide_hero.png" alt="Find Your Letter のトップ画面" loading="lazy"></span>
   </section>
 
@@ -272,13 +284,17 @@ footer a{color:var(--sub)}
   <div class="cta-final">
     <h2>あなたの「ちょうどいい一通」を見つけよう</h2>
     <p>まだ知らない書き手が、きっといます。</p>
-    <a class="btn" href="./">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      Find Your Letter を開く
-    </a>
+    <div class="cta-2">
+      <a class="primary" href="./">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+        記事から探す
+      </a>
+      <a class="ghost" href="./#writers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1.5a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4V20M16 5.2a3 3 0 0 1 0 5.6"/></svg>
+        発行物から探す
+      </a>
+    </div>
   </div>
-
-  <a class="back-bottom" href="./">← サイトへ戻る</a>
 </main>
 
 <footer>
