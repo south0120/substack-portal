@@ -97260,6 +97260,84 @@
       "hash": "6fcec82cf9b0574cf75f09ea08476201d54745ef5846538a257c1c4c7211d196",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://soejimadesign.substack.com/p/cvr1": {
+      "category": "ビジネス",
+      "hash": "fe85b60a190d2e272d563775bf8b0b3380efa9c13c3256dd7fb6f96e487cc335",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/claude-fable-5-mythos-5-ai": {
+      "category": "AI",
+      "hash": "256c5ddee259d8e5b5fe9e3cccb89413a8643398e514d93965e7ad22a808babb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/gpt-463": {
+      "category": "AI",
+      "hash": "eae9da517b880ed003ae6660d0c773f9341f18f0b53c475ab3ca42e5c213f96a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/anthropicai": {
+      "category": "AI",
+      "hash": "029d4119597bf4d8b08b0e7f643c343a57c7ab6cf24efd9aee889e4b3785013d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://soejimadesign.substack.com/p/0a8": {
+      "category": "ビジネス",
+      "hash": "4b194221e2b9456faf635053bcad38dc8e058465125b812b02a9f2812a9cc0a6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/claude-opus-48": {
+      "category": "AI",
+      "hash": "7dd3ef3ba3ed287187c3dc8a803502796f7922a7396867a05a0bb321ef2a5acd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/d83": {
+      "category": "社会・文化",
+      "hash": "d3cdfdf24be3f430cd53c15b7f74d687d60dd3b5973951284995bd917939802d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/gpt": {
+      "category": "ゲーム",
+      "hash": "8885f666d78ee7c27f5cdbc30a53faf546e746056ea187aa5551c06f6ba1ab5d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/google-io-2026gemini": {
+      "category": "AI",
+      "hash": "fcce64816a295505bc835e4d9a1f896a0351f36d42bfc0ca492c4729c1f3bfb9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/gwsstudionotebooklm": {
+      "category": "AI",
+      "hash": "a39a65e3bd32c0d7b38f154306809ef7f0fe4269ba6dc8fe4bfe62638a7abf05",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/claudesmall-business": {
+      "category": "ビジネス",
+      "hash": "417f706f925baa90d90e985eebfa96359bac89234612821f5aca2aa969c98f1b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "03516d37bb3e146504e4642f79db03c310db27a02515af14c0e8ae2e8107e5f7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dm416.substack.com/p/355": {
+      "category": "グルメ・料理",
+      "hash": "dcb83d1c68750b099699daca0f75de7933957fe9ad7df83123a76b3de5f549ed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
