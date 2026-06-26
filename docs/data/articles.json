@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T16:39:14.385091+00:00",
+  "updated_at": "2026-06-26T19:15:02.382031+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "大人の夜会　ゲスト:うさこ先生",
+          "url": "https://www.yukarik.com/p/3e2",
+          "published": "2026-06-26T16:46:37+00:00"
+        },
+        {
           "title": "がんばれない6月に「がんばれ」と言う自分",
           "url": "https://www.yukarik.com/p/6",
           "published": "2026-06-24T10:38:12+00:00"
@@ -553,11 +558,6 @@
           "title": "パンツ亡国論〜おパンツカルチャー研究室より",
           "url": "https://www.yukarik.com/p/43e",
           "published": "2026-06-21T13:31:35+00:00"
-        },
-        {
-          "title": "大人の夜会　withもちスラさん",
-          "url": "https://www.yukarik.com/p/with",
-          "published": "2026-06-20T20:26:07+00:00"
         }
       ]
     },
@@ -12806,6 +12806,15 @@
   ],
   "articles": [
     {
+      "title": "大人の夜会　ゲスト:うさこ先生",
+      "url": "https://www.yukarik.com/p/3e2",
+      "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
+      "published": "2026-06-26T16:46:37+00:00",
+      "image": "https://api.substack.com/feed/podcast/203689702/460e43060c3e4f56a202b1657697dfea.mp3",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "社会・文化"
+    },
+    {
       "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
       "url": "https://www.debunkresearch.com/p/ainews260624-25",
       "excerpt": "主要ニュースまとめ",
@@ -13234,15 +13243,6 @@
       "excerpt": "初めに〜このガイドについて Subustackとは？",
       "published": "2026-06-02T23:16:00+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!08K-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e513929-461b-40e8-a676-1827e865a1c6_1672x941.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "社会・文化"
-    },
-    {
-      "title": "子育てママが直面する、子育てと発信の両立とは？",
-      "url": "https://www.yukarik.com/p/5ae",
-      "excerpt": "Podcast「大人の夜会」ゲストのしょうこさんさんが見つけた『私を後回しにしない』生き方",
-      "published": "2026-06-02T06:40:36+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!LHp2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9de35e36-b46f-4794-bac5-4702f2ee5c24_1672x941.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
     },
