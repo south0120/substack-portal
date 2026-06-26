@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T21:05:59.825662+00:00",
+  "updated_at": "2026-06-26T22:47:51.660526+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "クリプトもAIも資金のある部分から伸びる",
+          "url": "https://www.debunkresearch.com/p/pc260627",
+          "published": "2026-06-26T21:02:04+00:00"
+        },
+        {
           "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
           "url": "https://www.debunkresearch.com/p/ainews260624-25",
           "published": "2026-06-25T21:01:53+00:00"
@@ -161,11 +166,6 @@
           "title": "【6/24(水)~6/25(木)News Report】SBIがビットバンクを467億円で完全子会社化へ / KDDIとSecuritize JapanがRWAトークン化で基本合意 / トランプ大統領がCBDC禁止条項を含む住宅法案の署名を拒否など",
           "url": "https://www.debunkresearch.com/p/cnews260624-25",
           "published": "2026-06-25T21:01:52+00:00"
-        },
-        {
-          "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
-          "url": "https://www.debunkresearch.com/p/okara",
-          "published": "2026-06-24T23:01:41+00:00"
         }
       ]
     },
@@ -12806,6 +12806,15 @@
   ],
   "articles": [
     {
+      "title": "クリプトもAIも資金のある部分から伸びる",
+      "url": "https://www.debunkresearch.com/p/pc260627",
+      "excerpt": "今すぐ聴く | 毎週土曜は1週間の振り返りをお届けします。",
+      "published": "2026-06-26T21:02:04+00:00",
+      "image": "https://api.substack.com/feed/podcast/203678373/1d31c8685094d1a8ad7aea2935c23be6.mp3",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "大人の夜会　ゲスト:うさこ先生",
       "url": "https://www.yukarik.com/p/3e2",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -13063,15 +13072,6 @@
       "excerpt": "「実需つきエージェント決済」は本物か、仮説どまりか",
       "published": "2026-06-15T21:01:30+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!jd0h!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F445fb2b0-6817-41e5-b673-2eb212dae7e3_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【webmcp】エージェントが「スクレイプせず操作する」ウェブへ",
-      "url": "https://www.debunkresearch.com/p/webmcp",
-      "excerpt": "WebMCPという潮流の入口になりつつあるライブ・ディレクトリと、その背後で動く標準化の流れを読み解きます。",
-      "published": "2026-06-15T21:01:21+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!6u9v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9125e8eb-ac8b-41a1-bc21-000f92994146_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
