@@ -267,6 +267,8 @@
         <label>重み <select id="netWeight"><option value="indeg">被推薦</option><option value="pagerank">PageRank</option></select></label>
         <label>クラスタ <select id="netClusterBy"><option value="cat">カテゴリ</option><option value="community">界隈(自動検出)</option></select></label>
         <label>界隈で絞る <select id="netCommunityFilter"><option value="">すべて</option></select></label>
+        <label>ユーザーで絞る <input type="search" id="netUserFilter" list="netUserList" placeholder="発行物名で選択" style="min-width:150px"></label>
+        <datalist id="netUserList"></datalist>
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
@@ -764,6 +766,15 @@ function buildNet(){
   // 界隈ごとの代表名（被推薦トップ）＝ホバー時に「何の界隈か」を示すため
   NET.commName={};
   for(const n of NET.nodes){ if(n.ext || n.community==null) continue; const c=NET.commName[n.community]; if(!c || (n.indeg||0)>c.indeg) NET.commName[n.community]={name:n.name,indeg:n.indeg||0}; }
+  // 「ユーザーで絞る」用: 名前→ノード対応＋datalist候補（被推薦順）
+  NET.byName={};
+  const dl=document.getElementById("netUserList");
+  if(dl){
+    const sorted=[...NET.nodes].sort((a,b)=>(b.indeg||0)-(a.indeg||0));
+    const opts=[];
+    for(const n of sorted){ if(!NET.byName[n.name]){ NET.byName[n.name]=n; opts.push(`<option value="${esc(n.name)}">`); } }
+    dl.innerHTML=opts.join("");
+  } else { for(const n of NET.nodes){ if(!NET.byName[n.name]) NET.byName[n.name]=n; } }
   document.getElementById("netStats").textContent = `${NET.nodes.length}発行物 / ${NET.edges.length}本の推薦`;
 }
 function renderNetLegend(){
@@ -949,7 +960,7 @@ function focusNode(node){
     fitBox(mnx,mny,mxx,mxy,true,2.2);
   }
 }
-function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; restoreEgo(true); }
+function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; const uf=document.getElementById("netUserFilter"); if(uf) uf.value=""; restoreEgo(true); }
 function renderNetDetail(node,out,inc){
   const uniq=arr=>{ const s=new Set(),r=[]; for(const n of arr){ if(!s.has(n.id)){ s.add(n.id); r.push(n); } } return r; };
   out=uniq(out); inc=uniq(inc);
@@ -1105,6 +1116,16 @@ document.getElementById("netHideList").addEventListener("change",()=>{
   document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;
 });
 document.getElementById("netSearch").addEventListener("input",e=>{ NET.highlight=(e.target.value||"").trim().toLowerCase(); drawNet(); });
+// ユーザーで絞る: 発行物名を選択/入力 → そのユーザーのエゴネットワークにフォーカス
+document.getElementById("netUserFilter").addEventListener("change",function(){
+  const v=(this.value||"").trim();
+  if(!v){ clearFocus(); return; }
+  const n=(NET.byName&&NET.byName[v]) || NET.nodes.find(x=>x.name===v) || NET.nodes.find(x=>x.name.toLowerCase()===v.toLowerCase());
+  if(n){
+    NET.commFilter=null; const cf=document.getElementById("netCommunityFilter"); if(cf) cf.value="";
+    focusNode(n);
+  }
+});
 
 init();
 </script>
