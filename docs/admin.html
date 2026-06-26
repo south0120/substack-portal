@@ -880,6 +880,19 @@ function restoreEgo(animate){
   if(animate){ animateNodes(targets,360); } else { for(const [n,t] of targets){ n.x=t.x; n.y=t.y; } }
   for(const n of targets.keys()){ delete n._ox; delete n._oy; }
 }
+// 指定のワールド座標bboxを、右の詳細リストを避けた可視領域に収まるようフィット
+function fitBox(mnx,mny,mxx,mxy,animate,maxK){
+  if(mnx>mxx) return;
+  const det=document.getElementById("netDetail");
+  const listShown = det && !det.hidden;
+  const panelW = listShown ? Math.min(264, NET.W*0.74) + 28 : 0;   // 右の詳細リスト幅＋余白
+  const pad=64, w=(mxx-mnx)||1, h=(mxy-mny)||1;
+  const availW=Math.max(140, NET.W - panelW), availH=NET.H;
+  const k=Math.min((availW-pad)/w, (availH-pad)/h, maxK||2.2);
+  const cx=(mnx+mxx)/2, cy=(mny+mxy)/2;
+  const tx=-cx*k - panelW/2, ty=-cy*k;       // パネル分だけ中心を左へずらす
+  if(animate){ tweenView(tx,ty,k,430); } else { NET.view.k=k; NET.view.x=tx; NET.view.y=ty; drawNet(); }
+}
 function focusNode(node){
   if(NET.focus) restoreEgo(false);           // 直前のフォーカスを瞬時に元へ戻してから組み直す
   NET.focus=node;
@@ -908,12 +921,12 @@ function focusNode(node){
     animateNodes(targets,440);
     let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
     for(const [,t] of targets){ mnx=Math.min(mnx,t.x); mny=Math.min(mny,t.y); mxx=Math.max(mxx,t.x); mxy=Math.max(mxy,t.y); }
-    const w=mxx-mnx||1, h=mxy-mny||1, k=Math.min(NET.W/(w+130), NET.H/(h+130), 1.8);
-    tweenView(-((mnx+mxx)/2)*k, -((mny+mxy)/2)*k, k, 440);
+    fitBox(mnx,mny,mxx,mxy,true,1.8);   // リストを避けた領域に放射状ネットワーク全体をフィット
   } else {
-    // 全体マップのまま選択: 位置は動かさず、ビューだけそのノード中心へ寄せる
-    const tk=Math.max(NET.view.k, 0.9);
-    tweenView(-node.x*tk, -node.y*tk, tk, 360);
+    // 全体マップのまま選択: 位置は動かさず、そのノードのエゴネットワーク全体をリスト外領域にフィット
+    let mnx=1e9,mny=1e9,mxx=-1e9,mxy=-1e9;
+    for(const n of NET.nodes){ if(NET.focusSet.has(n.id)){ mnx=Math.min(mnx,n.x); mny=Math.min(mny,n.y); mxx=Math.max(mxx,n.x); mxy=Math.max(mxy,n.y); } }
+    fitBox(mnx,mny,mxx,mxy,true,2.2);
   }
 }
 function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; restoreEgo(true); }
