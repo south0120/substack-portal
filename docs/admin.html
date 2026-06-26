@@ -67,6 +67,15 @@
   .net-controls input[type=search]{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
   .net-controls button{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;color:var(--ink)}
   .net-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin-bottom:10px;font-size:.72rem;color:var(--sub)}
+  .net-help{margin:0 0 10px;font-size:.74rem}
+  .net-help>summary{cursor:pointer;color:var(--brand);font-weight:700;list-style:none;display:inline-flex;align-items:center;gap:5px;user-select:none}
+  .net-help>summary::-webkit-details-marker{display:none}
+  .net-help>summary::after{content:"▾";margin-left:3px;font-size:.7rem;transition:transform .2s}
+  .net-help[open]>summary::after{transform:rotate(180deg)}
+  .net-help-body{margin-top:8px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);line-height:1.75;color:var(--sub);max-width:760px}
+  .net-help-body p{margin:0 0 9px} .net-help-body p:last-child{margin:0}
+  .net-help-body b{color:var(--ink)}
+  .net-help-note{font-size:.7rem;color:var(--sub);border-top:1px solid var(--line);padding-top:8px}
   .net-legend span{display:inline-flex;align-items:center;gap:5px}
   .net-legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
   #netCanvas{cursor:grab;touch-action:none}
@@ -261,6 +270,14 @@
         <span class="muted" id="netStats"></span>
       </div>
       <div class="net-legend" id="netLegend"></div>
+      <details class="net-help">
+        <summary>ⓘ 界隈・カテゴリの分け方について</summary>
+        <div class="net-help-body">
+          <p><b>カテゴリ（色分け「カテゴリ」選択時）</b>：各発行物の<b>直近の記事の内容</b>をAIがトピック分類し、最も多いカテゴリで色分けしています。＝<b>テーマによる分類</b>。固定ではなく、最近の発信内容に合わせて変わります（サイト表示の「カテゴリバランスバー」と同じ判定）。</p>
+          <p><b>界隈（色分け「界隈(自動検出)」選択時）</b>：発行物どうしの「<b>推薦</b>」のつながりをグラフとして捉え、<b>Louvain法</b>（コミュニティ検出アルゴリズム）で「実際に推薦し合っているグループ」を自動抽出したものです。テーマ（カテゴリ）とは<b>別の軸</b>で、“誰と誰がつながっているか”で分かれます。各界隈の<b>「代表」</b>は、その界隈内で最も多く推薦されている発行物です（ホバーで表示）。</p>
+          <p class="net-help-note">※ いずれも公開データ（記事内容・推薦関係）に基づく自動分類です。順位づけや優劣の評価ではありません。</p>
+        </div>
+      </details>
       <div class="net-stage" style="position:relative">
         <canvas id="netCanvas" height="600" style="width:100%;height:600px;display:block;border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle at 50% 40%, #16120f, #0c0a08)"></canvas>
         <div id="netDetail" class="net-detail" hidden></div>
