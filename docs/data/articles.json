@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-27T18:29:44.385769+00:00",
+  "updated_at": "2026-06-27T21:40:57.678807+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "BitbankをSBI Holdingsが$289MでM&A、FomoにIndex Venturesが$75M出資、など全13PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/cwfr260620-26",
+          "published": "2026-06-27T21:01:13+00:00"
+        },
+        {
+          "title": "Nearfield InstrumentsにFidelity・Temasekが$380M出資、PeregrineにFifth Down Capitalが$250M出資、など全22PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/aiwfr260620-26",
+          "published": "2026-06-27T21:01:12+00:00"
+        },
+        {
           "title": "クリプトもAIも資金のある部分から伸びる",
           "url": "https://www.debunkresearch.com/p/pc260627",
           "published": "2026-06-26T21:02:04+00:00"
-        },
-        {
-          "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
-          "url": "https://www.debunkresearch.com/p/ainews260624-25",
-          "published": "2026-06-25T21:01:53+00:00"
-        },
-        {
-          "title": "【6/24(水)~6/25(木)News Report】SBIがビットバンクを467億円で完全子会社化へ / KDDIとSecuritize JapanがRWAトークン化で基本合意 / トランプ大統領がCBDC禁止条項を含む住宅法案の署名を拒否など",
-          "url": "https://www.debunkresearch.com/p/cnews260624-25",
-          "published": "2026-06-25T21:01:52+00:00"
         }
       ]
     },
@@ -12806,6 +12806,24 @@
   ],
   "articles": [
     {
+      "title": "BitbankをSBI Holdingsが$289MでM&A、FomoにIndex Venturesが$75M出資、など全13PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/cwfr260620-26",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-27T21:01:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!MSHP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc706520a-1110-487b-85bd-1b9482c934c7_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "Nearfield InstrumentsにFidelity・Temasekが$380M出資、PeregrineにFifth Down Capitalが$250M出資、など全22PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/aiwfr260620-26",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-06-27T21:01:12+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!9Fpe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F689d091d-38d3-4f4c-98d1-b794a5e9ae98_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "クリプトもAIも資金のある部分から伸びる",
       "url": "https://www.debunkresearch.com/p/pc260627",
       "excerpt": "今すぐ聴く | 毎週土曜は1週間の振り返りをお届けします。",
@@ -13049,15 +13067,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【06/12(金)~06/16(火)News Report】MiCA移行期限が7/1に終了 / KrakenとCoinbaseが米国向けパーペチュアル投入 / 北陸銀行のDCJPYが商用化へなど",
-      "url": "https://www.debunkresearch.com/p/crypto-news260612-16",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-16T21:00:43+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!09ia!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb4463fb6-b14f-48fa-8d61-5059a5ab2f97_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "#112 どうする？GOする！",
       "url": "https://www.wha2come.xyz/p/go",
       "excerpt": "久しぶりの大型上場のGOについて考える",
@@ -13065,15 +13074,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!7rNk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F190ac9ca-19e0-498c-afb6-220e38759893_3074x1722.png",
       "writer": "時代編集会議",
       "category": "その他"
-    },
-    {
-      "title": "【AI Pay with Crypto】AIエージェントに実店舗QR決済を可能にするプロジェクト / @aipaywithcrypto",
-      "url": "https://www.debunkresearch.com/p/apc",
-      "excerpt": "「実需つきエージェント決済」は本物か、仮説どまりか",
-      "published": "2026-06-15T21:01:30+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!jd0h!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F445fb2b0-6817-41e5-b673-2eb212dae7e3_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "#111 時代通信#3がでます",
