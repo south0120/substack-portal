@@ -102114,6 +102114,18 @@
       "hash": "0aae09a2ceadf82095c11edcecff912ab3214c3edf5f0b094ca9ef36fe97fbbe",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://onikunoyousei.substack.com/p/28": {
+      "category": "キャリア・働き方",
+      "hash": "f578de4969608ec634ea48807ebd329b351258119e9190eb96092cb919e83258",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ryokan24.substack.com/p/83c": {
+      "category": "テクノロジー",
+      "hash": "ac16541257957821fc826ae39188d36be5ae88bce98d32fda34f11fd5477aec2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
