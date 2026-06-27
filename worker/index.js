@@ -812,20 +812,20 @@ async function getArticles(url, env) {
   const includeAudio = ["1", "true"].includes((url.searchParams.get("includeAudio") || "").toLowerCase());
 
   if (!includeAudio) {
-    clauses.push("is_audio = 0");
+    clauses.push("a.is_audio = 0");
   }
 
   if (category && category !== "すべて") {
-    clauses.push("category = ?");
+    clauses.push("a.category = ?");
     params.push(category);
   }
   if (writer) {
-    clauses.push("writer = ?");
+    clauses.push("a.writer = ?");
     params.push(writer);
   }
   if (query) {
     const pattern = `%${escapeLike(query)}%`;
-    clauses.push("(title LIKE ? ESCAPE '\\' OR excerpt LIKE ? ESCAPE '\\' OR writer LIKE ? ESCAPE '\\')");
+    clauses.push("(a.title LIKE ? ESCAPE '\\' OR a.excerpt LIKE ? ESCAPE '\\' OR a.writer LIKE ? ESCAPE '\\')");
     params.push(pattern, pattern, pattern);
   }
 
@@ -833,12 +833,15 @@ async function getArticles(url, env) {
   const offset = (page - 1) * limit;
   const [rows, countRow] = await Promise.all([
     env.DB.prepare(`
-      SELECT id, url, title, excerpt, image, published, writer, category, is_audio
-      FROM articles${where}
-      ORDER BY published DESC
+      SELECT a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category, a.is_audio,
+        w.avatar AS avatar, w.url AS writer_url
+      FROM articles a
+      LEFT JOIN writers w ON a.writer = w.name
+      ${where}
+      ORDER BY a.published DESC
       LIMIT ? OFFSET ?
     `).bind(...params, limit, offset).all(),
-    env.DB.prepare(`SELECT COUNT(*) AS total FROM articles${where}`)
+    env.DB.prepare(`SELECT COUNT(*) AS total FROM articles a${where}`)
       .bind(...params).first(),
   ]);
   const total = Number(countRow?.total || 0);
@@ -853,6 +856,8 @@ async function getArticles(url, env) {
 
 async function getWriters(url, env) {
   const category = (url.searchParams.get("category") || "").trim();
+  const light = ["1", "true"].includes((url.searchParams.get("light") || "").toLowerCase());
+  const bioSelect = light ? "substr(COALESCE(bio, ''), 1, 140) AS bio" : "bio";
   const params = [];
   let where = "";
   if (category && category !== "すべて") {
@@ -862,7 +867,7 @@ async function getWriters(url, env) {
 
   const [writersResult, latestResult] = await Promise.all([
     env.DB.prepare(`
-      SELECT name, url, feed_url, avatar, bio, categories,
+      SELECT name, url, feed_url, avatar, ${bioSelect}, categories,
         EXISTS(SELECT 1 FROM articles a WHERE a.writer = writers.name AND a.is_audio = 0) AS has_non_audio
       FROM writers${where}
       ORDER BY rowid

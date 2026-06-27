@@ -305,6 +305,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{
   display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .article-meta{display:flex;gap:7px;align-items:center;margin-top:auto;color:var(--faint);
   font-size:.67rem;min-width:0;padding-top:8px}
+.article-avatar{flex:none;width:18px;height:18px;border-radius:50%;object-fit:cover;background:var(--panel)}
 .article-writer{color:var(--sub);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .article-date{margin-left:auto;white-space:nowrap}
 .more{display:block;margin:22px auto 0;border:1px solid var(--line);border-radius:999px;
@@ -678,6 +679,10 @@ let apiHasMore = false;
 let apiLoading = false;
 let apiTotal = 0;
 let apiRequestId = 0;
+let writersLoadingPromise = null;
+let writersLoaded = !API_MODE;
+let shelfObserver = null;
+let shelfItemsByCategory = new Map();
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g, char => ({
   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
@@ -725,7 +730,10 @@ function formatDate(value){
 
 function defaultCategoryOrder(){
   if(API_MODE){
-    return [...new Set(DATA.categories.map(normalizedCategory))];
+    const categories = DATA.categories.length
+      ? DATA.categories
+      : DATA.articles.map(article => article.category).filter(Boolean);
+    return [...new Set(categories.map(normalizedCategory))];
   }
   return MASTER_CATEGORIES.filter(name =>
     DATA.writers.some(writer => writerCategories(writer).includes(name))
@@ -908,13 +916,54 @@ function writerHasVisibleArticles(writer){
   return !latest.length || latest.some(article => !article.is_audio);
 }
 
+function updateShelfArrows(shelf){
+  const row = shelf.querySelector(".writer-grid");
+  const arrows = shelf.querySelector(".shelf-arrows");
+  if(!row || !arrows) return;
+  arrows.hidden = row.scrollWidth <= row.clientWidth + 1;
+}
+
+function hydrateShelfSection(shelf){
+  if(!shelf || shelf.dataset.shelfHydrated === "true") return;
+  const row = shelf.querySelector(".writer-grid");
+  if(!row) return;
+  const items = shelfItemsByCategory.get(shelf.dataset.shelfCategory) || [];
+  row.innerHTML = items.map(writerCard).join("");
+  row.removeAttribute("aria-busy");
+  shelf.dataset.shelfHydrated = "true";
+  updateShelfArrows(shelf);
+  enableDragScroll(row);
+}
+
+function observeShelfSections(root){
+  if(shelfObserver) shelfObserver.disconnect();
+  const shelves = [...root.querySelectorAll("[data-shelf]")];
+  if(!shelves.length) return;
+  if(!("IntersectionObserver" in window)){
+    shelves.forEach(hydrateShelfSection);
+    return;
+  }
+  shelfObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      hydrateShelfSection(entry.target);
+      shelfObserver.unobserve(entry.target);
+    });
+  }, {rootMargin:"600px 0px"});
+  shelves.forEach(shelf => shelfObserver.observe(shelf));
+}
+
 function renderShelf(refreshContent = false){
+  if(API_MODE && !writersLoaded){
+    ensureWritersLoaded(true);
+  }
   const normalized = query.toLocaleLowerCase("ja");
   const writers = DATA.writers.filter(writer =>
     writerHasVisibleArticles(writer) &&
     `${writer.name} ${writer.bio}`.toLocaleLowerCase("ja").includes(normalized)
   );
   const root = document.getElementById("shelfView");
+  shelfItemsByCategory = new Map();
   // カテゴリにチェックが入っていれば、そのカテゴリの棚だけに絞る（順序は維持）
   const visibleCategories = categoryFilters.size > 0
     ? categoryOrder().filter(name => categoryFilters.has(name))
@@ -924,6 +973,7 @@ function renderShelf(refreshContent = false){
       .filter(writer => writerCategories(writer).includes(name))
       .sort((a, b) => writerLastUpdated(b) - writerLastUpdated(a));
     if(!items.length) return "";
+    shelfItemsByCategory.set(name, items);
     const style = styleFor(name);
     return `
       <section class="shelf-section" data-shelf data-shelf-category="${esc(name)}">
@@ -937,7 +987,7 @@ function renderShelf(refreshContent = false){
             <button type="button" class="shelf-arrow" data-direction="1" aria-label="${esc(name)}を次へ">${CHEVRON_RIGHT}</button>
           </div>
         </div>
-        <div class="writer-grid">${items.map(writerCard).join("")}</div>
+        <div class="writer-grid" aria-busy="true"></div>
       </section>`;
   }).join("");
   root.innerHTML = `
@@ -954,21 +1004,22 @@ function renderShelf(refreshContent = false){
     ${sections || `
     <div class="no-results">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      <b>条件に合う発行物が見つかりませんでした</b>
-      検索語を変えてみてください。
+      <b>${API_MODE && !writersLoaded ? "発行物を読み込んでいます" : "条件に合う発行物が見つかりませんでした"}</b>
+      ${API_MODE && !writersLoaded ? "少し待ってから表示します。" : "検索語を変えてみてください。"}
     </div>`}`;
   document.getElementById("orderOpen").addEventListener("click", openOrderModal);
   root.querySelectorAll("[data-shelf]").forEach(shelf => {
     const row = shelf.querySelector(".writer-grid");
     const arrows = shelf.querySelector(".shelf-arrows");
-    arrows.hidden = row.scrollWidth <= row.clientWidth + 1;
+    arrows.hidden = true;
     arrows.querySelectorAll(".shelf-arrow").forEach(button => {
       button.addEventListener("click", () => {
+        hydrateShelfSection(shelf);
         row.scrollBy({left:Number(button.dataset.direction) * row.clientWidth * .8,behavior:"smooth"});
       });
     });
-    enableDragScroll(row);
   });
+  observeShelfSections(root);
   enableShelfDnD(root);
   if(refreshContent){
     const refreshToken = String((Number(root.dataset.refreshToken) || 0) + 1);
@@ -1098,7 +1149,7 @@ function renderOrderList(){
       [next[index], next[target]] = [next[target], next[index]];
       saveCategoryOrder(next);
       renderOrderList();
-      renderShelf(true);
+      if(view === "shelf") renderShelf(true);
       renderCategoryPills();
       renderCategorySidebar();
     });
@@ -1166,7 +1217,7 @@ function initOrderTouchDnd(listEl){
       else if(after) listEl.insertBefore(dragging, after.nextSibling);
       const newOrder = rows().map(r => r.dataset.cat).filter(Boolean);
       saveCategoryOrder(newOrder);
-      renderShelf(true);
+      if(view === "shelf") renderShelf(true);
       renderCategoryPills();
       renderCategorySidebar();
     }
@@ -1227,10 +1278,18 @@ function periodMatches(value){
     (period === "month" && elapsed <= 24 * 31);
 }
 
+function articleAvatarUrl(article){
+  if(article.avatar) return article.avatar;
+  const writer = DATA.writers.find(item => item.name === article.writer);
+  return writer && writer.avatar ? writer.avatar : "";
+}
+
 function articleCard(article){
   const articleCategory = normalizedCategory(article.category);
   const style = styleFor(articleCategory);
   const image = article.image ? `<img src="${esc(safeUrl(article.image))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
+  const avatar = articleAvatarUrl(article);
+  const avatarHtml = avatar ? `<img class="article-avatar" src="${esc(safeUrl(avatar))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
   return `
     <a class="article-card" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener"
       data-ga="article_click" data-ga-writer="${esc(article.writer)}" data-ga-cat="${esc(articleCategory)}" data-ga-title="${esc(article.title)}" data-ga-id="${esc(article.id || "")}">
@@ -1242,6 +1301,7 @@ function articleCard(article){
         <span class="badge" style="background:${style.bg};color:${style.fg}">${esc(article.category)}</span>
         <h3>${esc(article.title)}</h3>
         <div class="article-meta">
+          ${avatarHtml}
           <span class="article-writer">${esc(article.writer)}</span>
           <span class="article-date">${esc(formatDate(article.published))}</span>
         </div>
@@ -1305,7 +1365,9 @@ function setCategory(nextCategory, scrollTab = true){
   shown = PAGE_SIZE;
   renderCategoryPills();
   renderCategorySidebar();
-  if(API_MODE) resetApiArticles(); else renderArticles();
+  if(view === "shelf") renderShelf();
+  else if(API_MODE) resetApiArticles();
+  else renderArticles();
   if(scrollTab) requestAnimationFrame(scrollActiveCategoryTab);
 }
 
@@ -1460,7 +1522,7 @@ function renderCategorySidebar(){
       draggedCategory = "";
       renderCategorySidebar();
       renderCategoryPills();
-      renderShelf(true);
+      if(view === "shelf") renderShelf(true);
     });
   });
 }
@@ -1739,7 +1801,6 @@ function init(){
   initPwaPrompt();
   initHideOnScroll();
   updateHeaderHeight();
-  renderShelf();
   setView(location.hash === "#writers" ? "shelf" : "articles", false);
   if(API_MODE && view === "articles" && categoryFilters.size > 0) resetApiArticles();
 
@@ -1828,7 +1889,7 @@ function init(){
   document.getElementById("orderReset").addEventListener("click", () => {
     saveCategoryOrder([]);
     renderOrderList();
-    renderShelf(true);
+    if(view === "shelf") renderShelf(true);
     renderCategoryPills();
     renderCategorySidebar();
   });
@@ -1841,8 +1902,7 @@ function init(){
   window.addEventListener("resize", () => {
     updateHeaderHeight();
     document.querySelectorAll("[data-shelf]").forEach(shelf => {
-      const row = shelf.querySelector(".writer-grid");
-      shelf.querySelector(".shelf-arrows").hidden = row.scrollWidth <= row.clientWidth + 1;
+      updateShelfArrows(shelf);
     });
   });
 }
@@ -1859,6 +1919,61 @@ async function fetchJson(url){
   const response = await fetch(url);
   if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
   return response.json();
+}
+
+function normalizeWriters(writers){
+  return writers.map(writer => {
+    let categories = writer.categories;
+    if(typeof categories === "string"){
+      try{ categories = JSON.parse(categories); }catch(_){ categories = []; }
+    }
+    return {
+      ...writer,
+      categories:Array.isArray(categories) ? categories : [],
+      latest:Array.isArray(writer.latest) ? writer.latest : [],
+      hasNonAudio:typeof writer.hasNonAudio === "boolean" ? writer.hasNonAudio : Boolean(writer.has_non_audio)
+    };
+  });
+}
+
+function updateCategoriesFromWriters(){
+  const writerCategoriesList = DATA.writers.flatMap(writer => writerCategories(writer));
+  if(writerCategoriesList.length){
+    DATA.categories = [...new Set(writerCategoriesList)];
+  }
+}
+
+function ensureWritersLoaded(renderWhenDone = false){
+  if(!API_MODE || writersLoaded) return Promise.resolve(DATA.writers);
+  if(writersLoadingPromise) return writersLoadingPromise;
+  writersLoadingPromise = fetchJson(`${WORKER_URL}/api/writers?light=1`)
+    .then(writers => {
+      const loaded = Array.isArray(writers.writers) ? normalizeWriters(writers.writers) : [];
+      if(loaded.length < 10) throw new Error("writer data insufficient");
+      DATA.writers = loaded;
+      writersLoaded = true;
+      updateCategoriesFromWriters();
+      renderCategoryPills();
+      renderCategorySidebar();
+      if(view === "shelf") renderShelf(renderWhenDone);
+      else renderArticles();
+      return DATA.writers;
+    })
+    .catch(error => {
+      console.warn("Find Your Letter writers request failed",error);
+      return DATA.writers;
+    })
+    .finally(() => {
+      writersLoadingPromise = null;
+    });
+  return writersLoadingPromise;
+}
+
+function preloadWritersIfNeeded(){
+  if(!API_MODE || writersLoaded || DATA.articles.every(article => article.avatar)) return;
+  const start = () => ensureWritersLoaded(false);
+  if("requestIdleCallback" in window) requestIdleCallback(start, {timeout:2500});
+  else setTimeout(start, 1200);
 }
 
 async function resetApiArticles(){
@@ -1892,11 +2007,7 @@ async function refreshData(){
   if(!API_MODE){ location.reload(); return; }
   lastRefresh = Date.now();
   try{
-    const [writers, health] = await Promise.all([
-      fetchJson(`${WORKER_URL}/api/writers`),
-      fetchJson(`${WORKER_URL}/api/health`)
-    ]);
-    if(Array.isArray(writers.writers) && writers.writers.length >= 10) DATA.writers = writers.writers;
+    const health = await fetchJson(`${WORKER_URL}/api/health`);
     if(health && health.lastRun){
       DATA.updated_at = health.lastRun;
       const fe = document.getElementById("fetchInline");
@@ -1907,6 +2018,7 @@ async function refreshData(){
     }
   }catch(error){ console.warn("Find Your Letter refresh failed",error); }
   await resetApiArticles();
+  if(writersLoaded) ensureWritersLoaded(false);
   if(view === "shelf") renderShelf();
 }
 
@@ -1999,33 +2111,37 @@ async function load(){
   ]);
   try{
     if(API_MODE){
-      const [articles, writers, health] = await Promise.all([
+      const [articles, health] = await Promise.all([
         fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`),
-        fetchJson(`${WORKER_URL}/api/writers`),
         fetchJson(`${WORKER_URL}/api/health`)
       ]);
-      if(!Array.isArray(writers.writers) || writers.writers.length < 10) throw new Error("writer data insufficient, fallback to static");
+      const loadedArticles = Array.isArray(articles.articles) ? articles.articles : [];
       DATA = {
-        updated_at:health.lastRun || articles.articles?.[0]?.published || "",
-        categories:[...new Set(writers.writers.flatMap(writer =>
-          Array.isArray(writer.categories) ? writer.categories : []
-        ))],
-        writers:writers.writers,
-        articles:Array.isArray(articles.articles) ? articles.articles : []
+        updated_at:health.lastRun || loadedArticles[0]?.published || "",
+        categories:[...new Set([
+          ...loadedArticles.map(article => article.category).filter(Boolean),
+          ...MASTER_CATEGORIES
+        ])],
+        writers:[],
+        articles:loadedArticles
       };
+      writersLoaded = false;
       apiPage = Number(articles.page) || 1;
       apiHasMore = Boolean(articles.hasMore);
       apiTotal = Number(articles.total) || 0;
     }else{
       DATA = await loadStaticData();
+      writersLoaded = true;
     }
   }catch(error){
     if(API_MODE) console.warn("Find Your Letter API initial load failed; using static data",error);
     API_MODE = false;
     try{
       DATA = await loadStaticData();
+      writersLoaded = true;
     }catch(_){
       DATA = SAMPLE;
+      writersLoaded = true;
       sample = true;
     }
   }
@@ -2042,6 +2158,7 @@ async function load(){
   sampleBanner.hidden = !sample;
   if(sample) sampleBanner.textContent = "現在データを読み込めませんでした。暫定的な内容を表示しています。";
   init();
+  preloadWritersIfNeeded();
 }
 
 /* カテゴリタブは最初に決めた軸をジェスチャー終了まで維持する */
