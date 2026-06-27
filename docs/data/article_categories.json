@@ -102102,6 +102102,18 @@
       "hash": "76294c13fd39c51d236a38509da9d5a860199583eaf4f0f6a043dca5debc5c81",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://beardbear.substack.com/p/4": {
+      "category": "子育て・家族",
+      "hash": "404e3a88970c925d6dce5f8bd1a588a99d63bc04988da6c1bf223b2c00b743c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dashilees.substack.com/p/a55": {
+      "category": "グルメ・料理",
+      "hash": "0aae09a2ceadf82095c11edcecff912ab3214c3edf5f0b094ca9ef36fe97fbbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
