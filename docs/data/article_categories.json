@@ -102630,6 +102630,30 @@
       "hash": "452993f09ddb92cbb2acc9e50a6ae34f92fd728562659ef27e199426df8a558b",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://manabi.substack.com/p/cfo": {
+      "category": "投資・経済",
+      "hash": "4089ddd39b98e65d0b06ad59b92cb66e9e0e49a1c51af1bf501ea72c162308c9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nagarakigyou.substack.com/p/30url": {
+      "category": "クリエイティブ",
+      "hash": "bcd5d309ec0b632accabf88858e24dd347256ca4cb1dff83778f51a7513b6434",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/a8c": {
+      "category": "ライフスタイル",
+      "hash": "52ec6a8e87178f980e33b60313253387e5526fe569e380dca891b3be11e8e63a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dankuofficial.substack.com/p/characters": {
+      "category": "マンガ・アニメ",
+      "hash": "1f8cbc84412c30d4401a7da460e470353ecacbcfd3d2c976cf4f7713e6fc6200",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
