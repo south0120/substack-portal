@@ -102564,6 +102564,18 @@
       "hash": "61933d68ccc7633c3d59d30a1e018dbb580bd51d421f2a43151c1ef3b38dd5a3",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://mitopmf.substack.com/p/3": {
+      "category": "キャリア・働き方",
+      "hash": "e73a1888749b65419f52e222d10662498360f89d4b5efbeef5515aa6c7c89802",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itawaru.substack.com/p/073": {
+      "category": "健康・ウェルネス",
+      "hash": "0927a3016ee8b1ba4f011d1bbfebfa3072d027edea6e7cb987d380033e90d2e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
