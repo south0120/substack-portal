@@ -42,6 +42,9 @@ export default {
       if (url.pathname === "/api/apply" && request.method === "POST") {
         return handleApplication(request, env);
       }
+      if (url.pathname === "/api/remove" && request.method === "POST") {
+        return handleRemoval(request, env);
+      }
       if (url.pathname === "/api/admin/login" && request.method === "POST") {
         return runAdminLogin(request, env);
       }
@@ -91,20 +94,28 @@ async function handleApplication(request, env) {
     }
 
     const fields = extractTallyFields(payload);
-    if (!fields.name || !fields.rawUrl) {
-      return jsonResponse({ error: "name_and_url_required" }, 400, "no-store");
+    if (!fields.rawUrl) {
+      return jsonResponse({ error: "url_required" }, 400, "no-store");
     }
 
     let feedUrl;
     try {
-      feedUrl = normalizeFeedUrl(fields.rawUrl);
+      feedUrl = await resolveSubstackFeed(fields.rawUrl);
     } catch {
+      return jsonResponse({ error: "invalid_feed_url" }, 400, "no-store");
+    }
+    if (!feedUrl) {
       return jsonResponse({ error: "invalid_feed_url" }, 400, "no-store");
     }
     const category = MASTER_CATEGORIES.has(fields.category) ? fields.category : "その他";
 
-    if (!(await verifyJapaneseFeed(feedUrl))) {
+    const feedCheck = await verifyJapaneseFeed(feedUrl);
+    if (!feedCheck.ok) {
       return jsonResponse({ error: "feed_unreachable_or_not_japanese" }, 422, "no-store");
+    }
+    const applicationName = fields.name || feedCheck.name.slice(0, 80);
+    if (!applicationName) {
+      return jsonResponse({ error: "name_unresolved" }, 400, "no-store");
     }
 
     const feedsResponse = await fetch(FEEDS_URL, {
@@ -115,7 +126,7 @@ async function handleApplication(request, env) {
     const feedsPayload = await feedsResponse.json();
     const feeds = Array.isArray(feedsPayload.feeds) ? feedsPayload.feeds : [];
     const alreadyListed = feeds.some((feed) =>
-      String(feed?.name || "").trim() === fields.name
+      String(feed?.name || "").trim() === applicationName
       || comparableFeedUrl(feed?.feed_url) === feedUrl
     );
     if (alreadyListed) {
@@ -134,7 +145,7 @@ async function handleApplication(request, env) {
     await env.DB.prepare(`
       INSERT INTO applications (id, name, feed_url, category, bio, status, created_at)
       VALUES (?, ?, ?, ?, ?, 'pending', ?)
-    `).bind(id, fields.name, feedUrl, category, fields.bio, timestamp).run();
+    `).bind(id, applicationName, feedUrl, category, fields.bio, timestamp).run();
 
     if (!env.GITHUB_TOKEN) {
       return jsonResponse(
@@ -146,7 +157,7 @@ async function handleApplication(request, env) {
 
     const result = await publishApplication(env, {
       id,
-      name: fields.name,
+      name: applicationName,
       feed_url: feedUrl,
       category,
       bio: fields.bio,
@@ -157,6 +168,69 @@ async function handleApplication(request, env) {
     return jsonResponse({ ok: true, pr: result.url }, 200, "no-store");
   } catch (error) {
     console.error("Application webhook failed", error);
+    return jsonResponse({ error: "Internal server error" }, 500, "no-store");
+  }
+}
+
+async function handleRemoval(request, env) {
+  try {
+    const rawBody = await request.text();
+    if (env.TALLY_SIGNING_SECRET) {
+      const valid = await verifyTallySignature(
+        rawBody,
+        env.TALLY_SIGNING_SECRET,
+        request.headers.get("tally-signature"),
+      );
+      if (!valid) return jsonResponse({ error: "invalid_signature" }, 401, "no-store");
+    }
+
+    let payload;
+    try {
+      payload = JSON.parse(rawBody);
+    } catch {
+      return jsonResponse({ error: "invalid_json" }, 400, "no-store");
+    }
+
+    const fields = extractTallyFields(payload);
+    const reason = extractRemovalReason(payload);
+    if (!fields.rawUrl) {
+      return jsonResponse({ error: "url_required" }, 400, "no-store");
+    }
+
+    let feedUrl;
+    try {
+      feedUrl = await resolveSubstackFeed(fields.rawUrl);
+    } catch {
+      return jsonResponse({ error: "invalid_feed_url" }, 400, "no-store");
+    }
+    if (!feedUrl) {
+      return jsonResponse({ error: "invalid_feed_url" }, 400, "no-store");
+    }
+
+    const feedsResponse = await fetch(FEEDS_URL, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!feedsResponse.ok) throw new Error(`feeds.json: HTTP ${feedsResponse.status}`);
+    const feedsPayload = await feedsResponse.json();
+    const feeds = Array.isArray(feedsPayload.feeds) ? feedsPayload.feeds : [];
+    const matchedFeed = feeds.find((feed) => comparableFeedUrl(feed?.feed_url) === feedUrl);
+    if (!matchedFeed) {
+      return jsonResponse({ error: "not_listed" }, 404, "no-store");
+    }
+
+    if (!env.GITHUB_TOKEN) {
+      return jsonResponse(
+        { ok: true, pr: null, note: "GITHUB_TOKEN未設定" },
+        200,
+        "no-store",
+      );
+    }
+
+    const result = await publishRemoval(env, matchedFeed, feedUrl, reason);
+    return jsonResponse({ ok: true, pr: result.url }, 200, "no-store");
+  } catch (error) {
+    console.error("Removal webhook failed", error);
     return jsonResponse({ error: "Internal server error" }, 500, "no-store");
   }
 }
@@ -226,6 +300,18 @@ export function extractTallyFields(payload) {
   return result;
 }
 
+function extractRemovalReason(payload) {
+  const fields = Array.isArray(payload?.data?.fields) ? payload.data.fields : [];
+  for (const field of fields) {
+    const label = String(field?.label || "").toLowerCase();
+    if (!label.includes("理由") && !label.includes("reason") && !label.includes("削除")) continue;
+    const value = Array.isArray(field?.value) ? field.value[0] : field?.value;
+    const text = String(value ?? "").trim();
+    if (text) return text.slice(0, 300);
+  }
+  return "";
+}
+
 export function normalizeFeedUrl(rawUrl) {
   let value = String(rawUrl || "").trim();
   if (!/^[a-z][a-z\d+.-]*:\/\//i.test(value)) value = `https://${value}`;
@@ -242,6 +328,74 @@ export function normalizeFeedUrl(rawUrl) {
   url.search = "";
   url.hash = "";
   return url.href.replace(/\/$/, "");
+}
+
+export async function resolveSubstackFeed(rawUrl) {
+  let value = String(rawUrl || "").trim();
+  if (!value) return null;
+  if (!/^[a-z][a-z\d+.-]*:\/\//i.test(value)) value = `https://${value}`;
+
+  let url;
+  try {
+    url = new URL(value);
+  } catch {
+    return null;
+  }
+  if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+  url.search = "";
+  url.hash = "";
+
+  const hostname = url.hostname.toLowerCase();
+  if (hostname === "open.substack.com") {
+    const parts = url.pathname.split("/").filter(Boolean);
+    if (parts[0] !== "pub" || !isValidPublicationSubdomain(parts[1])) return null;
+    return normalizeFeedUrl(`https://${parts[1].toLowerCase()}.substack.com/feed`);
+  }
+
+  if (hostname === "substack.com") {
+    const handle = url.pathname.split("/").filter(Boolean)[0];
+    if (!handle?.startsWith("@")) return null;
+    const subdomain = await resolveSubstackHandle(handle.slice(1));
+    if (!isValidPublicationSubdomain(subdomain)) return null;
+    return normalizeFeedUrl(`https://${subdomain}.substack.com/feed`);
+  }
+
+  if (hostname.endsWith(".substack.com")) {
+    const subdomain = hostname.slice(0, -".substack.com".length);
+    if (!isValidPublicationSubdomain(subdomain)) return null;
+    return normalizeFeedUrl(`https://${subdomain}.substack.com/feed`);
+  }
+
+  return null;
+}
+
+function isValidPublicationSubdomain(value) {
+  const subdomain = String(value || "").trim().toLowerCase();
+  return /^[a-z0-9][a-z0-9-]{0,62}$/.test(subdomain)
+    && !["www", "open", "substack"].includes(subdomain);
+}
+
+async function resolveSubstackHandle(handle) {
+  const cleanHandle = String(handle || "").trim().replace(/^@/, "");
+  if (!/^[a-z0-9_-]+$/i.test(cleanHandle)) return "";
+  try {
+    const response = await fetch(
+      `https://substack.com/api/v1/user/${encodeURIComponent(cleanHandle)}/public_profile`,
+      {
+        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+        signal: AbortSignal.timeout(10000),
+      },
+    );
+    if (!response.ok) return "";
+    const profile = await response.json();
+    return String(
+      profile?.primaryPublication?.subdomain
+      || profile?.publicationUsers?.[0]?.publication?.subdomain
+      || "",
+    ).trim().toLowerCase();
+  } catch {
+    return "";
+  }
 }
 
 function comparableFeedUrl(value) {
@@ -275,18 +429,19 @@ async function verifyJapaneseFeed(feedUrl) {
       },
       signal: AbortSignal.timeout(10000),
     });
-    if (response.status !== 200) return false;
+    if (response.status !== 200) return { ok: false, name: "" };
     const xml = await response.text();
-    if (!/<(?:rss|feed)\b/i.test(xml)) return false;
+    if (!/<(?:rss|feed)\b/i.test(xml)) return { ok: false, name: "" };
+    const name = cleanText(firstTag(xml, "title"));
     const itemBlocks = allTags(xml, "item");
     const entryBlocks = itemBlocks.length ? [] : allTags(xml, "entry");
     const titles = [...itemBlocks, ...entryBlocks]
       .slice(0, 3)
       .map((item) => cleanText(firstTag(item, "title")))
       .join("");
-    return (titles.match(/[ぁ-ゟ]/g) || []).length >= 3;
+    return { ok: (titles.match(/[ぁ-ゟ]/g) || []).length >= 3, name };
   } catch {
-    return false;
+    return { ok: false, name: "" };
   }
 }
 
@@ -362,6 +517,64 @@ async function publishApplication(env, application) {
         "- [ ] フィードと掲載名が申請者のものか",
         "- [ ] 日本語コンテンツとして掲載可能か",
         "- [ ] カテゴリと自己紹介が適切か",
+      ].join("\n"),
+      head: branch,
+      base: "main",
+    },
+  });
+  return { url: pull.html_url || null };
+}
+
+async function publishRemoval(env, matchedFeed, feedUrl, reason) {
+  const token = env.GITHUB_TOKEN;
+  const contents = await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/feeds.json?ref=main`);
+  const parsed = JSON.parse(decodeBase64Utf8(contents.content));
+  const feeds = Array.isArray(parsed.feeds) ? parsed.feeds : [];
+  parsed.feeds = feeds.filter((feed) => comparableFeedUrl(feed?.feed_url) !== feedUrl);
+  const encodedContent = encodeBase64Utf8(`${JSON.stringify(parsed, null, 1)}\n`);
+  const name = String(matchedFeed?.name || feedUrl).trim();
+  const message = `remove: ${name} を掲載削除`;
+
+  const mainRef = await githubRequest(
+    token,
+    `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/ref/heads/main`,
+  );
+  const id = await sha256(`${feedUrl}${new Date().toISOString()}`);
+  const slug = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 40) || "writer";
+  const branch = `remove/${slug}-${id.slice(0, 8)}`;
+  await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/refs`, {
+    method: "POST",
+    body: { ref: `refs/heads/${branch}`, sha: mainRef.object.sha },
+  });
+  await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/feeds.json`, {
+    method: "PUT",
+    body: {
+      message,
+      content: encodedContent,
+      sha: contents.sha,
+      branch,
+    },
+  });
+  const pull = await githubRequest(token, `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/pulls`, {
+    method: "POST",
+    body: {
+      title: `remove: ${name} を掲載削除`,
+      body: [
+        "## 削除依頼",
+        "",
+        `- 掲載名: ${name}`,
+        `- Feed URL: ${feedUrl}`,
+        `- 理由: ${reason || "理由未記入"}`,
+        "",
+        "## 確認チェックリスト",
+        "",
+        "- [ ] 削除依頼が本人または正当な関係者からのものか",
+        "- [ ] 対象フィードが掲載中の書き手と一致しているか",
+        "- [ ] 削除して問題ないか",
       ].join("\n"),
       head: branch,
       base: "main",
