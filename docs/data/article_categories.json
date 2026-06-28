@@ -102576,6 +102576,30 @@
       "hash": "0927a3016ee8b1ba4f011d1bbfebfa3072d027edea6e7cb987d380033e90d2e9",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kumanohitomiatelier.substack.com/p/7a8": {
+      "category": "子育て・家族",
+      "hash": "72217ee3f4a23232702a5528176a37c66a0890e5ac9356bd2ea41968ebc16c24",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bravelotuskiss.substack.com/p/aab": {
+      "category": "ライフスタイル",
+      "hash": "f341e134347ea36da3d4914b6d0e093a4c12327a7078c7daba4ba1fb3d78d313",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://616168.substack.com/p/20266-07a": {
+      "category": "AI",
+      "hash": "ddd6a376b34358f35816179ed05dea9640ce4b52afa7af6dbed66b4f752dfb90",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://616168.substack.com/p/20266": {
+      "category": "AI",
+      "hash": "d2b3b89b116cc2ba0b97f789df9123676a21f3c1c9ad0f8965e65cdb5dfa1257",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
