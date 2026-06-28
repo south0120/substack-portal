@@ -102600,6 +102600,36 @@
       "hash": "d2b3b89b116cc2ba0b97f789df9123676a21f3c1c9ad0f8965e65cdb5dfa1257",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://waterai.substack.com/p/19": {
+      "category": "スポーツ",
+      "hash": "0e428466f54a652ee28bd00c448bbe703a21c92f907f24bcc8389ffa17114054",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://waterai.substack.com/p/polymarket": {
+      "category": "投資・経済",
+      "hash": "c8a8a102eaf0eff66c4d04ad3dd9b3c98f603a3c671df61bc6341459fe730896",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fulltilt16.substack.com/p/877": {
+      "category": "ライフスタイル",
+      "hash": "311912c102ff2cedd5c1d77cc2421a29248c3e1f9ea5ae74af51a44f3c1bec88",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chie.substack.com/p/d2e": {
+      "category": "子育て・家族",
+      "hash": "e3c9edd3cbb07c57ed615bb4f913f598d61007452b85bc63cc40e9da2d36b460",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gygtx.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "452993f09ddb92cbb2acc9e50a6ae34f92fd728562659ef27e199426df8a558b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
