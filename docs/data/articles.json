@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T18:28:29.760653+00:00",
+  "updated_at": "2026-06-28T21:40:57.602609+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/aiwr260620-26",
+          "published": "2026-06-28T21:00:46+00:00"
+        },
+        {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/cwr260620-26",
+          "published": "2026-06-28T21:00:39+00:00"
+        },
+        {
           "title": "BitbankをSBI Holdingsが$289MでM&A、FomoにIndex Venturesが$75M出資、など全13PJ【資金調達PJまとめ】",
           "url": "https://www.debunkresearch.com/p/cwfr260620-26",
           "published": "2026-06-27T21:01:13+00:00"
-        },
-        {
-          "title": "Nearfield InstrumentsにFidelity・Temasekが$380M出資、PeregrineにFifth Down Capitalが$250M出資、など全22PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/aiwfr260620-26",
-          "published": "2026-06-27T21:01:12+00:00"
-        },
-        {
-          "title": "クリプトもAIも資金のある部分から伸びる",
-          "url": "https://www.debunkresearch.com/p/pc260627",
-          "published": "2026-06-26T21:02:04+00:00"
         }
       ]
     },
@@ -4513,6 +4513,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "latest": [
         {
+          "title": "「コンピュート」が新たな石油になる時代 / Ethlabs発足 など",
+          "url": "https://www.bspeak.xyz/p/ethlabs",
+          "published": "2026-06-28T21:30:29+00:00"
+        },
+        {
           "title": "Coinbase Venturesの投資する再保険、RWA、ステーブルコイン",
           "url": "https://www.bspeak.xyz/p/coinbase-venturesrwa",
           "published": "2026-06-21T21:30:26+00:00"
@@ -4521,11 +4526,6 @@
           "title": "パーペチュアルDEX間の証拠金を統合するインフラ",
           "url": "https://www.bspeak.xyz/p/dex-aa4",
           "published": "2026-06-07T21:30:32+00:00"
-        },
-        {
-          "title": "2026年前半 | 最近のクリプトについて",
-          "url": "https://www.bspeak.xyz/p/2026",
-          "published": "2026-05-30T09:01:09+00:00"
         }
       ]
     },
@@ -12806,6 +12806,33 @@
   ],
   "articles": [
     {
+      "title": "「コンピュート」が新たな石油になる時代 / Ethlabs発足 など",
+      "url": "https://www.bspeak.xyz/p/ethlabs",
+      "excerpt": "#442 Bspeak! 2026年6月29日号",
+      "published": "2026-06-28T21:30:29+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!qJfR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2af069f-14c1-4f0a-bbb7-0bc0b0696f49_2048x1174.png",
+      "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/aiwr260620-26",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-28T21:00:46+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!u9Xz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbde719e-78a7-47a2-85af-5e69b2ff7ea1_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/cwr260620-26",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-06-28T21:00:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!jXBh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5d5cf733-5215-43c7-945f-3ccecdbf5f09_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "BitbankをSBI Holdingsが$289MでM&A、FomoにIndex Venturesが$75M出資、など全13PJ【資金調達PJまとめ】",
       "url": "https://www.debunkresearch.com/p/cwfr260620-26",
       "excerpt": "直近1週間の資金調達情報をまとめました。",
@@ -13031,15 +13058,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【inc.fun】AIが運営する会社を立ち上げ出資するローンチパッド / @incdotfun",
-      "url": "https://www.debunkresearch.com/p/incfun",
-      "excerpt": "ミームコインの次は「アイデアからAgentic Companyを生む」ローンチパッドです。",
-      "published": "2026-06-17T21:01:13+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!cwTD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa4b03b3-b66e-44eb-8ba0-51c1768ad40b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "#113 説明できずらいものも大事にしたい",
       "url": "https://www.wha2come.xyz/p/113",
       "excerpt": "言語化の重要性と言語化で取り逃がすもの",
@@ -13056,15 +13074,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!nK1v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd357b27b-3a57-4cec-9146-0d4c459ba5d6_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "【06/12(金)~06/16(火)News Report】米政府がAnthropic最強モデルへのアクセスを全世界停止 / SalesforceがFinを36億ドルで買収 / Googleが中国系AI詐欺網を提訴など",
-      "url": "https://www.debunkresearch.com/p/ai-news260612-16",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-16T21:01:14+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!vFnH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf4e0e48-0271-4807-b557-91658e8fb330_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "#112 どうする？GOする！",
