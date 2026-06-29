@@ -10,3 +10,17 @@ database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
 
 [triggers]
 crons = ["*/10 * * * *"]
+
+# --- staging 環境（テストサイト用）---
+# `npx wrangler deploy --env staging` で fyl-api-staging を立てる。
+# D1 は本番を読み取り共有（UIテスト用）。triggers を持たない＝staging は ingest cron を回さない。
+# ⚠️ apply/remove 等の書き込みを staging で試す場合は、別 D1 ＋別 GitHub ブランチに切り替えること（本番汚染防止）。
+[env.staging]
+# cron を明示的に無効化（staging は ingest を回さない＝本番D1へ二重書き込みしない）
+[env.staging.triggers]
+crons = []
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "fyl-articles"
+database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
