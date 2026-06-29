@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T14:29:46.158302+00:00",
+  "updated_at": "2026-06-29T21:08:28.335585+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -12833,6 +12833,666 @@
         "スポーツ"
       ],
       "bio": "",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "みゆー|ワンオペママのAI時短情報収集術！",
+      "url": "https://miyu1192.substack.com/",
+      "feed_url": "https://miyu1192.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIがあれば「できない！」が「できた！」に変わる！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "デザイン経営観測所",
+      "url": "https://designnewsletter.substack.com/",
+      "feed_url": "https://designnewsletter.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "つくることが好きなデザイン会社経営者の、毎週月曜の観測記録",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "えんじこーむ@公務員→30代未経験から社内SEに転職",
+      "url": "https://engikoumu.substack.com/",
+      "feed_url": "https://engikoumu.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "公務員(市役所)→30代未経験でエンジニアに転職 →36歳で社内SEに転職→年収140万円アップ 客先常駐ゼロ。残業月10h以下 「スキルより場所で年収は決まる」を体現した人 noteで社内SE転職のリアルと、年収アップの具体的な方法を発信中",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Letter Box",
+      "url": "https://box0204.substack.com/",
+      "feed_url": "https://box0204.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Letter Box",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "TORCH の Substack",
+      "url": "https://torchnikko.substack.com/",
+      "feed_url": "https://torchnikko.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "やなぎ | AI × 動画編集を極める大学生",
+      "url": "https://yanagiai.substack.com/",
+      "feed_url": "https://yanagiai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "受験失敗してショート動画編集を始めた文系大学生 | 日本最大の動画編集サロン（参加者2,000名以上）でAI研修会とAI研究サークルを担当 | 朝活も夜活も苦手なのでスキマ時間の有効活用に命かけてます笑",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "会社員の裏羅針盤🧭｜会社では教えてくれない人生の進み方",
+      "url": "https://diagramwolf.substack.com/",
+      "feed_url": "https://diagramwolf.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "図解師★ウルフが、会社では教えてくれない、お金・キャリア・副業・発信の考え方を毎日お届けします🐺",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "村長の人生クリエイティブマガジン",
+      "url": "https://sonscreator.substack.com/",
+      "feed_url": "https://sonscreator.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "映像、写真、AI、コーヒー、身近なモノコトなどなど、幅広く語ります。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "いくみ@AIを使う旅するママ社長",
+      "url": "https://fpikumi.substack.com/",
+      "feed_url": "https://fpikumi.substack.com/feed",
+      "categories": [
+        "旅行・おでかけ"
+      ],
+      "bio": "小学生（小１、小４）のママしながら会社を経営中✨ 旅が好きで毎月どこかへ✈️substackではゆるりと裏話なんかしていきます🍒",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たくぞー｜AI動画最新情報",
+      "url": "https://tkzai.substack.com/",
+      "feed_url": "https://tkzai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "海外AI動画を速報｜最新AI動画ツールを毎日試して結果を全部公開｜AI副業2年で1500万円・SNS総フォロワー12万人｜失敗続きの50代デザイナー→AIで初めて成功｜LINEオープンチャットはこちら",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "妖精アーヤ│ラジオ＆記事",
+      "url": "https://fairyaya.substack.com/",
+      "feed_url": "https://fairyaya.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "おといし",
+      "url": "https://otoishi.substack.com/",
+      "feed_url": "https://otoishi.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "ユーザ数30万人超のプラットフォーム『Brain』社長の右腕としてライティング、マネジメント、デザイン、バックオフィスなどなんでもやりる人8年目。会社全体のパフォーマンス最大化するお仕事。教育を通して1人でも多くの人の人生を豊かに。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "でーかえちゃん| 心と身体の、秘密基地",
+      "url": "https://ponkotsudekae.substack.com/",
+      "feed_url": "https://ponkotsudekae.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "【ポンコツだって、理想の居場所は作れる。】 身体を整え、心を軽くする。飾らない「声」での交流を大切に、出会った一人ひとりと丁寧に繋がる場所を目指しています。理想のコミュニティを作るまでの過程を、等身大で配信中。|🎙️スタエフで『ポンコツ井戸端会議』開講中。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "はなもも｜ココロのやすみ処",
+      "url": "https://hanamomorestore.substack.com/",
+      "feed_url": "https://hanamomorestore.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "頑張りすぎた日に、少し呼吸を整えるための言葉を届けます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "綾@子供と毎日遊びながら在宅ワークで１５００万円を稼いだ人",
+      "url": "https://aya20210611.substack.com/",
+      "feed_url": "https://aya20210611.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "上の子１歳８ヶ月、下の子生後２ヶ月でX(Twitter)だけで３５日で１５万円達成✨｜Twitterだけで６４万円を稼いだ後、あることを組み合わせて報酬を３倍に｜子供との時間を最優先にしながらも在宅ワークで会社員時代の手取り１６万円以上の収入を得ています(*´艸`*)💕",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "不器用な会社員の生存戦略",
+      "url": "https://patrocinorvolaticus583925.substack.com/",
+      "feed_url": "https://patrocinorvolaticus583925.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "不器用な会社員の生存戦略",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ほまち堂 の Substack",
+      "url": "https://homachido.substack.com/",
+      "feed_url": "https://homachido.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "本質のコンパス",
+      "url": "https://essencecompass.substack.com/",
+      "feed_url": "https://essencecompass.substack.com/feed",
+      "categories": [
+        "教育・学び"
+      ],
+      "bio": "人生の変化の中で、本質を見極める力が大切になっている。パイロット人生で掴んだ思考法で、情報過多の時代を生き抜く知恵を、toiee.lab学習理論と実体験から共有します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆるくない納得設計ラボ｜「裏ゆなラボ」",
+      "url": "https://bmpai.substack.com/",
+      "feed_url": "https://bmpai.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "表では話せない、業界の裏話やマーケティングの闇、心理の裏テクニックなど、ちょっとヤヴァスでガチな話を暴露しちゃうメルマガです。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ヒイラギの現場AI通信",
+      "url": "https://denkiyaai.substack.com/",
+      "feed_url": "https://denkiyaai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "綺麗事のDXはもういらない。現場の1秒を削り出し「18時退社」を実現するための、AIと実戦ツールの冷徹な活用記録。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Shota@比較を止める「自分軸」の整え方",
+      "url": "https://shota1109.substack.com/",
+      "feed_url": "https://shota1109.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "「同世代と比べて焦る」を、自分らしく進む力に変える。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "カンザキハヤト",
+      "url": "https://kanzakihayato.substack.com/",
+      "feed_url": "https://kanzakihayato.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "🇷🇺 ロシア在住 | 書くこと | フリーランス 変わりたいけど動けない人へ。 語学ほぼゼロ・貯金38万・計画なしでロシアに来ました。 それでも生活できてる理由をnoteに全部書いてます。 note.com/jyo7jyo",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "どんぐりばぁばのおうち英語通信",
+      "url": "https://apostolustot479980.substack.com/",
+      "feed_url": "https://apostolustot479980.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "英語プレイデイト・フォニックス・ボートゲーム・絵本読み聞かせなど、子どもの英語力を育くむヒントをお届けします。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "しろうず｜ライフバランス × タスク管理コーチNews",
+      "url": "https://shirouzucoach.substack.com/",
+      "feed_url": "https://shirouzucoach.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "こんにちは! タスク管理、行動科学、コーチングやビジネスマインドについてお届けしていきます！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Substackアカデミー",
+      "url": "https://substaacademy.substack.com/",
+      "feed_url": "https://substaacademy.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "初心者向け、Substackに関する基礎知識が学べるサイトです。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "さくら｜人生再構築の実験室",
+      "url": "https://sakura744.substack.com/",
+      "feed_url": "https://sakura744.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "さくらです。AIを怖がっていた人間が、今では毎日のようにAIと遊びながら暮らしています。 このパブリケーションでは、回復期の日々の記録、AIを使った生活実験やミニアプリ開発、発信活動の試行錯誤を発信します。 回復しながら前に進みたい人、新しいものは苦手だけど少し気になっている人、AIを生活に取り入れてみたい人に向けて書いています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "誰にも聞けない男女の本音",
+      "url": "https://usakopairtech.substack.com/",
+      "feed_url": "https://usakopairtech.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "男の自信と活力、女の自立と魅力を育てる。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "好き、得意、詳しいことを商品にする方法",
+      "url": "https://tomozou.substack.com/",
+      "feed_url": "https://tomozou.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "あなたの「好き」「得意」「詳しい」を活かして商品を作る方法を教える象｜作った商品を必要な人に届ける方法も教える象｜コンテンツ販売・情報発信13年目｜初Brain24時間で200部販売｜その後もほぼ自動で売れ続けて1,000部突破",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たつみん│マーケティング10年目",
+      "url": "https://tatsumin.substack.com/",
+      "feed_url": "https://tatsumin.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "「寝てる間に売上が…！」の感動をお届けしたい┃兵庫の実家を建て替えて、わんこ8頭と妻、母とおばあちゃんの12人暮らし。AIを最大限に活用したハイクオリティな商品・売れる仕組みの作り方を教えてます┃発信10年目┃",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "畠山ゆな@目指せ書籍化",
+      "url": "https://novelyuna.substack.com/",
+      "feed_url": "https://novelyuna.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "私たち姉弟で小説を書いています、畠山ゆなと申します。目標は書籍化です✨もしよろしければ、レビューや感想をいただけると、姉弟ともに大変励みになります。これからも新作を公開していきますので、応援していただけると嬉しいです🙏",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ここあん|朝活達成率85%突破🎉",
+      "url": "https://8512780947.substack.com/",
+      "feed_url": "https://8512780947.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "4時起きで人生激変した朝活生活5年目のここあんです｜本業:年収2倍＆副業:月10万到達⤴️｜「朝の1時間」で人生変わる方法を毎日1つ公開📝｜習慣化ハック・ツール・失敗談をガチで垂れ流し🈲｜一緒に頑張り合える朝活仲間募集中🙌",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ひかさん🍺",
+      "url": "https://hikasan.substack.com/",
+      "feed_url": "https://hikasan.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIデジタルとアナログDIYを混ぜたモノヅクリしてます",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ひつじの部屋",
+      "url": "https://hitsujiweb.substack.com/",
+      "feed_url": "https://hitsujiweb.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "ひつじの部屋",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たいろーのAI・テック業界解説ニュースレター",
+      "url": "https://tairo.substack.com/",
+      "feed_url": "https://tairo.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "準備中ですが、楽しみながら不定期で発信していきます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ホンダアキラ｜バイト×フリーランス",
+      "url": "https://hondaakira.substack.com/",
+      "feed_url": "https://hondaakira.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "広島在住｜46歳｜アルバイト×フリーランス｜イラ通会員",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "さゆ吉🐱イラストレーター",
+      "url": "https://sayukichi.substack.com/",
+      "feed_url": "https://sayukichi.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "I'm a commercial illustrator based in Japan, working on children's books and educational materials. I also create my own comics featuring charming character designs. I love building time-saving tools using AI to support creative workflows. ✏️🛠️",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆふ|楽しすぎる読書",
+      "url": "https://yufubooks.substack.com/",
+      "feed_url": "https://yufubooks.substack.com/feed",
+      "categories": [
+        "教育・学び"
+      ],
+      "bio": "読書がもっと楽しくなる超ポジティブ本紹介｜家事育児ズボラ｜ワンオペ（1歳3歳）｜キャリ孔ファミリー",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ACTan",
+      "url": "https://actan365.substack.com/",
+      "feed_url": "https://actan365.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "ACTan",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "てるまにの部屋",
+      "url": "https://terumani.substack.com/",
+      "feed_url": "https://terumani.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "日常を少し大げさに切り取って人生を楽しむ切り口をお届け！あなたが僕の投稿でクスッと笑って明日の活力にしてくれたら最高です。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "なぎかぜ｜AIで「書く」を時短して、副収入を育てる人",
+      "url": "https://nhirolab0205.substack.com/",
+      "feed_url": "https://nhirolab0205.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIで「書く」を時短して、副収入を育てる人。 元プログラマ／IT講師。 忙しい40代・50代会社員向けに、X・ブログ・note・メールをラクに書く方法を発信しています。 「時間がない」「続かない」をAIで解決。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆはな＠スキマ時間だけで稼ぐ副業パパ",
+      "url": "https://yuhananft.substack.com/",
+      "feed_url": "https://yuhananft.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "このメルマガでは、毎日残業しながらAIで月10万つくる副業パパの頭の中や実践記録を毎週お届けします。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "カイト",
+      "url": "https://roicompass.substack.com/",
+      "feed_url": "https://roicompass.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "カイト",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "吉田の五輪書",
+      "url": "https://5rinsho.substack.com/",
+      "feed_url": "https://5rinsho.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "よしだ健康の裏メルマガです。※承認制です",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "センスオブワンダーな暮らし",
+      "url": "https://yukkochi.substack.com/",
+      "feed_url": "https://yukkochi.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "山と海のある暮らしの中で、小さな気付きと可能性を再発見。 なんでもない日々にもう一度、感動するために。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "にしえみどり",
+      "url": "https://nishiemidori.substack.com/",
+      "feed_url": "https://nishiemidori.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "イケハヤさんのススメで初めてみました。 岡山県の山の中で元気に暮らすアラフォーです❗️音声配信が大好きです❗️ よろしくお願いします👍",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "おはぎ｜暮らしの実験室",
+      "url": "https://0hagi.substack.com/",
+      "feed_url": "https://0hagi.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "おはぎ｜暮らしの実験室",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たろちん|語り人",
+      "url": "https://tarochin098.substack.com/",
+      "feed_url": "https://tarochin098.substack.com/feed",
+      "categories": [
+        "旅行・おでかけ"
+      ],
+      "bio": "揺らぎの中にある記憶を辿る旅。 ルーツである与那国島や琉球弧を起点に、 海から見えるもう一つの日本を辿っています。 沖縄、御嶽、唄、祭祀、旅、琉球神話、境界線。 島々に残された記憶や感覚を手がかりに、 「端」と呼ばれてきた場所から世界を見直しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ふくふくろう 植物観察",
+      "url": "https://fukufukurou.substack.com/",
+      "feed_url": "https://fukufukurou.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "朝の１分、植物にふれる時間を🌸 「毎日の誕生花」「季節の植物写真」を、無料メルマガでお届けしています。ほんの少し心がやわらぐ時間になりますように🍃",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Masayuki Otawara MD, PhD｜医療AI",
+      "url": "https://cursorversssss.substack.com/",
+      "feed_url": "https://cursorversssss.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "『医療 × AI』『AIに臨床の魂を』｜大田原正幸 ｜医療AIガバナンス・監査『Cursorvers株式会社』Founder｜医療現場から「責任あるAI」を問う｜救命救急医・集中治療医・統括DMAT・産業医｜医療安全推進学会理事｜Newspicks expert｜岡山県出身｜仕事のご依頼はフォームにて▽",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ソラ",
+      "url": "https://solanyan.substack.com/",
+      "feed_url": "https://solanyan.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "絵を描いたり作詞をしたりする、心の冒険家。 猫たちと暮らしている、猫のような人間です。うっかり人間に生まれてきた猫というほうが、しっくりくるかも🐱 場面緘黙症経験者。 ADHDぽくて、ASDぽくて、エンパスぽいです。 立派な都会もなく、自然豊かな田舎でもない、中途半端な過疎町に暮らしています。 ここでは私自身の心の動きや日常の出来事など、ゆっくりまったり、赤裸々に語っていきます。ゆっくりペースな発信です。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "あさひ@CNPおくすり手帳&おうち防災ノート",
+      "url": "https://asahinote.substack.com/",
+      "feed_url": "https://asahinote.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "薬剤師💊｜CNPおくすり手帳・CNPおうち防災カード制作 📖CNPおうち防災ノート制作中 薬・健康・衛生の視点から、防災をもっと身近に。 2027年 医療×ざっかふぇす出展が目標🌸 リンク先で販売中です💡",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ちゃんさと",
+      "url": "https://chansato.substack.com/",
+      "feed_url": "https://chansato.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "福祉やりながら色々情報を発信してます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "普通じゃなくていい、あなたらしくていい。",
+      "url": "https://ayumimu.substack.com/",
+      "feed_url": "https://ayumimu.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "普通じゃなくていい、わたしらしくていい。あなたらしくていい。｜猫と彼と暮らす40歳。書いて、ときどき話します｜葛藤も挫折も喜びも、言葉にしていきたい｜書くと心は軽くなる",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ニタ（中山博之）｜AI時代の実験者",
+      "url": "https://keirinita.substack.com/",
+      "feed_url": "https://keirinita.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "米国のMAツールのGoHighLevelのオタクです、 日本で広めようと頑張っています。また、AIグーグルアンチグラビティでいろんな活用事例などもノートなどで発信しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "サブスタの歩き方｜書く・届ける・続けるコラム",
+      "url": "https://fapen.substack.com/",
+      "feed_url": "https://fapen.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Substackを始めたばかりの人へ。 一足先に調べて、試して、迷わず続けるためのコツを案内します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "六曜広報部のAI創作通信",
+      "url": "https://rokuyou.substack.com/",
+      "feed_url": "https://rokuyou.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "「気軽に始めて、きちんと終わる創作」をAIと共に実現すべく、何気なくやっていることをTIPSにして配信します。この記事やニュースレターを読むと、各種LLMとComfyUI、Krita AI Diffusionを創作の相棒にできます！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "おうちnomad",
+      "url": "https://ouchinomad.substack.com/",
+      "feed_url": "https://ouchinomad.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "柊とおこです。 ここでは、日々の学びや気づきをもとに、 自分らしく働き、暮らしを整えていくための種をお届けします。 情報が多すぎる時代。 焦って動くよりも、自分に合う選択肢をひとつずつ見つけていきたい。 日々の発信では流れてしまう考えも、 ここでは少し深く、落ち着いて書いていくつもりです。 更新は、まずは週1回ほど。 よければ、気軽に登録して読んでみてください。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "やなの「地縁のその先」",
+      "url": "https://yanaaiboumori.substack.com/",
+      "feed_url": "https://yanaaiboumori.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "お寺、家族、子育てを通して、変わりゆく時代のお寺のあり方を模索する記録です。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "明鏡実践中パンダ｜夢はフリースクール運営",
+      "url": "https://kentapanda.substack.com/",
+      "feed_url": "https://kentapanda.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "２年間副業で稼げていません。ここから『明鏡』で学習して月10万円を作ります。その過程を全て公開（週１コラム）。応援してくれる人・見届けてくれる人を募集中。最終目標は収益×投資で資産１億円を作り、世の困っている子ども達のためのフリースクールを作ること。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "りえ｜音と暮らしと伯耆",
+      "url": "https://riepyon.substack.com/",
+      "feed_url": "https://riepyon.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "音楽、暮らし、移住、地域のことを、少しずつ記録しています。衣食住を整えながら、地に足のついた音を育てていくことが私の軸です。三重から東京へ、ドイツを経て、ふたたび東京へ。そして鳥取県へ。地域・教育・デジタルをゆるやかにつなぎ、人と人が出会う入口づくりを大切にしています。",
       "avatar": "",
       "latest": []
     }
