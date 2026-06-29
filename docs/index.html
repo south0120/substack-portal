@@ -925,7 +925,7 @@ function syncFavoriteButtons(){
     const on = favorites.has(button.dataset.favoriteId);
     button.classList.toggle("on", on);
     button.setAttribute("aria-pressed", String(on));
-    button.setAttribute("aria-label", `${button.dataset.favoriteName || "発行物"}を${on ? "お気に入りから外す" : "お気に入りに追加"}`);
+    button.setAttribute("aria-label", `${button.dataset.favoriteName || "発行物"}を${on ? "お気に入りから解除" : "お気に入りに追加"}`);
     button.textContent = on ? "♥" : "♡";
   });
 }
@@ -1012,7 +1012,7 @@ function writerCard(writer){
           <button type="button" class="writer-favorite${favorite ? " on" : ""}"
             data-favorite-id="${esc(favId)}" data-favorite-name="${esc(writer.name)}"
             aria-pressed="${favorite ? "true" : "false"}"
-            aria-label="${esc(writer.name)}を${favorite ? "お気に入りから外す" : "お気に入りに追加"}">${favorite ? "♥" : "♡"}</button>
+            aria-label="${esc(writer.name)}を${favorite ? "お気に入りから解除" : "お気に入りに追加"}">${favorite ? "♥" : "♡"}</button>
         </div>
         <p class="bio">${esc(writer.bio)}</p>
       </div>
@@ -1611,18 +1611,21 @@ function renderFavorites(){
   );
   const requestId = ++favoriteArticlesRequestId;
   if(!writers.length){
+    const loadingWriters = API_MODE && !writersLoaded;
     root.innerHTML = `
       <div class="favorites-head">
         <div>
           <h1 class="favorites-title">お気に入り</h1>
-          <p class="favorites-note">発行物カードの♡で、あなたの棚に書き手を追加できます。</p>
         </div>
       </div>
       <div class="no-results">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 7.6c0 5.2-8.8 10.4-8.8 10.4S3.2 12.8 3.2 7.6A4.4 4.4 0 0 1 12 6a4.4 4.4 0 0 1 8.8 1.6Z"/></svg>
-        <b>${API_MODE && !writersLoaded ? "発行物を読み込んでいます" : "あなたの棚はまだ空です"}</b>
-        発行物カードの♡で、あなたの棚に書き手を追加できます。
+        <b>${loadingWriters ? "発行物を読み込んでいます" : "まだ棚は空です"}</b>
+        気になる書き手の♡を押すと、ここに集まります。
+        ${loadingWriters ? "" : `<button type="button" class="more" id="favoritesDiscover">発行物をさがす</button>`}
       </div>`;
+    const discover = document.getElementById("favoritesDiscover");
+    if(discover) discover.addEventListener("click", () => setView("shelf"));
     return;
   }
   root.innerHTML = `
