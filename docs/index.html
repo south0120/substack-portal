@@ -2257,7 +2257,14 @@ async function load(){
 
 load();
 if("serviceWorker" in navigator){
-  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+  // staging/プレビュー(.pages.dev)では SW を使わない＝常に最新を表示。既存SW/キャッシュは掃除する
+  const isPreviewHost = /(^|\.)staging\b/.test(location.hostname) || /\.pages\.dev$/.test(location.hostname);
+  if(isPreviewHost){
+    navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {});
+    if(window.caches) caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(() => {});
+  } else {
+    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+  }
 }
 </script>
 </body>
