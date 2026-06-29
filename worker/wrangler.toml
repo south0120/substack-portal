@@ -20,6 +20,8 @@ crons = ["*/10 * * * *"]
 [env.staging.triggers]
 crons = []
 
+# 既定は本番D1を読み取り共有（Phase A/B のUIテスト用＝全カタログ）。
+# email駆動の検証時のみ一時的に fyl-articles-staging (237e1aa6...) に差し替えて deploy する。
 [[env.staging.d1_databases]]
 binding = "DB"
 database_name = "fyl-articles"
