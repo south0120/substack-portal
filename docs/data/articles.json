@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T23:31:48.419779+00:00",
+  "updated_at": "2026-06-29T05:12:25.344360+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -12800,6 +12800,17 @@
         "AI"
       ],
       "bio": "IT苦手・AI初心者・非エンジニア向けのAI情報発信！ AIの苦手意識がゼロになる💻 最新のAIニュースから ✔ 時短✔",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "むかちゃん",
+      "url": "https://mukachan.substack.com/",
+      "feed_url": "https://mukachan.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "",
       "avatar": "",
       "latest": []
     }
