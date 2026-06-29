@@ -7,3 +7,15 @@ compatibility_date = "2026-05-01"
 [[r2_buckets]]
 binding = "EMAILS"
 bucket_name = "fyl-emails"
+
+[env.staging]
+name = "fyl-email-staging"
+
+[[env.staging.r2_buckets]]
+binding = "EMAILS"
+bucket_name = "fyl-emails"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "fyl-articles-staging"
+database_id = "237e1aa6-a02a-4ffb-a71c-11214aa5303d"

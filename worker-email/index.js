@@ -1,7 +1,9 @@
-// FYL メール受信ワーカー（Stage 1: 受信して貯めるだけ）。
+import PostalMime from "postal-mime";
+
+// FYL メール受信ワーカー（Stage 2: 受信保存 + 投稿メールだけD1へ取込）。
 // Cloudflare Email Routing で inbox@findyourletter.com をこのワーカーにルーティングする。
 // 各 Substack の新着投稿メールが届いたら、生メール(.eml)をそのまま R2 に保存する。
-// パース/D1取込は Stage 2 で別途。ここは「1通も損しない」ことだけが責務。
+// パース/D1取込は失敗しても受信保存を止めない。「1通も損しない」ことを優先。
 
 const SAN = /[^A-Za-z0-9._@-]+/g;
 
@@ -11,6 +13,103 @@ function sanitize(value, max = 80) {
 
 function pad(n) {
   return String(n).padStart(2, "0");
+}
+
+function headerValue(headers, name) {
+  const target = name.toLowerCase();
+  if (!headers) return "";
+  if (typeof headers.get === "function") return headers.get(name) || headers.get(target) || "";
+  const found = headers.find?.((h) => String(h?.key || h?.name || "").toLowerCase() === target);
+  return found?.value || "";
+}
+
+function isoDate(value) {
+  if (!value) return null;
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+async function sha256(value) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)]
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function extractPost(rawArrayBuffer) {
+  const parsed = await PostalMime.parse(rawArrayBuffer);
+  const listId = headerValue(parsed.headers, "list-id");
+  const listMatch = String(listId).match(/<?([a-z0-9-]+)\.substack\.com>?/i);
+  if (!listMatch) return null;
+
+  // 正規の /p/ 直リンクは text パートにある。HTML側はトラッキング転送(redirect)で
+  // 包まれていて直リンクが無いことが多いので、text→html の順で連結して探索する。
+  const body = `${parsed.text || ""}\n${parsed.html || ""}`;
+  const urlMatch = body.match(/https?:\/\/([a-z0-9-]+)\.substack\.com\/p\/[a-z0-9\-%]+/i);
+  if (!urlMatch) return null;
+
+  const u = new URL(urlMatch[0]);
+  u.search = "";
+  u.hash = "";
+  return {
+    subdomain: listMatch[1].toLowerCase(),
+    url: u.toString(),
+    title: parsed.subject || "",
+    date: parsed.date || null,
+  };
+}
+
+async function knownFeed(env, subdomain) {
+  const feedUrl = `https://${subdomain}.substack.com/feed`;
+  const row = await env.DB.prepare(
+    "SELECT name, categories FROM writers WHERE feed_url = ? LIMIT 1"
+  ).bind(feedUrl).first();
+  if (!row) return null;
+
+  let categories = [];
+  try {
+    categories = JSON.parse(row.categories || "[]");
+  } catch {
+    categories = [];
+  }
+  return { writer: row.name, category: categories[0] || "その他" };
+}
+
+async function upsertEmailArticle(env, post, feed) {
+  const id = await sha256(post.url);
+  const article = env.DB.prepare(`
+    INSERT INTO articles
+      (id, url, title, excerpt, image, published, writer, category, is_audio)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)
+    ON CONFLICT(url) DO UPDATE SET
+      published = COALESCE(excluded.published, articles.published)
+  `).bind(
+    id,
+    post.url,
+    post.title,
+    "",
+    "",
+    isoDate(post.date),
+    feed.writer,
+    feed.category,
+  );
+  const writer = env.DB.prepare("UPDATE writers SET updated_at=datetime('now') WHERE name=?").bind(feed.writer);
+  await env.DB.batch([article, writer]);
+  return id;
+}
+
+async function processPost(env, rawArrayBuffer) {
+  try {
+    const post = await extractPost(rawArrayBuffer);
+    if (!post) return { skipped: "not-a-post" };
+    const feed = await knownFeed(env, post.subdomain);
+    if (!feed) return { skipped: "unknown-feed", subdomain: post.subdomain };
+    await upsertEmailArticle(env, post, feed);
+    return { upserted: true, url: post.url, writer: feed.writer };
+  } catch (e) {
+    return { error: String(e) };
+  }
 }
 
 export default {
@@ -42,6 +141,8 @@ export default {
         rawSize: String(raw.byteLength),
       },
     });
+    // D1取込は保存後に裏で走らせる。失敗しても受信/R2保存には影響させない。
+    if (env.DB) ctx.waitUntil(processPost(env, raw).catch(() => {}));
     // ハンドラは raw を消費済みなのでメールは破棄されず保存完了。
   },
 
@@ -70,6 +171,38 @@ export default {
         }))
         .sort((a, b) => String(b.uploaded).localeCompare(String(a.uploaded)));
       return Response.json({ count: items.length, truncated: listed.truncated, items });
+    }
+    // R2全件を再処理してD1へ反映（staging検証用）。LIST_TOKEN secret で保護
+    if (url.pathname === "/reprocess") {
+      if (!env.LIST_TOKEN || url.searchParams.get("token") !== env.LIST_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      if (!env.DB) return Response.json({ error: "DB binding missing" }, { status: 500 });
+
+      let cursor;
+      let total = 0;
+      let upserted = 0;
+      let skippedUnknown = 0;
+      let skippedNotPost = 0;
+      let errors = 0;
+      const samples = [];
+
+      do {
+        const listed = await env.EMAILS.list({ limit: 1000, cursor });
+        for (const item of listed.objects) {
+          total++;
+          const obj = await env.EMAILS.get(item.key);
+          const result = obj ? await processPost(env, await obj.arrayBuffer()) : { error: "not found" };
+          if (result.upserted) upserted++;
+          else if (result.skipped === "unknown-feed") skippedUnknown++;
+          else if (result.skipped === "not-a-post") skippedNotPost++;
+          else if (result.error) errors++;
+          if (samples.length < 10) samples.push({ key: item.key, result });
+        }
+        cursor = listed.truncated ? listed.cursor : undefined;
+      } while (cursor);
+
+      return Response.json({ total, upserted, skippedUnknown, skippedNotPost, errors, samples });
     }
     // 受信メールの生本文を取得（監視/デバッグ用）。i=新しい順のインデックス
     if (url.pathname === "/get") {

@@ -1,0 +1,16 @@
+{
+  "name": "worker-email",
+  "version": "1.0.0",
+  "description": "Substack の新着投稿メールを受信し、生メール(.eml)をそのまま R2 に保存する。 イベント駆動取込のうち「受信して貯める」だけを担う。パース→D1取込は Stage 2（別途）。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "postal-mime": "^2.7.5"
+  }
+}
