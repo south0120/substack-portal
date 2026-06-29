@@ -1,0 +1,5 @@
+node_modules/
+.wrangler/
+**/__pycache__/
+worker-email/dbg.mjs
+.DS_Store
