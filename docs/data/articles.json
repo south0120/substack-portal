@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T10:09:43.599965+00:00",
+  "updated_at": "2026-06-29T14:29:46.158302+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -550,7 +550,7 @@
           "published": "2026-06-26T16:46:37+00:00"
         },
         {
-          "title": "がんばれない6月に「がんばれ」と言う自分",
+          "title": "理由もないのに沈む6月に、自分を責めないで",
           "url": "https://www.yukarik.com/p/6",
           "published": "2026-06-24T10:38:12+00:00"
         },
@@ -12813,6 +12813,28 @@
       "bio": "",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "サノッチのAI実践記 ＆ 独立へのロードマップ",
+      "url": "https://yosuke0930.substack.com/",
+      "feed_url": "https://yosuke0930.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ピッチサイド・インサイト：サッカー指導者のノート",
+      "url": "https://footballnote.substack.com/",
+      "feed_url": "https://footballnote.substack.com/feed",
+      "categories": [
+        "スポーツ"
+      ],
+      "bio": "",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
@@ -12916,9 +12938,9 @@
       "category": "投資・経済"
     },
     {
-      "title": "がんばれない6月に「がんばれ」と言う自分",
+      "title": "理由もないのに沈む6月に、自分を責めないで",
       "url": "https://www.yukarik.com/p/6",
-      "excerpt": "6月病という名の、真面目すぎる人への処方箋",
+      "excerpt": "梅雨、気圧、祝日のない日々。真面目な人ほど疲れが出る季節の話",
       "published": "2026-06-24T10:38:12+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!ZDnl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1194588f-0435-40a3-889f-825661ae0e8c_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
