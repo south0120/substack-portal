@@ -52,11 +52,25 @@ async function extractPost(rawArrayBuffer) {
   const u = new URL(urlMatch[0]);
   u.search = "";
   u.hash = "";
+
+  // カバー/本文画像: メールHTMLに埋まっている substackcdn の post-media 画像の先頭。
+  // 巡回(cron)が後追いで来ない可能性があるので、メール時点でサムネを確保する。
+  const imgs = String(parsed.html || "").match(/https:\/\/substackcdn\.com\/image\/fetch\/[^"'\s)]+/gi) || [];
+  const image = imgs.find((x) => /substack-post-media/.test(x)) || "";
+
+  // excerpt: 本文テキストから定型文(「web で見る」リンク・購読のお願い等)を除いた最初の中身。
+  const excerpt = String(parsed.text || "")
+    .split(/\n/).map((s) => s.trim())
+    .filter((s) => s && !/View this post on the web|無料購読|有料購読|皆さまの支援によって|今後の配信も見逃さない/.test(s))
+    .join(" ").replace(/\s+/g, " ").slice(0, 180);
+
   return {
     subdomain: listMatch[1].toLowerCase(),
     url: u.toString(),
     title: parsed.subject || "",
     date: parsed.date || null,
+    image,
+    excerpt,
   };
 }
 
@@ -78,18 +92,21 @@ async function knownFeed(env, subdomain) {
 
 async function upsertEmailArticle(env, post, feed) {
   const id = await sha256(post.url);
+  // 既存行(巡回が入れた本データ)は壊さない。excerpt/image は「空のときだけ」メール値で補完する。
   const article = env.DB.prepare(`
     INSERT INTO articles
       (id, url, title, excerpt, image, published, writer, category, is_audio)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, 0)
     ON CONFLICT(url) DO UPDATE SET
-      published = COALESCE(excluded.published, articles.published)
+      published = COALESCE(excluded.published, articles.published),
+      excerpt = CASE WHEN articles.excerpt IS NULL OR articles.excerpt = '' THEN excluded.excerpt ELSE articles.excerpt END,
+      image = CASE WHEN articles.image IS NULL OR articles.image = '' THEN excluded.image ELSE articles.image END
   `).bind(
     id,
     post.url,
     post.title,
-    "",
-    "",
+    post.excerpt || "",
+    post.image || "",
     isoDate(post.date),
     feed.writer,
     feed.category,
