@@ -66,6 +66,10 @@
   .net-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px;font-size:.8rem}
   .net-controls input[type=search]{padding:6px 9px;border:1px solid var(--line);border-radius:8px;font-size:.8rem;background:var(--card);color:var(--ink)}
   .net-controls button{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;color:var(--ink)}
+  .net-line-mode{display:inline-flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+  .net-line-mode span{padding:0 7px;color:var(--sub);font-weight:700}
+  .net-line-mode button{border:0;border-left:1px solid var(--line);border-radius:0;padding:6px 9px;background:transparent}
+  .net-line-mode button.on{background:var(--brand);color:#fff}
   .net-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin-bottom:10px;font-size:.72rem;color:var(--sub)}
   .net-help{margin:0 0 10px;font-size:.74rem}
   .net-help>summary{cursor:pointer;color:var(--brand);font-weight:700;list-style:none;display:inline-flex;align-items:center;gap:5px;user-select:none}
@@ -271,6 +275,7 @@
         <label><input type="checkbox" id="netHideList"> リストを隠す</label>
         <label><input type="checkbox" id="netNeighborLabels" checked> 関連名を表示</label>
         <label><input type="checkbox" id="netShowEdges" checked> 線を表示</label>
+        <span class="net-line-mode" id="netLineMode" role="group" aria-label="線モード"><span>線モード</span><button type="button" class="on" data-line-mode="mutual">相互</button><button type="button" data-line-mode="out">推薦</button><button type="button" data-line-mode="in">被推薦</button></span>
         <label><input type="checkbox" id="netRadial"> 放射状に整列</label>
         <label>重み <select id="netWeight"><option value="indeg">被推薦</option><option value="pagerank">PageRank</option></select></label>
         <label>クラスタ <select id="netClusterBy"><option value="cat">カテゴリ</option><option value="community">界隈(自動検出)</option></select></label>
@@ -683,6 +688,7 @@ function showTab(name){
   document.getElementById("tabNetwork").hidden = name!=="network";
   if(name==="discovery" && !DISC.loaded) loadDiscovery();
   if(name==="network" && !NET.started) loadNetwork();
+  else if(name==="network" && NET.started){ resizeNet(); drawNet(); if(netLineAnimating()) wakeNet(); }
 }
 document.querySelectorAll(".admin-tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
 
@@ -765,7 +771,7 @@ document.querySelector("[data-disc-csv]").addEventListener("click",()=>{
 // ===== ネットワークタブ（力学グラフ / canvas） =====
 const NET = { raw:null, started:false, nodes:[], edges:[], byId:{}, alpha:0, raf:null,
   view:{x:0,y:0,k:1}, drag:null, panning:null, hover:null, moved:false, down:null,
-  canvas:null, ctx:null, W:0, H:0, highlight:"", focus:null, focusSet:null };
+  canvas:null, ctx:null, W:0, H:0, highlight:"", focus:null, focusSet:null, lineMode:"mutual" };
 const NET_CATCOLORS = {"AI":"#8b6cff","テクノロジー":"#39a0ff","ビジネス":"#ff8a3d","投資・経済":"#ffc73d","クリエイティブ":"#ff5e9c","エンタメ":"#ff5252","ライフスタイル":"#37d99b","健康・ウェルネス":"#26c6a6","社会・文化":"#a99bff","キャリア・働き方":"#ffab40","スポーツ":"#4dd0e1","学び・教育":"#9ccc65","旅行・地域":"#7ed957","フード":"#ffd54f","子育て":"#f06fa0","スピリチュアル":"#b39ddb","外部":"#6b645c","その他":"#b0a89e"};
 function netColor(c){ return NET_CATCOLORS[c] || "#b0a89e"; }
 function communityColor(id){ if(id<0) return "#888"; return `hsl(${(id*53)%360},62%,60%)`; }
@@ -880,11 +886,16 @@ function resizeNet(){
   c.width=w*dpr; c.height=h*dpr;
   NET.ctx.setTransform(dpr,0,0,dpr,0,0);
 }
-function reheatNet(){ resizeNet(); NET.alpha=1; NET.needFit=true; if(NET.raf) cancelAnimationFrame(NET.raf); fitNet(false); stepNet(); }
+function netLineAnimating(){ return NET.focus && NET.lineMode!=="mutual"; }
+function wakeNet(){ if(!NET.raf && !document.getElementById("tabNetwork").hidden) NET.raf=requestAnimationFrame(stepNet); }
+function stopNetLineRaf(){ if(NET.raf && NET.alpha<=0.02 && !NET.drag){ cancelAnimationFrame(NET.raf); NET.raf=null; } }
+function reheatNet(){ resizeNet(); NET.alpha=1; NET.needFit=true; if(NET.raf) cancelAnimationFrame(NET.raf); NET.raf=null; fitNet(false); stepNet(); }
 function stepNet(){
   if(document.getElementById("tabNetwork").hidden){ NET.raf=null; return; }
-  tickNet(); drawNet(); NET.alpha*=0.985;
-  if(NET.alpha>0.02 || NET.drag){ NET.raf=requestAnimationFrame(stepNet); }
+  const moving = NET.alpha>0.02 || NET.drag;
+  if(moving){ tickNet(); NET.alpha*=0.985; }
+  drawNet();
+  if(moving || netLineAnimating()){ NET.raf=requestAnimationFrame(stepNet); }
   else { NET.raf=null; if(NET.needFit && !NET.focus){ NET.needFit=false; resizeNet(); fitNet(true); } }   // レイアウト収束後に全体表示へフィット
 }
 function tickNet(){
@@ -912,17 +923,40 @@ function tickNet(){
 function sx_(x){ return x*NET.view.k+NET.view.x+NET.W/2; }
 function sy_(y){ return y*NET.view.k+NET.view.y+NET.H/2; }
 function toWorld(sx,sy){ return [(sx-NET.view.x-NET.W/2)/NET.view.k, (sy-NET.view.y-NET.H/2)/NET.view.k]; }
+function drawFlowLine(e, mode){
+  const ctx=NET.ctx, x1=sx_(e.s.x), y1=sy_(e.s.y), x2=sx_(e.t.x), y2=sy_(e.t.y);
+  const dx=x2-x1, dy=y2-y1, len=Math.sqrt(dx*dx+dy*dy);
+  if(len<4) return;
+  const out=mode==="out", color=out?(NET.focus.color||"#ff9a52"):"#b0a89e";
+  ctx.save();
+  ctx.strokeStyle=out?"rgba(255,154,82,0.24)":"rgba(176,168,158,0.20)";
+  ctx.lineWidth=Math.max(1,1.15*NET.view.k);
+  ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  const space=22, r=Math.max(2.1,Math.min(4.2,2.4*NET.view.k)), speed=0.075;
+  const phase=(performance.now()*speed)%space;
+  ctx.fillStyle=color; ctx.shadowColor=color; ctx.shadowBlur=7; ctx.globalAlpha=0.95;
+  for(let d=phase; d<len; d+=space){
+    const t=d/len;
+    ctx.beginPath(); ctx.arc(x1+dx*t,y1+dy*t,r,0,7); ctx.fill();
+  }
+  ctx.restore();
+}
 function drawNet(){
   const ctx=NET.ctx, k=NET.view.k, hl=NET.highlight, fc=NET.focus, fset=NET.focusSet, cf=NET.commFilter;
   ctx.clearRect(0,0,NET.W,NET.H);
   ctx.lineWidth=Math.max(0.3,0.4*k);
   const showEdges = !document.getElementById("netShowEdges") || document.getElementById("netShowEdges").checked;
+  const lineMode = fc ? NET.lineMode : "mutual";
   for(const e of NET.edges){
     if(fc){ if(e.s!==fc && e.t!==fc) continue; }                 // フォーカス中は中心ノードに接続する線だけ
     else if(!showEdges) continue;                                // 全体表示で「線を表示」OFFなら線を描かない
+    if(lineMode==="out" && e.s!==fc) continue;
+    if(lineMode==="in" && e.t!==fc) continue;
     const on = fc ? true : (cf!=null ? (e.s.community===cf && e.t.community===cf) : (!hl || e.s.name.toLowerCase().includes(hl)||e.t.name.toLowerCase().includes(hl) || e.s===NET.hover||e.t===NET.hover));
-    ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.05)";   // 白い細い線（全体はかろうじて見える程度）
-    ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
+    if(lineMode==="mutual"){
+      ctx.strokeStyle = on ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.05)";   // 白い細い線（全体はかろうじて見える程度）
+      ctx.beginPath(); ctx.moveTo(sx_(e.s.x),sy_(e.s.y)); ctx.lineTo(sx_(e.t.x),sy_(e.t.y)); ctx.stroke();
+    } else drawFlowLine(e,lineMode);
   }
   const hideBg = fc && document.getElementById("netHideBg") && document.getElementById("netHideBg").checked;
   for(const n of NET.nodes){
@@ -1034,8 +1068,9 @@ function focusNode(node){
     for(const n of NET.nodes){ if(NET.focusSet.has(n.id)){ mnx=Math.min(mnx,n.x); mny=Math.min(mny,n.y); mxx=Math.max(mxx,n.x); mxy=Math.max(mxy,n.y); } }
     fitBox(mnx,mny,mxx,mxy,true,2.2);
   }
+  if(netLineAnimating()) wakeNet();
 }
-function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; const uf=document.getElementById("netUserFilter"); if(uf) uf.value=""; restoreEgo(true); }
+function clearFocus(){ if(!NET.focus) return; NET.focus=null; NET.focusSet=null; document.getElementById("netDetail").hidden=true; const uf=document.getElementById("netUserFilter"); if(uf) uf.value=""; restoreEgo(true); stopNetLineRaf(); }
 function renderNetDetail(node,out,inc){
   const uniq=arr=>{ const s=new Set(),r=[]; for(const n of arr){ if(!s.has(n.id)){ s.add(n.id); r.push(n); } } return r; };
   out=uniq(out); inc=uniq(inc);
@@ -1150,6 +1185,7 @@ document.getElementById("netClusterBy").addEventListener("change",()=>{ if(NET.r
 document.getElementById("netCommunityFilter").addEventListener("change",function(){
   NET.commFilter = this.value===""? null : Number(this.value);
   NET.focus=null; NET.focusSet=null;   // 界隈絞り込みとノードフォーカスは排他
+  stopNetLineRaf();
   if(NET.commFilter!=null){
     renderCommunityMembers(NET.commFilter);
     const ms=NET.nodes.filter(n=>n.community===NET.commFilter);
@@ -1186,6 +1222,12 @@ document.addEventListener("fullscreenchange",()=>{
 document.getElementById("netHideBg").addEventListener("change", drawNet);
 document.getElementById("netNeighborLabels").addEventListener("change", drawNet);
 document.getElementById("netShowEdges").addEventListener("change", drawNet);
+document.querySelectorAll("#netLineMode [data-line-mode]").forEach(b=>b.addEventListener("click",()=>{
+  NET.lineMode=b.dataset.lineMode || "mutual";
+  document.querySelectorAll("#netLineMode [data-line-mode]").forEach(x=>x.classList.toggle("on", x===b));
+  drawNet();
+  if(netLineAnimating()) wakeNet(); else stopNetLineRaf();
+}));
 document.getElementById("netRadial").addEventListener("change",()=>{ if(NET.focus) focusNode(NET.focus); });
 document.getElementById("netHideList").addEventListener("change",()=>{
   document.getElementById("netDetail").hidden = document.getElementById("netHideList").checked || !NET.focus;

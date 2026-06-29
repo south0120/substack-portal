@@ -7,3 +7,22 @@ compatibility_date = "2026-05-01"
 [[r2_buckets]]
 binding = "EMAILS"
 bucket_name = "fyl-emails"
+
+# 本番D1。受信メールを email() ハンドラから直接 upsert する（push 取込）。
+# このバインドが付くと Stage2 が有効化される（無ければ R2 保存のみ＝Stage1 のまま）。
+[[d1_databases]]
+binding = "DB"
+database_name = "fyl-articles"
+database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
+
+[env.staging]
+name = "fyl-email-staging"
+
+[[env.staging.r2_buckets]]
+binding = "EMAILS"
+bucket_name = "fyl-emails"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "fyl-articles-staging"
+database_id = "237e1aa6-a02a-4ffb-a71c-11214aa5303d"
