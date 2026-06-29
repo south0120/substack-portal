@@ -103452,6 +103452,474 @@
       "hash": "3a17f8e244e748c3ce9d781be35a18418d793e704837fe20107160f52b4fbb24",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://keitoaiweb.substack.com/p/20sns": {
+      "category": "ビジネス",
+      "hash": "f4954a83c5ccd1819daa8608c1cfdbbb917f548417f650c2b984792c4e3e316b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/f7a": {
+      "category": "ライフスタイル",
+      "hash": "b139315655cf9f986175c7644cfcb76df0efe0cbd0cd83d5b006ce5d248f0745",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/b3b": {
+      "category": "読書",
+      "hash": "6f80bbf794d1fb81fd23449e5779838381a31afa59f3454609ea25b38052a4c9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fujin.substack.com/p/2026ai": {
+      "category": "AI",
+      "hash": "a2be7fdb85884a17af070a061a054c0532e54bde4f646f1165912e1ec2898dde",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://earthkey.substack.com/p/12d": {
+      "category": "健康・ウェルネス",
+      "hash": "50571957cea5829c5ccb0f357b7f18dd671a330bdcf62e1d93143a1b70c53882",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hatchy99.substack.com/p/learning-isnt-something-done-to-you": {
+      "category": "教育・学び",
+      "hash": "9bc534a0ec28331e34124f8372b9bc9db4c34bda0c3a4f96feb5e4caa55debba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cuscusism.substack.com/p/43c": {
+      "category": "ビジネス",
+      "hash": "7728744df132aee2a9b85bfcc999795e5ce7e8d4f56018dd190cb7d112114bc6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ganko1980.substack.com/p/472": {
+      "category": "ライフスタイル",
+      "hash": "30f10c86caf0382606aa02ed097d71ae82aeef47bd78dd38c29b9cf44137200f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kurumirekishi.substack.com/p/103": {
+      "category": "AI",
+      "hash": "15944adfecb38fa2bcc746e5e80b13a9e626f6459f23e1483517b32a35a9e6cf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/dd8": {
+      "category": "AI",
+      "hash": "010f10ef53ef822d6eb6d8c7e3c83d7e83bf45158067738ef1d1189f6db92a4c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bmp3c.substack.com/p/13substack": {
+      "category": "ビジネス",
+      "hash": "6dc2c0ec46132465dc512ee13f2ffc7013d63696c4683fdfee96d9c3244f0d04",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://youkoseki.substack.com/p/steampc": {
+      "category": "ゲーム",
+      "hash": "014e70eef9035e8dc172c9fc11b578f878e07c51beefa9b777affb3203aa6dde",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ritsuto.substack.com/p/ai-7cd": {
+      "category": "AI",
+      "hash": "db86ef3b304e1f58ed5ead0ac03246cdfe03cca79a6da5ba1f3a5d8cd5d38b5e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pessham.substack.com/p/ai-6a3": {
+      "category": "AI",
+      "hash": "c1f8330411af8c8e89cf0919e5914879e7b6d21f3891c9419c74da34756feb85",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ideasforgood.substack.com/p/new-ai05": {
+      "category": "テクノロジー",
+      "hash": "450a7724621e9d627783d09e055d1162a5ee5e47afb16149e56bb41a41972250",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiipstudio.substack.com/p/3-2": {
+      "category": "ライフスタイル",
+      "hash": "75f866e736ccef9a09fca60b24c5fcea10e21ac16601d7b024e9e6f8ad0d6a8e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dai1k1.substack.com/p/1000-d68": {
+      "category": "ビジネス",
+      "hash": "56d0d96e7ebf8c6b67f4a1f0867427de01df61e4b48dc7bf15ee185a855f17f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://momoto.substack.com/p/3bd": {
+      "category": "子育て・家族",
+      "hash": "23d947ec2720ca92ea1bd4ac31150cbeada567a5571a5cf62d7c8dc24b032ca8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://joemorotome.substack.com/p/870": {
+      "category": "ビジネス",
+      "hash": "c3ba170aa0eef953aec3d9d77674cbec57027f2c9bc28a9c6a51a14400d8361b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukimaruai.substack.com/p/webai": {
+      "category": "AI",
+      "hash": "c13140d970c79ed9a85d910558c709c2fac3e998960b2dab962b223f69872d81",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/2-f73": {
+      "category": "ビジネス",
+      "hash": "27ce1d02619a80c5b363eaee74bde62d5268b86cd5a095a5df58c8095d6e357a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://zenouo59174.substack.com/p/629": {
+      "category": "ビジネス",
+      "hash": "21e6207d203c0646c5811d915208e47091181c0052466765c9f9106ef1b77cad",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamayauber007.substack.com/p/18-c8c": {
+      "category": "投資・経済",
+      "hash": "0ccf2fc4d768af74a09d99695367428f22c59491b1edeba707bad8b9867505e0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nabetaro.substack.com/p/2-8d0": {
+      "category": "ビジネス",
+      "hash": "1cf658aeb58eebc84e2ee8fd8abfaa0b058b42166f82d4d1e4aa39559f5e763f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/9b7": {
+      "category": "ビジネス",
+      "hash": "dfa7b1146628c3dfcf371b52e52f4dfd5e12e147066dfec4094f81109e9fc1ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://starwalker0202.substack.com/p/15": {
+      "category": "テクノロジー",
+      "hash": "f79401d84c0a3f6ccf27464f46afb504e7333def1ae96516afe94c0cface46dd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://earthkey.substack.com/p/300": {
+      "category": "ライフスタイル",
+      "hash": "b3cbf7e1842111becc4f32b11778577d35c386b6a19234e36ae3c2f8bcba7625",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamayauber007.substack.com/p/archive-2b7": {
+      "category": "社会・文化",
+      "hash": "d087392a05be660919eb843d30b7721a8d7bbd8b8cf9d3a38749930ca1cfc858",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamayauber007.substack.com/p/d32": {
+      "category": "社会・文化",
+      "hash": "fe5aaee69f5c87b2cd6d8fa778dbc7d94037afe5f8dd9efef5dc35c7c206111f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bmp3c.substack.com/p/622627": {
+      "category": "ビジネス",
+      "hash": "20955204e8cfc81bc96add43109a8d73dc5afba4cd2ea63b0fa94af58d0cb2f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://earthkey.substack.com/p/airoblox5": {
+      "category": "クリエイティブ",
+      "hash": "c18e0841d235fe03d404b9584d7e33f6c0fec205a154d16a9897185d168283dc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cheaton5519.substack.com/p/104": {
+      "category": "ライフスタイル",
+      "hash": "ed1b0f79782d8eaae9734649d23af3caea3181c1f81d228cd0461a00015daa9a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dai1k1.substack.com/p/167": {
+      "category": "ビジネス",
+      "hash": "e2355da55fc7f78a822bae6e8716c9417a53f3a393419d7c0f077bfd442af143",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/ai19800": {
+      "category": "ビジネス",
+      "hash": "8b2c49eb9c5f462dac0ddb3c3e5d2d2c88d0b56e08b8628618fb2df08a073a25",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pessham.substack.com/p/a8f": {
+      "category": "ライフスタイル",
+      "hash": "c3605629ebe6c8dadba15d8f86b406f7333af56ed999bb44a1bb3284cbc95261",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kurumirekishi.substack.com/p/e97": {
+      "category": "クリエイティブ",
+      "hash": "066042ea3398efb8c9df341539e11466979e745181c1ff09e7246eb8a359c36d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://goriasu.substack.com/p/7fc": {
+      "category": "ライフスタイル",
+      "hash": "9beb48fff2b214d546087e4c1e27ac9199da559b67b297e7cfca2561ea3e9d2d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiipstudio.substack.com/p/e5e": {
+      "category": "子育て・家族",
+      "hash": "a0387e4df1713db32ceb62995821eee656d7e0e3264cbbc9b6a321f6c4685812",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://joemorotome.substack.com/p/474": {
+      "category": "クリエイティブ",
+      "hash": "4090768568a107a3fd212eab1343c9a8192e94a9d17a9541280379ad6dd3a302",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/30": {
+      "category": "ビジネス",
+      "hash": "7e35aa477cb9c9d579eb78e92f254ad3257b426b24a269bf14f9632271fa9ebf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukimaruai.substack.com/p/2b5": {
+      "category": "旅行・おでかけ",
+      "hash": "43eee22f84ba6081795b6559e6ca3af52d4b706db6031aa0cc282643a53861a4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://zenouo59174.substack.com/p/628": {
+      "category": "ビジネス",
+      "hash": "e4b7e0508a1327558288ee5765a41d9a62a0ed1ed07b993638730f339124b94e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamayauber007.substack.com/p/566": {
+      "category": "AI",
+      "hash": "4f500e0b75986ec50d37fc95dc3aafc376e2e42bad4e554fb237ac6bff06d3fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://narumimemo.substack.com/p/2": {
+      "category": "ライフスタイル",
+      "hash": "245fa6c2dc54a17af2d97633a7d302a27e0f19b426c3952381d8e5a9efd59aec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nabetaro.substack.com/p/c94": {
+      "category": "ビジネス",
+      "hash": "5eea40b27f28897fe2d702a416c2dc8d16d16b0e5323afff63fc9278e56435bd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://uojun.substack.com/p/3-4a1": {
+      "category": "ビジネス",
+      "hash": "ad40b389c745f53c1bc25cb3c344ac9b266fce0b569f2aa45451b3c3a074bce2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/6ac": {
+      "category": "ビジネス",
+      "hash": "c63c4c0b949d96d5390a8461425e75aed1734065d9151bfa31f1479523fc5dba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://uminoai.substack.com/p/lineai": {
+      "category": "AI",
+      "hash": "ce86ea1726633d1e6d7e3092c63911120a383d6d165ec5be20f5e00bf2a0a8fc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fujin.substack.com/p/gpt-563": {
+      "category": "AI",
+      "hash": "79c05e516802fb190965124c24b27a9d91cf51b9522dd852702ef2a3ad645288",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://earthkey.substack.com/p/4-edc": {
+      "category": "ビジネス",
+      "hash": "b1f240d18de04a0f11b619719b79a51ff0efdd1a9ee605a44ee6ac4481686f3b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://keitoaiweb.substack.com/p/ai-c71": {
+      "category": "AI",
+      "hash": "cddefb35db4beb6ab5fe8e26356a5c8cd74be45e6d33a08c0b61c6e65fe0c0fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/cloudflare": {
+      "category": "テクノロジー",
+      "hash": "111bf3e586f342f4f98ea8f9857180bf91ac654799bcebcb0e927dff17d6f4f9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bmp3c.substack.com/p/b46": {
+      "category": "ライフスタイル",
+      "hash": "c48dcd5b8ccead4d0010966c3d023d3465c444015af8a52da9605c92a0b2d155",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://momoto.substack.com/p/d57": {
+      "category": "ライフスタイル",
+      "hash": "3309126993c3c6ee80b13c9cc7dc4c8e0d0ac3ec72e7c7776b3a84eda9909705",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dai1k1.substack.com/p/1000-2c6": {
+      "category": "ビジネス",
+      "hash": "9e21acb1f22b5a27e4382e1ae383feab700bc93ecfb56a2b877038794cfb0932",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pessham.substack.com/p/ai-009": {
+      "category": "AI",
+      "hash": "60b973e609f7a1e631a2fdfa5e96429be174e09ab9067ed9e458051082d9def5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://goriasu.substack.com/p/1ff": {
+      "category": "クリエイティブ",
+      "hash": "5bf7b87eae29805f0154c416aaddb74158ea14be3f11237d1ceabd30e2debab1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamayauber007.substack.com/p/de6": {
+      "category": "社会・文化",
+      "hash": "8ff642d865898ddae344a91f7675215b30441add1f0daeb7209bed1c67bd411a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://joemorotome.substack.com/p/d59": {
+      "category": "AI",
+      "hash": "b3a019e855d14fd33e644643a622fa5b3c04022fd19c0ce6bd5117ebb6255e4b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://knowledgestuck.substack.com/p/seminar-h2607": {
+      "category": "AI",
+      "hash": "30299bea5fb84e77537e1f29197ed5e068be1a2117872fa656d49af49361a0c6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/132": {
+      "category": "ビジネス",
+      "hash": "22101a4441f1efd708cf344b3dca7bf5370342c66e486db50e6b667295ebd48a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://knowledgestuck.substack.com/p/obv019": {
+      "category": "テクノロジー",
+      "hash": "d01cc53a5dd6c848844f8d40db5aa46f6f3b8f9df1a7949957c5864bc2f81736",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ogugourmet.substack.com/p/720": {
+      "category": "グルメ・料理",
+      "hash": "6309cd7bf5863f651eb97c083241983660c4af3afce5de819ae8292a92010088",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://goriasu.substack.com/p/6b9": {
+      "category": "ライフスタイル",
+      "hash": "d5530455d418613900aa8106ee2d976ce82a4e6f8ac986f511686bc84ffd7d4d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/b65": {
+      "category": "ライフスタイル",
+      "hash": "4252bdad1cb88210810ba5cb1736b72e257b21ebf7f737042368a42a549bde0e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuichimori.substack.com/p/vol5-f06": {
+      "category": "旅行・おでかけ",
+      "hash": "b4f2380cea1f288a7f919ae1cb311b5b5278ceb55aea420714d36bc247fa9937",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pessham.substack.com/p/665": {
+      "category": "ライフスタイル",
+      "hash": "6fdab64d6d3e91801451287f585e739eff94befddb188b6364b9307e7d6e0b2f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/ai5": {
+      "category": "クリエイティブ",
+      "hash": "1ced6a32f7e3c7d44847390dc1433836f169ad5a5c67aa78b283aceabed84870",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tukimi.substack.com/p/dfc": {
+      "category": "エンタメ",
+      "hash": "81194a0d8b22c6bb4ead2ed23efaf4e18f8cb488663768d10b4d42fe6e53e019",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cheaton5519.substack.com/p/100": {
+      "category": "ライフスタイル",
+      "hash": "0d0b82e815fbfce7f4ab75244c0e7146050105fe55fc8fafcfd5ae2bede15408",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://goriasu.substack.com/p/7a5": {
+      "category": "ライフスタイル",
+      "hash": "041c2ceee112755516dd6abdcd7fba5bdaa8716b1d440f05eaf4d63a2bde823d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://momoto.substack.com/p/100": {
+      "category": "ライフスタイル",
+      "hash": "bddc2e14422d30e7eaf8bf8d18420cc5386a1ddd519fee404d71b4a51dfbd614",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshinarilab.substack.com/p/ab0": {
+      "category": "ビジネス",
+      "hash": "9a3550baa3eba5f5ed99b0261ffbdca39c094ad718bb297f760a165e3856e86f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://goriasu.substack.com/p/914": {
+      "category": "ライフスタイル",
+      "hash": "400248a3593efd6b68b14ae01f4e48cbeaafd36e2484000ff27738f7618a0981",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/237": {
+      "category": "教育・学び",
+      "hash": "dccd201d303fd13dacc307e277d42fcebd902e5c719ab9e27eaccece4e7acee1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriynt1103.substack.com/p/9": {
+      "category": "キャリア・働き方",
+      "hash": "f641aa9495dc6e2a36898a954214f724086c39db667fa5f971cafbd131ea65f9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://keitoaiweb.substack.com/p/fable-5-aisakana-fugu": {
+      "category": "AI",
+      "hash": "2e2ff8f8cd2c676f903949bec137923e9ba7e63946fd58f2d4dfc24e87c8a9c1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://knowledgestuck.substack.com/p/obt005": {
+      "category": "テクノロジー",
+      "hash": "9ee90de25bf02897ece05257a204e18abf184cfcd6a683faa40b557d5b8b633c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
