@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T21:08:28.335585+00:00",
+  "updated_at": "2026-06-30T01:36:30.067886+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Ploy】Webflow共同創業者が挑む働くウェブサイト / @ployai",
+          "url": "https://www.debunkresearch.com/p/ploy",
+          "published": "2026-06-29T21:01:51+00:00"
+        },
+        {
+          "title": "【Polysights】予測市場の「インサイダー」を可視化する / @Polysights",
+          "url": "https://www.debunkresearch.com/p/polysights",
+          "published": "2026-06-29T21:01:48+00:00"
+        },
+        {
           "title": "先週のAI市場を5分で振り返り",
           "url": "https://www.debunkresearch.com/p/aiwr260620-26",
           "published": "2026-06-28T21:00:46+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/cwr260620-26",
-          "published": "2026-06-28T21:00:39+00:00"
-        },
-        {
-          "title": "BitbankをSBI Holdingsが$289MでM&A、FomoにIndex Venturesが$75M出資、など全13PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/cwfr260620-26",
-          "published": "2026-06-27T21:01:13+00:00"
         }
       ]
     },
@@ -13499,6 +13499,24 @@
   ],
   "articles": [
     {
+      "title": "【Ploy】Webflow共同創業者が挑む働くウェブサイト / @ployai",
+      "url": "https://www.debunkresearch.com/p/ploy",
+      "excerpt": "ページ作成からリード特定、広告運用までを1つのAIエージェント群に束ねる",
+      "published": "2026-06-29T21:01:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!MTMg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6fdcd923-5c1f-4dbe-95ff-58415aa062ec_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Polysights】予測市場の「インサイダー」を可視化する / @Polysights",
+      "url": "https://www.debunkresearch.com/p/polysights",
+      "excerpt": "Polymarketの怪しい大口を毎日炙り出す29歳の元memeトレーダー開発",
+      "published": "2026-06-29T21:01:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!-Diw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e15da38-660b-45fd-9e09-9e2876649f54_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "「コンピュート」が新たな石油になる時代 / Ethlabs発足 など",
       "url": "https://www.bspeak.xyz/p/ethlabs",
       "excerpt": "#442 Bspeak! 2026年6月29日号",
@@ -13729,24 +13747,6 @@
       "excerpt": "主要ニュースをまとめました。",
       "published": "2026-06-18T21:01:26+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!7Z9K!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a6b7cd2-15d9-4439-b594-1cb777e6db07_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【06/17(水)~06/18(木)News Report】CMEがパーペ承認をめぐりCFTCを提訴へ / SBIレミットがFassetとステーブルコイン送金で基本合意 / ムーディーズがSolanaで信用格付け開始など",
-      "url": "https://www.debunkresearch.com/p/crypto-260617-18",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-18T21:01:17+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!qJkf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffa1510f0-f907-404d-a3b3-34052cb9b8e6_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Osaurus】クラウドではなくMacの中でエージェントを動かすローカルAI / @OsaurusAI",
-      "url": "https://www.debunkresearch.com/p/osaurus",
-      "excerpt": "クラウドに預けるのではなく、Macの中でエージェントを動かす。\"Own your AI\" を掲げるローカルAIランタイムとは何か。",
-      "published": "2026-06-17T21:01:20+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!hLIe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F391d197b-99b8-464e-9ef8-fb67c25708a0_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
