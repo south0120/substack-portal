@@ -134,17 +134,6 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .guide-link span{display:none}
 .sample-banner{max-width:calc(var(--maxw) - 48px);margin:14px auto 0;padding:8px 14px;border:1px solid var(--brand-line);
   border-radius:12px;background:var(--brand-soft);color:var(--brand-ink);font-size:.78rem;font-weight:700}
-.beta-banner{background:#FFF4CC;border-bottom:1px solid #F2D98A;color:#7A5C00;
-  font-size:.76rem;font-weight:600;text-align:center;padding:6px 14px;line-height:1.45}
-.beta-banner a{color:#7A5C00;text-decoration:underline;font-weight:700}
-:root[data-theme="dark"] .beta-banner{background:rgba(255,206,69,.14);border-bottom-color:rgba(255,206,69,.32);color:#F0CE73}
-:root[data-theme="dark"] .beta-banner a{color:#F0CE73}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .beta-banner{background:rgba(255,206,69,.14);border-bottom-color:rgba(255,206,69,.32);color:#F0CE73}
-  :root:not([data-theme="light"]) .beta-banner a{color:#F0CE73}}
-.beta-badge{flex:none;align-self:flex-start;margin-left:-6px;margin-top:2px;
-  font-size:.6rem;font-weight:800;line-height:1;letter-spacing:.02em;
-  color:var(--brand);background:var(--brand-soft);border:1px solid var(--brand-line);
-  border-radius:5px;padding:2px 5px}
 .main{max-width:var(--maxw);margin:auto;padding:0 16px 42px}
 .shelf-tools{display:flex;flex-direction:column;gap:0;padding:14px 0 2px}
 .shelf-note{margin:0;color:var(--sub);font-size:.76rem;line-height:1.6}
@@ -487,13 +476,11 @@ window.FYL_WORKER_URL=(/(^|\.)staging\b/.test(location.hostname)||/\.pages\.dev$
 </head>
 <body>
 <div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></div>
-<div class="beta-banner" role="status">🚧 現在ベータ版として公開中です。<a href="https://tally.so/r/gDOWGD" target="_blank" rel="noopener">ご意見・ご要望はこちら</a></div>
 <header class="header">
   <div class="header-in">
-    <a class="site-logo-link" href="#" aria-label="Find Your Letter（ベータ版）">
+    <a class="site-logo-link" href="#" aria-label="Find Your Letter">
       <img src="assets/logo/logo_light.png" alt="Find Your Letter" class="site-logo site-logo--light">
       <img src="assets/logo/logo_dark.png" alt="" class="site-logo site-logo--dark" aria-hidden="true">
-      <span class="beta-badge">β版</span>
     </a>
     <span class="site-tagline">読みたいニュースレターに出会う場所</span>
     <label class="search">
