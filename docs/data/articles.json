@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-01T01:43:51.040828+00:00",
+  "updated_at": "2026-07-01T13:51:51.747023+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "人を惹きつけるサブスタックのPublicationの名前の付け方",
+          "url": "https://www.yukarik.com/p/publication",
+          "published": "2026-07-01T09:04:51+00:00"
+        },
+        {
           "title": "大人の夜会　ゲスト:うさこ先生",
           "url": "https://www.yukarik.com/p/3e2",
           "published": "2026-06-26T16:46:37+00:00"
@@ -553,11 +558,6 @@
           "title": "理由もないのに沈む6月に、自分を責めないで",
           "url": "https://www.yukarik.com/p/6",
           "published": "2026-06-24T10:38:12+00:00"
-        },
-        {
-          "title": "パンツ亡国論〜おパンツカルチャー研究室より",
-          "url": "https://www.yukarik.com/p/43e",
-          "published": "2026-06-21T13:31:35+00:00"
         }
       ]
     },
@@ -13499,6 +13499,15 @@
   ],
   "articles": [
     {
+      "title": "人を惹きつけるサブスタックのPublicationの名前の付け方",
+      "url": "https://www.yukarik.com/p/publication",
+      "excerpt": "あなたのメディアブランド成長の第一歩",
+      "published": "2026-07-01T09:04:51+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!4XNE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26b49851-b23f-463e-a1af-fdfdd26aa396_1536x1024.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "社会・文化"
+    },
+    {
       "title": "【Ploy】Webflow共同創業者が挑む働くウェブサイト / @ployai",
       "url": "https://www.debunkresearch.com/p/ploy",
       "excerpt": "ページ作成からリード特定、広告運用までを1つのAIエージェント群に束ねる",
@@ -13938,15 +13947,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!I1Zy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf104937-54ff-4c66-aa88-b705a8cdcb27_1320x2277.jpeg",
       "writer": "時代編集会議",
       "category": "その他"
-    },
-    {
-      "title": "50代以上のシニアが使えるサブスタック　〜上手に育てる自分のメディア",
-      "url": "https://www.yukarik.com/p/substack-246",
-      "excerpt": "初めに〜このガイドについて Subustackとは？",
-      "published": "2026-06-02T23:16:00+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!08K-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e513929-461b-40e8-a676-1827e865a1c6_1672x941.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "社会・文化"
     },
     {
       "title": "2026年最新｜仮想通貨エアドロップは儲かる？おすすめ一覧と初心者向けTOP3のやり方・受け取り方",
