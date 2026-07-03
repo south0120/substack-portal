@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T13:23:43.169483+00:00",
+  "updated_at": "2026-07-03T15:37:15.160231+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "大人の夜会　ゲスト:はむさん（ポンコツの森）",
+          "url": "https://www.yukarik.com/p/dc0",
+          "published": "2026-07-03T13:41:19+00:00"
+        },
+        {
           "title": "人を惹きつけるサブスタックのPublicationの名前の付け方",
           "url": "https://www.yukarik.com/p/publication",
           "published": "2026-07-01T09:04:51+00:00"
@@ -553,11 +558,6 @@
           "title": "大人の夜会　ゲスト:うさこ先生",
           "url": "https://www.yukarik.com/p/3e2",
           "published": "2026-06-26T16:46:37+00:00"
-        },
-        {
-          "title": "理由もないのに沈む6月に、自分を責めないで",
-          "url": "https://www.yukarik.com/p/6",
-          "published": "2026-06-24T10:38:12+00:00"
         }
       ]
     },
@@ -13521,6 +13521,15 @@
   ],
   "articles": [
     {
+      "title": "大人の夜会　ゲスト:はむさん（ポンコツの森）",
+      "url": "https://www.yukarik.com/p/dc0",
+      "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
+      "published": "2026-07-03T13:41:19+00:00",
+      "image": "https://api.substack.com/feed/podcast/204904992/5346d9e0a580687cbe63c9b9f4258565.mp3",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "社会・文化"
+    },
+    {
       "title": "人を惹きつけるサブスタックのPublicationの名前の付け方",
       "url": "https://www.yukarik.com/p/publication",
       "excerpt": "あなたのメディアブランド成長の第一歩",
@@ -13949,15 +13958,6 @@
       "excerpt": "A recording from ゆかりっく｜大人の自由ライフ革命ラボ's live video",
       "published": "2026-06-04T14:21:33+00:00",
       "image": "https://api.substack.com/feed/podcast/200441410/846d6179200ed5fb938a9735466e4650.mp3",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "社会・文化"
-    },
-    {
-      "title": "サブスタックでいい子になるほど自分に嘘をつく",
-      "url": "https://www.yukarik.com/p/d38",
-      "excerpt": "期待と信頼はコインの表裏",
-      "published": "2026-06-04T03:15:06+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!96gb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F030ff6c2-2445-4721-979e-13db324b6ada_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
     },
