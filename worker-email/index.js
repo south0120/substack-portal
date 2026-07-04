@@ -354,6 +354,27 @@ export default {
         headers: { "content-type": "application/json" },
       });
     }
+    // 空カバーの現況を集計する読み取り専用エンドポイント（C=backfillの要否判断・監視用）。
+    // トークンはURL履歴に残さないよう x-list-token ヘッダも受け付ける。SELECTのみで副作用なし。
+    if (url.pathname === "/empty-covers-stats") {
+      const tok = url.searchParams.get("token") || request.headers.get("x-list-token");
+      if (!env.LIST_TOKEN || tok !== env.LIST_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      if (!env.DB) return Response.json({ error: "DB binding missing" }, { status: 500 });
+      const row = await env.DB.prepare(`
+        SELECT
+          COUNT(*) AS total,
+          SUM(CASE WHEN image IS NULL OR image = '' THEN 1 ELSE 0 END) AS empty,
+          SUM(CASE WHEN (image IS NULL OR image = '') AND datetime(published) >= datetime('now','-3 hours') THEN 1 ELSE 0 END) AS empty_lt_3h,
+          SUM(CASE WHEN (image IS NULL OR image = '') AND datetime(published) < datetime('now','-3 hours') AND datetime(published) >= datetime('now','-7 days') THEN 1 ELSE 0 END) AS empty_3h_to_7d,
+          SUM(CASE WHEN (image IS NULL OR image = '') AND datetime(published) < datetime('now','-7 days') THEN 1 ELSE 0 END) AS empty_gt_7d,
+          MIN(CASE WHEN image IS NULL OR image = '' THEN published END) AS oldest_empty,
+          MAX(CASE WHEN image IS NULL OR image = '' THEN published END) AS newest_empty
+        FROM articles
+      `).first();
+      return Response.json(row);
+    }
     // 遅延リトライを手動で1回走らせる（cronと同じ処理・検証/運用用）。LIST_TOKEN で保護。
     if (url.pathname === "/retry-covers") {
       if (!env.LIST_TOKEN || url.searchParams.get("token") !== env.LIST_TOKEN) {
