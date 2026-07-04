@@ -74,6 +74,131 @@ async function extractPost(rawArrayBuffer) {
   };
 }
 
+// メール本文にカバー画像が無い投稿(テキスト主体・一部テンプレ)向けのフォールバック。
+// 投稿ページの og:image / twitter:image を取得する。失敗しても空文字を返すだけ。
+function metaContent(html, key) {
+  const tag = String(html).match(
+    new RegExp(`<meta[^>]+(?:property|name)=["']${key}["'][^>]*>`, "i")
+  );
+  if (!tag) return "";
+  const c = tag[0].match(/content=["']([^"']+)["']/i);
+  return c ? c[1] : "";
+}
+
+// Substack はUA無しのリクエストを弾くことがあるため、外向きfetchは共通の明示UAを付ける。
+const FYL_UA = "Mozilla/5.0 (compatible; FYLBot/1.0; +https://findyourletter.com)";
+
+async function fetchOgImage(pageUrl) {
+  const res = await fetch(pageUrl, {
+    headers: { "user-agent": FYL_UA },
+    cf: { cacheTtl: 300, cacheEverything: true },
+  });
+  if (!res.ok) return "";
+  const html = await res.text();
+  return metaContent(html, "og:image") || metaContent(html, "twitter:image") || "";
+}
+
+// ---- RSSフィードからカバー画像を取得（メール本文にもインライン画像が無い時の中段フォールバック）----
+// Cloudflare Workers に DOMParser が無いので、既存の metaContent 同様に正規表現で最小パースする。
+
+function stripCdata(s) {
+  return String(s || "").replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
+}
+
+function decodeEntities(s) {
+  return String(s || "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0*39;|&apos;/g, "'")
+    .trim();
+}
+
+// クエリ/フラグメント/末尾スラッシュ/大小文字の揺れを吸収して記事URLを突き合わせる。
+function normFeedUrl(u) {
+  const raw = decodeEntities(u);
+  try {
+    const x = new URL(raw);
+    x.search = "";
+    x.hash = "";
+    return x.toString().replace(/\/+$/, "").toLowerCase();
+  } catch {
+    return raw.split(/[?#]/)[0].replace(/\/+$/, "").toLowerCase();
+  }
+}
+
+// URL末尾に埋まった _幅x高 から、細帯(区切り線/バナー)っぽい画像を弾く。判定不能なら通す。
+function looksLikeCover(url) {
+  const dim = String(url).match(/_(\d{2,5})x(\d{2,5})\.(?:jpe?g|png|webp|gif|avif)/i);
+  if (!dim) return true;
+  const w = +dim[1], h = +dim[2];
+  if (h < 200) return false;                 // 高さ200px未満は区切り/バナーとみなす
+  if (w / h > 4 || h / w > 4) return false;   // 極端なアスペクト比も区切り扱い
+  return true;
+}
+
+// <media:content>/<enclosure> タグ群から「画像」だけを拾う。podcastのenclosure(audio/mpeg)等は弾く。
+function pickImageFromTags(tags) {
+  for (const tag of tags) {
+    const url = (tag.match(/\burl=["']([^"']+)["']/i) || [])[1];
+    if (!url) continue;
+    const type = (tag.match(/\btype=["']([^"']+)["']/i) || [])[1] || "";
+    const medium = (tag.match(/\bmedium=["']([^"']+)["']/i) || [])[1] || "";
+    if (/^(?:audio|video)\//i.test(type) || /^(?:audio|video)$/i.test(medium)) continue; // 明示的に非画像
+    const isImage =
+      /^image\//i.test(type) ||
+      /^image$/i.test(medium) ||
+      (!type && !medium && /substackcdn\.com\/image\/|substack-post-media|\.(?:jpe?g|png|webp|gif|avif)(?:[?#]|$)/i.test(url));
+    if (isImage) return decodeEntities(url);
+  }
+  return "";
+}
+
+// フィードの1<item>からカバー画像URLを取り出す。優先順: media:content → enclosure → content:encoded内のカバーimg。
+function imageFromFeedItem(item) {
+  const m1 = pickImageFromTags(item.match(/<media:content\b[^>]*>/gi) || []);
+  if (m1) return m1;
+  const m2 = pickImageFromTags(item.match(/<enclosure\b[^>]*>/gi) || []);
+  if (m2) return m2;
+  const ce = item.match(/<content:encoded\b[^>]*>([\s\S]*?)<\/content:encoded>/i);
+  if (ce) {
+    const html = stripCdata(ce[1]);
+    const srcs = (html.match(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi) || [])
+      .map((tag) => (tag.match(/\bsrc=["']([^"']+)["']/i) || [])[1])
+      .filter(Boolean);
+    // カバーは substack-post-media を優先し、細帯バナーは除外。良い候補が無ければ空を返し og:image に委ねる。
+    const media = srcs.filter((s) => /substack-post-media/.test(s));
+    const cover = media.find(looksLikeCover) || srcs.find(looksLikeCover) || "";
+    if (cover) return decodeEntities(cover);
+  }
+  return "";
+}
+
+async function fetchFeedImage(subdomain, postUrl) {
+  try {
+    const res = await fetch(`https://${subdomain}.substack.com/feed`, {
+      headers: { "user-agent": FYL_UA },
+      cf: { cacheTtl: 300, cacheEverything: true },
+    });
+    if (!res.ok) return "";
+    const xml = await res.text();
+    const items = xml.match(/<item\b[\s\S]*?<\/item>/gi) || [];
+    if (!items.length) return "";
+    const target = normFeedUrl(postUrl);
+    // 記事URLが一致する item のみ採用（先頭item決め打ちは誤マッチの元なのでしない）。
+    const item = items.find((it) => {
+      const m = it.match(/<link\b[^>]*>([\s\S]*?)<\/link>/i);
+      const link = m ? normFeedUrl(stripCdata(m[1])) : "";
+      return link && link === target;
+    });
+    if (!item) return "";
+    return imageFromFeedItem(item);
+  } catch {
+    return "";
+  }
+}
+
 async function knownFeed(env, subdomain) {
   const feedUrl = `https://${subdomain}.substack.com/feed`;
   const row = await env.DB.prepare(
@@ -122,8 +247,18 @@ async function processPost(env, rawArrayBuffer) {
     if (!post) return { skipped: "not-a-post" };
     const feed = await knownFeed(env, post.subdomain);
     if (!feed) return { skipped: "unknown-feed", subdomain: post.subdomain };
+    // カバー画像のフォールバック: メール本文 → RSSフィード → 投稿ページの og:image。
+    let imageSource = post.image ? "email" : "none";
+    if (!post.image) {
+      post.image = await fetchFeedImage(post.subdomain, post.url).catch(() => "");
+      if (post.image) imageSource = "feed";
+    }
+    if (!post.image) {
+      post.image = await fetchOgImage(post.url).catch(() => "");
+      if (post.image) imageSource = "og";
+    }
     await upsertEmailArticle(env, post, feed);
-    return { upserted: true, url: post.url, writer: feed.writer };
+    return { upserted: true, url: post.url, writer: feed.writer, image: post.image ? "yes" : "no", imageSource };
   } catch (e) {
     return { error: String(e) };
   }
