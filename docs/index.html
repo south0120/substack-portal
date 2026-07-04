@@ -309,8 +309,13 @@ button:focus-visible,a:focus-visible,input:focus-visible{
 .thumb{position:relative;flex:none;width:100%;aspect-ratio:16/9;background:var(--panel);overflow:hidden}
 .thumb-placeholder{position:absolute;inset:0;display:grid;place-items:center}
 .thumb-placeholder svg{width:32px;height:32px;opacity:.55}
+.thumb-avatar{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--card);
+  box-shadow:0 2px 10px rgba(0,0,0,.16);border:2px solid var(--card)}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   transition:transform .3s ease}
+.thumb img.thumb-avatar{top:50%;left:50%;right:auto;bottom:auto;width:64px;height:64px;transition:none}
+.article-card:hover .thumb img.thumb-avatar{transform:translate(-50%,-50%)}
 .article-card:hover .thumb img{transform:scale(1.035)}
 .article-body{min-width:0;flex:1;padding:11px 12px 12px;display:flex;flex-direction:column;gap:6px}
 .article-body .badge{align-self:flex-start;margin:0}
@@ -1432,11 +1437,13 @@ function articleCard(article){
   const image = article.image ? `<img src="${esc(safeUrl(article.image))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
   const avatar = articleAvatarUrl(article);
   const avatarHtml = avatar ? `<img class="article-avatar" src="${esc(safeUrl(avatar))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
+  const thumbAvatar = avatar ? `<img class="thumb-avatar" src="${esc(safeUrl(avatar))}" alt="" loading="lazy" onerror="this.hidden=true">` : "";
   return `
     <a class="article-card" href="${esc(safeUrl(article.url))}" target="_blank" rel="noopener"
       data-ga="article_click" data-ga-writer="${esc(article.writer)}" data-ga-cat="${esc(articleCategory)}" data-ga-title="${esc(article.title)}" data-ga-id="${esc(article.id || "")}">
       <div class="thumb">
         <span class="thumb-placeholder" style="background:${style.bg};color:${style.fg}">${style.icon}</span>
+        ${thumbAvatar}
         ${image}
       </div>
       <div class="article-body">
@@ -1471,18 +1478,31 @@ function patchRenderedArticleAvatars(){
     .filter(writer => writer.avatar)
     .map(writer => [writer.name, safeUrl(writer.avatar)]));
   document.querySelectorAll("#articleGrid .article-card").forEach(card => {
-    const meta = card.querySelector(".article-meta");
-    const writerLabel = card.querySelector(".article-writer");
-    if(!meta || !writerLabel || meta.querySelector(".article-avatar")) return;
     const avatar = avatarByWriter.get(card.dataset.gaWriter);
     if(!avatar) return;
-    const img = document.createElement("img");
-    img.className = "article-avatar";
-    img.src = avatar;
-    img.alt = "";
-    img.loading = "lazy";
-    img.onerror = function(){ this.hidden = true; };
-    meta.insertBefore(img, writerLabel);
+    const meta = card.querySelector(".article-meta");
+    const writerLabel = card.querySelector(".article-writer");
+    if(meta && writerLabel && !meta.querySelector(".article-avatar")){
+      const img = document.createElement("img");
+      img.className = "article-avatar";
+      img.src = avatar;
+      img.alt = "";
+      img.loading = "lazy";
+      img.onerror = function(){ this.hidden = true; };
+      meta.insertBefore(img, writerLabel);
+    }
+    const thumb = card.querySelector(".thumb");
+    if(thumb && !thumb.querySelector(".thumb-avatar")){
+      const cover = thumb.querySelector("img:not(.thumb-avatar)");
+      const fallback = document.createElement("img");
+      fallback.className = "thumb-avatar";
+      fallback.src = avatar;
+      fallback.alt = "";
+      fallback.loading = "lazy";
+      fallback.onerror = function(){ this.hidden = true; };
+      if(cover) thumb.insertBefore(fallback, cover);
+      else thumb.appendChild(fallback);
+    }
   });
 }
 
