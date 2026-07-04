@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T19:49:29.919604+00:00",
+  "updated_at": "2026-07-04T21:25:05.823226+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
+          "published": "2026-07-04T21:00:39+00:00"
+        },
+        {
+          "title": "Venice AIにDragonflyが$65M出資、Onyx OddsにPaywardが$20M出資、など全15PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/wfr260627-0703",
+          "published": "2026-07-04T21:00:30+00:00"
+        },
+        {
           "title": "【Ploy】Webflow共同創業者が挑む働くウェブサイト / @ployai",
           "url": "https://www.debunkresearch.com/p/ploy",
           "published": "2026-06-29T21:01:51+00:00"
-        },
-        {
-          "title": "【Polysights】予測市場の「インサイダー」を可視化する / @Polysights",
-          "url": "https://www.debunkresearch.com/p/polysights",
-          "published": "2026-06-29T21:01:48+00:00"
-        },
-        {
-          "title": "先週のAI市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/aiwr260620-26",
-          "published": "2026-06-28T21:00:46+00:00"
         }
       ]
     },
@@ -13521,6 +13521,24 @@
   ],
   "articles": [
     {
+      "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-04T21:00:39+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!zcqq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6aaeb6c-1da6-481f-875e-2f70fa32ecf8_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "Venice AIにDragonflyが$65M出資、Onyx OddsにPaywardが$20M出資、など全15PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/wfr260627-0703",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-04T21:00:30+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!5qhq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F408fdd5a-9fdd-4309-9043-448556831c06_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "日食が示す「闇と光の両極の愛」",
       "url": "https://www.yukarik.com/p/20e",
       "excerpt": "2026年から始まる日食の黄金時代に寄せて",
@@ -13780,24 +13798,6 @@
       "image": "https://api.substack.com/feed/podcast/202834166/7744d9b174db7f47ce63aa8a8f962364.mp3",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "1週間の記事振り返り",
-      "url": "https://www.debunkresearch.com/p/260613-19",
-      "excerpt": "毎週土曜は1週間の振り返りをお届けします。",
-      "published": "2026-06-19T21:01:32+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!BYBw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【6/17(水)~6/18(木)News Report】G7首脳が「米国がAIをオフにできる」リスクに反発 / Gemini共同リードのNoam Shazeer氏がOpenAIへ移籍 / 「危険なAIは何があっても来る」と専門家が警鐘など",
-      "url": "https://www.debunkresearch.com/p/ai-260617-18",
-      "excerpt": "主要ニュースをまとめました。",
-      "published": "2026-06-18T21:01:26+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!7Z9K!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2a6b7cd2-15d9-4439-b594-1cb777e6db07_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "#113 説明できずらいものも大事にしたい",
