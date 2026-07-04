@@ -2,6 +2,10 @@ name = "fyl-email"
 main = "index.js"
 compatibility_date = "2026-05-01"
 
+# 遅延リトライ: 5分毎に直近の空カバー投稿を後追いでカバー補完する（scheduled ハンドラ）。
+[triggers]
+crons = ["*/5 * * * *"]
+
 # 受信した生メール(.eml)を貯める R2 バケット。
 # 事前に `npx wrangler r2 bucket create fyl-emails` で作成しておくこと。
 [[r2_buckets]]

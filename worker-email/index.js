@@ -264,6 +264,49 @@ async function processPost(env, rawArrayBuffer) {
   }
 }
 
+// 記事URLから Substack サブドメインを取り出す。カスタムドメインは空を返し og:image に委ねる。
+function subdomainFromUrl(url) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    const m = host.match(/^([a-z0-9-]+)\.substack\.com$/);
+    return m ? m[1] : "";
+  } catch {
+    return "";
+  }
+}
+
+// 遅延リトライ: 取込時にRSS/ページへカバー未反映だった空カバー投稿を後追いで補完する。
+// 直近3h・空カバーのみが対象。埋まった行は次回以降スイープ対象外(冪等)。3h超で空は
+// 「真にカバー無し」とみなし打ち切る(=無限リトライしない)。LIMIT で1実行を軽く保つ。
+async function retryEmptyCovers(env, limit = 30) {
+  // published は toISOString() 形式("...T..Z")で保存。datetime('now') は空白区切りの別形式で、
+  // 生の文字列比較だと 'T'>' ' の影響で日付跨ぎ等が壊れる。両辺を datetime() で正規化して比較する。
+  const rows = await env.DB.prepare(
+    `SELECT url FROM articles
+       WHERE (image IS NULL OR image = '')
+         AND datetime(published) >= datetime('now', '-3 hours')
+       ORDER BY published DESC
+       LIMIT ?`
+  ).bind(limit).all();
+  const list = (rows && rows.results) || [];
+  let checked = 0, filled = 0;
+  // 直列ループ。Substackのレート制限に配慮し低負荷に保つ(過去に高並列でブロック実績あり)。
+  for (const { url } of list) {
+    checked++;
+    let image = "";
+    const sub = subdomainFromUrl(url);
+    if (sub) image = await fetchFeedImage(sub, url).catch(() => "");
+    if (!image) image = await fetchOgImage(url).catch(() => "");
+    if (!image) continue;
+    // 取込側と同じ不変条件: 「空のときだけ」更新して既存カバーは壊さない。
+    await env.DB.prepare(
+      `UPDATE articles SET image = ? WHERE url = ? AND (image IS NULL OR image = '')`
+    ).bind(image, url).run();
+    filled++;
+  }
+  return { checked, filled };
+}
+
 export default {
   // Email Routing から呼ばれる受信ハンドラ
   async email(message, env, ctx) {
@@ -298,6 +341,11 @@ export default {
     // ハンドラは raw を消費済みなのでメールは破棄されず保存完了。
   },
 
+  // cron(*/5) から呼ばれる遅延リトライ。直近の空カバー投稿を後追い補完する。
+  async scheduled(event, env, ctx) {
+    if (env.DB) ctx.waitUntil(retryEmptyCovers(env).catch(() => {}));
+  },
+
   // 動作確認用の簡易エンドポイント（ルーティングには無関係）
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -305,6 +353,16 @@ export default {
       return new Response(JSON.stringify({ ok: true, worker: "fyl-email", role: "store-raw-to-r2" }), {
         headers: { "content-type": "application/json" },
       });
+    }
+    // 遅延リトライを手動で1回走らせる（cronと同じ処理・検証/運用用）。LIST_TOKEN で保護。
+    if (url.pathname === "/retry-covers") {
+      if (!env.LIST_TOKEN || url.searchParams.get("token") !== env.LIST_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      if (!env.DB) return Response.json({ error: "DB binding missing" }, { status: 500 });
+      const limit = Math.min(Number(url.searchParams.get("limit")) || 30, 100);
+      const result = await retryEmptyCovers(env, limit);
+      return Response.json(result);
     }
     // R2に貯まった受信メールの一覧（監視用）。LIST_TOKEN secret で保護
     if (url.pathname === "/list") {
