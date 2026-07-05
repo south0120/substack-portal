@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T21:39:11.136793+00:00",
+  "updated_at": "2026-07-05T23:39:28.489853+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -4513,6 +4513,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "latest": [
         {
+          "title": "予測市場はインデックスの時代へ",
+          "url": "https://www.bspeak.xyz/p/robinhoodopen-usd",
+          "published": "2026-07-05T21:30:13+00:00"
+        },
+        {
           "title": "「コンピュート」が新たな石油になる時代 / Ethlabs発足 など",
           "url": "https://www.bspeak.xyz/p/ethlabs",
           "published": "2026-06-28T21:30:29+00:00"
@@ -4521,11 +4526,6 @@
           "title": "Coinbase Venturesの投資する再保険、RWA、ステーブルコイン",
           "url": "https://www.bspeak.xyz/p/coinbase-venturesrwa",
           "published": "2026-06-21T21:30:26+00:00"
-        },
-        {
-          "title": "パーペチュアルDEX間の証拠金を統合するインフラ",
-          "url": "https://www.bspeak.xyz/p/dex-aa4",
-          "published": "2026-06-07T21:30:32+00:00"
         }
       ]
     },
@@ -13521,6 +13521,15 @@
   ],
   "articles": [
     {
+      "title": "予測市場はインデックスの時代へ",
+      "url": "https://www.bspeak.xyz/p/robinhoodopen-usd",
+      "excerpt": "#443 Bspeak! 2026年7月6日号",
+      "published": "2026-07-05T21:30:13+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Fr89!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F92f24cb9-82c2-463a-b92d-610da6aa1a3b_1543x679.png",
+      "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
+      "category": "投資・経済"
+    },
+    {
       "title": "先週のweb3市場を5分で振り返り",
       "url": "https://www.debunkresearch.com/p/crypto-wr260706",
       "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
@@ -14176,15 +14185,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!ZvRL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe4902643-30c8-4eee-853e-347968c1ede1_1920x1006.jpeg",
       "writer": "時代編集会議",
       "category": "その他"
-    },
-    {
-      "title": "Ethereumロードマップたたき台「strawmap」",
-      "url": "https://www.bspeak.xyz/p/ethereum-7ae",
-      "excerpt": "#426 Bspeak! 2026年3月2日号",
-      "published": "2026-03-01T21:30:28+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!wvDM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe0fa3815-7eba-4fff-b339-b09f4972ffd6_1272x891.png",
-      "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
-      "category": "投資・経済"
     },
     {
       "title": "Dangoのエアドロップ戦略【まだアーリーの新レイヤー1/DeFi】",
