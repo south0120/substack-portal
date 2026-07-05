@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T19:53:37.112543+00:00",
+  "updated_at": "2026-07-05T21:39:11.136793+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/crypto-wr260706",
+          "published": "2026-07-05T21:00:45+00:00"
+        },
+        {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/ai-wr260706",
+          "published": "2026-07-05T21:00:29+00:00"
+        },
+        {
           "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
           "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
           "published": "2026-07-04T21:00:39+00:00"
-        },
-        {
-          "title": "Venice AIにDragonflyが$65M出資、Onyx OddsにPaywardが$20M出資、など全15PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/wfr260627-0703",
-          "published": "2026-07-04T21:00:30+00:00"
-        },
-        {
-          "title": "【Ploy】Webflow共同創業者が挑む働くウェブサイト / @ployai",
-          "url": "https://www.debunkresearch.com/p/ploy",
-          "published": "2026-06-29T21:01:51+00:00"
         }
       ]
     },
@@ -13521,6 +13521,24 @@
   ],
   "articles": [
     {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/crypto-wr260706",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-05T21:00:45+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!h5kL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75d5d514-d5c5-4bb4-a015-ae578fb39bba_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260706",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-05T21:00:29+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!eHpm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c88d07f-391c-401d-ba44-e380f9e5841b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
       "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
       "excerpt": "直近1週間の資金調達情報をまとめました。",
@@ -13771,24 +13789,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!L511!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F739fa5f0-9911-4a5b-aaba-2205ade217f9_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "Trace FinanceにCoinFund等が$32M出資、EarnOSに1kx等が$18.5M出資、など全11PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/c-wfr260613-19",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-06-20T21:01:00+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!HZup!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9ec62e24-7b4e-4414-8d4e-9ec74ab2cf91_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "BasetenにAltimeter等が$1.5B出資、CuspAIにBezos等が$400M出資、など全21PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260613-19",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-06-20T21:00:57+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!IYWn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4e37dbce-108c-42a6-9a5d-8f8917db9ae7_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "大人の夜会　withもちスラさん",
