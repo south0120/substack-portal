@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-06T19:16:35.532967+00:00",
+  "updated_at": "2026-07-06T21:13:32.243551+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
+          "url": "https://www.debunkresearch.com/p/noimosai",
+          "published": "2026-07-06T21:01:19+00:00"
+        },
+        {
+          "title": "【THEA】\"人間の行動\"を予測するSolanaのAI決済レイヤー / @Thea_AI",
+          "url": "https://www.debunkresearch.com/p/thea",
+          "published": "2026-07-06T21:01:19+00:00"
+        },
+        {
           "title": "先週のweb3市場を5分で振り返り",
           "url": "https://www.debunkresearch.com/p/crypto-wr260706",
           "published": "2026-07-05T21:00:45+00:00"
-        },
-        {
-          "title": "先週のAI市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/ai-wr260706",
-          "published": "2026-07-05T21:00:29+00:00"
-        },
-        {
-          "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
-          "published": "2026-07-04T21:00:39+00:00"
         }
       ]
     },
@@ -13517,9 +13517,687 @@
       "bio": "悪役動物代表取締役のブチハイエナが、悪知恵を活かして賢く生きる様子をメルマガでお届けいたします。",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "わかモン@AI漫画クリエイター",
+      "url": "https://velitvoro480734.substack.com/",
+      "feed_url": "https://velitvoro480734.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIマンガを制作投稿中",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "かなえ｜個人開発を応援する非エンジニア",
+      "url": "https://kanae88.substack.com/",
+      "feed_url": "https://kanae88.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "非エンジニアですが、Mintor（ミンター）という個人開発で作ったものを投稿できるサイトを作っています。 https://mintor.dev/ja",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AIと暮らす話",
+      "url": "https://maguroneko.substack.com/",
+      "feed_url": "https://maguroneko.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "40代夜勤民が、AIと一緒に生活改善・創作・ITまわりを試している記録です。 AIセミナー地獄、健康診断、BASE BREAD、ComfyUIなど、日常にAIを混ぜたら見えてきたことを書いています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "おちょ🐰ただのブロガー",
+      "url": "https://chappi1.substack.com/",
+      "feed_url": "https://chappi1.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "朝起きるのしんどいので会社辞めてブロガーになりました⭐︎",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "しまりすのゲーム開発室",
+      "url": "https://shimarisu586.substack.com/",
+      "feed_url": "https://shimarisu586.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "AIと協奏してつくるゲーム開発室です。 Robloxを中心としたゲーム制作に関する情報をお届けします。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Noa（のあ）｜のあの実験室",
+      "url": "https://noa2yohaku.substack.com/",
+      "feed_url": "https://noa2yohaku.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "自分で作ったAIプロンプトや、フォロワーさんにお借りしたプロンプトの実践、プログラミング、デザイン、ものづくり。とりあえず触って、試して、結果を残していく実験室です。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たける（7歳）",
+      "url": "https://takeru7.substack.com/",
+      "feed_url": "https://takeru7.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "CryptoNinja（クリプトニンジャ）の三次創作キャラ｜FiNANCiE開運オロチコミュニティ専属キッズモデル＆広報｜AIから生まれたミーム少年｜永遠の7歳｜趣味はダジャレ｜やたらとAIに詳しい｜保護者会（ファンクラブ）もあるよ",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "模索中の23歳 HARU",
+      "url": "https://123450218.substack.com/",
+      "feed_url": "https://123450218.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "👩‍🎓管理栄養士の資格取得🥗→🐣IT企業のSE2年目💻 食・健康について学んだことを元に日々考えること、感じることを発信してみたい！ 管理栄養士として就職しなかっことには理由がある！ 少しでも共感してくれる人がいるのなら、それだけで嬉しい！ 誰かの健康について考えるきっかけになるのなら、発信してみたい！ 今後何十年も会社勤め、雇われ続けることが安定なのか？不安を抱えつつ、日々勉強中📚 自分で稼ぐ力も身につけるため奮闘中🔥",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Stella's Sewing Laboratory",
+      "url": "https://possimusalioqui683894.substack.com/",
+      "feed_url": "https://possimusalioqui683894.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "「楽に着れるおしゃれ服」をテーマにした服作りと、パッチワークやフリーモーション刺繍を取り入れた小物づくりをご紹介しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "かしわもち＠夜中にサブスタとブログする人",
+      "url": "https://kashiwamoc33122.substack.com/",
+      "feed_url": "https://kashiwamoc33122.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "夫のお財布に依存するを卒業したい主婦｜8歳児のママ｜ブログ運営で新規ドメイン9か月で月3.7万円を達成｜実は…メガネを外出先で失くすポンコツ｜相棒のAI：Geminiと夜な夜なブログやサブスタをやってます｜ソイラテが大好きだけど最近チャイも好き｜夫に頼らず自分で稼げるようになるまでの失敗だらけの道のりを書いてます｜ポンコツでも在宅ワークがんばりたい人とつながりたい🍀",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "そうだ、会社やめてゲームしよう。",
+      "url": "https://nekoyogurt.substack.com/",
+      "feed_url": "https://nekoyogurt.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "20代で会社をやめて自由になれた。 余裕ある時間と収入を手に入れるための考え方を読めます。 「購読」すると見逃しを防げます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆゆし",
+      "url": "https://yuyushi17.substack.com/",
+      "feed_url": "https://yuyushi17.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "副業・新NISA・資産形成の情報を発信中📊 会社員でも月3万円の副収入を目指せる方法を、シミュレーション例つきでわかりやすく解説します。 Instagram/X/YouTube等9媒体でも配信中✨ Instagram：@yuyushi17 X：@y_tya17t YouTube/TikTok/Threads：@yuyushi17",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Mayuの瞑想のススメ",
+      "url": "https://mayuhys325.substack.com/",
+      "feed_url": "https://mayuhys325.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "瞑想が好きすぎて、気がつけばヒーラーになっていた管理栄養士。 瞑想会にランチ会、お茶会、イベント企画しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "味村昇｜傾聴とイラストで育児する人",
+      "url": "https://mimuranoboru.substack.com/",
+      "feed_url": "https://mimuranoboru.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "初育児中のイラストカウンセラー｜傾聴の在り方で「こどもに自分で幸せになれる力をつけさせる」を実地実践中｜幸せは気づくもの、不幸せは困っている状態というだけ｜傾聴の学校 ｜THE GATE ｜BMC継承生",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "カオリ乃 ハラカズコ | メディアライター&香りのデザイナー",
+      "url": "https://kazukohara.substack.com/",
+      "feed_url": "https://kazukohara.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "カオリ乃 ハラカズコ | メディアライター&香りのデザイナー",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "わくわくのかわいいやつ",
+      "url": "https://wqw9.substack.com/",
+      "feed_url": "https://wqw9.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "サブスタで生きるわくわくです。応援してください。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "HIROのAI活用マガジン＆コラム",
+      "url": "https://hero325.substack.com/",
+      "feed_url": "https://hero325.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "非エンジニア向けに「Obsidian×AI活用」、Substackについて語ります。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "こはると心の森ᐟᐟ🌳⋆⁎",
+      "url": "https://koharu333.substack.com/",
+      "feed_url": "https://koharu333.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "忙しさの中で、自分の気持ちが分からなくなった人へ。 「心の森」を舞台にした物語と心理テストを通して、 あなたの本音や感情を見つけるSubstackです。 案内人は、こはる。 毎週、森のどこかでお待ちしています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "VOXELJOKER 英語勉強して海外転職に挑戦中",
+      "url": "https://voxeljokernft.substack.com/",
+      "feed_url": "https://voxeljokernft.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "40代３人子持ちサラリーマン。AI活用で海外転職に挑戦中、失敗も含めて40代⚡️現在進行中⚡️のリアル海外転職活動を記事にしています✈️海外グローバル企業へのキャリアアップ転職目指して頑張ってます🔥➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖ゲームも作れます🎮🐍OROCHI PANIC🐍 https://www.sandbox.game/ja/experiences/Orochi%20Panic/7de6b600-0833-4623-aa22-996e6587062c/page/",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "えこぶりゅ | 腸活する人",
+      "url": "https://ecobrew.substack.com/",
+      "feed_url": "https://ecobrew.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "健康のために何か始めたいけれど、がんばる腸活は続かない人へ。ぬか床・納豆・発酵食・エコな暮らしを通して、無理なく腸と暮らしを整える「ゆる腸活ライフ」をお届けします。合言葉は、無理なく、無駄なく、土に還るまで。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "KOJI@AIチーム構築家",
+      "url": "https://koji851.substack.com/",
+      "feed_url": "https://koji851.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "KOJIです。1人AIチーム構築家として、リサーチ・構成・執筆をそれぞれ別のAIに任せる「分業型」の働き方を実践しています。このアカウントでは、AIを\"ツール\"ではなく\"チームメンバー\"として使うノウハウ、1人でも週5本コンテンツを回す仕組みづくりを発信します。発信を続けたいけど手が回らない1人起業家・個人事業主の方に向けて書いています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "きつね｜才能開花のハッタリ転職",
+      "url": "https://careerbprint.substack.com/",
+      "feed_url": "https://careerbprint.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "今までの経験を「採りたい理由」に変える！。キャリア設計に関する情報を発信",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "きゅーぶの余白を編む",
+      "url": "https://cubecareer.substack.com/",
+      "feed_url": "https://cubecareer.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "整えることで、ちゃんと前に進む。 働き方と暮らしを、静かに再設計する記録。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "リョータ｜50歳から人生の荷物を下ろす手紙",
+      "url": "https://ryota5501.substack.com/",
+      "feed_url": "https://ryota5501.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "50歳・会社員パパ。20年間のノウハウ疲れと高額投資の果てに気づいたのは、苦しさの原因が能力不足ではなく「仕事＝つらい」という無意識の思い込みだったこと。 本業と子育てに追われ、毎日ギリギリで頑張っている同世代の同志へ。自分を責めるのをやめ、人生の重い荷物を少しずつ下ろしていく「もがきの過程」をリアルタイムで共有するお手紙です。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "日常が少し楽しく見える話",
+      "url": "https://fuji223.substack.com/",
+      "feed_url": "https://fuji223.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "AI・Web3・経済をSEVEN DAOで日々勉強中。 季節や日常の雑学、言葉の由来、アニメや物語の話、テクノロジーを身近に感じる話など、知るとちょっと楽しい話を綴っています✨",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "kimuchi のつながり雑記帳",
+      "url": "https://kim1ml.substack.com/",
+      "feed_url": "https://kim1ml.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "朝活・生活・AI・時代について本音で書く。読者とつながるための雑記帳。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "smartnavipro の Substack",
+      "url": "https://smartnavipro.substack.com/",
+      "feed_url": "https://smartnavipro.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "CRM・SaaS管理の\"地味な面倒\"をAIで自動化する実践ノウハウを配信。 実際に作って使ったツールとその仕組みをそのまま公開します。 営業・マーケ・IT担当者向け。登録無料。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ファンタジートラベル/猫好きプログラマーのAI活用",
+      "url": "https://fantasytravel.substack.com/",
+      "feed_url": "https://fantasytravel.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIの便利な使い方を、実践していることのみわかりやすくお届け。youtubeもやってます！ 質問は完全にお気軽に～！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "摩耶（マヤ）の日米二拠点生活のリアルとAI活動術",
+      "url": "https://mayatakaishi.substack.com/",
+      "feed_url": "https://mayatakaishi.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "アメリカ・オレゴン州と日本を往復する二拠点生活のリアル。 子育てや介護で時間に制約があり「収入を増やしたいけど難しい」と感じている50代以降の方へ。スキマ時間を収入に変えるAI活用と、場所に縛られない働き方を実体験ベースで発信しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "アールグレイ",
+      "url": "https://earlgreyai.substack.com/",
+      "feed_url": "https://earlgreyai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "自宅サーバーでAIエージェントを動かしながら、AI・暗号資産・自動化の実践記録を発信しています。毎朝のポッドキャスト生成、作業の自動化、運用の試行錯誤まで、実際にやってみたことをベースに書いています。Xでは日々の気づき、YouTubeでは自動化で作成した動画、Substackではその背景や手順、考えたことをもう少し深くまとめていきます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "白紙から始めないAI営業準備室",
+      "url": "https://salesprepai.substack.com/",
+      "feed_url": "https://salesprepai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIを検索の延長で終わらせず、商談前の準備に使うための実務ノートです。 企業分析、商談前メモ、質問設計、提案骨子づくりなど、現場で試した「営業準備×AI」の型を発信しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "くらしニュース研究所",
+      "url": "https://futa625.substack.com/",
+      "feed_url": "https://futa625.substack.com/feed",
+      "categories": [
+        "社会・文化"
+      ],
+      "bio": "ニュースは大事。 でも、忙しい。 そんな人のための「生活者目線」のニュースレターです。 元新聞記者が、 お金、AI、政治、経済などの話を、 「あなたの暮らし」に接続して解説します。 難しい話は、マンガと図解でやさしく整理します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "あんだの副業実験室",
+      "url": "https://andanteliberal.substack.com/",
+      "feed_url": "https://andanteliberal.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "社員がAI・発信・実戦で副業を育てる記録。AIアニメ制作、マーケティング、キャリアの試行錯誤を発信します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "タケオスズキSubstack",
+      "url": "https://takeosuzukijp.substack.com/",
+      "feed_url": "https://takeosuzukijp.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "芸術家を自称するサウンドアーティスト・タケオスズキの発信拠点。音と思想、創作と生活の断片を届けます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ずーかのメルマガ",
+      "url": "https://zuka20210101.substack.com/",
+      "feed_url": "https://zuka20210101.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "読んだ本の内容を、AIと一緒に整理しています。その中から、自分が引っかかった言葉や、日常で使えそうな考え方を残しています。完璧な書評ではなく、読書のあとに残った気づきのメモです。本を読むきっかけや、考えるきっかけになればうれしいです。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "まさみつ囲碁きっず",
+      "url": "https://j2igo.substack.com/",
+      "feed_url": "https://j2igo.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "25年前からオンライン囲碁サイト運営。 Claude Code ぶん回して「囲碁きっず - reborn -」構築中です。 多くのオンライン囲碁サイトが行きずりの他流試合、腕試しの場なのに対して、小さなコミュニティで知り合いと音声チャット交えて楽しめる場を目指してます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AIアニメーターになりたあいもん",
+      "url": "https://aimoon777.substack.com/",
+      "feed_url": "https://aimoon777.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIアニメーターになりたあいもん",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AI・Web3・アート・食・旅を通じ自分をアップデートする",
+      "url": "https://kosanweb3.substack.com/",
+      "feed_url": "https://kosanweb3.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "シニアでも新しい世界を楽しもう。AI・Web3・アート・旅を通じて、人生後半をもっと面白くする実践記録をお届け。 AI活用したいけど情報が多すぎて迷う…そんな方にも 📩 超初心者向けAIメルマガ👇 kochan-goodday01-a8.systeme.io/f3298403 シニア世代向けsubstack のはじめ方💁 https://brain-market.com/u/global_kochan/a/bwITO5QjMgoTZsNWa0JXY",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆうや @ AI漫画",
+      "url": "https://yuyaman1986.substack.com/",
+      "feed_url": "https://yuyaman1986.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "メンサ会員/外資IT9年 /文系・未経験から6回転職してキャリアアップ /副業オンライン日本語教師4年（時給30ドル）",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "よーすけ｜AI画像＆動画生成",
+      "url": "https://hinata0127.substack.com/",
+      "feed_url": "https://hinata0127.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "ぜひ相互フォローお願いします 2児パパ佐賀暮らし｜本業：製造業｜副業：Studio VIBE AIアニメーター(26年5月より)｜AI画像＆動画生成まわりで情報発信｜妻が書いた絵を動画にしたり｜子供2人はマイクラ民とプロセカ＆メルカリ民",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "もかやも",
+      "url": "https://mokayamo.substack.com/",
+      "feed_url": "https://mokayamo.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AI Contents Labo事務｜明鏡 コミュマネ｜マネリテDAO コミュマネ｜フリ校｜ICLα｜証券会社→税理士法人→フリーランス｜CFP｜ オンライン秘書（営業・経理・事務・コンサル）｜ゲーム全般｜UEFN｜Roblox｜スト6 MルークMASTER｜CryptoNinja 弁天ホルダー",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "トニー｜心の避難所",
+      "url": "https://tonymindnote.substack.com/",
+      "feed_url": "https://tonymindnote.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "仕事、人間関係、将来。 頭の中がモヤモヤして、 一人で抱え込んでしまう夜がある。 ここでは、 そんな気持ちを言葉にしながら、 “少し心が軽くなる考え方” を届けています。 失恋・仕事・不登校・介護。 うまくいかない日々を経験してきたからこそ、 「頑張れない日」に寄り添える文章を書きたい。 Tony Mind Note",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "らむ",
+      "url": "https://rumuu.substack.com/",
+      "feed_url": "https://rumuu.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "心理学 × 香りで、感情のクセを整える。人間関係のしんどさを深層心理から読み解く。 AEAJ認定アロマテラピー・ハーブコーディネーター資格取得。あなたの疲れた心に気づきを。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ISAQ｜感情を歌うAIアーティスト",
+      "url": "https://isaqtype0.substack.com/",
+      "feed_url": "https://isaqtype0.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "ISAQの世界観を届ける🌙",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AI秘書タルトのお仕事日記",
+      "url": "https://tarutoai.substack.com/",
+      "feed_url": "https://tarutoai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "ぼくはタルト🐢カメ型AI秘書です。 オーナーのりょーさん（@ryo000）の横で、思考整理から、発信・ツール作り・戦略相談まで、のそのそ実務を進めています。 ここでは、ぼくの「お仕事日記」を、毎週月・水・金にお届けします。 AI秘書と、止まらない毎日をはじめませんか？",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ダンス │ 応援経済で暮らしを整える",
+      "url": "https://dancegogo.substack.com/",
+      "feed_url": "https://dancegogo.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "応援経済で暮らしを整える。 ▷ FiNANCiE・ヘルスリーのコミュニティやトークン特典を、生活者目線で実験中。 ▷ FiNANCiE公式モデレーター／ヘルスリーコンテンツクリエイター。 応援を消費で終わらせず、毎日を少し楽しくする発信をしています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "shun-chamP の Substack",
+      "url": "https://shunchamp.substack.com/",
+      "feed_url": "https://shunchamp.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "野口嘉則@自己実現の心理学",
+      "url": "https://ynoguchi.substack.com/",
+      "feed_url": "https://ynoguchi.substack.com/feed",
+      "categories": [
+        "健康・ウェルネス"
+      ],
+      "bio": "心の仕組みがわかり、自己肯定感が高まり、人間関係を楽しめるようになるための心理学の話をお届けします！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "かずみん＠豊かさを受け取れる自分になる伴走者",
+      "url": "https://kazumin0831.substack.com/",
+      "feed_url": "https://kazumin0831.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "弾ける笑顔と心解く対話で、あなた本来の豊かさを解放／神戸一元気な対話師／有料対話サポート実績70名以上 ／「お金の抵抗感を緩める講演会」（2026年4月～5月）大好評御礼！ ／自分を好きになり、自信を持って楽しく前進できる「型」を一緒に見つけます！ ／私自身、受け取る怖さと向き合い続けているからこそ、ビジネスを始めたばかりのあなたの「自分の価値を信じる一歩」にどこまでも寄り添い、あなたらしく豊かさを循環させるサポートをします。 「お話ししてみたいな」と思ったら、まずは気軽に繋がってくださいね！",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆみ｜言語聴覚士「うちの子、言葉が遅い？」 園児ママと家リハ",
+      "url": "https://voiceyumich.substack.com/",
+      "feed_url": "https://voiceyumich.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "言語聴覚士｜こえとかおのトレーニング「モイこえ」代表ゆみです。未就学児〜小学生の「ことば・滑舌・コミュニケーション」の悩みを、家庭でできる関わりとおうちリハの視点からやさしく発信。「うちの子、このままで大丈夫？」そんなママの不安が少し安心に変わる場所を目指しています。子どもの「伝わった！」を一緒に増やしていきましょう。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "れんか｜元グラドル直伝「いい人止まり」から「記憶に残る男」へ",
+      "url": "https://renkadesu.substack.com/",
+      "feed_url": "https://renkadesu.substack.com/feed",
+      "categories": [
+        "スポーツ"
+      ],
+      "bio": "元フリーアナ、グラドルとしてプロスポーツ選手など1000人以上の取材経験で得た、いい人で終わる人から選ばれる人になるコミュニケーション講師。趣味:プロ野球観戦",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ぱんだや の Substack",
+      "url": "https://pandaya.substack.com/",
+      "feed_url": "https://pandaya.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AI駆動経営 実践ノート",
+      "url": "https://aihitori.substack.com/",
+      "feed_url": "https://aihitori.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "1人で大きな事業をつくれる時代に、 会社のつくり方はどう変わるのか。 経営OS、AI社員、AI自動化の知見を、プロンプトやコード付きで共有します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "hiro_aiai",
+      "url": "https://hiroaiai.substack.com/",
+      "feed_url": "https://hiroaiai.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIに仕事を任せた日、はじめて「自分の人生を生きている」と実感✨ 週10h削減・副業自動化を実現した会社員が、時間もお金も自分で決められる生き方への変え方を発信します🌐",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "みやび@AI最適ビジネス研究家",
+      "url": "https://miyablog.substack.com/",
+      "feed_url": "https://miyablog.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "【AI時代でもオワコン回避】AIで死なない事業をつくる。2024年からClaude活用中。起業独立・スモビジ専門。年商100億目指し中。（株）トランスAIJ 代表。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "みなみ",
+      "url": "https://minamifreeup.substack.com/",
+      "feed_url": "https://minamifreeup.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "X運用を効率化したいへ｜LINE×AI自動化でＸ運用を仕組み化する方法を発信｜SNS講師歴3年｜X運用自動化支援｜AI個別レクチャー｜AI初心者のお悩みを解決します｜小3小5ママ",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "地獄のnote",
+      "url": "https://zigoku2noter.substack.com/",
+      "feed_url": "https://zigoku2noter.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "【AI×海外版noteで1億挑戦中】21歳で倒産→鬱→note始めて年商5億【累計20万部】KADOKAWA出版 ▶︎将来の夢は宇宙へ行くこと🪐",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "二本柳亮 の Substack",
+      "url": "https://ryonihonyanagi.substack.com/",
+      "feed_url": "https://ryonihonyanagi.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "タカノリ🎯AI×ものづくり",
+      "url": "https://takanori4649.substack.com/",
+      "feed_url": "https://takanori4649.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "タカノリです。AIを使いたいけど何から始めればいいか分からない人へ GPTs・note・X発信を、今日やることまで分解して届けます。 マーク先生たちとAI初心者向けの教室を実践中。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "いけP🟰想いを形にする人",
+      "url": "https://ikep3.substack.com/",
+      "feed_url": "https://ikep3.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "10万人を笑顔にした男",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
+      "url": "https://www.debunkresearch.com/p/noimosai",
+      "excerpt": "”AIに任せて承認するだけ”は個人・中小に刺さるか",
+      "published": "2026-07-06T21:01:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!S2bO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F905c69aa-4d08-4239-aa7d-8f00f0b7b401_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【THEA】\"人間の行動\"を予測するSolanaのAI決済レイヤー / @Thea_AI",
+      "url": "https://www.debunkresearch.com/p/thea",
+      "excerpt": "”行動知能”は本当に次のインフラ層か",
+      "published": "2026-07-06T21:01:19+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!UiZY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc71a385c-2418-4f0e-9dd6-566eda150e13_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "予測市場はインデックスの時代へ",
       "url": "https://www.bspeak.xyz/p/robinhoodopen-usd",
@@ -13770,24 +14448,6 @@
       "published": "2026-06-21T21:30:26+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/ai-wr260613-19",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-21T21:01:35+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!SvDf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0986409-7b11-4dad-bb21-aedd7784ed6c_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/c-wr260613-19",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-21T21:01:28+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!_7Bb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06da68a1-8d75-4c9c-8405-53a6fe8255c7_3760x2480.png",
-      "writer": "DEBUNK",
       "category": "投資・経済"
     },
     {
