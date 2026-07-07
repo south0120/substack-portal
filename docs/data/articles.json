@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T20:27:34.437190+00:00",
+  "updated_at": "2026-07-07T21:55:25.036065+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/3(金)~7/7(火)News Report】MiCA全面施行でEUの無認可2000社が窮地 / USDCが取引量でUSDTを逆転 / セキュリタイズが4億ドルでM&A視野など",
+          "url": "https://www.debunkresearch.com/p/cnews260703-07",
+          "published": "2026-07-07T21:00:41+00:00"
+        },
+        {
+          "title": "【7/3(金)~7/7(火)News Report】OpenAI・Anthropicが計算資源の無償提供合戦 / 中国製モデルがOpenRouterで3割超のシェア / Cloudflareが用途別のAIボット制御へなど",
+          "url": "https://www.debunkresearch.com/p/ai-news260703-07",
+          "published": "2026-07-07T21:00:24+00:00"
+        },
+        {
           "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
           "url": "https://www.debunkresearch.com/p/noimosai",
           "published": "2026-07-06T21:01:19+00:00"
-        },
-        {
-          "title": "【THEA】\"人間の行動\"を予測するSolanaのAI決済レイヤー / @Thea_AI",
-          "url": "https://www.debunkresearch.com/p/thea",
-          "published": "2026-07-06T21:01:19+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/crypto-wr260706",
-          "published": "2026-07-05T21:00:45+00:00"
         }
       ]
     },
@@ -14181,6 +14181,24 @@
   ],
   "articles": [
     {
+      "title": "【7/3(金)~7/7(火)News Report】MiCA全面施行でEUの無認可2000社が窮地 / USDCが取引量でUSDTを逆転 / セキュリタイズが4億ドルでM&A視野など",
+      "url": "https://www.debunkresearch.com/p/cnews260703-07",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-07T21:00:41+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!RHNF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1ae1d354-9e60-49c6-9fd4-ebca2c30b69b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/3(金)~7/7(火)News Report】OpenAI・Anthropicが計算資源の無償提供合戦 / 中国製モデルがOpenRouterで3割超のシェア / Cloudflareが用途別のAIボット制御へなど",
+      "url": "https://www.debunkresearch.com/p/ai-news260703-07",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-07T21:00:24+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Uz_b!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff93fca2c-9346-4f62-b237-1212d141f499_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
       "url": "https://www.debunkresearch.com/p/noimosai",
       "excerpt": "”AIに任せて承認するだけ”は個人・中小に刺さるか",
@@ -14411,24 +14429,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-06-23T23:01:10+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!Xfhv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff45b9c65-94cf-4072-811c-48ee0488f824_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【06/19(金)~06/23(火)News Report】SBI新生信託銀行が信託型ステーブルコイン「JPYSC」を国内初発行へ / NYSE親会社ICEとOKXがトークン化証券で合弁 / イーサリアム財団が人員2割削減・Ethlabs始動など",
-      "url": "https://www.debunkresearch.com/p/cnews260619-23",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-23T23:01:09+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!axUK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb7d018c-4966-41ae-b08e-4d71cc4892aa_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Palmier Pro】AIエージェントが操作するビデオエディター / @Palmier_io",
-      "url": "https://www.debunkresearch.com/p/palmier-pro",
-      "excerpt": "コード解析AIから大胆ピボット。元五輪候補スイマー × YouTuber × エンジニアのYC創業者が、Claudeがタイムラインを直接操作するOSSビデオエディターを作った。",
-      "published": "2026-06-22T21:01:47+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!nGWb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffff376dc-1709-4000-95ca-a4b020853c97_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
