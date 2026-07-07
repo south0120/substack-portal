@@ -3,9 +3,10 @@ name: Refresh analysis (discovery & network)
 # admin の「発見タブ」(discovery.json) と「ネットワークタブ」(network.json) を毎週土曜に再生成する。
 # Substack を全書き手ぶん巡回して集計 → networkx でネットワーク指標を付与 → コミットして
 # Cloudflare Pages が自動デプロイ。GitHub の IP は Substack に弾かれるので Worker プロキシ経由で取得。
+# 週次の自動実行はローカルの launchd (com.south.alex.fyl-weekly-refresh・土 06:00 JST) に移行済み。
+# Substack が共有プロキシIPを強く 429 するため Actions/proxy 版は全書き手巡回に時間がかかりすぎ、
+# タイムアウトの懸念があった。ここは手動起動(workflow_dispatch)のフォールバックとしてのみ残す。
 on:
-  schedule:
-    - cron: "0 21 * * 5"   # 毎週金 21:00 UTC（＝土 06:00 JST）
   workflow_dispatch:
 
 permissions:
