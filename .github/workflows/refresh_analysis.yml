@@ -1,0 +1,74 @@
+name: Refresh analysis (discovery & network)
+
+# admin の「発見タブ」(discovery.json) と「ネットワークタブ」(network.json) を毎週土曜に再生成する。
+# Substack を全書き手ぶん巡回して集計 → networkx でネットワーク指標を付与 → コミットして
+# Cloudflare Pages が自動デプロイ。GitHub の IP は Substack に弾かれるので Worker プロキシ経由で取得。
+on:
+  schedule:
+    - cron: "0 21 * * 5"   # 毎週金 21:00 UTC（＝土 06:00 JST）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-analysis
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install certifi networkx
+
+      - name: Crawl discovery (engagement per writer)
+        env:
+          FYL_PROXY_URL: https://fyl-api.south0120.workers.dev
+          FYL_PROXY_SECRET: ${{ secrets.FYL_PROXY_SECRET }}
+        run: python scripts/crawl_discovery.py
+
+      - name: Crawl network (recommendation graph)
+        env:
+          FYL_PROXY_URL: https://fyl-api.south0120.workers.dev
+          FYL_PROXY_SECRET: ${{ secrets.FYL_PROXY_SECRET }}
+        run: python scripts/crawl_network.py
+
+      - name: Analyze network (pagerank / louvain / betweenness)
+        run: python scripts/analyze_network.py
+
+      - name: Sanity check (skip commit if data looks broken)
+        id: sanity
+        run: |
+          python - <<'PY'
+          import json, os
+          disc = json.load(open("docs/data/discovery.json"))
+          net  = json.load(open("docs/data/network.json"))
+          d_ok = sum(1 for w in disc.get("writers", []) if w.get("err") is None)
+          n_nodes = len(net.get("nodes", []))
+          print(f"discovery: count={disc.get('count')} non_err={d_ok} | network: nodes={n_nodes}")
+          ok = d_ok >= 300 and n_nodes >= 200
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"ok={'true' if ok else 'false'}\n")
+          if not ok:
+              print("::warning::analysis output looks degraded; keeping previous data (no commit)")
+          PY
+
+      - name: Commit & push refreshed analysis
+        if: steps.sanity.outputs.ok == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/discovery.json docs/data/network.json
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "chore: weekly refresh of discovery/network analysis"
+          git fetch origin main
+          git rebase origin/main
+          git push
