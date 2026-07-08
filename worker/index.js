@@ -29,6 +29,12 @@ export default {
       } catch (error) {
         console.warn("backfill step failed", error);
       }
+      // 壊れカバー(非画像URL)を毎tick少数ずつ og:image で自動修復。失敗しても取込本体に影響させない。
+      try {
+        await healBadCoversStep(env);
+      } catch (error) {
+        console.warn("heal bad covers step failed", error);
+      }
     })());
   },
 
@@ -55,6 +61,7 @@ export default {
         return jsonResponse({ error: "Method not allowed" }, 405, "no-store");
       }
       if (url.pathname === "/api/articles") return getArticles(url, env);
+      if (url.pathname === "/api/discover") return getDiscover(url, env);
       if (url.pathname === "/api/writers") return getWriters(url, env);
       if (url.pathname === "/api/categories") return getCategories(env);
       if (url.pathname === "/api/health") return getHealth(env);
@@ -66,6 +73,8 @@ export default {
       if (url.pathname === "/api/backfill") return getBackfill(env);
       if (url.pathname === "/api/admin/overview") return getAdminOverview(url, request, env);
       if (url.pathname === "/api/admin/writers") return getAdminWriters(url, request, env);
+      if (url.pathname === "/api/cover-health") return getCoverHealth(url, env);
+      if (url.pathname === "/api/admin/heal-covers") return healBadCovers(url, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
       console.error("API error", error);
@@ -751,7 +760,14 @@ async function upsertParsedFeed(env, parsed) {
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(url) DO UPDATE SET
         published = COALESCE(excluded.published, articles.published),
-        is_audio = excluded.is_audio
+        is_audio = excluded.is_audio,
+        image = CASE
+          WHEN excluded.image <> ''
+           AND (articles.image IS NULL OR articles.image = ''
+                OR (articles.image NOT LIKE 'https://substackcdn.com/image/%'
+                    AND (articles.image LIKE '%api.substack.com/feed/podcast%'
+                         OR articles.image LIKE '%substack-video.s3%')))
+          THEN excluded.image ELSE articles.image END
     `).bind(
       article.id,
       article.url,
@@ -811,7 +827,7 @@ async function fetchArchive(feed, maxPages = 3) {
         url,
         title,
         excerpt,
-        image: p.cover_image || "",
+        image: archiveImage(p),
         published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
         writer: feed.name,
         category: categories[0],
@@ -828,10 +844,133 @@ async function upsertArticlesOnly(env, articles) {
   const statements = articles.map((a) =>
     env.DB.prepare(
       "INSERT INTO articles (id,url,title,excerpt,image,published,writer,category,is_audio) VALUES (?,?,?,?,?,?,?,?,?) " +
-      "ON CONFLICT(url) DO UPDATE SET published = COALESCE(excluded.published, articles.published), is_audio = excluded.is_audio",
+      "ON CONFLICT(url) DO UPDATE SET published = COALESCE(excluded.published, articles.published), is_audio = excluded.is_audio, " +
+      "image = CASE WHEN excluded.image <> '' AND (articles.image IS NULL OR articles.image = '' " +
+      "OR (articles.image NOT LIKE 'https://substackcdn.com/image/%' " +
+      "AND (articles.image LIKE '%api.substack.com/feed/podcast%' OR articles.image LIKE '%substack-video.s3%'))) " +
+      "THEN excluded.image ELSE articles.image END",
     ).bind(a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category, a.is_audio),
   );
   await runBatches(env.DB, statements);
+}
+
+// 投稿ページの <meta og:image>（無ければ twitter:image）から実カバーURLを取り出す。
+function ogImageFromHtml(html) {
+  for (const tag of String(html || "").match(/<meta\b[^>]*>/gi) || []) {
+    if (/(?:property|name)=["'](?:og:image(?::url)?|twitter:image)["']/i.test(tag)) {
+      const c = (tag.match(/content=["']([^"']+)["']/i) || [])[1];
+      if (c) return decodeEntities(c);
+    }
+  }
+  return "";
+}
+
+// ===== サムネ抜けチェック体制: 現況を読み取り専用で集計（空カバー＋非画像URLの壊れサムネ） =====
+async function getCoverHealth(url, env) {
+  if (!env.DB) return jsonResponse({ error: "no_db" }, 500, "no-store");
+  const agg = await env.DB.prepare(`
+    SELECT
+      COUNT(*) AS total,
+      SUM(CASE WHEN image IS NULL OR image = '' THEN 1 ELSE 0 END) AS empty,
+      SUM(CASE WHEN image NOT LIKE 'https://substackcdn.com/image/%' AND image LIKE '%api.substack.com/feed/podcast%' THEN 1 ELSE 0 END) AS bad_podcast,
+      SUM(CASE WHEN image NOT LIKE 'https://substackcdn.com/image/%' AND image LIKE '%substack-video.s3%' THEN 1 ELSE 0 END) AS bad_video
+    FROM articles
+  `).first();
+  const badTotal = (agg.bad_podcast || 0) + (agg.bad_video || 0);
+  const writers = (await env.DB.prepare(`
+    SELECT writer, COUNT(*) AS n FROM articles
+    WHERE ${BAD_COVER_SQL}
+    GROUP BY writer ORDER BY n DESC LIMIT 15
+  `).all()).results || [];
+  return jsonResponse({
+    total: agg.total,
+    empty: agg.empty,
+    bad_nonimage: badTotal,
+    bad_podcast: agg.bad_podcast,
+    bad_video: agg.bad_video,
+    top_affected_writers: writers,
+  }, 200, "no-store");
+}
+
+// ===== 既存の壊れサムネ(非画像URL)を投稿ページの og:image で一括修復。DEDUPE_TOKENで保護・冪等 =====
+// 取れれば実カバーに UPDATE、ページは開けたが og が無い/非画像なら空にしてアバターfallbackへ。
+// ページ取得自体に失敗した行は据置き（次回リトライで拾う）。writer 指定で対象を絞れる。
+// 「壊れカバー」= 生の音声/動画URL。substackcdn.com/image/ でラップされた版は中身が動画フレームでも
+// 画像として配信され描画できる（＝正常）ので、ラップ済みは除外して生URLだけを壊れ扱いにする。
+const BAD_COVER_SQL = "(image NOT LIKE 'https://substackcdn.com/image/%' AND (image LIKE '%api.substack.com/feed/podcast%' OR image LIKE '%substack-video.s3%'))";
+function isRawBadCover(img) {
+  img = String(img || "");
+  return !/^https:\/\/substackcdn\.com\/image\//.test(img)
+    && /api\.substack\.com\/feed\/podcast|substack-video\.s3/.test(img);
+}
+
+// 各行の投稿ページ og:image を見て実カバーに貼り直す共通処理（手動endpoint/cron両用）。
+// 有効なog→貼替 / ページは開けたが実カバー無し&今が壊れURL→空(アバターfallback) / 取得失敗→据置き。
+async function processCoverRows(env, rows) {
+  let healed = 0, blanked = 0, unchanged = 0, skipped = 0;
+  for (const r of rows) {
+    const isBad = isRawBadCover(r.image);
+    let loaded = false, og = "";
+    try {
+      const res = await fetch(r.url, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(12000) });
+      if (res.ok) { loaded = true; og = ogImageFromHtml(await res.text()); }
+    } catch { /* transient: leave row for next run */ }
+    if (isImageUrl(og)) {
+      if (og === r.image) { unchanged++; continue; }
+      await env.DB.prepare("UPDATE articles SET image = ? WHERE url = ?").bind(og, r.url).run();
+      healed++;
+    } else if (loaded && isBad) {
+      await env.DB.prepare("UPDATE articles SET image = '' WHERE url = ?").bind(r.url).run();
+      blanked++;
+    } else {
+      skipped++;
+    }
+  }
+  return { healed, blanked, unchanged, skipped };
+}
+
+// cron から呼ぶ自動修復: 非画像URLの壊れカバー行を毎tick少数ずつ og:image で修復する。
+// retryEmptyCovers(空カバー)と対をなす「壊れカバー」版。トークン不要（内部呼び出し）。
+async function healBadCoversStep(env, limit = 12) {
+  if (!env.DB) return;
+  const rows = ((await env.DB.prepare(
+    `SELECT url, image FROM articles WHERE ${BAD_COVER_SQL} ORDER BY published DESC LIMIT ?`
+  ).bind(limit).all()).results) || [];
+  if (!rows.length) return;
+  await processCoverRows(env, rows);
+}
+
+async function healBadCovers(url, env) {
+  const token = url.searchParams.get("token") || "";
+  const secret = env.HEAL_TOKEN || env.DEDUPE_TOKEN;
+  if (!secret || token !== secret) {
+    return jsonResponse({ error: "unauthorized" }, 401, "no-store");
+  }
+  if (!env.DB) return jsonResponse({ error: "no_db" }, 500, "no-store");
+  const limit = Math.min(60, Math.max(1, positiveInt(url.searchParams.get("limit"), 25)));
+  const writer = (url.searchParams.get("writer") || "").trim();
+  // resync: 書き手の全記事を og:image で正しいカバーに貼り直す（音声の壊れ＋テキストの誤カバー両方を修復）。
+  // 既定(非resync): 非画像URLの壊れ行のみ対象（サイト全体を安全に修復）。
+  const resync = ["1", "true"].includes((url.searchParams.get("resync") || "").toLowerCase());
+  const clauses = [];
+  const params = [];
+  if (resync) {
+    if (!writer) return jsonResponse({ error: "resync_requires_writer" }, 400, "no-store");
+    clauses.push("writer = ?"); params.push(writer);
+  } else {
+    clauses.push(BAD_COVER_SQL);
+    if (writer) { clauses.push("writer = ?"); params.push(writer); }
+  }
+  const where = clauses.join(" AND ");
+  const rows = ((await env.DB.prepare(
+    `SELECT url, image FROM articles WHERE ${where} ORDER BY published DESC LIMIT ?`
+  ).bind(...params, limit).all()).results) || [];
+
+  const { healed, blanked, unchanged, skipped } = await processCoverRows(env, rows);
+  const remainingBad = (await env.DB.prepare(
+    `SELECT COUNT(*) AS n FROM articles WHERE ${BAD_COVER_SQL}${writer ? " AND writer = ?" : ""}`
+  ).bind(...(writer ? [writer] : [])).first())?.n ?? 0;
+  return jsonResponse({ mode: resync ? "resync" : "bad-only", scanned: rows.length, healed, blanked, unchanged, skipped, remaining_bad: remainingBad }, 200, "no-store");
 }
 
 async function backfillStep(env) {
@@ -984,7 +1123,8 @@ async function fetchAndParseFeed(feed) {
     const hiragana = `${title}${excerpt}`.match(/[ぁ-ゟ]/g) || [];
     if (!title || !url || hiragana.length < 3) continue;
 
-    const enclosure = item.match(/<enclosure\b[^>]*\burl\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>/i);
+    // カバー画像は media:content / 画像型enclosure / content:encoded から取る（音声/動画の
+    // enclosure URL をサムネにしない）。旧実装は先頭enclosureを無条件採用しmp3/mp4を掴んでいた。
     const isAudio = /<enclosure[^>]*type=["']audio/.test(item);
     const date = new Date(cleanText(firstTag(item, "pubDate")));
     articles.push({
@@ -992,7 +1132,7 @@ async function fetchAndParseFeed(feed) {
       url,
       title,
       excerpt,
-      image: decodeEntities(enclosure?.[1] || enclosure?.[2] || ""),
+      image: imageFromFeedItem(item),
       published: Number.isNaN(date.getTime()) ? null : date.toISOString(),
       writer: writerName,
       category: categories[0],
@@ -1065,6 +1205,50 @@ async function getArticles(url, env) {
     total,
     hasMore: offset + limit < total,
   });
+}
+
+// 発見ガチャ（新規発見）: 読み手がカテゴリを選ぶ → 活動中の書き手を「一人一票・等確率ランダム」で
+// N人抽選し、各人の最新記事を1本ずつ返す。理念(mckenzie合意)= 順位づけ/優遇なし・人気で重み付け
+// しない・エンゲージは床に入れない・活動窓は広め(3ヶ月)・書き手ごと抽選で量産が有利にならない。
+async function getDiscover(url, env) {
+  if (!env.DB) return jsonResponse({ error: "no_db" }, 500, "no-store");
+  const catRaw = (url.searchParams.get("category") || "").trim();
+  const category = MASTER_CATEGORIES.has(catRaw) ? catRaw : ""; // "" = おまかせ(全カテゴリ)
+  const count = Math.min(8, Math.max(1, positiveInt(url.searchParams.get("count"), 5)));
+  const catClause = category ? "AND a.category = ?" : "";
+  // 床は「活動中(直近3ヶ月に非音声記事あり)＋実在の書き手」のみ。エンゲージ(反応数)は一切見ない。
+  const window = "datetime(a.published) >= datetime('now','-3 months')";
+
+  // 一人一票: 活動中の書き手を等確率で count 人。ORDER BY RANDOM() で人気重み付けなし。
+  const writerRows = (await env.DB.prepare(
+    `SELECT a.writer AS writer
+       FROM articles a
+      WHERE a.is_audio = 0 AND ${window} ${catClause}
+        AND a.writer IS NOT NULL AND a.writer <> ''
+      GROUP BY a.writer
+      ORDER BY RANDOM()
+      LIMIT ${count}`
+  ).bind(...(category ? [category] : [])).all()).results || [];
+  const writers = writerRows.map((r) => r.writer).filter(Boolean);
+  if (!writers.length) {
+    return jsonResponse({ category: category || "おまかせ", articles: [] }, 200, "no-store");
+  }
+
+  // 各書き手の最新の非音声記事を1本ずつ（カテゴリ指定時はそのカテゴリ内で）。
+  const ph = writers.map(() => "?").join(",");
+  const rows = (await env.DB.prepare(
+    `SELECT id, url, title, excerpt, image, published, writer, category, avatar, writer_url FROM (
+        SELECT a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category,
+               w.avatar AS avatar, w.url AS writer_url,
+               ROW_NUMBER() OVER (PARTITION BY a.writer ORDER BY datetime(a.published) DESC) AS rn
+          FROM articles a
+          LEFT JOIN writers w ON a.writer = w.name
+         WHERE a.is_audio = 0 AND a.writer IN (${ph}) ${catClause}
+     ) t WHERE rn = 1`
+  ).bind(...writers, ...(category ? [category] : [])).all()).results || [];
+
+  // 書き手はランダム抽選済み・順位づけしない（表示順に意味はない）。
+  return jsonResponse({ category: category || "おまかせ", count: rows.length, articles: rows }, 200, "no-store");
 }
 
 async function getWriters(url, env) {
@@ -1562,6 +1746,79 @@ function decodeEntities(value) {
         : entity;
     },
   );
+}
+
+function stripCdata(value) {
+  return String(value || "").replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
+}
+
+// URLが「画像」らしいか判定。音声/動画ファイル(mp3/mp4, substack-video, podcast/audio API)を明示的に弾く。
+function isImageUrl(value) {
+  const s = String(value || "");
+  if (!s) return false;
+  // substackcdn の画像変換URLは中身が動画フレームでも f_jpg 等で画像として配信されるので常に画像扱い
+  // （動画postのog:imageはこの形。ラップ内側のsubstack-video.s3で誤爆させないよう先に許可する）。
+  if (/substackcdn\.com\/image\//i.test(s)) return true;
+  // 生の音声/動画/プレースホルダは弾く
+  if (/substack-video\.s3|api\.substack\.com\/(?:feed\/podcast|api\/v1\/audio)|substack\.com\/img\/podcast\/generic|\.(?:mp3|mp4|m4a|mov|wav|aac|ogg)(?:[?#]|$)/i.test(s)) return false;
+  return /substack-post-media|images\.unsplash\.com|\/image\/|\.(?:jpe?g|png|webp|gif|avif)(?:[?#]|$)/i.test(s);
+}
+
+// archive JSONの1postから実カバー画像を選ぶ。cover_imageは動画postだと動画URLなので、
+// podcast_episode_image_url(実サムネ) にフォールバック。どちらも非画像なら空(=アバターfallback)。
+function archiveImage(p) {
+  for (const cand of [p && p.cover_image, p && p.podcast_episode_image_url]) {
+    if (isImageUrl(cand)) return String(cand);
+  }
+  return "";
+}
+
+// URL末尾に埋まった _幅x高 から、細帯(区切り線/バナー)っぽい画像を弾く。判定不能なら通す。
+function looksLikeCover(url) {
+  const dim = String(url).match(/_(\d{2,5})x(\d{2,5})\.(?:jpe?g|png|webp|gif|avif)/i);
+  if (!dim) return true;
+  const w = +dim[1], h = +dim[2];
+  if (h < 200) return false;                 // 高さ200px未満は区切り/バナーとみなす
+  if (w / h > 4 || h / w > 4) return false;   // 極端なアスペクト比も区切り扱い
+  return true;
+}
+
+// <media:content>/<enclosure> タグ群から「画像」だけを拾う。podcastのenclosure(audio/mpeg)/動画等は弾く。
+function pickImageFromTags(tags) {
+  for (const tag of tags) {
+    const url = (tag.match(/\burl=["']([^"']+)["']/i) || [])[1];
+    if (!url) continue;
+    const type = (tag.match(/\btype=["']([^"']+)["']/i) || [])[1] || "";
+    const medium = (tag.match(/\bmedium=["']([^"']+)["']/i) || [])[1] || "";
+    if (/^(?:audio|video)\//i.test(type) || /^(?:audio|video)$/i.test(medium)) continue; // 明示的に非画像
+    const isImage =
+      /^image\//i.test(type) ||
+      /^image$/i.test(medium) ||
+      (!type && !medium && /substackcdn\.com\/image\/|substack-post-media|\.(?:jpe?g|png|webp|gif|avif)(?:[?#]|$)/i.test(url));
+    if (isImage) return decodeEntities(url);
+  }
+  return "";
+}
+
+// フィードの1<item>からカバー画像URLを取り出す。優先順: media:content → enclosure(画像型のみ) → content:encoded内のカバーimg。
+// 音声/動画投稿の enclosure(mp3/mp4) を掴まないよう型判定で弾き、無ければ本文のカバーimgに委ねる（空なら空=アバターfallback）。
+function imageFromFeedItem(item) {
+  const m1 = pickImageFromTags(item.match(/<media:content\b[^>]*>/gi) || []);
+  if (m1) return m1;
+  const m2 = pickImageFromTags(item.match(/<enclosure\b[^>]*>/gi) || []);
+  if (m2) return m2;
+  const ce = item.match(/<content:encoded\b[^>]*>([\s\S]*?)<\/content:encoded>/i);
+  if (ce) {
+    const html = stripCdata(ce[1]);
+    const srcs = (html.match(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi) || [])
+      .map((tag) => (tag.match(/\bsrc=["']([^"']+)["']/i) || [])[1])
+      .filter(Boolean);
+    // カバーは substack-post-media を優先し、細帯バナーは除外。良い候補が無ければ空を返す。
+    const media = srcs.filter((s) => /substack-post-media/.test(s));
+    const cover = media.find(looksLikeCover) || srcs.find(looksLikeCover) || "";
+    if (cover) return decodeEntities(cover);
+  }
+  return "";
 }
 
 function fallbackSiteUrl(feedUrl) {

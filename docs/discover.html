@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>新規発見 — Find Your Letter</title>
+<style>
+:root{
+  --bg:#F8F8F7; --card:#FFFFFF; --ink:#1B1B1F; --sub:#5b6472; --faint:#71767F;
+  --line:#E9E9E7; --brand:#FF6719; --brand-ink:#9A410F; --brand-soft:#FFF1E8; --brand-line:#FFD9C2;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#141417; --card:#1E1E23; --ink:#ECECEF; --sub:#B3B8C0; --faint:#969CA5;
+  --line:#2E2E35; --brand:#FF7A33; --brand-ink:#FFB088; --brand-soft:#2A2018; --brand-line:#4a3524;
+}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 18px 64px}
+header.h{margin-bottom:8px}
+.brand{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.02em}
+h1{font-size:clamp(24px,5vw,34px);font-weight:800;margin-top:6px;letter-spacing:.01em}
+.lead{color:var(--sub);font-size:14px;margin-top:8px;max-width:640px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px;margin:20px 0 14px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.plabel{font-size:12.5px;font-weight:700;color:var(--faint);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:transparent;color:var(--sub);font-size:13px;font-weight:700;
+  padding:7px 13px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
+.chip:hover{border-color:var(--brand-line);color:var(--ink)}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.actions{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.draw{background:var(--brand);color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:800;
+  padding:13px 26px;border-radius:999px;cursor:pointer;box-shadow:0 4px 14px rgba(255,103,25,.32);transition:transform .1s,filter .12s}
+.draw:hover{filter:brightness(1.05)}.draw:active{transform:scale(.97)}.draw[disabled]{opacity:.6;cursor:default;box-shadow:none}
+.hint{font-size:12px;color:var(--faint)}
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:920px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;transition:transform .12s,box-shadow .12s,border-color .12s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.09);border-color:var(--brand-line)}
+.thumb{position:relative;aspect-ratio:16/9;background:var(--brand-soft);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.thumb .ph{font-size:12px;font-weight:800;opacity:.5}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.thumb .av{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid var(--card);z-index:0}
+.body{padding:13px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.badge{align-self:flex-start;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+.title{font-size:15.5px;font-weight:800;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.excerpt{font-size:12.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:4px}
+.meta img{width:22px;height:22px;border-radius:50%;object-fit:cover;background:var(--line)}
+.meta .wn{font-size:12.5px;font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.read{font-size:12px;font-weight:800;color:var(--brand);margin-top:4px}
+.state{padding:40px 12px;text-align:center;color:var(--faint);font-size:14px}
+.spin{width:26px;height:26px;border:3px solid var(--line);border-top-color:var(--brand);border-radius:50%;animation:sp .8s linear infinite;margin:0 auto 12px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.foot{margin-top:28px;font-size:11.5px;color:var(--faint);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="h">
+    <div class="brand">Find Your Letter</div>
+    <h1>新規発見 <span style="font-size:.6em;color:var(--faint);font-weight:700">— テスト版</span></h1>
+    <p class="lead">カテゴリを選んで引くと、その分野で最近書いている書き手を<b>ランダムに5人</b>お連れします。人気順でも新着順でもなく、公平なくじ引き。まだ出会っていない人との、偶然の一冊を。</p>
+  </header>
+
+  <div class="panel">
+    <div class="plabel">カテゴリを選ぶ</div>
+    <div class="chips" id="chips"></div>
+    <div class="actions">
+      <button class="draw" id="draw">🎲 発見する</button>
+      <span class="hint" id="hint">選んだカテゴリ：おまかせ</span>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <div class="foot">
+    ※ 抽選は「書き手ひとりにつき一票」の等確率ランダムです。投稿数が多くても当たりやすくなりません。人気・エンゲージメントで並べ替えることはしません（＝攻略できる順位が存在しません）。直近3か月に投稿のある書き手が対象です。
+  </div>
+</div>
+
+<script>
+const API = "https://fyl-api.south0120.workers.dev/api/discover";
+const CATS = ["おまかせ","AI","テクノロジー","ビジネス","投資・経済","社会・文化","ライフスタイル","クリエイティブ","キャリア・働き方","健康・ウェルネス","教育・学び","エンタメ","旅行・おでかけ","グルメ・料理","スポーツ","子育て・家族","マンガ・アニメ","音楽","読書","ゲーム","ファッション・美容","その他"];
+const CAT_COLOR = {"AI":["#F1EAFE","#7C3AED"],"テクノロジー":["#E7F0FE","#2563EB"],"ビジネス":["#E6F6EC","#16A34A"],"投資・経済":["#FEF4E0","#D97706"],"社会・文化":["#FDE8F0","#DB2777"],"ライフスタイル":["#E4F7F4","#0D9488"],"クリエイティブ":["#FFEDE2","#EA580C"],"キャリア・働き方":["#FFF6DC","#B45309"],"健康・ウェルネス":["#FDEAEA","#DC2626"],"教育・学び":["#EDF1FE","#4F46E5"],"エンタメ":["#FCE7F3","#BE185D"],"旅行・おでかけ":["#E0F2FE","#0369A1"],"グルメ・料理":["#FEF3C7","#B45309"],"スポーツ":["#DCFCE7","#15803D"],"子育て・家族":["#FFE4E6","#BE123C"],"マンガ・アニメ":["#EDE9FE","#6D28D9"],"音楽":["#F3E8FF","#9333EA"],"読書":["#FFF7ED","#C2410C"],"ゲーム":["#E0E7FF","#4338CA"],"ファッション・美容":["#FAE8FF","#A21CAF"],"その他":["#F1F2F4","#6B7280"]};
+let sel = "おまかせ";
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => { try{ const x=new URL(u); return ["http:","https:"].includes(x.protocol)?x.href:"#"; }catch(_){ return "#"; } };
+
+const chipsEl = document.getElementById("chips");
+CATS.forEach(c=>{
+  const b=document.createElement("button"); b.className="chip"+(c===sel?" on":""); b.textContent=c;
+  b.onclick=()=>{ sel=c; document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x.textContent===c));
+    document.getElementById("hint").textContent="選んだカテゴリ："+c; };
+  chipsEl.appendChild(b);
+});
+
+const resEl = document.getElementById("results");
+const drawBtn = document.getElementById("draw");
+
+function card(a){
+  const [bg,fg] = CAT_COLOR[a.category] || CAT_COLOR["その他"];
+  const img = a.image ? '<img src="'+esc(safeUrl(a.image))+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : "";
+  const av = a.avatar ? '<img class="av" src="'+esc(safeUrl(a.avatar))+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">' : "";
+  const avSmall = a.avatar ? '<img src="'+esc(safeUrl(a.avatar))+'" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'">' : '<img alt="">';
+  return '<a class="card" href="'+esc(safeUrl(a.url))+'" target="_blank" rel="noopener">'
+    + '<div class="thumb" style="background:'+bg+'"><span class="ph" style="color:'+fg+'">'+esc(a.category)+'</span>'+av+img+'</div>'
+    + '<div class="body">'
+    + '<span class="badge" style="background:'+bg+';color:'+fg+'">'+esc(a.category)+'</span>'
+    + '<div class="title">'+esc(a.title)+'</div>'
+    + (a.excerpt?'<div class="excerpt">'+esc(a.excerpt)+'</div>':'')
+    + '<div class="meta">'+avSmall+'<span class="wn">'+esc(a.writer)+'</span></div>'
+    + '<div class="read">Substackで読む →</div>'
+    + '</div></a>';
+}
+
+async function draw(){
+  drawBtn.disabled = true;
+  resEl.innerHTML = '<div class="state"><div class="spin"></div>引いています…</div>';
+  try{
+    const url = API + (sel && sel!=="おまかせ" ? "?category="+encodeURIComponent(sel) : "");
+    const r = await fetch(url, {cache:"no-store"});
+    const d = await r.json();
+    const arts = d.articles || [];
+    if(!arts.length){
+      resEl.innerHTML = '<div class="state">このカテゴリで最近活動している書き手が見つかりませんでした。別のカテゴリで引いてみてください。</div>';
+    } else {
+      resEl.innerHTML = '<div class="grid">'+arts.map(card).join("")+'</div>'
+        + '<div class="actions" style="justify-content:center;margin-top:22px"><button class="draw" id="again">🎲 もう一回引く</button></div>';
+      document.getElementById("again").onclick=draw;
+    }
+  }catch(e){
+    resEl.innerHTML = '<div class="state">読み込みに失敗しました。少し待ってもう一度お試しください。</div>';
+  }
+  drawBtn.disabled = false;
+  window.scrollTo({top: document.querySelector("#results").offsetTop-20, behavior:"smooth"});
+}
+drawBtn.onclick = draw;
+</script>
+</body>
+</html>
