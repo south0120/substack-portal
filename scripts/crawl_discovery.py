@@ -110,7 +110,7 @@ def main():
         ar=r.get('avg_reactions') or 0; ac=r.get('avg_comments') or 0; rs=r.get('avg_restacks') or 0; rc=r.get('recommendations') or 0
         r['score']=round(ar + 2*ac + rs + rc, 2)
     rows.sort(key=lambda r: r['score'])
-    json.dump({'generated': datetime.datetime.utcnow().isoformat()+'Z','count':len(rows),'writers':rows},
+    json.dump({'generated': datetime.datetime.now(datetime.UTC).isoformat().replace('+00:00','Z'),'count':len(rows),'writers':rows},
               open(OUT,'w'), ensure_ascii=False)
     print(f'DONE assembled {len(rows)} -> {OUT}', flush=True)
 
