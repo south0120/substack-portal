@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-08T17:02:32.186722+00:00",
+  "updated_at": "2026-07-08T22:28:53.872306+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
+          "url": "https://www.debunkresearch.com/p/robinhood-chain",
+          "published": "2026-07-08T21:00:53+00:00"
+        },
+        {
+          "title": "【Together AI】\"オープンモデルのAWS\"を狙う研究者集団のインフラ企業 / @togethercompute",
+          "url": "https://www.debunkresearch.com/p/together-ai",
+          "published": "2026-07-08T21:00:48+00:00"
+        },
+        {
           "title": "【7/3(金)~7/7(火)News Report】MiCA全面施行でEUの無認可2000社が窮地 / USDCが取引量でUSDTを逆転 / セキュリタイズが4億ドルでM&A視野など",
           "url": "https://www.debunkresearch.com/p/cnews260703-07",
           "published": "2026-07-07T21:00:41+00:00"
-        },
-        {
-          "title": "【7/3(金)~7/7(火)News Report】OpenAI・Anthropicが計算資源の無償提供合戦 / 中国製モデルがOpenRouterで3割超のシェア / Cloudflareが用途別のAIボット制御へなど",
-          "url": "https://www.debunkresearch.com/p/ai-news260703-07",
-          "published": "2026-07-07T21:00:24+00:00"
-        },
-        {
-          "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
-          "url": "https://www.debunkresearch.com/p/noimosai",
-          "published": "2026-07-06T21:01:19+00:00"
         }
       ]
     },
@@ -14181,6 +14181,24 @@
   ],
   "articles": [
     {
+      "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
+      "url": "https://www.debunkresearch.com/p/robinhood-chain",
+      "excerpt": "株のトークン化は”2つのモデル”に割れる",
+      "published": "2026-07-08T21:00:53+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!8-fW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9d367b01-5927-47cc-99ea-8868195c3999_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Together AI】\"オープンモデルのAWS\"を狙う研究者集団のインフラ企業 / @togethercompute",
+      "url": "https://www.debunkresearch.com/p/together-ai",
+      "excerpt": "”オープンモデルのAWS”は成立するのか",
+      "published": "2026-07-08T21:00:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!K4rP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb4ade485-8c44-4e20-a18f-2660b0f4efb7_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "愛されたい。稼ぎたい。そう願うほど苦しくなる理由",
       "url": "https://www.yukarik.com/p/8f0",
       "excerpt": "足りないものを探す人生から、満たされる人生への転換",
@@ -14406,15 +14424,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【Coinbase】21製品を一挙発表、「最後のマネーアプリ」宣言",
-      "url": "https://www.debunkresearch.com/p/coinbase21",
-      "excerpt": "暗号資産取引所が証券・銀行・予測市場・AIアドバイザーを吸収する。創業14年で最大のプロダクトローンチ、その全容と死角。",
-      "published": "2026-06-24T21:01:17+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!SMrw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4ebf4309-1bcc-45c8-bdef-1aa4fe0c0590_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "理由もないのに沈む6月に、自分を責めないで",
       "url": "https://www.yukarik.com/p/6",
       "excerpt": "梅雨、気圧、祝日のない日々。真面目な人ほど疲れが出る季節の話",
@@ -14430,15 +14439,6 @@
       "published": "2026-06-24T08:26:29+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!apNG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F13e47183-04ef-4564-b626-27f6b4850a72_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【6/19(金)~6/23(火)News Report】ノーベル賞のJ.ジャンパーがDeepMindからAnthropicへ移籍 / AnthropicとMicronが次世代AIメモリで戦略提携 / Five EyesがフロンティアAIのサイバー脅威を「数カ月」と警告など",
-      "url": "https://www.debunkresearch.com/p/ainews260619-23",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-23T23:01:10+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Xfhv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff45b9c65-94cf-4072-811c-48ee0488f824_3760x2480.png",
-      "writer": "DEBUNK",
       "category": "投資・経済"
     },
     {
