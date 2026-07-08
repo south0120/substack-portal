@@ -22,12 +22,13 @@ header.h{margin-bottom:8px}
 h1{font-size:clamp(24px,5vw,34px);font-weight:800;margin-top:6px;letter-spacing:.01em}
 .lead{color:var(--sub);font-size:14px;margin-top:8px;max-width:640px}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 18px;margin:20px 0 14px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-.plabel{font-size:12.5px;font-weight:700;color:var(--faint);margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);background:transparent;color:var(--sub);font-size:13px;font-weight:700;
-  padding:7px 13px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap}
-.chip:hover{border-color:var(--brand-line);color:var(--ink)}
-.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.plabel{font-size:12.5px;font-weight:700;color:var(--faint);margin-bottom:8px}
+.picker{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+.selwrap{position:relative;flex:1 1 220px;min-width:170px}
+.selwrap::after{content:"▾";position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--faint);pointer-events:none;font-size:16px}
+select#catSel{width:100%;height:100%;appearance:none;-webkit-appearance:none;background:var(--bg);border:1.5px solid var(--line);
+  color:var(--ink);font-family:inherit;font-size:15px;font-weight:700;padding:13px 40px 13px 15px;border-radius:12px;cursor:pointer}
+select#catSel:focus{outline:none;border-color:var(--brand)}
 .actions{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
 .draw{background:var(--brand);color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:800;
   padding:13px 26px;border-radius:999px;cursor:pointer;box-shadow:0 4px 14px rgba(255,103,25,.32);transition:transform .1s,filter .12s}
@@ -67,10 +68,9 @@ h1{font-size:clamp(24px,5vw,34px);font-weight:800;margin-top:6px;letter-spacing:
 
   <div class="panel">
     <div class="plabel">カテゴリを選ぶ</div>
-    <div class="chips" id="chips"></div>
-    <div class="actions">
+    <div class="picker">
+      <div class="selwrap"><select id="catSel" aria-label="カテゴリ"></select></div>
       <button class="draw" id="draw">🎲 発見する</button>
-      <span class="hint" id="hint">選んだカテゴリ：おまかせ</span>
     </div>
   </div>
 
@@ -85,17 +85,12 @@ h1{font-size:clamp(24px,5vw,34px);font-weight:800;margin-top:6px;letter-spacing:
 const API = "https://fyl-api.south0120.workers.dev/api/discover";
 const CATS = ["おまかせ","AI","テクノロジー","ビジネス","投資・経済","社会・文化","ライフスタイル","クリエイティブ","キャリア・働き方","健康・ウェルネス","教育・学び","エンタメ","旅行・おでかけ","グルメ・料理","スポーツ","子育て・家族","マンガ・アニメ","音楽","読書","ゲーム","ファッション・美容","その他"];
 const CAT_COLOR = {"AI":["#F1EAFE","#7C3AED"],"テクノロジー":["#E7F0FE","#2563EB"],"ビジネス":["#E6F6EC","#16A34A"],"投資・経済":["#FEF4E0","#D97706"],"社会・文化":["#FDE8F0","#DB2777"],"ライフスタイル":["#E4F7F4","#0D9488"],"クリエイティブ":["#FFEDE2","#EA580C"],"キャリア・働き方":["#FFF6DC","#B45309"],"健康・ウェルネス":["#FDEAEA","#DC2626"],"教育・学び":["#EDF1FE","#4F46E5"],"エンタメ":["#FCE7F3","#BE185D"],"旅行・おでかけ":["#E0F2FE","#0369A1"],"グルメ・料理":["#FEF3C7","#B45309"],"スポーツ":["#DCFCE7","#15803D"],"子育て・家族":["#FFE4E6","#BE123C"],"マンガ・アニメ":["#EDE9FE","#6D28D9"],"音楽":["#F3E8FF","#9333EA"],"読書":["#FFF7ED","#C2410C"],"ゲーム":["#E0E7FF","#4338CA"],"ファッション・美容":["#FAE8FF","#A21CAF"],"その他":["#F1F2F4","#6B7280"]};
-let sel = "おまかせ";
+const COUNT = 6;
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => { try{ const x=new URL(u); return ["http:","https:"].includes(x.protocol)?x.href:"#"; }catch(_){ return "#"; } };
 
-const chipsEl = document.getElementById("chips");
-CATS.forEach(c=>{
-  const b=document.createElement("button"); b.className="chip"+(c===sel?" on":""); b.textContent=c;
-  b.onclick=()=>{ sel=c; document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x.textContent===c));
-    document.getElementById("hint").textContent="選んだカテゴリ："+c; };
-  chipsEl.appendChild(b);
-});
+const catSel = document.getElementById("catSel");
+CATS.forEach(c=>{ const o=document.createElement("option"); o.value=c; o.textContent=c; catSel.appendChild(o); });
 
 const resEl = document.getElementById("results");
 const drawBtn = document.getElementById("draw");
@@ -120,7 +115,10 @@ async function draw(){
   drawBtn.disabled = true;
   resEl.innerHTML = '<div class="state"><div class="spin"></div>引いています…</div>';
   try{
-    const url = API + (sel && sel!=="おまかせ" ? "?category="+encodeURIComponent(sel) : "");
+    const sel = catSel.value;
+    const params = new URLSearchParams({ count: String(COUNT) });
+    if(sel && sel!=="おまかせ") params.set("category", sel);
+    const url = API + "?" + params.toString();
     const r = await fetch(url, {cache:"no-store"});
     const d = await r.json();
     const arts = d.articles || [];
