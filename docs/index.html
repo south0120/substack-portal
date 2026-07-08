@@ -495,6 +495,7 @@ window.FYL_WORKER_URL=(/(^|\.)staging\b/.test(location.hostname)||/\.pages\.dev$
     <div class="view-toggle" aria-label="表示切り替え">
       <button type="button" data-view="articles" class="on">記事</button>
       <button type="button" data-view="shelf">発行物</button>
+      <button type="button" data-view="discover">発見</button>
       <button type="button" data-view="favorites">お気に入り</button>
     </div>
     <a class="intro-link" href="start.html" aria-label="ご紹介・使い方" style="flex:none;display:inline-flex;align-items:center;gap:5px;font-size:.76rem;font-weight:700;color:var(--brand);padding:6px 11px;border:1.5px solid var(--brand);border-radius:9px;white-space:nowrap">
@@ -511,6 +512,7 @@ window.FYL_WORKER_URL=(/(^|\.)staging\b/.test(location.hostname)||/\.pages\.dev$
 <main class="main">
   <div id="shelfView" hidden></div>
   <div id="favoritesView" hidden></div>
+  <div id="discoverView" hidden></div>
 
   <section id="articleView">
     <div class="article-layout">
@@ -567,6 +569,9 @@ window.FYL_WORKER_URL=(/(^|\.)staging\b/.test(location.hostname)||/\.pages\.dev$
   </button>
   <button type="button" data-mobile-view="shelf">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4v16M20 4v16M4 7h16M4 17h16"/><path d="M8 7v10M15 7v10"/></svg>発行物
+  </button>
+  <button type="button" data-mobile-view="discover">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/></svg>発見
   </button>
   <button type="button" data-mobile-view="favorites">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 7.6c0 5.2-8.8 10.4-8.8 10.4S3.2 12.8 3.2 7.6A4.4 4.4 0 0 1 12 6a4.4 4.4 0 0 1 8.8 1.6Z"/></svg>お気に入り
@@ -1607,6 +1612,105 @@ async function loadFavoriteArticles(writers, requestId){
   root.querySelectorAll(".favorites-publications").forEach(enableDragScroll);
 }
 
+// ===== 新規発見（発見タブ）: 一人一票・等確率ランダムのくじ引き（/api/discover） =====
+let discoverInited = false;
+function renderDiscover(){
+  const root = document.getElementById("discoverView");
+  if(discoverInited) return;
+  discoverInited = true;
+  const st = document.createElement("style");
+  st.textContent = `
+  #discoverView{max-width:1080px;margin:0 auto;padding:20px 4px 44px}
+  #discoverView .d-lead{color:var(--faint);font-size:.9rem;margin:6px 0 16px;line-height:1.7;max-width:660px}
+  #discoverView .d-panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  #discoverView .d-label{font-size:.72rem;font-weight:700;color:var(--faint);margin-bottom:8px}
+  #discoverView .d-picker{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+  #discoverView .d-selwrap{position:relative;flex:1 1 220px;min-width:170px}
+  #discoverView .d-selwrap::after{content:"▾";position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--faint);pointer-events:none}
+  #discoverView select{width:100%;height:100%;appearance:none;-webkit-appearance:none;background:var(--bg);border:1.5px solid var(--line);color:var(--ink);font-family:inherit;font-size:.95rem;font-weight:700;padding:13px 40px 13px 15px;border-radius:12px;cursor:pointer}
+  #discoverView select:focus{outline:none;border-color:var(--brand)}
+  #discoverView .d-draw{background:var(--brand);color:#fff;border:none;font-family:inherit;font-size:1rem;font-weight:800;padding:13px 26px;border-radius:999px;cursor:pointer;box-shadow:0 4px 14px rgba(255,103,25,.3)}
+  #discoverView .d-draw[disabled]{opacity:.6;cursor:default}
+  #discoverView .d-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+  @media(min-width:620px){#discoverView .d-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:920px){#discoverView .d-grid{grid-template-columns:1fr 1fr 1fr}}
+  #discoverView .d-card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .12s,box-shadow .12s}
+  #discoverView .d-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+  #discoverView .d-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  #discoverView .d-thumb .d-ph{font-size:.72rem;font-weight:800;opacity:.55}
+  #discoverView .d-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  #discoverView .d-thumb .d-av{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid var(--card);z-index:0}
+  #discoverView .d-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+  #discoverView .d-badge{align-self:flex-start;font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:999px}
+  #discoverView .d-title{font-size:.97rem;font-weight:800;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  #discoverView .d-ex{font-size:.8rem;color:var(--faint);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  #discoverView .d-meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:4px}
+  #discoverView .d-meta img{width:22px;height:22px;border-radius:50%;object-fit:cover;background:var(--line)}
+  #discoverView .d-wn{font-size:.8rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #discoverView .d-read{font-size:.75rem;font-weight:800;color:var(--brand)}
+  #discoverView .d-state{padding:40px 12px;text-align:center;color:var(--faint)}
+  #discoverView .d-again{display:flex;justify-content:center;margin-top:22px}
+  #discoverView .d-foot{margin-top:26px;font-size:.72rem;color:var(--faint);line-height:1.7}
+  `;
+  document.head.appendChild(st);
+  const cats = ["おまかせ", ...categoryOrder()];
+  root.innerHTML = `
+    <h1 style="font-size:clamp(20px,4vw,28px);font-weight:800;margin-top:2px">新規発見</h1>
+    <p class="d-lead">カテゴリを選んで引くと、その分野で最近書いている書き手を<b>ランダムに6人</b>お連れします。人気順でも新着順でもない、攻略できない公平なくじ引き。まだ出会っていない人との、偶然の一冊を。</p>
+    <div class="d-panel">
+      <div class="d-label">カテゴリを選ぶ</div>
+      <div class="d-picker">
+        <div class="d-selwrap"><select id="dCat" aria-label="カテゴリ">${cats.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("")}</select></div>
+        <button class="d-draw" id="dDraw">🎲 発見する</button>
+      </div>
+    </div>
+    <div id="dResults"></div>
+    <div class="d-foot">※ 抽選は「書き手ひとりにつき一票」の等確率ランダムです。投稿数が多くても当たりやすくなりません。人気・エンゲージメントで並べ替えることはしません（＝攻略できる順位が存在しません）。直近3か月に投稿のある書き手が対象です。</div>
+  `;
+  document.getElementById("dDraw").addEventListener("click", drawDiscover);
+  drawDiscover();
+}
+
+async function drawDiscover(){
+  const btn = document.getElementById("dDraw");
+  const res = document.getElementById("dResults");
+  if(!res) return;
+  const sel = document.getElementById("dCat")?.value || "おまかせ";
+  if(btn) btn.disabled = true;
+  res.innerHTML = '<div class="d-state">引いています…</div>';
+  try{
+    const p = new URLSearchParams({ count:"6" });
+    if(sel && sel !== "おまかせ") p.set("category", sel);
+    const r = await fetch(`${WORKER_URL}/api/discover?${p.toString()}`, { cache:"no-store" });
+    const d = await r.json();
+    const arts = d.articles || [];
+    if(!arts.length){
+      res.innerHTML = '<div class="d-state">このカテゴリで最近活動している書き手が見つかりませんでした。別のカテゴリで引いてみてください。</div>';
+    } else {
+      res.innerHTML = `<div class="d-grid">${arts.map(discoverCard).join("")}</div>`
+        + `<div class="d-again"><button class="d-draw" id="dAgain">🎲 もう一回引く</button></div>`;
+      document.getElementById("dAgain").addEventListener("click", drawDiscover);
+    }
+  } catch(e){
+    res.innerHTML = '<div class="d-state">読み込みに失敗しました。少し待ってもう一度お試しください。</div>';
+  }
+  if(btn) btn.disabled = false;
+}
+
+function discoverCard(a){
+  const s = styleFor(a.category);
+  const img = a.image ? `<img src="${esc(safeUrl(a.image))}" alt="" loading="lazy" onerror="this.style.display='none'">` : "";
+  const av = a.avatar ? `<img class="d-av" src="${esc(safeUrl(a.avatar))}" alt="" loading="lazy" onerror="this.style.display='none'">` : "";
+  const avS = a.avatar ? `<img src="${esc(safeUrl(a.avatar))}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '<img alt="">';
+  return `<a class="d-card" href="${esc(safeUrl(a.url))}" target="_blank" rel="noopener">`
+    + `<div class="d-thumb" style="background:${s.bg}"><span class="d-ph" style="color:${s.fg}">${esc(a.category)}</span>${av}${img}</div>`
+    + `<div class="d-body"><span class="d-badge" style="background:${s.bg};color:${s.fg}">${esc(a.category)}</span>`
+    + `<div class="d-title">${esc(a.title)}</div>`
+    + (a.excerpt ? `<div class="d-ex">${esc(a.excerpt)}</div>` : "")
+    + `<div class="d-meta">${avS}<span class="d-wn">${esc(a.writer)}</span></div>`
+    + `<div class="d-read">Substackで読む →</div></div></a>`;
+}
+
 function renderFavorites(){
   if(API_MODE && !writersLoaded){
     ensureWritersLoaded(true);
@@ -1730,7 +1834,7 @@ function toggleCategoryFilter(name){
 }
 
 function setView(nextView, scroll = true){
-  if(!["articles","shelf","favorites"].includes(nextView)) nextView = "articles";
+  if(!["articles","shelf","favorites","discover"].includes(nextView)) nextView = "articles";
   const previousView = view;
   if(nextView !== previousView){
     track("view_switch", { view: nextView });
@@ -1745,9 +1849,11 @@ function setView(nextView, scroll = true){
   view = nextView;
   const shelf = view === "shelf";
   const favoritesView = view === "favorites";
+  const discover = view === "discover";
   document.getElementById("shelfView").hidden = !shelf;
   document.getElementById("favoritesView").hidden = !favoritesView;
-  document.getElementById("articleView").hidden = shelf || favoritesView;
+  document.getElementById("discoverView").hidden = !discover;
+  document.getElementById("articleView").hidden = shelf || favoritesView || discover;
   document.getElementById("searchInput").placeholder = shelf || favoritesView ? "発行物を検索" : "記事を検索";
   document.querySelectorAll("[data-view]").forEach(button =>
     button.classList.toggle("on", button.dataset.view === view)
@@ -1755,9 +1861,10 @@ function setView(nextView, scroll = true){
   document.querySelectorAll("[data-mobile-view]").forEach(button =>
     button.classList.toggle("on", button.dataset.mobileView === view)
   );
-  history.replaceState(null,"",shelf ? "#writers" : favoritesView ? "#favorites" : `${location.pathname}${location.search}`);
+  history.replaceState(null,"",shelf ? "#writers" : favoritesView ? "#favorites" : discover ? "#discover" : `${location.pathname}${location.search}`);
   if(shelf) renderShelf();
   else if(favoritesView) renderFavorites();
+  else if(discover) renderDiscover();
   else if(API_MODE && previousView !== "articles") resetApiArticles();
   else renderArticles();
   if(scroll) window.scrollTo({top:0,behavior:"smooth"});
@@ -2127,7 +2234,7 @@ function init(){
   initPwaPrompt();
   initHideOnScroll();
   updateHeaderHeight();
-  setView(location.hash === "#writers" ? "shelf" : location.hash === "#favorites" ? "favorites" : "articles", false);
+  setView(location.hash === "#writers" ? "shelf" : location.hash === "#favorites" ? "favorites" : location.hash === "#discover" ? "discover" : "articles", false);
   if(API_MODE && view === "articles" && categoryFilters.size > 0) resetApiArticles();
 
   document.querySelectorAll("[data-view]").forEach(button =>
