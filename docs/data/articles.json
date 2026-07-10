@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T20:55:41.949799+00:00",
+  "updated_at": "2026-07-10T22:28:50.445769+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "今週のDEBUNKまとめ（7/4〜7/10）",
+          "url": "https://www.debunkresearch.com/p/260704-10",
+          "published": "2026-07-10T21:00:43+00:00"
+        },
+        {
           "title": "【7/8(水)~7/9(木)AI News Report】xAIがGrok 4.5を公開「Opusクラス」 / OpenAIが同時発話の新音声モデル / 中国MiniMaxが2.7兆パラメータをOSS化予定など",
           "url": "https://www.debunkresearch.com/p/news260708-09",
           "published": "2026-07-09T21:00:30+00:00"
@@ -161,11 +166,6 @@
           "title": "【7/8(水)~7/9(木)News Report】ソニー銀行が米ドルSC発行へOCC承認 / 欧州委がMiCAを域外発行者に拡大検討 / 三井住友信託が国内信託初のファンドトークン化など",
           "url": "https://www.debunkresearch.com/p/news20260708-09",
           "published": "2026-07-09T21:00:29+00:00"
-        },
-        {
-          "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
-          "url": "https://www.debunkresearch.com/p/robinhood-chain",
-          "published": "2026-07-08T21:00:53+00:00"
         }
       ]
     },
@@ -14247,6 +14247,15 @@
   ],
   "articles": [
     {
+      "title": "今週のDEBUNKまとめ（7/4〜7/10）",
+      "url": "https://www.debunkresearch.com/p/260704-10",
+      "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
+      "published": "2026-07-10T21:00:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vsaM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa4e61dca-0544-47be-b22a-531a1b094a97_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "大人の夜会　ゲスト　しがないさん",
       "url": "https://www.yukarik.com/p/e55",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -14497,15 +14506,6 @@
       "image": "https://api.substack.com/feed/podcast/203689702/460e43060c3e4f56a202b1657697dfea.mp3",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "【6/24(水)~6/25(木)News Report】OpenAIがBroadcomと初の自社推論チップ「Jalapeño」を発表 / GoogleがGemini 3.5 Flashに「コンピュータ操作」を標準搭載 / 欧州が米国の対中半導体規制に反発など",
-      "url": "https://www.debunkresearch.com/p/ainews260624-25",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-25T21:01:53+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!jd2S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad16b112-d855-477e-8f3e-af5d9ef967c7_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "理由もないのに沈む6月に、自分を責めないで",
