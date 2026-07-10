@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T16:54:13.276319+00:00",
+  "updated_at": "2026-07-10T00:30:33.938710+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/8(水)~7/9(木)AI News Report】xAIがGrok 4.5を公開「Opusクラス」 / OpenAIが同時発話の新音声モデル / 中国MiniMaxが2.7兆パラメータをOSS化予定など",
+          "url": "https://www.debunkresearch.com/p/news260708-09",
+          "published": "2026-07-09T21:00:30+00:00"
+        },
+        {
+          "title": "【7/8(水)~7/9(木)News Report】ソニー銀行が米ドルSC発行へOCC承認 / 欧州委がMiCAを域外発行者に拡大検討 / 三井住友信託が国内信託初のファンドトークン化など",
+          "url": "https://www.debunkresearch.com/p/news20260708-09",
+          "published": "2026-07-09T21:00:29+00:00"
+        },
+        {
           "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
           "url": "https://www.debunkresearch.com/p/robinhood-chain",
           "published": "2026-07-08T21:00:53+00:00"
-        },
-        {
-          "title": "【Together AI】\"オープンモデルのAWS\"を狙う研究者集団のインフラ企業 / @togethercompute",
-          "url": "https://www.debunkresearch.com/p/together-ai",
-          "published": "2026-07-08T21:00:48+00:00"
-        },
-        {
-          "title": "【7/3(金)~7/7(火)News Report】MiCA全面施行でEUの無認可2000社が窮地 / USDCが取引量でUSDTを逆転 / セキュリタイズが4億ドルでM&A視野など",
-          "url": "https://www.debunkresearch.com/p/cnews260703-07",
-          "published": "2026-07-07T21:00:41+00:00"
         }
       ]
     },
@@ -14177,9 +14177,93 @@
       "bio": "10万人を笑顔にした男",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "秋怜(しゅうれい)｜凹凸育児とカサンドラのアルバム",
+      "url": "https://shuurei2026.substack.com/",
+      "feed_url": "https://shuurei2026.substack.com/feed",
+      "categories": [
+        "子育て・家族"
+      ],
+      "bio": "発達っ子4人の母。夫にも特性がありそうで、我が家では定型発達がマイノリティ。そんな私の目に映るすれ違いを言葉にしています。発達/定型どちらにも「わかる…」を届けたい🍀︎ ̖́-",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "つもみち│ 三丁目六番地Tokyo？",
+      "url": "https://tsumomichi.substack.com/",
+      "feed_url": "https://tsumomichi.substack.com/feed",
+      "categories": [
+        "投資・経済"
+      ],
+      "bio": "女 │ イヤイヤ期真っ只中22歳娘 │ セキセイインコのRuuちゃん │ 株式会社アミューティ代表 │ アクセサリーブランド三丁目六番地Tokyo企画デザイン運営 │ ダンス歴13年 │ 娘3歳からシングル歴長過ぎ │ 九星気学 │ カードリーディング │ ヒーラー │ ISFP │ 四緑木星 │ てんびん座 │ 平和しゅき(好き) │ うっかり協同組合員 │",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "おちゃい飯山啓介 § 農薬・化学肥料不使用コーヒー",
+      "url": "https://88ochai88.substack.com/",
+      "feed_url": "https://88ochai88.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "☕️自家焙煎しながら、広島の空き家を、地域•国際交流シェアハウス×焙煎処×レンタルスペース×陶芸工房×家庭菜園へ。その開業までのリアルを綴ります。ひとり親3児の父。豆の購入はリンクのwebショップへ☕️",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "まきまき@ペットと飼い主の通訳者",
+      "url": "https://maki2anicomi.substack.com/",
+      "feed_url": "https://maki2anicomi.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "まきまき@ペットと飼い主の通訳者",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AIでちょっと楽するノート",
+      "url": "https://gymhoppy.substack.com/",
+      "feed_url": "https://gymhoppy.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "無料AIで、仕事と生活の小さな面倒を少しずつ減らす実験メモ。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "梟流(おうる)",
+      "url": "https://wiseowllab.substack.com/",
+      "feed_url": "https://wiseowllab.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Substackて何？勢です。",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【7/8(水)~7/9(木)AI News Report】xAIがGrok 4.5を公開「Opusクラス」 / OpenAIが同時発話の新音声モデル / 中国MiniMaxが2.7兆パラメータをOSS化予定など",
+      "url": "https://www.debunkresearch.com/p/news260708-09",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-09T21:00:30+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vNUg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3d26681-1410-44b4-b29b-06de5c3227f9_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/8(水)~7/9(木)News Report】ソニー銀行が米ドルSC発行へOCC承認 / 欧州委がMiCAを域外発行者に拡大検討 / 三井住友信託が国内信託初のファンドトークン化など",
+      "url": "https://www.debunkresearch.com/p/news20260708-09",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-09T21:00:29+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!euZ0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06fbf9ec-f03d-4122-95b8-e8262d35ef89_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
       "url": "https://www.debunkresearch.com/p/robinhood-chain",
@@ -14402,24 +14486,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-06-25T21:01:53+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!jd2S!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad16b112-d855-477e-8f3e-af5d9ef967c7_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【6/24(水)~6/25(木)News Report】SBIがビットバンクを467億円で完全子会社化へ / KDDIとSecuritize JapanがRWAトークン化で基本合意 / トランプ大統領がCBDC禁止条項を含む住宅法案の署名を拒否など",
-      "url": "https://www.debunkresearch.com/p/cnews260624-25",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-06-25T21:01:52+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!thON!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6624da61-c415-4618-b0b8-e9e68491e14d_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Okara】サーバーを落とした\"世界初のAI CMO\" /   @askOkara",
-      "url": "https://www.debunkresearch.com/p/okara",
-      "excerpt": "ウェブサイトのURLを入れるだけで10体超のエージェントがSEO・Reddit・Xを回す",
-      "published": "2026-06-24T23:01:41+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Oger!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F289dfa30-7ee5-42c2-b13a-f8694f75fe1c_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
