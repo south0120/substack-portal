@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T00:22:45.280123+00:00",
+  "updated_at": "2026-07-11T03:56:02.932842+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "なぜ今、世界中が予測市場に賭けているのか",
+          "url": "https://www.debunkresearch.com/p/video-prediction-market",
+          "published": "2026-07-11T03:00:52+00:00"
+        },
+        {
           "title": "今週のDEBUNKまとめ（7/4〜7/10）",
           "url": "https://www.debunkresearch.com/p/260704-10",
           "published": "2026-07-10T21:00:43+00:00"
@@ -161,11 +166,6 @@
           "title": "【7/8(水)~7/9(木)AI News Report】xAIがGrok 4.5を公開「Opusクラス」 / OpenAIが同時発話の新音声モデル / 中国MiniMaxが2.7兆パラメータをOSS化予定など",
           "url": "https://www.debunkresearch.com/p/news260708-09",
           "published": "2026-07-09T21:00:30+00:00"
-        },
-        {
-          "title": "【7/8(水)~7/9(木)News Report】ソニー銀行が米ドルSC発行へOCC承認 / 欧州委がMiCAを域外発行者に拡大検討 / 三井住友信託が国内信託初のファンドトークン化など",
-          "url": "https://www.debunkresearch.com/p/news20260708-09",
-          "published": "2026-07-09T21:00:29+00:00"
         }
       ]
     },
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "「切ってしまえば治るのよ」",
+          "url": "https://www.yukarik.com/p/8f5",
+          "published": "2026-07-11T03:15:21+00:00"
+        },
+        {
           "title": "大人の夜会　ゲスト　しがないさん",
           "url": "https://www.yukarik.com/p/e55",
           "published": "2026-07-10T14:20:42+00:00"
@@ -553,11 +558,6 @@
           "title": "愛されたい。稼ぎたい。そう願うほど苦しくなる理由",
           "url": "https://www.yukarik.com/p/8f0",
           "published": "2026-07-08T03:16:05+00:00"
-        },
-        {
-          "title": "日食が示す「闇と光の両極の愛」",
-          "url": "https://www.yukarik.com/p/20e",
-          "published": "2026-07-04T10:04:02+00:00"
         }
       ]
     },
@@ -14247,6 +14247,24 @@
   ],
   "articles": [
     {
+      "title": "「切ってしまえば治るのよ」",
+      "url": "https://www.yukarik.com/p/8f5",
+      "excerpt": "母が遺したもの",
+      "published": "2026-07-11T03:15:21+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!pxv_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa0f8b49-6fe4-4c88-ab7a-2b298dfc99b3_1536x1024.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "社会・文化"
+    },
+    {
+      "title": "なぜ今、世界中が予測市場に賭けているのか",
+      "url": "https://www.debunkresearch.com/p/video-prediction-market",
+      "excerpt": "世論調査が外した2024年の米大統領選を、Polymarketは当てた。これは単なるギャンブルなのか、それとも未来を映す“真実のマシン（トゥルースマシン）”なのか。",
+      "published": "2026-07-11T03:00:52+00:00",
+      "image": "https://api.substack.com/feed/podcast/206504736/fbbc336e439fcb7a2d480b7c4e3869d2.mp3",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "今週のDEBUNKまとめ（7/4〜7/10）",
       "url": "https://www.debunkresearch.com/p/260704-10",
       "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
@@ -14490,15 +14508,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "クリプトもAIも資金のある部分から伸びる",
-      "url": "https://www.debunkresearch.com/p/pc260627",
-      "excerpt": "今すぐ聴く | 毎週土曜は1週間の振り返りをお届けします。",
-      "published": "2026-06-26T21:02:04+00:00",
-      "image": "https://api.substack.com/feed/podcast/203678373/1d31c8685094d1a8ad7aea2935c23be6.mp3",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "大人の夜会　ゲスト:うさこ先生",
       "url": "https://www.yukarik.com/p/3e2",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -14695,15 +14704,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
       "category": "投資・経済"
-    },
-    {
-      "title": "サブスタックで1秒で出来るあなたのアクション〜Substackで透明人間になる呪文",
-      "url": "https://www.yukarik.com/p/substack-e10",
-      "excerpt": "サブスタックで動き始めると、景色は変わり始める",
-      "published": "2026-06-07T00:15:28+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!OOBz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba027536-5dcc-4d55-aaf2-9cc3e73a6dfd_1536x1024.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "社会・文化"
     },
     {
       "title": "#109 良い社交の場はどうつくれるのか",
