@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12T19:44:01.927597+00:00",
+  "updated_at": "2026-07-12T21:19:06.349402+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/crypto-wr260704-10",
+          "published": "2026-07-12T21:00:17+00:00"
+        },
+        {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/ai-wr260704-10",
+          "published": "2026-07-12T21:00:17+00:00"
+        },
+        {
           "title": "SambaNovaをGeneral AtlanticがSeries F、Kraken TechnologyをDTCPがSeries B、など全13PJ【資金調達PJまとめ】",
           "url": "https://www.debunkresearch.com/p/ai-wfr260704-10",
           "published": "2026-07-11T22:31:10+00:00"
-        },
-        {
-          "title": "GauntletにSBI Holdingsが$125M（Series C）、EDX Marketsにも$76M（Series C）出資、など全9PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/crypto-wfr260704-10",
-          "published": "2026-07-11T22:31:07+00:00"
-        },
-        {
-          "title": "なぜ今、世界中が予測市場に賭けているのか",
-          "url": "https://www.debunkresearch.com/p/video-prediction-market",
-          "published": "2026-07-11T03:00:52+00:00"
         }
       ]
     },
@@ -14247,6 +14247,24 @@
   ],
   "articles": [
     {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/crypto-wr260704-10",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-12T21:00:17+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!ffG0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F363d37da-3e1c-4aa1-978f-2e036a5ed019_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260704-10",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-12T21:00:17+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7DYU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8bc77482-77cd-4e1b-a40b-31bd6efd9908_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "SambaNovaをGeneral AtlanticがSeries F、Kraken TechnologyをDTCPがSeries B、など全13PJ【資金調達PJまとめ】",
       "url": "https://www.debunkresearch.com/p/ai-wfr260704-10",
       "excerpt": "直近1週間の資金調達情報をまとめました。",
@@ -14487,24 +14505,6 @@
       "published": "2026-06-28T21:30:29+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!qJfR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa2af069f-14c1-4f0a-bbb7-0bc0b0696f49_2048x1174.png",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/aiwr260620-26",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-28T21:00:46+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!u9Xz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcbde719e-78a7-47a2-85af-5e69b2ff7ea1_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/cwr260620-26",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-06-28T21:00:39+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!jXBh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5d5cf733-5215-43c7-945f-3ccecdbf5f09_3760x2480.png",
-      "writer": "DEBUNK",
       "category": "投資・経済"
     },
     {
