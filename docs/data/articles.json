@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-14T19:58:22.907308+00:00",
+  "updated_at": "2026-07-14T21:27:28.989794+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
+          "url": "https://www.debunkresearch.com/p/ai-news260711-14",
+          "published": "2026-07-14T21:00:28+00:00"
+        },
+        {
+          "title": "【7/11(土)~7/14(火)News Report】Circleが米国法信託銀行の最終承認を取得 / 英政府がトークン化タスクフォース発足 / JCB×CircleがUSDC決済でMOUなど",
+          "url": "https://www.debunkresearch.com/p/crypto-news260711-14",
+          "published": "2026-07-14T21:00:28+00:00"
+        },
+        {
           "title": "【Screenpipe】画面・音声・操作を24時間ローカルで記録しAIエージェントに渡すデスクトップアプリ/ @screenpipe",
           "url": "https://www.debunkresearch.com/p/screenpipe",
           "published": "2026-07-13T21:03:05+00:00"
-        },
-        {
-          "title": "【KOR Protocol】音楽・映像・デジタルアートなどのクリエイティブ資産（IP）のためのオンチェーンクリアリングハウス",
-          "url": "https://www.debunkresearch.com/p/kor-protocol",
-          "published": "2026-07-13T21:02:38+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/crypto-wr260704-10",
-          "published": "2026-07-12T21:00:17+00:00"
         }
       ]
     },
@@ -14665,6 +14665,24 @@
   ],
   "articles": [
     {
+      "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
+      "url": "https://www.debunkresearch.com/p/ai-news260711-14",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-14T21:00:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!eqQK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F182cffdc-679b-4e6e-8615-440ea4c3345b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/11(土)~7/14(火)News Report】Circleが米国法信託銀行の最終承認を取得 / 英政府がトークン化タスクフォース発足 / JCB×CircleがUSDC決済でMOUなど",
+      "url": "https://www.debunkresearch.com/p/crypto-news260711-14",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-14T21:00:28+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!zIfg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64753411-2960-47c9-a1ef-c3a192a1980f_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Screenpipe】画面・音声・操作を24時間ローカルで記録しAIエージェントに渡すデスクトップアプリ/ @screenpipe",
       "url": "https://www.debunkresearch.com/p/screenpipe",
       "excerpt": "「AIの記憶層」という賭けは成立するか",
@@ -14868,24 +14886,6 @@
       "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
       "published": "2026-07-05T21:00:29+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!eHpm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c88d07f-391c-401d-ba44-e380f9e5841b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "Quantum SystemsにBlackstoneが$1.2B出資、Together AIにAramco Venturesが$800M出資、など全21PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260627-0703",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-04T21:00:39+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!zcqq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6aaeb6c-1da6-481f-875e-2f70fa32ecf8_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "Venice AIにDragonflyが$65M出資、Onyx OddsにPaywardが$20M出資、など全15PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/wfr260627-0703",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-04T21:00:30+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!5qhq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F408fdd5a-9fdd-4309-9043-448556831c06_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
