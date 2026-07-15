@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T19:55:14.227398+00:00",
+  "updated_at": "2026-07-15T21:33:35.977615+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
+          "url": "https://www.debunkresearch.com/p/flask",
+          "published": "2026-07-15T21:01:09+00:00"
+        },
+        {
+          "title": "【WebX 2026】日本企業が見せた「オンチェーン金融」の本気度",
+          "url": "https://www.debunkresearch.com/p/webx-2026",
+          "published": "2026-07-15T21:01:05+00:00"
+        },
+        {
           "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
           "url": "https://www.debunkresearch.com/p/ai-news260711-14",
           "published": "2026-07-14T21:00:28+00:00"
-        },
-        {
-          "title": "【7/11(土)~7/14(火)News Report】Circleが米国法信託銀行の最終承認を取得 / 英政府がトークン化タスクフォース発足 / JCB×CircleがUSDC決済でMOUなど",
-          "url": "https://www.debunkresearch.com/p/crypto-news260711-14",
-          "published": "2026-07-14T21:00:28+00:00"
-        },
-        {
-          "title": "【Screenpipe】画面・音声・操作を24時間ローカルで記録しAIエージェントに渡すデスクトップアプリ/ @screenpipe",
-          "url": "https://www.debunkresearch.com/p/screenpipe",
-          "published": "2026-07-13T21:03:05+00:00"
         }
       ]
     },
@@ -20033,6 +20033,24 @@
   ],
   "articles": [
     {
+      "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
+      "url": "https://www.debunkresearch.com/p/flask",
+      "excerpt": "録画で指摘し、AIが構造化する動画レビューSaaS。その核心は、AI動画生成時代の\"レビュー基盤\"にあります。",
+      "published": "2026-07-15T21:01:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!R1OT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8d4cd91-fcf9-4e58-8209-703a30dfae1b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【WebX 2026】日本企業が見せた「オンチェーン金融」の本気度",
+      "url": "https://www.debunkresearch.com/p/webx-2026",
+      "excerpt": "WebX 2026は、日本のクリプトが「実験」から「制度金融の実装」へ切り替わった2日間でした。",
+      "published": "2026-07-15T21:01:05+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!Vq0i!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd86b4953-ce85-45aa-aa7c-63032f9976f2_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
       "url": "https://www.debunkresearch.com/p/ai-news260711-14",
       "excerpt": "主要ニュースまとめ",
@@ -20237,24 +20255,6 @@
       "published": "2026-07-05T21:30:13+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!Fr89!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F92f24cb9-82c2-463a-b92d-610da6aa1a3b_1543x679.png",
       "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/crypto-wr260706",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-07-05T21:00:45+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!h5kL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F75d5d514-d5c5-4bb4-a015-ae578fb39bba_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/ai-wr260706",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-07-05T21:00:29+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!eHpm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c88d07f-391c-401d-ba44-e380f9e5841b_3760x2480.png",
-      "writer": "DEBUNK",
       "category": "投資・経済"
     },
     {
