@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T20:30:43.291671+00:00",
+  "updated_at": "2026-07-16T21:33:39.736595+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
+          "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
+          "published": "2026-07-16T21:01:17+00:00"
+        },
+        {
+          "title": "【7/15(水)~7/16(木)AI News Report】日本政府・産業界とNVIDIAが世界初の「国家AIインフラ」 / Hugging Faceに自律AIエージェントが侵入 / Thinking Machinesが975Bのオープンモデル「Inkling」公開など",
+          "url": "https://www.debunkresearch.com/p/ai-news260715-16",
+          "published": "2026-07-16T21:01:14+00:00"
+        },
+        {
           "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
           "url": "https://www.debunkresearch.com/p/flask",
           "published": "2026-07-15T21:01:09+00:00"
-        },
-        {
-          "title": "【WebX 2026】日本企業が見せた「オンチェーン金融」の本気度",
-          "url": "https://www.debunkresearch.com/p/webx-2026",
-          "published": "2026-07-15T21:01:05+00:00"
-        },
-        {
-          "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
-          "url": "https://www.debunkresearch.com/p/ai-news260711-14",
-          "published": "2026-07-14T21:00:28+00:00"
         }
       ]
     },
@@ -20044,6 +20044,24 @@
   ],
   "articles": [
     {
+      "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
+      "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-16T21:01:17+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!-P6G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd138476f-28d9-49e2-83a9-a7f763dc0a7b_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/15(水)~7/16(木)AI News Report】日本政府・産業界とNVIDIAが世界初の「国家AIインフラ」 / Hugging Faceに自律AIエージェントが侵入 / Thinking Machinesが975Bのオープンモデル「Inkling」公開など",
+      "url": "https://www.debunkresearch.com/p/ai-news260715-16",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-16T21:01:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!1Pln!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5b4f5e9a-c1d2-4b52-bd9c-9ce0f9d296b3_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
       "url": "https://www.debunkresearch.com/p/flask",
       "excerpt": "録画で指摘し、AIが構造化する動画レビューSaaS。その核心は、AI動画生成時代の\"レビュー基盤\"にあります。",
@@ -20238,24 +20256,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-07-07T21:00:24+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!Uz_b!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff93fca2c-9346-4f62-b237-1212d141f499_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【NoimosAI】元Web3ゲーム起業家が仕掛ける\"マーケ部門まるごと自動化\" / @noimos_ai",
-      "url": "https://www.debunkresearch.com/p/noimosai",
-      "excerpt": "”AIに任せて承認するだけ”は個人・中小に刺さるか",
-      "published": "2026-07-06T21:01:19+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!S2bO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F905c69aa-4d08-4239-aa7d-8f00f0b7b401_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【THEA】\"人間の行動\"を予測するSolanaのAI決済レイヤー / @Thea_AI",
-      "url": "https://www.debunkresearch.com/p/thea",
-      "excerpt": "”行動知能”は本当に次のインフラ層か",
-      "published": "2026-07-06T21:01:19+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!UiZY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc71a385c-2418-4f0e-9dd6-566eda150e13_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
