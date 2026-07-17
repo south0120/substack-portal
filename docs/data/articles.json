@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T17:47:40.989349+00:00",
+  "updated_at": "2026-07-17T21:24:49.058856+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "今週のDEBUNKまとめ（7/11〜7/17）",
+          "url": "https://www.debunkresearch.com/p/wpr260711-17",
+          "published": "2026-07-17T21:00:26+00:00"
+        },
+        {
           "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
           "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
           "published": "2026-07-16T21:01:17+00:00"
@@ -161,11 +166,6 @@
           "title": "【7/15(水)~7/16(木)AI News Report】日本政府・産業界とNVIDIAが世界初の「国家AIインフラ」 / Hugging Faceに自律AIエージェントが侵入 / Thinking Machinesが975Bのオープンモデル「Inkling」公開など",
           "url": "https://www.debunkresearch.com/p/ai-news260715-16",
           "published": "2026-07-16T21:01:14+00:00"
-        },
-        {
-          "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
-          "url": "https://www.debunkresearch.com/p/flask",
-          "published": "2026-07-15T21:01:09+00:00"
         }
       ]
     },
@@ -20044,6 +20044,15 @@
   ],
   "articles": [
     {
+      "title": "今週のDEBUNKまとめ（7/11〜7/17）",
+      "url": "https://www.debunkresearch.com/p/wpr260711-17",
+      "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
+      "published": "2026-07-17T21:00:26+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!xhfO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbccbfe83-4b9c-4f8e-9e9d-56a4736de5fd_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "#114 現代批評をするとホラー映画になっちゃった",
       "url": "https://www.wha2come.xyz/p/114",
       "excerpt": "チルド公開するってよ",
@@ -20256,15 +20265,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-07-07T21:00:41+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!RHNF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1ae1d354-9e60-49c6-9fd4-ebca2c30b69b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【7/3(金)~7/7(火)News Report】OpenAI・Anthropicが計算資源の無償提供合戦 / 中国製モデルがOpenRouterで3割超のシェア / Cloudflareが用途別のAIボット制御へなど",
-      "url": "https://www.debunkresearch.com/p/ai-news260703-07",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-07T21:00:24+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Uz_b!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff93fca2c-9346-4f62-b237-1212d141f499_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
