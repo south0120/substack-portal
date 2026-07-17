@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T00:29:26.529462+00:00",
+  "updated_at": "2026-07-17T03:56:14.155269+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -10620,6 +10620,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!RgEP!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64d855a7-0671-4e35-9f43-45fd6e478284_1280x1280.png",
       "latest": [
         {
+          "title": "#114 現代批評をするとホラー映画になっちゃった",
+          "url": "https://www.wha2come.xyz/p/114",
+          "published": "2026-07-17T00:31:12+00:00"
+        },
+        {
           "title": "#113 説明できずらいものも大事にしたい",
           "url": "https://www.wha2come.xyz/p/113",
           "published": "2026-06-17T15:55:31+00:00"
@@ -10628,11 +10633,6 @@
           "title": "#112 どうする？GOする！",
           "url": "https://www.wha2come.xyz/p/go",
           "published": "2026-06-16T15:53:05+00:00"
-        },
-        {
-          "title": "#111 時代通信#3がでます",
-          "url": "https://www.wha2come.xyz/p/111-3",
-          "published": "2026-06-15T15:20:40+00:00"
         }
       ]
     },
@@ -20044,6 +20044,15 @@
   ],
   "articles": [
     {
+      "title": "#114 現代批評をするとホラー映画になっちゃった",
+      "url": "https://www.wha2come.xyz/p/114",
+      "excerpt": "チルド公開するってよ",
+      "published": "2026-07-17T00:31:12+00:00",
+      "image": "https://substackcdn.com/image/youtube/w_728,c_limit/j0eDXiLpVOA",
+      "writer": "時代編集会議",
+      "category": "その他"
+    },
+    {
       "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
       "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
       "excerpt": "主要ニュースまとめ",
@@ -20924,15 +20933,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!XAVv!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3864db43-c3cf-4e1d-ad84-c0dbf774bcf7_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
       "category": "投資・経済"
-    },
-    {
-      "title": "#94 高市政権の方向性から考える起業・投資テーマ",
-      "url": "https://www.wha2come.xyz/p/94",
-      "excerpt": "政治優位の時代におけるスタートアップテーマ",
-      "published": "2025-10-27T09:02:45+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!sf3l!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffea2f926-d7b6-4424-b597-5b273fd3832c_1172x1252.png",
-      "writer": "時代編集会議",
-      "category": "その他"
     },
     {
       "title": "Dexariのエアドロップ狙い！ハイリキをスマホで使って【5000万ドル取引した結果…】",
