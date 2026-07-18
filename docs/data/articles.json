@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T19:49:51.777014+00:00",
+  "updated_at": "2026-07-18T21:23:45.781484+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "AlpacaにPeak XV Partnersが$135M出資、VelocityにDragonfly・FirstMarkが$38M出資、など全15PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/wfr260711-17",
+          "published": "2026-07-18T21:00:12+00:00"
+        },
+        {
+          "title": "Helsingが防衛AIで$1.8B（Series E）、FireworksにAtreides・Index・TCVが$1.505B出資、など全17PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/ai-wfr260711-17",
+          "published": "2026-07-18T21:00:08+00:00"
+        },
+        {
           "title": "今週のDEBUNKまとめ（7/11〜7/17）",
           "url": "https://www.debunkresearch.com/p/wpr260711-17",
           "published": "2026-07-17T21:00:26+00:00"
-        },
-        {
-          "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
-          "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
-          "published": "2026-07-16T21:01:17+00:00"
-        },
-        {
-          "title": "【7/15(水)~7/16(木)AI News Report】日本政府・産業界とNVIDIAが世界初の「国家AIインフラ」 / Hugging Faceに自律AIエージェントが侵入 / Thinking Machinesが975Bのオープンモデル「Inkling」公開など",
-          "url": "https://www.debunkresearch.com/p/ai-news260715-16",
-          "published": "2026-07-16T21:01:14+00:00"
         }
       ]
     },
@@ -20044,6 +20044,24 @@
   ],
   "articles": [
     {
+      "title": "AlpacaにPeak XV Partnersが$135M出資、VelocityにDragonfly・FirstMarkが$38M出資、など全15PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/wfr260711-17",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-18T21:00:12+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!O8qk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59b4d7eb-3a78-4760-9e85-5b0728f8aedc_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "Helsingが防衛AIで$1.8B（Series E）、FireworksにAtreides・Index・TCVが$1.505B出資、など全17PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260711-17",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-18T21:00:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!2pof!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F09fedf33-ce65-403d-95a1-8f75102e7909_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "今週のDEBUNKまとめ（7/11〜7/17）",
       "url": "https://www.debunkresearch.com/p/wpr260711-17",
       "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
@@ -20242,15 +20260,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "【Together AI】\"オープンモデルのAWS\"を狙う研究者集団のインフラ企業 / @togethercompute",
-      "url": "https://www.debunkresearch.com/p/together-ai",
-      "excerpt": "”オープンモデルのAWS”は成立するのか",
-      "published": "2026-07-08T21:00:48+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!K4rP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb4ade485-8c44-4e20-a18f-2660b0f4efb7_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "愛されたい。稼ぎたい。そう願うほど苦しくなる理由",
       "url": "https://www.yukarik.com/p/8f0",
       "excerpt": "足りないものを探す人生から、満たされる人生への転換",
@@ -20258,15 +20267,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!35kj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71c81bbe-15a5-42e3-ba55-969d30b3caca_1672x941.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "【7/3(金)~7/7(火)News Report】MiCA全面施行でEUの無認可2000社が窮地 / USDCが取引量でUSDTを逆転 / セキュリタイズが4億ドルでM&A視野など",
-      "url": "https://www.debunkresearch.com/p/cnews260703-07",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-07T21:00:41+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!RHNF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1ae1d354-9e60-49c6-9fd4-ebca2c30b69b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "予測市場はインデックスの時代へ",
