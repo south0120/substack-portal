@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T21:25:18.271323+00:00",
+  "updated_at": "2026-07-19T22:26:41.994927+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -4513,6 +4513,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!gpa-!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb00b5539-cdea-44b5-a873-e34f8bad1194_256x256.png",
       "latest": [
         {
+          "title": "アジア株をパーペチュアルで取引する",
+          "url": "https://www.bspeak.xyz/p/ed4",
+          "published": "2026-07-19T21:31:12+00:00"
+        },
+        {
           "title": "予測市場はインデックスの時代へ",
           "url": "https://www.bspeak.xyz/p/robinhoodopen-usd",
           "published": "2026-07-05T21:30:13+00:00"
@@ -4521,11 +4526,6 @@
           "title": "「コンピュート」が新たな石油になる時代 / Ethlabs発足 など",
           "url": "https://www.bspeak.xyz/p/ethlabs",
           "published": "2026-06-28T21:30:29+00:00"
-        },
-        {
-          "title": "Coinbase Venturesの投資する再保険、RWA、ステーブルコイン",
-          "url": "https://www.bspeak.xyz/p/coinbase-venturesrwa",
-          "published": "2026-06-21T21:30:26+00:00"
         }
       ]
     },
@@ -20043,6 +20043,15 @@
     }
   ],
   "articles": [
+    {
+      "title": "アジア株をパーペチュアルで取引する",
+      "url": "https://www.bspeak.xyz/p/ed4",
+      "excerpt": "#445 Bspeak! 2026年7月20日号",
+      "published": "2026-07-19T21:31:12+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!b2-n!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3dd5546-fbaf-453d-8bc4-f648ea2d6783_1047x607.png",
+      "writer": "Bspeak! - 暗号通貨/ブロックチェーン",
+      "category": "投資・経済"
+    },
     {
       "title": "先週のAI市場を5分で振り返り",
       "url": "https://www.debunkresearch.com/p/ai-wr260711-17",
