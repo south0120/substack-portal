@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-19T19:49:30.391550+00:00",
+  "updated_at": "2026-07-19T21:25:18.271323+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/ai-wr260711-17",
+          "published": "2026-07-19T21:00:09+00:00"
+        },
+        {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/wr260711-17",
+          "published": "2026-07-19T21:00:07+00:00"
+        },
+        {
           "title": "AlpacaにPeak XV Partnersが$135M出資、VelocityにDragonfly・FirstMarkが$38M出資、など全15PJ【資金調達PJまとめ】",
           "url": "https://www.debunkresearch.com/p/wfr260711-17",
           "published": "2026-07-18T21:00:12+00:00"
-        },
-        {
-          "title": "Helsingが防衛AIで$1.8B（Series E）、FireworksにAtreides・Index・TCVが$1.505B出資、など全17PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/ai-wfr260711-17",
-          "published": "2026-07-18T21:00:08+00:00"
-        },
-        {
-          "title": "今週のDEBUNKまとめ（7/11〜7/17）",
-          "url": "https://www.debunkresearch.com/p/wpr260711-17",
-          "published": "2026-07-17T21:00:26+00:00"
         }
       ]
     },
@@ -20044,6 +20044,24 @@
   ],
   "articles": [
     {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260711-17",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-19T21:00:09+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!j2EL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8c9aff0-0fa4-4630-93e1-c124bb7df199_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/wr260711-17",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-19T21:00:07+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!RYWR!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb9fab0c2-a806-41c4-bce0-c4077bf7b6a3_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "年齢を言い訳にしている人と、武器にしている人の違い",
       "url": "https://www.yukarik.com/p/c81",
       "excerpt": "50代からの〝遅咲き〟ブランディング論",
@@ -20247,24 +20265,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-07-09T21:00:30+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!vNUg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3d26681-1410-44b4-b29b-06de5c3227f9_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【7/8(水)~7/9(木)News Report】ソニー銀行が米ドルSC発行へOCC承認 / 欧州委がMiCAを域外発行者に拡大検討 / 三井住友信託が国内信託初のファンドトークン化など",
-      "url": "https://www.debunkresearch.com/p/news20260708-09",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-09T21:00:29+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!euZ0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06fbf9ec-f03d-4122-95b8-e8262d35ef89_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Robinhood Chain】株を\"24/7トークン\"に変える自前L2",
-      "url": "https://www.debunkresearch.com/p/robinhood-chain",
-      "excerpt": "株のトークン化は”2つのモデル”に割れる",
-      "published": "2026-07-08T21:00:53+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!8-fW!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9d367b01-5927-47cc-99ea-8868195c3999_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
