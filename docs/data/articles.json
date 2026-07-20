@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-20T18:36:45.620061+00:00",
+  "updated_at": "2026-07-20T22:30:39.223479+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Pact Labs】Tetherが賭けた「与信のフル・オンチェーン化」 / @pact_labs",
+          "url": "https://www.debunkresearch.com/p/pact-labs",
+          "published": "2026-07-20T21:00:58+00:00"
+        },
+        {
+          "title": "【Decart】映像を\"その場で書き換える\"リアルタイムAI / @DecartAI",
+          "url": "https://www.debunkresearch.com/p/decart",
+          "published": "2026-07-20T21:00:50+00:00"
+        },
+        {
           "title": "先週のAI市場を5分で振り返り",
           "url": "https://www.debunkresearch.com/p/ai-wr260711-17",
           "published": "2026-07-19T21:00:09+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/wr260711-17",
-          "published": "2026-07-19T21:00:07+00:00"
-        },
-        {
-          "title": "AlpacaにPeak XV Partnersが$135M出資、VelocityにDragonfly・FirstMarkが$38M出資、など全15PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/wfr260711-17",
-          "published": "2026-07-18T21:00:12+00:00"
         }
       ]
     },
@@ -20040,9 +20040,38 @@
       "bio": "Threads×AIツールの始祖 | ツール受託開発実績500件 | ツール開発講座生60人突破 | ★Substack完全自動運用ツール使いたい人は公sikiライﾝから↓↓↓",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "キヨシSABOTEN",
+      "url": "https://kiyoshi0608.substack.com/",
+      "feed_url": "https://kiyoshi0608.substack.com/feed",
+      "categories": [
+        "音楽"
+      ],
+      "bio": "バンドSABOTENのギターボーカル 音楽スタジオGREEN STUDIOのオーナー",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【Pact Labs】Tetherが賭けた「与信のフル・オンチェーン化」 / @pact_labs",
+      "url": "https://www.debunkresearch.com/p/pact-labs",
+      "excerpt": "なぜ世界最大のステーブルコイン発行体は、地味なABL（資産担保融資）インフラに$7Mをリード投資したのか。",
+      "published": "2026-07-20T21:00:58+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!sm2t!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F002ff61a-6c06-465d-bc7e-fa4790b91292_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Decart】映像を\"その場で書き換える\"リアルタイムAI / @DecartAI",
+      "url": "https://www.debunkresearch.com/p/decart",
+      "excerpt": "Decart は 30FPS で映像を「書き換える」",
+      "published": "2026-07-20T21:00:50+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!zHVj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe2e76c8e-2416-44cb-a154-81fac51ce4d6_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "アジア株をパーペチュアルで取引する",
       "url": "https://www.bspeak.xyz/p/ed4",
@@ -20242,15 +20271,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "今週のDEBUNKまとめ（7/4〜7/10）",
-      "url": "https://www.debunkresearch.com/p/260704-10",
-      "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
-      "published": "2026-07-10T21:00:43+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!vsaM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa4e61dca-0544-47be-b22a-531a1b094a97_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "大人の夜会　ゲスト　しがないさん",
       "url": "https://www.yukarik.com/p/e55",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -20266,15 +20286,6 @@
       "published": "2026-07-10T12:03:32+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!9KwQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa37dd288-3f51-42ca-933c-2817e7e66203_420x300.gif",
       "writer": "【裏情報】仮想通貨エアドロップ\"Twitterでは言えない\"やり方の話",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【7/8(水)~7/9(木)AI News Report】xAIがGrok 4.5を公開「Opusクラス」 / OpenAIが同時発話の新音声モデル / 中国MiniMaxが2.7兆パラメータをOSS化予定など",
-      "url": "https://www.debunkresearch.com/p/news260708-09",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-09T21:00:30+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!vNUg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3d26681-1410-44b4-b29b-06de5c3227f9_3760x2480.png",
-      "writer": "DEBUNK",
       "category": "投資・経済"
     },
     {
