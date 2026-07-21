@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T17:00:27.999550+00:00",
+  "updated_at": "2026-07-21T22:28:16.513697+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/18(土)~7/21(火)News Report】トランプ大統領がCLARITY法の倫理条項に同意 / Hut 8が1GWのAIデータセンターを完全商業化 / AZ-COM丸和HDが約2,300社への支払いにJPYCを採用など",
+          "url": "https://www.debunkresearch.com/p/news260718-21",
+          "published": "2026-07-21T21:01:35+00:00"
+        },
+        {
+          "title": "【7/18(土)~7/21(火)AI News Report】Anthropicの$1.5B著作権和解が裁判所で承認 / トランプ政権が中国製AIモデルを「じわじわ禁止」 / Metaの余剰計算資源がAnthropicへなど",
+          "url": "https://www.debunkresearch.com/p/ai-news260718-21",
+          "published": "2026-07-21T21:01:14+00:00"
+        },
+        {
           "title": "【Pact Labs】Tetherが賭けた「与信のフル・オンチェーン化」 / @pact_labs",
           "url": "https://www.debunkresearch.com/p/pact-labs",
           "published": "2026-07-20T21:00:58+00:00"
-        },
-        {
-          "title": "【Decart】映像を\"その場で書き換える\"リアルタイムAI / @DecartAI",
-          "url": "https://www.debunkresearch.com/p/decart",
-          "published": "2026-07-20T21:00:50+00:00"
-        },
-        {
-          "title": "先週のAI市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/ai-wr260711-17",
-          "published": "2026-07-19T21:00:09+00:00"
         }
       ]
     },
@@ -20055,6 +20055,24 @@
   ],
   "articles": [
     {
+      "title": "【7/18(土)~7/21(火)News Report】トランプ大統領がCLARITY法の倫理条項に同意 / Hut 8が1GWのAIデータセンターを完全商業化 / AZ-COM丸和HDが約2,300社への支払いにJPYCを採用など",
+      "url": "https://www.debunkresearch.com/p/news260718-21",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-21T21:01:35+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!FlPQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff482743-cfc6-41c3-a35e-043e29870152_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/18(土)~7/21(火)AI News Report】Anthropicの$1.5B著作権和解が裁判所で承認 / トランプ政権が中国製AIモデルを「じわじわ禁止」 / Metaの余剰計算資源がAnthropicへなど",
+      "url": "https://www.debunkresearch.com/p/ai-news260718-21",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-21T21:01:14+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!TYGG!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F315f6590-f385-48f7-9972-f0a9112a97ad_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "【Pact Labs】Tetherが賭けた「与信のフル・オンチェーン化」 / @pact_labs",
       "url": "https://www.debunkresearch.com/p/pact-labs",
       "excerpt": "なぜ世界最大のステーブルコイン発行体は、地味なABL（資産担保融資）インフラに$7Mをリード投資したのか。",
@@ -20244,15 +20262,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "GauntletにSBI Holdingsが$125M（Series C）、EDX Marketsにも$76M（Series C）出資、など全9PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/crypto-wfr260704-10",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-11T22:31:07+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!v58W!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F109131dc-243c-42ef-b5bb-3e4292a0a9c5_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "「切ってしまえば治るのよ」",
       "url": "https://www.yukarik.com/p/8f5",
       "excerpt": "母が遺したもの",
@@ -20260,15 +20269,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!pxv_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa0f8b49-6fe4-4c88-ab7a-2b298dfc99b3_1536x1024.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "なぜ今、世界中が予測市場に賭けているのか",
-      "url": "https://www.debunkresearch.com/p/video-prediction-market",
-      "excerpt": "世論調査が外した2024年の米大統領選を、Polymarketは当てた。これは単なるギャンブルなのか、それとも未来を映す“真実のマシン（トゥルースマシン）”なのか。",
-      "published": "2026-07-11T03:00:52+00:00",
-      "image": "https://api.substack.com/feed/podcast/206504736/fbbc336e439fcb7a2d480b7c4e3869d2.mp3",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "大人の夜会　ゲスト　しがないさん",
