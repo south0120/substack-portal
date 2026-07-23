@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-23T17:04:13.994275+00:00",
+  "updated_at": "2026-07-23T22:31:30.647960+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,19 +153,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/22(水)~7/23(木)News Report】Anthropicが著作権訴訟を$1.5Bで和解 / 米財務省がMoonshotに制裁警告 / AnthropicがAMD GPUを2GW展開など",
+          "url": "https://www.debunkresearch.com/p/ai-news260722-23",
+          "published": "2026-07-23T21:00:43+00:00"
+        },
+        {
+          "title": "【7/22(水)~7/23(木)News Report】CLARITY法・上院修正版が公表 / Korbitが未来アセット傘下に / エージェントAIは仮想通貨のキラーユースケース",
+          "url": "https://www.debunkresearch.com/p/crypto-news260722-23",
+          "published": "2026-07-23T21:00:42+00:00"
+        },
+        {
           "title": "【7/18(土)~7/21(火)News Report】トランプ大統領がCLARITY法の倫理条項に同意 / Hut 8が1GWのAIデータセンターを完全商業化 / AZ-COM丸和HDが約2,300社への支払いにJPYCを採用など",
           "url": "https://www.debunkresearch.com/p/news260718-21",
           "published": "2026-07-21T21:01:35+00:00"
-        },
-        {
-          "title": "【7/18(土)~7/21(火)AI News Report】Anthropicの$1.5B著作権和解が裁判所で承認 / トランプ政権が中国製AIモデルを「じわじわ禁止」 / Metaの余剰計算資源がAnthropicへなど",
-          "url": "https://www.debunkresearch.com/p/ai-news260718-21",
-          "published": "2026-07-21T21:01:14+00:00"
-        },
-        {
-          "title": "【Pact Labs】Tetherが賭けた「与信のフル・オンチェーン化」 / @pact_labs",
-          "url": "https://www.debunkresearch.com/p/pact-labs",
-          "published": "2026-07-20T21:00:58+00:00"
         }
       ]
     },
@@ -20055,6 +20055,24 @@
   ],
   "articles": [
     {
+      "title": "【7/22(水)~7/23(木)News Report】Anthropicが著作権訴訟を$1.5Bで和解 / 米財務省がMoonshotに制裁警告 / AnthropicがAMD GPUを2GW展開など",
+      "url": "https://www.debunkresearch.com/p/ai-news260722-23",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-23T21:00:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!EJAD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a0998b0-d29c-4b8d-bd3d-ae9e85cd46e9_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/22(水)~7/23(木)News Report】CLARITY法・上院修正版が公表 / Korbitが未来アセット傘下に / エージェントAIは仮想通貨のキラーユースケース",
+      "url": "https://www.debunkresearch.com/p/crypto-news260722-23",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-23T21:00:42+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!wQ1G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff6ec4b0-3206-421f-9cf2-a311d053b613_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "#115 時代通信4通目。しかし休刊。",
       "url": "https://www.wha2come.xyz/p/115-4",
       "excerpt": "時代通信は一旦Substackへ",
@@ -20249,24 +20267,6 @@
       "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
       "published": "2026-07-12T21:00:17+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!ffG0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F363d37da-3e1c-4aa1-978f-2e036a5ed019_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のAI市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/ai-wr260704-10",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-07-12T21:00:17+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!7DYU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8bc77482-77cd-4e1b-a40b-31bd6efd9908_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "SambaNovaをGeneral AtlanticがSeries F、Kraken TechnologyをDTCPがSeries B、など全13PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260704-10",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-11T22:31:10+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Crgu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26123f0b-7b65-4e9f-8952-12504589f42a_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
