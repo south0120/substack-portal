@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T16:00:58.902847+00:00",
+  "updated_at": "2026-07-24T23:34:05.927664+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -153,6 +153,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "今週のDEBUNKまとめ（7/18〜7/24）",
+          "url": "https://www.debunkresearch.com/p/pwr260718-24",
+          "published": "2026-07-24T21:01:08+00:00"
+        },
+        {
           "title": "【7/22(水)~7/23(木)News Report】Anthropicが著作権訴訟を$1.5Bで和解 / 米財務省がMoonshotに制裁警告 / AnthropicがAMD GPUを2GW展開など",
           "url": "https://www.debunkresearch.com/p/ai-news260722-23",
           "published": "2026-07-23T21:00:43+00:00"
@@ -161,11 +166,6 @@
           "title": "【7/22(水)~7/23(木)News Report】CLARITY法・上院修正版が公表 / Korbitが未来アセット傘下に / エージェントAIは仮想通貨のキラーユースケース",
           "url": "https://www.debunkresearch.com/p/crypto-news260722-23",
           "published": "2026-07-23T21:00:42+00:00"
-        },
-        {
-          "title": "【7/18(土)~7/21(火)News Report】トランプ大統領がCLARITY法の倫理条項に同意 / Hut 8が1GWのAIデータセンターを完全商業化 / AZ-COM丸和HDが約2,300社への支払いにJPYCを採用など",
-          "url": "https://www.debunkresearch.com/p/news260718-21",
-          "published": "2026-07-21T21:01:35+00:00"
         }
       ]
     },
@@ -20055,6 +20055,15 @@
   ],
   "articles": [
     {
+      "title": "今週のDEBUNKまとめ（7/18〜7/24）",
+      "url": "https://www.debunkresearch.com/p/pwr260718-24",
+      "excerpt": "今週配信した10本を、3行ずつで振り返ります。",
+      "published": "2026-07-24T21:01:08+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!vWXP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f2d0b54-fa61-4e5e-934c-f023b3207ac1_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "大人の夜会 ゲスト：中嶋茂夫さん",
       "url": "https://www.yukarik.com/p/ef0",
       "excerpt": "A recording from ゆかりっく｜成熟カルチャー研究室's live video",
@@ -20285,15 +20294,6 @@
       "excerpt": "deadmau5もBlack Mirrorも載るIPインフラ。$100M評価に、実体は追いついているのか。",
       "published": "2026-07-13T21:02:38+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!Mt82!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff44fdf48-0ff5-4b2c-b7ca-b9acda5e3eef_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "先週のweb3市場を5分で振り返り",
-      "url": "https://www.debunkresearch.com/p/crypto-wr260704-10",
-      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
-      "published": "2026-07-12T21:00:17+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!ffG0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F363d37da-3e1c-4aa1-978f-2e036a5ed019_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
