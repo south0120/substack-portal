@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T00:27:54.784601+00:00",
+  "updated_at": "2026-07-24T04:01:59.612028+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -545,6 +545,11 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!IIMb!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F139e7594-8fe2-495c-8ab7-baad530369ef_1254x1254.png",
       "latest": [
         {
+          "title": "傷つかない批評家、転び続ける挑戦者",
+          "url": "https://www.yukarik.com/p/3de",
+          "published": "2026-07-24T03:15:11+00:00"
+        },
+        {
           "title": "年齢を言い訳にしている人と、武器にしている人の違い",
           "url": "https://www.yukarik.com/p/c81",
           "published": "2026-07-19T09:01:18+00:00"
@@ -553,11 +558,6 @@
           "title": "「切ってしまえば治るのよ」",
           "url": "https://www.yukarik.com/p/8f5",
           "published": "2026-07-11T03:15:21+00:00"
-        },
-        {
-          "title": "大人の夜会　ゲスト　しがないさん",
-          "url": "https://www.yukarik.com/p/e55",
-          "published": "2026-07-10T14:20:42+00:00"
         }
       ]
     },
@@ -20055,6 +20055,15 @@
   ],
   "articles": [
     {
+      "title": "傷つかない批評家、転び続ける挑戦者",
+      "url": "https://www.yukarik.com/p/3de",
+      "excerpt": "言葉は借りられる。でも、経験は借りられない。",
+      "published": "2026-07-24T03:15:11+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!QKFh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f8fee9b-e92c-4614-903d-4876baa7b52a_1448x1086.jpeg",
+      "writer": "ゆかりっく｜成熟カルチャー研究室",
+      "category": "社会・文化"
+    },
+    {
       "title": "【7/22(水)~7/23(木)News Report】Anthropicが著作権訴訟を$1.5Bで和解 / 米財務省がMoonshotに制裁警告 / AnthropicがAMD GPUを2GW展開など",
       "url": "https://www.debunkresearch.com/p/ai-news260722-23",
       "excerpt": "主要ニュースまとめ",
@@ -20519,15 +20528,6 @@
       "excerpt": "第一部 4回目｜成熟世代だからこそ相性がいい理由",
       "published": "2026-06-09T23:16:18+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!-bxj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F96dbfbe4-9939-403f-8dea-51f020adaabe_1536x1024.jpeg",
-      "writer": "ゆかりっく｜成熟カルチャー研究室",
-      "category": "社会・文化"
-    },
-    {
-      "title": "世界の激震を超えてゆけ〜内なる平和の炎",
-      "url": "https://www.yukarik.com/p/69e",
-      "excerpt": "スピリチュアル視点から観る火の時代",
-      "published": "2026-06-09T09:15:31+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!WyCr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6c301328-3f6d-4228-9e67-9cc8fa614a4d_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
     },
