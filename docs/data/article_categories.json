@@ -179760,6 +179760,18 @@
       "hash": "08d6d6dddcb0af95cddb198ebc610e6e695bce749851a00a6b224a711fad4ac6",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://motasa.substack.com/p/bc4": {
+      "category": "社会・文化",
+      "hash": "0bfa4eec0e19dffd4a8cad5afbb56609d4a468b2f839b37558cb8f107444f656",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://akikostarlight.substack.com/p/50e": {
+      "category": "ビジネス",
+      "hash": "111168ca0c4ab9d16e4b02c3e2a4d6415c79009f4508c627c349901e369ad894",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
