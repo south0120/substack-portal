@@ -181482,6 +181482,90 @@
       "hash": "376cbdf2e842c79fb7dc3111106762423ebd9e290131156debf2286df80a9f79",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kagawaken.substack.com/p/21a": {
+      "category": "AI",
+      "hash": "4258eb1e69b23bae925e2286d6b51785410ba03405dd516b4f5ce09f022222fa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kagawaken.substack.com/p/426": {
+      "category": "テクノロジー",
+      "hash": "6e6bd75e6c4c9fda0eacd60192568358f86d426a56ddc19f0cd257169e6308e4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kagawaken.substack.com/p/claude-opus-5-tlivf": {
+      "category": "AI",
+      "hash": "6e1de0ac18fdd07c65d69ff16daee982c4470fd566d2a4643dcd014b08b87d8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mamagotolab.substack.com/p/db2": {
+      "category": "音楽",
+      "hash": "43c2df96f0383cf7ce0228e6453ce9e36c022807546d4d14aa45d9f0760714d7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tanumaruuuu.substack.com/p/167ai107": {
+      "category": "AI",
+      "hash": "cc0475e01a577b2c93b18f0d0c493be87427af9cbfa6af3bf5c6dd65a56b9706",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itotomio.substack.com/p/9802026-7-25": {
+      "category": "ビジネス",
+      "hash": "7e3fa5be8d7c70b2e1a5d221077a4d8d00afbe369f9a77dcd2faf8f5b9abd06b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://freeowner17.substack.com/p/200": {
+      "category": "読書",
+      "hash": "0c49fd091ca45621b0b824331ed9e9a072d7600fc0c49d5ae3854eee0496a78e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://anko1oo7.substack.com/p/ai-f18": {
+      "category": "AI",
+      "hash": "d06f7cc4254f8b708e15f7c36ed5601145e62110a9c1f18f0d0703b707131427",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://warako0987.substack.com/p/585": {
+      "category": "クリエイティブ",
+      "hash": "660c2f635aeeba84583e4e33113a42b5216d86bc923318601272c6474bddd6c0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://starwalker0202.substack.com/p/412": {
+      "category": "エンタメ",
+      "hash": "183988c8a40c669b4a35ebab634f66f7d4c511ca4d63c78e8e4264fce9c9d3a5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kyouwasekkothuin.substack.com/p/068": {
+      "category": "社会・文化",
+      "hash": "06cb3767bf2d069de365571ea4616c642c1229fedd6958fdef128202e6bdd2f7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://akezimad.substack.com/p/89a": {
+      "category": "クリエイティブ",
+      "hash": "f46d3d4f1ed09c3158820014cadbc0be8b200c0e06886b3c892a4825b77d9766",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://odeopan.substack.com/p/claude-opus-5fable-5": {
+      "category": "AI",
+      "hash": "81191e76a0261d5012b5990c7fa72ecb9c2c6a10bda65fdd779c9fd8ae120ffe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hizume8fukko.substack.com/p/0-23": {
+      "category": "社会・文化",
+      "hash": "e7bd48e7af860cceee21e17e23a1c952f18b7b9b0ebb589e6328fa5c42fa39d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
