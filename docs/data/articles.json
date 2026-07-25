@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25T18:27:07.610738+00:00",
+  "updated_at": "2026-07-25T21:26:43.113509+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -163,19 +163,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "Crypto.comにCitadel Securitiesが$400M出資、AugustusにTiger Globalが$180M（Series B）、など全14PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/cryptocomcitadel-securities400maugustustiger",
+          "published": "2026-07-25T21:00:36+00:00"
+        },
+        {
+          "title": "ArisGlobalをDassault Systèmesが$1.8Bで買収、Atomsにa16zが$1.7B出資、など全30PJ【資金調達PJまとめ】",
+          "url": "https://www.debunkresearch.com/p/ai-wfr260718-24",
+          "published": "2026-07-25T21:00:33+00:00"
+        },
+        {
           "title": "今週のDEBUNKまとめ（7/18〜7/24）",
           "url": "https://www.debunkresearch.com/p/pwr260718-24",
           "published": "2026-07-24T21:01:08+00:00"
-        },
-        {
-          "title": "【7/22(水)~7/23(木)News Report】Anthropicが著作権訴訟を$1.5Bで和解 / 米財務省がMoonshotに制裁警告 / AnthropicがAMD GPUを2GW展開など",
-          "url": "https://www.debunkresearch.com/p/ai-news260722-23",
-          "published": "2026-07-23T21:00:43+00:00"
-        },
-        {
-          "title": "【7/22(水)~7/23(木)News Report】CLARITY法・上院修正版が公表 / Korbitが未来アセット傘下に / エージェントAIは仮想通貨のキラーユースケース",
-          "url": "https://www.debunkresearch.com/p/crypto-news260722-23",
-          "published": "2026-07-23T21:00:42+00:00"
         }
       ]
     },
@@ -20726,6 +20726,24 @@
   ],
   "articles": [
     {
+      "title": "Crypto.comにCitadel Securitiesが$400M出資、AugustusにTiger Globalが$180M（Series B）、など全14PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/cryptocomcitadel-securities400maugustustiger",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-25T21:00:36+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!kBN-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f518caa-228f-42d8-a080-274409232226_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "ArisGlobalをDassault Systèmesが$1.8Bで買収、Atomsにa16zが$1.7B出資、など全30PJ【資金調達PJまとめ】",
+      "url": "https://www.debunkresearch.com/p/ai-wfr260718-24",
+      "excerpt": "直近1週間の資金調達情報をまとめました。",
+      "published": "2026-07-25T21:00:33+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!goPl!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad5bb1bb-b442-46c1-9588-b249deca72ce_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "今週のDEBUNKまとめ（7/18〜7/24）",
       "url": "https://www.debunkresearch.com/p/pwr260718-24",
       "excerpt": "今週配信した10本を、3行ずつで振り返ります。",
@@ -20947,24 +20965,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-07-14T21:00:28+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!zIfg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F64753411-2960-47c9-a1ef-c3a192a1980f_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Screenpipe】画面・音声・操作を24時間ローカルで記録しAIエージェントに渡すデスクトップアプリ/ @screenpipe",
-      "url": "https://www.debunkresearch.com/p/screenpipe",
-      "excerpt": "「AIの記憶層」という賭けは成立するか",
-      "published": "2026-07-13T21:03:05+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!GQxf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F943a181b-cc70-44d9-88af-e4f06f5b3d05_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【KOR Protocol】音楽・映像・デジタルアートなどのクリエイティブ資産（IP）のためのオンチェーンクリアリングハウス",
-      "url": "https://www.debunkresearch.com/p/kor-protocol",
-      "excerpt": "deadmau5もBlack Mirrorも載るIPインフラ。$100M評価に、実体は追いついているのか。",
-      "published": "2026-07-13T21:02:38+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Mt82!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff44fdf48-0ff5-4b2c-b7ca-b9acda5e3eef_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
