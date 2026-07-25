@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T23:34:05.927664+00:00",
+  "updated_at": "2026-07-25T00:35:14.877208+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -21,7 +21,17 @@
     "ゲーム",
     "旅行・おでかけ",
     "マンガ・アニメ",
-    "音楽"
+    "音楽",
+    "フード",
+    "マネー",
+    "育児",
+    "本",
+    "メンタル",
+    "法律",
+    "英語",
+    "スキル",
+    "働き方",
+    "旅"
   ],
   "writers": [
     {
@@ -20031,24 +20041,134 @@
       "latest": []
     },
     {
-      "name": "碧 | サブスタ自動化ツール開発",
-      "url": "https://aotool.substack.com/",
-      "feed_url": "https://aotool.substack.com/feed",
+      "name": "デン太郎| 休学生の食研究ラボ",
+      "url": "https://cuisinevlog.substack.com/",
+      "feed_url": "https://cuisinevlog.substack.com/feed",
       "categories": [
-        "テクノロジー"
+        "ライフスタイル",
+        "フード"
       ],
-      "bio": "Threads×AIツールの始祖 | ツール受託開発実績500件 | ツール開発講座生60人突破 | ★Substack完全自動運用ツール使いたい人は公sikiライﾝから↓↓↓",
+      "bio": "デン太郎| 休学生の食研究ラボ",
       "avatar": "",
       "latest": []
     },
     {
-      "name": "キヨシSABOTEN",
-      "url": "https://kiyoshi0608.substack.com/",
-      "feed_url": "https://kiyoshi0608.substack.com/feed",
+      "name": "れいな",
+      "url": "https://komenoiro.substack.com/",
+      "feed_url": "https://komenoiro.substack.com/feed",
       "categories": [
-        "音楽"
+        "ライフスタイル",
+        "フード"
       ],
-      "bio": "バンドSABOTENのギターボーカル 音楽スタジオGREEN STUDIOのオーナー",
+      "bio": "れいな",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "横田惣司",
+      "url": "https://sojiyokota.substack.com/",
+      "feed_url": "https://sojiyokota.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "横田惣司",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゴイチ 3.5万円おこづかい戦士",
+      "url": "https://goichilog55.substack.com/",
+      "feed_url": "https://goichilog55.substack.com/feed",
+      "categories": [
+        "マネー",
+        "ライフスタイル"
+      ],
+      "bio": "ゴイチ 3.5万円おこづかい戦士",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "かおり｜育児をゆるめるトイトレ便り",
+      "url": "https://catnippot.substack.com/",
+      "feed_url": "https://catnippot.substack.com/feed",
+      "categories": [
+        "育児",
+        "ライフスタイル"
+      ],
+      "bio": "かおり｜育児をゆるめるトイトレ便り",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "forest book club",
+      "url": "https://forestbookclub.substack.com/",
+      "feed_url": "https://forestbookclub.substack.com/feed",
+      "categories": [
+        "本",
+        "ライフスタイル"
+      ],
+      "bio": "forest book club",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "心理カウンセラー南ユウタ",
+      "url": "https://yutaminamiyoutube.substack.com/",
+      "feed_url": "https://yutaminamiyoutube.substack.com/feed",
+      "categories": [
+        "メンタル",
+        "ライフスタイル"
+      ],
+      "bio": "心理カウンセラー南ユウタ",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "レオ (ベテラン法務の観察記)",
+      "url": "https://orchard3500.substack.com/",
+      "feed_url": "https://orchard3500.substack.com/feed",
+      "categories": [
+        "ビジネス",
+        "法律"
+      ],
+      "bio": "レオ (ベテラン法務の観察記)",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "杏 / 英語AI 在宅コーチ",
+      "url": "https://anjaenglish.substack.com/",
+      "feed_url": "https://anjaenglish.substack.com/feed",
+      "categories": [
+        "英語",
+        "AI",
+        "スキル"
+      ],
+      "bio": "杏 / 英語AI 在宅コーチ",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "岸本幸子",
+      "url": "https://larkhikari.substack.com/",
+      "feed_url": "https://larkhikari.substack.com/feed",
+      "categories": [
+        "ライフスタイル",
+        "働き方"
+      ],
+      "bio": "岸本幸子",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "まめまめみ",
+      "url": "https://norupieforest.substack.com/",
+      "feed_url": "https://norupieforest.substack.com/feed",
+      "categories": [
+        "ライフスタイル",
+        "旅"
+      ],
+      "bio": "まめまめみ",
       "avatar": "",
       "latest": []
     }
