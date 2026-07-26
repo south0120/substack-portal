@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T19:53:10.623190+00:00",
+  "updated_at": "2026-07-26T21:29:15.805812+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -163,19 +163,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "先週のAI市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/ai-wr260718-24",
+          "published": "2026-07-26T21:00:48+00:00"
+        },
+        {
+          "title": "先週のweb3市場を5分で振り返り",
+          "url": "https://www.debunkresearch.com/p/wr260718-24",
+          "published": "2026-07-26T21:00:43+00:00"
+        },
+        {
           "title": "パーペチュアル（無期限先物）とは？",
           "url": "https://www.debunkresearch.com/p/vp-perpetual",
           "published": "2026-07-26T03:00:31+00:00"
-        },
-        {
-          "title": "Crypto.comにCitadel Securitiesが$400M出資、AugustusにTiger Globalが$180M（Series B）、など全14PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/cryptocomcitadel-securities400maugustustiger",
-          "published": "2026-07-25T21:00:36+00:00"
-        },
-        {
-          "title": "ArisGlobalをDassault Systèmesが$1.8Bで買収、Atomsにa16zが$1.7B出資、など全30PJ【資金調達PJまとめ】",
-          "url": "https://www.debunkresearch.com/p/ai-wfr260718-24",
-          "published": "2026-07-25T21:00:33+00:00"
         }
       ]
     },
@@ -20726,6 +20726,24 @@
   ],
   "articles": [
     {
+      "title": "先週のAI市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/ai-wr260718-24",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-26T21:00:48+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!EuwQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74df27da-7496-4f56-9dad-6478e2aaec0c_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "先週のweb3市場を5分で振り返り",
+      "url": "https://www.debunkresearch.com/p/wr260718-24",
+      "excerpt": "直近1週間のマーケット情報・主要ニュースをまとめました。",
+      "published": "2026-07-26T21:00:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!JzUz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa16b4d63-d210-46cc-a9f9-b0e9e875ae67_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "パーペチュアル（無期限先物）とは？",
       "url": "https://www.debunkresearch.com/p/vp-perpetual",
       "excerpt": "【動画】クリプト取引で最も大きなお金が動いているのは、実は「現物」ではありません。今回はその主役であるパーペチュアル（無期限先物）を、ゼロから解説します。",
@@ -20947,24 +20965,6 @@
       "excerpt": "録画で指摘し、AIが構造化する動画レビューSaaS。その核心は、AI動画生成時代の\"レビュー基盤\"にあります。",
       "published": "2026-07-15T21:01:09+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!R1OT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8d4cd91-fcf9-4e58-8209-703a30dfae1b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【WebX 2026】日本企業が見せた「オンチェーン金融」の本気度",
-      "url": "https://www.debunkresearch.com/p/webx-2026",
-      "excerpt": "WebX 2026は、日本のクリプトが「実験」から「制度金融の実装」へ切り替わった2日間でした。",
-      "published": "2026-07-15T21:01:05+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!Vq0i!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd86b4953-ce85-45aa-aa7c-63032f9976f2_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【7/11(土)~7/14(火)AI News Report】独オープン30B「Soofi S」が英独ベンチ首位 / Claude Codeに組み込みブラウザ搭載 / ノーベル賞経済学者ら200名超がAI警告声明など",
-      "url": "https://www.debunkresearch.com/p/ai-news260711-14",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-14T21:00:28+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!eqQK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F182cffdc-679b-4e6e-8615-440ea4c3345b_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
