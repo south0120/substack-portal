@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-27T19:06:18.042064+00:00",
+  "updated_at": "2026-07-27T22:35:43.745531+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -163,19 +163,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【Atoms】Uber 共同創業者のTravis Kalanick 氏が率いるフィジカルAIの持株会社",
+          "url": "https://www.debunkresearch.com/p/atoms",
+          "published": "2026-07-27T21:01:58+00:00"
+        },
+        {
+          "title": "【Uniswap v4 Permissioned Pools】2026年7月23日に発表した v4 の新しいプール規格",
+          "url": "https://www.debunkresearch.com/p/uniswap-v4-permissioned-pools",
+          "published": "2026-07-27T21:01:43+00:00"
+        },
+        {
           "title": "先週のAI市場を5分で振り返り",
           "url": "https://www.debunkresearch.com/p/ai-wr260718-24",
           "published": "2026-07-26T21:00:48+00:00"
-        },
-        {
-          "title": "先週のweb3市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/wr260718-24",
-          "published": "2026-07-26T21:00:43+00:00"
-        },
-        {
-          "title": "パーペチュアル（無期限先物）とは？",
-          "url": "https://www.debunkresearch.com/p/vp-perpetual",
-          "published": "2026-07-26T03:00:31+00:00"
         }
       ]
     },
@@ -20722,9 +20722,214 @@
       "bio": "琵琶や日本文化・音楽の初体験を丁寧につづる発信者",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "みきを|AI楽曲アーティスト",
+      "url": "https://loanhappy.substack.com/",
+      "feed_url": "https://loanhappy.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "2026年7月1日にストリーミングアーティストとしてデビューしました。 Spotify、Apple Music、YouTube Music、Amazon Music、TikTok、Instagram Musicなどで配信中。 22年の時を経て、夢を再び追いかける、音楽を届ける人",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "久積篤史のニュースレター（無料）",
+      "url": "https://hisatsumi.substack.com/",
+      "feed_url": "https://hisatsumi.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "夢を諦めなかった人だけが、次の景色を見ることができる。 このニュースレターは、久積篤史の再挑戦を記録する場所です。 AIとWeb3を武器に、ゼロから世界へ挑戦するプロセスをリアルタイムで公開。 プロダクト開発、資金調達、組織づくり、失敗、意思決定まで、すべてをお届けします。 成功だけではなく、失敗も、葛藤も、すべて公開します。 世界へ挑戦する、その一歩一歩を一緒に見届けてください。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ララ｜SNS×楽天ROOM × AI",
+      "url": "https://rarahome.substack.com/",
+      "feed_url": "https://rarahome.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "インスタ┋ SNS×楽天ROOM × AI ショート動画でしっかり稼ぐ AI使って効率よく運用する仕組みを発信 ショート動画クリエイター┋ショート動画ディレクター┋ROOMインフルエンサー ・Instagramでは主婦に役立つ便利グッズ ・XやsubstackではSNS発信ノウハウ ・LINEではお得クーポンなどをお届け",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "heyhey | Shigin Voice",
+      "url": "https://heyhey3011.substack.com/",
+      "feed_url": "https://heyhey3011.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "heyhey | Shigin Voice",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "れんとんの秘密基地",
+      "url": "https://renton1014.substack.com/",
+      "feed_url": "https://renton1014.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "\"1枚の絵から、1本の映像へ\" ▶︎AIで画像と動画をつくり続けるクリエイター ▷画像・動画生成AIを誰よりもやさしく伝える人 ▶︎画像×動画生成AI特化のコミュニティRAML運営中 ▷AIアート・動画制作に興味あ る方はフォロー推奨🍊",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "orivie",
+      "url": "https://orivie.substack.com/",
+      "feed_url": "https://orivie.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "X・noteを中心に「挑戦」について発信します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "よっしー｜今さらを、今から",
+      "url": "https://essepaens449422.substack.com/",
+      "feed_url": "https://essepaens449422.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "40代50代から教員を目指す人へ｜37歳で読み聞かせボランティア→42歳で学校司書｜55歳で会計年度任用職員から教員へ｜夫の扶養を抜けて年収6倍｜61歳で教員免許取得｜教員転職への道筋を発信｜詳しくはnoteへ https://note.com/honest_skink5839",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "がっきー",
+      "url": "https://gacky0219.substack.com/",
+      "feed_url": "https://gacky0219.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "2026.５月にやり直しました_最近読んだ本やメルマガをお届けします_週に1回くらい投稿します_ 在宅での働きを実現できることが目標です_",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "たかみゆり｜猫のそばで月47万円",
+      "url": "https://takamiyuri.substack.com/",
+      "feed_url": "https://takamiyuri.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "猫を介護しながらパソコン一台・完全在宅で月47万円稼ぐWebライター ｜ 開始4ヶ月で月10万円→1年後専業に ｜ Webライターの魅力やライターの日常を発信 ｜ メルぞう主催「第37回無料コンテンツ大賞」優秀賞受賞",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "あなごん",
+      "url": "https://anagon1111.substack.com/",
+      "feed_url": "https://anagon1111.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "あなごん",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ゆるワーママ働き方研究室",
+      "url": "https://yuruworkmama.substack.com/",
+      "feed_url": "https://yuruworkmama.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "フルタイム・フルリモート勤務の2児ママ。 正社員・専業主婦・派遣を経て、「生活を壊さずに、働き方の選択肢を増やす」をゆるく研究中です🌼育児と仕事に追われながらも、発信・副業・学びを少しずつ積み重ねたい30代ワーママへ。働き方・発信・暮らしの試行錯誤を記録しています✍️",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "天倉 ゆう",
+      "url": "https://amakura9376.substack.com/",
+      "feed_url": "https://amakura9376.substack.com/feed",
+      "categories": [
+        "クリエイティブ"
+      ],
+      "bio": "初めまして、[天倉 ゆう]と申します。 忙しい毎日に、ほっとひと息つける場所。 心温まるイラストと優しい物語で、 疲れた心を少しだけ軽くします。 また明日も訪れたくなる、小さな癒しをあなたへ。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "人生再構築スタジオニュースレター",
+      "url": "https://golem50kabba.substack.com/",
+      "feed_url": "https://golem50kabba.substack.com/feed",
+      "categories": [
+        "社会・文化"
+      ],
+      "bio": "休む・辞める・続けるを、ひとりで抱えない。 暮らしを守りながら、次の一手を考える。 うつと復職を6回経験したゴーレム所長が、人生を立て直していく小さな実験を届けます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "ひーさ@書くことで人生再生中",
+      "url": "https://hisafree.substack.com/",
+      "feed_url": "https://hisafree.substack.com/feed",
+      "categories": [
+        "キャリア・働き方"
+      ],
+      "bio": "海のそばで丁寧に暮らす暇人を目指す、2児のパパ| 語学留学するも、謎の病で強制帰国→海外赴任を夢見て転職するも適応障害→個人事業主をチャレンジするも月10万止まり→移住するも不慮の事故でUターン| 失敗してもなんだかんだで再起してます| 通勤電車が作業場",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "こゆき|お砂糖で描く人",
+      "url": "https://sugarpaint.substack.com/",
+      "feed_url": "https://sugarpaint.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "パティシエが砂糖を使って絵を描き始める人生挑戦記録",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "みら│サブスタ上級アルゴリズム解析",
+      "url": "https://proanalyst.substack.com/",
+      "feed_url": "https://proanalyst.substack.com/feed",
+      "categories": [
+        "ビジネス"
+      ],
+      "bio": "マーケティング歴8年。現在、年商2億円社長の裏方マーケターをしている著者が、ビッグデータを元にSubstackのアルゴリズムの答えを完全解析していきます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "841帖",
+      "url": "https://841cho.substack.com/",
+      "feed_url": "https://841cho.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "LINEスタンプや絵文字を使う方へ。「LINEトークがちょっと楽しくなる」使い方を紹介しています。",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【Atoms】Uber 共同創業者のTravis Kalanick 氏が率いるフィジカルAIの持株会社",
+      "url": "https://www.debunkresearch.com/p/atoms",
+      "excerpt": "Travis is Back。どうなるでしょうか。",
+      "published": "2026-07-27T21:01:58+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!DSDu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3bdf18f6-4613-458a-9706-d99240e9c1a6_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Uniswap v4 Permissioned Pools】2026年7月23日に発表した v4 の新しいプール規格",
+      "url": "https://www.debunkresearch.com/p/uniswap-v4-permissioned-pools",
+      "excerpt": "Uniswapが2026年7月23日に発表した v4 の新しいプール規格",
+      "published": "2026-07-27T21:01:43+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!AkCa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fade8d03b-346b-442f-9be1-9c555efcf814_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "先週のAI市場を5分で振り返り",
       "url": "https://www.debunkresearch.com/p/ai-wr260718-24",
@@ -20947,24 +21152,6 @@
       "excerpt": "主要ニュースまとめ",
       "published": "2026-07-16T21:01:17+00:00",
       "image": "https://substackcdn.com/image/fetch/$s_!-P6G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd138476f-28d9-49e2-83a9-a7f763dc0a7b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【7/15(水)~7/16(木)AI News Report】日本政府・産業界とNVIDIAが世界初の「国家AIインフラ」 / Hugging Faceに自律AIエージェントが侵入 / Thinking Machinesが975Bのオープンモデル「Inkling」公開など",
-      "url": "https://www.debunkresearch.com/p/ai-news260715-16",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-16T21:01:14+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!1Pln!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5b4f5e9a-c1d2-4b52-bd9c-9ce0f9d296b3_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "【Flask】AIエージェントが動画を上げ、人間のレビューを取り込む「review-loop」",
-      "url": "https://www.debunkresearch.com/p/flask",
-      "excerpt": "録画で指摘し、AIが構造化する動画レビューSaaS。その核心は、AI動画生成時代の\"レビュー基盤\"にあります。",
-      "published": "2026-07-15T21:01:09+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!R1OT!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8d4cd91-fcf9-4e58-8209-703a30dfae1b_3760x2480.png",
       "writer": "DEBUNK",
       "category": "投資・経済"
     },
