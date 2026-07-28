@@ -262,11 +262,19 @@ async function handleProxy(url, request, env) {
   } catch {
     return new Response("Invalid URL", { status: 400 });
   }
+  const fwdHeaders = {
+    "User-Agent": USER_AGENT,
+    Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
+  };
+  // Forward a Substack auth cookie only for substack.com targets. Used by the
+  // keyword-search writer discovery (publication/search sits behind auth). Fully
+  // backward-compatible: requests without x-fwd-cookie behave exactly as before.
+  const fwdCookie = request.headers.get("x-fwd-cookie");
+  if (fwdCookie && parsedTarget.hostname.endsWith("substack.com")) {
+    fwdHeaders["Cookie"] = fwdCookie;
+  }
   const response = await fetch(parsedTarget.href, {
-    headers: {
-      "User-Agent": USER_AGENT,
-      Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
-    },
+    headers: fwdHeaders,
     signal: AbortSignal.timeout(15000),
   });
   const body = await response.arrayBuffer();

@@ -1,0 +1,53 @@
+name: Discover writers (keyword search)
+
+# Substack の publication 検索（「はじめました」等の開始告知ワード）で、
+# 推薦グラフ巡回(discover.py)では届かない新しい日本語ニュースレターを発見し
+# feeds.json に追加する。週次（手動実行も可）。
+# 推薦グラフ=月・エンゲージ=木 に対し、これは 木 1:30 JST で分散させる。
+on:
+  schedule:
+    - cron: "30 16 * * 3"   # 毎週水曜 16:30 UTC（≒木曜 1:30 JST）
+  workflow_dispatch:
+    inputs:
+      max_new:
+        description: "1回で追加する最大数"
+        default: "40"
+
+permissions:
+  contents: write
+
+jobs:
+  discover-keyword:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install certifi
+
+      - name: Discover writers via keyword search
+        env:
+          # GitHub の IP は Substack に弾かれるため Worker プロキシ経由で取得する
+          FYL_PROXY_URL: https://fyl-api.south0120.workers.dev
+          FYL_PROXY_SECRET: ${{ secrets.FYL_PROXY_SECRET }}
+          # publication 検索は Substack ログインセッション必須。Secret に cookie を設定すること。
+          # ※Substack のセッション cookie は期限切れがあるため、失効したら Secret を更新する。
+          FYL_SUBSTACK_COOKIE: ${{ secrets.FYL_SUBSTACK_COOKIE }}
+        run: |
+          python scripts/discover_keyword.py \
+            --max-new "${{ github.event.inputs.max_new || '40' }}"
+
+      - name: Commit new writers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feeds.json
+          git diff --cached --quiet && echo "no new writers" && exit 0
+          git commit -m "chore: discover new writers via keyword search"
+          git fetch origin main
+          git rebase origin/main
+          git push
