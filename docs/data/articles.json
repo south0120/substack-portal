@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T17:57:52.978180+00:00",
+  "updated_at": "2026-07-29T21:29:26.633443+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -163,19 +163,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【RL1】欧州の銀行10社が共同で持つ、規制対応ブロックチェーン",
+          "url": "https://www.debunkresearch.com/p/rl1",
+          "published": "2026-07-29T21:02:03+00:00"
+        },
+        {
+          "title": "【Buzz】人とAIエージェントが同じ部屋で働く、Jack Dorseyの新しい仕事場",
+          "url": "https://www.debunkresearch.com/p/buzz",
+          "published": "2026-07-29T21:01:44+00:00"
+        },
+        {
           "title": "【Atoms】Uber 共同創業者のTravis Kalanick 氏が率いるフィジカルAIの持株会社",
           "url": "https://www.debunkresearch.com/p/atoms",
           "published": "2026-07-27T21:01:58+00:00"
-        },
-        {
-          "title": "【Uniswap v4 Permissioned Pools】2026年7月23日に発表した v4 の新しいプール規格",
-          "url": "https://www.debunkresearch.com/p/uniswap-v4-permissioned-pools",
-          "published": "2026-07-27T21:01:43+00:00"
-        },
-        {
-          "title": "先週のAI市場を5分で振り返り",
-          "url": "https://www.debunkresearch.com/p/ai-wr260718-24",
-          "published": "2026-07-26T21:00:48+00:00"
         }
       ]
     },
@@ -20913,6 +20913,24 @@
   ],
   "articles": [
     {
+      "title": "【RL1】欧州の銀行10社が共同で持つ、規制対応ブロックチェーン",
+      "url": "https://www.debunkresearch.com/p/rl1",
+      "excerpt": "新しいチェーンのローンチではありません。3年動いてきたネットワークの、持ち主が変わったという話です。",
+      "published": "2026-07-29T21:02:03+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!cZTw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3fccaf74-61fc-462f-8930-2c8d9abdca6f_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【Buzz】人とAIエージェントが同じ部屋で働く、Jack Dorseyの新しい仕事場",
+      "url": "https://www.debunkresearch.com/p/buzz",
+      "excerpt": "Slackにも GitHubにも代わる",
+      "published": "2026-07-29T21:01:44+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!8u57!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F04a3aef1-744e-4d8e-8b95-d838ea41424f_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
       "title": "効率はAI担当。人間は非効率担当",
       "url": "https://www.yukarik.com/p/ai",
       "excerpt": "便利になった時代に、あえて遠回りを楽しむという贅沢",
@@ -21138,15 +21156,6 @@
       "category": "投資・経済"
     },
     {
-      "title": "今週のDEBUNKまとめ（7/11〜7/17）",
-      "url": "https://www.debunkresearch.com/p/wpr260711-17",
-      "excerpt": "今週配信した12本を、3行ずつで振り返ります。",
-      "published": "2026-07-17T21:00:26+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!xhfO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbccbfe83-4b9c-4f8e-9e9d-56a4736de5fd_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
       "title": "#114 現代批評をするとホラー映画になっちゃった",
       "url": "https://www.wha2come.xyz/p/114",
       "excerpt": "チルド公開するってよ",
@@ -21154,15 +21163,6 @@
       "image": "https://substackcdn.com/image/youtube/w_728,c_limit/j0eDXiLpVOA",
       "writer": "時代編集会議",
       "category": "その他"
-    },
-    {
-      "title": "【7/15(水)~7/16(木)News Report】日本が暗号資産を金融商品に再分類 / DTCCがトークン化証券の本番取引を開始 / StripeとAdventがPayPalに$53Bの買収提案など",
-      "url": "https://www.debunkresearch.com/p/715716news-report-dtcc-stripeadventpaypal53b",
-      "excerpt": "主要ニュースまとめ",
-      "published": "2026-07-16T21:01:17+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!-P6G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd138476f-28d9-49e2-83a9-a7f763dc0a7b_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "「切ってしまえば治るのよ」",
