@@ -190542,6 +190542,18 @@
       "hash": "d641f37adc71dec205821bdcf3e3c21441d539c91db648bc6e6f8ab27687f11d",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/part-fb9": {
+      "category": "ライフスタイル",
+      "hash": "074e5604fc2a9c230002f882d67cb80bc50f1f055a1390b6af024fe29a10ef81",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://akinagi.substack.com/p/be9": {
+      "category": "子育て・家族",
+      "hash": "8e1ebc8b59434a4300222a6b5c626142aa374d9f345a88233bfe5e4459417e30",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
