@@ -190524,6 +190524,24 @@
       "hash": "09e8600adda3634a0cd59112ff87485b2602e18c381b61d8ff1347dc22154227",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://hacopapa.substack.com/p/9e8": {
+      "category": "投資・経済",
+      "hash": "392991faaf52ebc4634587924bc10abc111f607e10e64f729b175b9bbe250957",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shobonkun.substack.com/p/4bc": {
+      "category": "旅行・おでかけ",
+      "hash": "2c996219665ef992108bd21f551cd1677e1b7d81ced05792dd865a30c686f185",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shobonkun.substack.com/p/bcf": {
+      "category": "グルメ・料理",
+      "hash": "d641f37adc71dec205821bdcf3e3c21441d539c91db648bc6e6f8ab27687f11d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
