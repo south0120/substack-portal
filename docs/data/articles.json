@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T17:07:16.496655+00:00",
+  "updated_at": "2026-07-30T22:44:48.013521+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -163,19 +163,19 @@
       "avatar": "https://substackcdn.com/image/fetch/$s_!BYBw!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2b5e7035-2fb9-479c-b402-7f29425fecd4_600x600.png",
       "latest": [
         {
+          "title": "【7/24(金)~7/30(木)News Report】AnthropicがClaude Opus 5を発表 / MythosがAES・耐量子署名の脆弱性を自律発見 / フロンティアAI従業員1,200人が研究のペース調整を要求など",
+          "url": "https://www.debunkresearch.com/p/ai-news260724-30",
+          "published": "2026-07-30T21:00:59+00:00"
+        },
+        {
+          "title": "【7/24(金)~7/30(木)News Report】FRB据え置きでBTCが$64,000割れ / SEC「CLARITY法が不成立なら独自ルール」 / クリプト業界の人員削減が7月だけで12社超など",
+          "url": "https://www.debunkresearch.com/p/news260724-30",
+          "published": "2026-07-30T21:00:57+00:00"
+        },
+        {
           "title": "【RL1】欧州の銀行10社が共同で持つ、規制対応ブロックチェーン",
           "url": "https://www.debunkresearch.com/p/rl1",
           "published": "2026-07-29T21:02:03+00:00"
-        },
-        {
-          "title": "【Buzz】人とAIエージェントが同じ部屋で働く、Jack Dorseyの新しい仕事場",
-          "url": "https://www.debunkresearch.com/p/buzz",
-          "published": "2026-07-29T21:01:44+00:00"
-        },
-        {
-          "title": "【Atoms】Uber 共同創業者のTravis Kalanick 氏が率いるフィジカルAIの持株会社",
-          "url": "https://www.debunkresearch.com/p/atoms",
-          "published": "2026-07-27T21:01:58+00:00"
         }
       ]
     },
@@ -20909,9 +20909,38 @@
       "bio": "LINEスタンプや絵文字を使う方へ。「LINEトークがちょっと楽しくなる」使い方を紹介しています。",
       "avatar": "",
       "latest": []
+    },
+    {
+      "name": "くろあん",
+      "url": "https://aiunttenus816364.substack.com/",
+      "feed_url": "https://aiunttenus816364.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "看護師一本でやってきました。今は働き方を変えたく副業のためAIの勉強中です。そんな成長日記を配信したり…黒猫部長と共にsubstack頑張りたいなと思います。漫画・猫様大好きです！医療系も（たぶん）詳しいです。よろしくお願いします🤗",
+      "avatar": "",
+      "latest": []
     }
   ],
   "articles": [
+    {
+      "title": "【7/24(金)~7/30(木)News Report】AnthropicがClaude Opus 5を発表 / MythosがAES・耐量子署名の脆弱性を自律発見 / フロンティアAI従業員1,200人が研究のペース調整を要求など",
+      "url": "https://www.debunkresearch.com/p/ai-news260724-30",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-30T21:00:59+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7tOa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c010875-c6c0-46b0-9fa8-aeec9374f1bf_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
+    {
+      "title": "【7/24(金)~7/30(木)News Report】FRB据え置きでBTCが$64,000割れ / SEC「CLARITY法が不成立なら独自ルール」 / クリプト業界の人員削減が7月だけで12社超など",
+      "url": "https://www.debunkresearch.com/p/news260724-30",
+      "excerpt": "主要ニュースまとめ",
+      "published": "2026-07-30T21:00:57+00:00",
+      "image": "https://substackcdn.com/image/fetch/$s_!7k0c!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F13d13efb-afed-4458-9c5f-906f6dbb5528_3760x2480.png",
+      "writer": "DEBUNK",
+      "category": "投資・経済"
+    },
     {
       "title": "【RL1】欧州の銀行10社が共同で持つ、規制対応ブロックチェーン",
       "url": "https://www.debunkresearch.com/p/rl1",
@@ -21136,24 +21165,6 @@
       "image": "https://substackcdn.com/image/fetch/$s_!WYhN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38c185ef-1df6-4aca-a442-02e4e8d9a5ec_1448x1086.jpeg",
       "writer": "ゆかりっく｜成熟カルチャー研究室",
       "category": "社会・文化"
-    },
-    {
-      "title": "AlpacaにPeak XV Partnersが$135M出資、VelocityにDragonfly・FirstMarkが$38M出資、など全15PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/wfr260711-17",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-18T21:00:12+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!O8qk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F59b4d7eb-3a78-4760-9e85-5b0728f8aedc_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
-    },
-    {
-      "title": "Helsingが防衛AIで$1.8B（Series E）、FireworksにAtreides・Index・TCVが$1.505B出資、など全17PJ【資金調達PJまとめ】",
-      "url": "https://www.debunkresearch.com/p/ai-wfr260711-17",
-      "excerpt": "直近1週間の資金調達情報をまとめました。",
-      "published": "2026-07-18T21:00:08+00:00",
-      "image": "https://substackcdn.com/image/fetch/$s_!2pof!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F09fedf33-ce65-403d-95a1-8f75102e7909_3760x2480.png",
-      "writer": "DEBUNK",
-      "category": "投資・経済"
     },
     {
       "title": "#114 現代批評をするとホラー映画になっちゃった",
