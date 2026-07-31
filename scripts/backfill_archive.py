@@ -208,9 +208,13 @@ def main():
             values = ", ".join(sql_quote(r[k]) for k in ("id", "url", "title", "excerpt", "image", "published", "writer", "category", "is_audio"))
             lines.append(
                 f"INSERT INTO articles (id, url, title, excerpt, image, published, writer, category, is_audio) VALUES ({values}) "
+                # 既存行を「良くする方向」だけ更新する。archive API 側は既存より情報量が少ないため、
+                # title / excerpt / image は上書きしない（同じ表に書く fetch_to_d1.py と
+                # worker/index.js も同じ方針。excerpt は archive=120字 に対し本番=500字で、
+                # 上書きするとカテゴリ判定の入力が痩せる。image は未検証で動画URLが入りうる）。
                 "ON CONFLICT(url) DO UPDATE SET "
                 "published=COALESCE(excluded.published, articles.published), "
-                "title=excluded.title, excerpt=excluded.excerpt, image=excluded.image, is_audio=excluded.is_audio;"
+                "is_audio=excluded.is_audio;"
             )
         out = OUT_DIR / f"backfill_{chunk_index // ROWS_PER_FILE + 1:02d}.sql"
         out.write_text("\n".join(lines) + "\n")
