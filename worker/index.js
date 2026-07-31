@@ -1,6 +1,8 @@
 const FEEDS_URL = "https://raw.githubusercontent.com/south0120/substack-portal/main/feeds.json";
 const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
 const FEEDS_PER_RUN = 30;
+// backfill が同じ書き手で連続何回失敗したら諦めて次へ進むか（1人で全体が詰まるのを防ぐ）
+const BACKFILL_MAX_MISSES = 3;
 const INGEST_MAX = 22;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
@@ -799,11 +801,15 @@ async function upsertParsedFeed(env, parsed) {
 // ===== archive バックフィル（分散）: 1回の巡回ごとに1書き手の過去記事を遡って取り込む =====
 // RSSは直近~20件しか返さないため、archive API を辿って過去記事を補完する。負荷分散のため
 // scheduled の各runで1人ずつ進める（feedsを一巡したらループして新規/差分も拾う）。
+// 戻り値は { articles, ok }。ok=false は「取り損ねた」＝この書き手はまだ終わっていない、の意味。
+// 以前は 429 を含む !resp.ok を黙って break して空配列を返しており、呼び出し側が
+// 「過去記事0件の書き手」と区別できずカーソルを前進させていた（＝1ヶ月間 fetched:0 の原因）。
 async function fetchArchive(feed, maxPages = 3) {
-  if (!feed?.feed_url || !feed.feed_url.endsWith("/feed")) return [];
+  // 設定不備は恒久的な状態。ok:true を返してカーソルを前進させる（ここで止めると全体が詰まる）。
+  if (!feed?.feed_url || !feed.feed_url.endsWith("/feed")) return { articles: [], ok: true };
   const base = feed.feed_url.slice(0, -"/feed".length);
   const categories = feedCategories(feed);
-  if (!categories.length) return [];
+  if (!categories.length) return { articles: [], ok: true };
   const articles = [];
   for (let page = 0; page < maxPages; page++) {
     let resp;
@@ -813,14 +819,26 @@ async function fetchArchive(feed, maxPages = 3) {
         signal: AbortSignal.timeout(12000),
       });
     } catch {
-      break;
+      return { articles, ok: false };
     }
-    if (!resp.ok) break;
+    // 429 は本体の取込と同じ方針で「長く粘らず次のcronに回す」。1回だけ即retryする。
+    if (resp.status === 429) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      try {
+        resp = await fetch(`${base}/api/v1/archive?sort=new&limit=50&offset=${page * 50}`, {
+          headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+          signal: AbortSignal.timeout(12000),
+        });
+      } catch {
+        return { articles, ok: false };
+      }
+    }
+    if (!resp.ok) return { articles, ok: false };
     let posts;
     try {
       posts = await resp.json();
     } catch {
-      break;
+      return { articles, ok: false };
     }
     if (!Array.isArray(posts) || !posts.length) break;
     for (const p of posts) {
@@ -844,7 +862,7 @@ async function fetchArchive(feed, maxPages = 3) {
     }
     if (posts.length < 50) break;
   }
-  return articles;
+  return { articles, ok: true };
 }
 
 async function upsertArticlesOnly(env, articles) {
@@ -995,7 +1013,7 @@ async function backfillStep(env) {
   if (!feeds.length) return { ok: false, reason: "no_feeds" };
   const cursor = normalizeCursor(await getMeta(env, "backfill_cursor"), feeds.length);
   const feed = feeds[cursor];
-  const articles = await fetchArchive(feed);
+  const { articles, ok } = await fetchArchive(feed);
   // 新規に追加される件数を数える（既存urlを除く）
   let added = 0;
   if (articles.length) {
@@ -1005,9 +1023,25 @@ async function backfillStep(env) {
     const have = new Set((existing.results || []).map((r) => r.url));
     added = articles.filter((a) => !have.has(a.url)).length;
   }
-  await upsertArticlesOnly(env, articles);
+  await upsertArticlesOnly(env, articles);  // 部分取得ぶんも upsert なので入れて損はない
+
+  if (!ok) {
+    // 取り損ね＝この書き手はまだ終わっていない。カーソルを進めず次のcronで再試行する。
+    // ただし恒久的に失敗する1人でバックフィル全体が詰まらないよう、規定回数で諦めて前進する。
+    const misses = (Number(await getMeta(env, "backfill_misses")) || 0) + 1;
+    if (misses >= BACKFILL_MAX_MISSES) {
+      await setMeta(env, "backfill_cursor", String((cursor + 1) % feeds.length));
+      await setMeta(env, "backfill_misses", "0");
+    } else {
+      await setMeta(env, "backfill_misses", String(misses));
+    }
+    await bumpBackfillStats(env, articles.length, added, true);
+    return { ok: false, reason: "fetch_failed", writer: feed?.name, cursor, misses, articles: articles.length, added };
+  }
+
   await setMeta(env, "backfill_cursor", String((cursor + 1) % feeds.length));
-  await bumpBackfillStats(env, articles.length, added);
+  await setMeta(env, "backfill_misses", "0");
+  await bumpBackfillStats(env, articles.length, added, false);
   return { ok: true, writer: feed?.name, cursor, articles: articles.length, added };
 }
 
@@ -1044,7 +1078,7 @@ function jstDay(offsetDays = 0) {
 }
 
 // 過去記事バックフィルの日次集計（人数=処理した書き手数 / fetched=取得した記事数 / added=新規追加数）
-async function bumpBackfillStats(env, fetched, added) {
+async function bumpBackfillStats(env, fetched, added, failed = false) {
   const key = `backfill:${jstDay(0)}`;
   let cur = {};
   try { cur = JSON.parse((await getMeta(env, key)) || "{}"); } catch { cur = {}; }
@@ -1052,6 +1086,8 @@ async function bumpBackfillStats(env, fetched, added) {
     writers: (cur.writers || 0) + 1,
     fetched: (cur.fetched || 0) + fetched,
     added: (cur.added || 0) + added,
+    // 取り損ねた回数。fetched が伸びないのに failed だけ増えていたら 429 を疑う。
+    failed: (cur.failed || 0) + (failed ? 1 : 0),
   }));
 }
 
@@ -1059,7 +1095,7 @@ async function getBackfillStat(env, offsetDays) {
   const day = jstDay(offsetDays);
   let v = {};
   try { v = JSON.parse((await getMeta(env, `backfill:${day}`)) || "{}"); } catch { v = {}; }
-  return { date: day, writers: v.writers || 0, fetched: v.fetched || 0, added: v.added || 0 };
+  return { date: day, writers: v.writers || 0, fetched: v.fetched || 0, added: v.added || 0, failed: v.failed || 0 };
 }
 
 // 手動バックフィル用: GET /api/ingest?n=5 （60秒スロットル付き）
