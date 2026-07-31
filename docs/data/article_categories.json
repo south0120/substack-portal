@@ -202092,6 +202092,330 @@
       "hash": "916d6257bd8fc2e751d07b34aa9cd6052f2e1e902ec1786b58577fb00a2e0bc2",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://paloj.substack.com/p/666": {
+      "category": "グルメ・料理",
+      "hash": "1a6f6e16fdff8e2d8b7e169c173b4d623925d383092698fdc5a2c7142dc6c511",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hamukatsu.substack.com/p/12e": {
+      "category": "ライフスタイル",
+      "hash": "3f70a8d650ecaa0582cc7a1d9b17265b6f0ca0d3bcdc58476961d42141c2abb4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/78": {
+      "category": "教育・学び",
+      "hash": "660f662146bb2263195ed56e4b8586a302111294eed0ee9cf131930fb1072a0e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/part-d3e": {
+      "category": "ライフスタイル",
+      "hash": "11fdeed931a012e0231942a10f0460009d6df6b7685d1b5b49280f8ba4ce138b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mikahydrangea.substack.com/p/29800": {
+      "category": "ビジネス",
+      "hash": "5f39bd1da79ca2ff2281d8b6bfb3678d24018cb7a3ab38c0498c76121395f42d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/b6e": {
+      "category": "旅行・おでかけ",
+      "hash": "ab6ac7f15501677d8b7295a9d81d640f75aeb6894e855a9f6247ad130c3dc703",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bluejaypolitics.substack.com/p/frb103730-46a": {
+      "category": "ビジネス",
+      "hash": "8cb705375504e928fc14af2b5e297b943a08d285ea4610e82510d757529963e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/b45": {
+      "category": "ライフスタイル",
+      "hash": "3750f2400d8513d6e62959b58e5924af80cbcb3d0b803800e64d610b4ad11c27",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/ad5": {
+      "category": "ライフスタイル",
+      "hash": "96fc09955b84ff9e4e60907b155fab03e971968aa9a13fb9fcb241f1ae56299a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/b3c": {
+      "category": "旅行・おでかけ",
+      "hash": "34e25e6aecc09ad6ac51afeb723e7fde7e45f6aee398cad8a6db691b58aeeb91",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/8": {
+      "category": "旅行・おでかけ",
+      "hash": "ff0bafd8060955716b3c1b97876825ab78cb2a6f23d0d21aa7daccde68e540cd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/2a6": {
+      "category": "スポーツ",
+      "hash": "2d9782904c4e7ae64c813c484337da0f1377ce575b2d029c8572b9ca6dcc5e28",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/8db": {
+      "category": "社会・文化",
+      "hash": "45dfd4f67cb4f3b6fa4938ad6efe36305fc5eba05f222ff787c767ed65b135f7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/e55": {
+      "category": "ライフスタイル",
+      "hash": "3b469540b6fc9b56ea23016a1c73766aa65f2cd5e26e1ca32ab5088413af20c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/030": {
+      "category": "ライフスタイル",
+      "hash": "1b2cff7780962a09de77ec2772b11b30eac4bc5f91b5318d070bc5d6aab7c1d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/e33": {
+      "category": "ライフスタイル",
+      "hash": "540aa43b28e291edef7da99f7b5514ff5406622f52dbda0211fd2234389aaffb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/gemini-ooyama-722": {
+      "category": "クリエイティブ",
+      "hash": "2363a6b2eb47370d7b36dd4ed93a6839bda2a42d53dde16606cf6810f91aa371",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://imahuhu.substack.com/p/e1f": {
+      "category": "投資・経済",
+      "hash": "897bb3e9e4457e527f4dd12a6675d74cd2c66c2c37fcc23e1faef40625b97edd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/3ca": {
+      "category": "ライフスタイル",
+      "hash": "c6d9ae831f0e8382b18e4b83f9387c260f6e54932330b2b123da4f984c5fa499",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gmgjgmgjgmgj1.substack.com/p/ny": {
+      "category": "ライフスタイル",
+      "hash": "26695701b271f6f29839d797477115c674067b3bffd884c9f9c6fbf92266e133",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/415": {
+      "category": "教育・学び",
+      "hash": "cfe34bf21cbd7f55cd9cf790d0ffd28b05514ca2383c5ff4ad7b742d10feaac8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/gemini-ooyama-718": {
+      "category": "クリエイティブ",
+      "hash": "117fbad4400bbfded27b3b391f9cb7ade04e7b6a503a612de410f991a9bc1aaf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/manga-717": {
+      "category": "クリエイティブ",
+      "hash": "799a1059b1ede84ca152e3a5d943336db7ec11dce9666539f590e29974b34bcd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/eff": {
+      "category": "ライフスタイル",
+      "hash": "a42639a5e980daba8527c521ab86f07111554ed0a65f481db101bfaeaba30615",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/value-of-diamond-seo": {
+      "category": "クリエイティブ",
+      "hash": "ba20fd4745cd3ad8a8a9f0c21b7f85e429209d20dfcd29cc929f05ea0036f75d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/readers-make-writing-harder": {
+      "category": "クリエイティブ",
+      "hash": "fa2d0184b2b0cec6150595bffee04479a270a714480e755c5d9df283fbc15fd4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/ooyama-manga-710": {
+      "category": "クリエイティブ",
+      "hash": "075ad49540eb2b21639891fd8e5cb8f4dfc02d04d515b61cd41912b6682ab6d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/0c6": {
+      "category": "ライフスタイル",
+      "hash": "19ef0de05f13bb709484bf99a93e8df8d45ee49b392fdc93811329c78cf0c7ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://imahuhu.substack.com/p/d29": {
+      "category": "投資・経済",
+      "hash": "16893990ba10bb03c5f00b74eff0517c1951108cf4e3df15820fcdf0ee7e0d27",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/9b8": {
+      "category": "ライフスタイル",
+      "hash": "b2dfd48fd4bf9f892c2e673f1f689e302f0aac68a816ccc6dbe37af6cf673a09",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/gemini-ooyama-708": {
+      "category": "その他",
+      "hash": "0f4068ff0e4fc120b6519add282eca625e5877c30c0f85cfc0a03c84af40c80b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/ai-manga-706": {
+      "category": "クリエイティブ",
+      "hash": "069cb5209d88e5a89b77b3be744e7d60074dc1fa12ab760db6cee11087ca169a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/e1b": {
+      "category": "投資・経済",
+      "hash": "56ce7a26ccc7893a9e9e7bafe05f40d5ab43b042b27d137cf1c8ccdf3f6e3823",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/ai-ooyamagem": {
+      "category": "AI",
+      "hash": "93a762c8fa872a1616e41af3288e8fda733931ac178c753f8bdaa594340d1c49",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/gemini-ooyama-704": {
+      "category": "クリエイティブ",
+      "hash": "3bbbd11787abe4b8b2500dc9f30e976b43ba2cf48adfe3aa6559c7a634ca136c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/ooyamam-manga-01": {
+      "category": "AI",
+      "hash": "539bdf2ccf51e9089107c54ef74e5fab3e299d7098115bd10dac655938244241",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yusukeoyamanga.substack.com/p/ooyamam-manga": {
+      "category": "クリエイティブ",
+      "hash": "638b84da415ad7a7d97acdaf3f82b508107e9116c91dd7b7bbb043a4803c5cdb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/fp3-fa2": {
+      "category": "キャリア・働き方",
+      "hash": "91748873716dbf724c08f79a282c17a49702c8635f3fe46b3e6cb1ea2f200c5e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://imahuhu.substack.com/p/1000": {
+      "category": "投資・経済",
+      "hash": "ea9b172e7bc78b7c2c25bd6174c4028f296be3c812d790f40ea50d116f68987b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chirorumoney.substack.com/p/fp3": {
+      "category": "キャリア・働き方",
+      "hash": "2cf88a7b7e15611b30d0e21ee3dac0d64aba0c0bd601ac1702ca3078ac9afcbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-be4": {
+      "category": "クリエイティブ",
+      "hash": "feb7c77d20b8d9e86dfd0770b66715e2e67bf1b62046562940579926825272ec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-fed": {
+      "category": "クリエイティブ",
+      "hash": "7bf4d38017dfba8391422347fae0012b32c6cd918cbc71d6c3c0e98f959661ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-862": {
+      "category": "クリエイティブ",
+      "hash": "60b3dd96aa078a626ec4cf2912d9432685be207bb90dcf616a78a0faeace8e09",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/400": {
+      "category": "旅行・おでかけ",
+      "hash": "d860ce5d7b977a531099795d051a5e0a775d40f0abc0d7e24e44fde1d69a5d13",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-7bc": {
+      "category": "クリエイティブ",
+      "hash": "7e433121a13eb6da96f8498e2ef844bad618243409eb9c3e316624082f6beca4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/everyone-else-was-already-eating": {
+      "category": "旅行・おでかけ",
+      "hash": "6ace6f0f30b618f41bb5e56836a6a64fd59c11220828d1a433b559e11e52e26b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/me-moon-shop-suzuri": {
+      "category": "クリエイティブ",
+      "hash": "55252e895147d6946193c2a12260158be2ad0b45afc1a8b23ac4dd9b28cb6d9b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-50b": {
+      "category": "クリエイティブ",
+      "hash": "e77f7e1f8692e0845c4eaaf8948c615ab4ae96ecbc0e4004e88b2c3d52d0a950",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mankyu.substack.com/p/d55": {
+      "category": "クリエイティブ",
+      "hash": "7c88b815fee112b1b4f9ed0d692bf7d8758d0226b56d3d54f7f1f5d4504827b1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://imahuhu.substack.com/p/6c6": {
+      "category": "旅行・おでかけ",
+      "hash": "96f8588a369a8a62d38f3b54e13cfc63b958d48797e8d6ff458752bb4765c403",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft-a43": {
+      "category": "クリエイティブ",
+      "hash": "b93d2708db48ee952edf3178774a67508594d8c83ea56906f615e53203a835e0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://44yossy.substack.com/p/nft": {
+      "category": "クリエイティブ",
+      "hash": "d78bf731c20b943890c3866449753e4f2eade670a0183b9bb3d7b4b377155bc5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://k2nd.substack.com/p/2": {
+      "category": "テクノロジー",
+      "hash": "076c2cbc06103d8d13fa8519142b0a9dfa44ca0d6dea8032ff0b5acac60caf61",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mankyu.substack.com/p/angel-talk": {
+      "category": "音楽",
+      "hash": "31afe41b52a404eff71374d599f6ee20e93b5e9ac673a24e5c9cc1807c602198",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
