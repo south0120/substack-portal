@@ -7,7 +7,7 @@
 
 cron（毎朝8:00 JST）から実行し、出力をDiscordへ投稿する想定。
 """
-import json, os, ssl, sys, urllib.request
+import json, os, ssl, sys, time, urllib.error, urllib.request
 from datetime import datetime, timezone, timedelta
 
 HEALTH = os.environ.get("FYL_HEALTH_URL", "https://fyl-api.south0120.workers.dev/api/health")
@@ -26,15 +26,35 @@ def _ctx(verify=True):
         return None
 
 
-def get(url):
+def _fetch(url, verify=True):
     req = urllib.request.Request(url, headers={"User-Agent": "fyl-daily-report"})
-    try:
-        with urllib.request.urlopen(req, timeout=30, context=_ctx()) as r:
-            return json.loads(r.read())
-    except (ssl.SSLError, urllib.error.URLError):
-        # certifi が無い環境向けフォールバック（urllibはSSLErrorをURLErrorで包むため両方捕捉）
-        with urllib.request.urlopen(req, timeout=30, context=_ctx(verify=False)) as r:
-            return json.loads(r.read())
+    with urllib.request.urlopen(req, timeout=30, context=_ctx(verify)) as r:
+        return json.loads(r.read())
+
+
+def get(url):
+    """一過性の失敗（429 / 5xx / 接続エラー）だけ2秒→4秒で再試行する。
+
+    429以外の4xxは再試行しても同じなので即座に投げる。最終的に諦めた場合も例外のまま
+    落とす（ワークフローが赤くなるのが正しい＝サイレント欠損にしない）。
+    HTTPError は URLError のサブクラスなので、SSLフォールバックに流れないよう先に捕捉する。
+    """
+    for attempt in range(3):
+        try:
+            try:
+                return _fetch(url)
+            except urllib.error.HTTPError:
+                raise
+            except (ssl.SSLError, urllib.error.URLError):
+                # certifi が無い環境向けフォールバック（urllibはSSLErrorをURLErrorで包むため両方捕捉）
+                return _fetch(url, verify=False)
+        except urllib.error.HTTPError as e:
+            if attempt == 2 or not (e.code == 429 or 500 <= e.code < 600):
+                raise
+        except (ssl.SSLError, urllib.error.URLError):
+            if attempt == 2:
+                raise
+        time.sleep(2 if attempt == 0 else 4)
 
 
 def main():

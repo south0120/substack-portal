@@ -9,6 +9,8 @@ import csv
 import json
 import os
 import ssl
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
@@ -31,8 +33,20 @@ def fetch_health():
     except Exception:
         ctx = None
     req = urllib.request.Request(HEALTH_URL, headers={"User-Agent": "fyl-daily-stats"})
-    with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
-        return json.loads(r.read())
+    # 一過性の失敗（429 / 5xx / 接続エラー）だけ2秒→4秒で再試行。
+    # 429以外の4xxは何度やっても同じなので即座に投げる。最終的に諦めたら例外のまま
+    # 落として構わない（ワークフローが赤くなる＝サイレント欠損にならない）。
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if attempt == 2 or not (e.code == 429 or 500 <= e.code < 600):
+                raise
+        except urllib.error.URLError:
+            if attempt == 2:
+                raise
+        time.sleep(2 if attempt == 0 else 4)
 
 
 def load_rows():
