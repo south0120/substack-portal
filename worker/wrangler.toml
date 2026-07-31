@@ -9,7 +9,11 @@ database_name = "fyl-articles"
 database_id = "059349fc-d32a-4422-93de-af77b7a7317f"
 
 [triggers]
-crons = ["*/10 * * * *"]
+# 1本目: RSS取り込み本体（30誌/run）。2本目: バックフィル+カバー修復の保守枠。
+# 分けている理由は subrequest 予算が invocation 単位のため（index.js の scheduled() 参照）。
+# ⚠️ 2本目の「分」(=5) を index.js の MAINTENANCE_MINUTE_OFFSET と一致させること。
+#    cron文字列そのものは判定に使っていない（表記ゆれで分岐が外れるのを避けるため）。
+crons = ["*/10 * * * *", "5-59/10 * * * *"]
 
 # --- staging 環境（テストサイト用）---
 # `npx wrangler deploy --env staging` で fyl-api-staging を立てる。

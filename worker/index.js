@@ -3,6 +3,9 @@ const USER_AGENT = "find-your-letter/1.0 (+https://findyourletter.com)";
 const FEEDS_PER_RUN = 30;
 // backfill が同じ書き手で連続何回失敗したら諦めて次へ進むか（1人で全体が詰まるのを防ぐ）
 const BACKFILL_MAX_MISSES = 3;
+// バックフィル/カバー修復を回す保守枠。取り込み本体(*/10)と5分ずらし、別invocation＝別予算にする。
+// wrangler.toml 側は crons = ["*/10 * * * *", "5-59/10 * * * *"]。この 5 と対応している。
+const MAINTENANCE_MINUTE_OFFSET = 5;
 const INGEST_MAX = 22;
 const INGEST_THROTTLE_MS = 60000;
 const DB_BATCH_SIZE = 50;
@@ -22,21 +25,34 @@ const CORS_HEADERS = {
 };
 
 export default {
-  async scheduled(_controller, env, ctx) {
+  // cron は2本立て。1回のinvocationあたりの subrequest 予算は共有されるため、
+  // RSS取り込み(30誌ぶんのfetch)と同じ実行に相乗りさせると、後段の backfill /
+  // カバー修復が「予算切れ」で fetch すらできずに死ぬ（実際に1ヶ月間そうなっていた）。
+  // cron を分ければ別invocation＝別予算になるので、確実に走らせられる。
+  async scheduled(controller, env, ctx) {
+    // 判定は cron 文字列ではなく scheduledTime の「分」で行う。cron文字列の表記ゆれで
+    // 分岐が外れると、保守側が一度も走らないまま無言で放置される（今日と同じ壊れ方）ため。
+    // 毎tick モードをログに出して、デプロイ直後に目視で確認できるようにしておく。
+    const minute = new Date(controller?.scheduledTime ?? Date.now()).getUTCMinutes();
+    const isMaintenance = minute % 10 === MAINTENANCE_MINUTE_OFFSET;
+    console.log(JSON.stringify({ cron: controller?.cron ?? "", minute, mode: isMaintenance ? "maintenance" : "ingest" }));
     ctx.waitUntil((async () => {
+      if (isMaintenance) {
+        // 各runで1書き手だけ archive 過去記事を補完（負荷分散）。
+        try {
+          await backfillStep(env);
+        } catch (error) {
+          console.warn("backfill step failed", error);
+        }
+        // 壊れカバー(非画像URL)を毎tick少数ずつ og:image で自動修復。
+        try {
+          await healBadCoversStep(env);
+        } catch (error) {
+          console.warn("heal bad covers step failed", error);
+        }
+        return;
+      }
       await refreshFeeds(env);
-      // 各runで1書き手だけ archive 過去記事を補完（負荷分散）。失敗しても取込本体に影響させない。
-      try {
-        await backfillStep(env);
-      } catch (error) {
-        console.warn("backfill step failed", error);
-      }
-      // 壊れカバー(非画像URL)を毎tick少数ずつ og:image で自動修復。失敗しても取込本体に影響させない。
-      try {
-        await healBadCoversStep(env);
-      } catch (error) {
-        console.warn("heal bad covers step failed", error);
-      }
     })());
   },
 
@@ -1007,10 +1023,16 @@ async function backfillStep(env) {
       const payload = await resp.json();
       feeds = Array.isArray(payload.feeds) ? payload.feeds : [];
     }
-  } catch {
+  } catch (error) {
+    // 無言でreturnしない。ここが黙っていたせいで「予算切れでbackfillが走っていない」ことに
+    // 1ヶ月気づけなかった。統計にも出ない経路なので、ログだけが唯一の手掛かりになる。
+    console.warn("backfill: feeds fetch failed", error);
     return { ok: false, reason: "feeds_fetch_failed" };
   }
-  if (!feeds.length) return { ok: false, reason: "no_feeds" };
+  if (!feeds.length) {
+    console.warn("backfill: feeds.json returned no feeds (HTTP error or malformed payload)");
+    return { ok: false, reason: "no_feeds" };
+  }
   const cursor = normalizeCursor(await getMeta(env, "backfill_cursor"), feeds.length);
   const feed = feeds[cursor];
   const { articles, ok } = await fetchArchive(feed);
