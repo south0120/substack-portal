@@ -10,7 +10,10 @@
   （日本語 かつ 直近アクティブ）で絞って追加する。カテゴリは guess_category() で推定。
 
 ⚠️ 認証: publication/search は Substack ログインセッション必須（未認証だと 401 "Please sign in"）。
-  cookie は 環境変数 FYL_SUBSTACK_COOKIE、無ければ ~/.claude/credentials/substack.json の "cookie"。
+  cookie は 環境変数 FYL_SUBSTACK_COOKIE、無ければ ~/.claude/credentials/substack_fyl.json の "cookie"。
+  🔴 substack.json ではない。あちらは south0120（週報）用。2026-08-02 に分離した。
+     env が file より優先なので、env に古い値が残っていると file を直しても効かない。
+     実行時に「[cookie] 出所: ...」を stderr に出すので、そこで必ず確認すること。
   ※Substack のセッション cookie は期限切れがあるため、GitHub Actions では Secret を定期更新する前提。
 
 ⚠️ GitHub Actions の IP は Substack に弾かれるため、本番では Worker プロキシ経由が要る。
@@ -63,16 +66,27 @@ except Exception:
 
 
 def get_cookie():
+    """(cookie, source) を返す。source は「どこから読んだか」の説明文字列。
+
+    🔴 出所を必ず呼び出し側に返すこと。返り値を cookie だけにしないこと。
+    2026-07-31、FYL の cookie が south0120 用の substack.json に書き込まれ、
+    別 publication のセッションで動いていたのに誰も気づけなかった。
+    どのファイルを読んだかが画面に出ていれば、その場で分かる事故だった。
+
+    env が file より優先なのは GitHub Actions で Secret を使うため（この順序は変えない）。
+    ただし env に古い値が残っていると file を直しても効かないので、
+    「env を使った」ことは必ず表に出す。
+    """
     c = os.environ.get("FYL_SUBSTACK_COOKIE", "")
     if c:
-        return c
-    p = Path.home() / ".claude" / "credentials" / "substack.json"
+        return c, "env FYL_SUBSTACK_COOKIE"
+    p = Path.home() / ".claude" / "credentials" / "substack_fyl.json"
     if p.exists():
         try:
-            return json.loads(p.read_text()).get("cookie", "")
-        except Exception:
-            return ""
-    return ""
+            return json.loads(p.read_text()).get("cookie", ""), str(p)
+        except Exception as e:
+            return "", f"{p} (読めない: {e})"
+    return "", f"{p} (存在しない)"
 
 
 def search_publications(query, cookie, timeout=25):
@@ -128,10 +142,11 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="feeds.json に書かず候補だけ表示")
     args = ap.parse_args()
 
-    cookie = get_cookie()
+    cookie, cookie_src = get_cookie()
+    print(f"[cookie] 出所: {cookie_src}", file=sys.stderr)
     if not cookie:
         print("WARN: Substack cookie 未設定 → publication/search は 401。"
-              "FYL_SUBSTACK_COOKIE か ~/.claude/credentials/substack.json を用意してください。", file=sys.stderr)
+              "FYL_SUBSTACK_COOKIE か ~/.claude/credentials/substack_fyl.json を用意してください。", file=sys.stderr)
 
     keywords = json.loads(SEARCH_KW.read_text()) if SEARCH_KW.exists() else \
         ["はじめました", "ニュースレター始めました", "Substack始めました", "書き始めました"]
