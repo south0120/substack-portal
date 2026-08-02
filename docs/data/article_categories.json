@@ -254928,6 +254928,72 @@
       "hash": "1f0215979b163de440a1f5befbbdfc9be88b5384f6cf87595bcd8489224894c5",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/part-21a": {
+      "category": "ライフスタイル",
+      "hash": "9e65600f76c947543f756c89de7c3e3e86f50781b371cefae5f953506db530f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aeternachico.substack.com/p/539": {
+      "category": "ライフスタイル",
+      "hash": "b7925a4c457824189d6dcd8d2baa054a992220d31c3098c12d4383931d669d02",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tokidoki3.substack.com/p/017": {
+      "category": "キャリア・働き方",
+      "hash": "a4f555735ae18a5af51eb98e45968ef25a9cb2bec59675629fdc4c7849907d94",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aicochan.substack.com/p/openaiastra": {
+      "category": "AI",
+      "hash": "e7b14341f2b048a822e73475e936a370d36aa49136b6b2a8a5d7ab88efffba5c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sekitsuba283.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "1e1a5c8d8783d3bf09bcf8ca347a490eae99a3fdfe925fcf23f68cfd67e37f8b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dabochan.substack.com/p/ai-798": {
+      "category": "クリエイティブ",
+      "hash": "d7ecbc6bdcb208953eda5c636a57a4f12466f2db6264d1658e84da5144790f2b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sachikoinaka.substack.com/p/3-686": {
+      "category": "クリエイティブ",
+      "hash": "270b15d9e1a13910b1e05971cb522174ea9deba8f0b46734be854a85c827dd81",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aicochan.substack.com/p/81c": {
+      "category": "ビジネス",
+      "hash": "c439b5fcac90203bbdef5c14df0b473477391b6c8b315bb44b2b2b5fcab36e9c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://longgoodbye.substack.com/p/11": {
+      "category": "ライフスタイル",
+      "hash": "c2f71d4e6d695abc7da457ad428ee3331135f375cf3bcabb57183cfdc94239d2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sachikoinaka.substack.com/p/31": {
+      "category": "キャリア・働き方",
+      "hash": "839ac24eaefe54ae187253f33afcf32a4e5a5bccd217c4775e386c6a645aa25c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aicochan.substack.com/p/codex-8ef": {
+      "category": "ビジネス",
+      "hash": "c004d9a097ac5b081c991745eb1751426978c5dbdb49ee997f680d6bef51dacc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
