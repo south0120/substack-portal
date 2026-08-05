@@ -269286,6 +269286,312 @@
       "hash": "3bf70683693a61f6273214d46a213c720abf4ba137fae853a056f6b52e1c0a46",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/2035542210cagr342": {
+      "category": "ビジネス",
+      "hash": "0a7600a62705b1dbc0fb4cd70bf8ed8d87865840571d7a6fc6b9b1cf070570ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://keitoaiweb.substack.com/p/3aiweb": {
+      "category": "クリエイティブ",
+      "hash": "05b3c5b1c778c84f5cd9bcd9c9120bff8c7e394265a9a8d7edf1e152202b5696",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/448": {
+      "category": "キャリア・働き方",
+      "hash": "2da2f5989b126037a04cecf8967e0ee7c684f0be135e07c49e923ed9ad1e5a4b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/678": {
+      "category": "社会・文化",
+      "hash": "6812d022ab5f932ca637515e0e719c94111d8c7eaebcc8e46d3a9374ae4293ec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/2035917000cagr480": {
+      "category": "ビジネス",
+      "hash": "30c44a370b19613e9f08c82f2beded602428b76e59008ddfe85c8ebdf9457b81",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/f49": {
+      "category": "教育・学び",
+      "hash": "06bb75547b91e58b3642967e6a49feb8af6f6f4552dbb0ec80f847baf414a9a3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hirofumi21.substack.com/p/03c": {
+      "category": "社会・文化",
+      "hash": "7dffbeeced688b21911d0b078a0cd2d94e53efbbd1459319f81d3cd7f2cf9dc6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/ef9": {
+      "category": "社会・文化",
+      "hash": "2067ca01de312661b35f6c1e5286075bd5f2d170d558a5cdd378f92b66ade135",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/284": {
+      "category": "教育・学び",
+      "hash": "dec1fc2e647795388192aaae747efb389ddf9830ca36c892bcdcfd34641f5165",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/638": {
+      "category": "キャリア・働き方",
+      "hash": "6a401ded03600a26d1345a183d4e6d8673afdb8c49123cb9934851aed9b47068",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/203518439000cagr28": {
+      "category": "ビジネス",
+      "hash": "da6db38710bc00c8f3dd0d9500bfcd5cb309f374498194517ab6aed2da6d0c2f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://peripathos.substack.com/p/recording-2026-08-05-1418": {
+      "category": "社会・文化",
+      "hash": "da382b8a0cb06acd6fde09464eff3f0aa641a95ca12fd26cf8fa62409e81b9dc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/ai-925": {
+      "category": "AI",
+      "hash": "8c6df3439302547ccca9d78fa27f28d3b1b3227c15205e4f5449aaf25446acae",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/05d": {
+      "category": "投資・経済",
+      "hash": "fb2c4098ec7573dcb6ad8d2d8e9f74a9f964fcd9dbc31f7c65c402bb0c0efbbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://warako0987.substack.com/p/50-9ef": {
+      "category": "ライフスタイル",
+      "hash": "197b6d77a48e0e54858c1693fec8ec7ef5094050f29931e8f8a9a20caa3d4702",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/ef0": {
+      "category": "ライフスタイル",
+      "hash": "7eee188b183c9633668617e0a4b0399a50b019deee38210fbdb5232c0b3f4367",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://www.debunkresearch.com/p/ai-news260731-0804": {
+      "category": "AI",
+      "hash": "7b2d6b091db8d27dbc486346b42fe786d89d000965c194bcf1d78a480a739ba7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://www.debunkresearch.com/p/news260731-0804": {
+      "category": "テクノロジー",
+      "hash": "d4f3a2325dd06bb73be7e8a69cad061dcfdd3fad5231aae4c4ca2ad343c09b4e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naturesales.substack.com/p/van-office": {
+      "category": "ライフスタイル",
+      "hash": "95a66433357ddb9ec445b9caac6d33be6be68043057deb7d8f2566706c65c4c5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sachiway.substack.com/p/985": {
+      "category": "健康・ウェルネス",
+      "hash": "04dcc97fd194ca1cf7121bac1fc6a53942fb9ea01acf75bb7b99ec6dc1f919ff",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://renkadesu.substack.com/p/adb": {
+      "category": "ライフスタイル",
+      "hash": "1ee25110ff1f76b5e422d9eab5423419c66249831bceb6031284856042ce7034",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://terumani.substack.com/p/abd": {
+      "category": "エンタメ",
+      "hash": "f7e0d87bf59ebb71f684f07f9c406b441ac1bb9ff1e7cedae06dc8ae202ad39f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/700": {
+      "category": "ライフスタイル",
+      "hash": "bc2d92d76f9dc8ef40bc0fd742b41f5e3c6fe2af95d612a8034dc6aa98f7e1e4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuhananft.substack.com/p/1-937": {
+      "category": "クリエイティブ",
+      "hash": "da9658b2d76da8bfb572cd96aca4c4ef7d0cebbb925282ba68534a2b003f581c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://usakopairtech.substack.com/p/4b7": {
+      "category": "健康・ウェルネス",
+      "hash": "59eb7331c3c04597e957be5c8ea73b9fcec77c57e6eef776770d08eca2aee96c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://usakopairtech.substack.com/p/58": {
+      "category": "ライフスタイル",
+      "hash": "d80ac7c47bd6588c210bad4155a7fb3747477267a50e38c070bc51e67dd6d9dd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/sns": {
+      "category": "クリエイティブ",
+      "hash": "841eff7c401ad63cd1422811a4187766a0a579154066f8ee18d98bc99cf32393",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/seedance-25ai": {
+      "category": "AI",
+      "hash": "783ae821d6abbc306aeb664fae7534fc6e415057bccfe22f2aac1bb0195fb947",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://taniharayumi.substack.com/p/801": {
+      "category": "子育て・家族",
+      "hash": "f5da6a311ba7407525a23c4cd5aa85eccc23c5404a47e0e6a9e4d55315b9f918",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/54b": {
+      "category": "クリエイティブ",
+      "hash": "5c92df726f6093e48a80f6b32005c13ce2b6117a277e2c31f00975cbc593e1fd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/kindle-2ac": {
+      "category": "クリエイティブ",
+      "hash": "35c9d2b137abecf119ee96d3d73aa8daf64b8c06ee3d120078a390f0cbf9ff5c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/kindle-e03": {
+      "category": "クリエイティブ",
+      "hash": "fb53b21fd02ae4882c7a5afcce184e9407f9ee60b828c5b981e5ee48ab11596f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/kindle-223": {
+      "category": "子育て・家族",
+      "hash": "9db47d52c4c89f297be71a2a5760796bd513b9fd1f04879f304b5ddeb240b6e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/kindle": {
+      "category": "子育て・家族",
+      "hash": "bee61bd5acac0087ed9595742739ea79afcc8fb293250f5134d4032a12efe379",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/e64": {
+      "category": "音楽",
+      "hash": "259579f8115054805eff18553a2bd46edb5e12222b53e872f7604240756e8ef3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/7cb": {
+      "category": "子育て・家族",
+      "hash": "9d29b358e0041376f6c2d70d3692de03909826c98cbcb7c458634469a663a2e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/1f9": {
+      "category": "音楽",
+      "hash": "475bdd0984f78b71c98dbd9b6a337b69a9100d754b03a3bccad13fc2abd70dc3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/bgm-c68": {
+      "category": "音楽",
+      "hash": "b16eaa34e0aa61cf40bcab752040e98b9288eef4b1d77a5d6953a5ecb615d74b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/bgm": {
+      "category": "音楽",
+      "hash": "f39a72583b189310d45a4fd917ab66d51984fdbf5c042ef683773e48abd928bf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozuai.substack.com/p/21ai": {
+      "category": "AI",
+      "hash": "303b5df5c33adfd51a1f6f674132a1325a0395d3ae8d3be38fda315f822df1ed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naitou.substack.com/p/10636041": {
+      "category": "ビジネス",
+      "hash": "eaa05b968e34be18fb1a8666c7db116b599b8a72f58770893b8e98c23ffe2dc1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/my-trail-running-race-history": {
+      "category": "スポーツ",
+      "hash": "c253a6ccb27a7c364b751740384037153ce6b6df628b54e166ddf484c4650a79",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-review-100okushinano100": {
+      "category": "スポーツ",
+      "hash": "bbbfec38403192c38de9492ff52890fae283588acad97e2e121599129e7f838a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-preview-100okushinano100": {
+      "category": "スポーツ",
+      "hash": "50f1024a2792d73ba44905f86888cc028aa537603eb26df7d97f8be7e966a5af",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-570": {
+      "category": "スポーツ",
+      "hash": "b03269c39389c247bbc014235c77d5c1dbd109f6335befff9527b8782c5c5ff5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-6bf": {
+      "category": "スポーツ",
+      "hash": "5774d92276370d617e0af32d1f53539d34836103eb0d0b507952919c8aa8193b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-052": {
+      "category": "スポーツ",
+      "hash": "5d8268018e576822edf7d07a65332a2fb5c478e81f8e9366c2090fc1eb0d8850",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-bab": {
+      "category": "スポーツ",
+      "hash": "21794eba6f10930332df937cbea4cb804bb0d0aca3af07e9c87137abf92945a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-7ca": {
+      "category": "スポーツ",
+      "hash": "a7f3de4ed0e1c679543f2520367f3c6ceda7af680ae4f765a2414bbe0f26022d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia-b73": {
+      "category": "スポーツ",
+      "hash": "18f9d7e03ef051a46749b04b4f59d7b7a4ff8d741c6661ca2c17beb8476f670f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meditawalk.substack.com/p/race-report-ultra-trail-snowdonia": {
+      "category": "スポーツ",
+      "hash": "a940fb247e75a1d4539cd5cffeb06e07b76a07459d408d824776e7a72bd84fe4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
