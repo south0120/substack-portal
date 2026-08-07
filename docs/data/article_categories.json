@@ -275904,6 +275904,24 @@
       "hash": "d8cf37ac9651b322b738adb3e3d8faa1116c5e89a81b191c393a8a952e49013a",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234808800.substack.com/p/984": {
+      "category": "社会・文化",
+      "hash": "44c658e1032a3f24afcdf0b03fb90bd9c76da8b80db26e056af290b2a2095a55",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kyouwasekkothuin.substack.com/p/303": {
+      "category": "キャリア・働き方",
+      "hash": "20f6a0709bb7f4d40d65c40f2af55312564d808d2a46c8a78a3a1ee8f132750a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/substack": {
+      "category": "ビジネス",
+      "hash": "bae1daede12d838733fa11cb09f480683ca40ee44d7c41f3f03a5e0fd0a33dd6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
