@@ -275964,6 +275964,12 @@
       "hash": "9f898e94704f29c25f60d679ac28b8ac9e05c31034d8e69b634e8889e59d19d2",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://peripathos.substack.com/p/classicism-feat-snakajima": {
+      "category": "音楽",
+      "hash": "8ff08de0e058ddeb0c0c7deddacfc3aa68df6354bd5ff40fa0eb20735d579b88",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
