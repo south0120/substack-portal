@@ -275976,6 +275976,24 @@
       "hash": "fd7c7c08113161256c25ccd62ff6824c28b2e500fd35a16ffdde4b8f4c3665b6",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://peripathos.substack.com/p/classicism": {
+      "category": "その他",
+      "hash": "fdd97dea475ae556036f13714a40b43278123b0d15ad97d22b5bf25243288739",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://osaji.substack.com/p/fe6": {
+      "category": "ライフスタイル",
+      "hash": "1552599610615a8c74b8b704b8830d92234d5e3fdbaf8533be72e181e6a86cec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yoshiinsta.substack.com/p/d75": {
+      "category": "ビジネス",
+      "hash": "5b8059d78075f521ffc2d42d1a5445371d67609f4466519546a0485703c34584",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
