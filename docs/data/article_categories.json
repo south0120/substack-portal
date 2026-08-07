@@ -275994,6 +275994,60 @@
       "hash": "5b8059d78075f521ffc2d42d1a5445371d67609f4466519546a0485703c34584",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://yamadasimple.substack.com/p/ainotekindle1": {
+      "category": "クリエイティブ",
+      "hash": "6bacb68d766f77defafe504909bb33ec48da3ba3bd5f2f89226b6c23c51a7794",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aibabanba.substack.com/p/aiai": {
+      "category": "テクノロジー",
+      "hash": "5efe91b283d56fed832fd6ad934b474e7eccf4e92e2de05f680256441317bde9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://baruo.substack.com/p/100": {
+      "category": "ライフスタイル",
+      "hash": "407b048448e45eaca1a3b343230b86267a3dc8bb3ba9458502354269ee22e726",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masamark.substack.com/p/6df": {
+      "category": "クリエイティブ",
+      "hash": "2050872c967837fec0bfb08068f53ffb850bddbd81b07a4a1d201d92dc8aff9e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/797": {
+      "category": "ライフスタイル",
+      "hash": "1d0f5bda623df86bd96cb0b0840484fc56a10377b200674298c5504e784ce5d3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/ai-26c": {
+      "category": "AI",
+      "hash": "811c4fe3aeacde958438ba2a08601f41c4693ab7f987cef1487e0af0c42edcc4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/ai-5": {
+      "category": "AI",
+      "hash": "72604dfb039cb6375cb060a2ac8315fb23eeae1587bd9c8ed42dd341fec91770",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/1208000": {
+      "category": "ライフスタイル",
+      "hash": "61cb684c4f521f41b6ecad010cb8f9ec51de4c1f7036b4531111626a64f8bcb0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/619": {
+      "category": "キャリア・働き方",
+      "hash": "eaa6fb0ccc9232bce053debe13e6efdff37c66b7c55489cc104fb1d23fb60104",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
