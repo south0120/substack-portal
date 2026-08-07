@@ -275862,6 +275862,48 @@
       "hash": "89109d3ee8434385757d0101584ffad33d467993440511e36ec275b5ec8455be",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://ikazukin.substack.com/p/610": {
+      "category": "旅行・おでかけ",
+      "hash": "dbf7c40ab00ff5a51bf042d6587e8f241970daee1643107db9dcba79c8924cb9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tankyu.substack.com/p/da3": {
+      "category": "ライフスタイル",
+      "hash": "f07dcf58c0d567383fbc1cd097c1ca13f151420c45d228b64c7107aeda5debf0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://taketube.substack.com/p/s": {
+      "category": "スポーツ",
+      "hash": "98ab776f7d018f29899fbd8eb27c44f6c734a631a75a60e730b6d769070e4c4a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/ai20351034000cagr2485": {
+      "category": "AI",
+      "hash": "c496b2c1f0621350d6d4d55d05031616d386bd800d5269517032ce4e297b68ca",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotoriart.substack.com/p/c05": {
+      "category": "ライフスタイル",
+      "hash": "0cc69acf794921421901028a14c5a8da5296a63b6eb9cdb5ca5f86eac700c445",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ubatoshiko.substack.com/p/20": {
+      "category": "ビジネス",
+      "hash": "f7ea594ee9dd76ab7e7fbff3100a091e5959362eba14f075173f819b1cfa7a5c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tsumuinfo.substack.com/p/8": {
+      "category": "教育・学び",
+      "hash": "d8cf37ac9651b322b738adb3e3d8faa1116c5e89a81b191c393a8a952e49013a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
