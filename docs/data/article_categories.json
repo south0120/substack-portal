@@ -277728,6 +277728,90 @@
       "hash": "397d92f3e2097642817add71a3b3aa7e344af625e5a7feb73b85a4c9437e0f98",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://chie.substack.com/p/chat-8": {
+      "category": "社会・文化",
+      "hash": "73e7a55bc56c462bbdcbe12d5dcbf6dcf7ecf1c1aefc1d4fe6b68ebabf5838be",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kikunoyusuke.substack.com/p/efb": {
+      "category": "ビジネス",
+      "hash": "390ced6b8bc2e1338b698b3ad554f15ad220995de17b56ed62d4a82b7f2e4cd4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hirosuwa.substack.com/p/chatgpt": {
+      "category": "AI",
+      "hash": "ac56bde6b61dcd2c3e0161485728051f62e0be11cd4e73675f626b418057fdca",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naaapoco.substack.com/p/459": {
+      "category": "キャリア・働き方",
+      "hash": "ce2a8384bc7cb7f667d437086b7b9b9b842b5be4a3e5c334dd1d3e43fd20a520",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/486": {
+      "category": "クリエイティブ",
+      "hash": "48e9dc4dc957a2ffb509bb96c2541afa141d1b88534bffd2986b65df981671ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://golem50kabba.substack.com/p/71b": {
+      "category": "キャリア・働き方",
+      "hash": "85621a87b150337fa60a35e3ac689a10318649aa59f7ac25829961e980865cbc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://amakura9376.substack.com/p/7fc": {
+      "category": "エンタメ",
+      "hash": "c6d46d3337efd0b5bc57ddfec04f7d18e4b5e35e00a144e45cee2754d6a97089",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/3-808": {
+      "category": "クリエイティブ",
+      "hash": "eb9e2f93f15ee3df2bfc94e156778909e41dd6c7423e6ed21ca21fa0d754af9f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/516": {
+      "category": "クリエイティブ",
+      "hash": "c3adff45012f3de1c56296605cc332c882fdd96745942bed2c13c792547042ed",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/394": {
+      "category": "クリエイティブ",
+      "hash": "de020eaed6e682932fce3cfb801d04fa77a3b530ad712d582e28b900c15384fd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/d7b": {
+      "category": "クリエイティブ",
+      "hash": "535ac3f748d51351fa5b6cdc8b42f55d0993746ffa796a7912be09205f12e543",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/74e": {
+      "category": "クリエイティブ",
+      "hash": "7aa468bcddb7ab145a37bf923c91690267334d9e819622b53cecd48c55e58ac3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/1-011": {
+      "category": "クリエイティブ",
+      "hash": "6bba1c86634e94a076198e435d1714a852de3e0cfec84621e6776852cc950e9b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shojinhyakka.substack.com/p/0e5": {
+      "category": "クリエイティブ",
+      "hash": "db4537f68bd9ea094f3db9ed5221c76b76518c57c71c262d8396c9640f398bfd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
