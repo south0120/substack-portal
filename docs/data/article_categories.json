@@ -277248,6 +277248,126 @@
       "hash": "650f953cd7fd07c74c0c7c9f35891b11d060733747e07d38418047624e22e100",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/3fd": {
+      "category": "社会・文化",
+      "hash": "38a9644f3f35752661c3249fb056c51375f899a6ce8551fc2adbb69d8851d6fc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://michikitchen.substack.com/p/ailine": {
+      "category": "ビジネス",
+      "hash": "ee37f080f4a1f9d1f6a9f4c200b1c11d983afd6c49b95b809b024c70ce4638f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kurashitokaori.substack.com/p/ai": {
+      "category": "クリエイティブ",
+      "hash": "6acfe76da01ba6cd9f35add22a6021a54f600f64a01f92a966e5c60937f90d93",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/92f": {
+      "category": "その他",
+      "hash": "c3a14cad60f44da04be11501801d72581db24407038a418ade5321ade1d018ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/ai-f36": {
+      "category": "AI",
+      "hash": "329a0668da2d7b4eecd79eab3b0b7638866c776e33cf73f937c548a761770cad",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/c88": {
+      "category": "その他",
+      "hash": "425305a9199bcb1fcc1857aa904a4c07e6d5ecdf89ea5b8425f404ab87cd5644",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tesoutugumi.substack.com/p/279": {
+      "category": "ライフスタイル",
+      "hash": "069176d93dfc469124f1c87c057e621ff14aa0d7cbac43f47701c4c6844255ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuukit.substack.com/p/805": {
+      "category": "音楽",
+      "hash": "1c0b251fae6b28e3350d66ae381441d0d2aa7ff06a46ee0569759bbaf6ccb745",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-8dd": {
+      "category": "クリエイティブ",
+      "hash": "82e18a51d0aa42ed2be298ec4ae0f72b8e0a3100360bdbc7e88254e73aac9bdb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ai12183871.substack.com/p/252": {
+      "category": "ライフスタイル",
+      "hash": "982e2bd3c1e3bae1d0805ff0b896343d456712d9a807cb0f6302ec6ff1712873",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-eb1": {
+      "category": "AI",
+      "hash": "21d419aff2a1381683b013ddcd4bce38e638f4bb4e4c16eaed0105ed8a836510",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-b7a": {
+      "category": "AI",
+      "hash": "05725ce262bb230d47ac9b8eb7514c096181bab7b0a03baee5c968f205ba21fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/x70": {
+      "category": "AI",
+      "hash": "af53c45b14615f359b9bcdd8d8d0cb6eae0457ee8a10c545952b27b7dc419ed2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuukit.substack.com/p/13186": {
+      "category": "音楽",
+      "hash": "3df1a7e5110978189225479090e7231b0fb0755259adbe7e45e6d08f89921870",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-f84": {
+      "category": "AI",
+      "hash": "e7d0aeba523ec24f70e65ef7c5f26623b3054947a517c97adf17b229fe35c8e6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-3f3": {
+      "category": "AI",
+      "hash": "766308c2fd8fb8bbae17c3eba5abe0d53e2c0ec154ab3f8303f0b7a2cdd3bbf6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://teanano.substack.com/p/ai-450": {
+      "category": "AI",
+      "hash": "007d7895e4bd27c9827fb17d1b7f1d0f081ab79b0a73b0a6433e5436f074c6ac",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuukit.substack.com/p/40-920": {
+      "category": "音楽",
+      "hash": "e2b6bf29843673defa43bdbbb51d4aa797e2f508149d8b8f9e70d109f0d0c293",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuukit.substack.com/p/ai-389": {
+      "category": "音楽",
+      "hash": "4fa3bab2a78e6fea5271d93ae9dad4024899fdfd1a13900ba1044b0cb70469dd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuukit.substack.com/p/94e": {
+      "category": "音楽",
+      "hash": "90d7a909dc0ba494c488f862345026b5457b901e33e5d1340013077469ce33a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
