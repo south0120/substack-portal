@@ -282930,6 +282930,18 @@
       "hash": "3883b4286e22cb71775278682f1c7399eb9005cb1c903ac22c1a2c964cd5c1fd",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://yamadasimple.substack.com/p/ai-724": {
+      "category": "AI",
+      "hash": "f18c0a27ed88e9ee9e1a437b5ad8f04947f21102b1cc9ea00413666314d68662",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/995": {
+      "category": "ライフスタイル",
+      "hash": "23c6b080e9fd0f7538cdbb5a829b06da51ebd71518fb83488c38b50258f53b43",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
