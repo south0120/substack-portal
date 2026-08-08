@@ -278304,6 +278304,384 @@
       "hash": "9731a8c5f47440a8f78c790cac2dbda9476ad5e2143ea60b03c4f074feb4fe36",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kjressentiman.substack.com/p/operations-research-aujourdhui-looking": {
+      "category": "ビジネス",
+      "hash": "877df6ca711a0cd5fb843b4dfc7a2724348542493a5781dd4115f7266849db99",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://koartsacademy.substack.com/p/0c2": {
+      "category": "健康・ウェルネス",
+      "hash": "6bf42bcdcf9779772601cb28a3246ce636b40bf20edb9917d04be61b2d25b5c5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takasarenews.substack.com/p/dbf": {
+      "category": "クリエイティブ",
+      "hash": "56e82eceafff8f55d0716fef0dee18405766f37204d1fa1b70b5173a0a64ba83",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takasarenews.substack.com/p/a07": {
+      "category": "クリエイティブ",
+      "hash": "166e0040e2393841ab48e3d2c7cbb695c3df86d63ed08f1581b243f998b20f12",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ai-ef8": {
+      "category": "教育・学び",
+      "hash": "2169e1b931a1c5c1630884b72b1fac63d58c42483b445ff465852bccdaaa4d14",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ai-439": {
+      "category": "ビジネス",
+      "hash": "332ebf51214389918704ed32553558c0daaac667d4598da2ee9d49e9be793148",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/bff": {
+      "category": "ビジネス",
+      "hash": "6806245375ef05c6583be6fba67271adf3f03da1c4acbf158f34a847678a22d0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ai-a18": {
+      "category": "テクノロジー",
+      "hash": "952ee928bbca6e196b766a8303e1021b5fc360d7a606164a1ceb04695cb50838",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/fq20267": {
+      "category": "社会・文化",
+      "hash": "d53dc7bf193d80eb2ae4617930d85b4615588e5eb9fd6391e1596c11c3351a6e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/cab": {
+      "category": "ビジネス",
+      "hash": "23c949a83fac594cd2edcb77f99ba4aba40a3e2546a1320519c0f14f67976647",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/seo": {
+      "category": "テクノロジー",
+      "hash": "3f3d4c2d9c22f4d41c0455599ab2d2457b32e2dbcc945047f210f3faef30739b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/442": {
+      "category": "キャリア・働き方",
+      "hash": "1c14f324cbf428c6a94c7ac723aee04b7b7b3d0a16d3ddfef80ea4e614103a3b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/9": {
+      "category": "ビジネス",
+      "hash": "51c4463c1b339913193edd2eb1be5ead3a9204a6e6194e32d1fd2454885f2618",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/10": {
+      "category": "テクノロジー",
+      "hash": "bc38367d555c5c89fc5888c94d30097260fd5315a26f058753709dc29121edb0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/686": {
+      "category": "音楽",
+      "hash": "438bff11832aa4fc0693e1899676fd6380f48c7a37440ae540969b7a3466c18d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ai-720": {
+      "category": "教育・学び",
+      "hash": "5841a27ac15edc1c9e39799f569e0aaa950dfdd199b8cb1660274977eb769fc1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ai-a55": {
+      "category": "ビジネス",
+      "hash": "9e79f05f09426182441390290f9dbe2eaec7fdc35bfa8de57abcfd5d8408e930",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/wordpress-a18": {
+      "category": "テクノロジー",
+      "hash": "b625b7d16a1b2968dbea16c15d0c27b28a179362c4846c77ac81c1570e5ce0d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/ac9": {
+      "category": "ビジネス",
+      "hash": "fbe4c0d9706e118675dadc1eb88f0eab099f8e46472ff50ffbd0cad0fcd6e780",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/013": {
+      "category": "ビジネス",
+      "hash": "43f4dda60aa1e8b2256ca09d1cc549e702def2fc7e13b542b9de9043c03273ab",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/googleai": {
+      "category": "テクノロジー",
+      "hash": "853ed640d7d36ab8451beb85f9097f3a73083fe78d22065d3a828e3c41a7c9ee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/aiwordpress": {
+      "category": "テクノロジー",
+      "hash": "31f5454103d462cf54e9ef4162ad2b01289d9826fce99796d013c0ab44beac8a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/wordpress-165": {
+      "category": "テクノロジー",
+      "hash": "ff44f21a15c6c80c0c42202c32493d5e4fd38eea0baa5201b06344e29f74acbd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/wordpressstudiowix": {
+      "category": "テクノロジー",
+      "hash": "a709796568b207866395791f1671e5e1f305286e748f4042daf2e8e4d033abfe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/733": {
+      "category": "キャリア・働き方",
+      "hash": "5b416a4685300123e151c15a90106dc13447c82274d96dfa366f9a80ac78ae0a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/246": {
+      "category": "AI",
+      "hash": "54b075516488d9be8ef98191c3ded8124bc47a7a3baa1a25c8d814a2c86eaada",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/7e1": {
+      "category": "クリエイティブ",
+      "hash": "f9808480c516b38bb7ec3020d577e456a4c2a3b4e527c9b378de90c343706f0d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/yomanai": {
+      "category": "投資・経済",
+      "hash": "fd6544aa7e1414364e8f39c8cd8d69260c3efdab2b7ed2987346bbf655c8e33b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/3c9": {
+      "category": "テクノロジー",
+      "hash": "a648a3d69023af2901c74eaa1a7d2e94046f8e2e252ea5e75ac29929ba7c45f1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/c1d": {
+      "category": "AI",
+      "hash": "c60b78d5bc1b5c2858680f7840d8078acc2cd56d7653a14547e50cb37659a0a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/628": {
+      "category": "社会・文化",
+      "hash": "65541aa220b96eedf4a0d5453e4f8340b2c144cd348ca3c47372ea7662eae9d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/292": {
+      "category": "教育・学び",
+      "hash": "407af43dfa0624cbb34e2410b4cc2efd45450b440d5783117e587e58c35745e4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/fc6": {
+      "category": "クリエイティブ",
+      "hash": "b3ab98c2f721644f10c3f639b429ec583295e230d1425d9a50669479ec21de18",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/ae6": {
+      "category": "ライフスタイル",
+      "hash": "b326b664ba12af37201cdc24e74429967a893cc914c1b1efe8a606e4d172313b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/8de": {
+      "category": "テクノロジー",
+      "hash": "7e5abf6569fbbe04c2a0fb2d2efecd5332bd51eb532a130244035649243bbf99",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/walking-in-the-rhythm": {
+      "category": "ライフスタイル",
+      "hash": "d06d086ae708efc2dd9b5ab74a35cb18e1bd7f3beea25174bed47b59fe7d3e6a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/101": {
+      "category": "テクノロジー",
+      "hash": "b89f850dceca702260c9131275f0c53b9f76d717a2ebc9e947c2d9baad4e4002",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/ce2": {
+      "category": "クリエイティブ",
+      "hash": "2fbd33f0bad7d0eab5cb91c74efe096622974d4c312c30eead5f7b9907464bd2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/4": {
+      "category": "その他",
+      "hash": "2aaaa7ea4f5af8882720b3c33563d3f74a4111d7b0d9d9a3645241d70b153aaa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/7dd": {
+      "category": "テクノロジー",
+      "hash": "982af919498f5276390d5bf2cda08904bee5f62b43a48215f38ef1c4a9616634",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/fae": {
+      "category": "グルメ・料理",
+      "hash": "04ecebcd4576e7f862be3077cce28bcf961d539ff0f4d0c842a66dc2c122416b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/46c": {
+      "category": "エンタメ",
+      "hash": "857c3574da9e95dd50acfa8d2134ede1128f08678410f46350d342dbd94fe94b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/b39": {
+      "category": "テクノロジー",
+      "hash": "282df3b58e95e3d2f033c25a26b8b84e740a15e31c686a5f638428f50b362333",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sorami.substack.com/p/f12": {
+      "category": "クリエイティブ",
+      "hash": "55c68eff2cc29d9f4960f25c7ab37969cca0f6bbfc9667c52af4397f4f93eafa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/moyanfigure10": {
+      "category": "社会・文化",
+      "hash": "a722a603577180a73104ad465286b129b08d8fdf75c39acb514822382aed533a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/54d": {
+      "category": "ライフスタイル",
+      "hash": "f69f382bd1271f4fe4ee701b343d045607c1df68af5a5e6e179a5bf0a10ef681",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/2025magic-the-gathering": {
+      "category": "ゲーム",
+      "hash": "c32409976d9e1d28a8deb23caa678cbc98f458b586daa42de96b8fb097fd435f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/fq-6a8": {
+      "category": "社会・文化",
+      "hash": "4ca10a7ace0201753a9ed925ba26d8d0338dcad0eaae37f1770e6ea4bbe7bdcb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/a51": {
+      "category": "エンタメ",
+      "hash": "d5976b30608ade3b702a948c7850fdc6944ee10e6a476e0c9b813585b706c1f9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/itchio": {
+      "category": "社会・文化",
+      "hash": "1facc7d71105eea0399a83b32dab0b54a511dd25f8e07195c73f94132fe7d153",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/fq": {
+      "category": "ライフスタイル",
+      "hash": "1b4407dd3d5c2d4f44d0d0cb96195f927dad49a014a868e17d7e460573e93791",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/c3b": {
+      "category": "教育・学び",
+      "hash": "cd258a6e8c4fe322a244e58e4609ce284df1b59050770044e0160edd7c262509",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/b50": {
+      "category": "読書",
+      "hash": "f15119301aa65f66bc99498f7a619123f58d8e27429a97702f67157dc7ec2683",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/380": {
+      "category": "エンタメ",
+      "hash": "445fefcca74d991331076e46895e3fd518447c0d67861bb3ee9ceda28729db63",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/2024-31e": {
+      "category": "社会・文化",
+      "hash": "8e35401af20c9b5e72233aaa74a3e2f4345a2d959e90dc2b5097f87e1b00acad",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/2024": {
+      "category": "ゲーム",
+      "hash": "23e3813c2d678e129419fc0a449239a14f1a3924a5cc5ba393bbfa4a1dfe842e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/524": {
+      "category": "社会・文化",
+      "hash": "6a23b8fb6dc694380003cde6bfe9e0ad450849a2d00674452bd4637678fe4da9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/kadokawa": {
+      "category": "社会・文化",
+      "hash": "084fac15dd621da3d85641051df9331327b6f6b91c90c432f505b47545c5bf73",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/40d": {
+      "category": "エンタメ",
+      "hash": "cfdc80e47d6426262206947e00b91503d720b3557df6cc559066d80c3567d6f2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/a0a": {
+      "category": "社会・文化",
+      "hash": "ec3529b9c2d0b97e60082f3be5e2df76a5439942d0871ee8e26b6fdc5ef422b4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/d95": {
+      "category": "社会・文化",
+      "hash": "cbb74777a3a910a0bde735fcf051b98f47f64515d6af9d86adb6a3ff98dda4e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/bioshock": {
+      "category": "エンタメ",
+      "hash": "05f861b047c8134ada449f01e9a7339d3eaeaef6d643143bde62642242141308",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kondoginga.substack.com/p/sf": {
+      "category": "社会・文化",
+      "hash": "56cd1cdf456b89e34a70002e48b2104e52e875716077c3f66d130781d8d9d71e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
