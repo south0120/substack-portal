@@ -284736,6 +284736,24 @@
       "hash": "f79bfc0b92b91eda05266db196637f7be8610fe6aa57b585f85c2fa0b93a8823",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/tmps": {
+      "category": "教育・学び",
+      "hash": "3b630e1d854c5919d8ab6a7e2d188047b2cc4a4958115ad468a6796a101b07cf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mana2518.substack.com/p/ai-a59": {
+      "category": "ビジネス",
+      "hash": "065bee0b1de58559e4b4a0994364a1ef71d10f5658881202d34aaf4cb83c2802",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/d7d": {
+      "category": "ライフスタイル",
+      "hash": "ab17bf4ab7ee327622cc13c9d8c9f24e679161b4b287d08f03c665af181c6401",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
