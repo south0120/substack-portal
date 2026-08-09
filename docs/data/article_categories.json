@@ -283764,6 +283764,24 @@
       "hash": "8669a372bf6807692049de43b4a0b24dfdfccbafca13454df298980fba5bdd82",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/9b2": {
+      "category": "社会・文化",
+      "hash": "c7a40c0ef3583788e45b108c2c96c713b346d9af7f6d566c5149083b230c2d43",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://haremaki.substack.com/p/vol13202689": {
+      "category": "ビジネス",
+      "hash": "3450871304d715a46805dafd209873ed78eb5c43972e2668b90b35e386867b95",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sayavcthoshi.substack.com/p/48a": {
+      "category": "ライフスタイル",
+      "hash": "6504b20e03f4857e7377a33794ecfd6708a9660eab2e98be00600ef8901c31cc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
