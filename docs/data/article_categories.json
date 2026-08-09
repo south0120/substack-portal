@@ -284592,6 +284592,36 @@
       "hash": "cb41903c6a98615e182bf0ceffa280a9e0f4315006340c80998e669de0858223",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://toshirashinban.substack.com/p/5a1": {
+      "category": "クリエイティブ",
+      "hash": "d8c5e40b3cd352891c1427e37c7142b730e295e3148992a8748077e47ac803b3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itawaru.substack.com/p/91c": {
+      "category": "ライフスタイル",
+      "hash": "ddef3881dfa2a0596aee823b251ffc6f9a61148246a665b3f16ca7246e81c4c7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://wataruhayakawa.substack.com/p/2c0": {
+      "category": "キャリア・働き方",
+      "hash": "bf8e08d11a58e06147afcef155d129151b7ee8b89faf32fc71b467885f39f0c4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://salesprepai.substack.com/p/30-ffd": {
+      "category": "ビジネス",
+      "hash": "12195e113188e02e42b8a482e423377b4ddc597462652c98e757981ea85597e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kanasugi.substack.com/p/0e2": {
+      "category": "教育・学び",
+      "hash": "a3655b4b8907afb83d911057e33594fec08982e8a5de69f2e583c2a351b8b3e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
