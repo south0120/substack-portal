@@ -283716,6 +283716,54 @@
       "hash": "c0fc0cff1a60474fed2f08e0dc59cc2edff9c65cf15b3c972863066834f794a7",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/9df": {
+      "category": "社会・文化",
+      "hash": "61c6df4c1471a9209ff8edeee5c6af4b9cbfd37623e31e3b09377a8d345cfb95",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234293368.substack.com/p/ccf": {
+      "category": "ライフスタイル",
+      "hash": "90b81efeb5ac1da807ffbdea76212848ff666169d89a668e4dc2198122cd4d6a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/starlink": {
+      "category": "テクノロジー",
+      "hash": "cc0028caef0625ee523c6c157ff5e2c446326f1c7b261de003096399d66354e0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ritsuto.substack.com/p/claudecode": {
+      "category": "AI",
+      "hash": "ef7939be72859ada1e9bea659032f84581398380b32a7bb83131b591d4db1b28",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/physical-ai": {
+      "category": "AI",
+      "hash": "e14f7d00afe77d8cd6996db58ed841a87e147584b7e8fa4b3c83025e05922197",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://keiko777.substack.com/p/b51": {
+      "category": "ライフスタイル",
+      "hash": "bd44f8c790b868b39ae4aec99628cd6bcff44a4c3777dbed5e612dc420a9b055",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/deb": {
+      "category": "音楽",
+      "hash": "89e5679ad2110993522e0351f2c0bb95ad6f82de7dda0622156560b001a20dfe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/790": {
+      "category": "社会・文化",
+      "hash": "8669a372bf6807692049de43b4a0b24dfdfccbafca13454df298980fba5bdd82",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
