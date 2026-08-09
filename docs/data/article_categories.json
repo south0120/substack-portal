@@ -283644,6 +283644,78 @@
       "hash": "bdc93adcab876d62ec8dea05ee129f626ae022ac030232d08fd8db87d7d260f3",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/ai-2ca": {
+      "category": "AI",
+      "hash": "629a7578801013df5e0bbd0516bb319c3cb0629f3a93b08e90881c3868b285d9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://616168.substack.com/p/20268289": {
+      "category": "ライフスタイル",
+      "hash": "88dcc773dc8e9d94b154b75bc64e727ada4c2f9276575ff5773f79243a77a509",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takeworks.substack.com/p/web01": {
+      "category": "クリエイティブ",
+      "hash": "f573ace58d8bd528d8bfc94ad04710f8c18f59f47593f58a63782442c881772b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yukimaruai.substack.com/p/aiaiai": {
+      "category": "AI",
+      "hash": "4adc40adb9cc9f00134a69969ea9af2e57b30d98611e610ce67fce6f007aa02b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://zonoflow.substack.com/p/d19": {
+      "category": "ライフスタイル",
+      "hash": "6e5754ae60f3bc1314e87165bce934c7652d9a0028fbee4bb7c68be368f8cd66",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ipadworkers.substack.com/p/summer-study-quest-with-ai": {
+      "category": "教育・学び",
+      "hash": "76c6178a3eaee264d409ed231518754b2d54a32ec45025cdff261c604af98702",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://south0120.substack.com/p/ih": {
+      "category": "ライフスタイル",
+      "hash": "2093ea19a294522ec0d098adee615e47926790460af2af4c5000a9bb1e463188",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/10a": {
+      "category": "音楽",
+      "hash": "1915606243c3fc7124840de5aa4f98d8e0cc249454e8eb227c814ebab074066c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://satobeautyandhealth.substack.com/p/live-live-with": {
+      "category": "ファッション・美容",
+      "hash": "58fce80cd1a9dbd096cfda3020800c2b0b9dcacd87c6493280ec436b5a6d3321",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/genai": {
+      "category": "AI",
+      "hash": "f8e8fc6c29cd1805022f8399d8ce9b061d603885448a9b0ae545936844c7322c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ninkids22.substack.com/p/395": {
+      "category": "健康・ウェルネス",
+      "hash": "876b82e2258b1a520288c9942dc722ce0d3e55f734b9cc69cc32245d867fb49c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kojiro7168.substack.com/p/aiunity6ai-07": {
+      "category": "AI",
+      "hash": "c0fc0cff1a60474fed2f08e0dc59cc2edff9c65cf15b3c972863066834f794a7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
