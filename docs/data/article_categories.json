@@ -286626,6 +286626,54 @@
       "hash": "5794c891ba8c6a859b11c48a3708d95310e60977b266bd98989e3517f5342b4f",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://sachiway.substack.com/p/823": {
+      "category": "健康・ウェルネス",
+      "hash": "26f3ccbac3c2c7bf427f2f56b4ec70d5ea98b8426aea11a9c5ab6f4b778390a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yanagiai.substack.com/p/claudepremiere": {
+      "category": "テクノロジー",
+      "hash": "d7a934a10278f96fa1400c5e3c0dc84fc4ed913f86d654c59cff77704069100a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nhirolab0205.substack.com/p/prime-videoai": {
+      "category": "テクノロジー",
+      "hash": "e8fe9f593198d9a2f7f79795d1f55b18ac1c1149aa140c74386e799de8ec2cdd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://000111222.substack.com/p/271": {
+      "category": "旅行・おでかけ",
+      "hash": "6ad671c15f095398659d216b6bb5af6387bda8eb276bd2d77ae6788cf3062988",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamitaka02.substack.com/p/ai-6e2": {
+      "category": "クリエイティブ",
+      "hash": "4e4185f3eedc2a56a74ed4dbcb62a54a9f80a2352354ba960f8f9cbac1397cab",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamitaka02.substack.com/p/cd8": {
+      "category": "音楽",
+      "hash": "08638a6f279a9bf12bb1bc896304a3159dd6fc4fc9158c39a9f2ea40d9be5d10",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamitaka02.substack.com/p/obsidianai2": {
+      "category": "テクノロジー",
+      "hash": "ce1697269c60a54e66739e6c39bb5569d75e61abbc53ebb5320007cdbddfde60",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gamitaka02.substack.com/p/substack3": {
+      "category": "ビジネス",
+      "hash": "941c8195c37039f357b0f0e1db0174cec85af669c8cb2359f71746c395eb145c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
