@@ -290964,6 +290964,18 @@
       "hash": "cec855e581bb51100f5f7bd1b783ffd8ce1fe8c54d09a738d5577d60034f9e3d",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/3-1": {
+      "category": "ライフスタイル",
+      "hash": "55c8321105b69b2102db5ff06607310a5a6901826939bb44f21c5f82f25b03a3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://imahuhu.substack.com/p/a6d": {
+      "category": "投資・経済",
+      "hash": "81ae70712ccf388417bc3033de9f96248dca3c3809e2b9be4e6b03eec40ee659",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
