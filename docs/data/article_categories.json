@@ -288840,6 +288840,54 @@
       "hash": "a714fee8a2c6518d768d671a2e4959030468de96d6ce43cbb23eb332b7680ac1",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://show0815.substack.com/p/not-yet": {
+      "category": "その他",
+      "hash": "8fffef908f760ffa78dc53d9658bd18c1dd7880fe2d15799fcf7ed2e6289ffdf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://keitoaiweb.substack.com/p/keito": {
+      "category": "ビジネス",
+      "hash": "f63f17df74b7e9d7de8e99577174c61d1751d4d940902815fe3f7a71f7365a85",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/20351723250cagr503": {
+      "category": "健康・ウェルネス",
+      "hash": "dc6fc0d8173447e5bf0d2af9b002183275ac56a6d216de8c594a5bb9069dc0f7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://micarp.substack.com/p/5aa": {
+      "category": "ライフスタイル",
+      "hash": "934379f406942fa746a2351065c9286644c7f7f2cb5ac43367f2fdb01e523b96",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kohjikaneko.substack.com/p/9b6": {
+      "category": "ビジネス",
+      "hash": "9660fd2d631b2eeaef56bf18283297bdebd4b5bf07947848c2fe4c2d4be19f04",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shimonon.substack.com/p/fa8": {
+      "category": "クリエイティブ",
+      "hash": "99082a4ae1b2febe761bc2d02ab6b7fb4f9dbd8ec0b74caa10530aec7b493f0f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/0a8": {
+      "category": "ライフスタイル",
+      "hash": "b5382529ca56fbe093ccd6264474a1f283ca7d539743b563eeccc882f2f35d53",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nhirolab0205.substack.com/p/ai-265": {
+      "category": "AI",
+      "hash": "973342b7495679704f8fefbfd24484fcdd6cde2eb3dc5c775071d293e69f2e3e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
