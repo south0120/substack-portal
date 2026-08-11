@@ -290946,6 +290946,12 @@
       "hash": "1a72c8693a56c5c183af3574c85eac848d8cfd8735970c2b5a1471c196586d51",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://booktokjapan.substack.com/p/20": {
+      "category": "ビジネス",
+      "hash": "689068c20e8cc9426f2ec26d54a303ac259e67675f63438f914f92c1d61ad034",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
