@@ -292650,6 +292650,78 @@
       "hash": "8ef9f337386c2c89ed1857a86e481617e03c87659d814374f83ffa78045ba902",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://peripathos.substack.com/p/nvidiaai": {
+      "category": "ビジネス",
+      "hash": "5b55b4ec35d87f9d65c83d2e58b0a20d8c3507b2f4a082b9c531b5bd27a272f4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masakari.substack.com/p/substack-8b7": {
+      "category": "キャリア・働き方",
+      "hash": "939062b150b5ae0407a65bfb0f29813898c70e60a7b80929c68d84aec9cf3d7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takehisamark.substack.com/p/3ba": {
+      "category": "ビジネス",
+      "hash": "db0d70db62186cad518f9052283438c669b4f11fd2c6dbd230aeb1341189bff4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/ai-270": {
+      "category": "クリエイティブ",
+      "hash": "026fad804d18f3b3c9a62ecefbb07325a9493b7cc09f351f0ad6ff6578ef28f8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takehisamark.substack.com/p/3-9ef": {
+      "category": "ビジネス",
+      "hash": "7ab08032753b3987cbca1dd779a901d998090d52dc56b64784c8f86502a6fa70",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/claude-code": {
+      "category": "クリエイティブ",
+      "hash": "672178e98022b80b59e04b5eead63f9d7bb833d912db5769bf04ce1fdd676c33",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/ai-c38": {
+      "category": "クリエイティブ",
+      "hash": "c2273fcf35840869263d947aba651cbc197e11f9e47a6dffc2a08596e4754458",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nacchisan.substack.com/p/ee8": {
+      "category": "健康・ウェルネス",
+      "hash": "7ff21f8b0065e74ab5633005ba1751665feb7b80d9f49e96e4d274c03106e5f2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/ai3-a7a": {
+      "category": "クリエイティブ",
+      "hash": "438186ff7dd14c17efa2abda183f3f0a68f1e7151b193e444e8088db21924747",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/ai-82b": {
+      "category": "クリエイティブ",
+      "hash": "235966b2505f29d87b394e69f2423369e60ca3cc8bdbc3bb4dd2e7cfe172ca30",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buckyai.substack.com/p/ai4": {
+      "category": "クリエイティブ",
+      "hash": "6eed311fa432b4d9f7e1a6c8107d83df153b51122588349ef475a84a115e3f11",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nacchisan.substack.com/p/902": {
+      "category": "健康・ウェルネス",
+      "hash": "0c78866b7cb6b7b3a229f2f100981df0b316493264dcfd523b90a08ede418126",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
