@@ -292608,6 +292608,30 @@
       "hash": "76367ce972bbfc54d8d5db49ef7d0fd306f288f4adf4d33df33142cee466c3ab",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://pocorizm.substack.com/p/fa0": {
+      "category": "ビジネス",
+      "hash": "a11c639469a94e21172623495e9056733cfbffb5c10deb1ff0d81502eca6b92d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://amenotomo.substack.com/p/46a": {
+      "category": "ライフスタイル",
+      "hash": "cdab4eb9680bf8b5468693bf36fba8e1f067a1044145474b890fab0ff8b72b51",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ochakazutama.substack.com/p/72b": {
+      "category": "社会・文化",
+      "hash": "49c3e381b0de80cf6afcc8f7a47f371b665bd12f52e5a26cced763064723635f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://iroai.substack.com/p/4434": {
+      "category": "子育て・家族",
+      "hash": "db8c9b1f76d56214182151ea2ac920b82eba2a7da2d9d65c9870fc9567b5cca0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
