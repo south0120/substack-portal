@@ -292632,6 +292632,24 @@
       "hash": "db8c9b1f76d56214182151ea2ac920b82eba2a7da2d9d65c9870fc9567b5cca0",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://hsp1677305.substack.com/p/ai3": {
+      "category": "クリエイティブ",
+      "hash": "609d62a257494e1c6e2608cb95aaee9102b3902650d8bcf9d4d0d616772554b7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naaapoco.substack.com/p/substackbrain": {
+      "category": "ビジネス",
+      "hash": "9417f26ab8f22cd2aede5206fec2992cef44a1dd20815e3b2017ed11b4b73e2c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://officegokumedia.substack.com/p/5e7": {
+      "category": "ビジネス",
+      "hash": "8ef9f337386c2c89ed1857a86e481617e03c87659d814374f83ffa78045ba902",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
