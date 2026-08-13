@@ -295938,6 +295938,18 @@
       "hash": "f45c930c41ffc8546516dc412e57b183467eedecfe470512ca621ba1d7083872",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://masahironote.substack.com/p/fe4": {
+      "category": "ビジネス",
+      "hash": "a1da006eed5419e6515872d4054b7487cd6b827c2e4d5d22b6b00eeceb3094a5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuiweb.substack.com/p/ba7": {
+      "category": "ライフスタイル",
+      "hash": "587130d65235b2a083d1432843eef861f493f1b6de46bcef03ab143ebb39ded3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
