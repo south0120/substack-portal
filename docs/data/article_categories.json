@@ -295524,6 +295524,324 @@
       "hash": "ecfa537e0931e202577f358f7eb060a4bc33c526baa40d16bd3894494ad51643",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://michikitchen.substack.com/p/100": {
+      "category": "ビジネス",
+      "hash": "d833df07dc52db166edaf07b77210ab22866765c841c2728224ce9a8834d8145",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kun1aki.substack.com/p/92d": {
+      "category": "ビジネス",
+      "hash": "e7e84cac8f36bd694d5879dfb1019732a8fad175051c4149c177cf7ca463b9b2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kukoyojodo2.substack.com/p/4a2": {
+      "category": "ライフスタイル",
+      "hash": "61386f97bbc459e517a2eb2d7199330d623d2bd549e1cc74aac12a146700129e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://miwako767666.substack.com/p/3b6": {
+      "category": "社会・文化",
+      "hash": "e7ec82dc8dafba919e16376c62a77e2d2fb5a15f82ee3516d7300581ad207244",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kamesensei.substack.com/p/e21": {
+      "category": "その他",
+      "hash": "2643688ccf55cacaf4eeefed4cca5dc73518ed5a12349d61630a6b3eb5c59ac7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/20354200cagr1192": {
+      "category": "ビジネス",
+      "hash": "63fa508c1a15815f54b8d68b836eb8ea0aff7fb2e4d65d6055a6ec05c427efc8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234712588.substack.com/p/464": {
+      "category": "その他",
+      "hash": "36b6b059cfe9e73c2c1735453a8d6ee41c9f400caba4c5ab73e14ae4702828a5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hachico3.substack.com/p/claude-a30": {
+      "category": "AI",
+      "hash": "46516192cda112832541d8cfaad6bd37ca40f107d63a1bae25aa051a004d727a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/463": {
+      "category": "クリエイティブ",
+      "hash": "4ac2d7ed0e43f00e3b82a06445a4940919cb8e65960f048297491f4f2f8cb100",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/203570814000cagr66": {
+      "category": "ビジネス",
+      "hash": "aab4cd5271274966b4de35474c626e9d351028cca3d506ff8c0baa2e3cbe5706",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kamesensei.substack.com/p/96f": {
+      "category": "その他",
+      "hash": "4fa8291440722848288c2ec8fd5be21d5475788415b666d8c7de6706af630d47",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://katakori.substack.com/p/cc6": {
+      "category": "健康・ウェルネス",
+      "hash": "31243a475809f7d81a8d90d1e0b6c39ab6fee646ce7c197861557a8f918eba0e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itotomio.substack.com/p/700npo20cohatch9992026-8-13": {
+      "category": "ビジネス",
+      "hash": "b3efd3307da30901af8eab0fd5385a24efcd051f2cbbf93fcfcee309a2ec9374",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://www.debunkresearch.com/p/news260808-12": {
+      "category": "テクノロジー",
+      "hash": "5f9414ae9456b8dcf15590de160d54f6ba034cfdbd6571dbac16c753e7dda63a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://www.debunkresearch.com/p/ai-news260808-12": {
+      "category": "テクノロジー",
+      "hash": "6049269d49aa885d99d252a07994d1c57e9368239931622946980cea4783d34d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://andykondo.substack.com/p/ev-30e": {
+      "category": "テクノロジー",
+      "hash": "bd6a6785bd5c6aadf64de6e554c70c09455e4a781759fb12c587d8d5109af8ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kurumirekishi.substack.com/p/x": {
+      "category": "キャリア・働き方",
+      "hash": "46593f8133f4e0d5d937fcc6963305470dd14eed420298873538a1b11a51dedd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kurumirekishi.substack.com/p/d72": {
+      "category": "クリエイティブ",
+      "hash": "ebb38b868332a08887ed2757667a30d8afdc399eebbb1e16fcfa033e6e700650",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/e41": {
+      "category": "社会・文化",
+      "hash": "44cd988e4496e0d7c7699c409fc9b400799e332f7f29981480311fcfeb90a763",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://catherine626.substack.com/p/1fd": {
+      "category": "ビジネス",
+      "hash": "f11fd7ad1c6ac15632c3682e0433f9deaca7e09c651c37ea4e662b081cc01aa1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masaochiai.substack.com/p/61f": {
+      "category": "旅行・おでかけ",
+      "hash": "396de07d2f4369a174d3c29ecdff9f5fd1b0fc5b778b46fce47c9d95eb975dd0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sentotomachi.substack.com/p/vol56": {
+      "category": "社会・文化",
+      "hash": "aad1ee451733f6ce36c28476e3d9ef061dcd40d62746bbc0af0217ea58313008",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/b2b": {
+      "category": "社会・文化",
+      "hash": "78d3fc305aeb5f57f4245567c5ddf2615e7c6600f54616db472a109efc92e777",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://andykondo.substack.com/p/ai10gpu2": {
+      "category": "AI",
+      "hash": "81b4f38d9ffdf50d3de94bcf1621ed90400c3e1b0e82216784cfeb1409b8d936",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/detours-and-encounters": {
+      "category": "ライフスタイル",
+      "hash": "b54e6adb58d29ed37e4b1a865b69de0484c6ace43ed50fdbd3e67fc1bd2e5b35",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/little-by-little": {
+      "category": "ライフスタイル",
+      "hash": "95aac5eb4ee5b4214e53b8c6c65e3b511886816d0356a83d5870b9733ca15dc7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/swallow-flying-practice": {
+      "category": "ライフスタイル",
+      "hash": "62022252ecdd851381ad8ea007d1c49377daddf17ee811f4dafd5d814bd002f5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/himiko-today": {
+      "category": "ライフスタイル",
+      "hash": "263a05c1dfc149dd1c716df2e693f775dbc2fdee017322f83937b1a2882c128a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/community-pool": {
+      "category": "ライフスタイル",
+      "hash": "692b9aa4273b408d38b16ef422e66f8d7c7dddd6639ec909ec2e4c73c9dbf5c4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/09a": {
+      "category": "社会・文化",
+      "hash": "472c3cad47b564c973e5e2cb2ed5d667e71fb210688238ce7e95c92dbe23bb9d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/oya-ko-sodaterareru": {
+      "category": "子育て・家族",
+      "hash": "d2c51b36b78e01d01c9ec3b4c88db5dea11a4af207a3e80e329a9b8de1fcff20",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/heianno-inori": {
+      "category": "社会・文化",
+      "hash": "f75b253d3b2fe3bf3f9d90aab229070f4a5643636dba280a371baa2299363ed6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/36d": {
+      "category": "ライフスタイル",
+      "hash": "6a4efd8fc22b7041512cc316f9cdc305450d620205fcf7f77b0a61c9c47429d2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/c83": {
+      "category": "ライフスタイル",
+      "hash": "df8231bb14f288fc5052b9d0074989aad34370458892282aad7e6ff5a3a03762",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/a4b": {
+      "category": "ライフスタイル",
+      "hash": "82771e9a8e61bfec7de144fe1fa5214f0814cf81a854403a0b93265b413e61e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/52f": {
+      "category": "ライフスタイル",
+      "hash": "0e4b1d0e43560c0667acedd67ba4076f6ed48ce963ae8d78d4d08e8c84ac6ecb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/4ac": {
+      "category": "社会・文化",
+      "hash": "8e0b857291d87b4bb9a0bec29b4d5e339049b34c795795bbf654a22a83a6c870",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/b98": {
+      "category": "ライフスタイル",
+      "hash": "6577e32420259c01e818acc42ad6cd49520c71a29f05ca97e06c28b8732a7dfd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/504": {
+      "category": "社会・文化",
+      "hash": "491fa1c9304df7848088d4c08305aa698dd1eee2279db3d03038924eea646301",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/7ea": {
+      "category": "ライフスタイル",
+      "hash": "761241b3f7e20f3a179e1e00cd8f38723b616b13af562637b15ea3b426a00ec5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/8fc": {
+      "category": "社会・文化",
+      "hash": "739d8cce69f7ecd9b0c7260926c4bcfb2f90a0da1864dea11fc8dfe6b8de864e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/d5e": {
+      "category": "ライフスタイル",
+      "hash": "e66127f4c5a072ba4a060942b15e172fe29012af864961591eb08f67e868ee27",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/queers-read-this": {
+      "category": "教育・学び",
+      "hash": "2da7ad1b2fa03984016b37f2d629e2b73dd2ad225e84663b188b2114a5b07c7f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/e76": {
+      "category": "ライフスタイル",
+      "hash": "baab1db81be4596af413683f2a68ffb987fe5ddbc4d5330e07f2d3b49ef62d1e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/d42": {
+      "category": "健康・ウェルネス",
+      "hash": "ab2937c9e5f3e48360da0898a40471d8e90c38b692a58ebaab5a5dc128eb7546",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/c21": {
+      "category": "社会・文化",
+      "hash": "1e1e11fe6469922e96d72268f1b5e535f8265918f399289466cde544e7c5b842",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/ea7": {
+      "category": "健康・ウェルネス",
+      "hash": "cb3c402ca8065aac80172ca6d54da72486a701f751087a4d366b091e01b17a9a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/4e7": {
+      "category": "ライフスタイル",
+      "hash": "5fb37c4498c5e0b68ba53f28038fef1df00a2c5db5a968a84098273439628b89",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mukomiki.substack.com/p/1": {
+      "category": "ライフスタイル",
+      "hash": "f397370ef809a3df92bfd30d9b36ed598caed0e4283427de21c5b89d6a8195a3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/4a7": {
+      "category": "社会・文化",
+      "hash": "74ca87e593ef9819e6e73e3cee1f9cc8d71293d3b61a4cf49fe7dcda39c1b738",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/fb8": {
+      "category": "社会・文化",
+      "hash": "ee3f3f85743b011540a111b54f84cdaa3af41ed7cb6147275c3a39d3f2040eb7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/11": {
+      "category": "社会・文化",
+      "hash": "88a685819145a25dac86ad065b973705f14c902817bdf44d17325a9385550ab8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://queeresl.substack.com/p/8d8": {
+      "category": "社会・文化",
+      "hash": "3e7e7f7d75dc53ee53a32f0e0a26b20d70792a87eddbbac360dc8a8d4b7b77f4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
