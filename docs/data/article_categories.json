@@ -295974,6 +295974,18 @@
       "hash": "0059c9b679f42c7de4ba31e7c57deb784c137b270f7cee8197b8c10834d8cf26",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/3-3": {
+      "category": "ライフスタイル",
+      "hash": "21443309c99f6ef8491ea453391079a53bb2161a6af02a1b2cba7917ba01405c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://minahayashi.substack.com/p/bbc": {
+      "category": "社会・文化",
+      "hash": "c0583751f836ed70e14df79ca448714ff0b8a580f3769390abcf089e51e187f3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
