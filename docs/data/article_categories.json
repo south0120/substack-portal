@@ -295950,6 +295950,18 @@
       "hash": "587130d65235b2a083d1432843eef861f493f1b6de46bcef03ab143ebb39ded3",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://sachiway.substack.com/p/a2e": {
+      "category": "ライフスタイル",
+      "hash": "73788bb509933ac235ff950e84e890bc97ee0f75ddda42d503ba7eb2f1db619b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kalonletters.substack.com/p/eab": {
+      "category": "ライフスタイル",
+      "hash": "da1e7860632bca1b09aa9456a9954f1c8d37550e9dc9cc59d9e15fe821be53af",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
