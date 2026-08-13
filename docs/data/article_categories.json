@@ -295842,6 +295842,36 @@
       "hash": "3e7e7f7d75dc53ee53a32f0e0a26b20d70792a87eddbbac360dc8a8d4b7b77f4",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://dai1k1.substack.com/p/47b": {
+      "category": "ライフスタイル",
+      "hash": "a466487a8af6232e2d53f79f3d1de794685e55e92664c51e93dfde8eaef282b3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/203566404000cagr344": {
+      "category": "ビジネス",
+      "hash": "e73949dd8a4d17acb5222639b849930fc6186d3bfab2f80ff33851a8573a2d72",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://freeowner17.substack.com/p/sns": {
+      "category": "ビジネス",
+      "hash": "6f6da5575ec1d9692214876cf7e3e04852464f57e3ba68f51984c2349ced0f7d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bg0810.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "fe09a5ae85ef20dc89bb5110d17060fe0b8860c989645d36d1d22bf581b094a0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maiwriter.substack.com/p/kokokara-vol-5": {
+      "category": "ライフスタイル",
+      "hash": "bcfae7bbe5019f01448fcf8b11976d4a6c02c09b3ac9d66a40b6a6b86c8a0c82",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
