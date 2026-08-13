@@ -294120,6 +294120,504 @@
       "hash": "b52edcb76c3aae39be6826331683e674289d291311601ef88209e53de3a6992f",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://midoriokan.substack.com/p/91b": {
+      "category": "クリエイティブ",
+      "hash": "3da56314bbeedb8c963cf901519c440db178a7fc11e11d7fa6c9a60f98f3bebb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/e23": {
+      "category": "社会・文化",
+      "hash": "a745adcda5e05acec8dc4fef8e8434505661b58d20d0dc24e0db81b7a1b00f42",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://careerkoumei.substack.com/p/ainote-024": {
+      "category": "クリエイティブ",
+      "hash": "668717c5ae41edca722b0cd818d24c7a83b58d67fef178911f73bf57294eadbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://n8sunny.substack.com/p/05e": {
+      "category": "ライフスタイル",
+      "hash": "0f39311972ac5e36a1d6b24d42dc43134bc28ef1dadddaea256091a350dfc592",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hanamarufx.substack.com/p/2ch5chfx": {
+      "category": "投資・経済",
+      "hash": "2060eb37e1d9fd2a1c997001c2e3cc14fc09d477b01c895057b5012ddd540fbb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://littlebluebooks.substack.com/p/live-with": {
+      "category": "その他",
+      "hash": "468e3edc99d16eb7f35148d51b07f75f43db256a8d81e118a5ee0323b9a407ce",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hiroyukiokuda.substack.com/p/b40": {
+      "category": "その他",
+      "hash": "10b43a5c87cef711af20bfaa2bdf95dcc6048a3ad31e33feea6efc20250715af",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masahironote.substack.com/p/0b0": {
+      "category": "その他",
+      "hash": "1046b74383e3bd6e2ecc83bac05da52e0193232aad094a952619f3bb7decdf6e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nakamuracpaai.substack.com/p/metamuse-glimmerbtl4": {
+      "category": "AI",
+      "hash": "72125a2a2c4e03013496192b209ebdd37f98b4217b0915f70cce9646c16ec6d3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://arutom1031.substack.com/p/d4a": {
+      "category": "健康・ウェルネス",
+      "hash": "54b49b9bcf3c36f6d609a75899ba818faeaa0c57a796198f4ea027493aa753f6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/ddc": {
+      "category": "社会・文化",
+      "hash": "4e8d31467b769ef0ee0b7649d1a51c111ac06f55ff9d1e88c6a0630628861005",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://happylnk.substack.com/p/313": {
+      "category": "ライフスタイル",
+      "hash": "7b612a986ff38052697d44fb7dd98813eacd4b5804dbbfa65af4f42635f54b88",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kimidori935.substack.com/p/7b5": {
+      "category": "エンタメ",
+      "hash": "c76393254da5800e14c1474cc3c9c84a4aed6c61653b13f1d4c5ee16424bbe55",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hitomitetsugaku.substack.com/p/640": {
+      "category": "キャリア・働き方",
+      "hash": "52b4fecbfcf79491598562001472afb590556979633fe68438f61f98c597a256",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/191": {
+      "category": "ゲーム",
+      "hash": "b81c06282bdf1ece618819ba69d86b42cd52720e4d4c7afaa1af0bfaf4a8226c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hirostyle.substack.com/p/d1d": {
+      "category": "教育・学び",
+      "hash": "31b56bda2b667cb4a3a0bfc410d91cad1d52ca463a53e56df825ef987ba86165",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/claude-codeantigravity": {
+      "category": "AI",
+      "hash": "c5967598c132ce43b22653481769137098f3527721d8c2d6a4a6d5ed32998424",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/lineai": {
+      "category": "ビジネス",
+      "hash": "e4e8206accb0d87d1af0a48f76b32adde230aaad2909a1805c2f8d2aa61ed6a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/93d": {
+      "category": "子育て・家族",
+      "hash": "bd110907de1f1d6ad251fd72e51e68c9eab181f676802d49821c796edf50662d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aibiasai": {
+      "category": "ビジネス",
+      "hash": "fcdf460a2024136ba6090afec98e424ff9f4bd33fb92644cd9c55845526abab1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aifatigue": {
+      "category": "ビジネス",
+      "hash": "4c4a9489596e6ac71f5d9c6da56bb9f52a83cf2c26617740f0d9667fc0aae698",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masashiyamazaki.substack.com/p/vol": {
+      "category": "ビジネス",
+      "hash": "f9f3971ac377b04652c55cdf0598f5558f6c7a4a8bc3687380f08d6672055520",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kyoujisakai.substack.com/p/vol15": {
+      "category": "ライフスタイル",
+      "hash": "661af747c937cc4a46ff6ad5e06421b24801c58730c55d5d1f885b07f4c6ae40",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/ai-0f0": {
+      "category": "AI",
+      "hash": "470a3d184e770bd3ff81a74d192e9f0a4c643f3ed1ed0878cb631c38296566e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aiai-068": {
+      "category": "ビジネス",
+      "hash": "2e163de4028f459022917bd5846c9256a3ba4cea7466f651cad0ae40a2ec37c1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/ai13": {
+      "category": "AI",
+      "hash": "b945a675e8130ccae2f442930e966bafaa72e0a6bdcdab69a79e61b3d578cb33",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hirostyle.substack.com/p/059": {
+      "category": "子育て・家族",
+      "hash": "e3017617ca322b190d281ea53d83c86f4867958f21d2d355d4d619cac03d7e12",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/airetrieval-attenuation": {
+      "category": "AI",
+      "hash": "228bb653a3a817dd7996f765826c241efa90412ff1cde202ff1cccfd5a20b326",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/ai-a11": {
+      "category": "AI",
+      "hash": "c342b9ddf745beb6502ae451baab94b174e180723c269b970074bb956ff9787f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aiprompt-decay": {
+      "category": "AI",
+      "hash": "233ffc3561b9608dd11ceb865b3d8dffa6c32cddd6ab74afac8d95c5eb5da443",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aithreadslinem-and-a": {
+      "category": "ビジネス",
+      "hash": "6a611899cd5b2893d5a91e74a8039da4489e15f8b34ee54ae4c98e3a660b0dbf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/smsakiaai": {
+      "category": "ビジネス",
+      "hash": "5c258b726061a3933d2601b794d782ebf4c5cfe3ce3ee46f2ea1f40feb1c8e93",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/2sns": {
+      "category": "ビジネス",
+      "hash": "f782f6d7736838bbe602e07e90a793ed42679cbb886eef858818503078f64ee6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/a22": {
+      "category": "ビジネス",
+      "hash": "c1f901879e077b153df01487a8b2c6bd5d839ea65f5addb846b1da24e84eab66",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/190": {
+      "category": "ゲーム",
+      "hash": "c307989c922db5d586b3b2f85dee1a2f11bee9dce7b6269e0b9d7dd85ad88cfd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/web2lineai": {
+      "category": "ビジネス",
+      "hash": "0a7df1e2951c0087aaec4005ef9263df643c36fcc4a79bc7b273c64edba4937a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/150005ai": {
+      "category": "ビジネス",
+      "hash": "5cfa8084709f0ea91cf1206538065c451c4bc2fee733bdab380e3349d0ad05a4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/be7": {
+      "category": "ビジネス",
+      "hash": "6ceb2e2a53781310d734cc180c326e8bd4e8d38acb3552a2717c63fc1d47b1e3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/110ai": {
+      "category": "ビジネス",
+      "hash": "134bb77b9905da53a76d85a36394ee78d84e98094a010a5f7faf5fa8d61f92cd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/ai-a61": {
+      "category": "ビジネス",
+      "hash": "ecab60b543577072891141b9d6810f4290cce03f0f31f370b137bfe80d6eec8a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://alchemiaai.substack.com/p/aiservicetitanai": {
+      "category": "ビジネス",
+      "hash": "e7254f26cdc1e5a8cc4aa6933338e03139c5d722466153657366bfa94ec66539",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hirostyle.substack.com/p/a18": {
+      "category": "子育て・家族",
+      "hash": "e1ce2798ddbe3ca902f41d85e9f7e3ad0d4028ead85a951a1f337b85c50f87fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ameshonoyuki.substack.com/p/20": {
+      "category": "社会・文化",
+      "hash": "6e33beee6f9a47d4300615f3d5a1cbe04d8169a58a6553f937d523abdc9ef33b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/306": {
+      "category": "子育て・家族",
+      "hash": "403747daf53716e88007e1898e7d58fabeafb5ee2124ac9bff4f5a970ef73ea0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/189": {
+      "category": "ゲーム",
+      "hash": "83411e85bc0468ee1c5591a4821ad0705ee187d665b40ac01a8a8d927348ed49",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/ff5": {
+      "category": "子育て・家族",
+      "hash": "ab541c13f19ed8f4b5561acac93279e1ca22ada54198d563dfc574a1f9afd86c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/188": {
+      "category": "ゲーム",
+      "hash": "ec5e230cc054a2e19b9533645a975bef4d63856dc0f67d2c0940e0b96755ed66",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/164": {
+      "category": "子育て・家族",
+      "hash": "80bca36424d47302fdec23893175f2a000c49a8f9dde7f5c24eb578804aa050c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/187": {
+      "category": "ゲーム",
+      "hash": "e7a0ed9d17659c9552fcf401eceac29567491aa30d4320f1411de04db2699753",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/384": {
+      "category": "健康・ウェルネス",
+      "hash": "93a834f71e434653e551c98c81e7dcb1ef2f7b039d0b5d31a79f4ef5a8e929b0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/186": {
+      "category": "ゲーム",
+      "hash": "b0d94aaa42550ed05771769773e70cbcff53359688b2269361468e67230e4cfe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/a0b": {
+      "category": "子育て・家族",
+      "hash": "49166a319bf64c2eca8f388edeb53cd7ccc36ff5e8d436340c5ecf3827722f5f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/185": {
+      "category": "ゲーム",
+      "hash": "69e49b0f07ea4a011883ea1f1b671ea60cf489288a2d5fc2ae527ba7a6fcff1c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/6eb": {
+      "category": "子育て・家族",
+      "hash": "800facfa849cb97c28a08deb020abb313615e178a0d497ec3063f44a1ee74b1d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/c5e": {
+      "category": "子育て・家族",
+      "hash": "d78f6eb9e00f157099c22f9a1bb687226e2c4e9b346080170006736b4dd9290e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/184": {
+      "category": "ゲーム",
+      "hash": "2c1b0a2a8ec8fe1f192add5d9250d1b56f54f257355f29e444508abf90e36b36",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/634": {
+      "category": "子育て・家族",
+      "hash": "f5e63c1036df2d09e4f249a6d09f590156d377e9af0a95b749df881d3b70f486",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/11c": {
+      "category": "子育て・家族",
+      "hash": "8554c4978a4957de01d5217c11400c1bd47a63c3b8a5480f850a94cdc349b618",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/183": {
+      "category": "ゲーム",
+      "hash": "50b573d6151ddadc361d8bf1ee750a7087254e1ec4fab8379e24b5c085fe9ccb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/12e": {
+      "category": "社会・文化",
+      "hash": "d3a9ec8eff3ebf7604499afd28b88f5b6d91679d4e43a5bd6d6dc9ba5cc29f2d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/8b3": {
+      "category": "ライフスタイル",
+      "hash": "3f786495dd216eece04af75b5cd22a3f1378cc7f48127c1c27cdfd915b87b8a1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitanodrop.substack.com/p/webpodcast": {
+      "category": "キャリア・働き方",
+      "hash": "3ccfd7dbb2fb8ce8c3d03ef14fb67c7367bc020239fa0d38c60b0846e9219581",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/182": {
+      "category": "ゲーム",
+      "hash": "22390ec093066adf7e3ecd1e423ad4e3009aa53c6abc8edb2c13b36b6bd72fd3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/04d": {
+      "category": "子育て・家族",
+      "hash": "eb48890b35e8f394da443fda7ce1cf479a79a3b959476e45f520ffeef23cb76d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/d3f": {
+      "category": "子育て・家族",
+      "hash": "829c7ef4bc4180bfbb1997c067ab0a167be5648abe52276770229e343fd8a0c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/181": {
+      "category": "ゲーム",
+      "hash": "e495adfdd670509dfefce6783cf24a2a3d687c4c92653ab579b0191bd9e30891",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitanodrop.substack.com/p/4000": {
+      "category": "ビジネス",
+      "hash": "d0fe963088e3d54dcf3276874de51b6edbeb58fee04772afa33903e1bdde73b1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/151": {
+      "category": "ライフスタイル",
+      "hash": "2a37b507685bc4ddd604232382f0b369069a21638c4c71a2133e15745c351ffc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/586": {
+      "category": "子育て・家族",
+      "hash": "4e0bf36afdd4442cf8deede7ba0e6bb2143f79e1cb8f02950756a86f83aa952c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/e01": {
+      "category": "子育て・家族",
+      "hash": "ae019065a06b1e538964b48ae1de4963c4ab3e9468a82a46388f45c1edc245ea",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/180": {
+      "category": "ゲーム",
+      "hash": "c20f84bd12112505a26b7838a495e5bb779b8cf49bafb54dbc80921f952fa131",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitanodrop.substack.com/p/webai": {
+      "category": "AI",
+      "hash": "1ec47456dbed695e95b8bd2ab620e1b50c92ccb70458b51a3d385c9b5823972a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/501": {
+      "category": "子育て・家族",
+      "hash": "2aba89224b39bbd0a675f5b2174dfcb7d9387a6d7458d95da2932ac028067979",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kaorisotsuhaha.substack.com/p/0a2": {
+      "category": "子育て・家族",
+      "hash": "0734d63f23cffc812ed73f83282db9ede40f1c4de46f8ae834b9b2add6332f74",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitanodrop.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "5f3897b7ed4da6c4872156b0b7571f80781eb66024d93b8b8c57055f9045aed2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/179": {
+      "category": "ゲーム",
+      "hash": "d739fef167fd43632f7b1531aa39d2cf99a496f380516612f723de28641d1cbd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/178": {
+      "category": "ゲーム",
+      "hash": "aa0221619aa6ff274d392e224044546c185f6951fc49bce912a0366d39102acf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/177": {
+      "category": "ゲーム",
+      "hash": "d07a55459d30fd38c1172a012d75b8224a9d0d136d5176da7ed95a0eab07ea39",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/176": {
+      "category": "ゲーム",
+      "hash": "ec663cae2fa1f94085d03e3ca5008b7a1f221ba936b01ee4dc67a697eca7482a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/175": {
+      "category": "ゲーム",
+      "hash": "0fd759739b80641cb49ced5aa9be9e586dc8c1cd75e0501bc1e3e41611ce571e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/174": {
+      "category": "ゲーム",
+      "hash": "1e28f54d98153c3594953fac28182cf00c0781a92e2dec92c5d354b3dcab9432",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/173": {
+      "category": "ゲーム",
+      "hash": "0e36280ddd66963d810927affe888ff2ba2559c062d04fcde0de40fbc51448e8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://weeklypauper.substack.com/p/172": {
+      "category": "ゲーム",
+      "hash": "c4249022cf2b051c751de9d34eac15ad833213d09f4ec962903250ef3b575519",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
