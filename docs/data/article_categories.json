@@ -297882,6 +297882,48 @@
       "hash": "1f18701b6d03951fd554d257ca7e3cbe4ab5037c02ce63ca12fa530bc06c6270",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/ai-0bf": {
+      "category": "AI",
+      "hash": "d774d86321d3f4e42fcd82df3e8e76fa25796ca6746e986e286fa2e590038f87",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sumobiz.substack.com/p/2": {
+      "category": "ライフスタイル",
+      "hash": "1c15cf3c88144955253bc330b814920131ef3722eee90f77d4fc16820c95f834",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/1d2": {
+      "category": "ライフスタイル",
+      "hash": "c249486ef3055361e5b4fe499575f388b6d80bddb2eb142d05531819331ae17c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buruveg.substack.com/p/claude": {
+      "category": "クリエイティブ",
+      "hash": "7db8209e2007f75de63ce77b34e4dbb3efe6af6db18e37c036462eb5fd5437fb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ohisama36.substack.com/p/d46": {
+      "category": "投資・経済",
+      "hash": "f43f77297902109315e4f71e766430a3764af4953c90d23895ba0f2aaaa61769",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ohisama36.substack.com/p/6d2": {
+      "category": "健康・ウェルネス",
+      "hash": "b047d434040aa377fbc0f7dc91ff88c1ac0bdb01cbcc9d3bfaa457b67b8e099b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ohisama36.substack.com/p/me-moon-dd6": {
+      "category": "ビジネス",
+      "hash": "d166bd7ac30fb26f29a0cc85ab237103b73b30a2ee6d9995ebcfd7d0f1c35425",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
