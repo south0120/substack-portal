@@ -297120,6 +297120,84 @@
       "hash": "3c3dd954554f8f9a8b6ec205b7f4af21ab274ccda0f464b42fc786bd14e0f295",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://midoriokan.substack.com/p/bot": {
+      "category": "クリエイティブ",
+      "hash": "978fbd15816ad19a815345a707be514266d296e30e5afe65666a04a75d3419c0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yui1143078.substack.com/p/391": {
+      "category": "ビジネス",
+      "hash": "0b04e562b804520ca8cb6aa717958efde2415cb0f117a3b1172ee57810580b9f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://moritamarita.substack.com/p/sns-70f": {
+      "category": "ビジネス",
+      "hash": "122cfac70f6da50b1458460900af4dcddc29817bb41afeb069f0b61d48d74949",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/20354326000cagr887": {
+      "category": "ビジネス",
+      "hash": "227c6595d2a36ed00610b5f4c4c4e435588a4b41497e9e5f51a01876a25fcae0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hajihajinews.substack.com/p/gemini1019": {
+      "category": "AI",
+      "hash": "ac03f4394db30ea17204999a170025089b85019527c2097c5d75b578af5c51e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://menaisei.substack.com/p/028": {
+      "category": "ライフスタイル",
+      "hash": "451094e3f33b0bae322f4a0ab1fe68fead0b51bb430a3d0c1384773878be42e3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mibuki.substack.com/p/198": {
+      "category": "ライフスタイル",
+      "hash": "2073c5a3e982b7f043cb0430c6b28bd015de46db1c1d730f2a129ef348ff5b49",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kamesensei.substack.com/p/substack-39e": {
+      "category": "クリエイティブ",
+      "hash": "09f75900b921917d2e3a4ae9e049a5c0dabf3229db925cc6d7fc700011b0c051",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://dashilees.substack.com/p/213": {
+      "category": "グルメ・料理",
+      "hash": "2a97e274247bc7813ffaba35d336d79abe39e6dc8634cbc57dc3cc06a4249402",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aoba2.substack.com/p/ai-f20": {
+      "category": "AI",
+      "hash": "78899615863d500cd42ccf93e582771454cf081af68ba484cd4a311190f5937a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mamoru7355.substack.com/p/65amazon": {
+      "category": "ビジネス",
+      "hash": "4c6177b3843c364b868fc4482882b2170382874110a07a7754c6d5d236119526",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nonbiri.substack.com/p/ai-253": {
+      "category": "クリエイティブ",
+      "hash": "ae61196c826c4767999a9e6d378bec1499986f217ae9885b95105e1fa807adcf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japanesethe72.substack.com/p/note": {
+      "category": "その他",
+      "hash": "fb66546961228c7866a516b7e9e285040493c29029f3bf02e02a8f65e621e41d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
