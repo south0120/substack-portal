@@ -300492,6 +300492,30 @@
       "hash": "900d868bd8695f123f9fdf631034ee90d495cc335d4432d94132518d36264fbd",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/5fe": {
+      "category": "社会・文化",
+      "hash": "55a8433fc1f58ff0fcc98bb5a58fc6fb215a1777d8f17cc0876962d9f36dbc44",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuichimori.substack.com/p/c02": {
+      "category": "旅行・おでかけ",
+      "hash": "8bcf4425b23aa315ecb4ae69aa696cb1f1caf77d321dc221de3ffec8af5ce5b8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kozukaitosan.substack.com/p/f13": {
+      "category": "ライフスタイル",
+      "hash": "2262757c94262a6d362c6d078540a69184bf19e1c8fc4695c0ee126ca33b81e6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kikunoyusuke.substack.com/p/dba": {
+      "category": "ビジネス",
+      "hash": "7a7c74048b8cd571ce3686a62e197a2cf485b6b1a0c8b87f855e2dd39c18e872",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
