@@ -300516,6 +300516,42 @@
       "hash": "7a7c74048b8cd571ce3686a62e197a2cf485b6b1a0c8b87f855e2dd39c18e872",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://humstar1993.substack.com/p/5c5": {
+      "category": "その他",
+      "hash": "008cee656fdc68bb648aca2a9a368978c73a8f73b3aabbf27db8239d1aad6e8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sarutora.substack.com/p/7b2": {
+      "category": "健康・ウェルネス",
+      "hash": "a2ead48a9f195d57edefd8df0568f4ff4d1e2be0b56972f43a8b34a9110a4645",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotamineo.substack.com/p/156-md-wiki": {
+      "category": "その他",
+      "hash": "9b0929d642173d60f735d68b99dfddd94a75ee280a32ea5c13e07ccf3ac5f70c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okirakukai.substack.com/p/0": {
+      "category": "社会・文化",
+      "hash": "602981fc98b6b63f3808cd49fd0644827376a878c6fe251d2a0cf73dab490275",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://monotokachi.substack.com/p/8": {
+      "category": "クリエイティブ",
+      "hash": "65dbad396fec2c7405252c67d55132e053ebe37b4a7634b32b5d40dd956ed43a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://offshoreymmt.substack.com/p/040": {
+      "category": "ビジネス",
+      "hash": "9c7babad49b1868e80e6c697aa703ccbe1ceb05d09270d4060a126453a7bdd56",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
