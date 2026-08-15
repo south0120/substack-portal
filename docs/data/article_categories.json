@@ -299742,6 +299742,576 @@
       "hash": "d73fde2ef3a7f9a7a38e1d6bd267b7e72079d0a00bbdc6673ea95622ae2a0f56",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://hachico3.substack.com/p/chatgpt-work": {
+      "category": "AI",
+      "hash": "66d37222a04247ae17477a339c0d99d949fae68f7a184cd81330ebf3270f1d55",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chinamimoon.substack.com/p/substack-ab5": {
+      "category": "ビジネス",
+      "hash": "932f3f92cb159c1b5ba7dfa190f4508c84463386e394e44df4d76414296c4a1e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chie.substack.com/p/chat-1f8": {
+      "category": "テクノロジー",
+      "hash": "200f40da82ef582ad571079a528dec4c8198ad5b84c2bc1a024e8668f2590c95",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nmo22.substack.com/p/37b": {
+      "category": "キャリア・働き方",
+      "hash": "2a939ea30578784284379c3a3847c438ba2e43da2d490cb5bad161666406f95b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://beck1240.substack.com/p/0273-fcd": {
+      "category": "キャリア・働き方",
+      "hash": "6446569883c36f3840ca6f07654bdc7c21fbb3ec5efb898276c2bbc339c76449",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gokenko.substack.com/p/9ee": {
+      "category": "健康・ウェルネス",
+      "hash": "1343344586c2a6ceb90fd89210cd5ec2e8cf0d8db0b6ab3b8ad6fe225b03d330",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gokenko.substack.com/p/1eb": {
+      "category": "健康・ウェルネス",
+      "hash": "fdc51d70c6cdaa5d002fff99ec2a210d48bb47fe06b01eee3779a02ccf332dd3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/de8": {
+      "category": "ライフスタイル",
+      "hash": "9b101b8d320b52d516c86724bfd71d706ea8e376e333336fb0949922a529df27",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-41-how-to-say-binge-watching": {
+      "category": "教育・学び",
+      "hash": "3f59c9816f3f148ffbab94a4214edcc323cbb05d8b4f056092edb7cc3f8f1ddc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://archikafizueri.substack.com/p/seebad-utoquai": {
+      "category": "旅行・おでかけ",
+      "hash": "b94d3be622557ecfd5cf5812d07088739fbf353d2e3e53bfe31fa47650c0434c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://lighthouse226.substack.com/p/30d": {
+      "category": "ビジネス",
+      "hash": "906aa5f1dbc497e5008186cb5aa4a03ee8fe030f9b67e3e015195d336aa36d79",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-40-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "ee5d56c63d502669001bbda8ac80340ff794b1f33e1c510ff7c102799e520fe6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-39-goshuin-japans-temple-stamp": {
+      "category": "旅行・おでかけ",
+      "hash": "4586048df57141ae72414b38716a3c26339f08a37ff66157e64887736494c767",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/9c9": {
+      "category": "投資・経済",
+      "hash": "8a95959180d28c2eef13a9fd702cff203b4429c70e1e03a42b67f8a24ff09ea4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/1": {
+      "category": "ライフスタイル",
+      "hash": "806addfbc3df4a87269660cb2d8a229ed2344c4a1554895fcbfc731041ac2027",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-38-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "b78659593564a29f7f2dbbffca0798c1ef03d12526adf392b75217b350565c20",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/405060ok": {
+      "category": "ライフスタイル",
+      "hash": "76d213e7f636395f13841b03f526dedaa750ff7abc8d0e6d4b8bc9882990d9cb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-37-two-japanese-words-every": {
+      "category": "読書",
+      "hash": "b5118c9af18cda3e3a850f3408721dc0f8950316222176a22dfc21148d12a67e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/etf": {
+      "category": "投資・経済",
+      "hash": "9a179a08d2fb77d4391ee8c44c85786433885cb1c9fcd8f13a1c8339860ea30b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-36-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "b2287819a4c4daf295ed0f28247ffc08ca21bcd245443eef571c4ada97a3b25a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/8b5": {
+      "category": "ライフスタイル",
+      "hash": "8a98c283692d82b8e02ae6de6fc70bf25101f3f0167d85dc561902a9490516b4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/ipox": {
+      "category": "投資・経済",
+      "hash": "a49447cd3f55647fa2bddebbc0739c5db653be1e2fe4ada97fc4d73997e57e76",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/7": {
+      "category": "投資・経済",
+      "hash": "5a6b7820c6b3ccacea45e160016626ccd8bc3d17a174eaa953a9353651dcf065",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/tsuyu-what-is-japans-rainy-season": {
+      "category": "旅行・おでかけ",
+      "hash": "57e830e591e096edc8e038db822bf080e11e179cf87d61980d4168a2c9c456db",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/38": {
+      "category": "投資・経済",
+      "hash": "5b0bf0197bd765fbeea42f3a05b9ed85308a368ee7f63e122020f597b35ba425",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/oksubstack": {
+      "category": "ライフスタイル",
+      "hash": "af65e3c693ec568aa1ae038fdd6be327b5208619b993b9e09a0359e5d0ce048a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/ok-ok": {
+      "category": "ライフスタイル",
+      "hash": "d96c14c299df1dee5b8f2e44b2f114843ef4f8823b493423673a94282efdb244",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-34-japanese-listening-challenge": {
+      "category": "教育・学び",
+      "hash": "2a7e5b419ba174d951be5d50044379bbe35543508b08e40f30c4b337ce600a7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/nisa": {
+      "category": "投資・経済",
+      "hash": "aba51577953cd1933bf8e64ef31e8dacd150354f8c9719a3a94071571f547a8c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/3e3": {
+      "category": "ライフスタイル",
+      "hash": "977008dcd3ad5aad7defa1d181981f857d098abd6c1116c6b3a67802ac8d950f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/what-does-senpai-really-mean-dwight": {
+      "category": "エンタメ",
+      "hash": "015297d88edea076cb730ddbead5d2fae78261eb593852ecb63373d3787a3b7c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/2027nisa": {
+      "category": "投資・経済",
+      "hash": "20b182d3c4f8bc520007e7e98aa716faa540a493cbae5da5edb5a473bf934a29",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-32-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "61a5ddfe7bc76c8192cc7eedac50394da3c4ea5a4563f33a593abc4a498d8f82",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/18-f5a": {
+      "category": "投資・経済",
+      "hash": "8790df8179f004ceb94973ca612c056c7e7988617ede40d184d41d18e183611b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/c45": {
+      "category": "健康・ウェルネス",
+      "hash": "339c35ba72175bd888b933bdd716b66e662c1b3b37e576c6f9459ecf3ecaac09",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-31-the-japanese-expression": {
+      "category": "エンタメ",
+      "hash": "d3ec869863c5d2eeceb1c712a59b75f8325bb9b0d8570a0bbf6a452dce9b4281",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/39": {
+      "category": "エンタメ",
+      "hash": "2da6ded2c7b73eb5cb7407548696c8c57828f64a5dc9c3f79d57f923c49c3120",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/953": {
+      "category": "健康・ウェルネス",
+      "hash": "83b53bdb247e2320fe50e730e6a9cd511fc3741f7d6d0d35fcbc60abc6352f5a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/ade": {
+      "category": "ライフスタイル",
+      "hash": "a9089ec4419b2ac3a66bb6abc4a8a966b741d9f849b40068a0203d4a14109084",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-30-count-it-series-counting": {
+      "category": "教育・学び",
+      "hash": "f8fc735eedb3932ee80e606e48f853c0521e7693d7fb4b060f265b93fb736ceb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/1-c41": {
+      "category": "投資・経済",
+      "hash": "81c2ffb4e5031739d0898cb406bbd2382590a2675043e107f2521ddf19f4b3db",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/linejpyc5": {
+      "category": "テクノロジー",
+      "hash": "a9b3268ca7a0ae810ca1601ff1c95c02403ba36449577f1e011eee9e53fe4548",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/unifilinejpycunifi": {
+      "category": "テクノロジー",
+      "hash": "a9d0a5fea20697f2748d9381c60c96c11a5af40b5f3af0f109e4588c2a2a3d35",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/9c4": {
+      "category": "投資・経済",
+      "hash": "2723942afeda8b8c98a7c1e02df6efa8beaaaa3e8cdbac4819792eac93d2176b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/3-7f0": {
+      "category": "投資・経済",
+      "hash": "549952e5c0658a441c83d8b5bca33d07209c01879cf8ffd5203770f8fe572210",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/dd6": {
+      "category": "投資・経済",
+      "hash": "b8d3ad1a8a9c87bee1a22793a3ca4dd1a13b53098730d31467baad03f7bec8e0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/linejpyc": {
+      "category": "テクノロジー",
+      "hash": "4c6f5168e04664090690ff74529ce1c4647f3f4c00cbc7d88fcab0cd600bf1d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/substack-a5c": {
+      "category": "その他",
+      "hash": "9197e6c115565caa9bbdb2ff973942b83b964812c8786371616075096fe9f35f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/18-b2c": {
+      "category": "投資・経済",
+      "hash": "b35e3e462aab62a4bb495f32035881a52ba5a55fdd5cdda252e7a526c7a0bbdb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-29-the-japanese-word-that": {
+      "category": "教育・学び",
+      "hash": "b5bc19f45075cf71a061663257b8b1d565346654ce9df8c356c6c8bc0f8c78fa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/vol1ok": {
+      "category": "健康・ウェルネス",
+      "hash": "7eb7e8d2613d5b90a172d24894d296548efd827d541bcb96761a5a224027d18c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/20285520": {
+      "category": "テクノロジー",
+      "hash": "f7bd828b2be11f7dd35d63bbf003588fb636cebe60a14808e706af4cb9f163c7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/5-4fd": {
+      "category": "テクノロジー",
+      "hash": "53da1c35d3ceadc62d5c12f6ce4802a831b42180561202ebeede3d9e800ec238",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sotahazuki.substack.com/p/d95": {
+      "category": "投資・経済",
+      "hash": "f019af59809a0d37925449369909591c09ba3d7aa8de00915130a8e5dbd0c935",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/ok": {
+      "category": "エンタメ",
+      "hash": "79839dd6b6947916157d7a6bb0d1943cbedd25c2ddba93c2aa4921b21d6d901a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/substack": {
+      "category": "その他",
+      "hash": "9205e465da0c27adb908bc72fe25d5f21d5344f15dd50e18218c909e32436a26",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-28-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "2dacd010db6c1098630fd837b2d71b338492401e8fb1ef0939fd1101b05c661e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/ddc": {
+      "category": "健康・ウェルネス",
+      "hash": "d1b7ce9be138cabb4440c76eb24d244dad5a238309a07d2b98fb595862bacd96",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-27-how-to-make-a-reservation": {
+      "category": "教育・学び",
+      "hash": "36fad3a3ac72b9277af1b5ec5fc76eda0a9e6469e7da5f8d6985eed8865f3e64",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/6": {
+      "category": "健康・ウェルネス",
+      "hash": "8f13c040c0c0f6d1dc2d2fb35d07663dc9f8c857ece682bf72c39c053aa52555",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-26-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "d8efaa64788f11585d793e016c29baeab1f5b7572a5f73b45bdde8bee115d0b1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/4a0": {
+      "category": "ライフスタイル",
+      "hash": "a9ac875e4e19721ce2c418068b83164d1cb4c7bf6eb03e3c064bd9777bac1e38",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/100-081": {
+      "category": "旅行・おでかけ",
+      "hash": "f572ab8c25fb529e9e377c762b73d6778363079e2179c6beb3b0fe428f14d2dd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/ai-e4d": {
+      "category": "AI",
+      "hash": "09abae4249bec1f00ad7adf0281f9af28f2dd619e6fc55b880146c605ec2f218",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/3claude": {
+      "category": "ビジネス",
+      "hash": "592650946ff900cc9caa659d74e3772f08312ae449fd93cf6353c231cfb34a12",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/u": {
+      "category": "ライフスタイル",
+      "hash": "8f474c6cce2a831f47da00b4d14d41c8a1d7f4890f1d3bed2b85e14b2aa8a3de",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/cd6": {
+      "category": "AI",
+      "hash": "d76d9d44685f41f4c56acb2dffc8d3eb9251939f715261d8f0fc791303dab864",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/ai10": {
+      "category": "AI",
+      "hash": "54d4db9ca35054565ea85445cb83ee15902d6179daf45fe42920226fa3d386eb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/ai156": {
+      "category": "AI",
+      "hash": "036b3af3a24092038edb7bc644101a1763eeda968fc33faa1c109b81178f3b34",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/the-japanese-words-every-subway-rider": {
+      "category": "教育・学び",
+      "hash": "b96466f04e708f649d89b60ca1e357aec0bd04e9f071c2f47353a6b999b922a8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/aianthropic": {
+      "category": "AI",
+      "hash": "469b038dd54f11f77081c951c31c0fd4351ccd3134fc6933ae93beae29d8012d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shikumi3.substack.com/p/ai274": {
+      "category": "AI",
+      "hash": "8449af24c5848fc3b2e5ff62029129dfc88539dc3e094859363147aeab228c31",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-24-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "fde929002aa0eb204e0919f1269b9a58396e9a90229fe32be5ece4237717e14b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/the-japanese-word-youll-hear-every": {
+      "category": "教育・学び",
+      "hash": "e9fdd59ae4720814094e4919b1e0d9083c31c14ba9c5aa0cd6f8b5176823928a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://japaneseminilessons.substack.com/p/lesson-22-building-basic-sentences": {
+      "category": "教育・学び",
+      "hash": "b6d5e650502e4377718faf33194dc05252e0a362a074b5a491440f18643ddd04",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202552661web3": {
+      "category": "投資・経済",
+      "hash": "afcad22f608764d85965e1cb87da5396fea184baa9868b4093d589cbd9cca540",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025519525web3": {
+      "category": "投資・経済",
+      "hash": "b6d602d33d5109b18d7dc424228f2915c9d8b2111de55975de79cf70056839af",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025512518web3": {
+      "category": "投資・経済",
+      "hash": "07edde17a4ff6775220b8ae65cee4a1a0beb890542dbfd0dc8b194f1f27c85ab",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202555511web3": {
+      "category": "投資・経済",
+      "hash": "8216c337c5a1e2414e3fb8cf8031b9e7d23c46805f50c14b903d3164158a336d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202542855web3": {
+      "category": "投資・経済",
+      "hash": "41b0cb77b4949f3e452aef50363ef7117a624074a740c749231be2080ebe00fd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025421427web3": {
+      "category": "投資・経済",
+      "hash": "8d1870308fb5752ed3fea55245ff84e785854d0b995d4aa0fa89c5200364648e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025414420web3": {
+      "category": "投資・経済",
+      "hash": "da258a6ba56713ab8656deeccb5c67918631455276b14e20fb5c3be253b55708",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202547413web3": {
+      "category": "投資・経済",
+      "hash": "3e7202a2c980bc9c160907a2aeda2932eff28f8ec6fa07fba12601de3ee43732",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/web3": {
+      "category": "ビジネス",
+      "hash": "a23cbbcd5706de524f435e642e45ea54ef52b5a71a3a2c804f147aea7bd39c1c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202533046web3": {
+      "category": "投資・経済",
+      "hash": "6897ac3b87b816c7055adffc9fdd439ee8becb8710622e021013aa7e13314c14",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202532429": {
+      "category": "投資・経済",
+      "hash": "8ff127234bc3f77139ecfa3b2b1d574c1f4d299499db1d2ddd1ab9c20b384c37",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025317": {
+      "category": "投資・経済",
+      "hash": "eec21603230c82242f2b61b7f5c007cbbb30d1b78fdf8827277a0b59d005ce63",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025310": {
+      "category": "投資・経済",
+      "hash": "18e977a92070e79a9e20b13ff2cda967c0bdfc68bb0295bd75a716a72db15267",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202533": {
+      "category": "投資・経済",
+      "hash": "192a7d23f4c2e3d39e71bfbead7b2f18edfe449c2ae327aaad3882f0073bbff2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025224": {
+      "category": "投資・経済",
+      "hash": "e9a85eb6d13112bd3033f02d6cb3813bcb5cf2fbc62dfabb497aeb6a73f83ee7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025217": {
+      "category": "投資・経済",
+      "hash": "bfdbc050224a2b92da3d9a469f6e1946350305960ba2c04a6497f3eef43d8868",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/52025210": {
+      "category": "投資・経済",
+      "hash": "10e82aadf1add75a072e0ead130bd6ca49f23348e32e90410498c0a117b4e033",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/5202523": {
+      "category": "投資・経済",
+      "hash": "4365c84ef1ff8c70d7b13b90515a56dc5d784e5aab8fc8d1a87e0ad54a3da140",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/2025127": {
+      "category": "投資・経済",
+      "hash": "d5ec29caf8b1dbe341be2233b9a47ea1421252200ac22eadddb4ed7596579c63",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://newsletter.kirifuda.io/p/2025120": {
+      "category": "投資・経済",
+      "hash": "d9cdf77d2a148d9466c059792443414b664cf2f42c933010477328500b52467a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
