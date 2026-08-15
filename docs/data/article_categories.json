@@ -300552,6 +300552,12 @@
       "hash": "9c7babad49b1868e80e6c697aa703ccbe1ceb05d09270d4060a126453a7bdd56",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://nemucha.substack.com/p/claude-codeai": {
+      "category": "AI",
+      "hash": "785fd83c0f26285ce7406891eaf86253021b3681c575baf0283a3a85dcc10755",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
