@@ -299238,6 +299238,48 @@
       "hash": "7168598847f3e2f99c329a63f0c9142bb7e4e96ff4662fd06353f40195ce6e88",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://tsuchimishiogama.substack.com/p/b46": {
+      "category": "社会・文化",
+      "hash": "1c99aa70d066a7f8c0762ff7d7c060696663516b9b9ee95aff93e1bab576b8be",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kokoroshoin.substack.com/p/ikigai40": {
+      "category": "キャリア・働き方",
+      "hash": "9d76e368ee9573a43d5933e41c5b57cb9b799ee6ea5866a186abc1cceecfbeab",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kimononokai.substack.com/p/181": {
+      "category": "ライフスタイル",
+      "hash": "80f97b4696f47a92fb6a4681be5b263edf7a69c1858504ed205ee7542c25fc8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/fd6": {
+      "category": "テクノロジー",
+      "hash": "c8664676c04587df0b67686d03d7715e35607f676df094340f3baf019402ce92",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hspaicr202511.substack.com/p/03a": {
+      "category": "AI",
+      "hash": "255b0320707ed32de56f1c6d902d5655436a5045dc9e050394650b27a6c61db1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://toshiseito.substack.com/p/wordpresssmtp": {
+      "category": "テクノロジー",
+      "hash": "60349feb5906b12c3373555c90296e78cd8462ec9c6b800319651e5bec4e8061",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takasarenews.substack.com/p/dc5": {
+      "category": "クリエイティブ",
+      "hash": "bb393335d37179ac0774dd445cc46027138132ca7e9248ec8cd70f10c3f4fc4c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
