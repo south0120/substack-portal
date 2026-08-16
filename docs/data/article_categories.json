@@ -302454,6 +302454,36 @@
       "hash": "c2b504776e1ace54ff8b7dc752d33e3a5727cb347008270b7a725672ad9184da",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://booktokjapan.substack.com/p/a17": {
+      "category": "ビジネス",
+      "hash": "519581ae628987aed2bcffa188ea66266aabbcc05739dbbb079ab9cf62a84707",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yokappa.substack.com/p/d59": {
+      "category": "クリエイティブ",
+      "hash": "91924f78c49c3d3047e684fe19eb67a9276cab257176b9cabada38fd7942e713",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://meemhonoka.substack.com/p/d15": {
+      "category": "教育・学び",
+      "hash": "4760ca0c2b19460def04f69e27386a5939c74fbb17758621a303a9a71527ae2d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://littlebluebooks.substack.com/p/2-substack": {
+      "category": "ビジネス",
+      "hash": "6bad42c73c8f09352b55e3fd1ce40096ad03ef06ebe59ce3a72c42b145738dac",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://penguin9.substack.com/p/and": {
+      "category": "ビジネス",
+      "hash": "47a2630617c0644efdde9bf0b53cf0df78e582d643635b1a3a32787c958c1549",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
