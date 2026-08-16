@@ -301416,6 +301416,54 @@
       "hash": "4c8a2027c3c07658285db014570ef2b1a6cc7a35851bfce7c4029bb0dc827399",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://menaisei.substack.com/p/283": {
+      "category": "子育て・家族",
+      "hash": "f1bb666fccb986872cce59081f4cd6afacf243df1d85d0e44f7d6c7369c2701e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sayumin.substack.com/p/b93": {
+      "category": "読書",
+      "hash": "c7815612114a5f11905512dd7a222cbc35a8e6c3241fcfca553ece8f3bf9a0cf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/668": {
+      "category": "クリエイティブ",
+      "hash": "87b7a801479050fb0a6bd99691d5cff107509170abe2280a18feb298e63ce397",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/051": {
+      "category": "クリエイティブ",
+      "hash": "a7574b4b1a281305e3e53eacf918c735c09154580465149e1118c8e6d97da52a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/556": {
+      "category": "社会・文化",
+      "hash": "9d0792d3530158e6e5efda50450b2d96d90181b89b27606b3ce06065ba55f0ea",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://616168.substack.com/p/202689816": {
+      "category": "ライフスタイル",
+      "hash": "2607080bb5a413f3d7fee3b3f5d956d283ed9fa8e556ec38bb93decf30b819b7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://atrey32.substack.com/p/a28": {
+      "category": "クリエイティブ",
+      "hash": "c9557ba040efd3a1836d631b320736cabb6b3588973146e0d3037636b67a07ec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/f46": {
+      "category": "AI",
+      "hash": "0644c5f207994ed9281e32c90bfe2cb9bd46a7c5cdc151034d6a4fb4d7501bd6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
