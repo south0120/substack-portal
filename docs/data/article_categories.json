@@ -302658,6 +302658,42 @@
       "hash": "7f7fbdea0d7bf532a120031fb497959a1eb4b67b6e1a8181dc94f300262fb233",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://mamoliiedu.substack.com/p/c2e": {
+      "category": "スポーツ",
+      "hash": "6099a2401bbb53ef7d52142bb5f2702c964dc8b054db259ed981ad8bea44d4c3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ryokimidorima.substack.com/p/92c": {
+      "category": "クリエイティブ",
+      "hash": "53405c628f463ca16aef1dd5dab9126b24bb725c87972b80990dc7bf332d2073",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kanasugi.substack.com/p/live-with": {
+      "category": "その他",
+      "hash": "8923301585bb52e2bbffcc28c8ae5a36972d2e4617a9bf166a0c847a1a93cb0f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://futtan.substack.com/p/aicryptoninja": {
+      "category": "AI",
+      "hash": "2e55ac065df1dc87a6219887626e92595bcf09bb64aa4b5cb0e6cf3877ab8efd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://asukanet.substack.com/p/kindle2": {
+      "category": "社会・文化",
+      "hash": "0c47bd260ec8040d6d1f4276d7341d320926a68126b50af383ecb33028f95ae9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://iroha108.substack.com/p/art-gallery-0c2": {
+      "category": "クリエイティブ",
+      "hash": "235d4d83b7eb0c8d1af70e094cc1c31ede3e2e6c11b6d7bc5e254bde0b7cfc65",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
