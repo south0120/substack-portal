@@ -302484,6 +302484,48 @@
       "hash": "47a2630617c0644efdde9bf0b53cf0df78e582d643635b1a3a32787c958c1549",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://postorijapan.substack.com/p/substack3": {
+      "category": "ビジネス",
+      "hash": "17aa06641315fc6941e05bcfbd0daa0352562fa0a173061388c3464fba26abf7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://officegokumedia.substack.com/p/8d9": {
+      "category": "キャリア・働き方",
+      "hash": "be21756742b6581d080ee70b4596f02977c296dc7e72d78a0c6547383880de8b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://rokusann.substack.com/p/5": {
+      "category": "クリエイティブ",
+      "hash": "186313852050f2ecf897202a90aab812f17656eec44f07bf552e446b0b1f6a9f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotoriart.substack.com/p/373": {
+      "category": "クリエイティブ",
+      "hash": "2eb78a85f7ca9fd8c2ae34ac41684aa4c0b70c93d0de63c6f46f9d68f0fc1922",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://rumi50.substack.com/p/substack80": {
+      "category": "クリエイティブ",
+      "hash": "07cd961a56672d2a06e8f4cef1a4b078cfe49cd6729b165f5dab405bdfae3951",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nakamuracpaai.substack.com/p/qwen38h20099pcbtl499": {
+      "category": "AI",
+      "hash": "28e1252f6ca4e8acf10db4edf23a4ac4d809764fa5ce8246f914c23cafa8188d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sho5midday.substack.com/p/claude-codejtcai": {
+      "category": "AI",
+      "hash": "3a19f67bc991ad1ef72e3b81ff2b67532ab948124c5e7f3f9b735e252d96d76c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
