@@ -303786,6 +303786,24 @@
       "hash": "067e0255984d1ac00ca12883bcde16b816c60ee112a39f2b8d7e1a2b2f7ec216",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://mibuki.substack.com/p/d28": {
+      "category": "ライフスタイル",
+      "hash": "c90456aba448b64f7efccab0ffd97f6c6fd9e87598346df52bdcc0d0bcbfd872",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/cagr4982035410": {
+      "category": "投資・経済",
+      "hash": "ba8496968b69e056aaf721df09d7b98e371651601b15911bc59c978c0db3ec7f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://futtan.substack.com/p/ai2": {
+      "category": "クリエイティブ",
+      "hash": "d4f62468d8dbb152b41e02302eabf227f250c21f7c18fe2b35a66f077b69b241",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
