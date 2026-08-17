@@ -304038,6 +304038,18 @@
       "hash": "71ecd5eb2bd0a42be76aab03a04c31ff06440679a8a41bcfe44e587272ec6909",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://stackaicreator.substack.com/p/701": {
+      "category": "クリエイティブ",
+      "hash": "e1edd022be4792e7381ed3cbc266fde61e5e904e71a37737eb5f66df720a2c3b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yyshirou.substack.com/p/01-de0": {
+      "category": "健康・ウェルネス",
+      "hash": "01ab5ee36e0aaaf51aab5f0c2ee989f058bd405f24aedcc9e010ab8db78d4564",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
