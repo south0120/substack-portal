@@ -303840,6 +303840,54 @@
       "hash": "0b680a37bc04402802e0b90a9064336b02b0ca367e9c8176d969b3bfc8f91f6e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://websapo.substack.com/p/ai-8db": {
+      "category": "テクノロジー",
+      "hash": "1dd5551723a87fd23b4f0294dd4447a0226fe7c0e2f65119997440849c81a95e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tanumaruuuu.substack.com/p/geminiai": {
+      "category": "音楽",
+      "hash": "839f63e75476523f336a91f54afa7da8c4d296d48590c540b41b0f37ecfa2903",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tkrock.substack.com/p/gptsbrain": {
+      "category": "AI",
+      "hash": "6671350749f480f06849a7eaf3941b774fe0e74eb27e83c0b67c1751fba1438c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kentanagakura.substack.com/p/962": {
+      "category": "ライフスタイル",
+      "hash": "d48ba69f22bdbe83bf50d9165e949a88d75d95ca45c0672d6206af4e2c8cb14c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuiprin.substack.com/p/gdp7160fomc": {
+      "category": "投資・経済",
+      "hash": "cfb328640aa2a2e22751586711567c8ed99a540bc9715657bb36dde5ecea119d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tsudukirigen.substack.com/p/250": {
+      "category": "クリエイティブ",
+      "hash": "d40a5a9e8d1931ea38c928be01d28fbda5860c645b7982f2e3515b8bc30c443d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kun1aki.substack.com/p/5ca": {
+      "category": "クリエイティブ",
+      "hash": "04352c91b0e84f70b401e5ad8047fdfe7fa96649c6f5136776b3f936d002c81a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://benkeionishi.substack.com/p/8d1": {
+      "category": "教育・学び",
+      "hash": "4569df2b91d5a34aef251bd7ab3776ebee0193975cc0a11ecae2f15f31fb5937",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
