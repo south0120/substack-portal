@@ -304050,6 +304050,24 @@
       "hash": "01ab5ee36e0aaaf51aab5f0c2ee989f058bd405f24aedcc9e010ab8db78d4564",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://nihongopicnicsensei.substack.com/p/certification": {
+      "category": "キャリア・働き方",
+      "hash": "29b3deeca380d041d12dfa40d5e06f061f2f7825c4f69e8f087af7261e9c74ef",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nihongopicnicsensei.substack.com/p/salary": {
+      "category": "キャリア・働き方",
+      "hash": "4ca9b9a324c8ca3da593b0322d7858eebf6377797d386887772403b3343f5b07",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nihongopicnicsensei.substack.com/p/nihongosensei": {
+      "category": "キャリア・働き方",
+      "hash": "dacde57bf3d53b9037e6fc455a6193393d381f4ff86d096135bad31aebd05e89",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
