@@ -306402,6 +306402,18 @@
       "hash": "2c2be1cf19c2e86747d13f6d316ff6722a2be8401f71500f6c37b13a029c4930",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://56goro.substack.com/p/0001": {
+      "category": "ライフスタイル",
+      "hash": "4269559b32125baf3b10e415c2894b08015e4b3be49d9e0f55235a09e327f50c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://futtan.substack.com/p/lp": {
+      "category": "クリエイティブ",
+      "hash": "4a7c953384d1e594b23161dc49fdb5244715eadbbdc41353fe7430cc47ffd9ad",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
