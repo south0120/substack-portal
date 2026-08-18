@@ -159,6 +159,14 @@
 
   <div class="kpis" id="kpis"></div>
 
+  <div class="panel" id="accessPanel">
+    <h2>アクセス数（GA4・直近28日）</h2>
+    <div id="accessKpis" class="kpi-wrap" style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px"></div>
+    <canvas id="accessChart" height="150"></canvas>
+    <div id="accessChannels" style="margin-top:12px"></div>
+    <p class="muted" id="accessNote" style="margin-top:10px;line-height:1.7"></p>
+  </div>
+
   <div class="panel" id="writerCardPanel">
     <h2>書き手カルテ（個人の投稿傾向）</h2>
     <div class="muted" style="font-size:.72rem;margin-bottom:10px">発行物名を選ぶと、その書き手の<b>記事数・投稿時間帯・曜日・投稿頻度・カテゴリ内訳</b>を表示します（レポートを作らなくても確認できます）。</div>
@@ -1250,6 +1258,73 @@ document.getElementById("netUserFilter").addEventListener("change",function(){
 });
 
 init();
+</script>
+
+<script>
+/* アクセス数パネル（2026-08-18 David 追加）
+   data/analytics.json は scripts/fetch_ga4.py が書く。ブラウザから GA4 は叩かない
+   （認証情報をブラウザに置かないため）。ここは出来上がった数字を表示するだけ。 */
+(async function () {
+  const el = id => document.getElementById(id);
+  const n = v => (v == null ? "-" : Number(v).toLocaleString("ja-JP"));
+  let d;
+  try {
+    const res = await fetch("data/analytics.json?cb=" + Date.now());
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    d = await res.json();
+  } catch (e) {
+    /* 取れなかったことを空欄にしない（0 と 取得失敗 を同じ顔にしない） */
+    el("accessNote").innerHTML = "🔴 アクセス数を読み込めませんでした（" + e.message +
+      "）。0件ではなく<b>取得できていない</b>状態です。";
+    return;
+  }
+  el("accessKpis").innerHTML =
+    '<div class="kpi"><div class="label">セッション（訪問回数）</div><div class="val">' + n(d.totals.sessions) + '</div></div>' +
+    '<div class="kpi"><div class="label">ユーザー（人数・推定）</div><div class="val">' + n(d.totals.users) + '</div></div>' +
+    '<div class="kpi"><div class="label">ページビュー</div><div class="val">' + n(d.totals.pageviews) + '</div></div>';
+
+  /* 🔴 管理画面はログインするまで #dash が display:none。
+     非表示のまま描くと canvas が 0x0 で固定され、ログイン後も空のままになる。
+     だから「幅が付いた瞬間」に初めて描く。 */
+  const drawChart = () => {
+    if (!(window.Chart && d.daily && d.daily.length)) return;
+    const cv = el("accessChart");
+    if (!cv || cv.__drawn || cv.getBoundingClientRect().width === 0) return;
+    cv.__drawn = true;
+    new Chart(cv, {
+      type: "line",
+      data: { labels: d.daily.map(x => x.date.slice(5)),
+              datasets: [{ label: "セッション", data: d.daily.map(x => x.sessions),
+                           borderColor: "#3dba7a", backgroundColor: "rgba(61,186,122,.12)",
+                           fill: true, tension: .3, pointRadius: 2 }] },
+      options: { responsive: true, plugins: { legend: { display: false } },
+                 scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
+    });
+  };
+  /* 🔴 ResizeObserver だけに頼ると、display:none → block の時に発火しないことがある
+     （2026-08-18 実測。手動で描くと描けるのに、observer 経由では描かれなかった）。
+     ＝ 「賢い方法」ではなく「確実に鳴る方法」を採る。 */
+  drawChart();                                   // 既に見えていれば即描く
+  let tries = 0;
+  const timer = setInterval(() => {
+    drawChart();
+    if (el("accessChart").__drawn || ++tries > 120) clearInterval(timer);  // 最大60秒で諦める
+  }, 500);
+  window.addEventListener("resize", drawChart);
+
+  const top = (d.channels || []).reduce((a, c) => a + c.sessions, 0) || 1;
+  el("accessChannels").innerHTML = "<b>流入元</b><br>" + (d.channels || []).map(c =>
+    '<span style="display:inline-block;margin:4px 10px 0 0">' + c.name + " <b>" + n(c.sessions) +
+    "</b> <span class=\"muted\">(" + Math.round(c.sessions / top * 100) + "%)</span></span>").join("");
+
+  const direct = (d.channels || []).find(c => c.name === "Direct");
+  const ratio = direct ? Math.round(direct.sessions / top * 100) : 0;
+  el("accessNote").innerHTML =
+    "取得 " + d.generated_at + " ／ 期間 " + d.period_days + "日。<br>" +
+    "🔴 <b>3つは別物です。</b>セッション＝訪問の回数、ユーザー＝人数（GA4の推定・端末が変わると別人に見える）、ページビュー＝表示回数。<br>" +
+    (ratio >= 60 ? "🔴 <b>Direct が " + ratio + "%</b> を占めています。ここには<b>自分たちの確認アクセスが混ざっている可能性</b>があり、分離できていません。読まれている量として読まないでください。<br>" : "") +
+    ((d.pages || []).length <= 1 ? "📌 ページ別が1件しか出ないのは、FYL が1ページ構成のためです（内訳は取れません）。" : "");
+})();
 </script>
 </body>
 </html>

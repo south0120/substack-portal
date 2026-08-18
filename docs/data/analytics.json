@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-08-18 09:49 JST",
+  "period_days": 28,
+  "property_id": "541711580",
+  "totals": {
+    "sessions": 179,
+    "users": 36,
+    "pageviews": 237
+  },
+  "daily": [
+    {
+      "date": "2026-07-21",
+      "sessions": 10,
+      "users": 6
+    },
+    {
+      "date": "2026-07-22",
+      "sessions": 5,
+      "users": 3
+    },
+    {
+      "date": "2026-07-23",
+      "sessions": 8,
+      "users": 2
+    },
+    {
+      "date": "2026-07-24",
+      "sessions": 9,
+      "users": 3
+    },
+    {
+      "date": "2026-07-25",
+      "sessions": 8,
+      "users": 5
+    },
+    {
+      "date": "2026-07-26",
+      "sessions": 7,
+      "users": 2
+    },
+    {
+      "date": "2026-07-27",
+      "sessions": 6,
+      "users": 2
+    },
+    {
+      "date": "2026-07-28",
+      "sessions": 3,
+      "users": 2
+    },
+    {
+      "date": "2026-07-29",
+      "sessions": 8,
+      "users": 6
+    },
+    {
+      "date": "2026-07-30",
+      "sessions": 4,
+      "users": 4
+    },
+    {
+      "date": "2026-07-31",
+      "sessions": 15,
+      "users": 6
+    },
+    {
+      "date": "2026-08-01",
+      "sessions": 10,
+      "users": 5
+    },
+    {
+      "date": "2026-08-02",
+      "sessions": 11,
+      "users": 5
+    },
+    {
+      "date": "2026-08-03",
+      "sessions": 5,
+      "users": 3
+    },
+    {
+      "date": "2026-08-04",
+      "sessions": 4,
+      "users": 2
+    },
+    {
+      "date": "2026-08-05",
+      "sessions": 2,
+      "users": 1
+    },
+    {
+      "date": "2026-08-06",
+      "sessions": 3,
+      "users": 2
+    },
+    {
+      "date": "2026-08-07",
+      "sessions": 8,
+      "users": 2
+    },
+    {
+      "date": "2026-08-08",
+      "sessions": 3,
+      "users": 1
+    },
+    {
+      "date": "2026-08-09",
+      "sessions": 5,
+      "users": 2
+    },
+    {
+      "date": "2026-08-10",
+      "sessions": 6,
+      "users": 3
+    },
+    {
+      "date": "2026-08-11",
+      "sessions": 7,
+      "users": 6
+    },
+    {
+      "date": "2026-08-12",
+      "sessions": 4,
+      "users": 2
+    },
+    {
+      "date": "2026-08-13",
+      "sessions": 3,
+      "users": 2
+    },
+    {
+      "date": "2026-08-14",
+      "sessions": 2,
+      "users": 2
+    },
+    {
+      "date": "2026-08-15",
+      "sessions": 7,
+      "users": 3
+    },
+    {
+      "date": "2026-08-16",
+      "sessions": 11,
+      "users": 4
+    },
+    {
+      "date": "2026-08-17",
+      "sessions": 5,
+      "users": 1
+    }
+  ],
+  "channels": [
+    {
+      "name": "Direct",
+      "sessions": 159
+    },
+    {
+      "name": "Referral",
+      "sessions": 12
+    },
+    {
+      "name": "Unassigned",
+      "sessions": 6
+    },
+    {
+      "name": "Organic Search",
+      "sessions": 3
+    },
+    {
+      "name": "AI Assistant",
+      "sessions": 2
+    },
+    {
+      "name": "Email",
+      "sessions": 2
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "views": 237
+    }
+  ],
+  "status": "ok"
+}
