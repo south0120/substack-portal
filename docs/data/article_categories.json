@@ -309936,6 +309936,36 @@
       "hash": "f5d7d542fe47043c067603f3d0efc83a2c93b1efecfbd6c8dc6d7643eddadd85",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://jamijapanese.substack.com/p/2f4": {
+      "category": "ライフスタイル",
+      "hash": "522124693ffade5fcb73073ec48397fa06e43a8992f28c5e820f1199678f1721",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://soy07.substack.com/p/substackai": {
+      "category": "ビジネス",
+      "hash": "168097a7a4d39cb257619e6d841c1b9144869845177e0036055fd096be6eea57",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://monologtaro.substack.com/p/spotify30": {
+      "category": "ビジネス",
+      "hash": "b744f4df0fde9abdb8126737c935619a36f289db55d25a6c2ccd2d2aba47c0d7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shitsumongata.substack.com/p/ai-62a": {
+      "category": "キャリア・働き方",
+      "hash": "7c3f72e25b409debc32fa184e3e1999e07454e5ab08202421ea9e3f27405b2b2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shitsumongata.substack.com/p/93f": {
+      "category": "ビジネス",
+      "hash": "5399d1a257576eff58a913efacc54235b7faf2b2c8d3f63ebbaaff1326e5524c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
