@@ -309444,6 +309444,42 @@
       "hash": "7b61b5f2cc1b236b5faec3b759ba2cc3b2e914b4fdbdfb103e4f56efc4543772",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://miyua.substack.com/p/sos": {
+      "category": "子育て・家族",
+      "hash": "b9298927c9c116ab2cfaa16ac1a36fc7a94a09703e67fb64c8a3b25849a0f7e3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fujin.substack.com/p/aiai-14f": {
+      "category": "クリエイティブ",
+      "hash": "f6c102b40f7835355cce7b2afed53ac7f7b5800a7e7c7bfd4c315f4f8e0860f7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/cagr64020351927000": {
+      "category": "テクノロジー",
+      "hash": "004cd52bf50af41bd64b483c8031e5fa4e0af5473a563559de535b94e790d93a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mibuki.substack.com/p/5be": {
+      "category": "ビジネス",
+      "hash": "373bd1091437c6c869b53b44efd0b555cb8a98559deaae030898daf64a3cae4e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hiroe123.substack.com/p/yes": {
+      "category": "キャリア・働き方",
+      "hash": "f6e024e9762a2c61c47e871322d39f59399e75e16481e0b97443e58c4c62e71a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shimonu.substack.com/p/ai-c60": {
+      "category": "AI",
+      "hash": "27b2156c76be54a4231e2c16131ebcef6ab9052d85c070a7abb6bc5a2a329339",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
