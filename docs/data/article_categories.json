@@ -309360,6 +309360,60 @@
       "hash": "7410fce72a2a2289958ecb9c43c6fbd56519ecff9440a0c12ba3dd1910a7c5ab",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://careercross.substack.com/p/61f": {
+      "category": "キャリア・働き方",
+      "hash": "6021bd6a9c49eac71594e7f04d192c5ed46edb9cf448bf8bd087eef8fad92c62",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/5a5": {
+      "category": "ライフスタイル",
+      "hash": "b981a1689f860bc1e710cf66c97f31dcee8570a21271b3d41d59c1583fca7938",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nmo22.substack.com/p/83d": {
+      "category": "クリエイティブ",
+      "hash": "8bcafeff9b9c60728885df42ef7a8c847ca70721e2ba8a8b30e6e2d8a5e2dace",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yokappa.substack.com/p/claude-codedavinci-resolve": {
+      "category": "AI",
+      "hash": "50217e3883efd6370038b32d150c59dde5cae36cf8eeb5340ffd115d31c2fe9c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://menaisei.substack.com/p/383": {
+      "category": "社会・文化",
+      "hash": "ffd5787e69266fc8289c768c0f69eed80dd0bad4b66240d658dd0e961b9a12df",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://misa7ai71228.substack.com/p/4bf": {
+      "category": "ライフスタイル",
+      "hash": "faab220273f3fec66e1596ffa193b0804e08f3b62daa18843d500d7630fbf4fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/20351185000cagr306": {
+      "category": "ビジネス",
+      "hash": "9a0c5b7bc55a9c403f857d92b6e8e45e7130ed1c89feda8b1c5f903ccbfdb393",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nmo22.substack.com/p/brain-163": {
+      "category": "その他",
+      "hash": "7e24baa77b94aeb44f1053dd36c82a978c503e95cc29ac2b372342b98adc56ca",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hometaremelt.substack.com/p/c6a": {
+      "category": "ライフスタイル",
+      "hash": "e73e915de5d05584d9a37971e6a378cd2af1ca79d6f356bde581df8dfc087d1c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
