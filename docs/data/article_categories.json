@@ -308046,6 +308046,402 @@
       "hash": "08093ece5e9e8736959d29b16b0c77731b5a51e022551c88e8d43ba509a5bf75",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/826": {
+      "category": "社会・文化",
+      "hash": "2b5b50bc47c218c282905a1701372a62e0a4ef9dd910bdf8d7afb2048732a048",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kugarage.substack.com/p/aigoogle": {
+      "category": "AI",
+      "hash": "bac1daa01f1085ea2a925920f47f5c97c0e4f8ffbaf3815c20fd35c24d210f94",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://heinaka.substack.com/p/1818": {
+      "category": "スポーツ",
+      "hash": "948bc330216930c0977b9ae2f5d4a9eb3c05900e666f3d4fa878548a9896908d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://megumuu.substack.com/p/3": {
+      "category": "ビジネス",
+      "hash": "5f85bd32495cd0e99a7ed6e3a797f7e52f741cebd4ae2e6535a08c0a56662f32",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mcwge.substack.com/p/1ec": {
+      "category": "ビジネス",
+      "hash": "79415e165bddb2f6108dcd0cecd299ee57427ef456db8e037beb489789c849a7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://webwritermiura.substack.com/p/substack3": {
+      "category": "ライフスタイル",
+      "hash": "f7c9975063b8c1ddbecd4fb33e0e895cb20ea9a92403ec5b61a06978173520d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/7day1-b55": {
+      "category": "ビジネス",
+      "hash": "21fe77faf3d0e81e0de66df200a1f3da9c8b8ddbdce855262ce0809e51ac3d3d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://okwalk.substack.com/p/50ok": {
+      "category": "健康・ウェルネス",
+      "hash": "a95746084d9e84bfd034707d69e788f4d6e24a55720a643eada5ba4a43e63ec2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/6day3-c5d": {
+      "category": "ビジネス",
+      "hash": "de5e28e0de21fc8a24ad380efb5e0ad230bb2a0df6eafb7f127ac422e45a771b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/6day2-049": {
+      "category": "ビジネス",
+      "hash": "400d095f1872abe38c7cbd4fffdd2d08c48bb79fa17540f3f9f43e1869c18122",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/8a3": {
+      "category": "キャリア・働き方",
+      "hash": "1d763e8cef65b57281371b6e0fe16bf2ddbd2ebf6ddcf0f6c5638d1c1f4eebb5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/dreame-aqua10s-roller-ae": {
+      "category": "テクノロジー",
+      "hash": "fb89bc7205ac4fa3bdd3c38681f6149356a1d5361ae1f6a7a517118a05359811",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/ulike-airpro-s": {
+      "category": "健康・ウェルネス",
+      "hash": "435613b7517cc87578454f6bfe240bf257c55b78aefa05c8025a62bc08e5daba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/6a4": {
+      "category": "ライフスタイル",
+      "hash": "80e98b01fd7196e5e11c3ebf9b42ffbe178dc52bd37f2144ca9431327cca86f3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/7day1": {
+      "category": "ビジネス",
+      "hash": "21fe77faf3d0e81e0de66df200a1f3da9c8b8ddbdce855262ce0809e51ac3d3d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/6day3": {
+      "category": "ビジネス",
+      "hash": "de5e28e0de21fc8a24ad380efb5e0ad230bb2a0df6eafb7f127ac422e45a771b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/6day2": {
+      "category": "ビジネス",
+      "hash": "400d095f1872abe38c7cbd4fffdd2d08c48bb79fa17540f3f9f43e1869c18122",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/6day1": {
+      "category": "ビジネス",
+      "hash": "dc0bf1b247c5736e9a1888a0e0471a7a209c2a2c1c8dee8aadae63531b455a40",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/5day3": {
+      "category": "投資・経済",
+      "hash": "5ed6676eb75f857c96e0259889bbb1731005d5e1562759e01eae812e3fe73945",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/81": {
+      "category": "ライフスタイル",
+      "hash": "776d9eec4af8aafbbb6eee101382ad52f7700b39140a736429b2b199082fc4a8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/5day2-755": {
+      "category": "投資・経済",
+      "hash": "83524148e4c92f235db8f4dc291f59e7cef74dafb34251af51cb302c967d333b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/5day2": {
+      "category": "投資・経済",
+      "hash": "83524148e4c92f235db8f4dc291f59e7cef74dafb34251af51cb302c967d333b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/5day1": {
+      "category": "投資・経済",
+      "hash": "586471516466f97b54543a8a3fcda491c94d4f3102f28318566cfc926c3f1c8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/4day3": {
+      "category": "投資・経済",
+      "hash": "6c4b46c0bcfeb9694fb466727de9be605879fa12e87e14c57a4831c94e73b977",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/4day2": {
+      "category": "投資・経済",
+      "hash": "9c6dd4f9bd100999afc178ab1b3803def60fef71d8c0b4b98e9bce0885fd0437",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/4day1": {
+      "category": "投資・経済",
+      "hash": "e1a0bda35ccb4ccdb85b9623b912b9ee0aa3ea4ec3ba53a67b614bf8307b0870",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/9ce": {
+      "category": "ライフスタイル",
+      "hash": "507d2ee8c9547fc326ec63db1510d763cb1cb5a0a128a7130ad7acc698a3ae3f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/prendre-2": {
+      "category": "ライフスタイル",
+      "hash": "b69b813a3b29071b2ca9ba761bf77ca63f61bce39fbcb3a0b972da34c2c3a0fc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/3day3": {
+      "category": "ビジネス",
+      "hash": "65047ffe2d758e89167496be754409392daf176bc5c12aca7bb3849207a634d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/3day2": {
+      "category": "ビジネス",
+      "hash": "5979ee3aae99fbd66db64ba0c333a14a8729b92c6e1eaa7aa548259749d4a69e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/200ml": {
+      "category": "ライフスタイル",
+      "hash": "e5be5595c747d219fdebfee168c58381604015e2b672155b723199fbe501db8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/coleman-co-3012-2": {
+      "category": "ライフスタイル",
+      "hash": "1b8288250d6390d50206ada7f0a41a6e85ca2e70f1b42fb37f61e0eb3dc1c5d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/3day1": {
+      "category": "ビジネス",
+      "hash": "5e6ecf2d1e01e3edc1650a015fb7136dcd9544dfb00cafbc62b4802a9198d438",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/furainex-dc-243d": {
+      "category": "ライフスタイル",
+      "hash": "97f97956be019e990f653884f33d5537eab197006c06c5bbd811d95897c3817f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/xiantong-uv": {
+      "category": "ライフスタイル",
+      "hash": "6d259d3fde74001456a5d01cee03c44bd751b955563bbb59066efa1309920725",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/easyacc-16000mah41led": {
+      "category": "ライフスタイル",
+      "hash": "4fbc8c0d1999c94e39ccdebcd23681cd829d126948a611104fc2b73b4ed4a8a8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/2day3": {
+      "category": "ビジネス",
+      "hash": "78c8b02ff473f3b58e8fa489f6de298d5045a40db47ed4b6a9f75e9d2fd4a209",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/5fc": {
+      "category": "ライフスタイル",
+      "hash": "e6f3ed9363016714c979c7e87da9115c773536d219a1fd51da9f1ae08e2fbd6d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/2day2": {
+      "category": "ビジネス",
+      "hash": "927621ec853d0404b1b1da180e6dfe2ff86422ba66a5a3732fe376cad611930d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/cartist-qi2-25w": {
+      "category": "ライフスタイル",
+      "hash": "d7b116548fe6fb10ed1062ee24780384c2974184aff1d42524d04ab6950796e0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/ih-cs-g321ms": {
+      "category": "ライフスタイル",
+      "hash": "17af5d970da448d4b3bdb3e9602edcd82d6d5d90b59e6640fdebdfc696ad3e20",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mechabito100.substack.com/p/2day1": {
+      "category": "ビジネス",
+      "hash": "bd6e0391eabdbc1dc668afeddc8f59b836b263893c2a6492d6c30e97162525bf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/4in1": {
+      "category": "ライフスタイル",
+      "hash": "a2ac853e6d3ab209a8fc7cd48d41d6d3daa3729f72154bf3102741d6141ed584",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/747": {
+      "category": "ライフスタイル",
+      "hash": "e5591f9137231c7a565e14fff3ab640e40205ab90b8ebe60533e22054643a422",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/57c": {
+      "category": "ライフスタイル",
+      "hash": "699c8f5e11c6d5895c3dca70c86e20efb2dd914573fe56fae960b04168e0d6a4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/d6c": {
+      "category": "ライフスタイル",
+      "hash": "3c541bc319a591b9bad8dcf8d7e6f31903ff210b2ed253322ff685188d57569b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/f32": {
+      "category": "ライフスタイル",
+      "hash": "fc01097c85c0a193889f10e42aa496b1a71847ce770b158355fa7fced4e23bb7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/ai1anker-soundcore-liberty-5-pro": {
+      "category": "テクノロジー",
+      "hash": "0ffcc67d2ddf43098b2cecb3068d301d4c7927ea2ea3a82555a92e981d4e4b6f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/f91": {
+      "category": "キャリア・働き方",
+      "hash": "9181a9cedeaedacd26e2195d0ce2a7bb9fac7c826f64370c3bd40e76facc63c2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/ca8": {
+      "category": "ライフスタイル",
+      "hash": "bd8f342814d9c36c57c96b43eaca8c0f9127f9f2f7c35dc81a4293a1b4ac0be2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/liberty-5-pro4-nc": {
+      "category": "テクノロジー",
+      "hash": "627f3b849e9734e071afcfa9fc2073d10b9a4162e6f0ac3f45c98f1402fc5ea8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/1e2": {
+      "category": "ライフスタイル",
+      "hash": "0e5c43ea60e03343ee19d75a6c9afb7be654b9a54c1362364247f8ff12f1b0c6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/50f": {
+      "category": "ライフスタイル",
+      "hash": "163c35119abf0d72f0f3905d6987252bcf5a905bc1f68b35f0ac6b199f40cd85",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/f0e": {
+      "category": "ライフスタイル",
+      "hash": "9cc54f6b7d356ebabd64dbb08092908c409aeda276404f0035f9a17b501337e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/05b": {
+      "category": "ライフスタイル",
+      "hash": "5988476a33c5565f2f8da5712249c7ebd80fcff7da6fe4a80fe600687e089cbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/a76": {
+      "category": "健康・ウェルネス",
+      "hash": "353f7fa7f2407b4b8c0cf52d1fd388d801bf7a6a8c596d68ec95803d7de92f09",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/8e3": {
+      "category": "ライフスタイル",
+      "hash": "88f601f7d3356e193fb3417ee91c72692beffa4a1ca4d0f87705eb77043438fe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/mojeer12kg1": {
+      "category": "スポーツ",
+      "hash": "7d10932370e74f4d9a43a5a985340aa3f03a93cc9f0cedae592eb968802b92e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/112": {
+      "category": "ライフスタイル",
+      "hash": "78e06cb137cf49535e8ac62fe2ed886c561976e7f7201259b20f614a8bc2e4e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/3ba": {
+      "category": "ライフスタイル",
+      "hash": "93d67c14b3c0c394451ca794a70be78299aac4c2703258dc717edfd88f2f5d97",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/06e": {
+      "category": "ライフスタイル",
+      "hash": "1498d32afe0d0413355a341511ad584ab5de7c9a963c569a95964cb4309a7841",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hoshitokokoroyuri.substack.com/p/c78": {
+      "category": "ライフスタイル",
+      "hash": "c6197f8d3969d6e30038d28bc4ccef8a18f78df0e83bbc689247c7af98dc606e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/c9c": {
+      "category": "ファッション・美容",
+      "hash": "8aaa378568d196df9cad4cded3050ee5d9a0c086e4545c6bf48406e58aaeb6da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/amazon": {
+      "category": "ライフスタイル",
+      "hash": "12ad661106a1a14e134d68ae1f3e407f02a6a06c90041d58cc6bb6c4689d37aa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/399iq": {
+      "category": "教育・学び",
+      "hash": "d14c684dd4300399233e0509586f93f9ba721de6999a54627e386dfea173fe8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234979481.substack.com/p/soundcore-space-2up": {
+      "category": "テクノロジー",
+      "hash": "e43a3cfa66059512bee55ad7f554831795d9697ac09d1d62994077541018d8a6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
