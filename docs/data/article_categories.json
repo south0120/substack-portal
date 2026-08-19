@@ -309966,6 +309966,66 @@
       "hash": "5399d1a257576eff58a913efacc54235b7faf2b2c8d3f63ebbaaff1326e5524c",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://sugikawa.substack.com/p/googlegemini-sparkpc": {
+      "category": "AI",
+      "hash": "5b9a9dc78768833d3b5ffb8d70018dedb6cd3fc23fecf42c7c7610463bd003e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cobe.substack.com/p/260820": {
+      "category": "読書",
+      "hash": "40c7750ca2e1e468629019f539e907e11e43cf9a46b42ca24104b540a3f9d2b3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://zenouo59174.substack.com/p/820bot": {
+      "category": "社会・文化",
+      "hash": "6bde18bcb7c953c0ce1d0b2e2ea70b4b2d5f2fbc59ef291886a4dcd4c48ef347",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nekoken.substack.com/p/6030cm": {
+      "category": "ライフスタイル",
+      "hash": "5bfd7efae42fd23e8d46d361b218a8759e4b4becef356fac8504ba7fb606d8e5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://paloj.substack.com/p/3ce": {
+      "category": "グルメ・料理",
+      "hash": "a1c8dbafebda351356d99febe401a52d31e860e5e9ead1b75e316f33c11ff698",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://midokane02.substack.com/p/bfa": {
+      "category": "ライフスタイル",
+      "hash": "e3f4dae1076c5ea1d9f683ad1b639b73adcd620222b6ba743d644d0eb7aa32eb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kugarage.substack.com/p/sns-355": {
+      "category": "社会・文化",
+      "hash": "7fcfdda09554c6b649965beec2920f0f9dfe820a95fb1b971426f1e08bfce9cd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/part-c12": {
+      "category": "ライフスタイル",
+      "hash": "c6f061bdeb6ff64677c0e1e00e00ff77bb90bf6f6e2937d60e53c3eac50d80b4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuhishirai.substack.com/p/805": {
+      "category": "AI",
+      "hash": "46bfa4a6990d2c39a0864dd8d2fcfc4af8ff76bdd2e0c6beffee361a50a7ffc4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/tmps4yui-hermes": {
+      "category": "AI",
+      "hash": "62ca9a67cc6883ce5c2eea502c4251ff4a6244b27336ffcb7597d5c180c74dff",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
