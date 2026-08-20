@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-20T18:05:36.913004+00:00",
+  "updated_at": "2026-08-20T19:21:31.417970+00:00",
   "model": "gemini-2.5-flash-lite",
   "rates_usd_per_mtok": {
     "input": 0.1,
     "output": 0.4
   },
   "cumulative": {
-    "input_tokens": 13277166,
-    "output_tokens": 1420533,
-    "api_calls": 3125,
-    "cost_usd": 1.8959
+    "input_tokens": 13278458,
+    "output_tokens": 1420665,
+    "api_calls": 3126,
+    "cost_usd": 1.8961
   },
   "monthly": {
     "2026-06": {
@@ -25,17 +25,17 @@
       "cost_usd": 0.6309
     },
     "2026-08": {
-      "input_tokens": 2423040,
-      "output_tokens": 252003,
-      "api_calls": 528,
-      "cost_usd": 0.3431
+      "input_tokens": 2424332,
+      "output_tokens": 252135,
+      "api_calls": 529,
+      "cost_usd": 0.3433
     }
   },
   "last_run": {
-    "at": "2026-08-20T18:05:36.913004+00:00",
-    "input_tokens": 672,
-    "output_tokens": 38,
-    "cost_usd": 0.0001,
-    "writers_classified": 1
+    "at": "2026-08-20T19:21:31.417970+00:00",
+    "input_tokens": 1292,
+    "output_tokens": 132,
+    "cost_usd": 0.0002,
+    "writers_classified": 5
   }
 }

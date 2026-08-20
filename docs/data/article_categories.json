@@ -312510,6 +312510,36 @@
       "hash": "1bb35c5f04209c7288e334c03dc186c096f48ca3ca809d1d115c6d3d80bf809f",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://maomugi.substack.com/p/122": {
+      "category": "ライフスタイル",
+      "hash": "5bf07d9b920eca63da4588f002ea8e39dd4512c467eafe61d73fd323fa602b3f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://wataruhayakawa.substack.com/p/ras": {
+      "category": "ライフスタイル",
+      "hash": "d20c0b962e3a2226af5997843393e3ef2421b793fe20fe8d807560ab8112af0f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://naaapoco.substack.com/p/ai": {
+      "category": "クリエイティブ",
+      "hash": "9f30dd980872e308ae6e14b99176b03bf2149ea5f62df46e3a454baa7d6684ae",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ikuchan.substack.com/p/8d7": {
+      "category": "子育て・家族",
+      "hash": "fc34faa8cceee4ddd2cda6f08b832714b352d947f9eb43477bd109c0ca5e6e69",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bardvision.substack.com/p/ai-b76": {
+      "category": "クリエイティブ",
+      "hash": "db034c9b47e88b5b5035456aef2b5745f266652b626efd356c1cbf2beff17945",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
