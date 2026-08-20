@@ -311052,6 +311052,438 @@
       "hash": "a70a191ceb3d1ebd3561b0137cfab1357fba30d521ff5f1bde82d9c087326d61",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://fujin.substack.com/p/aiopenai2": {
+      "category": "AI",
+      "hash": "3cbd9e216e76403a58fc2bae5fd6a0c0f7675d905dacef7d8a355d6ca28814b4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/570": {
+      "category": "AI",
+      "hash": "361ed5b62f554469c4e977cddafe754d5271af95ca86ade8a4f92a9cec48c1b0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/0b2": {
+      "category": "ライフスタイル",
+      "hash": "06be580c34b87a34655c275fca8517a2bf254c6abbf8852743bf0c58a089412a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://otake.substack.com/p/b34": {
+      "category": "スポーツ",
+      "hash": "2c2fd1615e2ce84fe56bef15445b59737fee05774944251b1f6135f04c04eb99",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tkrock.substack.com/p/brainai": {
+      "category": "AI",
+      "hash": "c6e692d76910e88c6d2ce0bf5a5d24490f2cab2b9ad9727b7ff5cab0449a800f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://humstar1993.substack.com/p/etsy": {
+      "category": "ビジネス",
+      "hash": "d848bb17cef54738d46c8cdb0c4f0e53d2850de49c0c16c8480df02dbe2af56b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/aaf": {
+      "category": "社会・文化",
+      "hash": "4fc3825e40c63cf46036267590084743849286129b3a764b1f82b456481b99b4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mochitherapy.substack.com/p/736": {
+      "category": "ライフスタイル",
+      "hash": "2de6b6661658a040e5657d6048479981e55c66fae57ff4ee611dfee719c20b8f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://aikotanaka274822.substack.com/p/2035889cagr262": {
+      "category": "ビジネス",
+      "hash": "b7b130ffa29a1596fbfa1d3c93639308f26f272fce23d60ee3be24d60660e1df",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/d89": {
+      "category": "社会・文化",
+      "hash": "79e64032417b39eab78afa0e0c7baa3a0674bb342b8b6d0380f302c8a994dd97",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tomokanamoney.substack.com/p/2371177": {
+      "category": "投資・経済",
+      "hash": "a129a9487d35828ce5e2ff3957f816644e41096d6e2f46560bc40d05ae8523e5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maya000828.substack.com/p/2e1": {
+      "category": "グルメ・料理",
+      "hash": "4380f63c6c6cd8559ae10ad3d028e73151998cebc59457d957e718c01ab7d7ce",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/819tiktok": {
+      "category": "AI",
+      "hash": "ea1ec9ce7ffc632c5e31c63ba73693eab202e45dcbf4c7ed8943a44e4a665a24",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/ai-96f": {
+      "category": "教育・学び",
+      "hash": "03fb983b22fdc7ee1c4c364bd38e75ae3e7c592b5da6e0e137b0c9ca506132ff",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/brain-3aa": {
+      "category": "AI",
+      "hash": "bd4302c443dd78c59054e9935d997e202c85535e562cc35233d26f829215c4f3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/instagram-1021": {
+      "category": "投資・経済",
+      "hash": "96353732ad345c6104ab2ea74f55e80137bf26b2b83b3e2714d973bc1acaffbe",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/825": {
+      "category": "ライフスタイル",
+      "hash": "6a85551a718c58d37bdfe9262bfa3c7bb13d9b1016f667f9557f81614e69fbbc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/818": {
+      "category": "テクノロジー",
+      "hash": "bbb220fb5375fa932c3237a9ffa7501335357bc2b5340e6ce7df8f8a8dbd72ba",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/7": {
+      "category": "AI",
+      "hash": "e799fcec5cc8f16675269a653bcc13930dfa06a2317ce56cb18232521bfc7bb4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/139": {
+      "category": "その他",
+      "hash": "414e1118977b087b8aa3aba31876409b7932118e8b9dfecf26dbb39ca296bf80",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/brain-1bb": {
+      "category": "ライフスタイル",
+      "hash": "cd1dabd558414a1ce172d21cb285863776669865a768460d9d8ba6cca3299499",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/sense-owners-3": {
+      "category": "投資・経済",
+      "hash": "bea96a17b393d806344dda4714ad0634ea0b8c52020a244f020c08110c8c6d4d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/f54": {
+      "category": "ライフスタイル",
+      "hash": "7803830671978313f752395fa97cb99074a813a25da6b487fe7867890f304178",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/569topix": {
+      "category": "投資・経済",
+      "hash": "a72f7ba46efe895999fc16cb338394f429fa9ffedc940cf4e10694147ce22f7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/817": {
+      "category": "テクノロジー",
+      "hash": "8bb3cce8e639b36fc00f63a85714ccfcc8121f82a5b29cc39f01facdd6e8abb8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/substack-7e3": {
+      "category": "ライフスタイル",
+      "hash": "d936d650d0baab9ec1295354e6cfa7e66909512ff67118db504dc2ab2fef079c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/3-e43": {
+      "category": "ライフスタイル",
+      "hash": "0ecbf7f8b4203e89ab39c4a6cd4fe443575185f400c5b86038a0c83276ba9058",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/4a8": {
+      "category": "その他",
+      "hash": "9ef281b54cb5d2eb9284d3f59694ac902ccdd4f7f4ee229c9525027cd39334d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/2f0": {
+      "category": "ライフスタイル",
+      "hash": "9726992f12c43a77303e42edb61831b1192b80cfc997613f576c1a13834ce1b8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/8ac": {
+      "category": "投資・経済",
+      "hash": "642ebe4f00abf66e63609b21b5c889d4fb9b36c60652b6fedfdfce061cce901e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/6d5": {
+      "category": "ライフスタイル",
+      "hash": "a2c2baa430f8aca3722b2c7fcbefaecc6f00a4da0c41ad6ab6ab312e0e846cd1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fapen.substack.com/p/aiclaude-code1ai": {
+      "category": "AI",
+      "hash": "dde0e107d936a21cd9baaba6bee945123d3ff139330539c394f89106cd3e226c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/816149": {
+      "category": "AI",
+      "hash": "813718b97b1aaba47c61438dc6ac04543b22fc6d3a53ad40e3dbec2554c4ccc3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shota1109.substack.com/p/115": {
+      "category": "ライフスタイル",
+      "hash": "0cbecde79658548792f32d6a7e8db6e1a143948d7e03613a37218076868234ef",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/e9b": {
+      "category": "ライフスタイル",
+      "hash": "e4dc1121d8a2517464d088715f5968c8f61b44d72000b459e571c678a23ebd5d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/655": {
+      "category": "その他",
+      "hash": "71b1a1cf1b6c14f0082daca1aecd3e0c32d1d28fac31dfd84735816af37bb786",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/a38": {
+      "category": "その他",
+      "hash": "5d1ec259d2e86d648e34d7b71223983f784819615aaecd53522daaf5538a0ac3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/prsense-owners": {
+      "category": "投資・経済",
+      "hash": "e34ab1339e50f999f405588a5e997a3b8434ca9ed590739b0640a29cdec8306b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/8": {
+      "category": "ライフスタイル",
+      "hash": "5244902db4a50b76781fb3c353d65db0d90bd93371c3c3c59e6eec7fc6043f95",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/815": {
+      "category": "AI",
+      "hash": "27ef8d9085adc7d6e7ff422a00bac138bbf961bf3bccfc7b9607cc9e49d350ff",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/ai-150": {
+      "category": "AI",
+      "hash": "93682c086fcb832f2a3eada72b3337009718ae20533b17fb3fdc9fff32228309",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/2": {
+      "category": "その他",
+      "hash": "1151f43e56beafb88dd0642f5de128ca8ec81b7b44c84d690abf8effb71826da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/685": {
+      "category": "その他",
+      "hash": "1e3f3d72e0121ddb360747dc04d928f2673b185296cb0df95873767247889eac",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/sense-owners": {
+      "category": "投資・経済",
+      "hash": "7605d1e762a5e5049bd0dc7ee0867808fceaaa7671504b54e4a394912ff093e9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/brain-ecd": {
+      "category": "教育・学び",
+      "hash": "6f1f8be3681acc5b51d23b671a05bb222979d4538f03bb87570dced4ce3c17b6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/511000": {
+      "category": "ライフスタイル",
+      "hash": "fafa333c7f479f81a7a0eef16f1905ac997d5fc7533d16465fa10c7c1512fcf6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://diagramwolf.substack.com/p/ea5": {
+      "category": "その他",
+      "hash": "2ecd6ca23dc2ceaf3aa95c716726e68377d93951ead4dbb4589e6eb45af1520f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/779": {
+      "category": "その他",
+      "hash": "69f1438f1a5c2b1abd2eb59f25da2da7f782c4bc0dd2bc14a8f96e5410b441f5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://sakura744.substack.com/p/6a1": {
+      "category": "ライフスタイル",
+      "hash": "89f60aaa87ef12e15cc7213b9f75687cf488bddb1dbf8ee65233af55ba2b8a2e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/846": {
+      "category": "投資・経済",
+      "hash": "86e9f7cf45acc6a7039a1ddc24e1e97c05a1a77ebbecbe547757eea10f231dde",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/7": {
+      "category": "ビジネス",
+      "hash": "4423e3bbadf2b9b523b563a141c1ff4eca83cd2e0cfd5ffd215a9638a11e41ff",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/6ee": {
+      "category": "投資・経済",
+      "hash": "b20a40e664749936e0bd84718a72aa891da467ac4e580a516baae9309c942728",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/tei-nei": {
+      "category": "ライフスタイル",
+      "hash": "180b550628ccbe9f692222a863062d496c390a994fa9a55403f1c8159c8290bc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://fapen.substack.com/p/ai3-e6d": {
+      "category": "AI",
+      "hash": "e35f64afa6c64e32a432cb343f4a279d0d25c2dbc0f57d50c4e98ceb009c74da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/20859": {
+      "category": "投資・経済",
+      "hash": "60ff4c560ac7181f2f357108b8b804282422df497f30c005ca38931437cb1e65",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/tei-nei60": {
+      "category": "ライフスタイル",
+      "hash": "d59cabe20531a28d7c0f2607c0f72781d97c64deed30902b251af8b5beabef3e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/9": {
+      "category": "ビジネス",
+      "hash": "3dedc8953e32f43d5622e1c7bf7f3183030da93c92a6c8e0495b4b7ffa0f4760",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/5-ea6": {
+      "category": "投資・経済",
+      "hash": "f73843a824d160b4b57a14774bf67fc0a34ae8a8233f98d30bb3a51565c81df3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/639kg": {
+      "category": "ライフスタイル",
+      "hash": "658092b80041fae2aea3861e7dedb49f809c42b03ecbd3a2c63624211346c0a7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://usakopairtech.substack.com/p/99": {
+      "category": "健康・ウェルネス",
+      "hash": "524b91fd0517b7f50533fa3a2a5af6652fa42a3bbeec68b886e68f09f87be536",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/3-f35": {
+      "category": "投資・経済",
+      "hash": "4e2caf567f3a845a2ea14ee8ada2090d3e7b57ca49f08ecdf9e3809c557270e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shota1109.substack.com/p/16": {
+      "category": "キャリア・働き方",
+      "hash": "5e18294858b1f4806611723748d54eb4913b6f7a172dc5b168bd0abb6051158b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/6c8": {
+      "category": "ビジネス",
+      "hash": "da5efb733f4110e59babda660359ca9fdcc48635ff25159d0ab775c54010e0bf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/1-ceb": {
+      "category": "投資・経済",
+      "hash": "19248c4a81727ff4eaca09502a01072ed30626434b574b1302ca3f74fb64a998",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/40": {
+      "category": "ビジネス",
+      "hash": "f530c7b6982a29ccfa2721d2fe9d720402894d5a34c7f0bdc3a6600c42f3b453",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cccleaning.substack.com/p/f8b": {
+      "category": "ビジネス",
+      "hash": "ab0476d2aecefe7fdd9d833c7d8f35a118bfcc426a1d0fe7bf11fe95ebeae641",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/topix": {
+      "category": "投資・経済",
+      "hash": "18c60f0bc35f5ddbe3d8dbe9432427312b272b9e01783377d37e0292161e4fa5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://usakopairtech.substack.com/p/sns": {
+      "category": "ライフスタイル",
+      "hash": "3b04ef87bc0b875510518bb87560a6a04b852287603c3a404916deedbe729150",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/pr-7e5": {
+      "category": "ビジネス",
+      "hash": "584f369770286e220b9f77e37282a6603223f3de510c4a7815eb9fd7f2162ce0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/pr2": {
+      "category": "投資・経済",
+      "hash": "6e9c0751757a453f189128ad0ca46ab27f83d9aebdbb5c3731f75d4fd351b7bb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yuyushi17.substack.com/p/80b": {
+      "category": "投資・経済",
+      "hash": "c86773598072dc36a203fea7d6884200a985dabfb83857e7d411132d01710660",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shota1109.substack.com/p/261": {
+      "category": "キャリア・働き方",
+      "hash": "0393ce125d5d0241459604fd6bbcc57c4c9930007e6a42803dc97b043d63a044",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
