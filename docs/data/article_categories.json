@@ -312288,6 +312288,30 @@
       "hash": "56ec07a259820c65213d40e3a03e1f46b8fc7c7299820b69e73a76b754487758",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://ariel143.substack.com/p/820arielradio": {
+      "category": "その他",
+      "hash": "9c0bca52e79b6fbcbbea5cd267e62c78df8beaa3ac5b5c4131dda6d2ed4a4550",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://koubunosho.substack.com/p/2c9": {
+      "category": "社会・文化",
+      "hash": "fd5136676bad3dfe01628b57dd2937e53d8e6b49f770a8b78756741df6610784",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tankyu.substack.com/p/ai-f27": {
+      "category": "AI",
+      "hash": "8261994dfc0cb1760d889268a4d05eccb5c49d4690e73f39cb054d204fa34569",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kakio.substack.com/p/vcp-2026-08-20": {
+      "category": "投資・経済",
+      "hash": "391c1a268ba7f68bbaaa9b86d934b324146aa2f3622e6a0c2b24779a22d1f0d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
