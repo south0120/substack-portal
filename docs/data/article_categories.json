@@ -313098,6 +313098,54 @@
       "hash": "c8a11fbc498430ca52ba2d8eb5b66dd31e7d79fe733a9f6d1283e3b4a55187d7",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/887": {
+      "category": "社会・文化",
+      "hash": "1b30fe80b5a1b31c4dce178a1d1aff5167be193bffa0c5293a641a4cb1dd5103",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://menaisei.substack.com/p/005": {
+      "category": "健康・ウェルネス",
+      "hash": "b7019eda62d6d921026abf9347e41b6f557740a6a3fd7a28ca34021956bc89d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://katonodoka.substack.com/p/61-r80821": {
+      "category": "ライフスタイル",
+      "hash": "43f416741831f6144e59756e82e6ef26dbec08401293dd1ae95d4a9665e0a9ad",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shack922.substack.com/p/2026-ba5": {
+      "category": "ライフスタイル",
+      "hash": "bdb40d51c6a3d4ca5e54b7acc2d34b1c2f56c904a4b9e83fbb7e6c4d6fd1a02a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikarilight.substack.com/p/9a0": {
+      "category": "グルメ・料理",
+      "hash": "6d41fc263e3f297ea52a19449bb80749403f00f69b25686e0d167f8fee65189a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://midoriokan.substack.com/p/line82020": {
+      "category": "クリエイティブ",
+      "hash": "0c3cac18246c7cad3c4728c86283ff5f62537e17ee7d41c838b63805b054cb5d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://forestbookclub.substack.com/p/159": {
+      "category": "クリエイティブ",
+      "hash": "90de709c679f1ccf2aa2d8c0b7405416d73e84ee24d0c59464b54ca4eb73b74e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kokoroshoin.substack.com/p/ikigai41": {
+      "category": "ビジネス",
+      "hash": "adb05e466be32555551bcc9e18ff5ef40f4a0a8615af98b72524b312ee2bb3da",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
