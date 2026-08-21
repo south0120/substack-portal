@@ -315240,6 +315240,444 @@
       "hash": "1d5c370457bb1fb547cf99e64faee97bfe19c175ab476ddd17ec7d452f6ac36d",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://yonewaits.substack.com/p/d45": {
+      "category": "ライフスタイル",
+      "hash": "b99c023d13663e7c53c4403412484e2187506a2dec1da4e54087cd8a8b637684",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/04e": {
+      "category": "社会・文化",
+      "hash": "83212bd008032e02f606cabeb5e25be51b9bad6f0bca0c563143c8cfe62a4f3b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kanoroom.substack.com/p/30a": {
+      "category": "エンタメ",
+      "hash": "44b404d14d01a9760883899527145e1ac8897926331c70edf6da3370f89d42d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/04a": {
+      "category": "社会・文化",
+      "hash": "7d43ae53be0fbf4ecf98d9e23e130e1ce2cc91bbae4fa41587f88a1ee22763bd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuhikiyose.substack.com/p/70-1": {
+      "category": "ビジネス",
+      "hash": "18d00abaad95f983d0e853af61fb18a5813fd4b5584bd57d52fa4152b600172d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/20": {
+      "category": "健康・ウェルネス",
+      "hash": "5d35c26f9db234bb2efe969098f4d54da09fb25015b68d3e2c835ce67b73fe5e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/811": {
+      "category": "ライフスタイル",
+      "hash": "249179164278ffe599cfbffdb08012dd53ce39cff710999d08ec278fd047be76",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/58d": {
+      "category": "クリエイティブ",
+      "hash": "b7f4259385fa2ad8d4113b3f3f5aad1b3369c53a0dd28ca6302518d65028fde4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/049": {
+      "category": "ライフスタイル",
+      "hash": "eccb23054239f8580b5a97eda612532dadd7a1762f853827d63457f2ca0cae30",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/bad": {
+      "category": "教育・学び",
+      "hash": "b94345201f7a4f3874af1f5641599dc1c70534bae7cef54cb049aea6fcf3c8c9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kanoroom.substack.com/p/ai": {
+      "category": "クリエイティブ",
+      "hash": "afff48964e5d4ba9faaf72887ea49dcf3150d389a854d39db33fb931de80604f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/aad": {
+      "category": "ライフスタイル",
+      "hash": "db869070f610114f8c437947ba7a53d8bd5ae1e93b4c6bd3c2573795666fe3e8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuhikiyose.substack.com/p/9-ai-ai": {
+      "category": "AI",
+      "hash": "69df1858f938b6a3c6b4bba26fec80df6d4ef39c5897b63f835e3aab86d822c0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/c6a": {
+      "category": "教育・学び",
+      "hash": "21391c3241604fc4c706c7cc65c677e7951514c2a8de972e13aec4c698934b1f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/d0c": {
+      "category": "ライフスタイル",
+      "hash": "eedf4cbbf28f9ad3ea10efc148e7eeec4d667582552365c49838ae8f0bbd64b7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/df2": {
+      "category": "ビジネス",
+      "hash": "912e35eb645fa902c228a350a246f48e88113ab5299b035df8d77b0051e84f41",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuhikiyose.substack.com/p/1-b21": {
+      "category": "ビジネス",
+      "hash": "431ef00c324ff9e5ff05b9c4a4344b1770840c0edf2e564a2eb29d7a5fb72e7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kitatashiro.substack.com/p/100": {
+      "category": "ライフスタイル",
+      "hash": "27aface50e632f61f14c413ba8a690e2df6314bd6fc463c87f78ef3dfee5d095",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kazuhikiyose.substack.com/p/ai": {
+      "category": "AI",
+      "hash": "df4b9680de24e793ac0975e3a1e059723de437fd31967d5059eb595bf36e5bd1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/918": {
+      "category": "教育・学び",
+      "hash": "e4699dc08fd4ca7e802342d0936730a7909178fd841a93f691fa84d70cb87bb8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/721": {
+      "category": "ビジネス",
+      "hash": "2782eff0b4d46417a6a9b6f3d6a17cbe22c1a2c9048d7a2c320dd83f55ef8ec5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/19": {
+      "category": "健康・ウェルネス",
+      "hash": "d4753e24557cd2a89a74ffbb487b2aab51a26b3cfe2425d0bfbb573a94eec3d5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/404": {
+      "category": "クリエイティブ",
+      "hash": "05e5db4653122b44c690cfe8c493f25d78e292a8079f1b692f109bd9d795ccc7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/0a3": {
+      "category": "ビジネス",
+      "hash": "3240026922638e23cbbc216064bd3ecfa8362589a9515b41c8ec201c1cdca78b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/ca1": {
+      "category": "教育・学び",
+      "hash": "8759ab0d1ddc66d29a7fdd7b821f1520259e350808484d340e51cfe083da43fb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/24e": {
+      "category": "ビジネス",
+      "hash": "1566944ebd989aecf844ab1d88ffee50eaa3115695424a29b6ac319bccbef330",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/4": {
+      "category": "ビジネス",
+      "hash": "c9a6edd3ce9576e2e3336beae5e740e6ae32a74d2b893bf03f94ddf97e5310f5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/syncroom": {
+      "category": "音楽",
+      "hash": "4fac0e7859ad48afd9e81408582d89e591928a379354da7eff5d0c03885ea3bb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/ic-f19": {
+      "category": "ビジネス",
+      "hash": "38e699af3606d7bea3c152b562ee3bdf239b77e829b174401ae108957579c8b7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/18": {
+      "category": "健康・ウェルネス",
+      "hash": "476b03aefa691dd4356f19d9b9ad0d7638f754083076ece2dceb8f9a06e1c36a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/cf3": {
+      "category": "ビジネス",
+      "hash": "77adcda8f435eaed614c54cd96611ded8e3515d646261857d98ef38771dd31eb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/ic-888": {
+      "category": "ビジネス",
+      "hash": "680b50a09faba4968dffd7c501be331a79dcabfbee3f2e457709cf478bdb6571",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/faqai": {
+      "category": "AI",
+      "hash": "9cb66edda792e1153a16b0eeaf998d522a4badb6760114889f1dc1c94ad46399",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/f4f": {
+      "category": "音楽",
+      "hash": "46372c5708af3f65b902e0f34e575e1389e5a5dc1c43382956a11e2e722e5264",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/26b": {
+      "category": "ビジネス",
+      "hash": "93f47eec295f705656cf745f5583b0315f507222eda9b0aa84051c929bb8aa73",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/17": {
+      "category": "健康・ウェルネス",
+      "hash": "7686bf4f395734199d6d024cca5bf82983304cd3c4e1214637e108f805c1779f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/aiir": {
+      "category": "ビジネス",
+      "hash": "b6f7df4f94f04e48515a0cb4808b9088b3c6e937b8211807a6e207761d6de12e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/944": {
+      "category": "音楽",
+      "hash": "b0760035c1a19e6dc326dd41f8cd5f4350772aefccd37e4029773d6c55c430fa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/ic-2a7": {
+      "category": "ビジネス",
+      "hash": "bd73f3898617bc5e874fd71f7f8e24bee710c0e411534a60e8c19dad50979ba8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/9d5": {
+      "category": "音楽",
+      "hash": "a147feecce064ab69e2882355d57b2b7bba81fe81845e32b4cacafd5289d1a0a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/aigeo": {
+      "category": "AI",
+      "hash": "af98f6f8b2014265db2d2f4a70caa2acfcaebf8314f3db2f4e11ad0e7a968c4b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/16": {
+      "category": "健康・ウェルネス",
+      "hash": "d2caeb83bf176bdaeb105399b7edbde8033bea85d281b1573ca3ee1122ce8e3b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/8b7": {
+      "category": "音楽",
+      "hash": "ca80cb0958964123009bd7e5518ab7c00f5ceb0ae5a9622fca4fa037287ddfa1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/seoprai": {
+      "category": "ビジネス",
+      "hash": "148f53734119f16c08893b1c0d56205d66ab819ede2f6d5f0b0a56657865cb62",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/ced": {
+      "category": "音楽",
+      "hash": "5f7a23990d3158ca3b55d69d9ecf3c91d803492e65510ff7a4c33c8089a1c4fc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/ic": {
+      "category": "テクノロジー",
+      "hash": "9c00a9a37088a03996c54f7175dd9b6abe4486fc92174dc53ec63b51eb4467c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/12": {
+      "category": "音楽",
+      "hash": "40a2e0ebac731beecb40134602afd5a86c97cee631d56793d196dd0e4c2371a8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/15": {
+      "category": "健康・ウェルネス",
+      "hash": "056010b831e3f9f3b1063ed5348f2e178a44204f3e25b82c0e785869f14613c4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kogureryohey.substack.com/p/f5b": {
+      "category": "ビジネス",
+      "hash": "217acf774f5876f2d59decc616a697acabbfc3a1239469f32a38391fe516f3e2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/edd": {
+      "category": "音楽",
+      "hash": "8a157028cf73c9ba86f659d6419cd682758c680695f4e8e70bc5e4de33a9a9f9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/sns-014": {
+      "category": "ビジネス",
+      "hash": "79be5dc5ce1dc09baa2ae9c7d058436b7c0aadacfbaffe82428240feb602aa89",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/14": {
+      "category": "健康・ウェルネス",
+      "hash": "0c2be14ee3f97b4c35b96575975c75cc82d3e8ab43d1bf554cacac558cfdf280",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/22": {
+      "category": "音楽",
+      "hash": "fe9c2e4552cc7ab1e59144cf3133219eb9b682ab752e31914bb55b389824928a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/f43": {
+      "category": "音楽",
+      "hash": "57611ce2345057ddb8d450fb536d25526562b6fa100e7703a40d36b547b43205",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/13": {
+      "category": "健康・ウェルネス",
+      "hash": "172ce4730bc49e0f4f3b96191192c1a4071cb2f9cb297d0b9a12d98962321db7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/bfe": {
+      "category": "音楽",
+      "hash": "b10e23613ee34439cd389f82d97ec79c4249f75052d9dc8d8e6f4f58c70759d6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/b71": {
+      "category": "音楽",
+      "hash": "37b500995930f674d0103dc672d1836e7dff0ec0508c2e270c606054d6cd422c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/12": {
+      "category": "健康・ウェルネス",
+      "hash": "3cddb7dda8b78879b82c88a5fb0dc5f9c8ffd2ed0fff3551e889a57cf755fc7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/1d0": {
+      "category": "音楽",
+      "hash": "e7bbe2e4bd688783fe4098708d2813228a9ec88aea2290c2963bf50192acb398",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/11": {
+      "category": "健康・ウェルネス",
+      "hash": "79ba2647f3e84119d377cc13e60eb6f3c9597b0be31da90e207a6bef2e30da59",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/484": {
+      "category": "音楽",
+      "hash": "03f2219be84468eddee4e1ef90e6ec73533618b40de5ce7599d6a199c44ad692",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/129": {
+      "category": "音楽",
+      "hash": "4fef725697fb02b15c80b1de4016bbbf33a9463e7a0643cd44bda418aaed7bda",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/10": {
+      "category": "健康・ウェルネス",
+      "hash": "d10f86fead9e6088b7b34ff4fbab0ccb1e7b3e26e43d5c4e3aae385ea4f91f57",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/ce2": {
+      "category": "健康・ウェルネス",
+      "hash": "e9fe8da7ed79153693c02ce7282c95908c0f7e002df3568af8eca65524c568a9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kawaisayoko.substack.com/p/todo": {
+      "category": "キャリア・働き方",
+      "hash": "aebdb846ffcc18796f3be05c76f78daa7c9040944a9e222201b9817150d0f71f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/9": {
+      "category": "健康・ウェルネス",
+      "hash": "8b9c9ec2e0252322f5c1314bd4e14941810daaaa3438b3eb6bc6dc3ac0a08112",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/8": {
+      "category": "健康・ウェルネス",
+      "hash": "2b3fcdcb2beef7148519a944d860f147c630075e59ac316f1a5a5f07f86e2144",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/c49": {
+      "category": "健康・ウェルネス",
+      "hash": "0435268d2df367604443c01b1fd406f9e0c07c4cf13f4aeb5750ce2b29aebbf5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/6-e36": {
+      "category": "健康・ウェルネス",
+      "hash": "9bc0db72af4bde8c008bc80ca7a23c420161f8e087da027d865f9f9b14ac1a5e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/6": {
+      "category": "健康・ウェルネス",
+      "hash": "4c0e5970b6c5ebe104333bffd607780f4eb2e74118af71e485421cd40fa5d7d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/5": {
+      "category": "健康・ウェルネス",
+      "hash": "5b7d89faa72fc32540812b613192e4c3f6d20e462e9c60905c745820ffef62c6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/4": {
+      "category": "健康・ウェルネス",
+      "hash": "cac84cda326482663c02f9da9d2adff264d3c9c15c3292538b610eef25fc5f27",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kata833574.substack.com/p/3": {
+      "category": "健康・ウェルネス",
+      "hash": "567ce7f87915a607321f31306e097371579b11b0554ab6eb4406918707f8450b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
