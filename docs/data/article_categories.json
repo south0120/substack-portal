@@ -316008,6 +316008,72 @@
       "hash": "4544757082014ab2263d627aaf15957fbaaf94bc0577a10b8afe4fd1804393be",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://cobe.substack.com/p/815-821xx": {
+      "category": "ライフスタイル",
+      "hash": "e02bf1cb3c531933aed5b57b8bb518772d08a018f12a67eca39c1aa913fb1d1b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/243": {
+      "category": "社会・文化",
+      "hash": "f5e08014e71d4351bd623ee1286dc03061c6c54b4e3b1bd2cbbebbefba3fb65d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nekoken.substack.com/p/60-c60": {
+      "category": "ライフスタイル",
+      "hash": "85dd090b0e2427963432e4e28074cee35c7282489807dc56170e19c538a1015d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://paloj.substack.com/p/41c": {
+      "category": "ライフスタイル",
+      "hash": "e7db0ef1aa926a3319a369aa899d77b8250698ded111ce8ef9890b3d97730fee",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yamadasimple.substack.com/p/note-612": {
+      "category": "ビジネス",
+      "hash": "a92f309afbba91d10b56c6379b75482457e928764387dde958f3c2246b8f084f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kugarage.substack.com/p/15pv": {
+      "category": "ビジネス",
+      "hash": "1ae03713a860c19b66b7ecd022e569e61c3e89c757e3ff355ec7f71f003185fc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maomugi.substack.com/p/160": {
+      "category": "旅行・おでかけ",
+      "hash": "0f4d5781d13ce78099305913b18ad691fbdfce6751c0a002aaec83b8fdc82ea2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234712588.substack.com/p/83d": {
+      "category": "読書",
+      "hash": "671d6376985e996d7f860950414e560c09af3dfca865fb6c8727ce84480e7529",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tmps1.substack.com/p/31": {
+      "category": "教育・学び",
+      "hash": "0b59e90d1700039ab859d598cc80beb76b991f0b44b9171b3b6a3ec0890106e1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bookcatalyst.substack.com/p/bc145after": {
+      "category": "その他",
+      "hash": "d9f2dd4e7710eb98ebf12b919032bc1e3af0ad25464fa517459fb73ddabdf3e8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bookcatalyst.substack.com/p/bc146": {
+      "category": "その他",
+      "hash": "ec8d2ee233c4e1a32bd215389b9abb169e6972653fe37b313bc75b38e2c112ae",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
