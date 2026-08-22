@@ -317808,6 +317808,42 @@
       "hash": "6c89712a3a569b9eeab4db0e890f011cb919cca3cc880588cb7e5cb684443801",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://tnauts.substack.com/p/what-five-outlets-actually-saw": {
+      "category": "クリエイティブ",
+      "hash": "9e81dd21cea5129602d6e7f087a9803e9f115fa0792eda024663bc864196c8cc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ohashishin.substack.com/p/00e": {
+      "category": "健康・ウェルネス",
+      "hash": "34be2138043bea6a46881f0581880ff6ad00325faae58584101fc566394e872d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itotomio.substack.com/p/126hokuruvol8010082026-8-22": {
+      "category": "ビジネス",
+      "hash": "f026f7fc3aa0863f0782f67c6af22a063204bcad80fdf7f38080df511e3d3e64",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ariel143.substack.com/p/0822-ariel3radio": {
+      "category": "その他",
+      "hash": "ac9dbca15ed9f8c7ea5e97cad5d82a187de5fe860414a23cf8ddd06ce539e723",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://show0815.substack.com/p/re": {
+      "category": "音楽",
+      "hash": "cb90a711445b228681d5cd456bd387b27ad8f45fee8c15f70ca5e5f177e74b7c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://monologtaro.substack.com/p/8cm12cm": {
+      "category": "音楽",
+      "hash": "24fe73d39b06ab091a37c0178a47c2b3d2ebee149c13bdb8305988e3887ccb5b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
