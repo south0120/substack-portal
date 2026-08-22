@@ -317130,6 +317130,186 @@
       "hash": "4cb7989683599d43f920b1adf17e67d7fa85181c49c942e84e93ad49b81e051e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://fujin.substack.com/p/ai-e08": {
+      "category": "ライフスタイル",
+      "hash": "54ccf3735110d9aa01ad3852384e50226f204873199999b2b1f5d2e64a986253",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://waveformsandlife.substack.com/p/vol-16": {
+      "category": "クリエイティブ",
+      "hash": "c9324dc6510eae8f1a2dfe278dcc96a1421848fb3f90573f1720641b8a9910c9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/d44": {
+      "category": "教育・学び",
+      "hash": "e6653daf90721e40ed97804aa4dc31a02e392e2b2182d287eff318f04c01963b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/a8a": {
+      "category": "社会・文化",
+      "hash": "54a939747ea885504e9cd954f96e2f6ba05f0ff28e434d672f4cb9d70498622a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://osaruproducer.substack.com/p/110ltv": {
+      "category": "ビジネス",
+      "hash": "0b880ea2bd46c3038d4a2e43ae38a7368f71cd0131b250c236accfc2e81c66a0",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://careercross.substack.com/p/3": {
+      "category": "教育・学び",
+      "hash": "cd21af29471ef3cc8c14abb6e07ff7c85a8817e69841ec8ddef8b7af22301346",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/2000substack30": {
+      "category": "クリエイティブ",
+      "hash": "047692dba80f9d9cd36b1d8015c8f1c1f427b49b169efc521629b19849313284",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://asukaai.substack.com/p/12ai3": {
+      "category": "キャリア・働き方",
+      "hash": "7edd29309ba1afb5036705ec52574891ff29a2bdc0f44885bb4a3a92ca882425",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kishino.substack.com/p/845": {
+      "category": "クリエイティブ",
+      "hash": "111710bfef1a2ba08d79c36522438176f9000f6c210391cbdbbdc40b5766a726",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/jpyc-ec": {
+      "category": "テクノロジー",
+      "hash": "ac7bf01a1a4be8b34dd431281d1ba475f8c0e6755c4187743188a43f58de0dd3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/ai-13f": {
+      "category": "AI",
+      "hash": "c172546cdaa1e1d11c4c329f0359ce47c6dc68e93fed191c495bce120c499a0e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/ai-90c": {
+      "category": "AI",
+      "hash": "30357410331be7e31fc04853ad4b6ed0020a63269a332f75762b37fb684d299c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/12-ee2": {
+      "category": "ビジネス",
+      "hash": "e29543e5de0f7b1f410bc32289911ddc7c97dcc98b422546b2672fd422b95f08",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/58e": {
+      "category": "AI",
+      "hash": "055a73c1da02fb5554f9742cec9d7286c9bb63dcf034d47d58eb678ea8009617",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/d36": {
+      "category": "ビジネス",
+      "hash": "2b2c0bf7ebce821e7eadfeab0ec0b945d8fab0d06d9cee699d6505dab97730c2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/818brain": {
+      "category": "ビジネス",
+      "hash": "3a639e4351dd2bcdf0ae6d1ae2440655418bec269760390efaaf43988b875660",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/ai3": {
+      "category": "AI",
+      "hash": "7a4aa4eef393a5c624dfc9c18c1c88a1fd9bcb7015e1fd4be84598ebee1c762c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/fable": {
+      "category": "AI",
+      "hash": "e50b2b37309d6a49f2746bf4e96df328cea590e5ac66511ca02f11ff6d97eb7f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/21": {
+      "category": "クリエイティブ",
+      "hash": "abbda0b8f5a8edbea9e3bf4906141ef7893b7f8c3cf0079d1f14c7abca609492",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/1-483": {
+      "category": "ビジネス",
+      "hash": "9b05da7ddfc0214f8579f7ea85ea50c43aa80f833fe19dc90d4f9af81ec9445a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/7d7": {
+      "category": "ビジネス",
+      "hash": "5947ae8bf05055e323f9337c2a717f9e415f1f3c425276898606b4180f44a631",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/x": {
+      "category": "ビジネス",
+      "hash": "9d15c5af667b6c1f400babebaa41e0364e0cd9251d0865d1350f9625a32d34e6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/13-238": {
+      "category": "ビジネス",
+      "hash": "b05dad16506f66749792c44a91f722cab0af05a978aeb3a710564de26528c82f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/903": {
+      "category": "ビジネス",
+      "hash": "9123bc8d499cb371ea4cbff71573f37e6db60a378440fc2dac7b618134870d66",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/4de": {
+      "category": "ビジネス",
+      "hash": "89b1b8f8cc46ca2894bd725cb47447997a409d86b377bfd5d2e734800de40dcb",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/iphone-052": {
+      "category": "テクノロジー",
+      "hash": "6f720f34db64b063fd312c604219b8d9214b795b3f808546b4ad3dfe14d3327e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/5030brain": {
+      "category": "ビジネス",
+      "hash": "3ed8ae4c284f30b240e659e112ec69bb5b5e88ec87090770999a91deb29ff422",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/50-3cf": {
+      "category": "ビジネス",
+      "hash": "e1c0cb3748cd82d5f856b4155e122c009db1be887b8353c6c22c6a8f6e3ecb0d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/50": {
+      "category": "ビジネス",
+      "hash": "20ac7bdcf4517923911aa2aab3a285b6ebda91257473565311bac20534d8c74c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikasan.substack.com/p/2e3": {
+      "category": "ビジネス",
+      "hash": "3b7a1a6b70e6c048ceaeb8a926a4f1a13bce4fe2bf823a541b25291173c26f63",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
