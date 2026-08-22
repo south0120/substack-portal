@@ -317310,6 +317310,42 @@
       "hash": "3b7a1a6b70e6c048ceaeb8a926a4f1a13bce4fe2bf823a541b25291173c26f63",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://owlfqlow.substack.com/p/qmv": {
+      "category": "音楽",
+      "hash": "7142aba5dc96e653b345ce5756fbd743e7605b7d889eb5f8777420a9a2a1ef46",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mikomana.substack.com/p/5e2": {
+      "category": "ライフスタイル",
+      "hash": "5921f2c1a563df80fd0b4faf0ac2c967985dbaf4199ed01c9dc5c7aad58965c8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://otokutabi.substack.com/p/ana202692": {
+      "category": "ビジネス",
+      "hash": "5245c4f7c75bbcb08b25c867ea1ead6460ac0b8b78c69d349ab0ecde1790224d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://1234476904.substack.com/p/bc6": {
+      "category": "社会・文化",
+      "hash": "c2f737155b0d9f9499c27158f56aef534edcb43b385586ca3fe69d1d8f5024d3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hagedango.substack.com/p/150": {
+      "category": "ビジネス",
+      "hash": "0e338940401f05dbe880c0386d1fd0aa261ea2bb9ea62c18f7393cde08fdf74d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://chie.substack.com/p/da5": {
+      "category": "ライフスタイル",
+      "hash": "32f52c53cf37fa069302e09ffe94749f9a2d0b34605e93e760ade0746e2d6c7e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
