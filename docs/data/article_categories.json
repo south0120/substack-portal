@@ -318912,6 +318912,18 @@
       "hash": "2d06a90f968864aed2296aebd278e2735f95efd539359b75a86cbf1bff6f0011",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://worldlinelog.substack.com/p/d5b": {
+      "category": "ライフスタイル",
+      "hash": "15295829acbfc6083cfcf4420832b81c7a73138c193b6248d9ce3b22ccdaf578",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://buruveg.substack.com/p/03d": {
+      "category": "グルメ・料理",
+      "hash": "28535d756578ddddbc6a1df38ced42ab7f0aa95fe03742b5f2c7331d6499432f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
