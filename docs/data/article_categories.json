@@ -319356,6 +319356,30 @@
       "hash": "ade23bbd7e9668024de505bd172ac29171f6bf8bb2a276e8ff82ce308088e884",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kugarage.substack.com/p/ai-7cc": {
+      "category": "AI",
+      "hash": "2d253488d296fd5d7ff55583250d8928ce3f900c34a5aa380df46b19596b034d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cnpred.substack.com/p/10": {
+      "category": "ゲーム",
+      "hash": "e388f55918c6d6821a49f15b6787e6dc8ba9e689992ecdcd26b0c18736bd7d79",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kirara0119.substack.com/p/cda": {
+      "category": "ライフスタイル",
+      "hash": "5cae60070bacf31b4a4247347551129812ac06e0e59b1483a5f96ae84d1731e7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotoriart.substack.com/p/01d": {
+      "category": "クリエイティブ",
+      "hash": "9477a382be635ceb634bc57b6192b29b04ef315d54d305641dfd101d2c5093df",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
