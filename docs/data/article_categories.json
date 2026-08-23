@@ -318732,6 +318732,36 @@
       "hash": "d35ffb27570f997ae338df1d0c5ca65f636ef6a1f74dba2458cc8c32bd60569c",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://makotokanon.substack.com/p/651": {
+      "category": "音楽",
+      "hash": "feb0fb8d08409bc58060a11271848bfbe2124f7d993f22abed3ced486ff7f31b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://noriyukiiwata.substack.com/p/431": {
+      "category": "ビジネス",
+      "hash": "8ecb96f0701057e8499c368ec70fd405972e1cf31572a4b68604df9230aca8c1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mochitherapy.substack.com/p/aec": {
+      "category": "その他",
+      "hash": "6923c21b7813b782df545e06fd3fb99845a5f975fb97661fd599e94522eb887d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hidekiqajf5.substack.com/p/not-at-this-time-clif-high-tpc-2123-8ab": {
+      "category": "その他",
+      "hash": "bdab9ad5cb319d0791b805a363cfc37b5ee68c031c3105bebd82917557c837c4",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kishino.substack.com/p/bot": {
+      "category": "AI",
+      "hash": "d4ec4e9f400c706fe23729598bfab740f86d502c7f4f1e45b1780dec2be23ae3",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
