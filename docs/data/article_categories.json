@@ -318864,6 +318864,54 @@
       "hash": "fd4d77de37995ba39bb6930d738a50555df734d370314d292affed02537bd5dd",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://yokappa.substack.com/p/8b5": {
+      "category": "ライフスタイル",
+      "hash": "4e5e761e4e072149dda2adfe034af11697365260e5f2eacd0797fa3e0a9e17de",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://miniaturehorse.substack.com/p/a04": {
+      "category": "ライフスタイル",
+      "hash": "dbafbe1a93603cc560a9fd5708cbde9c80dc975e8fee67a8ffdbc778ac0ba43b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://lyuj.substack.com/p/b8d": {
+      "category": "クリエイティブ",
+      "hash": "ec8a0253f998216980a3dbbfaa3985059e18c17d3aff68c43c3dd0eed87a199e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://pessham.substack.com/p/vre-2": {
+      "category": "教育・学び",
+      "hash": "dcc717c8a5a970a74b6b33209efcf269ef090c3e2b843ab4f9b052097224e003",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itotomio.substack.com/p/10": {
+      "category": "ビジネス",
+      "hash": "9f4652ffed71870e97a0ea1703047fa30d2b2ff13ed9100d67047167648d131a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotobaroots.substack.com/p/d4f": {
+      "category": "子育て・家族",
+      "hash": "e4345762d055d6704f438d2cb51032511e08c9f58a2bd42f00a7acd551ddbfd2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://substack.ayanomics9t.com/p/2026-08-23": {
+      "category": "AI",
+      "hash": "284455b6b60a01d737145c4cc74b28748a23822a2f6b7ebb47fffab5a81e629e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ozayan.substack.com/p/6e1": {
+      "category": "投資・経済",
+      "hash": "2d06a90f968864aed2296aebd278e2735f95efd539359b75a86cbf1bff6f0011",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
