@@ -319212,6 +319212,42 @@
       "hash": "d8bac87ab619e84ebc58903ba0b5c99b2ad4882374fc05a75f97b895c2207f6e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://yuiweb.substack.com/p/e2a": {
+      "category": "ライフスタイル",
+      "hash": "413258ee45a2d0756305771c6ffb0fdd187b03bda541e60c75d247d466d76215",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masa3hige.substack.com/p/mona-b94": {
+      "category": "ライフスタイル",
+      "hash": "0568669eb332cfd3714e386935453ea5da4dbd3490d1ca1afc46ada31e4af4fa",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://itotomio.substack.com/p/83500310092026-8-23": {
+      "category": "ビジネス",
+      "hash": "44fbb8e3b7905acb15be4aa78061d5fbd6a19ca3121bb525904af20fe80dcc35",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kotamineo.substack.com/p/157-cd": {
+      "category": "テクノロジー",
+      "hash": "530090399c6a1cf2b91164ca72fb8ef654a72871294b57435602ab0e214f99ce",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masa3hige.substack.com/p/4a7": {
+      "category": "その他",
+      "hash": "069e00c5c1ce10520b8e3a8cdb9544a705a0aad64e655fb0cfd0f77561c10e73",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://maoto.substack.com/p/the-option-sniper": {
+      "category": "投資・経済",
+      "hash": "54fce743f2ba8a30236178c605f5015213dc4cdca048fa922d1d37eeefc35ec6",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
