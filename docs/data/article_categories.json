@@ -319248,6 +319248,36 @@
       "hash": "54fce743f2ba8a30236178c605f5015213dc4cdca048fa922d1d37eeefc35ec6",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://peripathos.substack.com/p/823": {
+      "category": "その他",
+      "hash": "3c69e73b62f8c1df5f09a83dac4e84d4acabed36af6653d86e07ae6dec4c9421",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://bluejaypolitics.substack.com/p/817-823": {
+      "category": "ビジネス",
+      "hash": "c91811d31606aa5f4bf2cad0dee0495d524ed9ca077cc48152ae4d7049609335",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hisatsumi.substack.com/p/f10": {
+      "category": "ビジネス",
+      "hash": "ff4aa106ac3ad1992a8ca0a996b276ed4741e96c6debceec8c59788f38f65ab2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://soraharasayo.substack.com/p/892": {
+      "category": "ライフスタイル",
+      "hash": "523fea59ff67afab320a1b2ef5d98bb047b8a9e7c082c1554b78cf66bb8b662f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ykurashige.substack.com/p/3d8": {
+      "category": "ライフスタイル",
+      "hash": "ba81d031dae1f14cccf4415202b2cc82fcbea658796a4bea0b5a8fafb3970a56",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
