@@ -320004,6 +320004,30 @@
       "hash": "94b20f2f8a62868b3ed6999e385a52c04500a72eaf54468428f56b8006e4d91c",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://kotsukotsusan.substack.com/p/aiai": {
+      "category": "AI",
+      "hash": "6a2ca791efaf123b68e1b4dd4e336ecf81bb3ec6bd69a2f7a072a8d404526adf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mana2518.substack.com/p/ailine-077": {
+      "category": "テクノロジー",
+      "hash": "f6d3cab4274b797e339b0f8b833ce0e497b68a2dfd21750cdbcb905edca950d1",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://careerkoumei.substack.com/p/98a": {
+      "category": "キャリア・働き方",
+      "hash": "e27c81e03b05a0b3b4df5ab5b527111500f065dbc1835fe562f3e4c86b33702d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://shack922.substack.com/p/350": {
+      "category": "その他",
+      "hash": "31c26f1f2ae1af3e33cf385bfe2c8ca1f9c15e7c080333d7fa1db11c4f617a7a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
