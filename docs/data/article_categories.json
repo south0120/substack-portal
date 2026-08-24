@@ -321300,6 +321300,18 @@
       "hash": "5a48aa27f6cabf0ab94775bffeb45d703ea50cd37f996ec237a5ab5576e26ad2",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://miiidv.substack.com/p/live-with-a1b": {
+      "category": "ライフスタイル",
+      "hash": "07274078e2575685ac41ff796a77e01d6575451cdde0f926cea5755f92071af2",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tetsuhaga.substack.com/p/54c": {
+      "category": "キャリア・働き方",
+      "hash": "25d162663b5f763d2e881977f668a5db3d442c012392d775ac26ab45bb426a43",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
