@@ -320064,6 +320064,36 @@
       "hash": "6ecbc433feb5f6704d6667c6a0bc45441688a6d26c4a900bea15a2cb33afa720",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://imotoo.substack.com/p/ai-266": {
+      "category": "キャリア・働き方",
+      "hash": "c12bfc04f920b7142750f4cf79ae25980ef9dad514e1427c2775ebe1e0e1246a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tnauts.substack.com/p/recipe-10-fit-and-function-mastering": {
+      "category": "テクノロジー",
+      "hash": "9cb6b8227643f63ac619a68e1aa0f6062c3af5a21bea59af6566a3ada9e2ee06",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tnauts.substack.com/p/10": {
+      "category": "テクノロジー",
+      "hash": "d48aa3e420b8c87246ecda5d547e1ab53ddf637d7d0877d1079c1e49af38a5dc",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://wataruhayakawa.substack.com/p/167": {
+      "category": "クリエイティブ",
+      "hash": "a94e33edd513dc776ec3eab82fbf69706ff7a7defb69cc5d40316cbda2f490ec",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cheaton5519.substack.com/p/6ab": {
+      "category": "その他",
+      "hash": "fadd4f273eac34f71950d08b93ef36ba280272f181ec4d122e011e06f20a756a",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
