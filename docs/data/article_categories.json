@@ -323814,6 +323814,54 @@
       "hash": "ed20095d4ac84d0e78626438bd45a87fe66c879cce63992c71fffcbb75d47137",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://cancanai.substack.com/p/fe5": {
+      "category": "ビジネス",
+      "hash": "efafee797087ff6e8da586e7b3b67562e7c4bfd9a646b3fc948cdfda4ec7cd12",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://cancanai.substack.com/p/da4": {
+      "category": "ビジネス",
+      "hash": "845f639313aa65dfe6a50eadedb85f21805ad9762c9cea0252b45ee8a889fd97",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nakamuracpaai.substack.com/p/aiox-alpha": {
+      "category": "AI",
+      "hash": "836351f5b326eb6e207d3f4fca4b517307523e261be75321a772b71fd33b411d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yyshirou.substack.com/p/01-9eb": {
+      "category": "ライフスタイル",
+      "hash": "964bd9436a5f5e479cb25031fdd2034dc566f859d5be66dad30f09735468754b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takahirotech.substack.com/p/abb": {
+      "category": "ライフスタイル",
+      "hash": "d24fa479e91e4512db90505e022f50461f2fe7bfef874c2e7e85a1112773ca62",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takahirotech.substack.com/p/aimacbook": {
+      "category": "AI",
+      "hash": "d340df30d5d10a3363322d0d60e718fbd1510560f78594cc975d61a1379a691e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takahirotech.substack.com/p/codexmac": {
+      "category": "AI",
+      "hash": "90eb7eefcb408d7034b4a590ff30afb3f587718b27ff4ce31194b271997b85fd",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://takahirotech.substack.com/p/chatgptobsidiancodex": {
+      "category": "AI",
+      "hash": "c02913e385cca7ae5e73f1dfe492b7a1d29cc0d706df6d3e270f4c862b51b094",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
