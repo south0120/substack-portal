@@ -323898,6 +323898,24 @@
       "hash": "966998eff29fefd579226d04c10ba588754d54b169edd2ce7af4ee5b71f1913e",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://marunishi.substack.com/p/ai7200": {
+      "category": "AI",
+      "hash": "e218cc3de978d136e4cbbc18099bc7946b21b33bedc8ba124c3562d2968d56bf",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gogog.substack.com/p/801-15": {
+      "category": "グルメ・料理",
+      "hash": "8d49cfb451e7de07bc0a64bb9df4a162061a5599339947b096082d653e390457",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gogog.substack.com/p/801-14": {
+      "category": "AI",
+      "hash": "8f85954de35a872ce0ff016c4fddf0ba0969d75d6e015a1d36f5ea1a22131591",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
