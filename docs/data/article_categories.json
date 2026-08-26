@@ -324822,6 +324822,42 @@
       "hash": "03e4f4faebcfb2d5b67a99d34d7c94d814f175a5c934abcfc9fba7bd2a7fc6d8",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://jmenekishoken.substack.com/p/uv-3": {
+      "category": "ファッション・美容",
+      "hash": "279a1e5b987bbd87ceacdc24b9775511738f434b2cd4b832a2f7af8b2ab7fca7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yokappa.substack.com/p/68e": {
+      "category": "ライフスタイル",
+      "hash": "45a752643ee1d3956f90c138a8f396337bb904e63c03525abf235fa4ea064f90",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nikutama.substack.com/p/46vram": {
+      "category": "AI",
+      "hash": "75ed7259c343ef211f494eb3e79a9b9a4eacfa29f7ddad95068dd4bec60dc20c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nikutama.substack.com/p/36ai": {
+      "category": "AI",
+      "hash": "a5de69fa6544ff964bffc55a1a17ff7665c31a096d0ddf4f3e9e9eb514df1b90",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nikutama.substack.com/p/26ai": {
+      "category": "AI",
+      "hash": "337195a97621548bfec24cfa70253be3f6c541ba53bcbb305f364e4621ee4b8c",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://nikutama.substack.com/p/ai-6c3": {
+      "category": "AI",
+      "hash": "834c345580abd7321e080bab804927d7b08bd8cae5e957043d5a84a401a6ac6e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
