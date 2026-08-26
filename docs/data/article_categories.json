@@ -324780,6 +324780,48 @@
       "hash": "b2548f487cd1f4fb64be47a7f0454b93fb1c482e6f02dfff0de4a6e553de2e64",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://mana2518.substack.com/p/7e9": {
+      "category": "クリエイティブ",
+      "hash": "9d68d1606864d8a1779387479d928440271df3f994d77e6529fd5ecbf09b8a85",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://hikarilight.substack.com/p/b38": {
+      "category": "ライフスタイル",
+      "hash": "856084f9a765de63772b0c37c39f07d91722c42ad42e73a8a0acf5205dfda38f",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://followtheflow.substack.com/p/8c4": {
+      "category": "ビジネス",
+      "hash": "c457959bf05e8b7bb2af11dbbc62efcfee9d50db6d8b42c354054d53b4baafe7",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://offshoreymmt.substack.com/p/bbf": {
+      "category": "エンタメ",
+      "hash": "e47ff1d79236ecf2f2a588ee47c5cd91f8a7aa3f8699e6613b626cf8d6af8a12",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://mayatakaishi.substack.com/p/72c": {
+      "category": "社会・文化",
+      "hash": "a5c2238c71542b68b3d2baa01fa505be0794e1ac891de42c9736d4cb434fa8df",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://masa3hige.substack.com/p/3c7": {
+      "category": "クリエイティブ",
+      "hash": "8bff551f76f071e9a23ba6f254e45da82c3f3c2a53096812cd9ef7ba54fbd451",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://yfalto.substack.com/p/substack-5fc": {
+      "category": "ビジネス",
+      "hash": "03e4f4faebcfb2d5b67a99d34d7c94d814f175a5c934abcfc9fba7bd2a7fc6d8",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
