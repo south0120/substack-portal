@@ -331140,6 +331140,60 @@
       "hash": "c8cf1d90df66cdb8fd0b4951c6d85546a3dc6a4a22ff2b05a01847a7b75d76cc",
       "labels_version": "49058126",
       "prompt_version": "v3"
+    },
+    "https://shupeiman.substack.com/p/ai3-3ef": {
+      "category": "AI",
+      "hash": "22548aa4ebc4521908c1512d199e5c8836887c3aa14ceae078b92090beb8f7b5",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://tanakarchi.substack.com/p/4f6": {
+      "category": "読書",
+      "hash": "7670e0c904f967c2294cf93a6a1218b1978c56961c72da650750a15bd0b4dc04",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gakki0820.substack.com/p/1ba": {
+      "category": "その他",
+      "hash": "89846214b188ff53b1a5141e8a3df991de859a4cc8d0547346f38575856383d9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://gakki0820.substack.com/p/live-with-03e": {
+      "category": "その他",
+      "hash": "9a13c79e19d96bf8191cd582908b38996b75dbe2e046af5aedec863d55a0f64d",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ohnogilab.substack.com/p/b25": {
+      "category": "健康・ウェルネス",
+      "hash": "96cbac3d97d88052e171bad114f09a5e2d241b1921f7bf5826e706f838d46e2b",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ellieohana.substack.com/p/c25": {
+      "category": "キャリア・働き方",
+      "hash": "600d7bd15ca85a70be15145ba650a2ed2658632ebe5bb4ac1c402c599ce34ef9",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ellieohana.substack.com/p/71f": {
+      "category": "ライフスタイル",
+      "hash": "93cd88734cdbb02c0fb2562a54b5100c7ee90eda6a0b2ace730abaea74deb70e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://kousuke89coach.substack.com/p/68d": {
+      "category": "キャリア・働き方",
+      "hash": "fd53ded2f11f0a285b35a6fd273a707d251c0e1d33f2c3d235fc330dea6ceb34",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
+    },
+    "https://ellieohana.substack.com/p/05b": {
+      "category": "キャリア・働き方",
+      "hash": "b9084828443e7c2f7172aa0ea4644e9960c361fda08c3c6cab526fcac9537e9e",
+      "labels_version": "49058126",
+      "prompt_version": "v3"
     }
   }
 }
