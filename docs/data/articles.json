@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T04:37:42.317891+00:00",
+  "updated_at": "2026-09-04T09:41:31.580348+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30007,6 +30007,39 @@
         "ライフスタイル"
       ],
       "bio": "いつもの牛乳がほんの少し美味しく楽しくなって日々の暮らしも豊かになるそんな発信をお届けします。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "音楽制作のミニマルな作業部屋",
+      "url": "https://milliondrums.substack.com/",
+      "feed_url": "https://milliondrums.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "DTM初心者が「増やす前に、今ある環境で曲を完成させる」ための制作ログと、ミニマルDTMの考え方を書いています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "2分で分かる新聞一面",
+      "url": "https://2funde1men.substack.com/",
+      "feed_url": "https://2funde1men.substack.com/feed",
+      "categories": [
+        "社会・文化"
+      ],
+      "bio": "読むだけでニュースが分かるるニュースレター📰 まずはメールアドレスを打ち込んで無料登録してください🙌",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "鑑賞者の見方",
+      "url": "https://kojartthink.substack.com/",
+      "feed_url": "https://kojartthink.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "美術作品を題材に、鑑賞者の見方や思考について考えています。「なぜ身構えてしまうのか」「なぜ名画に惹かれるのか」など、鑑賞する側の疑問を中心にゆっくり更新しています。",
       "avatar": "",
       "latest": []
     }
