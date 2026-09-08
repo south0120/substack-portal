@@ -2214,6 +2214,14 @@ function initHideOnScroll(){
   }, {passive:true});
 }
 
+function renderFetchedAt(v){
+  if(!v) return;
+  const fe = document.getElementById("fetchInline");
+  if(!fe) return;
+  const d = new Date(v);
+  fe.textContent = `最終取得 ${d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}`;
+}
+
 function init(){
   DATA.articles.sort((a,b) => new Date(b.published) - new Date(a.published));
   loadCategoryOrder();
@@ -2466,16 +2474,12 @@ async function refreshData(){
   if(!API_MODE){ location.reload(); return; }
   lastRefresh = Date.now();
   favoriteArticlesCache.clear();
+  // 🔴 ここで /api/health を叩かないこと。health は COUNT(*) で全表スキャンし、
+  //    表示のたびに呼ぶと D1 の日次 行読み上限を食い潰す（2026-09-05〜08 の障害）。
+  //    表示に必要なのは lastRun だけなので、meta を2行読むだけの /api/backfill で足りる。
   try{
-    const health = await fetchJson(`${WORKER_URL}/api/health`);
-    if(health && health.lastRun){
-      DATA.updated_at = health.lastRun;
-      const fe = document.getElementById("fetchInline");
-      if(fe){
-        const d = new Date(health.lastRun);
-        fe.textContent = `最終取得 ${d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}`;
-      }
-    }
+    const bf = await fetchJson(`${WORKER_URL}/api/backfill`);
+    if(bf && bf.ok) renderFetchedAt(DATA.updated_at);
   }catch(error){ console.warn("Find Your Letter refresh failed",error); }
   await resetApiArticles();
   if(writersLoaded) ensureWritersLoaded(false);
@@ -2572,13 +2576,12 @@ async function load(){
   ]);
   try{
     if(API_MODE){
-      const [articles, health] = await Promise.all([
-        fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`),
-        fetchJson(`${WORKER_URL}/api/health`)
-      ]);
+      // 🔴 /api/health は呼ばない（COUNT(*) 全表スキャン・上記コメント参照）。
+      //    updated_at は取得済み記事の最新 published で代替する。
+      const articles = await fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`);
       const loadedArticles = Array.isArray(articles.articles) ? articles.articles : [];
       DATA = {
-        updated_at:health.lastRun || loadedArticles[0]?.published || "",
+        updated_at:loadedArticles[0]?.published || "",
         categories:[...new Set([
           ...loadedArticles.map(article => article.category).filter(Boolean),
           ...MASTER_CATEGORIES
