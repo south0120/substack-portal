@@ -1154,8 +1154,16 @@ async function bumpBackfillStats(env, fetched, added, failed = false) {
 
 async function getBackfillStat(env, offsetDays) {
   const day = jstDay(offsetDays);
+  // 🔴 `await getMeta(...)` を try の中に入れないこと（2026-09-08 実測で発覚）。
+  //    入れると **D1 の失敗まで catch が飲み込み、全項目 0 を `ok:true` / HTTP 200 で返す**。
+  //    実測: 14:53〜14:55 に10回 撃って **9回が全部 0**。しかも【昨日の値まで 0】になった
+  //    ＝ 過去の確定値が 0 になるのは論理的にありえないので、これは「データ」ではなく「失敗」。
+  //    🔑 「測れなかった」を「0件」として返すと、**取り込みが止まった日と見分けが付かない**。
+  //    so D1 の失敗はここで投げさせ、上位の catch で 500 にする（＝正直に落ちる）。
+  const raw = await getMeta(env, `backfill:${day}`);
   let v = {};
-  try { v = JSON.parse((await getMeta(env, `backfill:${day}`)) || "{}"); } catch { v = {}; }
+  // JSON が壊れている時だけ {} に倒す（これは「データの形」の話で、読めたかどうかとは別）
+  try { v = JSON.parse(raw || "{}"); } catch { v = {}; }
   return { date: day, writers: v.writers || 0, fetched: v.fetched || 0, added: v.added || 0, failed: v.failed || 0 };
 }
 
