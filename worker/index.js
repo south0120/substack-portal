@@ -1078,8 +1078,15 @@ async function backfillStep(env) {
 }
 
 async function getBackfill(env) {
-  const [today, yesterday] = await Promise.all([getBackfillStat(env, 0), getBackfillStat(env, -1)]);
-  return jsonResponse({ ok: true, today, yesterday }, 200, "no-store");
+  // lastRun も返す。フロントの「最終取得」表示はこれ1つで足りるので、
+  // 表示のために /api/health（COUNT(*) 全表スキャン）を呼ばずに済む。
+  // ここは meta の key 指定読みだけ＝1回あたり数行。
+  const [today, yesterday, lastRun] = await Promise.all([
+    getBackfillStat(env, 0),
+    getBackfillStat(env, -1),
+    getMeta(env, "last_run"),
+  ]);
+  return jsonResponse({ ok: true, today, yesterday, lastRun: lastRun || null }, 200, "no-store");
 }
 
 async function runBackfillStep(url, env) {

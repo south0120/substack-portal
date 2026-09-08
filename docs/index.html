@@ -2479,7 +2479,10 @@ async function refreshData(){
   //    表示に必要なのは lastRun だけなので、meta を2行読むだけの /api/backfill で足りる。
   try{
     const bf = await fetchJson(`${WORKER_URL}/api/backfill`);
-    if(bf && bf.ok) renderFetchedAt(DATA.updated_at);
+    if(bf && bf.lastRun){
+      DATA.updated_at = bf.lastRun;
+      renderFetchedAt(bf.lastRun);
+    }
   }catch(error){ console.warn("Find Your Letter refresh failed",error); }
   await resetApiArticles();
   if(writersLoaded) ensureWritersLoaded(false);
@@ -2576,12 +2579,16 @@ async function load(){
   ]);
   try{
     if(API_MODE){
-      // 🔴 /api/health は呼ばない（COUNT(*) 全表スキャン・上記コメント参照）。
-      //    updated_at は取得済み記事の最新 published で代替する。
-      const articles = await fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`);
+      // 🔴 /api/health は呼ばない（COUNT(*) 全表スキャン・下の refreshData のコメント参照）。
+      //    表示に要るのは lastRun だけなので、meta を数行読むだけの /api/backfill から取る。
+      //    ＝「最終取得」の意味は変えずに、全表スキャンだけを外す。
+      const [articles, bf] = await Promise.all([
+        fetchJson(`${WORKER_URL}/api/articles?limit=${API_PAGE_SIZE}&page=1&includeAudio=1`),
+        fetchJson(`${WORKER_URL}/api/backfill`)
+      ]);
       const loadedArticles = Array.isArray(articles.articles) ? articles.articles : [];
       DATA = {
-        updated_at:loadedArticles[0]?.published || "",
+        updated_at:bf?.lastRun || loadedArticles[0]?.published || "",
         categories:[...new Set([
           ...loadedArticles.map(article => article.category).filter(Boolean),
           ...MASTER_CATEGORIES
