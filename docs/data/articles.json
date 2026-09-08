@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T09:44:11.147359+00:00",
+  "updated_at": "2026-09-08T14:34:16.327696+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30249,6 +30249,17 @@
         "その他"
       ],
       "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "SYUKI NOTES",
+      "url": "https://syukilife.substack.com/",
+      "feed_url": "https://syukilife.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "影響力に頼らず売上を作る話＆仕事や日常で考えたことを配信。",
       "avatar": "",
       "latest": []
     }
