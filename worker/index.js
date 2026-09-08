@@ -50,6 +50,12 @@ export default {
         } catch (error) {
           console.warn("heal bad covers step failed", error);
         }
+        // 件数キャッシュ（COUNT(*) はここでしか撃たない。中で20時間のTTL判定）
+        try {
+          await refreshCountsCache(env);
+        } catch (error) {
+          console.warn("refresh counts cache failed", error);
+        }
         return;
       }
       await refreshFeeds(env);
@@ -1081,6 +1087,25 @@ async function runBackfillStep(url, env) {
   return jsonResponse(result, 200, "no-store");
 }
 
+// 件数キャッシュ。COUNT(*) は全表スキャンなので【1日1回だけ】走らせる。
+// 🔴 fetch 経路からは絶対に呼ばない（呼ぶと障害が再発する）。maintenance tick 専用。
+const COUNTS_TTL_MS = 20 * 3600 * 1000; // 20時間。1日1回に落ち着く
+
+async function refreshCountsCache(env) {
+  const at = Number(await getMeta(env, "count:at_ms")) || 0;
+  if (Date.now() - at < COUNTS_TTL_MS) return false;
+  const [articleRow, writerRow] = await Promise.all([
+    env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
+    env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+  ]);
+  const now = Date.now();
+  await setMeta(env, "count:articles", String(Number(articleRow?.n || 0)));
+  await setMeta(env, "count:writers", String(Number(writerRow?.n || 0)));
+  await setMeta(env, "count:at_ms", String(now));
+  await setMeta(env, "count:at", new Date(now).toISOString());
+  return true;
+}
+
 async function setMeta(env, key, value) {
   await env.DB.prepare(`
     INSERT INTO meta (key, value) VALUES (?, ?)
@@ -1711,9 +1736,15 @@ async function getCategories(env) {
 }
 
 async function getHealth(env) {
-  const [articleRow, writerRow, cursor, lastRun, bfToday, bfYest] = await Promise.all([
-    env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
-    env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+  // 🔴 ここで COUNT(*) を撃たないこと（2026-09-05〜09-08 の障害の原因）。
+  // articles/writers の COUNT(*) は全表スキャンで 1回あたり約73,743行を読む。
+  // フロントが表示のたびに /api/health を叩くため、1日 約1.3億行に達し
+  // D1 Free tier の日次 行読み上限(5,000,000行/日)を超えて【読みだけが落ちた】。
+  // 件数は maintenance tick が1日1回だけ数えて meta に入れる(refreshCountsCache)。
+  // ＝ この経路は meta の key 指定読み取りだけで済む。
+  const [articlesCached, writersCached, cursor, lastRun, bfToday, bfYest] = await Promise.all([
+    getMeta(env, "count:articles"),
+    getMeta(env, "count:writers"),
     getMeta(env, "cursor"),
     getMeta(env, "last_run"),
     getBackfillStat(env, 0),
@@ -1721,8 +1752,9 @@ async function getHealth(env) {
   ]);
   return jsonResponse({
     ok: true,
-    articles: Number(articleRow?.n || 0),
-    writers: Number(writerRow?.n || 0),
+    articles: Number(articlesCached || 0),
+    writers: Number(writersCached || 0),
+    countsAt: (await getMeta(env, "count:at")) || null,
     cursor: Number(cursor) || 0,
     lastRun: lastRun || null,
     backfill: { today: bfToday, yesterday: bfYest },
