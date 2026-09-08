@@ -97,7 +97,7 @@ export default {
       if (url.pathname === "/api/backfill") return getBackfill(env);
       if (url.pathname === "/api/admin/overview") return getAdminOverview(url, request, env);
       if (url.pathname === "/api/admin/writers") return getAdminWriters(url, request, env);
-      if (url.pathname === "/api/cover-health") return getCoverHealth(url, env);
+      if (url.pathname === "/api/cover-health") return getCoverHealth(url, request, env);
       if (url.pathname === "/api/admin/heal-covers") return healBadCovers(url, env);
       return jsonResponse({ error: "Not found" }, 404);
     } catch (error) {
@@ -914,7 +914,11 @@ function ogImageFromHtml(html) {
 }
 
 // ===== サムネ抜けチェック体制: 現況を読み取り専用で集計（空カバー＋非画像URLの壊れサムネ） =====
-async function getCoverHealth(url, env) {
+async function getCoverHealth(url, request, env) {
+  // 🔴 認証が抜けていた（2026-09-08 検品で発見）。この関数は articles 全体に
+  //    COUNT(*) と SUM(CASE…)×3、さらに GROUP BY をもう1本撃つ＝1回で約14万行。
+  //    誰でも叩ける全表スキャンの口になっていたので、他の管理系と同じ扱いに揃える。
+  if (!(await requireAdmin(url, request, env))) return jsonResponse({ error: "unauthorized" }, 401, "no-store");
   if (!env.DB) return jsonResponse({ error: "no_db" }, 500, "no-store");
   const agg = await env.DB.prepare(`
     SELECT
@@ -1094,13 +1098,16 @@ const COUNTS_TTL_MS = 20 * 3600 * 1000; // 20時間。1日1回に落ち着く
 async function refreshCountsCache(env) {
   const at = Number(await getMeta(env, "count:at_ms")) || 0;
   if (Date.now() - at < COUNTS_TTL_MS) return false;
-  const [articleRow, writerRow] = await Promise.all([
+  const [articleRow, writerRow, noAudioRow] = await Promise.all([
     env.DB.prepare("SELECT COUNT(*) AS n FROM articles").first(),
     env.DB.prepare("SELECT COUNT(*) AS n FROM writers").first(),
+    // includeAudio を付けないアクセス用。ここで数えておかないと、その経路が全表を舐める
+    env.DB.prepare("SELECT COUNT(*) AS n FROM articles WHERE is_audio = 0").first(),
   ]);
   const now = Date.now();
   await setMeta(env, "count:articles", String(Number(articleRow?.n || 0)));
   await setMeta(env, "count:writers", String(Number(writerRow?.n || 0)));
+  await setMeta(env, "count:articles_noaudio", String(Number(noAudioRow?.n || 0)));
   await setMeta(env, "count:at_ms", String(now));
   await setMeta(env, "count:at", new Date(now).toISOString());
   return true;
@@ -1279,7 +1286,15 @@ async function getArticles(url, env) {
   //    フロントの初期表示は includeAudio=1・カテゴリ指定なし＝ここに毎回落ちるため、
   //    ページを開くたびに全表を舐めていた（2026-09-05〜08 の障害の片割れ）。
   //    絞り込みが無い時だけ、1日1回更新している meta のキャッシュを使う。
-  const useCachedTotal = clauses.length === 0;
+  // 🔴 キャッシュを使える条件は「絞り込みが無い」だけでは足りない。
+  //    includeAudio を付けないアクセス（bot・クローラー・監視はまず付けない）は
+  //    clauses に "a.is_audio = 0" が1本入るだけで、そこも全表スキャンになる。
+  //    is_audio に index は無い（idx_cat / idx_pub / idx_writer の3本のみ）ので
+  //    index を足しても rows read は減らない。＝ この2形だけキャッシュで受ける。
+  const cacheKey =
+    clauses.length === 0 ? "count:articles"
+    : (clauses.length === 1 && clauses[0] === "a.is_audio = 0") ? "count:articles_noaudio"
+    : null;
   const [rows, countRow, cachedTotal] = await Promise.all([
     env.DB.prepare(`
       SELECT a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category, a.is_audio,
@@ -1290,14 +1305,23 @@ async function getArticles(url, env) {
       ORDER BY a.published DESC
       LIMIT ? OFFSET ?
     `).bind(...params, limit, offset).all(),
-    useCachedTotal
+    cacheKey
       ? Promise.resolve(null)
       : env.DB.prepare(`SELECT COUNT(*) AS total FROM articles a${where}`).bind(...params).first(),
-    useCachedTotal ? getMeta(env, "count:articles") : Promise.resolve(null),
+    cacheKey ? getMeta(env, cacheKey) : Promise.resolve(null),
   ]);
-  const total = useCachedTotal
-    ? Number(cachedTotal || 0)
-    : Number(countRow?.total || 0);
+  let total;
+  if (!cacheKey) {
+    total = Number(countRow?.total || 0);
+  } else if (cachedTotal !== null && cachedTotal !== undefined) {
+    total = Number(cachedTotal || 0);
+  } else {
+    // 🔴 キャッシュが空の窓（デプロイ直後〜最初の maintenance tick）で 0 を返すと
+    //    「記事0件」に見える。**無い時に1回だけ数えて埋める**（毎回数えるのとは別）。
+    const row = await env.DB.prepare(`SELECT COUNT(*) AS total FROM articles a${where}`).bind(...params).first();
+    total = Number(row?.total || 0);
+    try { await setMeta(env, cacheKey, String(total)); } catch (error) { console.warn("seed count cache failed", error); }
+  }
   return jsonResponse({
     articles: rows.results || [],
     page,
