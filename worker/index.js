@@ -1275,7 +1275,12 @@ async function getArticles(url, env) {
 
   const where = clauses.length ? ` WHERE ${clauses.join(" AND ")}` : "";
   const offset = (page - 1) * limit;
-  const [rows, countRow] = await Promise.all([
+  // 🔴 絞り込みが無い時の COUNT(*) は全表スキャン（約71,000行）。
+  //    フロントの初期表示は includeAudio=1・カテゴリ指定なし＝ここに毎回落ちるため、
+  //    ページを開くたびに全表を舐めていた（2026-09-05〜08 の障害の片割れ）。
+  //    絞り込みが無い時だけ、1日1回更新している meta のキャッシュを使う。
+  const useCachedTotal = clauses.length === 0;
+  const [rows, countRow, cachedTotal] = await Promise.all([
     env.DB.prepare(`
       SELECT a.id, a.url, a.title, a.excerpt, a.image, a.published, a.writer, a.category, a.is_audio,
         w.avatar AS avatar, w.url AS writer_url
@@ -1285,10 +1290,14 @@ async function getArticles(url, env) {
       ORDER BY a.published DESC
       LIMIT ? OFFSET ?
     `).bind(...params, limit, offset).all(),
-    env.DB.prepare(`SELECT COUNT(*) AS total FROM articles a${where}`)
-      .bind(...params).first(),
+    useCachedTotal
+      ? Promise.resolve(null)
+      : env.DB.prepare(`SELECT COUNT(*) AS total FROM articles a${where}`).bind(...params).first(),
+    useCachedTotal ? getMeta(env, "count:articles") : Promise.resolve(null),
   ]);
-  const total = Number(countRow?.total || 0);
+  const total = useCachedTotal
+    ? Number(cachedTotal || 0)
+    : Number(countRow?.total || 0);
   return jsonResponse({
     articles: rows.results || [],
     page,
