@@ -4,9 +4,12 @@ name: Record cursor hourly
 #    日次スナップショットでは「1回も進まなかった」と「ちょうど1周した」が原理的に区別できない
 #    （2026-08-29/30 の cursor がどちらも 1222 で、実際に判定不能になった）。
 #
-# 🔴 この workflow は **一時的な計測**のつもりで入れている。
-#    Paid への切替の前後を同じ精度で比較するのが目的なので、**結論が出たら外してよい**。
+# 🔴 この workflow は **一時的な計測**。入れる時にしか外す話はできないので、条件を先に書く。
+#    ✅ **外す条件**: Paid 切替後、`reports/cursor_hourly.csv` に **7日ぶん**の記録が溜まり、
+#       「cursor の進行が戻ったか」の判定が出たら外す。
+#    ✅ **外す人**: alex（実装）／ David が state.md の「次の一手」に予定を持つ（2026-09-11 合意）
 #    🛑 外す時は「なぜ入れたか」を消さずに、判定の記録に残すこと。
+#    🔑 引き金を書かないと、**動き出した瞬間に「動いているもの」になって外れなくなる**。
 #
 # 🔴 GitHub Actions の schedule は**当てにならない**（2026-09-10 実測: `*/10` 指定の
 #    fetch_d1.yml が **実績 8 run/日**だった）。so「毎時」も**実績は必ず出力ファイルで数える**。
@@ -27,6 +30,11 @@ permissions:
 jobs:
   record:
     runs-on: ubuntu-latest
+    # 🔴 必須。未指定だと GitHub 既定の **6時間**になる。
+    #    `cancel-in-progress: false` と組み合わさると、1本 ハングした時に
+    #    **毎時 起動したジョブが後ろに並び続ける**（2026-09-11 David 指摘）。
+    #    🔑 python 側の urllib timeout=30 では防げない（ハングするのは runner 側）。
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,7 +49,13 @@ jobs:
           git add reports/cursor_hourly.csv
           # 変化が無ければ commit しない（空コミットを積まない）
           git diff --staged --quiet && echo "no change" && exit 0
-          git commit -m "chore(stats): record cursor"
-          # 他のワークフローと衝突しうるので rebase して push
-          git pull --rebase origin main
-          git push origin HEAD:main
+          # 🔑 [skip ci] を付けて、この push が他の workflow を起こさないようにする
+          git commit -m "chore(stats): record cursor [skip ci]"
+          # 🔴 1日24回 push するので、他の自動更新と衝突しやすい（David の FYL巡回 等）。
+          #    衝突しても触るファイルが別なので機械的に解ける。**3回まで rebase して再試行**する。
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "push failed (attempt $i) — retrying"
+            sleep 5
+          done
+          echo "::warning::push に3回 失敗しました。次の実行で追いつきます（記録は1行ぶん欠けます）"
