@@ -14,6 +14,17 @@
     🛑 **1時間おきに記録しても同じ値が並ぶ**ので、新しい値の顔で並べないこと。
     🛑 正確な件数が欲しいからといって COUNT(*) を戻さないこと（**元の障害に戻る**）。
 
+🔴🔴 **読む側の規則**（`reports/cursor_hourly.csv` を集計する人は必ず読むこと）:
+    このファイルは `.gitattributes` で **merge=union** にしてある（追記専用なので衝突を
+    「両方 残す」で自動解決するため）。**union は行を増やす**ので、次の2つが起こりうる:
+      ① **同じ時刻に近い行が複数**（別 run が同じ分に記録した場合）→ 秒まで入れて区別できるようにした
+      ② **ヘッダ行が2行以上**（ファイル生成が同時に走った場合）
+    ✅ so 集計する時は:
+      1. **`http` が数字でない行は捨てる**（ヘッダの重複を落とす）
+      2. **cursor の差分を取る時は `http=200` の行だけ**を使う
+         （http=500 の行は cursor が空。**可用性のデータとしては使うが、差分には使わない**）
+      3. 時刻でソートしてから差分を取る（union は順序を保証しない）
+
 🛑 /api/health を叩くが、c3f3ccb 以降は meta を数行 読むだけなので安い。
     （修正前なら 1回 約73,743行＝1時間おきで1日177万行。この記録は成立しなかった）
 """
@@ -50,7 +61,9 @@ def main():
     h = h or {}
     jst = datetime.timezone(datetime.timedelta(hours=9))
     row = {
-        "recorded_at_jst": datetime.datetime.now(jst).strftime("%Y-%m-%d %H:%M"),
+        # 🔑 **秒まで入れる**。分までだと、union マージで同じ時刻の行が2つ並んだ時に
+        #    「同じ時刻に2つ値が在る」状態になり、差分を取る側が誤る（2026-09-11 David 実測）。
+        "recorded_at_jst": datetime.datetime.now(jst).strftime("%Y-%m-%d %H:%M:%S"),
         "http": str(status),
         "cursor": str(h.get("cursor", "")),
         "articles_cached": str(h.get("articles", "")),   # 🔴 キャッシュ値
