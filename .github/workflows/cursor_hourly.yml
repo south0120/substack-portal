@@ -1,0 +1,47 @@
+name: Record cursor hourly
+
+# 🔑 目的: cursor を細かく記録して、**折り返し（周回）と停止の区別**を付けられるようにする。
+#    日次スナップショットでは「1回も進まなかった」と「ちょうど1周した」が原理的に区別できない
+#    （2026-08-29/30 の cursor がどちらも 1222 で、実際に判定不能になった）。
+#
+# 🔴 この workflow は **一時的な計測**のつもりで入れている。
+#    Paid への切替の前後を同じ精度で比較するのが目的なので、**結論が出たら外してよい**。
+#    🛑 外す時は「なぜ入れたか」を消さずに、判定の記録に残すこと。
+#
+# 🔴 GitHub Actions の schedule は**当てにならない**（2026-09-10 実測: `*/10` 指定の
+#    fetch_d1.yml が **実績 8 run/日**だった）。so「毎時」も**実績は必ず出力ファイルで数える**。
+#    設定値から回数を語らない。
+
+on:
+  schedule:
+    - cron: "17 * * * *"      # 毎時17分（:00 は混むので避ける）
+  workflow_dispatch:
+
+concurrency:
+  group: cursor-hourly
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Record cursor
+        run: python3 scripts/record_cursor.py
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/cursor_hourly.csv
+          # 変化が無ければ commit しない（空コミットを積まない）
+          git diff --staged --quiet && echo "no change" && exit 0
+          git commit -m "chore(stats): record cursor"
+          # 他のワークフローと衝突しうるので rebase して push
+          git pull --rebase origin main
+          git push origin HEAD:main
