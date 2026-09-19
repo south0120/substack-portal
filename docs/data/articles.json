@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T05:56:13.993033+00:00",
+  "updated_at": "2026-09-19T11:03:37.573619+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30590,6 +30590,28 @@
         "その他"
       ],
       "bio": "A record of language before meaning settles.",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Hiroto Narikawa",
+      "url": "https://hirotonarikawa.substack.com/",
+      "feed_url": "https://hirotonarikawa.substack.com/feed",
+      "categories": [
+        "ライフスタイル"
+      ],
+      "bio": "自分の特性を理解し、努力を成果につなげるための思考法・働き方・ライフデザインを発信しています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Roido Does Japan",
+      "url": "https://lloyddallen.substack.com/",
+      "feed_url": "https://lloyddallen.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Exploring Japanese society, culture, economics, and politics through on-the-ground observations, research, and personal experiences living in Japan.",
       "avatar": "",
       "latest": []
     }
