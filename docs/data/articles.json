@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T01:36:28.002143+00:00",
+  "updated_at": "2026-09-26T07:45:36.507705+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30788,6 +30788,28 @@
         "その他"
       ],
       "bio": "こんにちは。すべてフィクションです。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "AIに仕事を任せたかった人",
+      "url": "https://thethreeyearloop.substack.com/",
+      "feed_url": "https://thethreeyearloop.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIが、僕の3年間を調べています。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "D&M Partners Corporation",
+      "url": "https://dmpartners.substack.com/",
+      "feed_url": "https://dmpartners.substack.com/feed",
+      "categories": [
+        "テクノロジー"
+      ],
+      "bio": "文章・音楽・画像・動画・ゲーム・アプリ。お互いの視点から作品を変換していく共同実験場。",
       "avatar": "",
       "latest": []
     }
