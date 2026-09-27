@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T08:14:20.222335+00:00",
+  "updated_at": "2026-09-27T14:00:37.313763+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30810,6 +30810,17 @@
         "テクノロジー"
       ],
       "bio": "文章・音楽・画像・動画・ゲーム・アプリ。お互いの視点から作品を変換していく共同実験場。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Japan Expert Insights",
+      "url": "https://mayamatsuokajei.substack.com/",
+      "feed_url": "https://mayamatsuokajei.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "We do consulting & training in: * Intercultural communications * Challenges in leading Japanese teams * Customer service * Management * Trust & relationship building * Intercultural negotiations",
       "avatar": "",
       "latest": []
     }
