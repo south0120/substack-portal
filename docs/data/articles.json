@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T05:59:51.284953+00:00",
+  "updated_at": "2026-10-01T13:21:43.160161+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -30865,6 +30865,17 @@
         "AI"
       ],
       "bio": "あなたのAstraを、オリジナル3DキャラをつくれるAIにする。今回は人型チビキャラの素体を使い、3D未経験者にもわかる形で、企画から3D化・表情・動き・動画出力までの実証過程を公開します。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Miyabi｜nao",
+      "url": "https://miyabipr.substack.com/",
+      "feed_url": "https://miyabipr.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "合同会社みやびの広報をしながら、AIのこと、仕事のこと、人との出会い、日々感じたことを、私自身の経験から話しています。知識を教えるというより、実際に見たこと、感じたことを。Podcast「Everyday Miyabi」も配信中。",
       "avatar": "",
       "latest": []
     }
