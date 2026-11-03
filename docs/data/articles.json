@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:56:07.011949+00:00",
+  "updated_at": "2026-11-03T18:27:42.867317+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -31470,6 +31470,17 @@
         "その他"
       ],
       "bio": "「なのninカレンダー」のことを、お届けするお便りです。制作の裏話や隠れた仕掛けのお話をお届けします。 12月からは、作品や展示の大きなお知らせがあるときだけ、お届けします。いらなくなったら、いつでも外せます。",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Shinji の Substack",
+      "url": "https://shinjimiyadai.substack.com/",
+      "feed_url": "https://shinjimiyadai.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "自分の Substack",
       "avatar": "",
       "latest": []
     }
