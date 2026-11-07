@@ -79,6 +79,18 @@ def get_pub_id(subdomain):
     html = http_get(f"https://{subdomain}.substack.com/", timeout=20)
     if not html:
         return None
+    # 新形式（2026-11 から）: <script type="application/json" id="preloads-json">{...}</script>
+    # window._preloads は `JSON.parse(document.querySelector('script#preloads-json…').textContent)` で
+    # 読むだけになり、JSON 本体は HTML 側のこの script タグに入っている。
+    m = re.search(r'<script\b[^>]*\bid="preloads-json"[^>]*>(.*?)</script>', html, re.S)
+    if m:
+        try:
+            pub = (json.loads(m.group(1)).get("pub") or {})
+            if pub.get("id"):
+                return pub["id"]
+        except Exception:
+            pass
+    # 旧形式（残しておく）: window._preloads = JSON.parse("…エスケープ済みJSON文字列…")
     m = re.search(r'window\._preloads\s*=\s*JSON\.parse\((\"(?:[^\"\\]|\\.)*\")\)', html)
     if not m:
         return None
@@ -192,6 +204,13 @@ def main():
             print(f"  seeds {i}/{len(seed_subs)}", flush=True)
         time.sleep(0.3)
     print(f"seeds resolved: {len(queue)}", flush=True)
+    if not queue:
+        # 種が1件も取れていない＝巡回は何も見ていない。「0件でした」と同じ顔で exit 0 にしない
+        # （2026-11-07: Substack のホーム形式が変わり、exit=0 で checked 0 のまま完走した）。
+        print(f"FATAL: seeds resolved 0/{len(seed_subs)} — get_pub_id が全件失敗。"
+              "ホームの HTML 形式変更・Substack 側の拒否（IP/429）を疑う。feeds.json は更新していない。",
+              file=sys.stderr, flush=True)
+        sys.exit(1)
 
     # BFS で推薦先を辿り、未登録の日本語候補を集める
     candidates = {}  # subdomain -> {feed_url, name}
