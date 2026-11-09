@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T00:56:04.437058+00:00",
+  "updated_at": "2026-11-09T07:59:56.035809+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -31569,6 +31569,17 @@
         "その他"
       ],
       "bio": "見たら、聞いたら、日本酒を買ってみたくなる発信をしていきます",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Substackの会",
+      "url": "https://mogurasub.substack.com/",
+      "feed_url": "https://mogurasub.substack.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Substack、どう使ってる？を、みんなで話す場所。",
       "avatar": "",
       "latest": []
     }
