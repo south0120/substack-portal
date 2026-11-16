@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T02:11:46.481649+00:00",
+  "updated_at": "2026-11-16T09:48:42.065910+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -31613,6 +31613,17 @@
         "AI"
       ],
       "bio": "自分の Substack",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "Way of the Mirror",
+      "url": "https://www.wayofthemirror.com/",
+      "feed_url": "https://www.wayofthemirror.com/feed",
+      "categories": [
+        "その他"
+      ],
+      "bio": "Essays on memory, craft, and journaling as curiosity about our own stories.",
       "avatar": "",
       "latest": []
     }
