@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:03:23.675062+00:00",
+  "updated_at": "2026-11-18T21:59:15.697317+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -31657,6 +31657,17 @@
         "その他"
       ],
       "bio": "The practice and art of photo-video journalism, independent filmmaking, travel writing, occasional gardening, and everything in between.",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "WithAI Studio",
+      "url": "https://withaistudio.substack.com/",
+      "feed_url": "https://withaistudio.substack.com/feed",
+      "categories": [
+        "AI"
+      ],
+      "bio": "AIと一緒に、発信をもっとラクに。フリーランス・起業家のためのPWAアプリづくりと、AI活用の記録",
       "avatar": "",
       "latest": []
     }
