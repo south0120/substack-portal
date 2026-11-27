@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T10:55:11.728537+00:00",
+  "updated_at": "2026-11-27T19:59:11.517375+00:00",
   "categories": [
     "テクノロジー",
     "AI",
@@ -31789,6 +31789,17 @@
         "AI"
       ],
       "bio": "AIをマーケティングにどう活かすか、実践者の解釈込みで届けるニュースレター",
+      "avatar": "",
+      "latest": []
+    },
+    {
+      "name": "SISYPHUS",
+      "url": "https://cosisyphus.substack.com/",
+      "feed_url": "https://cosisyphus.substack.com/feed",
+      "categories": [
+        "社会・文化"
+      ],
+      "bio": "AI時代の「人間の情熱の燃やし方」を模索するプロジェクト『SISYPHUS』の公式連載です。社会学者・宮台真司、僧侶・松波龍源、医師・冨永晃輝を含む6人の個性が交差。脳科学や社会学を補助線に、自らの人生を動かす問いを紡ぎます。",
       "avatar": "",
       "latest": []
     }
